@@ -444,11 +444,6 @@
 			"type": "animated-image-collage",
 			"blocks": {
       },
-			"custom_css": [
-			"h2.title--simple {background: linear-gradient(91deg, #fff 14.38%, #07abf8 93.41%); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent;}",
-        ".aic.background {background-image: url(https://cdn.shopify.com/s/files/1/0731/0757/0884/files/bg-fondo-centro.webp?v=1785345733) !important; background-repeat: no-repeat; background-position: center; background-size: contain; background-attachment: local;}",
-        ".aic__subtitle.subtitle {background-color: transparent; border: 1px solid; padding: 10px 24px;}"
-			],
 			"name": "t:sections.animated-image-collage.name",
 			"settings": {
 				"section_type": "background",
@@ -488,7 +483,7 @@
 				"show_button_2": true,
 				"button_label_2": "Hablar con un especialista",
 				"button_link_2": "",
-				"button_style_2": "simple",
+				"button_style_2": "tertiary",
 				"padding_top": "m",
 				"padding_bottom": "m",
 				"margin_top": "no-indent",
@@ -591,12 +586,6 @@
 				"column_9",
 				"column_10"
 			],
-			"custom_css": [
-				"h2 {background: linear-gradient(108deg, #fff 14.38%, #07abf8 93.41%); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 700;}",
-				".aic--background:before {background: linear-gradient(180deg, #00080c 1.92%, rgba(0, 8, 12, 0.8) 25.96%, rgba(0, 8, 12, 0.818) 74.04%, #00080c 100%); opacity: 1;}",
-				".aic--background .aic__info {max-width: 110rem;}",
-				".aic--background .aic__text {max-width: 84.4rem;}"
-			],
 			"name": "t:sections.animated-image-collage.name",
 			"settings": {
 				"section_type": "background",
@@ -632,7 +621,7 @@
 				"show_button_2": false,
 				"button_label_2": "",
 				"button_link_2": "",
-				"button_style_2": "simple",
+				"button_style_2": "tertiary",
 				"padding_top": "m",
 				"padding_bottom": "m",
 				"margin_top": "no-indent",

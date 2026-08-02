@@ -55,11 +55,6 @@
         "column_3",
         "column_4"
       ],
-      "custom_css": [
-        "h2 {background: linear-gradient(91deg, #fff 14.38%, #07abf8 93.41%); background-clip: text; font-weight: 700; -webkit-background-clip: text; -webkit-text-fill-color: transparent;}",
-        ".aic--background:before {background: linear-gradient( 180deg, #05070f 0%, rgba(5, 7, 15, 0.53) 53%, #05070f 100% ); opacity: 1;}",
-        ".aic__subtitle.subtitle {background-color: transparent; border: 1px solid; padding: 10px 24px;}"
-      ],
       "name": "t:sections.animated-image-collage.name",
       "settings": {
         "section_type": "background",
@@ -193,12 +188,6 @@
         "accordion_2",
         "accordion_3"
       ],
-      "custom_css": [
-        ".collapsible-content.background {background-image: url(https://cdn.shopify.com/s/files/1/0731/0757/0884/files/bg-fondo-2-sombra.webp?v=1785360364); background-repeat: no-repeat; background-position: center; background-size: 100%; background-attachment: local;}",
-        "h2 {font-weight: 700;}",
-        "h3 {font-weight: 600; font-size: 150% !important;}",
-        "p {font-size: 120%; opacity: 0.6;}"
-      ],
       "name": "t:sections.collapsible-content.name",
       "settings": {
         "layout": "background",
@@ -263,11 +252,6 @@
         "column_3",
         "column_4"
       ],
-      "custom_css": [
-        "h2.title--simple {background: linear-gradient(91deg, #fff 14.38%, #07abf8 93.41%); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent;}",
-        ".aic.background {background-image: url(https://cdn.shopify.com/s/files/1/0731/0757/0884/files/bg-fondo-centro.webp?v=1785345733) !important; background-repeat: no-repeat; background-position: center; background-size: contain; background-attachment: local;}",
-        ".aic__subtitle.subtitle {background-color: transparent; border: 1px solid; padding: 10px 24px;}"
-      ],
       "name": "t:sections.animated-image-collage.name",
       "settings": {
         "section_type": "background",
@@ -303,7 +287,7 @@
         "show_button_2": false,
         "button_label_2": "",
         "button_link_2": "",
-        "button_style_2": "simple",
+        "button_style_2": "tertiary",
         "padding_top": "m",
         "padding_bottom": "m",
         "margin_top": "no-indent",

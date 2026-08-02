@@ -1,6 +1,28 @@
 .aic {
   overflow: hidden;
 }
+
+.aic.background {
+  background-image: url(https://cdn.shopify.com/s/files/1/0731/0757/0884/files/bg-fondo-centro.webp?v=1785345733);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  background-attachment: local;
+}
+
+.aic.background h2.title--simple {
+  background: linear-gradient(91deg, #fff 14.38%, #07abf8 93.41%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.aic__subtitle.subtitle {
+  background-color: transparent;
+  border: 1px solid;
+  padding: 10px 24px;
+}
+
 .aic__titles {
   max-width: 106rem;
 }

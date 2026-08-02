@@ -19,11 +19,6 @@
     },
     "animated_image_collage_UaQyDT": {
       "type": "animated-image-collage",
-      "custom_css": [
-        "h2.title--simple {background: linear-gradient(91deg, #fff 14.38%, #07abf8 93.41%); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent;}",
-        ".aic.background {background-image: url(https://cdn.shopify.com/s/files/1/0731/0757/0884/files/bg-fondo-centro.webp?v=1785345733) !important; background-repeat: no-repeat; background-position: center; background-size: contain; background-attachment: local;}",
-        ".aic__subtitle.subtitle {background-color: transparent; border: 1px solid; padding: 10px 24px;}"
-      ],
       "name": "t:sections.animated-image-collage.name",
       "settings": {
         "section_type": "background",
@@ -110,7 +105,7 @@
             "show_button_2": false,
             "button_label_2": "",
             "button_link_2": "",
-            "button_style_2": "simple"
+            "button_style_2": "tertiary"
           }
         }
       },
@@ -119,11 +114,6 @@
         "title_gTnXXa",
         "description_hfE7UD",
         "buttons_QXcrfR"
-      ],
-      "custom_css": [
-        ".hero__subtitle.subtitle {border-width: 0; padding: 0;}",
-        "h2 {font-size: 245%; font-weight: 700;}",
-        ".hero {background-position: top center;}"
       ],
       "name": "t:sections.hero.name",
       "settings": {
@@ -303,12 +293,6 @@
         "accordion_2",
         "accordion_3"
       ],
-      "custom_css": [
-        ".collapsible-content.background {background-image: url(https://cdn.shopify.com/s/files/1/0731/0757/0884/files/bg-fondo-2-sombra.webp?v=1785360364); background-repeat: no-repeat; background-position: center; background-size: 100%; background-attachment: local;}",
-        "h2 {font-weight: 700;}",
-        "h3 {font-weight: 600; font-size: 150% !important;}",
-        "p {font-size: 120%; opacity: 0.6;}"
-      ],
       "name": "t:sections.collapsible-content.name",
       "settings": {
         "layout": "background",
@@ -373,11 +357,6 @@
         "column_3",
         "column_4"
       ],
-      "custom_css": [
-        "h2.title--simple {background: linear-gradient(91deg, #fff 14.38%, #07abf8 93.41%); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent;}",
-        ".aic.background {background-image: url(https://cdn.shopify.com/s/files/1/0731/0757/0884/files/bg-fondo-centro.webp?v=1785345733) !important; background-repeat: no-repeat; background-position: center; background-size: contain; background-attachment: local;}",
-        ".aic__subtitle.subtitle {background-color: transparent; border: 1px solid; padding: 10px 24px;}"
-      ],
       "name": "t:sections.animated-image-collage.name",
       "settings": {
         "section_type": "background",
@@ -413,7 +392,7 @@
         "show_button_2": false,
         "button_label_2": "",
         "button_link_2": "",
-        "button_style_2": "simple",
+        "button_style_2": "tertiary",
         "padding_top": "m",
         "padding_bottom": "m",
         "margin_top": "no-indent",
