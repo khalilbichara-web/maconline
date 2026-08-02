@@ -90,6 +90,7 @@
 									{% if forloop.index == y %}
 										{% render 'aic-item',
 											image: block.settings.image,
+											image_asset: block.settings.image_asset,
 											section: section,
 											section_index: section.index,
 											index: forloop.index,
@@ -117,6 +118,7 @@
 									{% if forloop.index == y %}
 										{% render 'aic-item',
 											image: block.settings.image,
+											image_asset: block.settings.image_asset,
 											section: section,
 											section_index: section.index,
 											index: forloop.index,
@@ -137,6 +139,7 @@
 							{% assign collection_index = forloop.index0 | modulo: 3 | plus: 1 %}
 							{% render 'aic-item',
 								image: block.settings.image,
+								image_asset: block.settings.image_asset,
 								section: section,
 								width: block.settings.image_width,
 								block: block,
@@ -1686,6 +1689,11 @@
 					"type": "image_picker",
 					"id": "image",
 					"label": "t:sections.all.image.label"
+				},
+				{
+					"type": "text",
+					"id": "image_asset",
+					"label": "Image asset filename"
 				},
 				{
 					"type": "range",

@@ -76,18 +76,22 @@
         {% for block in section.blocks %}
           {%- liquid
             assign card_large_text = block.settings.card_large_text
+            assign icon_asset = block.settings.icon_asset
+            if icon_asset == blank
+              assign icon_asset = block.settings.icon_name
+            endif
             if card_large_text == blank and block.settings.heading_variant == 'number_large' and block.settings.card_label != blank
               assign card_large_text = block.settings.card_label
             endif
           -%}
           <div class="icon-cards-section__card icon-cards-section__card--index-{{ forloop.index }}{% if card_large_text != blank %} icon-cards-section__card--number-large{% endif %}" {{ block.shopify_attributes }}>
 
-            {% if block.settings.icon_name != blank or block.settings.card_subtitle != blank or block.settings.card_label != blank and card_large_text == blank %}
+            {% if icon_asset != blank or block.settings.card_subtitle != blank or block.settings.card_label != blank and card_large_text == blank %}
               <div class="icon-cards-section__card-top">
-                {% if block.settings.icon_name != blank %}
+                {% if icon_asset != blank %}
                   <div class="icon-cards-section__card-icon">
                     <img
-                      src="{{ block.settings.icon_name | asset_url }}"
+                      src="{{ icon_asset | asset_url }}"
                       alt="{{ block.settings.heading }}"
                       width="48"
                       height="48"
@@ -240,6 +244,12 @@
             { "value": "solar_chart-outline.svg",        "label": "Chart / Escalabilidad" }
           ],
           "default": ""
+        },
+        {
+          "type": "text",
+          "id": "icon_asset",
+          "label": "Asset filename (override)",
+          "info": "Si se completa, se usa este archivo en assets por encima de Ícono. Ej: apple-accounts-benefit-shield-user.png"
         },
         {
           "type": "select",

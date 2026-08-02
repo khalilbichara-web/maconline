@@ -30,6 +30,14 @@
   color: rgba(0, 0, 0, 0.55);
 }
 
+.split-features--dark .split-features__subheading {
+  color: #e6f2f8;
+}
+
+.split-features--dark .split-features__description p {
+  color: #ffffff;
+}
+
 /* Badges always dark regardless of section color scheme */
 .split-features__badge {
   background: rgba(5, 26, 42, 0.85);
@@ -192,6 +200,27 @@
   font-weight: 400;
   line-height: 20px;
   color: #011624;
+}
+
+.split-features__description--portal-empresas-mdm {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.split-features__description--portal-empresas-mdm p {
+  position: relative;
+  padding-left: 2.6rem;
+}
+
+.split-features__description--portal-empresas-mdm p::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.15rem;
+  width: 1.6rem;
+  height: 1.6rem;
+  background: url("apple-accounts-check-circle.svg") center / contain no-repeat;
 }
 
 /* ── Feature grid (2×2) ───────────────────────────────── */

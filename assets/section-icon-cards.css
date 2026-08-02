@@ -173,6 +173,103 @@
   line-height: 1.3;
 }
 
+/* Scoped replica for node 1:5337 on /pages/portal-empresas-mdm */
+[id*="icon_cards_23872"] .icon-cards-section {
+  background: #040811;
+}
+
+[id*="icon_cards_23872"] .icon-cards-section__container {
+  max-width: 1440px;
+  padding: 6.25rem 3.125rem;
+}
+
+[id*="icon_cards_23872"] .icon-cards-section--align-left .icon-cards-section__header {
+  gap: 1.25rem;
+  margin-bottom: 2.5rem;
+  max-width: 59.2rem;
+}
+
+[id*="icon_cards_23872"] .icon-cards-section__subheading {
+  color: #e6f2f8;
+  letter-spacing: 0;
+}
+
+[id*="icon_cards_23872"] .icon-cards-section__heading {
+  font-family: "SF Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 2.25rem;
+  max-width: 59.2rem;
+  background: linear-gradient(98.88deg, #ffffff 10.24%, #07abf8 66.7%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+[id*="icon_cards_23872"] .icon-cards-section__description {
+  max-width: 59.2rem;
+}
+
+[id*="icon_cards_23872"] .icon-cards-section__description p {
+  color: #ffffff;
+  font-family: "SF Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 1rem;
+  line-height: 1.25rem;
+}
+
+[id*="icon_cards_23872"] .icon-cards-section__grid {
+  gap: 1.25rem;
+}
+
+[id*="icon_cards_23872"] .icon-cards-section__card {
+  background: rgba(14, 20, 35, 0.5);
+  border: 1px solid #007cb7;
+  border-radius: 0.625rem;
+  gap: 1.25rem;
+  padding: 1.25rem 1.25rem 2.5rem;
+}
+
+[id*="icon_cards_23872"] .icon-cards-section__card:hover {
+  transform: none;
+  border-color: #007cb7;
+}
+
+[id*="icon_cards_23872"] .icon-cards-section__card-icon,
+[id*="icon_cards_23872"] .icon-cards-section__card-icon img {
+  width: 3rem;
+  height: 3rem;
+}
+
+[id*="icon_cards_23872"] .icon-cards-section__card-content {
+  gap: 0;
+}
+
+[id*="icon_cards_23872"] .icon-cards-section__card-heading {
+  font-family: "SF Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.25rem;
+}
+
+[id*="icon_cards_23872"] .icon-cards-section__card-description {
+  display: none;
+}
+
+@media screen and (max-width: 989px) {
+  [id*="icon_cards_23872"] .icon-cards-section__container {
+    padding: 4rem 1.25rem;
+  }
+
+  [id*="icon_cards_23872"] .icon-cards-section__heading {
+    font-size: 1.625rem;
+    line-height: 1.875rem;
+  }
+
+  [id*="icon_cards_23872"] .icon-cards-section__grid {
+    gap: 1rem;
+  }
+}
+
 @media screen and (max-width: 989px) {
   [id*="icon_cards_casos_reales"] .icon-cards-section__container {
     padding: 3.5rem 1.25rem 4rem;
@@ -238,7 +335,6 @@
   margin: 0;
   font-family: "Geist", system-ui, -apple-system, sans-serif;
   font-size: 2rem;
-  font-weight: 300;
   line-height: 0;
   background: linear-gradient(63.9deg, #ffffff 21.6%, #07abf8 62.3%);
   -webkit-background-clip: text;

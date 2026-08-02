@@ -6,7 +6,7 @@
 	{% render 'section-margin' %}
 {%- endstyle -%}
 
-<section class="vertical-slideshow color-{{ section.settings.color_scheme }} background section-{{ section.id }}-padding section-{{ section.id }}-margin" data-vertical-slideshow>
+<section class="vertical-slideshow color-{{ section.settings.color_scheme }} background section-{{ section.id }}-padding section-{{ section.id }}-margin{% if section.settings.force_light_mode %} vertical-slideshow--force-light{% endif %}" data-vertical-slideshow>
 	<div class="vertical-slideshow__container">
 		<div class="vertical-slideshow__header">
 			{% if section.settings.subheading != blank %}
@@ -135,6 +135,12 @@
 			"default": "Un portal pensado para operación real"
 		},
 		{
+			"type": "checkbox",
+			"id": "force_light_mode",
+			"label": "Force light mode",
+			"default": false
+		},
+		{
 			"type": "richtext",
 			"id": "description",
 			"label": "Description",
@@ -201,7 +207,7 @@
 		{
 			"type": "slide",
 			"name": "Slide",
-			"limit": 4,
+			"limit": 5,
 			"settings": [
 				{
 					"type": "text",

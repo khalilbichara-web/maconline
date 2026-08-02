@@ -95,7 +95,7 @@
 				"light_mode": false,
 				"subheading": "el desafío",
 				"heading": "<p>Las cuentas personales no fueron creadas para administrar una empresa</p>",
-				"description": "<p>cuando los colaboradores utilizan sus cuentas de Apple personales para acceder a dispositivos corporativos, la organización pierde visibilidad, control y capacidad de administración sobre la información empresarial.</p><p>Esto puede generar situaciones como:</p>",
+				"description": "<p>Esto puede generar situaciones como:</p>",
 				"overlay_top_left": "",
 				"overlay_top_right": "",
 				"overlay_bottom_left": "",
@@ -272,15 +272,17 @@
 					"settings": {
 						"label": "Paso",
 						"details": "<p>La organización implementa Apple Business Manager.</p>",
-						"image_asset": "apple-accounts-step-1.png"
+						"image_asset": "apple-accounts-step-1.png",
+						"pill_1_text": "Implementación inicial"
 					}
 				},
 				"step_2": {
 					"type": "slide",
 					"settings": {
 						"label": "Paso",
-						"details": "<p>Se crean o sincronizan las Apple Accounts Gestionadas desde el directorio corporativo</p>",
-						"image_asset": "apple-accounts-step-2.png"
+						"details": "<p>Se crean o sincronizan las Apple Accounts Gestionadas desde el directorio corporativo.</p>",
+						"image_asset": "apple-accounts-step-2.png",
+						"pill_1_text": "Sincronización de cuentas"
 					}
 				},
 				"step_3": {
@@ -288,15 +290,17 @@
 					"settings": {
 						"label": "Paso",
 						"details": "<p>Cada colaborador recibe una identidad digital administrada por la empresa.</p>",
-						"image_asset": "apple-accounts-step-3.png"
+						"image_asset": "apple-accounts-step-3.png",
+						"pill_1_text": "Asignación de identidad"
 					}
 				},
 				"step_4": {
 					"type": "slide",
 					"settings": {
 						"label": "Paso",
-						"details": "<p>Las cuentas se integran con la plataforma MDM para asignar configuraciones, aplicaciones y políticas de seguridad</p>",
-						"image_asset": "apple-accounts-step-4.png"
+						"details": "<p>Las cuentas se integran con la plataforma MDM para asignar configuraciones, aplicaciones y políticas de seguridad.</p>",
+						"image_asset": "apple-accounts-step-4.png",
+						"pill_1_text": "Integración con MDM"
 					}
 				},
 				"step_5": {
@@ -304,7 +308,8 @@
 					"settings": {
 						"label": "Paso",
 						"details": "<p>Cuando el usuario inicia sesión por primera vez, su dispositivo queda completamente configurado para comenzar a trabajar.</p>",
-						"image_asset": "apple-accounts-step-5.png"
+						"image_asset": "apple-accounts-step-5.png",
+						"pill_1_text": "Primera sesión lista"
 					}
 				}
 			},
@@ -319,282 +324,21 @@
 				"color_scheme": "scheme-39e5d4a7-e422-4a30-b12c-b2a059c9acee",
 				"subheading": "paso a paso",
 				"heading": "Flujo de Apple Accounts",
-				"force_light_mode": true,
+				"force_light_mode": false,
 				"description": "<p>Implementación progresiva de identidades gestionadas para tu organización.</p>",
 				"padding_top": "l",
 				"padding_bottom": "l",
 				"margin_top": "no-indent",
 				"margin_bottom": "no-indent"
 			}
-		},
-		"portal_admin_scope_2": {
-			"type": "split-features",
-			"blocks": {},
-			"block_order": [],
-			"name": "Split Features",
-			"settings": {
-				"color_scheme": "dark",
-				"layout": "image_left",
-				"image": "",
-				"image_asset": "apple-accounts-ecosystem-split.png",
-				"subheading": "integración con el ecosistema apple",
-				"heading": "Un servicio que potencia toda la administración de dispositivos Apple",
-				"description": "<p>Apple Accounts para Empresas funciona como el punto de conexión entre los usuarios y el ecosistema Apple administrado por la organización.</p><p>Se integra de forma nativa con:</p><p>Apple Business Manage</p><p>Zero Touch Deployment</p><p>Plataformas MDM</p><p>Microsoft Entra ID</p><p>Google Workspace</p><p>Gestión de aplicaciones corporativas</p><p>Políticas de seguridad</p><p>Inventario de dispositivos</p>",
-				"show_button": false,
-				"button_label": "",
-				"button_link": "",
-				"button_style": "primary"
-			}
-		},
-		"icon_cards_apple_accounts_use_cases": {
-			"type": "icon-cards",
-			"blocks": {
-				"use_case_1": {
-					"type": "card",
-					"settings": {
-						"icon_name": "",
-						"icon_asset": "apple-accounts-use-case-user-plus.svg",
-						"heading_variant": "default",
-						"card_label": "",
-						"card_large_text": "",
-						"card_subtitle": "",
-						"heading": "Incorporación de nuevos colaboradores",
-						"description": "Los usuarios reciben automáticamente su cuenta corporativa y un dispositivo listo para comenzar a trabajar."
-					}
-				},
-				"use_case_2": {
-					"type": "card",
-					"settings": {
-						"icon_name": "",
-						"icon_asset": "apple-accounts-use-case-buildings.svg",
-						"heading_variant": "default",
-						"card_label": "",
-						"card_large_text": "",
-						"card_subtitle": "",
-						"heading": "Empresas con múltiples sucursales",
-						"description": "Gestiona identidades y accesos desde una única plataforma para todas las sedes."
-					}
-				},
-				"use_case_3": {
-					"type": "card",
-					"settings": {
-						"icon_name": "",
-						"icon_asset": "apple-accounts-use-case-laptop.svg",
-						"heading_variant": "default",
-						"card_label": "",
-						"card_large_text": "",
-						"card_subtitle": "",
-						"heading": "Trabajo híbrido y remoto",
-						"description": "Entrega dispositivos configurados a cualquier colaborador sin intervención presencial del área de TI."
-					}
-				},
-				"use_case_4": {
-					"type": "card",
-					"settings": {
-						"icon_name": "",
-						"icon_asset": "apple-accounts-use-case-refresh.svg",
-						"heading_variant": "default",
-						"card_label": "",
-						"card_large_text": "",
-						"card_subtitle": "",
-						"heading": "Renovación tecnológica",
-						"description": "Los usuarios mantienen su identidad corporativa al cambiar de dispositivo, conservando configuraciones y accesos."
-					}
-				}
-			},
-			"block_order": [
-				"use_case_1",
-				"use_case_2",
-				"use_case_3",
-				"use_case_4"
-			],
-			"settings": {
-				"columns": "4",
-				"header_alignment": "center",
-				"light_mode": false,
-				"subheading": "",
-				"heading": "<p>Casos de uso</p>",
-				"description": "",
-				"overlay_top_left": "",
-				"overlay_top_right": "",
-				"overlay_bottom_left": "",
-				"overlay_bottom_right": ""
-			}
-		},
-		"split_features_apple_accounts_why_maconline": {
-			"type": "split-features",
-			"blocks": {},
-			"block_order": [],
-			"name": "Split Features",
-			"settings": {
-				"color_scheme": "dark",
-				"layout": "image_right",
-				"image": "",
-				"image_asset": "apple-accounts-why-maconline-split.png",
-				"subheading": "integración con el ecosistema apple",
-				"heading": "¿Por qué implementarlo con MacOnline?",
-				"description": "<p>En MacOnline acompañamos a las organizaciones durante todo el proceso de implementación del ecosistema Apple para empresas.</p><p>Nuestro servicio contempla:</p><p>Configuración de Apple Business Manager</p><p>Integración con Microsoft Entra ID y Google Workspace.</p><p>Integración con plataformas MDM.</p><p>Capacitación al equipo de TI</p><p>Creación e implementación de Apple Accounts Gestionadas.</p><p>Configuración de sincronización de identidades</p><p>Implementación Zero Touch</p><p>Acompañamiento durante la puesta en marcha.</p>",
-				"show_button": false,
-				"button_label": "",
-				"button_link": "",
-				"button_style": "primary"
-			}
-		},
-		"animated_image_collage_apple_accounts_cta": {
-			"type": "animated-image-collage",
-			"blocks": {
-				"column_1": {
-					"type": "column",
-					"settings": {
-						"image": "",
-						"image_width": 420,
-						"image_asset": "apple-accounts-cta-1.jpg"
-					}
-				},
-				"column_2": {
-					"type": "column",
-					"settings": {
-						"image": "",
-						"image_width": 420,
-						"image_asset": "apple-accounts-cta-2.jpg"
-					}
-				},
-				"column_3": {
-					"type": "column",
-					"settings": {
-						"image": "",
-						"image_width": 420,
-						"image_asset": "apple-accounts-cta-3.jpg"
-					}
-				},
-				"column_4": {
-					"type": "column",
-					"settings": {
-						"image": "",
-						"image_width": 420,
-						"image_asset": "apple-accounts-cta-4.jpg"
-					}
-				},
-				"column_5": {
-					"type": "column",
-					"settings": {
-						"image": "",
-						"image_width": 420,
-						"image_asset": "apple-accounts-cta-5.jpg"
-					}
-				},
-				"column_6": {
-					"type": "column",
-					"settings": {
-						"image": "",
-						"image_width": 420,
-						"image_asset": "apple-accounts-cta-6.jpg"
-					}
-				},
-				"column_7": {
-					"type": "column",
-					"settings": {
-						"image": "",
-						"image_width": 420,
-						"image_asset": "apple-accounts-cta-7.jpg"
-					}
-				},
-				"column_8": {
-					"type": "column",
-					"settings": {
-						"image": "",
-						"image_width": 420,
-						"image_asset": "apple-accounts-cta-8.jpg"
-					}
-				},
-				"column_9": {
-					"type": "column",
-					"settings": {
-						"image": "",
-						"image_width": 420,
-						"image_asset": "apple-accounts-cta-2.jpg"
-					}
-				},
-				"column_10": {
-					"type": "column",
-					"settings": {
-						"image": "",
-						"image_width": 420,
-						"image_asset": "apple-accounts-cta-7.jpg"
-					}
-				}
-			},
-			"block_order": [
-				"column_1",
-				"column_2",
-				"column_3",
-				"column_4",
-				"column_5",
-				"column_6",
-				"column_7",
-				"column_8",
-				"column_9",
-				"column_10"
-			],
-			"custom_css": [
-				"h2 {background: linear-gradient(108deg, #fff 14.38%, #07abf8 93.41%); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 700;}",
-				".aic--background:before {background: linear-gradient(180deg, #00080c 1.92%, rgba(0, 8, 12, 0.8) 25.96%, rgba(0, 8, 12, 0.818) 74.04%, #00080c 100%); opacity: 1;}",
-				".aic--background .aic__info {max-width: 110rem;}",
-				".aic--background .aic__text {max-width: 84.4rem;}"
-			],
-			"name": "t:sections.animated-image-collage.name",
-			"settings": {
-				"section_type": "background",
-				"color_scheme": "scheme-39e5d4a7-e422-4a30-b12c-b2a059c9acee",
-				"header_overlay": false,
-				"header_transparent": false,
-				"column_to_show": 3,
-				"opacity_overlay": 0.3,
-				"full_width": true,
-				"icon": "none",
-				"icon_color_scheme": "",
-				"icon_style": "contrast",
-				"icon_fill_type": "gradient",
-				"icon_size": "recommended",
-				"box_shadow": true,
-				"subheading": "",
-				"subheading_style": "subtitle subtitle--secondary",
-				"subheading_icon": "none",
-				"heading": "Moderniza la gestión de identidades Apple de tu organización.",
-				"heading_size": "h1",
-				"heading_level": "h2",
-				"heading_line": "none",
-				"line_color": "#1566e0",
-				"heading_animation": "none",
-				"text": "Implementa Apple Accounts para Empresas y ofrece a tus colaboradores una experiencia segura, automatizada y completamente integrada con el ecosistema Apple.",
-				"enable_subscribe": false,
-				"button_label_subscribe": "",
-				"button_style_subscribe": "primary",
-				"show_button": true,
-				"button_label": "Solicita una asesoría con nuestros especialistas",
-				"button_link": "",
-				"button_style": "primary",
-				"show_button_2": false,
-				"button_label_2": "",
-				"button_link_2": "",
-				"button_style_2": "simple",
-				"padding_top": "m",
-				"padding_bottom": "m",
-				"margin_top": "no-indent",
-				"margin_bottom": "no-indent"
-			}
 		}
 	},
 	"order": [
-		"icon_cards_23872",
 		"main",
+		"icon_cards_23872",
 		"split_features_apple_accounts_intro",
 		"portal_admin_scope_1",
 		"icon_cards_apple_accounts_benefits",
-		"vertical_slideshow_apple_accounts_steps",
-		"portal_admin_scope_2",
-		"icon_cards_apple_accounts_use_cases",
-		"split_features_apple_accounts_why_maconline",
-		"animated_image_collage_apple_accounts_cta"
+		"vertical_slideshow_apple_accounts_steps"
 	]
 }

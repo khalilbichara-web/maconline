@@ -2,6 +2,7 @@
   	Renders animated image collage image
   	Accepts:
   	- image: {Object} Slider image
+  	- image_asset: {String} Theme asset filename fallback
   	- section: {Object} Section
   	- block: {Object} Block
   - width (For bottom layout)
@@ -104,6 +105,14 @@
           style: style
       }}
     </picture>
+  {% elsif image_asset != blank %}
+    <img
+      src="{{ image_asset | asset_url }}"
+      alt=""
+      loading="lazy"
+      class="aic__image"
+      width="{{ width }}"
+    >
   {% else %}
     <div class="aic__image aic__image--placeholder">
       {{ 'hero-apparel-' | append: collection_index | placeholder_svg_tag: 'placeholder-svg' }}

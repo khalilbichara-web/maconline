@@ -1,0 +1,147 @@
+.portal-admin-scope {
+  position: relative;
+  overflow: hidden;
+  background: #ffffff;
+  padding: clamp(3rem, 4.8vw, 5rem) clamp(2rem, 4.5vw, 4rem);
+}
+
+.portal-admin-scope__container::after {
+  content: "";
+  position: absolute;
+  right: -8rem;
+  bottom: -10rem;
+  width: clamp(20rem, 45vw, 34rem);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle, rgba(8, 49, 77, 0.85) 0 18%, transparent 18% 34%, rgba(8, 49, 77, 0.55) 34% 48%, transparent 48% 62%, rgba(8, 49, 77, 0.35) 62% 75%, transparent 75% 100%);
+  pointer-events: none;
+}
+
+.portal-admin-scope__container {
+  position: relative;
+  z-index: 1;
+  max-width: 1340px;
+  margin: 0 auto;
+  background: #051523;
+  border-radius: 2rem;
+  padding: clamp(2.5rem, 3.8vw, 4rem) clamp(1.5rem, 3.2vw, 3rem);
+  display: grid;
+  grid-template-columns: minmax(280px, 1fr) minmax(320px, 1.45fr);
+  gap: clamp(2rem, 3.3vw, 3.8rem);
+  align-items: start;
+  overflow: hidden;
+}
+
+.portal-admin-scope__left {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.portal-admin-scope__subheading-wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.portal-admin-scope__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #07abf8;
+  flex-shrink: 0;
+}
+
+.portal-admin-scope__subheading {
+  margin: 0;
+  font-family: "SF Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 12px;
+  line-height: 1.2;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.portal-admin-scope__heading {
+  margin: 0;
+  font-family: "Geist", system-ui, -apple-system, sans-serif;
+  font-size: clamp(2rem, 3vw, 2.9rem);
+  line-height: 1.05;
+  color: #ffffff;
+}
+
+.portal-admin-scope__heading strong,
+.portal-admin-scope__heading .accent {
+  color: #58c9ff;
+}
+
+.portal-admin-scope__description {
+  margin: 0;
+  color: #d8e7f3;
+  font-family: "SF Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: clamp(1rem, 1.5vw, 1.25rem);
+  line-height: 1.35;
+  max-width: 31ch;
+}
+
+.portal-admin-scope__lists {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-self: center;
+  gap: 1.25rem clamp(1.2rem, 3vw, 2.6rem);
+}
+
+.portal-admin-scope__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.portal-admin-scope__list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  color: rgba(255, 255, 255, 0.95);
+  font-family: "SF Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: clamp(0.95rem, 1.2vw, 1.35rem);
+  line-height: 1.35;
+}
+
+.portal-admin-scope__check {
+  width: 14px;
+  height: 14px;
+  margin-top: 0.08em;
+  flex-shrink: 0;
+  color: #07abf8;
+}
+
+.portal-admin-scope__check svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+@media screen and (max-width: 989px) {
+  .portal-admin-scope {
+    padding: 2.5rem 1.5rem;
+  }
+
+  .portal-admin-scope__container {
+    border-radius: 1.25rem;
+    padding: 2rem 1.25rem;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .portal-admin-scope__description {
+    max-width: none;
+  }
+
+  .portal-admin-scope__lists {
+    grid-template-columns: 1fr;
+  }
+}

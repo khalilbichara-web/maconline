@@ -13,7 +13,7 @@
     <!-- ── Media column ────────────────────────────── -->
     <div class="split-features__media">
       {%- liquid
-        if section.settings.image != blank
+        if section.settings.image != blank or section.settings.image_asset != blank
           assign image_wrap_class = 'split-features__image-wrap'
         else
           assign image_wrap_class = 'split-features__image-wrap split-features__image-wrap--placeholder'
@@ -29,6 +29,17 @@
               loading: 'lazy',
               widths: '400, 600, 900'
           }}
+        {% elsif section.settings.image_asset != blank %}
+          {% comment %} theme-check-disable ImgWidthAndHeight {% endcomment %}
+          <img
+            src="{{ section.settings.image_asset | asset_url }}"
+            alt="{{ section.settings.heading | escape }}"
+            class="split-features__image"
+            loading="lazy"
+            width="900"
+            height="600"
+          >
+          {% comment %} theme-check-enable ImgWidthAndHeight {% endcomment %}
         {% else %}
           {{ 'product-1' | placeholder_svg_tag: 'split-features__image' }}
         {% endif %}
@@ -69,7 +80,7 @@
       {% endif %}
 
       {% if section.settings.description != blank %}
-        <div class="split-features__description">
+        <div class="split-features__description{% if template.suffix == 'portal-empresas-mdm' %} split-features__description--portal-empresas-mdm{% endif %}">
           {{ section.settings.description }}
         </div>
       {% endif %}
@@ -155,6 +166,12 @@
       "type": "image_picker",
       "id": "image",
       "label": "Imagen principal"
+    },
+    {
+      "type": "text",
+      "id": "image_asset",
+      "label": "Imagen desde assets",
+      "info": "Ingresa el nombre del archivo en assets, por ejemplo: portal-empresas-mdm-figma-1-5402.png"
     },
     {
       "type": "header",
