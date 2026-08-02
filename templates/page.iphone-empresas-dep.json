@@ -275,6 +275,97 @@
         "feature_4"
       ]
     },
+    "iphone_empresas_comparison": {
+      "type": "iphone-empresas-comparison",
+      "settings": {
+        "subheading": "comparativa",
+        "heading": "Nosotros vs el modelo tradicional.",
+        "description": "",
+        "us_header": "iPhone B2B (Nosotros)",
+        "them_header": "Arriendo con plan de operador"
+      },
+      "blocks": {
+        "row_1": {
+          "type": "comparison_row",
+          "settings": {
+            "feature": "Libertad para elegir operador",
+            "us_value": "Total libertad",
+            "us_status": "check",
+            "them_value": "Bloqueado al operador",
+            "them_status": "cross"
+          }
+        },
+        "row_2": {
+          "type": "comparison_row",
+          "settings": {
+            "feature": "Cambio de plan sin costo",
+            "us_value": "Cuando quieras",
+            "us_status": "check",
+            "them_value": "Multa por término anticipado",
+            "them_status": "cross"
+          }
+        },
+        "row_3": {
+          "type": "comparison_row",
+          "settings": {
+            "feature": "Cuota predecible",
+            "us_value": "Una sola cuota fija",
+            "us_status": "check",
+            "them_value": "Cuota + plan + cargos extras",
+            "them_status": "cross"
+          }
+        },
+        "row_4": {
+          "type": "comparison_row",
+          "settings": {
+            "feature": "Acceso a mejores tarifas del mercado",
+            "us_value": "Siempre",
+            "us_status": "check",
+            "them_value": "Solo el plan del operador",
+            "them_status": "warning"
+          }
+        },
+        "row_5": {
+          "type": "comparison_row",
+          "settings": {
+            "feature": "Upgrade de equipo",
+            "us_value": "Al terminar el contrato",
+            "us_status": "check",
+            "them_value": "Solo si renuevas el plan",
+            "them_status": "warning"
+          }
+        },
+        "row_6": {
+          "type": "comparison_row",
+          "settings": {
+            "feature": "Gestión centralizada flota",
+            "us_value": "Portal MDM incluido",
+            "us_status": "check",
+            "them_value": "Depende del operador",
+            "them_status": "warning"
+          }
+        },
+        "row_7": {
+          "type": "comparison_row",
+          "settings": {
+            "feature": "Facturación empresa",
+            "us_value": "Factura electrónica",
+            "us_status": "check",
+            "them_value": "Factura electrónica",
+            "them_status": "check"
+          }
+        }
+      },
+      "block_order": [
+        "row_1",
+        "row_2",
+        "row_3",
+        "row_4",
+        "row_5",
+        "row_6",
+        "row_7"
+      ]
+    },
     "iphone_empresas_catalog": {
       "type": "iphone-empresas-catalog",
       "settings": {
@@ -319,6 +410,7 @@
     "hero_pbQt96",
     "icon_cards_23872",
     "split_features_aQmL29",
+    "iphone_empresas_comparison",
     "split_features_process",
     "iphone_empresas_catalog"
   ]

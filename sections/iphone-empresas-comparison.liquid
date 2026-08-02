@@ -1,0 +1,228 @@
+{{ 'section-iphone-empresas-comparison.css' | asset_url | stylesheet_tag }}
+
+<section class="iphone-empresas-comparison">
+  <div class="iphone-empresas-comparison__container">
+    <header class="iphone-empresas-comparison__header">
+      {% if section.settings.subheading != blank %}
+        <p class="iphone-empresas-comparison__subheading">{{ section.settings.subheading }}</p>
+      {% endif %}
+
+      {% if section.settings.heading != blank %}
+        <h2 class="iphone-empresas-comparison__heading">{{ section.settings.heading }}</h2>
+      {% endif %}
+
+      {% if section.settings.description != blank %}
+        <p class="iphone-empresas-comparison__description">{{ section.settings.description }}</p>
+      {% endif %}
+    </header>
+
+    <div class="iphone-empresas-comparison__table-wrap">
+      <div class="iphone-empresas-comparison__table" role="table" aria-label="{{ section.settings.heading | strip_html | escape }}">
+        <div class="iphone-empresas-comparison__row iphone-empresas-comparison__row--head" role="row">
+          <div class="iphone-empresas-comparison__cell iphone-empresas-comparison__cell--feature iphone-empresas-comparison__cell--head" role="columnheader"></div>
+          <div class="iphone-empresas-comparison__cell iphone-empresas-comparison__cell--us iphone-empresas-comparison__cell--head" role="columnheader">
+            {{ section.settings.us_header }}
+          </div>
+          <div class="iphone-empresas-comparison__cell iphone-empresas-comparison__cell--them iphone-empresas-comparison__cell--head" role="columnheader">
+            {{ section.settings.them_header }}
+          </div>
+        </div>
+
+        {% for block in section.blocks %}
+          <div class="iphone-empresas-comparison__row" role="row" {{ block.shopify_attributes }}>
+            <div class="iphone-empresas-comparison__cell iphone-empresas-comparison__cell--feature" role="cell">
+              {{ block.settings.feature }}
+            </div>
+
+            <div class="iphone-empresas-comparison__cell iphone-empresas-comparison__cell--us" role="cell">
+              <span class="iphone-empresas-comparison__status iphone-empresas-comparison__status--{{ block.settings.us_status }}" aria-hidden="true">
+                {% render 'iphone-comparison-status-icon', status: block.settings.us_status %}
+              </span>
+              <span>{{ block.settings.us_value }}</span>
+            </div>
+
+            <div class="iphone-empresas-comparison__cell iphone-empresas-comparison__cell--them" role="cell">
+              <span class="iphone-empresas-comparison__status iphone-empresas-comparison__status--{{ block.settings.them_status }}" aria-hidden="true">
+                {% render 'iphone-comparison-status-icon', status: block.settings.them_status %}
+              </span>
+              <span>{{ block.settings.them_value }}</span>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "iPhone comparativa",
+  "tag": "section",
+  "class": "section-iphone-empresas-comparison",
+  "settings": [
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subtítulo",
+      "default": "comparativa"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Título",
+      "default": "Nosotros vs el modelo tradicional."
+    },
+    {
+      "type": "text",
+      "id": "description",
+      "label": "Descripción",
+      "default": "Compara cada aspecto clave entre nuestro modelo y el arriendo tradicional."
+    },
+    {
+      "type": "text",
+      "id": "us_header",
+      "label": "Encabezado columna nosotros",
+      "default": "iPhone B2B (Nosotros)"
+    },
+    {
+      "type": "text",
+      "id": "them_header",
+      "label": "Encabezado columna tradicional",
+      "default": "Arriendo con plan de operador"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "comparison_row",
+      "name": "Fila",
+      "limit": 12,
+      "settings": [
+        {
+          "type": "text",
+          "id": "feature",
+          "label": "Característica",
+          "default": "Libertad para elegir operador"
+        },
+        {
+          "type": "text",
+          "id": "us_value",
+          "label": "Valor nosotros",
+          "default": "Total libertad"
+        },
+        {
+          "type": "select",
+          "id": "us_status",
+          "label": "Estado nosotros",
+          "options": [
+            { "value": "check", "label": "Check" },
+            { "value": "cross", "label": "Cross" },
+            { "value": "warning", "label": "Warning" }
+          ],
+          "default": "check"
+        },
+        {
+          "type": "text",
+          "id": "them_value",
+          "label": "Valor tradicional",
+          "default": "Bloqueado al operador"
+        },
+        {
+          "type": "select",
+          "id": "them_status",
+          "label": "Estado tradicional",
+          "options": [
+            { "value": "check", "label": "Check" },
+            { "value": "cross", "label": "Cross" },
+            { "value": "warning", "label": "Warning" }
+          ],
+          "default": "cross"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "iPhone comparativa",
+      "category": "Custom",
+      "settings": {
+        "subheading": "comparativa",
+        "heading": "Nosotros vs el modelo tradicional.",
+        "us_header": "iPhone B2B (Nosotros)",
+        "them_header": "Arriendo con plan de operador"
+      },
+      "blocks": [
+        {
+          "type": "comparison_row",
+          "settings": {
+            "feature": "Libertad para elegir operador",
+            "us_value": "Total libertad",
+            "us_status": "check",
+            "them_value": "Bloqueado al operador",
+            "them_status": "cross"
+          }
+        },
+        {
+          "type": "comparison_row",
+          "settings": {
+            "feature": "Cambio de plan sin costo",
+            "us_value": "Cuando quieras",
+            "us_status": "check",
+            "them_value": "Multa por término anticipado",
+            "them_status": "cross"
+          }
+        },
+        {
+          "type": "comparison_row",
+          "settings": {
+            "feature": "Cuota predecible",
+            "us_value": "Una sola cuota fija",
+            "us_status": "check",
+            "them_value": "Cuota + plan + cargos extras",
+            "them_status": "cross"
+          }
+        },
+        {
+          "type": "comparison_row",
+          "settings": {
+            "feature": "Acceso a mejores tarifas del mercado",
+            "us_value": "Siempre",
+            "us_status": "check",
+            "them_value": "Solo el plan del operador",
+            "them_status": "warning"
+          }
+        },
+        {
+          "type": "comparison_row",
+          "settings": {
+            "feature": "Upgrade de equipo",
+            "us_value": "Al terminar el contrato",
+            "us_status": "check",
+            "them_value": "Solo si renuevas el plan",
+            "them_status": "warning"
+          }
+        },
+        {
+          "type": "comparison_row",
+          "settings": {
+            "feature": "Gestión centralizada flota",
+            "us_value": "Portal MDM incluido",
+            "us_status": "check",
+            "them_value": "Depende del operador",
+            "them_status": "warning"
+          }
+        },
+        {
+          "type": "comparison_row",
+          "settings": {
+            "feature": "Facturación empresa",
+            "us_value": "Factura electrónica",
+            "us_status": "check",
+            "them_value": "Factura electrónica",
+            "them_status": "check"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
