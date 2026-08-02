@@ -1,454 +1,109 @@
-/*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin theme editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */
 {
-  "sections": {
-    "main": {
-      "type": "main-page",
-      "disabled": true,
-      "settings": {
-        "padding_top": "no-indent",
-        "padding_bottom": "m"
-      }
-    },
-    "animated_image_collage_tDn9mB": {
-      "type": "animated-image-collage",
-      "custom_css": [
-        "h2 {background: linear-gradient(91deg, #fff 14.38%, #07abf8 93.41%); background-clip: text; font-weight: 700; -webkit-background-clip: text; -webkit-text-fill-color: transparent;}",
-        ".aic--background:before {background: linear-gradient( 180deg, #05070f 0%, rgba(5, 7, 15, 0.53) 53%, #05070f 100% ); opacity: 1;}",
-        ".aic__subtitle.subtitle {background-color: transparent; border: 1px solid; padding: 10px 24px;}"
-      ],
-      "name": "t:sections.animated-image-collage.name",
-      "settings": {
-        "section_type": "background",
-        "color_scheme": "scheme-39e5d4a7-e422-4a30-b12c-b2a059c9acee",
-        "header_overlay": false,
-        "header_transparent": false,
-        "column_to_show": 3,
-        "opacity_overlay": 0.3,
-        "full_width": true,
-        "icon": "none",
-        "icon_color_scheme": "",
-        "icon_style": "contrast",
-        "icon_fill_type": "gradient",
-        "icon_size": "recommended",
-        "box_shadow": true,
-        "subheading": "Portal MDM Empresas",
-        "subheading_style": "subtitle subtitle--secondary",
-        "subheading_icon": "none",
-        "heading": "Cuando todo pasa por TI, se generan cuellos de botella",
-        "heading_size": "h1",
-        "heading_level": "h2",
-        "heading_line": "simple",
-        "line_color": "#1566e0",
-        "heading_animation": "none",
-        "text": "Un portal simple para que tu empresa gestione solicitudes, equipos, usuarios, apps y soporte, mientras TI mantiene políticas y seguridad centralizadas.",
-        "enable_subscribe": false,
-        "button_label_subscribe": "Agendar demo",
-        "button_style_subscribe": "primary",
-        "show_button": true,
-        "button_label": "Agendar demo",
-        "button_link": "",
-        "button_style": "primary",
-        "show_button_2": true,
-        "button_label_2": "Hablar con un experto",
-        "button_link_2": "",
-        "button_style_2": "tertiary",
-        "padding_top": "m",
-        "padding_bottom": "m",
-        "margin_top": "no-indent",
-        "margin_bottom": "no-indent"
-      }
-    },
-    "hero_LTMLPe": {
-      "type": "hero",
-      "blocks": {
-        "subtitle_YhMnDa": {
-          "type": "subtitle",
-          "settings": {
-            "subheading": "portal de empresas",
-            "subheading_style": "subtitle",
-            "subheading_icon": "circle"
-          }
-        },
-        "title_XcGnQi": {
-          "type": "title",
-          "settings": {
-            "heading": "¿Qué es el Portal de Empresas?",
-            "heading_size": "h1",
-            "heading_level": "h2",
-            "heading_line": "simple",
-            "line_color": "#1566e0",
-            "word_break": false,
-            "heading_animation": "none",
-            "word_break_an": false
-          }
-        },
-        "description_hwXVKh": {
-          "type": "description",
-          "settings": {
-            "description": "Es una capa de autoservicio sobre tu MDM para que usuarios autorizados puedan operar el día a día:\n\nSolicitar enrolamiento, asignar equipos, pedir aplicaciones, revisar estados, levantar tickets y ver reportes, con flujos controlados y trazabilidad."
-          }
-        },
-        "buttons_TiTmND": {
-          "type": "buttons",
-          "settings": {
-            "show_button_1": true,
-            "button_label_1": "Agendar demo",
-            "button_link_1": "",
-            "button_style_1": "primary",
-            "show_button_2": false,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_2": "tertiary"
-          }
-        }
-      },
-      "block_order": [
-        "subtitle_YhMnDa",
-        "title_XcGnQi",
-        "description_hwXVKh",
-        "buttons_TiTmND"
-      ],
-      "custom_css": [
-        ".hero__subtitle.subtitle {border-width: 0; padding: 0;}",
-        "h2 {font-size: 245%; font-weight: 700;}",
-        ".hero {background-position: top center;}"
-      ],
-      "name": "t:sections.hero.name",
-      "settings": {
-        "layout": "horizontal",
-        "header_overlay": false,
-        "header_transparent": true,
-        "block_type": "plain",
-        "color_scheme": "",
-        "full_screen": true,
-        "image": "shopify://shop_images/Rectangle_3.png",
-        "show_video": false,
-        "overlay_opacity": 0,
-        "image_ratio": "1/1",
-        "object_fit": "contain",
-        "desktop_image_position": "after",
-        "mobile_image_position": "after",
-        "mobile_image_overlay": "overlay",
-        "horizontal_alignment": "center",
-        "vertical_alignment": "middle",
-        "padding_top": "m",
-        "padding_bottom": "m"
-      }
-    },
-    "portal_challenges_mdm": {
-      "type": "portal-challenges",
-      "blocks": {
-        "card_1": {
-          "type": "card",
-          "settings": {
-            "icon_asset": "portal-icon-1.svg",
-            "heading": "Inventario y estado",
-            "text": "Ver equipos por área, ubicación, usuario, modelo, versión y cumplimiento."
-          }
-        },
-        "card_2": {
-          "type": "card",
-          "settings": {
-            "icon_asset": "portal-icon-2.svg",
-            "heading": "Altas y asignaciones",
-            "text": "Asignar dispositivos a usuarios/equipos de trabajo con trazabilidad."
-          }
-        },
-        "card_3": {
-          "type": "card",
-          "settings": {
-            "icon_asset": "portal-icon-3.svg",
-            "heading": "Solicitudes de apps",
-            "text": "Catálogo corporativo + solicitudes con aprobación y despliegue automático."
-          }
-        },
-        "card_4": {
-          "type": "card",
-          "settings": {
-            "icon_asset": "portal-icon-4.svg",
-            "heading": "Soporte y tickets",
-            "text": "Levantar incidentes y seguir el estado (con historial por equipo)."
-          }
-        }
-      },
-      "block_order": [
-        "card_1",
-        "card_2",
-        "card_3",
-        "card_4"
-      ],
-      "settings": {
-        "color_scheme": "background-1",
-        "subheading": "BENEFICIOS CLAVE PARA EMPRESAS",
-        "heading": "¿Qué significa “Seguridad con MDM”?",
-        "description": "<p>Sin un portal, cada alta, cambio o solicitud termina en correo, planilla o ticket manual.</p><p>El portal ordena la operación con flujos claros, aprobaciones, visibilidad y tiempos de respuesta más cortos, manteniendo el control y la seguridad donde corresponde.</p>",
-        "padding_top": "l",
-        "padding_bottom": "l",
-        "margin_top": "no-indent",
-        "margin_bottom": "no-indent"
-      }
-    },
-    "vertical_slideshow_portal": {
-      "type": "vertical-slideshow",
-      "blocks": {
-        "slide_1": {
-          "type": "slide",
-          "settings": {
-            "label": "Dashboard",
-            "details": "<ul><li>Indicadores de flota</li><li>Alertas</li><li>Accesos rápidos</li></ul>",
-            "image_asset": "vertical-slide-1.png",
-            "pill_1_text": "Indicadores de flota",
-            "pill_2_text": "Alertas",
-            "pill_3_text": "Accesos rápidos",
-            "pill_4_text": "",
-            "pill_5_text": ""
-          }
-        },
-        "slide_2": {
-          "type": "slide",
-          "settings": {
-            "label": "Dispositivos",
-            "details": "<ul><li>Búsqueda avanzada</li><li>Etiquetas</li><li>Asignación</li><li>Estado y acciones permitidas</li></ul>",
-            "image_asset": "vertical-slide-2.png",
-            "pill_1_text": "Búsqueda avanzada",
-            "pill_2_text": "Estado y acciones permitidas",
-            "pill_3_text": "Asignación",
-            "pill_4_text": "Etiquetas",
-            "pill_5_text": ""
-          }
-        },
-        "slide_3": {
-          "type": "slide",
-          "settings": {
-            "label": "Aplicaciones",
-            "details": "<ul><li>Catálogo</li><li>Solicitudes</li><li>Aprobaciones</li><li>Despliegue y control</li></ul>",
-            "image_asset": "vertical-slide-3.png",
-            "pill_1_text": "Catálogo",
-            "pill_2_text": "Despliegue y control",
-            "pill_3_text": "Solicitudes",
-            "pill_4_text": "Aprobaciones",
-            "pill_5_text": ""
-          }
-        },
-        "slide_4": {
-          "type": "slide",
-          "settings": {
-            "label": "Soporte/Reporte",
-            "details": "<ul><li>Tickets</li><li>Adjuntos</li><li>SLA</li><li>Historial por dispositivo</li><li>Inventario y cumplimiento</li><li>Incidentes y actividad</li></ul>",
-            "image_asset": "vertical-slide-4.png",
-            "pill_1_text": "Tickets",
-            "pill_2_text": "Adjuntos",
-            "pill_3_text": "Historial por dispositivo",
-            "pill_4_text": "Inventario y cumplimiento",
-            "pill_5_text": "Incidentes y actividad"
-          }
-        }
-      },
-      "block_order": [
-        "slide_1",
-        "slide_2",
-        "slide_3",
-        "slide_4"
-      ],
-      "settings": {
-        "color_scheme": "scheme-39e5d4a7-e422-4a30-b12c-b2a059c9acee",
-        "subheading": "COMO FUNCIONA",
-        "heading": "Un portal pensado para operación real",
-        "description": "<p>Todo ordenado por módulos, con permisos por rol.</p>",
-        "padding_top": "l",
-        "padding_bottom": "l",
-        "margin_top": "no-indent",
-        "margin_bottom": "no-indent"
-      }
-    },
-    "collapsible_content_portal": {
-      "type": "collapsible-content",
-      "blocks": {
-        "accordion_1": {
-          "type": "accordion",
-          "settings": {
-            "question": "¿El portal reemplaza al MDM?",
-            "answer": "<p>No, es la interfaz de autoservicio y operación. El MDM sigue siendo el motor de políticas y acciones.<br/></p>",
-            "opened": true
-          }
-        },
-        "accordion_QBUzeB": {
-          "type": "accordion",
-          "settings": {
-            "question": "¿Se puede limitar lo que ven las áreas?",
-            "answer": "<p>Sí, por roles/permisos y segmentación por grupos.<br/></p>",
-            "opened": false
-          }
-        },
-        "accordion_2": {
-          "type": "accordion",
-          "settings": {
-            "question": "¿Se integra con mesa de ayuda?",
-            "answer": "<p>Puede integrarse según tu herramienta (tickets, flujos, SSO), y también puede operar como centro de soporte básico.<br/></p>",
-            "opened": false
-          }
-        },
-        "accordion_3": {
-          "type": "accordion",
-          "settings": {
-            "question": "¿Sirve para Mac y iPhone/iPad?",
-            "answer": "<p>Sí, el portal consolida la operación para toda tus equipos Apple.<br/><br/></p>",
-            "opened": false
-          }
-        }
-      },
-      "block_order": [
-        "accordion_1",
-        "accordion_QBUzeB",
-        "accordion_2",
-        "accordion_3"
-      ],
-      "custom_css": [
-        ".collapsible-content.background {background-image: url(https://cdn.shopify.com/s/files/1/0731/0757/0884/files/bg-fondo-2-sombra.webp?v=1785360364); background-repeat: no-repeat; background-position: center; background-size: 100%; background-attachment: local;}",
-        "h2 {font-weight: 700;}",
-        "h3 {font-weight: 600; font-size: 150% !important;}",
-        "p {font-size: 120%; opacity: 0.6;}"
-      ],
-      "name": "t:sections.collapsible-content.name",
-      "settings": {
-        "layout": "background",
-        "color_scheme": "scheme-39e5d4a7-e422-4a30-b12c-b2a059c9acee",
-        "enable_border": false,
-        "border_full": false,
-        "subheading": "",
-        "subheading_style": "subtitle",
-        "subheading_icon": "none",
-        "heading": "Preguntas frecuentes Zero Touch",
-        "heading_size": "h2",
-        "heading_level": "h2",
-        "heading_line": "none",
-        "line_color": "#1566e0",
-        "word_break": false,
-        "heading_animation": "none",
-        "word_break_an": false,
-        "text": "",
-        "text_align": "center",
-        "row_color_scheme": "scheme-cf7617bd-cf5d-43c2-b151-2d92b8b69cd6",
-        "padding_top": "l",
-        "padding_bottom": "l",
-        "margin_top": "no-indent",
-        "margin_bottom": "no-indent"
-      }
-    },
-    "animated_image_collage_portal": {
-      "type": "animated-image-collage",
-      "custom_css": [
-        "h2.title--simple {background: linear-gradient(91deg, #fff 14.38%, #07abf8 93.41%); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent;}",
-        ".aic__subtitle.subtitle {background-color: transparent; border: 1px solid; padding: 10px 24px;}"
-      ],
-      "name": "t:sections.animated-image-collage.name",
-      "settings": {
-        "section_type": "background",
-        "color_scheme": "scheme-39e5d4a7-e422-4a30-b12c-b2a059c9acee",
-        "header_overlay": false,
-        "header_transparent": false,
-        "column_to_show": 3,
-        "opacity_overlay": 0,
-        "full_width": true,
-        "icon": "none",
-        "icon_color_scheme": "scheme-cf7617bd-cf5d-43c2-b151-2d92b8b69cd6",
-        "icon_style": "contrast",
-        "icon_fill_type": "gradient",
-        "icon_size": "recommended",
-        "box_shadow": true,
-        "subheading": "",
-        "subheading_style": "subtitle subtitle--secondary",
-        "subheading_icon": "none",
-        "heading": "Dale autonomía a tu empresa sin perder control",
-        "heading_size": "h1",
-        "heading_level": "h2",
-        "heading_line": "simple",
-        "line_color": "#1566e0",
-        "heading_animation": "none",
-        "text": "Te ayudamos a definir una base de seguridad (políticas, grupos, cumplimiento, distribución de apps y actualizaciones) y a implementarla con Zero-Touch para que tu flota quede protegida y controlada.",
-        "enable_subscribe": false,
-        "button_label_subscribe": "Agendar demo",
-        "button_style_subscribe": "primary",
-        "show_button": true,
-        "button_label": "Agenda un demo",
-        "button_link": "",
-        "button_style": "primary",
-        "show_button_2": false,
-        "button_label_2": "",
-        "button_link_2": "",
-        "button_style_2": "simple",
-        "padding_top": "m",
-        "padding_bottom": "m",
-        "margin_top": "no-indent",
-        "margin_bottom": "no-indent"
-      }
-    },
-    "portal_variation_row": {
-      "type": "portal-variation-row",
-      "blocks": {
-        "image_1": {
-          "type": "image",
-          "settings": {
-            "image_asset": "portal-variation-row-1.png"
-          }
-        },
-        "image_2": {
-          "type": "image",
-          "settings": {
-            "image_asset": "portal-variation-row-2.png"
-          }
-        },
-        "image_3": {
-          "type": "image",
-          "settings": {
-            "image_asset": "portal-variation-row-3.png"
-          }
-        },
-        "image_4": {
-          "type": "image",
-          "settings": {
-            "image_asset": "portal-variation-row-4.png"
-          }
-        },
-        "image_5": {
-          "type": "image",
-          "settings": {
-            "image_asset": "portal-variation-row-5.png"
-          }
-        }
-      },
-      "block_order": [
-        "image_1",
-        "image_2",
-        "image_3",
-        "image_4",
-        "image_5"
-      ],
-      "settings": {
-        "color_scheme": "scheme-39e5d4a7-e422-4a30-b12c-b2a059c9acee",
-        "padding_top": "no-indent",
-        "padding_bottom": "m",
-        "margin_top": "no-indent",
-        "margin_bottom": "no-indent"
-      }
-    }
-  },
-  "order": [
-    "main",
-    "animated_image_collage_tDn9mB",
-    "hero_LTMLPe",
-    "portal_challenges_mdm",
-    "vertical_slideshow_portal",
-    "collapsible_content_portal",
-    "animated_image_collage_portal",
-    "portal_variation_row"
-  ]
+	"sections": {
+		"main": {
+			"type": "main-page",
+			"settings": {}
+		},
+		"icon_cards_23872": {
+			"type": "icon-cards",
+			"blocks": {
+				"item_1": {
+					"type": "card",
+					"settings": {
+						"icon_name": "apple-accounts-icon-1.svg",
+						"heading_variant": "default",
+						"card_label": "",
+						"card_large_text": "",
+						"card_subtitle": "",
+						"heading": "Información corporativa asociada a cuentas personales",
+						"description": ""
+					}
+				},
+				"item_2": {
+					"type": "card",
+					"settings": {
+						"icon_name": "apple-accounts-icon-2.svg",
+						"heading_variant": "default",
+						"card_label": "",
+						"card_large_text": "",
+						"card_subtitle": "",
+						"heading": "Dificultad para recuperar accesos cuando un colaborador deja la empresa",
+						"description": ""
+					}
+				},
+				"item_3": {
+					"type": "card",
+					"settings": {
+						"icon_name": "apple-accounts-icon-3.svg",
+						"heading_variant": "default",
+						"card_label": "",
+						"card_large_text": "",
+						"card_subtitle": "",
+						"heading": "Administración manual de usuarios y permisos",
+						"description": ""
+					}
+				},
+				"item_4": {
+					"type": "card",
+					"settings": {
+						"icon_name": "apple-accounts-icon-4.svg",
+						"heading_variant": "default",
+						"card_label": "",
+						"card_large_text": "",
+						"card_subtitle": "",
+						"heading": "Riesgos de seguridad y cumplimiento",
+						"description": ""
+					}
+				},
+				"item_5": {
+					"type": "card",
+					"settings": {
+						"icon_name": "apple-accounts-icon-5.svg",
+						"heading_variant": "default",
+						"card_label": "",
+						"card_large_text": "",
+						"card_subtitle": "",
+						"heading": "Procesos de incorporación lentos",
+						"description": ""
+					}
+				},
+				"item_6": {
+					"type": "card",
+					"settings": {
+						"icon_name": "apple-accounts-icon-6.svg",
+						"heading_variant": "default",
+						"card_label": "",
+						"card_large_text": "",
+						"card_subtitle": "",
+						"heading": "Mayor carga operativa para el área TI",
+						"description": ""
+					}
+				}
+			},
+			"block_order": [
+				"item_1",
+				"item_2",
+				"item_3",
+				"item_4",
+				"item_5",
+				"item_6"
+			],
+			"settings": {
+				"columns": "3",
+				"header_alignment": "left",
+				"light_mode": false,
+				"subheading": "el desafío",
+				"heading": "<p>Las cuentas personales no fueron creadas para administrar una empresa</p>",
+				"description": "<p>Esto puede generar situaciones como:</p>",
+				"overlay_top_left": "",
+				"overlay_top_right": "",
+				"overlay_bottom_left": "",
+				"overlay_bottom_right": ""
+			}
+		}
+	},
+	"order": [
+		"main",
+		"icon_cards_23872"
+	]
 }
