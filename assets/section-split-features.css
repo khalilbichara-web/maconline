@@ -30,6 +30,16 @@
   color: rgba(0, 0, 0, 0.55);
 }
 
+.split-features--light .split-features__feature {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.05);
+}
+
+.split-features--light .split-features__feature-number {
+  color: #07ABF8;
+}
+
 .split-features--dark .split-features__subheading {
   color: #e6f2f8;
 }
@@ -240,6 +250,13 @@
   min-height: 0;
 }
 
+.split-features__feature-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 1rem;
+}
+
 .split-features__feature-icon {
   display: flex;
   align-items: center;
@@ -253,6 +270,15 @@
   width: 38px;
   height: 38px;
   display: block;
+}
+
+.split-features__feature-number {
+  font-family: "Geist", system-ui, -apple-system, sans-serif;
+  font-size: clamp(1.9rem, 3vw, 2.75rem);
+  line-height: 1;
+  font-weight: 600;
+  letter-spacing: -0.04em;
+  color: #ffffff;
 }
 
 .split-features__feature-body {
@@ -338,6 +364,10 @@
 
   .split-features__feature {
     padding: 1.25rem;
+  }
+
+  .split-features__feature-number {
+    font-size: 2rem;
   }
 
   /* Hide outer badges on very small screens */

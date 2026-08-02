@@ -89,17 +89,23 @@
         <div class="split-features__grid">
           {% for block in features %}
             <div class="split-features__feature" {{ block.shopify_attributes }}>
-              {% if block.settings.icon_name != blank %}
-                <div class="split-features__feature-icon">
-                  <img
-                    src="{{ block.settings.icon_name | asset_url }}"
-                    alt=""
-                    width="32"
-                    height="32"
-                    loading="lazy"
-                  >
-                </div>
-              {% endif %}
+              <div class="split-features__feature-top">
+                {% if block.settings.icon_name != blank %}
+                  <div class="split-features__feature-icon">
+                    <img
+                      src="{{ block.settings.icon_name | asset_url }}"
+                      alt=""
+                      width="32"
+                      height="32"
+                      loading="lazy"
+                    >
+                  </div>
+                {% endif %}
+
+                {% if block.settings.number != blank %}
+                  <span class="split-features__feature-number">{{ block.settings.number }}</span>
+                {% endif %}
+              </div>
               <div class="split-features__feature-body">
                 {% if block.settings.heading != blank %}
                   <h3 class="split-features__feature-heading">{{ block.settings.heading }}</h3>
@@ -278,6 +284,12 @@
         },
         {
           "type": "text",
+          "id": "number",
+          "label": "Número",
+          "info": "Opcional. Se muestra como etiqueta destacada en la tarjeta."
+        },
+        {
+          "type": "text",
           "id": "heading",
           "label": "Título",
           "default": "Título del feature"
@@ -287,80 +299,6 @@
           "id": "description",
           "label": "Descripción",
           "default": "Descripción breve del beneficio."
-        }
-      ]
-    }
-  ],
-  "presets": [
-    {
-      "name": "Split Features",
-      "category": "Custom",
-      "settings": {
-        "color_scheme": "light",
-        "layout": "image_left",
-        "subheading": "RENTAL OPERATIVO",
-        "heading": "Deja de comprar tecnología. Empieza a administrarla de forma inteligente",
-        "description": "<p>Transforma la adquisición de dispositivos Apple en un servicio integral que combina financiamiento, soporte, administración y renovación, permitiendo que tu empresa crezca con una infraestructura tecnológica siempre actualizada.</p>",
-        "show_button": true,
-        "button_label": "Explorar rental operativo",
-        "button_style": "primary"
-      },
-      "blocks": [
-        {
-          "type": "badge",
-          "settings": { "icon_name": "solar_shield-check-outline.svg",   "label": "No compromete capacidad crediticia" }
-        },
-        {
-          "type": "badge",
-          "settings": { "icon_name": "solar_chart-outline.svg",           "label": "Beneficio tributario" }
-        },
-        {
-          "type": "badge",
-          "settings": { "icon_name": "solar_graph-down-new-outline.svg",  "label": "Sin pago inicial" }
-        },
-        {
-          "type": "badge",
-          "settings": { "icon_name": "solar_clock-circle-outline.svg",    "label": "Cuota mensual fija en pesos" }
-        },
-        {
-          "type": "badge",
-          "settings": { "icon_name": "solar_shield-check-outline.svg",    "label": "Tecnología actualizada" }
-        },
-        {
-          "type": "badge",
-          "settings": { "icon_name": "solar_chart-outline.svg",           "label": "Protección integral" }
-        },
-        {
-          "type": "feature",
-          "settings": {
-            "icon_name": "solar_graph-down-new-outline.svg",
-            "heading": "Libera capital para crecer",
-            "description": "Evita grandes inversiones iniciales y destina recursos a iniciativas estratégicas."
-          }
-        },
-        {
-          "type": "feature",
-          "settings": {
-            "icon_name": "solar_clock-circle-outline.svg",
-            "heading": "Renueva sin volver a comenzar",
-            "description": "Mantén una flota siempre vigente mediante ciclos de renovación planificados."
-          }
-        },
-        {
-          "type": "feature",
-          "settings": {
-            "icon_name": "solar_chart-outline.svg",
-            "heading": "Costos predecibles",
-            "description": "Centraliza la inversión tecnológica en una cuota mensual simple de administrar."
-          }
-        },
-        {
-          "type": "feature",
-          "settings": {
-            "icon_name": "solar_shield-check-outline.svg",
-            "heading": "Gestión durante todo el ciclo de vida",
-            "description": "Desde la entrega hasta la renovación, administramos cada etapa para reducir la carga operativa de tu organización."
-          }
         }
       ]
     }

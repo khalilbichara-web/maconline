@@ -11,7 +11,7 @@
 -%}
 
 <div
-  class="icon-cards-section icon-cards-section--align-{{ alignment }}{% if section.settings.light_mode %} icon-cards-section--light{% endif %}"
+  class="icon-cards-section icon-cards-section--align-{{ alignment }}{% if section.settings.light_mode %} icon-cards-section--light{% endif %}{% if section.settings.show_card_description %} icon-cards-section--show-card-description{% endif %}"
   style="--icon-cards-cols: {{ col_count }}"
 >
   {%- assign overlay_top_left = section.settings.overlay_top_left -%}
@@ -120,7 +120,7 @@
                 <h3 class="icon-cards-section__card-heading">{{ block.settings.heading }}</h3>
               {% endif %}
 
-              {% if block.settings.description != blank %}
+              {% if section.settings.show_card_description and block.settings.description != blank %}
                 <p class="icon-cards-section__card-description">{{ block.settings.description }}</p>
               {% endif %}
             </div>
@@ -200,6 +200,12 @@
       "id": "light_mode",
       "label": "Light mode",
       "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "show_card_description",
+      "label": "Mostrar descripción en cards",
+      "default": true
     },
     {
       "type": "header",

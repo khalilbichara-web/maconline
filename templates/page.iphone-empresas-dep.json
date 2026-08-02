@@ -1,13 +1,325 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
       "type": "main-page",
       "disabled": true,
-      "settings": {}
+      "settings": {
+        "padding_top": "no-indent",
+        "padding_bottom": "m"
+      }
+    },
+    "hero_pbQt96": {
+      "type": "hero",
+      "blocks": {
+        "subtitle_CkwCL4": {
+          "type": "subtitle",
+          "settings": {
+            "subheading": "iPhone para empresas",
+            "subheading_style": "subtitle subtitle--secondary",
+            "subheading_icon": "none"
+          }
+        },
+        "title_UAcC9Y": {
+          "type": "title",
+          "settings": {
+            "heading": "El iPhone que quieres.Sin ataduras de plan.",
+            "heading_size": "h1",
+            "heading_level": "h2",
+            "heading_line": "simple",
+            "line_color": "#1566e0",
+            "word_break": false,
+            "heading_animation": "rolling",
+            "word_break_an": false
+          }
+        },
+        "description_HNkFnf": {
+          "type": "description",
+          "settings": {
+            "description": "Arrienda el iPhone de tu elección con una cuota mensual simple.\nElige el operador que quieras. Cambia cuando quieras.\nTu equipo, tu libertad."
+          }
+        },
+        "buttons_hP3hjN": {
+          "type": "buttons",
+          "settings": {
+            "show_button_1": true,
+            "button_label_1": "Ver modelos disponibles",
+            "button_link_1": "",
+            "button_style_1": "primary",
+            "show_button_2": true,
+            "button_label_2": "¿Cómo funciona?",
+            "button_link_2": "",
+            "button_style_2": "tertiary"
+          }
+        },
+        "users_azBfCz": {
+          "type": "users",
+          "settings": {
+            "user_text": ""
+          }
+        }
+      },
+      "block_order": [
+        "subtitle_CkwCL4",
+        "title_UAcC9Y",
+        "description_HNkFnf",
+        "buttons_hP3hjN",
+        "users_azBfCz"
+      ],
+      "custom_css": [
+        ".hero__subtitle {background-color: transparent; border: 1px solid; padding: 10px 24px;}",
+        "h2 {background: linear-gradient(91deg, #fff 14.38%, #07abf8 93.41%); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent;}",
+        ".hero__description {color: #fff; font-size: 150%;}"
+      ],
+      "settings": {
+        "layout": "vertical",
+        "header_overlay": false,
+        "header_transparent": false,
+        "block_type": "plain",
+        "color_scheme": "scheme-39e5d4a7-e422-4a30-b12c-b2a059c9acee",
+        "full_screen": true,
+        "image": "shopify://shop_images/image_3.png",
+        "show_video": false,
+        "overlay_opacity": 0.3,
+        "image_ratio": "1/1",
+        "object_fit": "contain",
+        "desktop_image_position": "after",
+        "mobile_image_position": "after",
+        "mobile_image_overlay": "after",
+        "horizontal_alignment": "center",
+        "vertical_alignment": "middle",
+        "padding_top": "m",
+        "padding_bottom": "no-indent"
+      }
+    },
+    "icon_cards_23872": {
+      "type": "icon-cards",
+      "blocks": {
+        "card_1": {
+          "type": "card",
+          "settings": {
+            "icon_name": "",
+            "icon_asset": "solar_lock-unlocked-outline.svg",
+            "heading_variant": "default",
+            "card_label": "",
+            "card_large_text": "",
+            "card_subtitle": "",
+            "heading": "100% libre de Planes",
+            "description": "El equipo es tuyo en arriendo. Elige el operador y plan que mejor se adapte a tu empresa en cada momento. Sin contratos cruzados."
+          }
+        },
+        "card_2": {
+          "type": "card",
+          "settings": {
+            "icon_name": "",
+            "icon_asset": "solar_shield-check-outline.svg",
+            "heading_variant": "default",
+            "card_label": "",
+            "card_large_text": "",
+            "card_subtitle": "",
+            "heading": "Cuota Fija Mensual",
+            "description": "Una sola cuota simple y predecible al mes. Sin sorpresas en la factura, sin cargos escondidos. Control total del presupuesto de tu empresa."
+          }
+        },
+        "card_3": {
+          "type": "card",
+          "settings": {
+            "icon_name": "",
+            "icon_asset": "solar_refresh-square-outline.svg",
+            "heading_variant": "default",
+            "card_label": "",
+            "card_large_text": "",
+            "card_subtitle": "",
+            "heading": "Renueva cuando quieras",
+            "description": "Termina el contrato de arriendo y upgradeá al último modelo. Tu flota siempre actualizada con la tecnología Apple más reciente."
+          }
+        },
+        "card_4": {
+          "type": "card",
+          "settings": {
+            "icon_name": "",
+            "icon_asset": "solar_shield-minimalistic-outline.svg",
+            "heading_variant": "default",
+            "card_label": "",
+            "card_large_text": "",
+            "card_subtitle": "",
+            "heading": "Soporte Empresarial",
+            "description": "Reposición exprés, MDM incluido y soporte dedicado para empresas. Si el equipo falla, te lo reemplazamos en 24 horas."
+          }
+        },
+        "card_5": {
+          "type": "card",
+          "settings": {
+            "icon_name": "",
+            "icon_asset": "solar_chart-outline.svg",
+            "heading_variant": "default",
+            "card_label": "",
+            "card_large_text": "",
+            "card_subtitle": "",
+            "heading": "Gestión Centralizada",
+            "description": "Portal de administración para gestionar toda tu flota de dispositivos Apple. Altas, bajas y configuraciones desde un solo lugar."
+          }
+        },
+        "card_6": {
+          "type": "card",
+          "settings": {
+            "icon_name": "",
+            "icon_asset": "solar_file-text-outline.svg",
+            "heading_variant": "default",
+            "card_label": "",
+            "card_large_text": "",
+            "card_subtitle": "",
+            "heading": "Factura Empresa",
+            "description": "Facturación mensual para tu empresa con IVA desglosado. Compatible con SAP, Oracle y cualquier sistema contable."
+          }
+        }
+      },
+      "block_order": [
+        "card_1",
+        "card_2",
+        "card_3",
+        "card_4",
+        "card_5",
+        "card_6"
+      ],
+      "name": "Icon Cards — Por qué elegirnos",
+      "settings": {
+        "columns": "3",
+        "header_alignment": "center",
+        "light_mode": false,
+        "show_card_description": true,
+        "subheading": "por qué elegirnos",
+        "heading": "<p>La forma inteligente de equipar tu empresa</p>",
+        "description": "<p>Sin permanencia, sin letras chicas, sin planes obligatorios. Solo el IPhone que necesitas a un precio mensual predecible.</p>"
+      }
+    },
+    "split_features_aQmL29": {
+      "type": "split-features",
+      "settings": {
+        "color_scheme": "dark",
+        "layout": "image_right",
+        "image_asset": "iphone-empresas-split-graphic.svg",
+        "subheading": "LIBERTAD DE OPERADOR",
+        "heading": "Tú eliges.<br>Siempre.",
+        "description": "<p>Con nuestros iPhones en arriendo, puedes contratar el plan de datos que más te conviene en cualquier operador. Cambia de plan o de operador en cualquier momento sin afectar tu equipo.</p>",
+        "show_button": true,
+        "button_label": "Elige tu iPhone",
+        "button_link": "#",
+        "button_style": "primary"
+      }
+    },
+    "split_features_process": {
+      "type": "split-features",
+      "settings": {
+        "color_scheme": "light",
+        "layout": "image_left",
+        "image_asset": "iphone-empresas-process-split.png",
+        "subheading": "proceso",
+        "heading": "Tan simple como debería ser",
+        "description": "",
+        "show_button": false,
+        "button_label": "",
+        "button_link": "",
+        "button_style": "primary"
+      },
+      "blocks": {
+        "feature_1": {
+          "type": "feature",
+          "settings": {
+            "icon_name": "",
+            "number": "01",
+            "heading": "Elige tu modelo",
+            "description": "Selecciona el iPhone que necesita tu equipo: 15, 16, Pro o Pro Max. Elige cantidad y configuración."
+          }
+        },
+        "feature_2": {
+          "type": "feature",
+          "settings": {
+            "icon_name": "",
+            "number": "02",
+            "heading": "Firma digitalmente",
+            "description": "Contrato 100% digital. Sin burocracia. Solo necesitas tu RUT de empresa y datos de facturación."
+          }
+        },
+        "feature_3": {
+          "type": "feature",
+          "settings": {
+            "icon_name": "",
+            "number": "03",
+            "heading": "Recibe en 24h",
+            "description": "Entrega express en tu oficina en Santiago. Equipos configurados y listos para usar desde el primer día."
+          }
+        },
+        "feature_4": {
+          "type": "feature",
+          "settings": {
+            "icon_name": "",
+            "number": "04",
+            "heading": "Elige tu plan libre",
+            "description": "Contrata el plan de datos que quieras con cualquier operador. Nosotros solo cobramos la cuota del equipo."
+          }
+        }
+      },
+      "block_order": [
+        "feature_1",
+        "feature_2",
+        "feature_3",
+        "feature_4"
+      ]
+    },
+    "iphone_empresas_catalog": {
+      "type": "iphone-empresas-catalog",
+      "settings": {
+        "subheading": "catálogo",
+        "heading": "Elige tu iPhone",
+        "description": "Todos los modelos incluyen garantía Apple, soporte prioritario y entrega en 24 horas en Santiago."
+      },
+      "blocks": {
+        "product_card_1": {
+          "type": "product_card",
+          "settings": {
+            "title": "iPhone 15",
+            "subtitle": "128 GB · Dynamic Island",
+            "price_label": "Desde",
+            "price_fallback": "$19.990/mes",
+            "list_items": "Chip A16 Bionic\nCámara 48 MP principal\nDynamic Island\nUSB-C\nGarantía Apple 1 año",
+            "button_label": "Cotizar para mi empresa",
+            "button_style": "primary"
+          }
+        },
+        "product_card_2": {
+          "type": "product_card",
+          "settings": {
+            "title": "iPhone 16 Pro",
+            "subtitle": "255 GB · Titanio Natural",
+            "price_label": "Desde",
+            "price_fallback": "$34.990/mes",
+            "list_items": "Chip A18 Pro con IA\nCámara Fusión 48 MP\nProRes Video 4k 120fps\nAction Button\nCamera Control\nGarantía Apple 1 año",
+            "button_label": "Cotizar para mi empresa",
+            "button_style": "primary"
+          }
+        }
+      },
+      "block_order": [
+        "product_card_1",
+        "product_card_2"
+      ]
     }
   },
   "order": [
-    "main"
+    "main",
+    "hero_pbQt96",
+    "icon_cards_23872",
+    "split_features_aQmL29",
+    "split_features_process",
+    "iphone_empresas_catalog"
   ]
 }
-  

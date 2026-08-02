@@ -240,10 +240,6 @@
   height: 3rem;
 }
 
-[id*="icon_cards_23872"] .icon-cards-section__card-content {
-  gap: 0;
-}
-
 [id*="icon_cards_23872"] .icon-cards-section__card-heading {
   font-family: "SF Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   font-weight: 400;
@@ -252,6 +248,10 @@
 
 [id*="icon_cards_23872"] .icon-cards-section__card-description {
   display: none;
+}
+
+[id*="icon_cards_23872"] .icon-cards-section.icon-cards-section--show-card-description .icon-cards-section__card-description {
+  display: block;
 }
 
 @media screen and (max-width: 989px) {
