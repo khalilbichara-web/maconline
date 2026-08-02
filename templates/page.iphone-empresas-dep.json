@@ -366,6 +366,50 @@
         "row_7"
       ]
     },
+    "iphone_empresas_testimonials": {
+      "type": "iphone-empresas-testimonials",
+      "settings": {
+        "subheading": "clientes",
+        "heading": "Empresas que ya eligieron la libertad"
+      },
+      "blocks": {
+        "testimonial_1": {
+          "type": "testimonial_card",
+          "settings": {
+            "rating_label": "5.00",
+            "quote": "\"Migramos 40 equipos en una semana. Lo mejor fue poder mantener nuestra cuenta corporativa con Entel sin atarnos al equipo. Ahora podemos negociar mejores tarifas.\"",
+            "avatar_asset": "iphone-empresas-testimonial-carlos.png",
+            "name": "Carlos Mendoza",
+            "role": "CTO · Startup Fintech, Santiago"
+          }
+        },
+        "testimonial_2": {
+          "type": "testimonial_card",
+          "settings": {
+            "rating_label": "5.00",
+            "quote": "\"Como empresa de retail con alta rotación, necesitábamos flexibilidad. La cuota mensual es un gasto operacional simple y podemos sumar o reducir equipos según la temporada.\"",
+            "avatar_asset": "iphone-empresas-testimonial-andrea.png",
+            "name": "Andrea Vidal",
+            "role": "Gerente RRHH · Empresa Retail"
+          }
+        },
+        "testimonial_3": {
+          "type": "testimonial_card",
+          "settings": {
+            "rating_label": "5.00",
+            "quote": "\"Llevábamos años atados a un operador solo por los equipos. Ahora tenemos iPhone 16 Pro para todo el equipo comercial y elegimos el plan de datos más conveniente del mes.\"",
+            "avatar_asset": "iphone-empresas-testimonial-pablo.png",
+            "name": "Pablo Rojas",
+            "role": "CEO · Consultora de RRHH"
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_1",
+        "testimonial_2",
+        "testimonial_3"
+      ]
+    },
     "iphone_empresas_catalog": {
       "type": "iphone-empresas-catalog",
       "settings": {
@@ -411,6 +455,7 @@
     "icon_cards_23872",
     "split_features_aQmL29",
     "iphone_empresas_comparison",
+    "iphone_empresas_testimonials",
     "split_features_process",
     "iphone_empresas_catalog"
   ]

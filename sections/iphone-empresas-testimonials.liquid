@@ -1,0 +1,193 @@
+{{ 'section-iphone-empresas-testimonials.css' | asset_url | stylesheet_tag }}
+
+<section class="iphone-empresas-testimonials">
+  <div class="iphone-empresas-testimonials__container">
+    <header class="iphone-empresas-testimonials__header">
+      {% if section.settings.subheading != blank %}
+        <p class="iphone-empresas-testimonials__subheading">{{ section.settings.subheading }}</p>
+      {% endif %}
+
+      {% if section.settings.heading != blank %}
+        <h2 class="iphone-empresas-testimonials__heading">{{ section.settings.heading }}</h2>
+      {% endif %}
+    </header>
+
+    {% if section.blocks.size > 0 %}
+      <div class="iphone-empresas-testimonials__grid">
+        {% for block in section.blocks %}
+          {%- liquid
+            assign fallback_avatar_asset = block.settings.avatar_asset | strip
+            assign person_name = block.settings.name | downcase
+
+            if fallback_avatar_asset == blank
+              if person_name contains 'carlos'
+                assign fallback_avatar_asset = 'iphone-empresas-testimonial-carlos.png'
+              elsif person_name contains 'andrea'
+                assign fallback_avatar_asset = 'iphone-empresas-testimonial-andrea.png'
+              elsif person_name contains 'pablo'
+                assign fallback_avatar_asset = 'iphone-empresas-testimonial-pablo.png'
+              elsif forloop.index == 1
+                assign fallback_avatar_asset = 'iphone-empresas-testimonial-carlos.png'
+              elsif forloop.index == 2
+                assign fallback_avatar_asset = 'iphone-empresas-testimonial-andrea.png'
+              elsif forloop.index == 3
+                assign fallback_avatar_asset = 'iphone-empresas-testimonial-pablo.png'
+              endif
+            endif
+          -%}
+
+          <article class="iphone-empresas-testimonials__card" {{ block.shopify_attributes }}>
+            <div class="iphone-empresas-testimonials__score">
+              <span class="iphone-empresas-testimonials__score-icon" aria-hidden="true">
+                <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M8 1.7L9.74 5.22L13.63 5.78L10.82 8.52L11.48 12.4L8 10.57L4.52 12.4L5.18 8.52L2.37 5.78L6.26 5.22L8 1.7Z" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <span>{{ block.settings.rating_label }}</span>
+            </div>
+
+            <p class="iphone-empresas-testimonials__quote">{{ block.settings.quote }}</p>
+
+            <div class="iphone-empresas-testimonials__person">
+              <div class="iphone-empresas-testimonials__avatar-wrap">
+                {% if block.settings.avatar != blank %}
+                  {{
+                    block.settings.avatar
+                    | image_url: width: 96
+                    | image_tag:
+                      class: 'iphone-empresas-testimonials__avatar',
+                      loading: 'lazy',
+                      alt: block.settings.name
+                  }}
+                {% elsif fallback_avatar_asset != blank %}
+                  <img
+                    class="iphone-empresas-testimonials__avatar"
+                    src="{{ fallback_avatar_asset | asset_url }}"
+                    alt="{{ block.settings.name | escape }}"
+                    loading="lazy"
+                    width="44"
+                    height="44"
+                  >
+                {% else %}
+                  <span class="iphone-empresas-testimonials__avatar-placeholder" aria-hidden="true"></span>
+                {% endif %}
+              </div>
+
+              <div class="iphone-empresas-testimonials__meta">
+                <p class="iphone-empresas-testimonials__name">{{ block.settings.name }}</p>
+                <p class="iphone-empresas-testimonials__role">{{ block.settings.role }}</p>
+              </div>
+            </div>
+          </article>
+        {% endfor %}
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "iPhone testimonios",
+  "tag": "section",
+  "class": "section-iphone-empresas-testimonials",
+  "settings": [
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subtítulo",
+      "default": "clientes"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Título",
+      "default": "Empresas que ya eligieron la libertad"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "testimonial_card",
+      "name": "Tarjeta testimonio",
+      "limit": 6,
+      "settings": [
+        {
+          "type": "text",
+          "id": "rating_label",
+          "label": "Rating",
+          "default": "5.00"
+        },
+        {
+          "type": "textarea",
+          "id": "quote",
+          "label": "Testimonio",
+          "default": "\"Migramos 40 equipos en una semana. Lo mejor fue poder mantener nuestra cuenta corporativa con Entel sin atarnos al equipo. Ahora podemos negociar mejores tarifas.\""
+        },
+        {
+          "type": "image_picker",
+          "id": "avatar",
+          "label": "Foto"
+        },
+        {
+          "type": "text",
+          "id": "avatar_asset",
+          "label": "Foto desde assets (archivo)"
+        },
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Nombre",
+          "default": "Carlos Mendoza"
+        },
+        {
+          "type": "text",
+          "id": "role",
+          "label": "Cargo",
+          "default": "CTO · Startup Fintech, Santiago"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "iPhone testimonios",
+      "category": "Custom",
+      "settings": {
+        "subheading": "clientes",
+        "heading": "Empresas que ya eligieron la libertad"
+      },
+      "blocks": [
+        {
+          "type": "testimonial_card",
+          "settings": {
+            "rating_label": "5.00",
+            "quote": "\"Migramos 40 equipos en una semana. Lo mejor fue poder mantener nuestra cuenta corporativa con Entel sin atarnos al equipo. Ahora podemos negociar mejores tarifas.\"",
+            "avatar_asset": "iphone-empresas-testimonial-carlos.png",
+            "name": "Carlos Mendoza",
+            "role": "CTO · Startup Fintech, Santiago"
+          }
+        },
+        {
+          "type": "testimonial_card",
+          "settings": {
+            "rating_label": "5.00",
+            "quote": "\"Como empresa de retail con alta rotación, necesitábamos flexibilidad. La cuota mensual es un gasto operacional simple y podemos sumar o reducir equipos según la temporada.\"",
+            "avatar_asset": "iphone-empresas-testimonial-andrea.png",
+            "name": "Andrea Vidal",
+            "role": "Gerente RRHH · Empresa Retail"
+          }
+        },
+        {
+          "type": "testimonial_card",
+          "settings": {
+            "rating_label": "5.00",
+            "quote": "\"Llevábamos años atados a un operador solo por los equipos. Ahora tenemos iPhone 16 Pro para todo el equipo comercial y elegimos el plan de datos más conveniente del mes.\"",
+            "avatar_asset": "iphone-empresas-testimonial-pablo.png",
+            "name": "Pablo Rojas",
+            "role": "CEO · Consultora de RRHH"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

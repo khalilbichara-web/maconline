@@ -278,7 +278,7 @@
         "header_overlay": false,
         "header_transparent": false,
         "column_to_show": 3,
-        "opacity_overlay": 0.3,
+        "opacity_overlay": 0,
         "full_width": true,
         "icon": "none",
         "icon_color_scheme": "scheme-39e5d4a7-e422-4a30-b12c-b2a059c9acee",
