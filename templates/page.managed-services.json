@@ -126,7 +126,7 @@
       ],
       "name": "Icon Cards — La Solución (3 col)",
       "settings": {
-        "columns": "3",
+        "columns": "auto",
         "header_alignment": "left",
         "light_mode": true,
         "subheading": "beneficios clave para empresas",
@@ -164,9 +164,9 @@
           "settings": {
             "tab_label": "3",
             "heading": "Auditoría/compliance",
-            "description": "Piloto controlado + despliegue progresivo.",
+            "description": "",
             "features": "Equipos nuevos, listos para usar\nCobertura frente a imprevistos incluida\nGestión simple para flotas de dispositivos\nRenovación tecnológica al finalizar el contrato",
-            "cta_label": "Cotizar iPhone",
+            "cta_label": "",
             "cta_url": ""
           }
         },
@@ -175,9 +175,9 @@
           "settings": {
             "tab_label": "4",
             "heading": "Pérdida/robo",
-            "description": "Soporte\nMonitoreo\nCambios\nReportes",
+            "description": "",
             "features": "Configuración y apps listas desde el día uno\nProtección integral y soporte incluidas\nIdeal para flotas y despliegue rápido\nContratos flexible con renovación tecnológica",
-            "cta_label": "Cotizar iPad",
+            "cta_label": "",
             "cta_url": ""
           }
         }

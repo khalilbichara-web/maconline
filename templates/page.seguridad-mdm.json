@@ -39,16 +39,16 @@
         "icon_fill_type": "gradient",
         "icon_size": "recommended",
         "box_shadow": true,
-        "subheading": "Administración Centralizada MDM",
+        "subheading": "Apple Business Manager",
         "subheading_style": "subtitle subtitle--secondary",
         "subheading_icon": "none",
-        "heading": "Implementa iPhone, iPad y Mac en minutos con Zero-Touch.",
+        "heading": "Maneja la seguridad de tus equipos Apple con MDM (Zero-Touch).",
         "heading_size": "h1",
         "heading_level": "h2",
         "heading_line": "simple",
         "line_color": "#1566e0",
         "heading_animation": "none",
-        "text": "Automatiza el enrolamiento a MDM y la configuración inicial de tus dispositivos. Menos trabajo para TI, más seguridad y una experiencia lista para usar desde el primer encendido.",
+        "text": "Aplica políticas de seguridad desde el primer encendido, protege datos corporativos, reduce riesgo operativo y asegura cumplimiento en iPhone, iPad y Mac desde un solo panel.",
         "enable_subscribe": false,
         "button_label_subscribe": "",
         "button_style_subscribe": "primary",
@@ -80,7 +80,7 @@
         "title_aJgXmN": {
           "type": "title",
           "settings": {
-            "heading": "Zero-Touch elimina el “armado uno a uno” y deja todo listo para que tus colaboradores solo enciendan e inicien sesión.",
+            "heading": "Tu organización crece. El riesgo también.",
             "heading_size": "h1",
             "heading_level": "h2",
             "heading_line": "simple",
@@ -93,7 +93,7 @@
         "description_D4XCBt": {
           "type": "description",
           "settings": {
-            "description": "Zero-Touches un modelo de despliegue automatizado que permite registrar, configurar y asegurar dispositivos corporativos (iPhone, iPad y Mac)de forma remota, sin intervención manual de TI en cada equipo."
+            "description": "Un dispositivo sin políticas claras, sin cifrado o sin control de acceso puede transformarse en una brecha.<br/><br>El MDM permite asegurar estándares mínimos, responder rápido ante incidentes (pérdida/robo), y sostener compliance sin depender de configuraciones manuales."
           }
         },
         "buttons_JLfmnx": {
@@ -192,6 +192,74 @@
         "description": "<p><strong>Apple Business Manager es el portal de Apple para organizaciones. </strong>En el caso de Mac, “propiedad” significa que tus equipos quedan asociados a tu empresa a nivel de programa, <br/>permitiendo asignarlos a un servidor MDM y automatizar su enrolamiento y configuración cuando se encienden o se reinstalan.<br/><br/></p>",
         "color_scheme": "light",
         "abm_slider_mode": true
+      }
+    },
+    "icon_cards_casos_reales": {
+      "type": "icon-cards",
+      "blocks": {
+        "card_1": {
+          "type": "card",
+          "settings": {
+            "icon_name": "slide-1-icon.svg",
+            "heading_variant": "default",
+            "card_label": "1",
+            "card_large_text": "",
+            "card_subtitle": "",
+            "heading": "Onboarding seguro",
+            "description": "Tus equipos Apple con cifrado, passcode, apps y restricciones desde el minuto cero."
+          }
+        },
+        "card_2": {
+          "type": "card",
+          "settings": {
+            "icon_name": "slide-2-icon-clean.svg",
+            "heading_variant": "default",
+            "card_label": "2",
+            "card_large_text": "",
+            "card_subtitle": "",
+            "heading": "Flota híbrida/remota",
+            "description": "Control y soporte sin visitas, sin retiros y sin “config manual”."
+          }
+        },
+        "card_3": {
+          "type": "card",
+          "settings": {
+            "icon_name": "slide-3-icon-clean.svg",
+            "heading_variant": "default",
+            "card_label": "3",
+            "card_large_text": "",
+            "card_subtitle": "",
+            "heading": "Auditoría/compliance",
+            "description": "Reportes de cumplimiento, versiones, controles activos y evidencia para auditorías."
+          }
+        },
+        "card_4": {
+          "type": "card",
+          "settings": {
+            "icon_name": "slide-4-icon-clean.svg",
+            "heading_variant": "default",
+            "card_label": "4",
+            "card_large_text": "",
+            "card_subtitle": "",
+            "heading": "Pérdida/robo",
+            "description": "Contención rápida y reducción del impacto."
+          }
+        }
+      },
+      "block_order": [
+        "card_1",
+        "card_2",
+        "card_3",
+        "card_4"
+      ],
+      "name": "3 ABM Dark",
+      "settings": {
+        "subheading": "beneficios para tu empresa",
+        "heading": "<p>¿Qué significa “propiedad de Mac” en ABM?</p>",
+        "description": "<p><strong>Apple Business Manager es el portal de Apple para organizaciones.</strong> En el caso de Mac, \"propiedad\" significa que tus equipos quedan asociados a tu empresa a nivel de programa, permitiendo asignarlos a un servidor MDM y automatizar su enrolamiento y configuración cuando se encienden o se reinstalan.</p>",
+        "columns": "auto",
+        "header_alignment": "center",
+        "light_mode": false
       }
     },
     "collapsible_content_3xRgKh": {
@@ -407,6 +475,7 @@
     "animated_image_collage_eQBHBw",
     "hero_HfX9iK",
     "device_tabs_eqYVrL",
+    "icon_cards_casos_reales",
     "collapsible_content_3xRgKh",
     "animated_image_collage_wW3JqC"
   ]
