@@ -1,0 +1,297 @@
+{{ 'section-tab-slider.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'tab-slider.js' | asset_url }}" defer></script>
+
+{%- assign scheme = section.settings.color_scheme | default: 'dark' -%}
+{%- assign abm_mode = section.settings.abm_slider_mode -%}
+{%- assign slide_bg_asset = 'slide-bg' | append: '.png' -%}
+
+<div class="tab-slider tab-slider--{{ scheme }}{% if abm_mode %} tab-slider--abm{% endif %}" style="--tab-slider-slide-bg: url('{{ slide_bg_asset | asset_url }}');">
+
+  {%- if section.settings.subheading != blank or section.settings.heading != blank or section.settings.description != blank -%}
+    <div class="tab-slider__section-header">
+      {%- if section.settings.subheading != blank -%}
+        <div class="tab-slider__subheading-wrapper">
+          <div class="tab-slider__subheading-dot"></div>
+          <p class="subtitle tab-slider__subheading">{{ section.settings.subheading }}</p>
+        </div>
+      {%- endif -%}
+
+      {%- if section.settings.heading != blank -%}
+        <h2 class="tab-slider__section-heading">{{ section.settings.heading }}</h2>
+      {%- endif -%}
+
+      {%- if section.settings.description != blank -%}
+        <div class="tab-slider__section-description">{{ section.settings.description }}</div>
+      {%- endif -%}
+    </div>
+  {%- endif -%}
+
+  <div class="tab-slider__devices">
+    <div class="tab-slider__card">
+      <div class="tab-slider__slides">
+      {% for block in section.blocks %}
+        {% assign overlay_asset = '' %}
+        {% case forloop.index %}
+          {% when 1 %}
+            {% assign overlay_asset = 'slide-1-bg-overlay.png' %}
+          {% when 2 %}
+            {% assign overlay_asset = 'slide-2-bg-overlay.png' %}
+          {% when 3 %}
+            {% assign overlay_asset = 'slide-3-overlay.png' %}
+        {% endcase %}
+
+        <div
+          class="tab-slider__slide{% if forloop.first %} is-active{% endif %}"
+          data-tab="{{ forloop.index0 }}"
+          id="tab-slider-panel-{{ section.id }}-{{ forloop.index0 }}"
+          role="tabpanel"
+          aria-labelledby="tab-slider-tab-{{ section.id }}-{{ forloop.index0 }}"
+          {% unless forloop.first %}hidden{% endunless %}
+          {{ block.shopify_attributes }}
+        >
+          <div class="tab-slider__content">
+
+
+            {% if block.settings.heading != blank %}
+              <h2 class="tab-slider__heading">{{ block.settings.heading }}</h2>
+            {% endif %}
+
+            {% if block.settings.description != blank %}
+              <p class="tab-slider__description">{{ block.settings.description }}</p>
+            {% endif %}
+
+            {% if block.settings.features != blank %}
+              <ul class="tab-slider__features" role="list">
+                {% assign feature_lines = block.settings.features | newline_to_br | split: '<br />' %}
+                {% for line in feature_lines %}
+                  {% assign trimmed = line | strip %}
+                  {% if trimmed != blank %}
+                    <li class="tab-slider__feature">
+                      <svg class="tab-slider__feature-icon" viewBox="0 0 20 20" width="18" height="18" fill="none" aria-hidden="true">
+                        <circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="1.5"/>
+                        <path d="M6.5 10l2.5 2.5 4.5-4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                      <span>{{ trimmed }}</span>
+                    </li>
+                  {% endif %}
+                {% endfor %}
+              </ul>
+            {% endif %}
+
+            {% if block.settings.cta_label != blank %}
+              <a
+                href="{{ block.settings.cta_url | default: '#' }}"
+                class="tab-slider__cta button button--primary focus-inset"
+              >
+                {{ block.settings.cta_label }}
+              </a>
+            {% endif %}
+
+          </div>
+
+          {% if abm_mode %}
+            <div class="tab-slider__abm-visual" aria-hidden="true">
+              {% if overlay_asset != blank %}
+                <img
+                  src="{{ overlay_asset | asset_url }}"
+                  alt=""
+                  class="tab-slider__abm-overlay"
+                  loading="lazy"
+                  width="700"
+                  height="405"
+                >
+              {% endif %}
+            </div>
+          {% elsif block.settings.image != blank %}
+            <div class="tab-slider__image-wrap">
+              {{
+                block.settings.image
+                | image_url: width: 800
+                | image_tag:
+                  class: 'tab-slider__image',
+                  loading: 'lazy',
+                  widths: '400, 600, 800'
+              }}
+            </div>
+          {% endif %}
+
+        </div>
+      {% endfor %}
+      </div>
+      {% if section.blocks.size > 1 %}
+        <nav class="tab-slider__nav" role="tablist" aria-label="Dispositivos">
+          {% for block in section.blocks %}
+            <button
+              class="tab-slider__nav-btn{% if forloop.first %} is-active{% endif %}"
+              id="tab-slider-tab-{{ section.id }}-{{ forloop.index0 }}"
+              data-target="{{ forloop.index0 }}"
+              role="tab"
+              aria-selected="{% if forloop.first %}true{% else %}false{% endif %}"
+              aria-controls="tab-slider-panel-{{ section.id }}-{{ forloop.index0 }}"
+              tabindex="{% if forloop.first %}0{% else %}-1{% endif %}"
+              type="button"
+            >
+              <span>{{ forloop.index }}</span>
+            </button>
+          {% endfor %}
+        </nav>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Tab Slider",
+  "tag": "section",
+  "class": "tab-slider-section",
+  "max_blocks": 6,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Encabezado de sección"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subtítulo",
+      "default": "TECNOLOGÍA APPLE"
+    },
+    {
+      "type": "richtext",
+      "id": "heading",
+      "label": "Título",
+      "default": "<p>El dispositivo adecuado para cada forma de trabajar</p>"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Descripción",
+      "default": "<p>Desde el diagnóstico hasta el soporte, implementamos soluciones Apple pensadas para impulsar la productividad, la seguridad y el crecimiento de tu empresa.</p>"
+    },
+    {
+      "type": "header",
+      "content": "Estilo"
+    },
+    {
+      "type": "select",
+      "id": "color_scheme",
+      "label": "Esquema de color",
+      "options": [
+        { "value": "dark",  "label": "Oscuro" },
+        { "value": "light", "label": "Claro (blanco)" }
+      ],
+      "default": "dark"
+    },
+    {
+      "type": "checkbox",
+      "id": "abm_slider_mode",
+      "label": "ABM slider mode",
+      "default": false
+    }
+  ],
+  "blocks": [
+    {
+      "type": "tab",
+      "name": "Tab / Dispositivo",
+      "settings": [
+        {
+          "type": "header",
+          "content": "Navegación"
+        },
+        {
+          "type": "text",
+          "id": "tab_label",
+          "label": "Etiqueta del tab",
+          "default": "Mac"
+        },
+        {
+          "type": "header",
+          "content": "Contenido"
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Título",
+          "default": "Mac para trabajar sin límites"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Descripción",
+          "default": "MacBook Pro, MacBook Air, iMac y Mac Studio para equipos de diseño, desarrollo, finanzas y operaciones"
+        },
+        {
+          "type": "textarea",
+          "id": "features",
+          "label": "Features (una por línea)",
+          "default": "Configuración inicial lista para tu operación\nAppleCare y garantía extendida incluida\nRenovación a la última generación al término del contrato\nSoporte técnico corporativo"
+        },
+        {
+          "type": "header",
+          "content": "Botón"
+        },
+        {
+          "type": "text",
+          "id": "cta_label",
+          "label": "Texto del botón",
+          "default": "Cotizar Mac"
+        },
+        {
+          "type": "url",
+          "id": "cta_url",
+          "label": "URL del botón"
+        },
+        {
+          "type": "header",
+          "content": "Imagen"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Imagen del producto"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Tab Slider",
+      "category": "Custom",
+      "blocks": [
+        {
+          "type": "tab",
+          "settings": {
+            "tab_label": "Mac",
+            "heading": "Mac para trabajar sin límites",
+            "description": "MacBook Pro, MacBook Air, iMac y Mac Studio para equipos de diseño, desarrollo, finanzas y operaciones",
+            "features": "Configuración inicial lista para tu operación\nAppleCare y garantía extendida incluida\nRenovación a la última generación al término del contrato\nSoporte técnico corporativo",
+            "cta_label": "Cotizar Mac"
+          }
+        },
+        {
+          "type": "tab",
+          "settings": {
+            "tab_label": "iPhone",
+            "heading": "iPhone para movilidad y punto de venta",
+            "description": "iPhone de última generación para ventas, logística y operaciones siempre conectados y protegidos",
+            "features": "Equipos nuevos, listos para usar\nCobertura frente a imprevistos incluida\nGestión simple para flotas de dispositivos\nRenovación tecnológica al finalizar el contrato",
+            "cta_label": "Cotizar iPhone"
+          }
+        },
+        {
+          "type": "tab",
+          "settings": {
+            "tab_label": "iPad",
+            "heading": "iPad para movilidad y punto de venta",
+            "description": "iPad Pro y iPad Air para atención, terreno y puntos de venta, con la flexibilidad que tu operación necesita",
+            "features": "Configuración y apps listas desde el día uno\nProtección integral y soporte incluidas\nIdeal para flotas y despliegue rápido\nContratos flexible con renovación tecnológica",
+            "cta_label": "Cotizar iPad"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+

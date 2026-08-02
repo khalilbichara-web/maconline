@@ -1,0 +1,382 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": "no-indent",
+        "padding_bottom": "m"
+      }
+    },
+    "animated_image_collage_bgYAAz": {
+      "type": "animated-image-collage",
+      "custom_css": [
+        "h2.title--simple {background: linear-gradient(91deg, #fff 14.38%, #07abf8 93.41%); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent;}",
+        ".aic.background {background-image: url(https://cdn.shopify.com/s/files/1/0731/0757/0884/files/bg-fondo-centro.webp?v=1785345733) !important; background-repeat: no-repeat; background-position: center; background-size: contain; background-attachment: local;}",
+        ".aic__subtitle.subtitle {background-color: transparent; border: 1px solid; padding: 10px 24px;}"
+      ],
+      "name": "t:sections.animated-image-collage.name",
+      "settings": {
+        "section_type": "background",
+        "color_scheme": "scheme-39e5d4a7-e422-4a30-b12c-b2a059c9acee",
+        "header_overlay": false,
+        "header_transparent": false,
+        "column_to_show": 3,
+        "opacity_overlay": 0.3,
+        "full_width": true,
+        "icon": "none",
+        "icon_color_scheme": "scheme-39e5d4a7-e422-4a30-b12c-b2a059c9acee",
+        "icon_style": "contrast",
+        "icon_fill_type": "gradient",
+        "icon_size": "recommended",
+        "box_shadow": true,
+        "subheading": "Apple Business Manager",
+        "subheading_style": "subtitle subtitle--secondary",
+        "subheading_icon": "none",
+        "heading": "Propiedad corporativa de Mac, desde el primer encendido",
+        "heading_size": "h1",
+        "heading_level": "h2",
+        "heading_line": "simple",
+        "line_color": "#1566e0",
+        "heading_animation": "none",
+        "text": "Asegura que cada Mac quede registrada como activo de tu empresa, asignada a tu MDM y lista para desplegarse sin preparación manual. Menos fricción, más control y una flota que se puede reasignar y escalar fácilmente.",
+        "enable_subscribe": false,
+        "button_label_subscribe": "",
+        "button_style_subscribe": "primary",
+        "show_button": true,
+        "button_label": "Agendar un demo",
+        "button_link": "",
+        "button_style": "primary",
+        "show_button_2": true,
+        "button_label_2": "",
+        "button_link_2": "",
+        "button_style_2": "tertiary",
+        "padding_top": "m",
+        "padding_bottom": "xs",
+        "margin_top": "no-indent",
+        "margin_bottom": "no-indent"
+      }
+    },
+    "hero_xDPpph": {
+      "type": "hero",
+      "blocks": {
+        "subtitle_RyNRgU": {
+          "type": "subtitle",
+          "settings": {
+            "subheading": "beneficios para tu empresa",
+            "subheading_style": "subtitle",
+            "subheading_icon": "circle"
+          }
+        },
+        "title_T6Ergb": {
+          "type": "title",
+          "settings": {
+            "heading": "Cuando el Mac “queda personal”, el control se pierde",
+            "heading_size": "h1",
+            "heading_level": "h2",
+            "heading_line": "simple",
+            "line_color": "#1566e0",
+            "word_break": false,
+            "heading_animation": "none",
+            "word_break_an": false
+          }
+        },
+        "description_EttkPP": {
+          "type": "description",
+          "settings": {
+            "description": "Sin una gestión correcta de propiedad, los equipos pueden terminar configurados con cuentas personales, sin estándar de seguridad y con procesos lentos de onboarding y recambio.\n<strong>\nABM resuelve la base: l Mac queda asociado a tu organizacióny lista para enrolarse automáticamente en MDM.</strong>"
+          }
+        },
+        "buttons_EjwEdj": {
+          "type": "buttons",
+          "settings": {
+            "show_button_1": true,
+            "button_label_1": "Agendar demo",
+            "button_link_1": "",
+            "button_style_1": "primary",
+            "show_button_2": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_2": "simple"
+          }
+        }
+      },
+      "block_order": [
+        "subtitle_RyNRgU",
+        "title_T6Ergb",
+        "description_EttkPP",
+        "buttons_EjwEdj"
+      ],
+      "custom_css": [
+        ".hero__subtitle.subtitle {border-width: 0; padding: 0;}",
+        "h2 {font-size: 245%; font-weight: 700;}",
+        ".hero {background-position: top center;}"
+      ],
+      "name": "t:sections.hero.name",
+      "settings": {
+        "layout": "horizontal",
+        "header_overlay": false,
+        "header_transparent": true,
+        "block_type": "plain",
+        "color_scheme": "",
+        "full_screen": true,
+        "image": "shopify://shop_images/Rectangle_1.png",
+        "show_video": false,
+        "overlay_opacity": 0,
+        "image_ratio": "1/1",
+        "object_fit": "contain",
+        "desktop_image_position": "after",
+        "mobile_image_position": "after",
+        "mobile_image_overlay": "overlay",
+        "horizontal_alignment": "center",
+        "vertical_alignment": "middle",
+        "padding_top": "m",
+        "padding_bottom": "m"
+      }
+    },
+    "three_column_abm_4Jxk9N": {
+      "type": "3-column",
+      "blocks": {
+        "step_1c2a": {
+          "type": "step",
+          "settings": {
+            "number": "1",
+            "icon_asset": "abm-step-1.svg",
+            "heading": "Compra correcta",
+            "text": "Los Mac se compran a través de distribuidores autorizados."
+          }
+        },
+        "step_2d3b": {
+          "type": "step",
+          "settings": {
+            "number": "2",
+            "icon_asset": "abm-step-2.svg",
+            "heading": "Asignación en ABM",
+            "text": "El equipo aparece en tu ABM y se marca para tu organización."
+          }
+        },
+        "step_3e4c": {
+          "type": "step",
+          "settings": {
+            "number": "3",
+            "icon_asset": "abm-step-3.svg",
+            "heading": "Enlace con MDM",
+            "text": "En ABM asignas la Mac a tu servidor MDM."
+          }
+        }
+      },
+      "block_order": [
+        "step_1c2a",
+        "step_2d3b",
+        "step_3e4c"
+      ],
+      "settings": {
+        "color_scheme": "background-1",
+        "card_background": "#0b3149",
+        "overlay_top_left": "",
+        "overlay_top_right": "",
+        "overlay_bottom_left": "",
+        "overlay_bottom_right": "",
+        "subheading": "BENEFICIOS PARA TU EMPRESA",
+        "subheading_style": "subtitle",
+        "heading": "¿Qué significa “propiedad de Mac” en ABM?",
+        "heading_size": "h2",
+        "text": "<p><strong>Apple Business Manager es el portal de Apple para organizaciones.</strong><br/>En el caso de Mac, “propiedad” significa que tus equipos quedan asociados a tu empresa a nivel de programa, permitiendo asignarlos a un servidor MDM y automatizar su enrolamiento y configuración cuando se encienden o se reinstalan.</p>",
+        "show_numbers": true,
+        "padding_top": "l",
+        "padding_bottom": "l",
+        "margin_top": "no-indent",
+        "margin_bottom": "no-indent"
+      }
+    },
+    "icon_cards_abm_4306": {
+      "type": "icon-cards",
+      "blocks": {
+        "card_k9f1": {
+          "type": "card",
+          "settings": {
+            "icon_name": "abm-icon-card-1.svg",
+            "heading_variant": "default",
+            "card_label": "",
+            "card_large_text": "",
+            "card_subtitle": "",
+            "heading": "Asignación a MDM",
+            "description": "Cada Mac queda asociada al servidor MDM definido por tu organización."
+          }
+        },
+        "card_w8b2": {
+          "type": "card",
+          "settings": {
+            "icon_name": "abm-icon-card-2.svg",
+            "heading_variant": "default",
+            "card_label": "",
+            "card_large_text": "",
+            "card_subtitle": "",
+            "heading": "Enrolamiento automatizado",
+            "description": "Despliegues consistentes sin preparación uno a uno."
+          }
+        },
+        "card_q3n7": {
+          "type": "card",
+          "settings": {
+            "icon_name": "abm-icon-card-3.svg",
+            "heading_variant": "default",
+            "card_label": "",
+            "card_large_text": "",
+            "card_subtitle": "",
+            "heading": "Reasignación y recambio",
+            "description": "Al borrar/reinstalar, el equipo vuelve a tu flujo corporativo."
+          }
+        },
+        "card_m5t4": {
+          "type": "card",
+          "settings": {
+            "icon_name": "abm-icon-card-4.svg",
+            "heading_variant": "default",
+            "card_label": "",
+            "card_large_text": "",
+            "card_subtitle": "",
+            "heading": "Inventario centralizado",
+            "description": "Visibilidad por número de serie, compra, estado y asignación."
+          }
+        }
+      },
+      "block_order": [
+        "card_k9f1",
+        "card_w8b2",
+        "card_q3n7",
+        "card_m5t4"
+      ],
+      "settings": {
+        "columns": "4",
+        "header_alignment": "left",
+        "light_mode": true,
+        "subheading": "CÓMO FUNCIONA",
+        "heading": "<p>Qué habilita Apple Business Manager para Mac</p>",
+        "description": "<p>Lo que habilitas al tener tus Mac \"propiedad empresa\".</p>"
+      }
+    },
+    "collapsible_content_hWBRAc": {
+      "type": "collapsible-content",
+      "blocks": {
+        "accordion_jTwdFX": {
+          "type": "accordion",
+          "settings": {
+            "question": "¿ABM reemplaza al MDM?",
+            "answer": "<p>No. ABM gestiona propiedad/asignación y habilita el enrolamiento automatizado. El MDM es quien aplica políticas, seguridad, apps y acciones remotas.</p>",
+            "opened": true
+          }
+        },
+        "accordion_GdrnUd": {
+          "type": "accordion",
+          "settings": {
+            "question": "¿Puedo “meter” Mac comprados fuera de canal?",
+            "answer": "<p>En general, la propiedad y asignación automática dependen del canal compatible. Si hoy compras fuera de ese flujo, lo correcto es ajustar el modelo de compra para que los Mac entren por ABM.</p>",
+            "opened": false
+          }
+        },
+        "accordion_UVjghG": {
+          "type": "accordion",
+          "settings": {
+            "question": "¿Esto sirve aunque tenga pocas Mac?",
+            "answer": "<p>Sí. De hecho, mientras antes se ordena la propiedad, más simple es crecer después.</p>",
+            "opened": false
+          }
+        }
+      },
+      "block_order": [
+        "accordion_jTwdFX",
+        "accordion_GdrnUd",
+        "accordion_UVjghG"
+      ],
+      "name": "t:sections.collapsible-content.name",
+      "settings": {
+        "layout": "background",
+        "color_scheme": "background-3",
+        "enable_border": false,
+        "border_full": false,
+        "subheading": "",
+        "subheading_style": "subtitle",
+        "subheading_icon": "none",
+        "heading": "Preguntas Frecuentes Apple business manager",
+        "heading_size": "h2",
+        "heading_level": "h2",
+        "heading_line": "none",
+        "line_color": "#1566e0",
+        "word_break": false,
+        "heading_animation": "none",
+        "word_break_an": false,
+        "text": "",
+        "text_align": "center",
+        "row_color_scheme": "scheme-cf7617bd-cf5d-43c2-b151-2d92b8b69cd6",
+        "padding_top": "l",
+        "padding_bottom": "l",
+        "margin_top": "no-indent",
+        "margin_bottom": "no-indent"
+      }
+    },
+    "animated_image_collage_NwN9jA": {
+      "type": "animated-image-collage",
+      "custom_css": [],
+      "name": "t:sections.animated-image-collage.name",
+      "settings": {
+        "section_type": "background",
+        "color_scheme": "scheme-cf7617bd-cf5d-43c2-b151-2d92b8b69cd6",
+        "header_overlay": false,
+        "header_transparent": false,
+        "column_to_show": 3,
+        "opacity_overlay": 0,
+        "full_width": true,
+        "icon": "none",
+        "icon_color_scheme": "background-3",
+        "icon_style": "contrast",
+        "icon_fill_type": "gradient",
+        "icon_size": "recommended",
+        "box_shadow": true,
+        "subheading": "",
+        "subheading_style": "subtitle subtitle--secondary",
+        "subheading_icon": "none",
+        "heading": "Ordena la propiedad de tu flota Mac y habilita Zero-Touch de verdad",
+        "heading_size": "h1",
+        "heading_level": "h2",
+        "heading_line": "simple",
+        "line_color": "#1566e0",
+        "heading_animation": "none",
+        "text": "Te ayudamos a configurar ABM, enlazar tu MDM y definir el flujo de compra/despliegue para que cada Mac quede como activo corporativo, estandarizado y listo para escalar.",
+        "enable_subscribe": false,
+        "button_label_subscribe": "",
+        "button_style_subscribe": "primary",
+        "show_button": true,
+        "button_label": "Agendar un demo",
+        "button_link": "",
+        "button_style": "primary",
+        "show_button_2": true,
+        "button_label_2": "",
+        "button_link_2": "",
+        "button_style_2": "tertiary",
+        "padding_top": "m",
+        "padding_bottom": "xs",
+        "margin_top": "no-indent",
+        "margin_bottom": "no-indent"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "animated_image_collage_bgYAAz",
+    "hero_xDPpph",
+    "three_column_abm_4Jxk9N",
+    "icon_cards_abm_4306",
+    "collapsible_content_hWBRAc",
+    "animated_image_collage_NwN9jA"
+  ]
+}

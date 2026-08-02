@@ -1,0 +1,70 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "type": "header",
+  "name": "t:sections.header.settings.header-group.label",
+  "sections": {
+    "announcement-bar": {
+      "type": "announcement-bar",
+      "custom_css": [],
+      "settings": {
+        "height": 45,
+        "height_mobile": 40,
+        "color_scheme": "scheme-30cf4b06-9d0e-4e96-951c-cf71fb24da44",
+        "text": "Nuevo  - Protección integral y soporte corporativo incluido en todos los planes. <a href=\"/pages/rental-operativo\" title=\"Rental Operativo\">Cotiza tu arriendo.</a>",
+        "icon": "none",
+        "icon_color_scheme": "scheme-fc8ff430-207a-4694-b968-0494c9bf68bb",
+        "icon_style": "colored",
+        "icon_fill_type": "solid",
+        "enable_slider": false,
+        "rows_count": "1",
+        "rows_count_mobile": "1",
+        "slide_duration": 2,
+        "speed": 0.8,
+        "margin_top": "no-indent",
+        "margin_bottom": "no-indent"
+      }
+    },
+    "header": {
+      "type": "header",
+      "custom_css": [
+        ".list-menu a {font-weight: 400;}"
+      ],
+      "settings": {
+        "h1_logo": true,
+        "header_type": "left-logo",
+        "full_width": false,
+        "logo": "shopify://shop_images/mac-online-pro-color.svg",
+        "logo_2": "shopify://shop_images/mac-online-pro.svg",
+        "logo_width": 180,
+        "enable_logo_mobile": true,
+        "enable_logo_desktop": true,
+        "menu": "main-menu",
+        "enable_country_selector": false,
+        "enable_language_selector": false,
+        "enable_social": false,
+        "sticky_header_type": "always",
+        "enable_search": true,
+        "search_color_scheme": "background-1",
+        "enable_box_shadow": true,
+        "collection_list": [],
+        "product_list": [],
+        "image_ratio": "5/4",
+        "image_fit": "cover",
+        "show_secondary_image": true,
+        "show_vendor": false
+      }
+    }
+  },
+  "order": [
+    "announcement-bar",
+    "header"
+  ]
+}

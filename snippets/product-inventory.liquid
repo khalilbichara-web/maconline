@@ -1,0 +1,25 @@
+{% if product.selected_or_first_available_variant.inventory_management == 'shopify' %}
+  {% liquid
+    assign inventory_quantity = product.selected_or_first_available_variant.inventory_quantity
+    assign inventory_class = ''
+    if inventory_quantity > 0 and inventory_quantity < 10
+      assign inventory_class = 'error'
+    elsif inventory_quantity == 0
+      assign inventory_class = 'empty'
+    endif
+  %}
+  <div id="Inventory-{{ section.id }}" class="product__inventory" {{ block.shopify_attributes }}>
+    <span class="product__inventory-inner product__inventory-inner--{{ inventory_class }} bold">
+      {% if inventory_quantity >= 10 %}
+        {% render 'icon-check' %}
+        {{ 'products.product.quantity.in_stock' | t: quantity: inventory_quantity }}
+      {% elsif inventory_quantity > 0 %}
+        {% render 'icon-bell' %}
+        {{ 'products.product.quantity.in_stock' | t: quantity: inventory_quantity }}
+      {% else %}
+        {% render 'icon-unavailable' %}
+        {{ 'products.product.quantity.out_of_stock' | t }}
+      {% endif %}
+    </span>
+  </div>
+{% endif %}

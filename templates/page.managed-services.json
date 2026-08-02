@@ -1,0 +1,391 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": "no-indent",
+        "padding_bottom": "m"
+      }
+    },
+    "animated_image_collage_aYY4b8": {
+      "type": "animated-image-collage",
+      "custom_css": [
+        "h2 {background: linear-gradient(91deg, #fff 14.38%, #07abf8 93.41%); background-clip: text; font-weight: 700; -webkit-background-clip: text; -webkit-text-fill-color: transparent;}",
+        ".aic--background:before {background: linear-gradient( 180deg, #05070f 0%, rgba(5, 7, 15, 0.53) 53%, #05070f 100% ); opacity: 1;}",
+        ".aic__subtitle.subtitle {background-color: transparent; border: 1px solid; padding: 10px 24px;}"
+      ],
+      "name": "t:sections.animated-image-collage.name",
+      "settings": {
+        "section_type": "background",
+        "color_scheme": "scheme-39e5d4a7-e422-4a30-b12c-b2a059c9acee",
+        "header_overlay": false,
+        "header_transparent": false,
+        "column_to_show": 3,
+        "opacity_overlay": 0.3,
+        "full_width": true,
+        "icon": "none",
+        "icon_color_scheme": "scheme-39e5d4a7-e422-4a30-b12c-b2a059c9acee",
+        "icon_style": "contrast",
+        "icon_fill_type": "gradient",
+        "icon_size": "recommended",
+        "box_shadow": true,
+        "subheading": "Managed Services Zero Touch",
+        "subheading_style": "subtitle subtitle--secondary",
+        "subheading_icon": "none",
+        "heading": "Nosotros operamos tu MDM, tú te enfocas en el negocio",
+        "heading_size": "h1",
+        "heading_level": "h2",
+        "heading_line": "simple",
+        "line_color": "#1566e0",
+        "heading_animation": "none",
+        "text": "Implementamos y administramos tu flota Apple de punta a punta (Mac, iPhone y iPad): enrolamiento Zero-Touch, políticas, seguridad, apps, soporte y reporting, con operación continua y SLAs.",
+        "enable_subscribe": false,
+        "button_label_subscribe": "Agendar demo",
+        "button_style_subscribe": "primary",
+        "show_button": true,
+        "button_label": "Agendar demo",
+        "button_link": "",
+        "button_style": "primary",
+        "show_button_2": true,
+        "button_label_2": "Hablar con un experto",
+        "button_link_2": "",
+        "button_style_2": "tertiary",
+        "padding_top": "m",
+        "padding_bottom": "m",
+        "margin_top": "no-indent",
+        "margin_bottom": "no-indent"
+      }
+    },
+    "icon_cards_AfcHEg": {
+      "type": "icon-cards",
+      "blocks": {
+        "card_zRp4D7": {
+          "type": "card",
+          "settings": {
+            "icon_name": "solar_shield-check-outline.svg",
+            "heading_variant": "default",
+            "card_label": "",
+            "card_large_text": "",
+            "card_subtitle": "",
+            "heading": "Implementación  Zero-Touch (Kickoff)",
+            "description": "Diseño de arquitectura · enrolamiento automático · perfiles base · segmentación por áreas · catálogo de apps · documentación operativa"
+          }
+        },
+        "card_jAbh3D": {
+          "type": "card",
+          "settings": {
+            "icon_name": "solar_clock-circle-outline.svg",
+            "heading_variant": "default",
+            "card_label": "",
+            "card_large_text": "",
+            "card_subtitle": "",
+            "heading": "Operación diaria (Run)",
+            "description": "Altas/bajas y reasignaciones · instalación/retiro de apps · cambios de políticas controlados · soporte remoto · gestión de incidentes · reportes periódicos"
+          }
+        },
+        "card_N4k6Fp": {
+          "type": "card",
+          "settings": {
+            "icon_name": "solar_chart-outline.svg",
+            "heading_variant": "default",
+            "card_label": "",
+            "card_large_text": "",
+            "card_subtitle": "",
+            "heading": "Seguridad y cumplimiento",
+            "description": "Baseline de seguridad · monitoreo de compliance · alertas y remediación · acciones ante pérdida/robo (bloqueo/borrado) · control de versiones y parches (según estrategia)"
+          }
+        },
+        "card_fehaFE": {
+          "type": "card",
+          "settings": {
+            "icon_name": "solar_chart-outline.svg",
+            "heading_variant": "default",
+            "card_label": "",
+            "card_large_text": "",
+            "card_subtitle": "",
+            "heading": "Gobernanza y mejora continua",
+            "description": "Mesa de control · cambios con trazabilidad · revisión mensual (QBR) · roadmap de mejoras · indicadores y recomendaciones"
+          }
+        }
+      },
+      "block_order": [
+        "card_zRp4D7",
+        "card_jAbh3D",
+        "card_N4k6Fp",
+        "card_fehaFE"
+      ],
+      "name": "Icon Cards — La Solución (3 col)",
+      "settings": {
+        "columns": "3",
+        "header_alignment": "left",
+        "light_mode": true,
+        "subheading": "beneficios clave para empresas",
+        "heading": "<p>¿Cómo funciona Zero Touch?<br/><br/><br/></p>",
+        "description": "<p>Un servicio continuo donde nos hacemos cargo del ciclo completo: diseño + implementación + operación. Nos encargamos de que cada dispositivo se configure automáticamente desde el primer encendido y se mantenga en cumplimiento durante toda su vida útil, con soporte y mejoras continuas.</p>"
+      }
+    },
+    "device_tabs_9fqXhT": {
+      "type": "device-tabs",
+      "blocks": {
+        "tab_zjypBm": {
+          "type": "tab",
+          "settings": {
+            "tab_label": "1",
+            "heading": "Diagnóstico",
+            "description": "",
+            "features": "Levantamiento de flota\nRiesgos\nNecesidades y objetivos",
+            "cta_label": "",
+            "cta_url": ""
+          }
+        },
+        "tab_Lan7fV": {
+          "type": "tab",
+          "settings": {
+            "tab_label": "2",
+            "heading": "Flota híbrida/remota",
+            "description": "",
+            "features": "Políticas\nGrupos\nApps\nFlujo de enrolamiento  \nSeguridad base",
+            "cta_label": "",
+            "cta_url": ""
+          }
+        },
+        "tab_7hgpXx": {
+          "type": "tab",
+          "settings": {
+            "tab_label": "3",
+            "heading": "Auditoría/compliance",
+            "description": "Piloto controlado + despliegue progresivo.",
+            "features": "Equipos nuevos, listos para usar\nCobertura frente a imprevistos incluida\nGestión simple para flotas de dispositivos\nRenovación tecnológica al finalizar el contrato",
+            "cta_label": "Cotizar iPhone",
+            "cta_url": ""
+          }
+        },
+        "tab_FpKGya": {
+          "type": "tab",
+          "settings": {
+            "tab_label": "4",
+            "heading": "Pérdida/robo",
+            "description": "Soporte\nMonitoreo\nCambios\nReportes",
+            "features": "Configuración y apps listas desde el día uno\nProtección integral y soporte incluidas\nIdeal para flotas y despliegue rápido\nContratos flexible con renovación tecnológica",
+            "cta_label": "Cotizar iPad",
+            "cta_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "tab_zjypBm",
+        "tab_Lan7fV",
+        "tab_7hgpXx",
+        "tab_FpKGya"
+      ],
+      "name": "Tab Slider",
+      "settings": {
+        "subheading": "",
+        "heading": "<p>Cómo partimos (sin interrumpir tu operación)</p>",
+        "description": "<p>Ejemplos concretos de cómo el MDM te ahorra tiempo y te sube el estándar de seguridad, <br/>sin depender de configuraciones manuales ni del usuario.<br/><br/></p>",
+        "color_scheme": "light",
+        "abm_slider_mode": true
+      }
+    },
+    "collapsible_content_3TzhGG": {
+      "type": "collapsible-content",
+      "blocks": {
+        "accordion_xLJNAp": {
+          "type": "accordion",
+          "settings": {
+            "question": "¿Esto reemplaza a mi equipo de TI?",
+            "answer": "<p>No. Lo complementa. Tomamos la operación repetitiva y especializada del MDM; tu TI se queda con decisiones y estrategia.</p>",
+            "opened": true
+          }
+        },
+        "accordion_a7pCWd": {
+          "type": "accordion",
+          "settings": {
+            "question": "¿Pueden operar el MDM que ya tengo?",
+            "answer": "<p>Sí. Partimos con un diagnóstico y proponemos mejoras sin “romper” tu operación.</p>",
+            "opened": false
+          }
+        },
+        "accordion_Md9fk7": {
+          "type": "accordion",
+          "settings": {
+            "question": "¿Qué tan rápido se ve el impacto?",
+            "answer": "<p>Normalmente el primer impacto es en onboarding y reducción de tickets, desde el primer ciclo de despliegue.</p>",
+            "opened": false
+          }
+        },
+        "accordion_hUBzPe": {
+          "type": "accordion",
+          "settings": {
+            "question": "¿Incluye seguridad?",
+            "answer": "<p>Incluye baseline, cumplimiento y respuesta remota.</p>",
+            "opened": false
+          }
+        },
+        "accordion_kMCUk9": {
+          "type": "accordion",
+          "settings": {
+            "question": "Here can be a commonly asked question about your product or service.",
+            "answer": "<p>Here can be a brief but clear response to the question, giving customers a quick answer without unnecessary details.</p>",
+            "opened": false
+          }
+        }
+      },
+      "block_order": [
+        "accordion_xLJNAp",
+        "accordion_a7pCWd",
+        "accordion_Md9fk7",
+        "accordion_hUBzPe",
+        "accordion_kMCUk9"
+      ],
+      "custom_css": [
+        ".collapsible-content.background {background-image: url(https://cdn.shopify.com/s/files/1/0731/0757/0884/files/bg-fondo-2-sombra.webp?v=1785360364); background-repeat: no-repeat; background-position: center; background-size: 100%; background-attachment: local;}",
+        "h2 {font-weight: 700;}",
+        "h3 {font-weight: 600; font-size: 150% !important;}",
+        "p {font-size: 120%; opacity: 0.6;}"
+      ],
+      "name": "t:sections.collapsible-content.name",
+      "settings": {
+        "layout": "background",
+        "color_scheme": "scheme-39e5d4a7-e422-4a30-b12c-b2a059c9acee",
+        "enable_border": false,
+        "border_full": false,
+        "subheading": "",
+        "subheading_style": "subtitle",
+        "subheading_icon": "none",
+        "heading": "Preguntas frecuentes Zero Touch",
+        "heading_size": "h2",
+        "heading_level": "h2",
+        "heading_line": "none",
+        "line_color": "#1566e0",
+        "word_break": false,
+        "heading_animation": "none",
+        "word_break_an": false,
+        "text": "",
+        "text_align": "center",
+        "row_color_scheme": "scheme-cf7617bd-cf5d-43c2-b151-2d92b8b69cd6",
+        "padding_top": "l",
+        "padding_bottom": "l",
+        "margin_top": "no-indent",
+        "margin_bottom": "no-indent"
+      }
+    },
+    "animated_image_collage_8WTp8V": {
+      "type": "animated-image-collage",
+      "custom_css": [
+        "h2.title--simple {background: linear-gradient(91deg, #fff 14.38%, #07abf8 93.41%); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent;}",
+        ".aic.background {background-image: url(https://cdn.shopify.com/s/files/1/0731/0757/0884/files/bg-fondo-centro.webp?v=1785345733) !important; background-repeat: no-repeat; background-position: center; background-size: contain; background-attachment: local;}",
+        ".aic__subtitle.subtitle {background-color: transparent; border: 1px solid; padding: 10px 24px;}"
+      ],
+      "name": "t:sections.animated-image-collage.name",
+      "settings": {
+        "section_type": "background",
+        "color_scheme": "scheme-39e5d4a7-e422-4a30-b12c-b2a059c9acee",
+        "header_overlay": false,
+        "header_transparent": false,
+        "column_to_show": 3,
+        "opacity_overlay": 0.3,
+        "full_width": true,
+        "icon": "none",
+        "icon_color_scheme": "scheme-39e5d4a7-e422-4a30-b12c-b2a059c9acee",
+        "icon_style": "contrast",
+        "icon_fill_type": "gradient",
+        "icon_size": "recommended",
+        "box_shadow": true,
+        "subheading": "",
+        "subheading_style": "subtitle subtitle--secondary",
+        "subheading_icon": "none",
+        "heading": "Dale autonomía a tu empresa sin perder control",
+        "heading_size": "h1",
+        "heading_level": "h2",
+        "heading_line": "simple",
+        "line_color": "#1566e0",
+        "heading_animation": "none",
+        "text": "Te ayudamos a definir una base de seguridad (políticas, grupos, cumplimiento, distribución de apps y actualizaciones) y a implementarla con Zero-Touch para que tu flota quede protegida y controlada.",
+        "enable_subscribe": false,
+        "button_label_subscribe": "Agendar demo",
+        "button_style_subscribe": "primary",
+        "show_button": true,
+        "button_label": "Agenda un demo",
+        "button_link": "",
+        "button_style": "primary",
+        "show_button_2": false,
+        "button_label_2": "",
+        "button_link_2": "",
+        "button_style_2": "simple",
+        "padding_top": "m",
+        "padding_bottom": "m",
+        "margin_top": "no-indent",
+        "margin_bottom": "no-indent"
+      }
+    },
+    "portal_variation_row_P4ME7C": {
+      "type": "portal-variation-row",
+      "blocks": {
+        "image_LfVaja": {
+          "type": "image",
+          "settings": {
+            "image_asset": "portal-variation-row-1.png"
+          }
+        },
+        "image_XFE6pY": {
+          "type": "image",
+          "settings": {
+            "image_asset": "portal-variation-row-2.png"
+          }
+        },
+        "image_LmR3nU": {
+          "type": "image",
+          "settings": {
+            "image_asset": "portal-variation-row-3.png"
+          }
+        },
+        "image_MaQgbt": {
+          "type": "image",
+          "settings": {
+            "image_asset": "portal-variation-row-4.png"
+          }
+        },
+        "image_pkneay": {
+          "type": "image",
+          "settings": {
+            "image_asset": "portal-variation-row-5.png"
+          }
+        }
+      },
+      "block_order": [
+        "image_LfVaja",
+        "image_XFE6pY",
+        "image_LmR3nU",
+        "image_MaQgbt",
+        "image_pkneay"
+      ],
+      "settings": {
+        "color_scheme": "scheme-39e5d4a7-e422-4a30-b12c-b2a059c9acee",
+        "padding_top": "no-indent",
+        "padding_bottom": "m",
+        "margin_top": "no-indent",
+        "margin_bottom": "no-indent"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "animated_image_collage_aYY4b8",
+    "icon_cards_AfcHEg",
+    "device_tabs_9fqXhT",
+    "collapsible_content_3TzhGG",
+    "animated_image_collage_8WTp8V",
+    "portal_variation_row_P4ME7C"
+  ]
+}

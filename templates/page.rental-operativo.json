@@ -1,0 +1,1391 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "custom_css": [],
+      "settings": {
+        "padding_top": "no-indent",
+        "padding_bottom": "m"
+      }
+    },
+    "hero_PcXWG3": {
+      "type": "hero",
+      "blocks": {
+        "subtitle_iExhfH": {
+          "type": "subtitle",
+          "settings": {
+            "subheading": "Rental operativo para empresas",
+            "subheading_style": "subtitle subtitle--secondary",
+            "subheading_icon": "none"
+          }
+        },
+        "title_6qcqpp": {
+          "type": "title",
+          "settings": {
+            "heading": "Equipa a tu empresa con Apple, sin inmovilizar capital",
+            "heading_size": "h1",
+            "heading_level": "h2",
+            "heading_line": "simple",
+            "line_color": "#1566e0",
+            "word_break": false,
+            "heading_animation": "none",
+            "word_break_an": false
+          }
+        },
+        "description_CCfeJR": {
+          "type": "description",
+          "settings": {
+            "description": "iPhone, iPad y/o Mac con una cuota mensual fija en pesos, sin pago inicial y con protección integral incluida. Una forma simple, flexible y eficiente de mantener tu operación siempre actualizada."
+          }
+        },
+        "buttons_KXnMC9": {
+          "type": "buttons",
+          "settings": {
+            "show_button_1": true,
+            "button_label_1": "Cotiza tu arriendo operativo",
+            "button_link_1": "",
+            "button_style_1": "primary",
+            "show_button_2": true,
+            "button_label_2": "Hablar con un experto",
+            "button_link_2": "",
+            "button_style_2": "tertiary"
+          }
+        }
+      },
+      "block_order": [
+        "subtitle_iExhfH",
+        "title_6qcqpp",
+        "description_CCfeJR",
+        "buttons_KXnMC9"
+      ],
+      "custom_css": [
+        ".hero__content {padding-right: 12rem;}"
+      ],
+      "name": "t:sections.hero.name",
+      "settings": {
+        "layout": "horizontal",
+        "header_overlay": false,
+        "header_transparent": false,
+        "block_type": "plain",
+        "color_scheme": "scheme-39e5d4a7-e422-4a30-b12c-b2a059c9acee",
+        "full_screen": true,
+        "image": "shopify://shop_images/maconline-servicio-rental.webp",
+        "show_video": false,
+        "overlay_opacity": 1,
+        "image_ratio": "1/1",
+        "object_fit": "contain",
+        "desktop_image_position": "after",
+        "mobile_image_position": "after",
+        "mobile_image_overlay": "overlay",
+        "horizontal_alignment": "center",
+        "vertical_alignment": "middle",
+        "padding_top": "xs",
+        "padding_bottom": "xl"
+      }
+    },
+    "rich_text_8nXHDw": {
+      "type": "rich-text",
+      "blocks": {
+        "subheading_HaXdtW": {
+          "type": "subheading",
+          "settings": {
+            "subheading": ""
+          }
+        },
+        "heading_VPxUix": {
+          "type": "heading",
+          "settings": {
+            "heading": "¿Por qué elegir Arriendo Operativo con MacOnline Pro?",
+            "heading_size": "medium",
+            "heading_level": "h2"
+          }
+        },
+        "text_beYL9N": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Con MacOnline Pro, tu empresa accede a tecnología Apple de última generación con un modelo flexible, predecible y eficiente. Reducimos la inversión inicial, simplificamos la gestión financiera y te ayudamos a mantener a tu equipo siempre equipado, protegido y listo para trabajar.</p>"
+          }
+        },
+        "button_pbH3jN": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Agenda un demo",
+            "button_link": "",
+            "button_style": "primary"
+          }
+        }
+      },
+      "block_order": [
+        "subheading_HaXdtW",
+        "heading_VPxUix",
+        "text_beYL9N",
+        "button_pbH3jN"
+      ],
+      "disabled": true,
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "color_scheme": "",
+        "full_width": true,
+        "alignment": "center",
+        "margin_top": "no-indent",
+        "margin_bottom": "no-indent",
+        "padding_top": "m",
+        "padding_bottom": "m"
+      }
+    },
+    "slideshow_ncn8DH": {
+      "type": "slideshow",
+      "blocks": {
+        "slide_J4mymD": {
+          "type": "slide",
+          "settings": {
+            "color_scheme": "background-3",
+            "icon": "none",
+            "image": "shopify://shop_images/compra-tradicional.svg",
+            "overlay_opacity": 1,
+            "show_video": false,
+            "loop_video": false,
+            "heading": "Compra tradicional",
+            "heading_size": "recommended",
+            "heading_level": "h3",
+            "description": "Un solo pago grande al inicio \n<ul class=\"list-x\">\n<li>Desembolso inicial alto</li>\n<li>Inmoviliza capital de la empresa</li>\n<li>Puede afectar tu capacitad crediticia</li> \n<li>La tecnología se desprecia con el tiempo</li>\n</ul>",
+            "tab_heading": "Compra tradicional",
+            "show_button": false,
+            "button_style": "simple_link",
+            "button_label": "Shop Now",
+            "button_link": "",
+            "overlay_link": false
+          }
+        },
+        "slide_PbBtMD": {
+          "type": "slide",
+          "settings": {
+            "color_scheme": "background-3",
+            "icon": "none",
+            "image": "shopify://shop_images/cuotas-mensuales-fijas.svg",
+            "overlay_opacity": 1,
+            "show_video": false,
+            "loop_video": false,
+            "heading": "Arriendo operativo",
+            "heading_size": "recommended",
+            "heading_level": "h3",
+            "description": "Cuota fija y predecible cada mes \n<ul class=\"list-check\">\n<li>Sin pago inicial</li>\n<li>Cuota mensual fija en pesos</li>\n<li>No compromete tu crédito ni tu balance </li> \n<li>Renovación de tecnología de ultima generación</li>\n<li>Protección y soporte incluidos</li>\n</ul>",
+            "tab_heading": "Arriendo operativo",
+            "show_button": false,
+            "button_style": "simple_link",
+            "button_label": "Shop Now",
+            "button_link": "",
+            "overlay_link": false
+          }
+        }
+      },
+      "block_order": [
+        "slide_J4mymD",
+        "slide_PbBtMD"
+      ],
+      "custom_css": [
+        "h2 {background: linear-gradient(91deg, #fff 14.38%, #07abf8 93.41%); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent;}",
+        "h2,h3 {font-weight: 700;}",
+        ".slideshow .description span {font-size: 125%;}",
+        ".slideshow__description-content {font-size: 120%;}",
+        ".media > img {object-fit: contain !important; max-width: 732px !important; right: 50px; left: initial !important; width: 90% !important;}",
+        "h3.slideshow__title-content {font-size: 210%;}",
+        "h3.slideshow__title-content {font-size: 245% !important;}"
+      ],
+      "name": "t:sections.slideshow.presets.name",
+      "settings": {
+        "layout": "simple",
+        "header_overlay": true,
+        "full_width": false,
+        "color_scheme": "scheme-39e5d4a7-e422-4a30-b12c-b2a059c9acee",
+        "enable_border": false,
+        "border_full": false,
+        "subheading": "El modelo",
+        "subheading_style": "subtitle",
+        "subheading_icon": "circle",
+        "heading": "Compra inmoviliza capital. Arrendar lo libera",
+        "heading_size": "h3",
+        "heading_level": "h2",
+        "heading_line": "simple",
+        "line_color": "#1566e0",
+        "word_break": false,
+        "text": "En vez de gran desembolsado inicial, pagas una cuota mensual fija. \nAsí mantienes la liquidez de tu empresa y tu tecnología siempre al día.",
+        "heading_animation": "none",
+        "word_break_an": false,
+        "text_align": "left",
+        "height": "adapt",
+        "text_align_content": "left",
+        "enable_autoplay": false,
+        "enable_parallax": false,
+        "enable_pagination": true,
+        "pagination_type": "tabs",
+        "pagination_color_scheme": "scheme-07ed3b7e-d3e2-404e-97c3-7b69c260dbf0",
+        "pagination_width": "medium",
+        "enable_navigation": false,
+        "navigation_color_scheme": "scheme-07ed3b7e-d3e2-404e-97c3-7b69c260dbf0",
+        "slide_duration": 5,
+        "icon_size": "recommended",
+        "icon_style": "contrast",
+        "icon_fill_type": "solid",
+        "show_tab_icon": true,
+        "padding_top": "m",
+        "padding_bottom": "m",
+        "margin_top": "no-indent",
+        "margin_bottom": "no-indent"
+      }
+    },
+    "slideshow_LKwURH": {
+      "type": "slideshow",
+      "blocks": {
+        "slide_HMT7VJ": {
+          "type": "slide",
+          "settings": {
+            "color_scheme": "",
+            "icon": "none",
+            "overlay_opacity": 0.5,
+            "show_video": false,
+            "loop_video": true,
+            "heading": "Sin pago inicial",
+            "heading_size": "h1",
+            "heading_level": "h2",
+            "description": "Evita grandes desembolsos al comienzo. Con nuestro sistema de arriendo operativo, tu empresa puede acceder a equipos Apple sin tener que destinar capital a una compra inmediata. Así mantienes liquidez para invertir en lo que realmente mueve tu negocio.",
+            "tab_heading": "Sin pago inicial",
+            "show_button": false,
+            "button_style": "simple_link",
+            "button_label": "",
+            "button_link": "",
+            "overlay_link": false
+          }
+        },
+        "slide_9MKFwg": {
+          "type": "slide",
+          "settings": {
+            "color_scheme": "",
+            "icon": "none",
+            "overlay_opacity": 0.5,
+            "show_video": false,
+            "loop_video": true,
+            "heading": "Cuota mensual fija en pesos",
+            "heading_size": "h1",
+            "heading_level": "h2",
+            "description": "Tu empresa paga una renta mensual estable durante todo el contrato. Sin variaciones inesperadas ni exposición al tipo de cambio. Esto te permite planificar mejor, ordenar tu presupuesto y proyectar costos con claridad.",
+            "tab_heading": "Cuota mensual fija en pesos",
+            "show_button": false,
+            "button_style": "simple_link",
+            "button_label": "",
+            "button_link": "",
+            "overlay_link": false
+          }
+        },
+        "slide_cxBx6q": {
+          "type": "slide",
+          "settings": {
+            "color_scheme": "",
+            "icon": "none",
+            "overlay_opacity": 0.5,
+            "show_video": false,
+            "loop_video": true,
+            "heading": "Beneficio tributario",
+            "heading_size": "h1",
+            "heading_level": "h2",
+            "description": "Las cuotas de arriendo pueden contabilizarse como gasto operativo, lo que puede representar una ventaja tributaria frente a la compra directa, según la situación contable y tributaria de cada empresa.",
+            "tab_heading": "Beneficio tributario",
+            "show_button": false,
+            "button_style": "simple_link",
+            "button_label": "",
+            "button_link": "",
+            "overlay_link": false
+          }
+        },
+        "slide_b9GhK8": {
+          "type": "slide",
+          "settings": {
+            "color_scheme": "",
+            "icon": "none",
+            "overlay_opacity": 0.5,
+            "show_video": false,
+            "loop_video": true,
+            "heading": "No compromete tu capacidad crediticia",
+            "heading_size": "h1",
+            "heading_level": "h2",
+            "description": "El arriendo operativo permite acceder a tecnología de alto valor sin cargar líneas de crédito destinadas a otros proyectos o inversiones. Es una alternativa eficiente para crecer sin tensionar la estructura financiera de tu empresa.",
+            "tab_heading": "No compromete tu capacidad crediticia",
+            "show_button": false,
+            "button_style": "simple_link",
+            "button_label": "",
+            "button_link": "",
+            "overlay_link": false
+          }
+        },
+        "slide_R3LgAN": {
+          "type": "slide",
+          "settings": {
+            "color_scheme": "",
+            "icon": "none",
+            "overlay_opacity": 0.5,
+            "show_video": false,
+            "loop_video": true,
+            "heading": "Tecnología siempre actualizada",
+            "heading_size": "h1",
+            "heading_level": "h2",
+            "description": "La tecnología cambia rápido. Con el arriendo operativo, al finalizar el contrato puedes renovar tus equipos por modelos más recientes, manteniendo a tu empresa al día y a tu equipo trabajando con herramientas de última generación.",
+            "tab_heading": "Tecnología siempre actualizada",
+            "show_button": false,
+            "button_style": "simple_link",
+            "button_label": "",
+            "button_link": "",
+            "overlay_link": false
+          }
+        }
+      },
+      "block_order": [
+        "slide_HMT7VJ",
+        "slide_9MKFwg",
+        "slide_cxBx6q",
+        "slide_b9GhK8",
+        "slide_R3LgAN"
+      ],
+      "disabled": true,
+      "name": "t:sections.slideshow.presets.name",
+      "settings": {
+        "layout": "overlay",
+        "header_overlay": false,
+        "full_width": false,
+        "color_scheme": "background-1",
+        "enable_border": false,
+        "border_full": true,
+        "subheading": "",
+        "subheading_style": "subtitle",
+        "subheading_icon": "none",
+        "heading": "¿Por qué elegir Arriendo Operativo con MacOnline Pro?",
+        "heading_size": "h2",
+        "heading_level": "h2",
+        "heading_line": "simple",
+        "line_color": "#1566e0",
+        "word_break": false,
+        "text": "Con MacOnline Pro, tu empresa accede a tecnología Apple de última generación con un modelo flexible, predecible y eficiente. Reducimos la inversión inicial, simplificamos la gestión financiera y te ayudamos a mantener a tu equipo siempre equipado, protegido y listo para trabajar.",
+        "heading_animation": "none",
+        "word_break_an": false,
+        "text_align": "center",
+        "height": "21/9",
+        "text_align_content": "center",
+        "enable_autoplay": false,
+        "enable_parallax": false,
+        "enable_pagination": true,
+        "pagination_type": "tabs_full",
+        "pagination_color_scheme": "",
+        "pagination_width": "medium",
+        "enable_navigation": true,
+        "navigation_color_scheme": "",
+        "slide_duration": 5,
+        "icon_size": "recommended",
+        "icon_style": "contrast",
+        "icon_fill_type": "solid",
+        "show_tab_icon": true,
+        "padding_top": "l",
+        "padding_bottom": "l",
+        "margin_top": "no-indent",
+        "margin_bottom": "no-indent"
+      }
+    },
+    "steps_ezybHY": {
+      "type": "steps",
+      "blocks": {
+        "step_fNRhGx": {
+          "type": "step",
+          "settings": {
+            "number": "",
+            "heading": "Configuración inicial incluida",
+            "text": "Los equipos pueden entregarse con una configuración base orientada al entorno corporativo, incluyendo instalación inicial de aplicaciones, parametrización base y preparación del entorno Apple Business Manager, según el alcance contratado.",
+            "show_button": false,
+            "button_style": "simple",
+            "button_label": "Know More",
+            "button_link": ""
+          }
+        },
+        "step_RPnhRn": {
+          "type": "step",
+          "settings": {
+            "number": "",
+            "heading": "Implementación más rápida",
+            "text": "Reducimos tiempos de puesta en marcha para que tu empresa incorpore nuevos dispositivos con menos fricción y mayor eficiencia.",
+            "show_button": false,
+            "button_style": "simple",
+            "button_label": "Know More",
+            "button_link": ""
+          }
+        },
+        "step_YqfqQx": {
+          "type": "step",
+          "settings": {
+            "number": "",
+            "heading": "Soporte y acompañamiento desde el primer día",
+            "text": "No solo recibes los equipos listos para usar. También cuentas con el respaldo de MacOnline Pro para acompañar la puesta en marcha de tu operación, resolver dudas iniciales y asegurar una implementación más ordenada para tu empresa. Así, tu equipo puede comenzar a trabajar con mayor continuidad, menor fricción y el apoyo de un partner especializado en tecnología Apple.",
+            "show_button": false,
+            "button_style": "simple",
+            "button_label": "Know More",
+            "button_link": ""
+          }
+        },
+        "step_hkUEkC": {
+          "type": "step",
+          "settings": {
+            "number": "1",
+            "heading": "Here can be your story title",
+            "text": "Simply complete this step to get started!",
+            "show_button": true,
+            "button_style": "simple",
+            "button_label": "Know More",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "step_fNRhGx",
+        "step_RPnhRn",
+        "step_YqfqQx",
+        "step_hkUEkC"
+      ],
+      "disabled": true,
+      "name": "t:sections.steps.name",
+      "settings": {
+        "layout": "columns",
+        "enable_arrows": true,
+        "color_scheme": "background-1",
+        "subheading": "",
+        "subheading_style": "subtitle",
+        "subheading_icon": "none",
+        "heading": "Recibe tus equipos listos para trabajar",
+        "heading_size": "h2",
+        "heading_level": "h2",
+        "heading_line": "simple",
+        "line_color": "#1566e0",
+        "word_break": false,
+        "heading_animation": "none",
+        "word_break_an": false,
+        "text": "Una vez aprobado el contrato, coordinamos la entrega de los dispositivos en tu oficina para que tu equipo comience a usarlos de inmediato.",
+        "text_align": "center",
+        "columns_to_show": 3,
+        "image_ratio": "landscape",
+        "number_size": "recommended",
+        "step_heading_size": "recommended",
+        "text_size": "recommended",
+        "padding_top": "l",
+        "padding_bottom": "l",
+        "margin_top": "no-indent",
+        "margin_bottom": "no-indent"
+      }
+    },
+    "multicolumn_gxJp4A": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_aBMAFT": {
+          "type": "column",
+          "settings": {
+            "icon": "none",
+            "icon_color_scheme": "background-3",
+            "icon_fill_type": "gradient",
+            "image": "shopify://shop_images/icono-sin-pago.svg",
+            "enable_link": false,
+            "link": "",
+            "heading": "Sin pago inicial",
+            "text": "<p>Accede a equipos Apple sin destinar capital a una compra inmediata. Mediante la liquidez de tu empresa desde el primer día.</p>",
+            "show_button": false,
+            "button_label": "Learn More",
+            "button_link": "",
+            "button_style": "simple"
+          }
+        },
+        "column_RgWWpW": {
+          "type": "column",
+          "settings": {
+            "icon": "none",
+            "icon_color_scheme": "background-3",
+            "icon_fill_type": "gradient",
+            "image": "shopify://shop_images/icono-calenadario.svg",
+            "enable_link": false,
+            "link": "",
+            "heading": "Sin pago Cuota mensual fija en pesos",
+            "text": "<p>Un valor predecible y estable durante todo el contrato sin sorpresas cambiarlas, que facilita tu planificación financiera.</p>",
+            "show_button": false,
+            "button_label": "Learn More",
+            "button_link": "",
+            "button_style": "simple"
+          }
+        },
+        "column_6VLHJD": {
+          "type": "column",
+          "settings": {
+            "icon": "none",
+            "icon_color_scheme": "background-3",
+            "icon_fill_type": "gradient",
+            "image": "shopify://shop_images/icono_tributario.svg",
+            "enable_link": false,
+            "link": "",
+            "heading": "Beneficio tributario",
+            "text": "<p>El arriendo operativo puede considerarse gasto, optimizando la carga tributaria de tu empresa frente a la compra directa. </p>",
+            "show_button": false,
+            "button_label": "Learn More",
+            "button_link": "",
+            "button_style": "simple"
+          }
+        },
+        "column_END338": {
+          "type": "column",
+          "settings": {
+            "icon": "none",
+            "icon_color_scheme": "background-3",
+            "icon_fill_type": "gradient",
+            "image": "shopify://shop_images/icono-crediticia.svg",
+            "enable_link": false,
+            "link": "",
+            "heading": "No compromete tu capacitad crediticia",
+            "text": "<p>Al no se deuda ni activo en balance, no afecta tus líneas de financiamientos ni tu capacidad de endeudamiento.</p>",
+            "show_button": false,
+            "button_label": "Learn More",
+            "button_link": "",
+            "button_style": "simple"
+          }
+        },
+        "column_a9jDWC": {
+          "type": "column",
+          "settings": {
+            "icon": "none",
+            "icon_color_scheme": "background-3",
+            "icon_fill_type": "gradient",
+            "image": "shopify://shop_images/icono-tecnologia.svg",
+            "enable_link": false,
+            "link": "",
+            "heading": "Tecnología siempre actualizada",
+            "text": "<p>Renueva tus equipos al final del contrato y mantén a tu equipo con la ultima generación de dispositivos Apple.</p>",
+            "show_button": false,
+            "button_label": "Learn More",
+            "button_link": "",
+            "button_style": "simple"
+          }
+        },
+        "column_etybdt": {
+          "type": "column",
+          "settings": {
+            "icon": "none",
+            "icon_color_scheme": "background-3",
+            "icon_fill_type": "gradient",
+            "image": "shopify://shop_images/icono-proteccion.svg",
+            "enable_link": false,
+            "link": "",
+            "heading": "Protección integral incluida",
+            "text": "<p>Cobertura, soporte y garantía extendida viven incluidos para que tu operación nunca se detenga. </p>",
+            "show_button": false,
+            "button_label": "Learn More",
+            "button_link": "",
+            "button_style": "simple"
+          }
+        }
+      },
+      "block_order": [
+        "column_aBMAFT",
+        "column_RgWWpW",
+        "column_6VLHJD",
+        "column_END338",
+        "column_a9jDWC",
+        "column_etybdt"
+      ],
+      "custom_css": [
+        "h2 {background: linear-gradient(91deg, #fff 14.38%, #07abf8 93.41%); background-clip: text; font-weight: 700; -webkit-background-clip: text; -webkit-text-fill-color: transparent;}",
+        ".h4 {font-size: 150%; font-weight: 600;}"
+      ],
+      "name": "t:sections.multicolumn.name",
+      "settings": {
+        "section_type": "solid",
+        "color_scheme": "scheme-39e5d4a7-e422-4a30-b12c-b2a059c9acee",
+        "enable_border": false,
+        "border_full": false,
+        "multicolumn_to_show": 3,
+        "content_horizontal_alignment": "left",
+        "content_vertical_alignment": "top",
+        "gap": "large",
+        "enable_mobile_overflow_slider": false,
+        "subheading": "Por qué maconline pro",
+        "subheading_style": "subtitle",
+        "subheading_icon": "circle",
+        "heading": "Un modelo flexible, predecible y eficiente",
+        "heading_size": "h2",
+        "heading_level": "h2",
+        "heading_line": "simple",
+        "line_color": "#1566e0",
+        "word_break": false,
+        "heading_animation": "none",
+        "word_break_an": false,
+        "text": "<p>Reducimos la inversión inicial, simplificando la gestión financiera y ayudamos a mantener a tu equipo siempre equipado, protegido y listo para trabajar. </p>",
+        "text_align": "center",
+        "icon_size": "recommended",
+        "box_shadow": true,
+        "icon_style": "colored",
+        "image_width": "medium",
+        "image_ratio": "square",
+        "object_fit": "cover",
+        "card_heading_size": "h4",
+        "padding_top": "xl",
+        "padding_bottom": "xl",
+        "margin_top": "no-indent",
+        "margin_bottom": "no-indent"
+      }
+    },
+    "slideshow_jaXkq7": {
+      "type": "slideshow",
+      "blocks": {
+        "slide_Dc4EYt": {
+          "type": "slide",
+          "settings": {
+            "color_scheme": "scheme-39e5d4a7-e422-4a30-b12c-b2a059c9acee",
+            "icon": "computer",
+            "image": "shopify://shop_images/macbook-pro-air-imac-mac-studio.webp",
+            "overlay_opacity": 1,
+            "show_video": false,
+            "loop_video": false,
+            "heading": "Mac para trabajar sin limites",
+            "heading_size": "recommended",
+            "heading_level": "h3",
+            "description": "MacBook Pro, MacBook Air, IMac y Mac Studio para equipos de diseño, desarrollo, finanzas y operaciones \n<ul class=\"list-check\">\n<li>Configuración inicial lista para tu operación</li>\n<li>AppleCare y garantía extendida incluida</li>\n<li>Renovación a la ultima generación al termino del contrato</li> \n<li>Soporte técnico corporativo</li>\n</ul>",
+            "tab_heading": "Mac",
+            "show_button": true,
+            "button_style": "primary",
+            "button_label": "Cotizar Mac",
+            "button_link": "",
+            "overlay_link": false
+          }
+        },
+        "slide_YfjYe6": {
+          "type": "slide",
+          "settings": {
+            "color_scheme": "scheme-39e5d4a7-e422-4a30-b12c-b2a059c9acee",
+            "icon": "laptop-1",
+            "image": "shopify://shop_images/iphone.webp",
+            "overlay_opacity": 1,
+            "show_video": false,
+            "loop_video": false,
+            "heading": "iPhone para movilidad y punto de venta",
+            "heading_size": "recommended",
+            "heading_level": "h3",
+            "description": "iPhone de ultima generación para ventas, logística y operaciones siempre conectados y protegidos \n<ul class=\"list-check\">\n<li>Equipos nuevos, listos para usar</li>\n<li>Cobertura frente a imprevistos incluida </li>\n<li>Gestión simple para flotas de dispositivos</li> \n<li>Renovación tecnológica al finalizar el contrato</li>\n</ul>",
+            "tab_heading": "iPhone",
+            "show_button": true,
+            "button_style": "primary",
+            "button_label": "Cotizar iPone",
+            "button_link": "",
+            "overlay_link": false
+          }
+        },
+        "slide_e7feU7": {
+          "type": "slide",
+          "settings": {
+            "color_scheme": "scheme-39e5d4a7-e422-4a30-b12c-b2a059c9acee",
+            "icon": "laptop-2",
+            "image": "shopify://shop_images/ipad.webp",
+            "overlay_opacity": 1,
+            "show_video": false,
+            "loop_video": false,
+            "heading": "iPad para movilidad y punto de venta",
+            "heading_size": "recommended",
+            "heading_level": "h3",
+            "description": "iPad Pro y iPad Air para atención, terreno y puntos de venta, con la flexibilidad que tu operación necesita \n<ul class=\"list-check\">\n<li>Configuración y apps listas desde el día uno</li>\n<li>Protección integral y soporte incluidas </li>\n<li>Ideal para flotas y despliegue rápido</li> \n<li>Contrato flexible con renovación tecnológica </li>\n</ul>",
+            "tab_heading": "iPad",
+            "show_button": true,
+            "button_style": "primary",
+            "button_label": "Cotizar iPad",
+            "button_link": "",
+            "overlay_link": false
+          }
+        }
+      },
+      "block_order": [
+        "slide_Dc4EYt",
+        "slide_YfjYe6",
+        "slide_e7feU7"
+      ],
+      "custom_css": [
+        ".slideshow__thumbs .swiper-slide.swiper-slide-thumb-active {background: var( --gradiente, linear-gradient(93deg, #007cb7 9.25%, #07abf8 52.63%) );}",
+        ".swiper-slide-thumb-active .h6 {color: #fff;}",
+        "h2.h3 {font-weight: 400;}",
+        ".slideshow .description span {font-size: 125%;}",
+        ".media > img {bottom: -2px !important; object-position: bottom !important; top: initial !important;}",
+        ".slideshow__icon--recommended {display: none;}",
+        ".slideshow__description-content {font-size: 120%;}",
+        "h3.slideshow__title-content {font-size: 245% !important; font-weight: 400;}"
+      ],
+      "name": "t:sections.slideshow.presets.name",
+      "settings": {
+        "layout": "simple",
+        "header_overlay": true,
+        "full_width": false,
+        "color_scheme": "background-1",
+        "enable_border": false,
+        "border_full": false,
+        "subheading": "Equipos disponibles",
+        "subheading_style": "subtitle",
+        "subheading_icon": "circle",
+        "heading": "Elige la línea Apple que tu equipo necesita",
+        "heading_size": "h3",
+        "heading_level": "h2",
+        "heading_line": "simple",
+        "line_color": "#1566e0",
+        "word_break": false,
+        "text": "Configura iPhone, Mac o iPad en arriendo operativo, con protección y soporte incluidos en cada plan.",
+        "heading_animation": "none",
+        "word_break_an": false,
+        "text_align": "left",
+        "height": "21/9",
+        "text_align_content": "left",
+        "enable_autoplay": false,
+        "enable_parallax": false,
+        "enable_pagination": true,
+        "pagination_type": "tabs",
+        "pagination_color_scheme": "scheme-fe7d2251-16e5-4b62-ab94-d700f64f3bbf",
+        "pagination_width": "medium",
+        "enable_navigation": false,
+        "navigation_color_scheme": "background-4",
+        "slide_duration": 5,
+        "icon_size": "recommended",
+        "icon_style": "contrast",
+        "icon_fill_type": "solid",
+        "show_tab_icon": true,
+        "padding_top": "xl",
+        "padding_bottom": "l",
+        "margin_top": "no-indent",
+        "margin_bottom": "no-indent"
+      }
+    },
+    "image_with_text_Ya4ABJ": {
+      "type": "image-with-text",
+      "blocks": {
+        "column_PL7Ynz": {
+          "type": "column",
+          "settings": {
+            "icon": "check-3",
+            "icon_fill_type": "gradient",
+            "heading": "Cobertura frente a imprevistos",
+            "text": "Respaldo ante daños accidentes para que un incidente no frene al equipo."
+          }
+        },
+        "column_JLHD7U": {
+          "type": "column",
+          "settings": {
+            "icon": "check-3",
+            "icon_fill_type": "gradient",
+            "heading": "Soporte técnico corporativo",
+            "text": "Atención especial para empresas, con canales dedicados."
+          }
+        },
+        "column_zeG83T": {
+          "type": "column",
+          "settings": {
+            "icon": "check-3",
+            "icon_fill_type": "gradient",
+            "heading": "Garantía extendida",
+            "text": "Protección mas allá de la garantía estándar durante toda la vigencia."
+          }
+        },
+        "column_L4mgy9": {
+          "type": "column",
+          "settings": {
+            "icon": "check-3",
+            "icon_fill_type": "gradient",
+            "heading": "Contratación simple y 100% digital",
+            "text": "Todo el proceso en línea, sin trámites presenciales ni papeleo."
+          }
+        },
+        "column_3geJqb": {
+          "type": "column",
+          "settings": {
+            "icon": "check-3",
+            "icon_fill_type": "gradient",
+            "heading": "Configuración inicial incluida",
+            "text": "Recibe los equipos listos para trabajar, configuradas según tu operación."
+          }
+        }
+      },
+      "block_order": [
+        "column_PL7Ynz",
+        "column_JLHD7U",
+        "column_zeG83T",
+        "column_L4mgy9",
+        "column_3geJqb"
+      ],
+      "custom_css": [
+        "h2 {font-weight: 400;}",
+        ".image-with-text__column-title {font-weight: 700;}",
+        ".image-with-text__column {border-radius: 10px; border: 1px solid #007cb7; padding: 1rem;}",
+        ".image-with-text__grid {gap: 0rem;}",
+        ".image-with-text__column-title.h5 {font-size: 120%;}",
+        ".image-with-text__column-text {font-size: 110%;}"
+      ],
+      "name": "t:sections.image-with-text.presets.name",
+      "settings": {
+        "layout": "image_last",
+        "color_scheme": "",
+        "subheading": "",
+        "subheading_style": "subtitle",
+        "subheading_icon": "none",
+        "heading": "",
+        "heading_size": "h2",
+        "heading_level": "h2",
+        "heading_line": "simple",
+        "line_color": "#1566e0",
+        "word_break": false,
+        "heading_animation": "none",
+        "word_break_an": false,
+        "text": "",
+        "text_align": "left",
+        "inner_subheading": "Protección integral",
+        "inner_heading": "Para que tu operación no se detenga",
+        "inner_heading_size": "h2",
+        "inner_heading_level": "h2",
+        "inner_heading_line": "simple",
+        "inner_line_color": "#1566e0",
+        "inner_word_break": false,
+        "description": "<p>Cada equipo llega respaldado por una ecosistemas completo de servicio: cobertura, soporte corporativos y garantía extendida, gestionado de forma simple y 100% digital.</p>",
+        "text_align_inner": "center",
+        "image": "shopify://shop_images/bg-operacion.webp",
+        "enable_link": false,
+        "link": "",
+        "height": "all-height",
+        "overlay_opacity": 0,
+        "logo_width": 75,
+        "add_text": "",
+        "author_color_scheme": "",
+        "icon_size": "small",
+        "box_shadow": false,
+        "icon_style": "colored",
+        "show_button": true,
+        "button_label": "Ver planes de cobertura",
+        "button_link": "",
+        "button_style": "primary",
+        "show_button_2": false,
+        "button_label_2": "",
+        "button_link_2": "",
+        "button_style_2": "simple",
+        "padding_top": "l",
+        "padding_bottom": "xl",
+        "margin_top": "no-indent",
+        "margin_bottom": "no-indent"
+      }
+    },
+    "multicolumn_nqMyex": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_Xqzxd9": {
+          "type": "column",
+          "settings": {
+            "icon": "none",
+            "icon_color_scheme": "background-3",
+            "icon_fill_type": "gradient",
+            "image": "shopify://shop_images/01_e9942152-9d19-4718-a88c-716e13df9e91.svg",
+            "enable_link": false,
+            "link": "",
+            "heading": "Cotiza a tu medida",
+            "text": "<p>Cuéntanos que necesitas tu empresa y diseñamos una solución flexible según tu operación. </p>",
+            "show_button": false,
+            "button_label": "",
+            "button_link": "",
+            "button_style": "simple"
+          }
+        },
+        "column_xFpWpj": {
+          "type": "column",
+          "settings": {
+            "icon": "none",
+            "icon_color_scheme": "background-3",
+            "icon_fill_type": "gradient",
+            "image": "shopify://shop_images/02_dc5c4d6d-99b6-4133-95ce-ec14e2ded39f.svg",
+            "enable_link": false,
+            "link": "",
+            "heading": "Firma 100% digital",
+            "text": "<p>Contratación simple y en línea, sin un pago inicial ni trámites presenciales.</p>",
+            "show_button": false,
+            "button_label": "Learn More",
+            "button_link": "",
+            "button_style": "simple"
+          }
+        },
+        "column_Vy3GMB": {
+          "type": "column",
+          "settings": {
+            "icon": "none",
+            "icon_color_scheme": "background-3",
+            "icon_fill_type": "gradient",
+            "image": "shopify://shop_images/03_defa7738-310b-4cf4-85fe-3a8189aa7a47.svg",
+            "enable_link": false,
+            "link": "",
+            "heading": "Recibe configurado",
+            "text": "<p>Los equipos llegan con la configuración inicial incluida, listos para trabajar.</p>",
+            "show_button": false,
+            "button_label": "Learn More",
+            "button_link": "",
+            "button_style": "simple"
+          }
+        },
+        "column_qyxXRL": {
+          "type": "column",
+          "settings": {
+            "icon": "none",
+            "icon_color_scheme": "background-3",
+            "icon_fill_type": "gradient",
+            "image": "shopify://shop_images/04_3534f704-9079-4883-a98e-c37c038ac204.svg",
+            "enable_link": false,
+            "link": "",
+            "heading": "Soporte continuo",
+            "text": "<p>Cobertura, soporte corporativo y acompañamiento durante todo el contrato.</p>",
+            "show_button": false,
+            "button_label": "Learn More",
+            "button_link": "",
+            "button_style": "simple"
+          }
+        },
+        "column_nMywiQ": {
+          "type": "column",
+          "settings": {
+            "icon": "none",
+            "icon_color_scheme": "background-3",
+            "icon_fill_type": "gradient",
+            "image": "shopify://shop_images/icono-billetera.svg",
+            "enable_link": false,
+            "link": "",
+            "heading": "$0",
+            "text": "<p>de pago inicial </p>",
+            "show_button": false,
+            "button_label": "Learn More",
+            "button_link": "",
+            "button_style": "simple"
+          }
+        },
+        "column_XVUUPi": {
+          "type": "column",
+          "settings": {
+            "icon": "none",
+            "icon_color_scheme": "background-3",
+            "icon_fill_type": "gradient",
+            "image": "shopify://shop_images/icono-computer.svg",
+            "enable_link": false,
+            "link": "",
+            "heading": "100%",
+            "text": "<p>Proceso digital </p>",
+            "show_button": false,
+            "button_label": "Learn More",
+            "button_link": "",
+            "button_style": "simple"
+          }
+        },
+        "column_Yh8Wzy": {
+          "type": "column",
+          "settings": {
+            "icon": "none",
+            "icon_color_scheme": "background-3",
+            "icon_fill_type": "gradient",
+            "image": "shopify://shop_images/icono-calendar.svg",
+            "enable_link": false,
+            "link": "",
+            "heading": "Cuota fija",
+            "text": "<p>Cuota mensual fija en pesos</p>",
+            "show_button": false,
+            "button_label": "Learn More",
+            "button_link": "",
+            "button_style": "simple"
+          }
+        },
+        "column_VphPhj": {
+          "type": "column",
+          "settings": {
+            "icon": "none",
+            "icon_color_scheme": "background-3",
+            "icon_fill_type": "gradient",
+            "image": "shopify://shop_images/icono-soporte.svg",
+            "enable_link": false,
+            "link": "",
+            "heading": "24/7",
+            "text": "<p>Soporte corporativo</p>",
+            "show_button": false,
+            "button_label": "Learn More",
+            "button_link": "",
+            "button_style": "simple"
+          }
+        }
+      },
+      "block_order": [
+        "column_Xqzxd9",
+        "column_xFpWpj",
+        "column_Vy3GMB",
+        "column_qyxXRL",
+        "column_nMywiQ",
+        "column_XVUUPi",
+        "column_Yh8Wzy",
+        "column_VphPhj"
+      ],
+      "custom_css": [
+        "h2 {background: linear-gradient(91deg, #fff 14.38%, #07abf8 93.41%); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent;}",
+        ".multicolumn-card:nth-last-child(n + 5) .multicolumn-card__image-wrapper.multicolumn-card__image-wrapper--image {margin-bottom: 80px; width: 63px !important;}",
+        ".multicolumn-card:nth-last-child(-n + 4) img {width: 24px;}",
+        ".multicolumn-card__image-wrapper img {object-fit: contain !important;}",
+        ".titles--center {max-width: 90rem;}"
+      ],
+      "name": "t:sections.multicolumn.name",
+      "settings": {
+        "section_type": "solid",
+        "color_scheme": "scheme-39e5d4a7-e422-4a30-b12c-b2a059c9acee",
+        "enable_border": false,
+        "border_full": false,
+        "multicolumn_to_show": 4,
+        "content_horizontal_alignment": "left",
+        "content_vertical_alignment": "top",
+        "gap": "large",
+        "enable_mobile_overflow_slider": false,
+        "subheading": "Cómo funciona",
+        "subheading_style": "subtitle",
+        "subheading_icon": "circle",
+        "heading": "Protección integral para que tu operación no se detenga",
+        "heading_size": "h2",
+        "heading_level": "h2",
+        "heading_line": "simple",
+        "line_color": "#1566e0",
+        "word_break": false,
+        "heading_animation": "none",
+        "word_break_an": false,
+        "text": "<p>Una implementación rápida y acompañamiento desde el primer día, para que tu equipo empiece <br/>a producir de inmediato. </p>",
+        "text_align": "center",
+        "icon_size": "recommended",
+        "box_shadow": true,
+        "icon_style": "colored",
+        "image_width": "medium",
+        "image_ratio": "square",
+        "object_fit": "cover",
+        "card_heading_size": "h4",
+        "padding_top": "xl",
+        "padding_bottom": "xl",
+        "margin_top": "no-indent",
+        "margin_bottom": "no-indent"
+      }
+    },
+    "collapsible_content_3TzhGG": {
+      "type": "collapsible-content",
+      "blocks": {
+        "accordion_xLJNAp": {
+          "type": "accordion",
+          "settings": {
+            "question": "¿Qué es el arriendo operativo?",
+            "answer": "<p>Es una solución que permite a tu empresa acceder a equipos Apple mediante una cuota mensual fija, sin necesidad de realizar una compra inicial. Así puedes incorporar tecnología a tu operación sin inmovilizar capital.</p>",
+            "opened": true
+          }
+        },
+        "accordion_a7pCWd": {
+          "type": "accordion",
+          "settings": {
+            "question": "¿Qué equipos puedo arrendar?",
+            "answer": "<p>Puedes arrendar distintos dispositivos Apple para empresa, como Mac, iPhone y iPad, según disponibilidad, perfil de uso y condiciones comerciales.</p>",
+            "opened": false
+          }
+        },
+        "accordion_Md9fk7": {
+          "type": "accordion",
+          "settings": {
+            "question": "¿Se necesita pagar pie o cuota inicial?",
+            "answer": "<p>No. Una de las principales ventajas del arriendo operativo es que no requiere pago inicial, lo que facilita la incorporación de equipos sin un desembolso importante al comienzo.</p>",
+            "opened": false
+          }
+        },
+        "accordion_hUBzPe": {
+          "type": "accordion",
+          "settings": {
+            "question": "¿La cuota cambia durante el contrato?",
+            "answer": "<p>No. La cuota mensual se mantiene fija en pesos durante toda la vigencia del contrato, lo que permite planificar mejor el presupuesto de tu empresa.</p>",
+            "opened": false
+          }
+        },
+        "accordion_jYUyKf": {
+          "type": "accordion",
+          "settings": {
+            "question": "¿El arriendo operativo afecta la capacidad crediticia de mi empresa?",
+            "answer": "<p>En general, este modelo permite acceder a tecnología sin utilizar directamente líneas de crédito destinadas a otros proyectos. De todos modos, la evaluación final dependerá de las condiciones de aprobación y del perfil de cada empresa.</p>",
+            "opened": false
+          }
+        },
+        "accordion_apF6d9": {
+          "type": "accordion",
+          "settings": {
+            "question": "¿Qué beneficios tiene frente a comprar los equipos?",
+            "answer": "<p>El arriendo operativo permite evitar una inversión inicial alta, mantener gastos mensuales predecibles, acceder a renovación tecnológica y simplificar la gestión financiera de la empresa.</p>",
+            "opened": false
+          }
+        },
+        "accordion_gq4FgW": {
+          "type": "accordion",
+          "settings": {
+            "question": "¿Tiene beneficios tributarios?",
+            "answer": "<p>Las cuotas pueden contabilizarse como gasto operativo, lo que puede representar una ventaja tributaria para la empresa. Esto debe ser revisado según la situación contable y tributaria de cada cliente.</p>",
+            "opened": false
+          }
+        },
+        "accordion_ajViiY": {
+          "type": "accordion",
+          "settings": {
+            "question": "¿Qué pasa al terminar el contrato?",
+            "answer": "<p>Al finalizar el plazo, tu empresa puede evaluar opciones de renovación para seguir operando con equipos más actualizados, según las condiciones vigentes al cierre del contrato.</p>",
+            "opened": false
+          }
+        },
+        "accordion_9EwE9L": {
+          "type": "accordion",
+          "settings": {
+            "question": "¿Los equipos incluyen cobertura o protección?",
+            "answer": "<p>Sí, el modelo puede incluir cobertura y respaldo para proteger los equipos durante la vigencia del contrato, según el plan contratado y las condiciones aplicables.</p>",
+            "opened": false
+          }
+        },
+        "accordion_x8xMX9": {
+          "type": "accordion",
+          "settings": {
+            "question": "¿Incluye soporte técnico?",
+            "answer": "<p>Sí. Además de la entrega de los equipos, MacOnline Pro puede acompañar la implementación con soporte técnico y apoyo especializado para empresas.</p>",
+            "opened": false
+          }
+        },
+        "accordion_gt93g4": {
+          "type": "accordion",
+          "settings": {
+            "question": "¿Los equipos se entregan configurados?",
+            "answer": "<p>Sí. Una vez aprobado el contrato, los dispositivos pueden entregarse con una configuración inicial base para facilitar una puesta en marcha más rápida. Si tu empresa requiere configuraciones especiales o administración avanzada, esos servicios se cotizan por separado.</p>",
+            "opened": false
+          }
+        },
+        "accordion_GhN9rY": {
+          "type": "accordion",
+          "settings": {
+            "question": "¿Cómo es el proceso de contratación?",
+            "answer": "<p>El proceso es <strong>ágil y 100% electrónico</strong>. Desde la evaluación hasta la firma, todo puede gestionarse de forma digital para simplificar la contratación.</p>",
+            "opened": false
+          }
+        },
+        "accordion_86cCdU": {
+          "type": "accordion",
+          "settings": {
+            "question": "¿Puedo cotizar una solución a la medida de mi empresa?",
+            "answer": "<p>Sí. Podemos ayudarte a cotizar una propuesta según la cantidad de equipos, tipo de dispositivo, plazo y necesidades de tu operación.</p>",
+            "opened": false
+          }
+        }
+      },
+      "block_order": [
+        "accordion_xLJNAp",
+        "accordion_a7pCWd",
+        "accordion_Md9fk7",
+        "accordion_hUBzPe",
+        "accordion_jYUyKf",
+        "accordion_apF6d9",
+        "accordion_gq4FgW",
+        "accordion_ajViiY",
+        "accordion_9EwE9L",
+        "accordion_x8xMX9",
+        "accordion_gt93g4",
+        "accordion_GhN9rY",
+        "accordion_86cCdU"
+      ],
+      "custom_css": [
+        ".collapsible-content.background {background-image: url(https://cdn.shopify.com/s/files/1/0731/0757/0884/files/bg-fondo-2-sombra.webp?v=1785360364); background-repeat: no-repeat; background-position: center; background-size: 100%; background-attachment: local;}",
+        "h2 {font-weight: 700;}",
+        "h3 {font-weight: 600; font-size: 150% !important;}",
+        "p {font-size: 120%; opacity: 0.6;}"
+      ],
+      "name": "t:sections.collapsible-content.name",
+      "settings": {
+        "layout": "background",
+        "color_scheme": "scheme-39e5d4a7-e422-4a30-b12c-b2a059c9acee",
+        "enable_border": false,
+        "border_full": false,
+        "subheading": "",
+        "subheading_style": "subtitle",
+        "subheading_icon": "none",
+        "heading": "Resolvemos tus dudas sobre MacOnline",
+        "heading_size": "h2",
+        "heading_level": "h2",
+        "heading_line": "none",
+        "line_color": "#1566e0",
+        "word_break": false,
+        "heading_animation": "none",
+        "word_break_an": false,
+        "text": "",
+        "text_align": "center",
+        "row_color_scheme": "scheme-cf7617bd-cf5d-43c2-b151-2d92b8b69cd6",
+        "padding_top": "l",
+        "padding_bottom": "l",
+        "margin_top": "no-indent",
+        "margin_bottom": "no-indent"
+      }
+    },
+    "animated_image_collage_xhDnX7": {
+      "type": "animated-image-collage",
+      "blocks": {
+        "column_U8yg4J": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/bg-fondo-rental-1_7b23a22c-7495-4282-b2f9-30e39e1443df.webp",
+            "image_width": 420
+          }
+        },
+        "column_4zjLxQ": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/bg-fondo-rental-2.webp",
+            "image_width": 420
+          }
+        },
+        "column_bY6F69": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/bg-fondo-rental-3.webp",
+            "image_width": 420
+          }
+        },
+        "column_RqFiFr": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/bg-fondo-rental-4.webp",
+            "image_width": 420
+          }
+        },
+        "column_Ve3DQU": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/bg-fondo-rental-5.webp",
+            "image_width": 420
+          }
+        },
+        "column_JgtUYN": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/bg-fondo-rental-6.webp",
+            "image_width": 420
+          }
+        },
+        "column_qC7pwr": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/bg-fondo-rental-2.webp",
+            "image_width": 420
+          }
+        },
+        "column_HkGRtR": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/bg-fondo-rental-8.webp",
+            "image_width": 420
+          }
+        },
+        "column_Qywyej": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/bg-fondo-rental-2.webp",
+            "image_width": 420
+          }
+        },
+        "column_U4fyzN": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/bg-fondo-rental-9.webp",
+            "image_width": 420
+          }
+        }
+      },
+      "block_order": [
+        "column_U8yg4J",
+        "column_4zjLxQ",
+        "column_bY6F69",
+        "column_RqFiFr",
+        "column_Ve3DQU",
+        "column_JgtUYN",
+        "column_qC7pwr",
+        "column_HkGRtR",
+        "column_Qywyej",
+        "column_U4fyzN"
+      ],
+      "custom_css": [
+        "h2 {background: linear-gradient(91deg, #fff 14.38%, #07abf8 93.41%); background-clip: text; font-weight: 700; -webkit-background-clip: text; -webkit-text-fill-color: transparent;}",
+        ".aic--background:before {background: linear-gradient( 180deg, #05070f 0%, rgba(5, 7, 15, 0.53) 53%, #05070f 100% ); opacity: 1;}"
+      ],
+      "name": "t:sections.animated-image-collage.name",
+      "settings": {
+        "section_type": "background",
+        "color_scheme": "scheme-39e5d4a7-e422-4a30-b12c-b2a059c9acee",
+        "header_overlay": false,
+        "header_transparent": false,
+        "column_to_show": 3,
+        "opacity_overlay": 0.3,
+        "full_width": true,
+        "icon": "none",
+        "icon_color_scheme": "",
+        "icon_style": "contrast",
+        "icon_fill_type": "gradient",
+        "icon_size": "recommended",
+        "box_shadow": true,
+        "subheading": "",
+        "subheading_style": "subtitle subtitle--secondary",
+        "subheading_icon": "none",
+        "heading": "Una solución pensada para empresas que quieren crecer",
+        "heading_size": "h1",
+        "heading_level": "h2",
+        "heading_line": "simple",
+        "line_color": "#1566e0",
+        "word_break": false,
+        "heading_animation": "none",
+        "word_break_an": true,
+        "text": "El arriendo operativo de MacOnline Pro combina acceso a tecnología Apple, previsibilidad financiera, cobertura y soporte, en un modelo diseñado para empresas que buscan equiparse mejor sin descapitalizarse.",
+        "enable_subscribe": false,
+        "button_label_subscribe": "Agendar Demo",
+        "color_scheme_subscribe": "background-1",
+        "enable_box_shadow": true,
+        "button_style_subscribe": "primary",
+        "show_button": true,
+        "button_label": "Cotiza tu arriendo operativo",
+        "button_link": "#",
+        "button_style": "primary",
+        "show_button_2": false,
+        "button_label_2": "",
+        "button_link_2": "",
+        "button_style_2": "simple",
+        "padding_top": "m",
+        "padding_bottom": "m",
+        "margin_top": "no-indent",
+        "margin_bottom": "no-indent"
+      }
+    },
+    "simulador_arriendo_CJ7iY8": {
+      "type": "simulador-arriendo",
+      "custom_css": [],
+      "name": "Simulador Arriendo",
+      "settings": {}
+    }
+  },
+  "order": [
+    "main",
+    "hero_PcXWG3",
+    "rich_text_8nXHDw",
+    "slideshow_ncn8DH",
+    "slideshow_LKwURH",
+    "steps_ezybHY",
+    "multicolumn_gxJp4A",
+    "slideshow_jaXkq7",
+    "image_with_text_Ya4ABJ",
+    "multicolumn_nqMyex",
+    "collapsible_content_3TzhGG",
+    "animated_image_collage_xhDnX7",
+    "simulador_arriendo_CJ7iY8"
+  ]
+}

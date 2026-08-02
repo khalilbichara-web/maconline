@@ -1,0 +1,113 @@
+.rental-closing {
+  align-items: center;
+  background: #011624;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  min-height: 56rem;
+  overflow: hidden;
+  padding: 6.4rem 2.4rem;
+  position: relative;
+}
+
+.rental-closing__collage {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(3, minmax(15rem, 1fr));
+  inset: -22rem 2rem;
+  opacity: 0.48;
+  pointer-events: none;
+  position: absolute;
+  transform: rotate(-3deg);
+}
+
+.rental-closing__tile {
+  background: #123142;
+  border-radius: 2.4rem;
+  min-height: 22rem;
+  overflow: hidden;
+}
+
+.rental-closing__tile:nth-child(3n + 1) {
+  transform: translateY(11rem);
+}
+
+.rental-closing__tile:nth-child(3n) {
+  transform: translateY(-8rem);
+}
+
+.rental-closing__image {
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+
+.rental-closing__image--fallback {
+  object-fit: contain;
+  padding: 2.4rem;
+}
+
+.rental-closing__shade {
+  background: rgba(1, 22, 36, 0.68);
+  inset: 0;
+  position: absolute;
+}
+
+.rental-closing__content {
+  max-width: 64rem;
+  position: relative;
+  text-align: center;
+  z-index: 1;
+}
+
+.rental-closing__heading,
+.rental-closing__heading p {
+  font-size: clamp(3.2rem, 4vw, 4.8rem);
+  font-weight: 700;
+  line-height: 1.08;
+  margin: 0;
+}
+
+.rental-closing__description,
+.rental-closing__description p {
+  font-size: 1.6rem;
+  line-height: 1.5;
+  margin: 2rem 0 0;
+}
+
+.rental-closing__button {
+  align-items: center;
+  background: #2b92c3;
+  border-radius: 999px;
+  color: #fff;
+  display: inline-flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 2.8rem;
+  min-height: 4.8rem;
+  padding: 1.2rem 2.4rem;
+  text-decoration: none;
+}
+
+.rental-closing__button:hover {
+  background: #007cb7;
+  color: #fff;
+}
+
+@media screen and (max-width: 749px) {
+  .rental-closing {
+    min-height: 48rem;
+    padding: 5.6rem 2rem;
+  }
+
+  .rental-closing__collage {
+    gap: 1rem;
+    grid-template-columns: repeat(2, minmax(12rem, 1fr));
+    inset: -14rem -8rem;
+  }
+
+  .rental-closing__tile {
+    border-radius: 1.6rem;
+    min-height: 16rem;
+  }
+}

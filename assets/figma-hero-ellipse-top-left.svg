@@ -1,0 +1,14 @@
+<svg width="1115.2" height="1086.2" viewBox="0 0 1115.2 1086.2" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g filter="url(#blur)">
+    <ellipse cx="557.6" cy="543.1" rx="271" ry="264" fill="url(#gradient)"/>
+  </g>
+  <defs>
+    <filter id="blur" x="0" y="0" width="1115.2" height="1086.2" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="139.55"/>
+    </filter>
+    <radialGradient id="gradient" cx="0" cy="0" r="1" gradientTransform="matrix(-252.36 -252.01 -225.85 215.18 593.2 596.4)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#00405E"/>
+      <stop offset="0.920554" stop-color="#101B38" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+</svg>

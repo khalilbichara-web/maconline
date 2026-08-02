@@ -1,0 +1,421 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": "no-indent",
+        "padding_bottom": "m"
+      }
+    },
+    "animated_image_collage_pMaBwE": {
+      "type": "animated-image-collage",
+      "custom_css": [
+        "h2.title--simple {background: linear-gradient(91deg, #fff 14.38%, #07abf8 93.41%); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent;}",
+        ".aic.background {background-image: url(https://cdn.shopify.com/s/files/1/0731/0757/0884/files/bg-fondo-centro.webp?v=1785345733) !important; background-repeat: no-repeat; background-position: center; background-size: contain; background-attachment: local;}",
+        ".aic__subtitle.subtitle {background-color: transparent; border: 1px solid; padding: 10px 24px;}"
+      ],
+      "name": "t:sections.animated-image-collage.name",
+      "settings": {
+        "section_type": "background",
+        "color_scheme": "scheme-39e5d4a7-e422-4a30-b12c-b2a059c9acee",
+        "header_overlay": false,
+        "header_transparent": false,
+        "column_to_show": 3,
+        "opacity_overlay": 0.3,
+        "full_width": true,
+        "icon": "none",
+        "icon_color_scheme": "scheme-39e5d4a7-e422-4a30-b12c-b2a059c9acee",
+        "icon_style": "contrast",
+        "icon_fill_type": "gradient",
+        "icon_size": "recommended",
+        "box_shadow": true,
+        "subheading": "Apple Business Manager",
+        "subheading_style": "subtitle subtitle--secondary",
+        "subheading_icon": "none",
+        "heading": "Maneja la seguridad de tus equipos Apple con MDM (Zero-Touch)",
+        "heading_size": "h1",
+        "heading_level": "h2",
+        "heading_line": "simple",
+        "line_color": "#1566e0",
+        "word_break": false,
+        "heading_animation": "none",
+        "word_break_an": false,
+        "text": "Aplica políticas de seguridad desde el primer encendido, protege datos corporativos, reduce riesgo operativo y asegura cumplimiento en iPhone, iPad y Mac desde un solo panel.",
+        "enable_subscribe": false,
+        "button_label_subscribe": "",
+        "color_scheme_subscribe": "",
+        "enable_box_shadow": true,
+        "button_style_subscribe": "primary",
+        "show_button": true,
+        "button_label": "Agendar un demo",
+        "button_link": "",
+        "button_style": "primary",
+        "show_button_2": true,
+        "button_label_2": "Hablar con un experto",
+        "button_link_2": "",
+        "button_style_2": "tertiary",
+        "padding_top": "m",
+        "padding_bottom": "xs",
+        "margin_top": "no-indent",
+        "margin_bottom": "no-indent"
+      }
+    },
+    "hero_39ETgw": {
+      "type": "hero",
+      "blocks": {
+        "subtitle_ghcVA6": {
+          "type": "subtitle",
+          "settings": {
+            "subheading": "seguridad mdm",
+            "subheading_style": "subtitle",
+            "subheading_icon": "circle"
+          }
+        },
+        "title_dQ7gkN": {
+          "type": "title",
+          "settings": {
+            "heading": "Tu organización crece.  El riesgo también.",
+            "heading_size": "h1",
+            "heading_level": "h2",
+            "heading_line": "simple",
+            "line_color": "#1566e0",
+            "word_break": false,
+            "heading_animation": "none",
+            "word_break_an": false
+          }
+        },
+        "description_JJ4m8h": {
+          "type": "description",
+          "settings": {
+            "description": "Un dispositivo sin políticas claras, sin cifrado o sin control de acceso puede transformarse en una brecha. \n\nEl MDM permite asegurar estándares mínimos, responder rápido ante incidentes (pérdida/robo), y sostener compliance sin depender de configuraciones manuales."
+          }
+        },
+        "buttons_jqUTYc": {
+          "type": "buttons",
+          "settings": {
+            "show_button_1": true,
+            "button_label_1": "Agendar demo",
+            "button_link_1": "",
+            "button_style_1": "primary",
+            "show_button_2": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_2": "simple"
+          }
+        }
+      },
+      "block_order": [
+        "subtitle_ghcVA6",
+        "title_dQ7gkN",
+        "description_JJ4m8h",
+        "buttons_jqUTYc"
+      ],
+      "custom_css": [
+        ".hero__subtitle.subtitle {border-width: 0; padding: 0;}",
+        "h2 {font-size: 245%; font-weight: 700;}",
+        ".hero {background-position: top center;}"
+      ],
+      "name": "t:sections.hero.name",
+      "settings": {
+        "layout": "horizontal",
+        "header_overlay": false,
+        "header_transparent": true,
+        "block_type": "plain",
+        "color_scheme": "",
+        "full_screen": true,
+        "image": "shopify://shop_images/Rectangle_2.png",
+        "show_video": false,
+        "overlay_opacity": 0,
+        "image_ratio": "1/1",
+        "object_fit": "contain",
+        "desktop_image_position": "after",
+        "mobile_image_position": "after",
+        "mobile_image_overlay": "overlay",
+        "horizontal_alignment": "center",
+        "vertical_alignment": "middle",
+        "padding_top": "m",
+        "padding_bottom": "m"
+      }
+    },
+    "icon_cards_PhdCr4": {
+      "type": "icon-cards",
+      "blocks": {
+        "card_KdygmT": {
+          "type": "card",
+          "settings": {
+            "icon_name": "solar_shield-check-outline.svg",
+            "heading_variant": "default",
+            "card_label": "",
+            "card_large_text": "",
+            "card_subtitle": "",
+            "heading": "Asignación a MDM",
+            "description": "Cada Mac queda asociada al servidor MDM definido por tu organización."
+          }
+        },
+        "card_hcMYJF": {
+          "type": "card",
+          "settings": {
+            "icon_name": "solar_graph-down-new-outline.svg",
+            "heading_variant": "default",
+            "card_label": "",
+            "card_large_text": "",
+            "card_subtitle": "",
+            "heading": "Enrolamiento automatizado",
+            "description": "Despliegues consistentes sin preparación uno a uno."
+          }
+        },
+        "card_9RRj4f": {
+          "type": "card",
+          "settings": {
+            "icon_name": "solar_clock-circle-outline.svg",
+            "heading_variant": "default",
+            "card_label": "",
+            "card_large_text": "",
+            "card_subtitle": "",
+            "heading": "Reasignación y recambio",
+            "description": "Al borrar/reinstalar, el equipo vuelve a tu flujo corporativo."
+          }
+        },
+        "card_btPtyV": {
+          "type": "card",
+          "settings": {
+            "icon_name": "solar_chart-outline.svg",
+            "heading_variant": "default",
+            "card_label": "",
+            "card_large_text": "",
+            "card_subtitle": "",
+            "heading": "Inventario centralizado",
+            "description": "visibilidad por número de serie, compra, estado y asignación."
+          }
+        }
+      },
+      "block_order": [
+        "card_KdygmT",
+        "card_hcMYJF",
+        "card_9RRj4f",
+        "card_btPtyV"
+      ],
+      "name": "Icon Cards — El Problema (4 col)",
+      "settings": {
+        "columns": "4",
+        "header_alignment": "left",
+        "subheading": "cómo funciona",
+        "heading": "<p>Qué habilita Apple Business Manager para Mac<br/><br/></p>",
+        "description": "<p>Lo que habilitas al tener tus Mac “propiedad empresa\".<br/></p>"
+      }
+    },
+    "collapsible_content_fqKbaJ": {
+      "type": "collapsible-content",
+      "blocks": {
+        "accordion_LcAbjm": {
+          "type": "accordion",
+          "settings": {
+            "question": "Here can be a commonly asked question about your product or service.",
+            "answer": "<p>Here can be a brief but clear response to the question, giving customers a quick answer without unnecessary details.</p>",
+            "opened": true
+          }
+        },
+        "accordion_YCbkq3": {
+          "type": "accordion",
+          "settings": {
+            "question": "Here can be a commonly asked question about your product or service.",
+            "answer": "<p>Here can be a brief but clear response to the question, giving customers a quick answer without unnecessary details.</p>",
+            "opened": false
+          }
+        },
+        "accordion_zjxBcC": {
+          "type": "accordion",
+          "settings": {
+            "question": "Here can be a commonly asked question about your product or service.",
+            "answer": "<p>Here can be a brief but clear response to the question, giving customers a quick answer without unnecessary details.</p>",
+            "opened": false
+          }
+        }
+      },
+      "block_order": [
+        "accordion_LcAbjm",
+        "accordion_YCbkq3",
+        "accordion_zjxBcC"
+      ],
+      "name": "t:sections.collapsible-content.name",
+      "settings": {
+        "layout": "border",
+        "color_scheme": "",
+        "enable_border": false,
+        "border_full": false,
+        "subheading": "Brand introduction",
+        "subheading_style": "subtitle",
+        "subheading_icon": "none",
+        "heading": "Your FAQs title",
+        "heading_size": "h2",
+        "heading_level": "h2",
+        "heading_line": "simple",
+        "line_color": "#1566E0",
+        "word_break": false,
+        "heading_animation": "none",
+        "word_break_an": false,
+        "text": "Easily explore FAQs, product details, or general info with collapsible content.",
+        "text_align": "center",
+        "row_color_scheme": "",
+        "padding_top": "l",
+        "padding_bottom": "l",
+        "margin_top": "no-indent",
+        "margin_bottom": "no-indent"
+      }
+    },
+    "animated_image_collage_9fftCT": {
+      "type": "animated-image-collage",
+      "blocks": {
+        "column_ptim8i": {
+          "type": "column",
+          "settings": {
+            "image_width": 420
+          }
+        },
+        "column_HkGd6W": {
+          "type": "column",
+          "settings": {
+            "image_width": 420
+          }
+        },
+        "column_PtkbxC": {
+          "type": "column",
+          "settings": {
+            "image_width": 420
+          }
+        },
+        "column_DUwaee": {
+          "type": "column",
+          "settings": {
+            "image_width": 420
+          }
+        },
+        "column_Jgfj8w": {
+          "type": "column",
+          "settings": {
+            "image_width": 420
+          }
+        },
+        "column_fr4m77": {
+          "type": "column",
+          "settings": {
+            "image_width": 420
+          }
+        },
+        "column_QqMJ9J": {
+          "type": "column",
+          "settings": {
+            "image_width": 420
+          }
+        },
+        "column_nd8bYd": {
+          "type": "column",
+          "settings": {
+            "image_width": 420
+          }
+        },
+        "column_h9EpBG": {
+          "type": "column",
+          "settings": {
+            "image_width": 420
+          }
+        },
+        "column_Pgktec": {
+          "type": "column",
+          "settings": {
+            "image_width": 420
+          }
+        },
+        "column_GExaWn": {
+          "type": "column",
+          "settings": {
+            "image_width": 420
+          }
+        },
+        "column_97YTrG": {
+          "type": "column",
+          "settings": {
+            "image_width": 420
+          }
+        }
+      },
+      "block_order": [
+        "column_ptim8i",
+        "column_HkGd6W",
+        "column_PtkbxC",
+        "column_DUwaee",
+        "column_Jgfj8w",
+        "column_fr4m77",
+        "column_QqMJ9J",
+        "column_nd8bYd",
+        "column_h9EpBG",
+        "column_Pgktec",
+        "column_GExaWn",
+        "column_97YTrG"
+      ],
+      "name": "t:sections.animated-image-collage.name",
+      "settings": {
+        "section_type": "background",
+        "color_scheme": "",
+        "header_overlay": false,
+        "header_transparent": false,
+        "column_to_show": 3,
+        "opacity_overlay": 0.3,
+        "full_width": true,
+        "icon": "none",
+        "icon_color_scheme": "",
+        "icon_style": "contrast",
+        "icon_fill_type": "gradient",
+        "icon_size": "recommended",
+        "box_shadow": true,
+        "subheading": "",
+        "subheading_style": "subtitle subtitle--secondary",
+        "subheading_icon": "none",
+        "heading": "Here can be a short introduction to this section",
+        "heading_size": "h1",
+        "heading_level": "h2",
+        "heading_line": "simple",
+        "line_color": "#1566E0",
+        "word_break": false,
+        "heading_animation": "none",
+        "word_break_an": false,
+        "text": "Use this space to provide context for the images, helping visitors understand the purpose of each featured category or product.",
+        "enable_subscribe": false,
+        "button_label_subscribe": "Shop Now",
+        "color_scheme_subscribe": "",
+        "enable_box_shadow": true,
+        "button_style_subscribe": "primary",
+        "show_button": true,
+        "button_label": "Shop Now",
+        "button_link": "",
+        "button_style": "primary",
+        "show_button_2": true,
+        "button_label_2": "Learn more",
+        "button_link_2": "",
+        "button_style_2": "simple",
+        "padding_top": "m",
+        "padding_bottom": "m",
+        "margin_top": "no-indent",
+        "margin_bottom": "no-indent"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "animated_image_collage_pMaBwE",
+    "hero_39ETgw",
+    "icon_cards_PhdCr4",
+    "collapsible_content_fqKbaJ",
+    "animated_image_collage_9fftCT"
+  ]
+}

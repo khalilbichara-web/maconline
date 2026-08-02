@@ -1,0 +1,857 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "hero": {
+      "type": "hero",
+      "blocks": {
+        "subtitle_x6fy9W": {
+          "type": "subtitle",
+          "settings": {
+            "subheading": "Rental operativo para empresas",
+            "subheading_style": "subtitle subtitle--secondary",
+            "subheading_icon": "none"
+          }
+        },
+        "block_2": {
+          "type": "title",
+          "settings": {
+            "heading": "Equipa tu empresa con Apple, sin grandes inversiones y con dispositivos listos para trabajar",
+            "heading_size": "h1",
+            "heading_level": "h2",
+            "heading_line": "simple",
+            "line_color": "#1566e0",
+            "word_break": false,
+            "heading_animation": "rolling",
+            "word_break_an": false
+          }
+        },
+        "block_3": {
+          "type": "description",
+          "settings": {
+            "description": "Accede a dispositivos Apple mediante Rental Operativo y simplifica su implementación con Zero Touch: equipos configurados, protegidos y administrados desde el primer encendido."
+          }
+        },
+        "block_4": {
+          "type": "buttons",
+          "settings": {
+            "show_button_1": true,
+            "button_label_1": "Solicita una propuesta",
+            "button_link_1": "",
+            "button_style_1": "primary",
+            "show_button_2": true,
+            "button_label_2": "Conoce Zero Touch",
+            "button_link_2": "shopify://pages/que-es-zero-touch",
+            "button_style_2": "tertiary"
+          }
+        },
+        "02d58f5b-81d2-4330-9065-4e77f2a2f56f": {
+          "type": "users",
+          "settings": {
+            "user_text": ""
+          }
+        }
+      },
+      "block_order": [
+        "subtitle_x6fy9W",
+        "block_2",
+        "block_3",
+        "block_4",
+        "02d58f5b-81d2-4330-9065-4e77f2a2f56f"
+      ],
+      "custom_css": [
+        ".hero__subtitle {background-color: transparent; border: 1px solid; padding: 10px 24px;}",
+        "h2 {background: linear-gradient(91deg, #fff 14.38%, #07abf8 93.41%); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent;}",
+        ".hero__description {color: #fff; font-size: 150%;}"
+      ],
+      "settings": {
+        "layout": "horizontal",
+        "header_overlay": false,
+        "header_transparent": false,
+        "block_type": "plain",
+        "color_scheme": "scheme-39e5d4a7-e422-4a30-b12c-b2a059c9acee",
+        "full_screen": false,
+        "image": "shopify://shop_images/bg-zero-touch.webp",
+        "show_video": false,
+        "overlay_opacity": 0,
+        "image_ratio": "1/1",
+        "object_fit": "contain",
+        "desktop_image_position": "after",
+        "mobile_image_position": "after",
+        "mobile_image_overlay": "overlay",
+        "horizontal_alignment": "center",
+        "vertical_alignment": "middle",
+        "padding_top": "m",
+        "padding_bottom": "m"
+      }
+    },
+    "icon_cards_Ube3Cz": {
+      "type": "icon-cards",
+      "blocks": {
+        "card_eNgPMF": {
+          "type": "card",
+          "settings": {
+            "icon_name": "solar_shield-check-outline.svg",
+            "heading_variant": "number_large",
+            "card_label": "",
+            "card_large_text": "",
+            "card_subtitle": "",
+            "heading": "Alta inversión inicial",
+            "description": "Renovar equipos requiere un importante desembolso de capital que impacta el flujo de caja y limita otras inversiones."
+          }
+        },
+        "card_fAYjQa": {
+          "type": "card",
+          "settings": {
+            "icon_name": "solar_graph-down-new-outline.svg",
+            "heading_variant": "number_large",
+            "card_label": "",
+            "card_large_text": "",
+            "card_subtitle": "",
+            "heading": "Activos que pierden valor",
+            "description": "Los dispositivos comienzan a depreciarse desde el primer día, reduciendo el valor de la inversión realizada."
+          }
+        },
+        "card_C9UHtC": {
+          "type": "card",
+          "settings": {
+            "icon_name": "solar_clock-circle-outline.svg",
+            "heading_variant": "number_large",
+            "card_label": "",
+            "card_large_text": "",
+            "card_subtitle": "",
+            "heading": "Implementación y soporte manual",
+            "description": "El área de TI debe configurar, entregar y administrar cada equipo, aumentando la carga operativa y los tiempos de despliegue."
+          }
+        },
+        "card_U8qnTm": {
+          "type": "card",
+          "settings": {
+            "icon_name": "solar_chart-outline.svg",
+            "heading_variant": "default",
+            "card_label": "",
+            "card_large_text": "",
+            "card_subtitle": "",
+            "heading": "Escalar se vuelve más complejo",
+            "description": "Cada nuevo colaborador implica más compras, configuraciones, inventario y soporte, dificultando el crecimiento de la organización."
+          }
+        }
+      },
+      "block_order": [
+        "card_eNgPMF",
+        "card_fAYjQa",
+        "card_C9UHtC",
+        "card_U8qnTm"
+      ],
+      "name": "Icon Cards — El Problema (4 col)",
+      "settings": {
+        "columns": "4",
+        "header_alignment": "center",
+        "subheading": "el problema",
+        "heading": "<p>La tecnología debería impulsar el crecimiento de tu empresa,</p><p>no convertirse en una carga operativa.</p>",
+        "description": "<p>Cada renovación tecnológica implica decisiones financieras, implementación, soporte, seguridad y administración. Un modelo tradicional hace que estos procesos consuman tiempo, presupuesto y recursos que podrían destinarse al crecimiento del negocio.</p>"
+      }
+    },
+    "split_features_zwiFDQ": {
+      "type": "split-features",
+      "blocks": {
+        "badge_aLVWtB": {
+          "type": "badge",
+          "settings": {
+            "icon_name": "solar_shield-check-outline.svg",
+            "label": "No compromete capacidad crediticia"
+          }
+        },
+        "badge_kEqcPq": {
+          "type": "badge",
+          "settings": {
+            "icon_name": "solar_chart-outline.svg",
+            "label": "Beneficio tributario"
+          }
+        },
+        "badge_9yzyLX": {
+          "type": "badge",
+          "settings": {
+            "icon_name": "solar_graph-down-new-outline.svg",
+            "label": "Sin pago inicial"
+          }
+        },
+        "badge_GCAHdJ": {
+          "type": "badge",
+          "settings": {
+            "icon_name": "solar_clock-circle-outline.svg",
+            "label": "Cuota mensual fija en pesos"
+          }
+        },
+        "badge_7Fryr7": {
+          "type": "badge",
+          "settings": {
+            "icon_name": "solar_shield-check-outline.svg",
+            "label": "Tecnología actualizada"
+          }
+        },
+        "badge_6z8GbL": {
+          "type": "badge",
+          "settings": {
+            "icon_name": "solar_chart-outline.svg",
+            "label": "Protección integral"
+          }
+        },
+        "feature_6GP9UX": {
+          "type": "feature",
+          "settings": {
+            "icon_name": "solar_graph-down-new-outline.svg",
+            "heading": "Libera capital para crecer",
+            "description": "Evita grandes inversiones iniciales y destina recursos a iniciativas estratégicas."
+          }
+        },
+        "feature_nHTwgd": {
+          "type": "feature",
+          "settings": {
+            "icon_name": "solar_clock-circle-outline.svg",
+            "heading": "Renueva sin volver a comenzar",
+            "description": "Mantén una flota siempre vigente mediante ciclos de renovación planificados."
+          }
+        },
+        "feature_jcAWeD": {
+          "type": "feature",
+          "settings": {
+            "icon_name": "solar_chart-outline.svg",
+            "heading": "Costos predecibles",
+            "description": "Centraliza la inversión tecnológica en una cuota mensual simple de administrar."
+          }
+        },
+        "feature_gy7pG8": {
+          "type": "feature",
+          "settings": {
+            "icon_name": "solar_shield-check-outline.svg",
+            "heading": "Gestión durante todo el ciclo de vida",
+            "description": "Desde la entrega hasta la renovación, administramos cada etapa para reducir la carga operativa de tu organización."
+          }
+        }
+      },
+      "block_order": [
+        "badge_aLVWtB",
+        "badge_kEqcPq",
+        "badge_9yzyLX",
+        "badge_GCAHdJ",
+        "badge_7Fryr7",
+        "badge_6z8GbL",
+        "feature_6GP9UX",
+        "feature_nHTwgd",
+        "feature_jcAWeD",
+        "feature_gy7pG8"
+      ],
+      "name": "Split Features",
+      "settings": {
+        "color_scheme": "light",
+        "layout": "image_left",
+        "image": "shopify://shop_images/img_rental.png",
+        "subheading": "RENTAL OPERATIVO",
+        "heading": "Deja de comprar tecnología. Empieza a administrarla de forma inteligente",
+        "description": "<p>Transforma la adquisición de dispositivos Apple en un servicio integral que combina financiamiento, soporte, administración y renovación, permitiendo que tu empresa crezca con una infraestructura tecnológica siempre actualizada.</p>",
+        "show_button": true,
+        "button_label": "Explorar rental operativo",
+        "button_link": "",
+        "button_style": "primary"
+      }
+    },
+    "icon_cards_kFJjhr": {
+      "type": "icon-cards",
+      "blocks": {
+        "card_AJa4KC": {
+          "type": "card",
+          "settings": {
+            "icon_name": "",
+            "heading_variant": "default",
+            "card_label": "",
+            "card_large_text": "",
+            "card_subtitle": "Rental Operativo",
+            "heading": "Adquiere la tecnología que tu empresa necesita",
+            "description": "Accede a dispositivos Apple mediante un modelo flexible que elimina grandes inversiones iniciales y facilita la renovación tecnológica."
+          }
+        },
+        "card_twGniC": {
+          "type": "card",
+          "settings": {
+            "icon_name": "",
+            "heading_variant": "default",
+            "card_label": "",
+            "card_large_text": "",
+            "card_subtitle": "Zero Touch",
+            "heading": "Implementa dispositivos listos para trabajar",
+            "description": "Automatizamos la configuración y administración de cada equipo para que tus colaboradores comiencen a trabajar desde el primer encendido."
+          }
+        },
+        "card_EQUF6X": {
+          "type": "card",
+          "settings": {
+            "icon_name": "",
+            "heading_variant": "default",
+            "card_label": "",
+            "card_large_text": "",
+            "card_subtitle": "Soporte y servicio 360º",
+            "heading": "Administra y evoluciona tu infraestructura tecnológica",
+            "description": "Acompañamos toda la operación tecnológica mediante soporte especializado, administración, mantenimiento y planes de renovación continua."
+          }
+        }
+      },
+      "block_order": [
+        "card_AJa4KC",
+        "card_twGniC",
+        "card_EQUF6X"
+      ],
+      "name": "Icon Cards — La Solución (3 col)",
+      "settings": {
+        "columns": "3",
+        "header_alignment": "left",
+        "subheading": "la solución",
+        "heading": "<p>Un modelo flexible, predecible y sin fricciones operativas.</p>",
+        "description": "<p>Reducimos la inversión inicial, simplificamos la gestión técnica y financiera de tus dispositivos Apple para que tu foco esté 100% en hacer crecer tu negocio.</p>"
+      }
+    },
+    "split_features_MDnrDm": {
+      "type": "split-features",
+      "blocks": {
+        "feature_TYM9qx": {
+          "type": "feature",
+          "settings": {
+            "icon_name": "solar_graph-down-new-outline.svg",
+            "heading": "Implementación automática",
+            "description": "Las políticas corporativas se aplican automáticamente durante el proceso de activación."
+          }
+        },
+        "feature_eaiRUA": {
+          "type": "feature",
+          "settings": {
+            "icon_name": "solar_clock-circle-outline.svg",
+            "heading": "Renueva sin volver a comenzar",
+            "description": "Elimina tareas repetitivas y reduce los tiempos de configuración manual."
+          }
+        },
+        "feature_LzFwha": {
+          "type": "feature",
+          "settings": {
+            "icon_name": "solar_chart-outline.svg",
+            "heading": "Costos predecibles",
+            "description": "Centraliza la inversión tecnológica en una cuota mensual simple de administrar."
+          }
+        },
+        "feature_qQEzTx": {
+          "type": "feature",
+          "settings": {
+            "icon_name": "solar_shield-check-outline.svg",
+            "heading": "Escalabilidad",
+            "description": "Implementa decenas o cientos de dispositivos manteniendo una experiencia consistente para todos los colaboradores."
+          }
+        }
+      },
+      "block_order": [
+        "feature_TYM9qx",
+        "feature_eaiRUA",
+        "feature_LzFwha",
+        "feature_qQEzTx"
+      ],
+      "name": "Split Features",
+      "settings": {
+        "color_scheme": "light",
+        "layout": "image_right",
+        "image": "shopify://shop_images/Frame_59.png",
+        "subheading": "Zero Touch",
+        "heading": "La tecnología debería llegar lista para trabajar. No para ser configurada.",
+        "description": "<p>Automatiza la implementación de dispositivos Apple para que cada colaborador reciba un equipo configurado, protegido y completamente operativo desde el primer encendido, reduciendo tiempos de despliegue y la carga operativa del área TI</p>",
+        "show_button": true,
+        "button_label": "Explorar rental operativo",
+        "button_link": "",
+        "button_style": "primary"
+      }
+    },
+    "icon_cards_fXaKUn": {
+      "type": "icon-cards",
+      "blocks": {
+        "card_krEjpW": {
+          "type": "card",
+          "settings": {
+            "icon_name": "",
+            "heading_variant": "default",
+            "card_label": "01",
+            "card_large_text": "",
+            "card_subtitle": "",
+            "heading": "Diseñamos",
+            "description": "Entendemos las necesidades de tu empresa y definimos la mejor estrategia tecnológica"
+          }
+        },
+        "card_3Y9wfh": {
+          "type": "card",
+          "settings": {
+            "icon_name": "",
+            "heading_variant": "default",
+            "card_label": "02",
+            "card_large_text": "",
+            "card_subtitle": "",
+            "heading": "Equipos",
+            "description": "Accede a dispositivos Apple mediante Rental Operativo y soluciones financieras flexibles."
+          }
+        },
+        "card_iYARGB": {
+          "type": "card",
+          "settings": {
+            "icon_name": "",
+            "heading_variant": "default",
+            "card_label": "03",
+            "card_large_text": "",
+            "card_subtitle": "",
+            "heading": "Implementamos",
+            "description": "Cada equipo llega configurado, protegido y listo para trabajar gracias a Zero Touch, Apple Business Manager y MDM."
+          }
+        },
+        "card_MEaemx": {
+          "type": "card",
+          "settings": {
+            "icon_name": "",
+            "heading_variant": "default",
+            "card_label": "04",
+            "card_large_text": "",
+            "card_subtitle": "",
+            "heading": "Administramos",
+            "description": "Acompañamos toda la operación tecnológica mediante soporte, administración, monitoreo y servicios especializados."
+          }
+        },
+        "card_UdPib8": {
+          "type": "card",
+          "settings": {
+            "icon_name": "",
+            "heading_variant": "default",
+            "card_label": "05",
+            "card_large_text": "",
+            "card_subtitle": "",
+            "heading": "Evolucionamos",
+            "description": "Renovamos tu infraestructura tecnológica de forma continua para mantener a tu empresa siempre actualizada."
+          }
+        }
+      },
+      "block_order": [
+        "card_krEjpW",
+        "card_3Y9wfh",
+        "card_iYARGB",
+        "card_MEaemx",
+        "card_UdPib8"
+      ],
+      "name": "Icon Cards — El Problema (4 col)",
+      "settings": {
+        "columns": "5",
+        "header_alignment": "center",
+        "subheading": "representante oficial de apple en chile",
+        "heading": "<p>Un partner para todo el ciclo de vida de tu infraestructura tecnológica</p>",
+        "description": ""
+      }
+    },
+    "device_tabs_NMYyLT": {
+      "type": "slideshow",
+      "blocks": {
+        "slide_zkxq9m": {
+          "type": "slide",
+          "settings": {
+            "color_scheme": "scheme-39e5d4a7-e422-4a30-b12c-b2a059c9acee",
+            "icon": "computer",
+            "image": "shopify://shop_images/MacBook_Air_13-in_M5_Sky_Blue_PDP_1000x1000__CLES_1.png",
+            "overlay_opacity": 1,
+            "show_video": false,
+            "loop_video": false,
+            "heading": "Mac para trabajar sin límites",
+            "heading_size": "recommended",
+            "heading_level": "h3",
+            "description": "MacBook Pro, MacBook Air, iMac y Mac Studio para equipos de diseño, desarrollo, finanzas y operaciones\n<ul class=\"list-check\">\n<li>Configuración inicial lista para tu operación</li>\n<li>AppleCare y garantía extendida incluida</li>\n<li>Renovación a la última generación al término del contrato</li>\n<li>Soporte técnico corporativo</li>\n</ul>",
+            "tab_heading": "Mac",
+            "show_button": true,
+            "button_style": "primary",
+            "button_label": "Cotizar Mac",
+            "button_link": "",
+            "overlay_link": false
+          }
+        },
+        "slide_3wVdWn": {
+          "type": "slide",
+          "settings": {
+            "color_scheme": "scheme-39e5d4a7-e422-4a30-b12c-b2a059c9acee",
+            "icon": "laptop-1",
+            "image": "shopify://shop_images/MacBook_Air_13-in_M5_Sky_Blue_PDP_1000x1000__CLES_1_1.png",
+            "overlay_opacity": 1,
+            "show_video": false,
+            "loop_video": false,
+            "heading": "iPhone para movilidad y punto de venta",
+            "heading_size": "recommended",
+            "heading_level": "h3",
+            "description": "iPhone de última generación para ventas, logística y operaciones siempre conectados y protegidos\n<ul class=\"list-check\">\n<li>Equipos nuevos, listos para usar</li>\n<li>Cobertura frente a imprevistos incluida</li>\n<li>Gestión simple para flotas de dispositivos</li>\n<li>Renovación tecnológica al finalizar el contrato</li>\n</ul>",
+            "tab_heading": "iPhone",
+            "show_button": true,
+            "button_style": "primary",
+            "button_label": "Cotizar iPhone",
+            "button_link": "",
+            "overlay_link": false
+          }
+        },
+        "slide_Mt6x4a": {
+          "type": "slide",
+          "settings": {
+            "color_scheme": "scheme-39e5d4a7-e422-4a30-b12c-b2a059c9acee",
+            "icon": "laptop-2",
+            "image": "shopify://shop_images/MacBook_Air_13-in_M5_Sky_Blue_PDP_1000x1000__CLES_1_2.png",
+            "overlay_opacity": 1,
+            "show_video": false,
+            "loop_video": false,
+            "heading": "iPad para movilidad y punto de venta",
+            "heading_size": "recommended",
+            "heading_level": "h3",
+            "description": "iPad Pro y iPad Air para atención, terreno y puntos de venta, con la flexibilidad que tu operación necesita\n<ul class=\"list-check\">\n<li>Configuración y apps listas desde el día uno</li>\n<li>Protección integral y soporte incluidas</li>\n<li>Ideal para flotas y despliegue rápido</li>\n<li>Contratos flexible con renovación tecnológica</li>\n</ul>",
+            "tab_heading": "iPad",
+            "show_button": true,
+            "button_style": "primary",
+            "button_label": "Cotizar iPad",
+            "button_link": "",
+            "overlay_link": false
+          }
+        }
+      },
+      "block_order": [
+        "slide_zkxq9m",
+        "slide_3wVdWn",
+        "slide_Mt6x4a"
+      ],
+      "name": "t:sections.slideshow.presets.name",
+      "settings": {
+        "layout": "simple",
+        "header_overlay": true,
+        "full_width": false,
+        "color_scheme": "scheme-39e5d4a7-e422-4a30-b12c-b2a059c9acee",
+        "enable_border": false,
+        "border_full": false,
+        "subheading": "TECNOLOGÍA APPLE",
+        "subheading_style": "subtitle",
+        "subheading_icon": "circle",
+        "heading": "El dispositivo adecuado para cada forma de trabajar",
+        "heading_size": "h3",
+        "heading_level": "h2",
+        "heading_line": "simple",
+        "line_color": "#1566e0",
+        "word_break": false,
+        "text": "Configura iPhone, Mac o iPad en arriendo operativo, con protección y soporte incluidos en cada plan.",
+        "heading_animation": "none",
+        "word_break_an": false,
+        "text_align": "left",
+        "height": "21/9",
+        "text_align_content": "left",
+        "enable_autoplay": false,
+        "enable_parallax": false,
+        "enable_pagination": true,
+        "pagination_type": "tabs",
+        "pagination_color_scheme": "scheme-fe7d2251-16e5-4b62-ab94-d700f64f3bbf",
+        "pagination_width": "medium",
+        "enable_navigation": false,
+        "navigation_color_scheme": "scheme-39e5d4a7-e422-4a30-b12c-b2a059c9acee",
+        "slide_duration": 5,
+        "icon_size": "recommended",
+        "icon_style": "contrast",
+        "icon_fill_type": "solid",
+        "show_tab_icon": true,
+        "padding_top": "xl",
+        "padding_bottom": "l",
+        "margin_top": "no-indent",
+        "margin_bottom": "no-indent"
+      }
+    },
+    "icon_cards_aBAPPi": {
+      "type": "icon-cards",
+      "blocks": {
+        "card_7Gd8ix": {
+          "type": "card",
+          "settings": {
+            "icon_name": "solar_shield-check-outline.svg",
+            "heading_variant": "default",
+            "card_label": "",
+            "card_large_text": "+4.000",
+            "card_subtitle": "",
+            "heading": "Empresas confían en nosotros",
+            "description": "Acompañamos a organizaciones de distintos tamaños con soluciones Apple adaptadas a sus necesidades."
+          }
+        },
+        "card_ADJ9WR": {
+          "type": "card",
+          "settings": {
+            "icon_name": "solar_clock-circle-outline.svg",
+            "heading_variant": "default",
+            "card_label": "",
+            "card_large_text": "+100.000",
+            "card_subtitle": "",
+            "heading": "Productos Apple desplegados",
+            "description": "Experiencia en despliegues tecnológicos para empresas de diferentes industrias y niveles de complejidad."
+          }
+        },
+        "card_8eHVPy": {
+          "type": "card",
+          "settings": {
+            "icon_name": "solar_chart-outline.svg",
+            "heading_variant": "default",
+            "card_label": "",
+            "card_large_text": "+10.000",
+            "card_subtitle": "asd",
+            "heading": "Equipos administrados",
+            "description": "Gestionamos ecosistemas Apple para simplificar la operación diaria y reducir la carga de los equipos de TI."
+          }
+        }
+      },
+      "block_order": [
+        "card_7Gd8ix",
+        "card_ADJ9WR",
+        "card_8eHVPy"
+      ],
+      "name": "Icon Cards — La Solución (3 col)",
+      "settings": {
+        "overlay_image": "shopify://shop_images/bg-pf-zero-touch.webp",
+        "columns": "3",
+        "header_alignment": "left",
+        "subheading": "respaldo líder en chile",
+        "heading": "<p>Resultados garantizados para tu empresa</p>",
+        "description": "<p>Acompañamos a organizaciones en su transformación digital reduciendo costos de TI y optimizando el retorno de inversión.</p>"
+      }
+    },
+    "collapsible_content_h8mA63": {
+      "type": "collapsible-content",
+      "blocks": {
+        "accordion_6QbF3q": {
+          "type": "accordion",
+          "settings": {
+            "question": "¿Qué es el arriendo operativo?",
+            "answer": "<p>Es una solución que permite a tu empresa acceder a equipos Apple mediante una cuota mensual fija, sin necesidad de realizar una compra inicial. Así puedes incorporar tecnología a tu operación sin inmovilizar capital.</p>",
+            "opened": true
+          }
+        },
+        "accordion_rHLL6w": {
+          "type": "accordion",
+          "settings": {
+            "question": "¿Qué equipos puedo arrendar?",
+            "answer": "<p>Puedes arrendar distintos dispositivos Apple para empresa, como Mac, iPhone y iPad, según disponibilidad, perfil de uso y condiciones comerciales.</p>",
+            "opened": false
+          }
+        },
+        "accordion_WGnJtY": {
+          "type": "accordion",
+          "settings": {
+            "question": "¿Se necesita pagar pie o cuota inicial?",
+            "answer": "<p>No. Una de las principales ventajas del arriendo operativo es que no requiere pago inicial, lo que facilita la incorporación de equipos sin un desembolso importante al comienzo.</p>",
+            "opened": false
+          }
+        },
+        "accordion_yeixQ8": {
+          "type": "accordion",
+          "settings": {
+            "question": "¿La cuota cambia durante el contrato?",
+            "answer": "<p>No. La cuota mensual se mantiene fija en pesos durante toda la vigencia del contrato, lo que permite planificar mejor el presupuesto de tu empresa.</p>",
+            "opened": false
+          }
+        },
+        "accordion_hcApdM": {
+          "type": "accordion",
+          "settings": {
+            "question": "¿El arriendo operativo afecta la capacidad crediticia de mi empresa?",
+            "answer": "<p>En general, este modelo permite acceder a tecnología sin utilizar directamente líneas de crédito destinadas a otros proyectos. De todos modos, la evaluación final dependerá de las condiciones de aprobación y del perfil de cada empresa.</p>",
+            "opened": false
+          }
+        }
+      },
+      "block_order": [
+        "accordion_6QbF3q",
+        "accordion_rHLL6w",
+        "accordion_WGnJtY",
+        "accordion_yeixQ8",
+        "accordion_hcApdM"
+      ],
+      "custom_css": [
+        ".collapsible-content.background {background-image: url(https://cdn.shopify.com/s/files/1/0731/0757/0884/files/bg-pf-zero-touch.webp?v=1785354676); background-repeat: no-repeat; background-position: center; background-size: 100%; background-attachment: local;}",
+        "h2 {font-weight: 700;}",
+        "h3 {font-weight: 600; font-size: 150% !important;}",
+        "p {font-size: 120%; opacity: 0.6;}",
+        ".collapsible-content__item {border: 1px solid #011624 !important;}",
+        ".collapsible-content__icon {background-color: #ffffff20;}"
+      ],
+      "name": "t:sections.collapsible-content.name",
+      "settings": {
+        "layout": "background",
+        "color_scheme": "scheme-39e5d4a7-e422-4a30-b12c-b2a059c9acee",
+        "enable_border": false,
+        "border_full": false,
+        "subheading": "Preguntas frecuentes",
+        "subheading_style": "subtitle",
+        "subheading_icon": "circle",
+        "heading": "Resolvemos tus dudas sobre MacOnline",
+        "heading_size": "h2",
+        "heading_level": "h2",
+        "heading_line": "none",
+        "line_color": "#1566e0",
+        "word_break": false,
+        "heading_animation": "none",
+        "word_break_an": false,
+        "text": "¿Tienes preguntas sobre el modelo de arriendo, soporte o renovación? \nEncuentra las respuestas rápidas aquí.",
+        "text_align": "center",
+        "row_color_scheme": "scheme-cf7617bd-cf5d-43c2-b151-2d92b8b69cd6",
+        "padding_top": "l",
+        "padding_bottom": "l",
+        "margin_top": "no-indent",
+        "margin_bottom": "no-indent"
+      }
+    },
+    "animated_image_collage_NqQpFB": {
+      "type": "animated-image-collage",
+      "blocks": {
+        "column_KMUaeP": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/bg-fondo-rental-1_7b23a22c-7495-4282-b2f9-30e39e1443df.webp",
+            "image_width": 420
+          }
+        },
+        "column_66J9j8": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/bg-fondo-rental-2.webp",
+            "image_width": 420
+          }
+        },
+        "column_PhC6F4": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/bg-fondo-rental-3.webp",
+            "image_width": 420
+          }
+        },
+        "column_pB7QBB": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/bg-fondo-rental-4.webp",
+            "image_width": 420
+          }
+        },
+        "column_cE4yBi": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/bg-fondo-rental-5.webp",
+            "image_width": 420
+          }
+        },
+        "column_zt4Yhn": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/bg-fondo-rental-6.webp",
+            "image_width": 420
+          }
+        },
+        "column_QLGYbx": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/bg-fondo-rental-2.webp",
+            "image_width": 420
+          }
+        },
+        "column_ktL4i3": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/bg-fondo-rental-8.webp",
+            "image_width": 420
+          }
+        },
+        "column_7Dj8N7": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/bg-fondo-rental-9.webp",
+            "image_width": 420
+          }
+        }
+      },
+      "block_order": [
+        "column_KMUaeP",
+        "column_66J9j8",
+        "column_PhC6F4",
+        "column_pB7QBB",
+        "column_cE4yBi",
+        "column_zt4Yhn",
+        "column_QLGYbx",
+        "column_ktL4i3",
+        "column_7Dj8N7"
+      ],
+      "custom_css": [
+        "h2 {background: linear-gradient(91deg, #fff 14.38%, #07abf8 93.41%); background-clip: text; font-weight: 700; -webkit-background-clip: text; -webkit-text-fill-color: transparent;}",
+        ".aic--background:before {background: linear-gradient( 180deg, #05070f 0%, rgba(5, 7, 15, 0.53) 53%, #05070f 100% ); opacity: 1;}"
+      ],
+      "name": "t:sections.animated-image-collage.name",
+      "settings": {
+        "section_type": "background",
+        "color_scheme": "scheme-39e5d4a7-e422-4a30-b12c-b2a059c9acee",
+        "header_overlay": false,
+        "header_transparent": false,
+        "column_to_show": 3,
+        "opacity_overlay": 0.3,
+        "full_width": true,
+        "icon": "none",
+        "icon_color_scheme": "",
+        "icon_style": "contrast",
+        "icon_fill_type": "gradient",
+        "icon_size": "recommended",
+        "box_shadow": true,
+        "subheading": "",
+        "subheading_style": "subtitle subtitle--secondary",
+        "subheading_icon": "none",
+        "heading": "Cambia la forma en que tu empresaadquiere tecnología",
+        "heading_size": "h1",
+        "heading_level": "h2",
+        "heading_line": "simple",
+        "line_color": "#1566e0",
+        "word_break": false,
+        "heading_animation": "none",
+        "word_break_an": false,
+        "text": "Accede a dispositivos Apple con un modelo diseñado para crecer contigo, reducir costos operacionales y simplificar toda la gestión tecnológica de tu organización.",
+        "enable_subscribe": false,
+        "button_label_subscribe": "cotización",
+        "color_scheme_subscribe": "background-1",
+        "enable_box_shadow": true,
+        "button_style_subscribe": "primary",
+        "show_button": true,
+        "button_label": "Solicitar una cotización",
+        "button_link": "",
+        "button_style": "primary",
+        "show_button_2": false,
+        "button_label_2": "",
+        "button_link_2": "",
+        "button_style_2": "simple",
+        "padding_top": "m",
+        "padding_bottom": "m",
+        "margin_top": "no-indent",
+        "margin_bottom": "no-indent"
+      }
+    },
+    "simulador_arriendo_zWJUEq": {
+      "type": "simulador-arriendo",
+      "name": "Arriendo Popup",
+      "settings": {}
+    }
+  },
+  "order": [
+    "hero",
+    "icon_cards_Ube3Cz",
+    "split_features_zwiFDQ",
+    "icon_cards_kFJjhr",
+    "split_features_MDnrDm",
+    "icon_cards_fXaKUn",
+    "device_tabs_NMYyLT",
+    "icon_cards_aBAPPi",
+    "collapsible_content_h8mA63",
+    "animated_image_collage_NqQpFB",
+    "simulador_arriendo_zWJUEq"
+  ]
+}

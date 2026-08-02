@@ -1,0 +1,858 @@
+{%- style -%}
+/* ── BOTÓN COTIZAR (estilo Buy Button) ──────────────────── */
+.qcot-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 14px 24px;
+  margin: 8px 0;
+  background: #0071e3;
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+  -webkit-font-smoothing: antialiased;
+}
+.qcot-btn:hover { background: #0077ed; }
+.qcot-btn:active { transform: scale(0.98); }
+.qcot-btn svg { width: 20px; height: 20px; fill: currentColor; flex-shrink: 0; }
+
+/* ── OVERLAY + MODAL ────────────────────────────────────── */
+.qcot-overlay {
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,0.5);
+  backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
+  z-index: 9998;
+  opacity: 0; visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s;
+}
+.qcot-overlay.qcot-open { opacity: 1; visibility: visible; }
+
+.qcot-modal {
+  position: fixed;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%) scale(0.95);
+  width: min(460px, calc(100vw - 32px));
+  background: #fff;
+  border-radius: 20px;
+  z-index: 9999;
+  overflow: hidden;
+  opacity: 0; visibility: hidden;
+  transition: opacity 0.3s, transform 0.3s, visibility 0.3s;
+  box-shadow: 0 24px 80px rgba(0,0,0,0.25);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  color: #1d1d1f;
+}
+.qcot-modal.qcot-open {
+  opacity: 1; visibility: visible;
+  transform: translate(-50%, -50%) scale(1);
+}
+.qcot-modal *, .qcot-modal *::before, .qcot-modal *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+.qcot-modal-header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 16px 20px;
+  border-bottom: 1px solid #e5e5ea;
+}
+.qcot-modal-title { font-size: 16px; font-weight: 600; }
+.qcot-modal-close {
+  width: 32px; height: 32px; border-radius: 50%;
+  background: #f5f5f7; border: none; cursor: pointer;
+  font-size: 16px; color: #6e6e73;
+  display: flex; align-items: center; justify-content: center;
+  transition: background 0.2s;
+}
+.qcot-modal-close:hover { background: #e5e5ea; }
+
+.qcot-modal-body { padding: 20px; }
+
+/* — Product preview in modal — */
+.qcot-preview { display: flex; gap: 14px; margin-bottom: 16px; }
+.qcot-preview-img { width: 64px; height: 64px; border-radius: 10px; background: #f5f5f7; overflow: hidden; flex-shrink: 0; }
+.qcot-preview-img img { width: 100%; height: 100%; object-fit: contain; }
+.qcot-preview-info { flex: 1; min-width: 0; }
+.qcot-preview-name { font-size: 14px; font-weight: 600; color: #1d1d1f; }
+.qcot-preview-variant { font-size: 12px; color: #6e6e73; margin-top: 2px; }
+.qcot-preview-price { font-size: 14px; font-weight: 600; color: #1d1d1f; margin-top: 4px; }
+
+/* — Form — */
+.qcot-form-group { margin-bottom: 14px; }
+.qcot-label { display: block; font-size: 12px; font-weight: 600; color: #6e6e73; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 6px; }
+.qcot-input {
+  width: 100%; padding: 12px 14px;
+  border: 1.5px solid #d2d2d7; border-radius: 10px;
+  font-size: 15px; font-family: inherit; color: #1d1d1f;
+  background: #fff; outline: none;
+  transition: border-color 0.2s;
+}
+.qcot-input:focus { border-color: #0071e3; }
+.qcot-input::placeholder { color: #aeaeb2; }
+.qcot-input-error { border-color: #ff3b30 !important; }
+.qcot-error-msg { font-size: 12px; color: #ff3b30; margin-top: 4px; display: none; }
+.qcot-error-msg.qcot-show { display: block; }
+
+.qcot-name-row { display: flex; gap: 10px; }
+.qcot-name-row .qcot-form-group { flex: 1; }
+
+.qcot-submit {
+  width: 100%; padding: 14px;
+  background: #0071e3; color: #fff;
+  border: none; border-radius: 12px;
+  font-size: 15px; font-weight: 600;
+  font-family: inherit; cursor: pointer;
+  transition: background 0.2s;
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+}
+.qcot-submit:hover { background: #0077ed; }
+.qcot-submit:disabled { background: #aeaeb2; cursor: not-allowed; }
+.qcot-submit svg { width: 18px; height: 18px; fill: currentColor; }
+
+.qcot-legal { font-size: 11px; color: #aeaeb2; text-align: center; margin-top: 12px; line-height: 1.4; }
+
+/* — Success state — */
+.qcot-success { text-align: center; padding: 20px 0; display: none; }
+.qcot-success.qcot-show { display: block; }
+.qcot-success-icon { font-size: 48px; margin-bottom: 12px; }
+.qcot-success-title { font-size: 18px; font-weight: 600; margin-bottom: 4px; }
+.qcot-success-sub { font-size: 14px; color: #6e6e73; }
+
+/* — Loading spinner — */
+.qcot-spinner { display: inline-block; width: 18px; height: 18px; border: 2px solid rgba(255,255,255,0.3); border-top-color: #fff; border-radius: 50%; animation: qcotSpin 0.6s linear infinite; }
+@keyframes qcotSpin { to { transform: rotate(360deg); } }
+
+@media (max-width: 480px) {
+  .qcot-modal { width: calc(100vw - 16px); }
+  .qcot-name-row { flex-direction: column; gap: 0; }
+}
+{%- endstyle -%}
+
+<!-- ── BOTÓN COTIZAR ────────────────────────────────────── -->
+<button class="qcot-btn" id="qcot-trigger">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg>
+  Descargar cotización
+</button>
+
+<!-- ── OVERLAY ───────────────────────────────────────────── -->
+<div class="qcot-overlay" id="qcot-overlay"></div>
+
+<!-- ── MODAL ─────────────────────────────────────────────── -->
+<div class="qcot-modal" id="qcot-modal" role="dialog" aria-modal="true" aria-label="Cotizar producto">
+  <div class="qcot-modal-header">
+    <span class="qcot-modal-title">Cotizar producto</span>
+    <button class="qcot-modal-close" id="qcot-close" aria-label="Cerrar">✕</button>
+  </div>
+  <div class="qcot-modal-body">
+    <!-- Product preview -->
+    <div class="qcot-preview">
+      <div class="qcot-preview-img">
+        {%- if product.featured_image -%}
+          <img src="{{ product.featured_image | image_url: width: 128 }}" alt="{{ product.title | escape }}" id="qcot-prod-img">
+        {%- endif -%}
+      </div>
+      <div class="qcot-preview-info">
+        <div class="qcot-preview-name" id="qcot-prod-name">{{ product.title }}</div>
+        <div class="qcot-preview-variant" id="qcot-prod-variant">{{ product.selected_or_first_available_variant.title }}</div>
+        <div class="qcot-preview-price" id="qcot-prod-price">-</div>
+      </div>
+    </div>
+
+    <!-- Form -->
+    <div id="qcot-form-area">
+      <div class="qcot-name-row">
+        <div class="qcot-form-group">
+          <label class="qcot-label" for="qcot-nombre">Nombre</label>
+          <input class="qcot-input" type="text" id="qcot-nombre" placeholder="Juan" autocomplete="given-name">
+        </div>
+        <div class="qcot-form-group">
+          <label class="qcot-label" for="qcot-apellido">Apellido</label>
+          <input class="qcot-input" type="text" id="qcot-apellido" placeholder="Pérez" autocomplete="family-name">
+        </div>
+      </div>
+      <div class="qcot-form-group">
+        <label class="qcot-label" for="qcot-empresa">Empresa</label>
+        <input class="qcot-input" type="text" id="qcot-empresa" placeholder="Mi Empresa SpA" autocomplete="organization">
+      </div>
+      <div class="qcot-form-group">
+        <label class="qcot-label" for="qcot-rut">RUT Empresa</label>
+        <input class="qcot-input" type="text" id="qcot-rut" placeholder="76.123.456-7" autocomplete="off">
+      </div>
+      <div class="qcot-name-row">
+        <div class="qcot-form-group">
+          <label class="qcot-label" for="qcot-telefono">Teléfono *</label>
+          <input class="qcot-input" type="tel" id="qcot-telefono" placeholder="+56 9 1234 5678" autocomplete="tel">
+          <div class="qcot-error-msg" id="qcot-telefono-error">Ingresa un número de teléfono válido</div>
+        </div>
+        <div class="qcot-form-group">
+          <label class="qcot-label" for="qcot-email">Email corporativo *</label>
+          <input class="qcot-input" type="email" id="qcot-email" placeholder="juan@empresa.cl" required autocomplete="email">
+          <div class="qcot-error-msg" id="qcot-email-error">Ingresa un email válido para descargar la cotización</div>
+        </div>
+      </div>
+      <button class="qcot-submit" id="qcot-submit-btn" type="button">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+        Descargar cotización PDF
+      </button>
+      <div class="qcot-legal">Al descargar, aceptas recibir información sobre nuestros productos y servicios.</div>
+    </div>
+
+    <!-- Success state -->
+    <div class="qcot-success" id="qcot-success">
+      <div class="qcot-success-icon">✓</div>
+      <div class="qcot-success-title">Cotización descargada</div>
+      <div class="qcot-success-sub">Revisa tu carpeta de descargas. Te contactaremos pronto.</div>
+    </div>
+  </div>
+</div>
+
+<!-- Preload shop logo for PDF -->
+{%- if shop.brand.logo -%}
+  <img src="{{ shop.brand.logo | image_url: width: 300 }}" id="qcot-shop-logo" style="display:none" crossorigin="anonymous">
+{%- endif -%}
+
+<script>
+(function() {
+  'use strict';
+
+  /* ── Load jsPDF dynamically ────────────────────────────── */
+  var jsPDFReady = false;
+  var jsPDFScript = document.createElement('script');
+  jsPDFScript.src = 'https://cdn.jsdelivr.net/npm/jspdf@2.5.2/dist/jspdf.umd.min.js';
+  jsPDFScript.onload = function() { jsPDFReady = true; };
+  jsPDFScript.onerror = function() { console.error('Failed to load jsPDF from CDN'); };
+  document.head.appendChild(jsPDFScript);
+
+  /* ── Product data from Liquid ──────────────────────────── */
+  var productData = {
+    title: {{ product.title | json }},
+    variantTitle: {{ product.selected_or_first_available_variant.title | json }},
+    price: {{ product.price }} / 100,
+    image: {{ product.featured_image | image_url: width: 400 | json }},
+    handle: {{ product.handle | json }},
+    tags: {{ product.tags | json }},
+    vendor: {{ product.vendor | json }},
+    type: {{ product.type | json }},
+    url: {{ product.url | json }},
+    variantId: {{ product.selected_or_first_available_variant.id | json }}
+  };
+
+  var shopName = {{ shop.name | json }};
+
+  /* Detect product type for leasing factor */
+  var tipoProducto = 'Mac';
+  var titleLower = productData.title.toLowerCase();
+  if (productData.tags.indexOf('iPhone') > -1 || titleLower.indexOf('iphone') > -1) tipoProducto = 'iPhone';
+  else if (productData.tags.indexOf('iPad') > -1 || titleLower.indexOf('ipad') > -1) tipoProducto = 'iPad';
+
+  var FACTOR = { 36: 0.0374, 24: 0.0421 };
+  var IPHONE_MULT = 1.07155;
+  var BUYOUT = { 36: '15%', 24: '25%' };
+
+  /* ── Format helpers ────────────────────────────────────── */
+  function fmtMiles(n) { return Math.round(n).toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.'); }
+  function fmtDate() {
+    var d = new Date();
+    var months = ['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'];
+    return d.getDate() + ' de ' + months[d.getMonth()] + ' de ' + d.getFullYear();
+  }
+  function fmtDateShort() {
+    var d = new Date();
+    return d.getDate().toString().padStart(2,'0') + '/' + (d.getMonth()+1).toString().padStart(2,'0') + '/' + d.getFullYear();
+  }
+  function addDays(days) {
+    var d = new Date();
+    d.setDate(d.getDate() + days);
+    return d.getDate().toString().padStart(2,'0') + '/' + (d.getMonth()+1).toString().padStart(2,'0') + '/' + d.getFullYear();
+  }
+
+  /* ── Read native quantity ──────────────────────────────── */
+  function getNativeQty() {
+    var selectors = [
+      'form[action*="/cart/add"] input[name="quantity"]',
+      '.product-form input[name="quantity"]',
+      'input[name="quantity"]'
+    ];
+    for (var i = 0; i < selectors.length; i++) {
+      var el = document.querySelector(selectors[i]);
+      if (el) { var v = parseInt(el.value, 10); if (v > 0) return v; }
+    }
+    return 1;
+  }
+
+  /* ── Display price in modal ────────────────────────────── */
+  var priceEl = document.getElementById('qcot-prod-price');
+  if (priceEl) priceEl.textContent = '$' + fmtMiles(productData.price) + ' sin IVA';
+
+  /* ── Modal open/close ──────────────────────────────────── */
+  var overlay = document.getElementById('qcot-overlay');
+  var modal = document.getElementById('qcot-modal');
+  var trigger = document.getElementById('qcot-trigger');
+  var closeBtn = document.getElementById('qcot-close');
+  var formArea = document.getElementById('qcot-form-area');
+  var successArea = document.getElementById('qcot-success');
+
+  function openCotModal() { overlay.classList.add('qcot-open'); modal.classList.add('qcot-open'); document.body.style.overflow = 'hidden'; }
+  function closeCotModal() { overlay.classList.remove('qcot-open'); modal.classList.remove('qcot-open'); document.body.style.overflow = ''; }
+
+  trigger.addEventListener('click', function() {
+    formArea.style.display = '';
+    successArea.classList.remove('qcot-show');
+    openCotModal();
+  });
+  closeBtn.addEventListener('click', closeCotModal);
+  overlay.addEventListener('click', closeCotModal);
+
+  /* ── Email validation ──────────────────────────────────── */
+  function isValidEmail(email) {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  }
+
+  /* ── Create Draft Order via App Proxy ──────────────────── */
+  /* La Custom App recibe estos datos y crea un Draft Order
+     via Admin API + registra/tagea al cliente como lead. */
+  var APP_PROXY_URL = '/apps/cotizador';
+
+  function createDraftOrder(leadData) {
+    var token = [
+      productData.handle,
+      productData.variantId,
+      leadData.qty,
+      Math.round(leadData.cuotaNeta),
+      leadData.plazo,
+      fmtDateShort().replace(/\//g, '')
+    ].join('|');
+
+    var payload = {
+      email: leadData.email,
+      nombre: leadData.nombre,
+      apellido: leadData.apellido,
+      empresa: leadData.empresa,
+      rut: leadData.rut,
+      telefono: leadData.telefono,
+      variantId: productData.variantId,
+      productTitle: productData.title,
+      variantTitle: productData.variantTitle,
+      qty: leadData.qty,
+      priceNet: productData.price,
+      tipoProducto: tipoProducto,
+      plazo: leadData.plazo,
+      cuotaNeta: Math.round(leadData.cuotaNeta),
+      cuotaIVA: Math.round(leadData.cuotaIVA),
+      token: token
+    };
+
+    console.log('[Cotizador] Creando Draft Order...', payload);
+
+    return fetch(APP_PROXY_URL + '/draft-order', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: JSON.stringify(payload)
+    })
+    .then(function(r) {
+      if (!r.ok) {
+        return r.text().then(function(body) {
+          console.warn('[Cotizador] Draft Order API error ' + r.status + ':', body);
+          throw new Error('Draft order failed: ' + r.status);
+        });
+      }
+      return r.json();
+    })
+    .then(function(result) {
+      if (result.success) {
+        console.log('[Cotizador] Draft Order creado:', result.draftOrder.name, '— ID:', result.draftOrder.id);
+      }
+      return result;
+    })
+    .catch(function(err) {
+      console.error('[Cotizador] Error creando Draft Order:', err.message);
+      /* Fallback: save lead to cart attributes so it's not lost */
+      console.log('[Cotizador] Fallback: guardando en cart attributes...');
+      return fetch('/cart/update.js', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({
+          attributes: {
+            'cotizacion_email': leadData.email,
+            'cotizacion_nombre': ((leadData.nombre || '') + ' ' + (leadData.apellido || '')).trim(),
+            'cotizacion_empresa': leadData.empresa || '',
+            'cotizacion_rut': leadData.rut || '',
+            'cotizacion_telefono': leadData.telefono || '',
+            'cotizacion_producto': productData.title,
+            'cotizacion_token': token,
+            'cotizacion_fecha': fmtDateShort(),
+            'cotizacion_tag': 'lead-cotizacion-producto'
+          }
+        })
+      }).then(function(r) { return r.json(); })
+      .then(function(cart) {
+        console.log('[Cotizador] Fallback OK — cart attributes guardados');
+        return cart;
+      })
+      .catch(function(e2) {
+        console.error('[Cotizador] Fallback también falló:', e2);
+      });
+    });
+  }
+
+  /* ── Submit handler ────────────────────────────────────── */
+  var submitBtn = document.getElementById('qcot-submit-btn');
+  var emailInput = document.getElementById('qcot-email');
+  var emailError = document.getElementById('qcot-email-error');
+
+  var telefonoInput = document.getElementById('qcot-telefono');
+  var telefonoError = document.getElementById('qcot-telefono-error');
+
+  submitBtn.addEventListener('click', function() {
+    var email = emailInput.value.trim();
+    var nombre = document.getElementById('qcot-nombre').value.trim();
+    var apellido = document.getElementById('qcot-apellido').value.trim();
+    var empresa = document.getElementById('qcot-empresa').value.trim();
+    var rut = document.getElementById('qcot-rut').value.trim();
+    var telefono = telefonoInput.value.trim();
+
+    /* Validate phone */
+    var phoneClean = telefono.replace(/[\s\-\(\)\.]/g, '');
+    if (!phoneClean || phoneClean.length < 8) {
+      telefonoInput.classList.add('qcot-input-error');
+      telefonoError.classList.add('qcot-show');
+      telefonoInput.focus();
+      return;
+    }
+    telefonoInput.classList.remove('qcot-input-error');
+    telefonoError.classList.remove('qcot-show');
+
+    if (!isValidEmail(email)) {
+      emailInput.classList.add('qcot-input-error');
+      emailError.classList.add('qcot-show');
+      emailInput.focus();
+      return;
+    }
+    emailInput.classList.remove('qcot-input-error');
+    emailError.classList.remove('qcot-show');
+
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = '<span class="qcot-spinner"></span> Generando cotización...';
+
+    var qty = getNativeQty();
+    var plazo = 36;
+    var factor = FACTOR[plazo] * (tipoProducto === 'iPhone' ? IPHONE_MULT : 1);
+    var cuotaNeta = productData.price * qty * factor;
+    var cuotaIVA = cuotaNeta * 1.19;
+
+    var leadData = {
+      email: email,
+      nombre: nombre,
+      apellido: apellido,
+      empresa: empresa,
+      rut: rut,
+      telefono: telefono,
+      qty: qty,
+      plazo: plazo,
+      cuotaNeta: cuotaNeta,
+      cuotaIVA: cuotaIVA,
+      factor: factor
+    };
+
+    /* Create Draft Order in Shopify (fire-and-forget, don't block PDF) */
+    createDraftOrder(leadData);
+
+    /* Wait for jsPDF to be ready, then generate PDF */
+    function attemptPDF(retries) {
+      if (window.jspdf && window.jspdf.jsPDF) {
+        try {
+          generatePDF(leadData);
+          formArea.style.display = 'none';
+          successArea.classList.add('qcot-show');
+        } catch(e) {
+          console.error('PDF generation error:', e, e.stack);
+          alert('Error al generar el PDF: ' + e.message);
+        }
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg> Descargar cotización PDF';
+      } else if (retries > 0) {
+        setTimeout(function() { attemptPDF(retries - 1); }, 300);
+      } else {
+        console.error('jsPDF not available after retries. window.jspdf =', window.jspdf);
+        alert('No se pudo cargar la librería PDF. Verifica tu conexión e intenta nuevamente.');
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg> Descargar cotización PDF';
+      }
+    }
+    attemptPDF(10);
+  });
+
+  /* ── PDF Generation with jsPDF (multi-page support) ────── */
+  function generatePDF(data) {
+    var jsPDF = window.jspdf.jsPDF;
+    var doc = new jsPDF('p', 'mm', 'a4');
+    var W = 210, H = 297, M = 18, CW = W - 2 * M;
+    var y = 0;
+    var pageNum = 1;
+    var totalPages = 1; /* updated at the end */
+
+    /* ── Colors ─────────────────────────────────── */
+    var blue = [0, 113, 227];
+    var dark = [29, 29, 31];
+    var gray = [110, 110, 115];
+    var lightBg = [245, 245, 247];
+    var white = [255, 255, 255];
+    var footerH = 14;
+    var maxY = H - M - footerH; /* safe bottom boundary */
+
+    /* ── Page management ─────────────────────────── */
+    function checkPage(needed) {
+      if (y + needed > maxY) {
+        addFooter();
+        doc.addPage();
+        pageNum++;
+        totalPages++;
+        y = M + 4;
+      }
+    }
+
+    function addFooter() {
+      var fy = H - M - 2;
+      doc.setDrawColor(210, 210, 210);
+      doc.line(M, fy - 4, W - M, fy - 4);
+      doc.setFontSize(7);
+      doc.setTextColor(gray[0], gray[1], gray[2]);
+      doc.setFont('helvetica', 'normal');
+      doc.text(shopName + '  —  Equipos Apple para empresas', M, fy);
+      doc.text('Generado el ' + fmtDateShort(), W / 2, fy, { align: 'center' });
+      /* Page number placeholder — replaced at the end */
+      doc.text('Pag. ' + pageNum, W - M, fy, { align: 'right' });
+    }
+
+    /* ── Helper: draw striped table rows ─────────── */
+    function drawTable(rows, colWidths, opts) {
+      opts = opts || {};
+      var rowH = opts.rowHeight || 8;
+      var pad = 4;
+      /* Header */
+      if (opts.header) {
+        checkPage(rowH + 2);
+        doc.setFillColor(dark[0], dark[1], dark[2]);
+        doc.roundedRect(M, y, CW, rowH + 2, 1.5, 1.5, 'F');
+        doc.setTextColor(255, 255, 255);
+        doc.setFontSize(8);
+        doc.setFont('helvetica', 'bold');
+        var hx = M;
+        for (var h = 0; h < opts.header.length; h++) {
+          var ha = opts.headerAlign ? opts.headerAlign[h] : 'left';
+          var hpos = ha === 'right' ? hx + colWidths[h] - pad : (ha === 'center' ? hx + colWidths[h] / 2 : hx + pad);
+          doc.text(opts.header[h], hpos, y + rowH - 1.5, { align: ha });
+          hx += colWidths[h];
+        }
+        y += rowH + 3;
+      }
+      /* Rows */
+      for (var r = 0; r < rows.length; r++) {
+        checkPage(rowH + 1);
+        if (r % 2 === 0) {
+          doc.setFillColor(lightBg[0], lightBg[1], lightBg[2]);
+          doc.rect(M, y, CW, rowH, 'F');
+        }
+        var rx = M;
+        for (var c = 0; c < rows[r].length; c++) {
+          var align = opts.align ? opts.align[c] : 'left';
+          var bold = opts.boldCols && opts.boldCols.indexOf(c) > -1;
+          doc.setFont('helvetica', bold ? 'bold' : 'normal');
+          doc.setTextColor(bold ? dark[0] : gray[0], bold ? dark[1] : gray[1], bold ? dark[2] : gray[2]);
+          doc.setFontSize(8.5);
+          var xpos = align === 'right' ? rx + colWidths[c] - pad : (align === 'center' ? rx + colWidths[c] / 2 : rx + pad);
+          doc.text(rows[r][c], xpos, y + rowH - 2.5, { align: align });
+          rx += colWidths[c];
+        }
+        y += rowH;
+      }
+    }
+
+    /* ── Section title helper ────────────────────── */
+    function sectionTitle(title) {
+      checkPage(12);
+      doc.setTextColor(gray[0], gray[1], gray[2]);
+      doc.setFontSize(8);
+      doc.setFont('helvetica', 'bold');
+      doc.text(title, M, y + 3);
+      y += 8;
+    }
+
+    /* ════════════════════════════════════════════════
+       PAGE CONTENT
+       ════════════════════════════════════════════════ */
+
+    /* ── Header bar ──────────────────────────────── */
+    doc.setFillColor(blue[0], blue[1], blue[2]);
+    doc.rect(0, 0, W, 40, 'F');
+
+    var logoEl = document.getElementById('qcot-shop-logo');
+    var logoAdded = false;
+    if (logoEl && logoEl.complete && logoEl.naturalWidth > 0) {
+      try {
+        var canvas = document.createElement('canvas');
+        canvas.width = logoEl.naturalWidth;
+        canvas.height = logoEl.naturalHeight;
+        var ctx = canvas.getContext('2d');
+        ctx.drawImage(logoEl, 0, 0);
+        var logoDataUrl = canvas.toDataURL('image/png');
+        var logoMaxW = 38, logoMaxH = 14;
+        var ratio = Math.min(logoMaxW / logoEl.naturalWidth, logoMaxH / logoEl.naturalHeight);
+        doc.addImage(logoDataUrl, 'PNG', M, 8, logoEl.naturalWidth * ratio, logoEl.naturalHeight * ratio);
+        logoAdded = true;
+      } catch(e) { console.warn('Logo insert error:', e); }
+    }
+    if (!logoAdded) {
+      doc.setTextColor(255, 255, 255);
+      doc.setFontSize(20);
+      doc.setFont('helvetica', 'bold');
+      doc.text(shopName, M, 20);
+    }
+
+    doc.setTextColor(255, 255, 255);
+    doc.setFontSize(9);
+    doc.setFont('helvetica', 'normal');
+    doc.text('Cotización de Arriendo Operativo', M, logoAdded ? 30 : 28);
+
+    /* Right side: date & ref */
+    doc.setFontSize(8.5);
+    doc.text('Fecha: ' + fmtDate(), W - M, 14, { align: 'right' });
+    doc.text('Válida hasta: ' + addDays(15), W - M, 20, { align: 'right' });
+    doc.setFontSize(7.5);
+    var refCode = data.email.split('@')[0].toUpperCase().replace(/[^A-Z0-9]/g, '').substring(0, 12) + '-' + fmtDateShort().replace(/\//g, '');
+    doc.text('Ref: ' + refCode, W - M, 26, { align: 'right' });
+
+    y = 48;
+
+    /* ── Client info (2-column layout) ────────────── */
+    sectionTitle('DATOS DEL SOLICITANTE');
+
+    var clientName = ((data.nombre || '') + ' ' + (data.apellido || '')).trim() || '—';
+    var leftCol = [
+      ['Nombre', clientName],
+      ['Email', data.email],
+      ['Teléfono', data.telefono || '—']
+    ];
+    var rightCol = [
+      ['Empresa', data.empresa || '—'],
+      ['RUT', data.rut || '—']
+    ];
+
+    checkPage(28);
+    doc.setFillColor(lightBg[0], lightBg[1], lightBg[2]);
+    doc.roundedRect(M, y, CW, 24, 2, 2, 'F');
+
+    doc.setFontSize(8.5);
+    var cy = y + 7;
+    for (var li = 0; li < leftCol.length; li++) {
+      doc.setFont('helvetica', 'normal');
+      doc.setTextColor(gray[0], gray[1], gray[2]);
+      doc.text(leftCol[li][0] + ':', M + 5, cy);
+      doc.setFont('helvetica', 'bold');
+      doc.setTextColor(dark[0], dark[1], dark[2]);
+      doc.text(leftCol[li][1], M + 28, cy);
+      cy += 6;
+    }
+    cy = y + 7;
+    var rightX = M + CW / 2 + 4;
+    for (var ri = 0; ri < rightCol.length; ri++) {
+      doc.setFont('helvetica', 'normal');
+      doc.setTextColor(gray[0], gray[1], gray[2]);
+      doc.text(rightCol[ri][0] + ':', rightX, cy);
+      doc.setFont('helvetica', 'bold');
+      doc.setTextColor(dark[0], dark[1], dark[2]);
+      doc.text(rightCol[ri][1], rightX + 22, cy);
+      cy += 6;
+    }
+    y += 30;
+
+    /* ── Product table (supports multiple items) ──── */
+    sectionTitle('DETALLE DE EQUIPOS');
+
+    /* Build items array — currently single product, but structured for future multi-product */
+    var items = [{
+      name: productData.title,
+      variant: (productData.variantTitle && productData.variantTitle !== 'Default Title') ? productData.variantTitle : '',
+      tipo: tipoProducto,
+      qty: data.qty,
+      unitPrice: productData.price,
+      totalNet: productData.price * data.qty
+    }];
+
+    var prodColWidths = [CW * 0.44, CW * 0.12, CW * 0.10, CW * 0.17, CW * 0.17];
+    var prodHeader = ['Producto', 'Tipo', 'Cant.', 'Precio Unit.', 'Total Neto'];
+    var prodHeaderAlign = ['left', 'left', 'center', 'right', 'right'];
+    var prodAlign = ['left', 'left', 'center', 'right', 'right'];
+
+    /* Draw header */
+    checkPage(12);
+    doc.setFillColor(dark[0], dark[1], dark[2]);
+    doc.roundedRect(M, y, CW, 9, 1.5, 1.5, 'F');
+    doc.setTextColor(255, 255, 255);
+    doc.setFontSize(8);
+    doc.setFont('helvetica', 'bold');
+    var hx = M;
+    for (var ph = 0; ph < prodHeader.length; ph++) {
+      var pha = prodHeaderAlign[ph];
+      var phpos = pha === 'right' ? hx + prodColWidths[ph] - 4 : (pha === 'center' ? hx + prodColWidths[ph] / 2 : hx + 4);
+      doc.text(prodHeader[ph], phpos, y + 6.5, { align: pha });
+      hx += prodColWidths[ph];
+    }
+    y += 11;
+
+    /* Draw product rows */
+    var grandTotal = 0;
+    for (var pi = 0; pi < items.length; pi++) {
+      var item = items[pi];
+      var rowH = item.variant ? 13 : 9;
+      checkPage(rowH + 2);
+
+      if (pi % 2 === 0) {
+        doc.setFillColor(lightBg[0], lightBg[1], lightBg[2]);
+        doc.rect(M, y, CW, rowH, 'F');
+      }
+
+      /* Product name */
+      doc.setTextColor(dark[0], dark[1], dark[2]);
+      doc.setFontSize(8.5);
+      doc.setFont('helvetica', 'normal');
+      var pName = item.name.length > 42 ? item.name.substring(0, 40) + '...' : item.name;
+      doc.text(pName, M + 4, y + 6);
+
+      /* Variant subtitle */
+      if (item.variant) {
+        doc.setFontSize(7);
+        doc.setTextColor(gray[0], gray[1], gray[2]);
+        doc.text(item.variant.substring(0, 55), M + 4, y + 11);
+      }
+
+      /* Other columns */
+      var cx = M + prodColWidths[0];
+      doc.setFontSize(8.5);
+      doc.setTextColor(dark[0], dark[1], dark[2]);
+      doc.setFont('helvetica', 'normal');
+
+      doc.text(item.tipo, cx + 4, y + 6);
+      cx += prodColWidths[1];
+
+      doc.text(item.qty.toString(), cx + prodColWidths[2] / 2, y + 6, { align: 'center' });
+      cx += prodColWidths[2];
+
+      doc.text('$' + fmtMiles(item.unitPrice), cx + prodColWidths[3] - 4, y + 6, { align: 'right' });
+      cx += prodColWidths[3];
+
+      doc.setFont('helvetica', 'bold');
+      doc.text('$' + fmtMiles(item.totalNet), cx + prodColWidths[4] - 4, y + 6, { align: 'right' });
+
+      grandTotal += item.totalNet;
+      y += rowH + 1;
+    }
+
+    /* Subtotal row */
+    checkPage(10);
+    doc.setDrawColor(210, 210, 210);
+    doc.line(M + CW * 0.6, y, M + CW, y);
+    y += 2;
+    doc.setFontSize(9);
+    doc.setFont('helvetica', 'bold');
+    doc.setTextColor(dark[0], dark[1], dark[2]);
+    doc.text('Total Neto:', M + CW - prodColWidths[4] - 4, y + 5, { align: 'right' });
+    doc.text('$' + fmtMiles(grandTotal), M + CW - 4, y + 5, { align: 'right' });
+    y += 12;
+
+    /* ── Lease hero box ──────────────────────────── */
+    sectionTitle('OPCIÓN DE ARRIENDO OPERATIVO');
+
+    checkPage(34);
+    doc.setFillColor(blue[0], blue[1], blue[2]);
+    doc.roundedRect(M, y, CW, 28, 3, 3, 'F');
+
+    doc.setTextColor(255, 255, 255);
+    doc.setFontSize(9);
+    doc.setFont('helvetica', 'normal');
+    doc.text('Cuota mensual neta (sin IVA)', M + 6, y + 9);
+
+    doc.setFontSize(24);
+    doc.setFont('helvetica', 'bold');
+    doc.text('$' + fmtMiles(data.cuotaNeta) + '/mes', M + 6, y + 22);
+
+    doc.setFontSize(10);
+    doc.setFont('helvetica', 'normal');
+    doc.text('Con IVA: $' + fmtMiles(data.cuotaIVA) + '/mes', M + CW - 6, y + 22, { align: 'right' });
+
+    y += 34;
+
+    /* ── Lease detail table ──────────────────────── */
+    var leaseRows = [
+      ['Plazo del contrato', data.plazo + ' meses'],
+      ['Cantidad de equipos', data.qty.toString()],
+      ['Valor total equipos (neto)', '$' + fmtMiles(grandTotal)],
+      ['Gestión remota (MDM)', 'Incluido — $3.000/equipo/mes'],
+      ['Opción de compra al final', BUYOUT[data.plazo]]
+    ];
+
+    var lColW = [CW * 0.6, CW * 0.4];
+    drawTable(leaseRows, lColW, {
+      align: ['left', 'right'],
+      boldCols: [1],
+      rowHeight: 8
+    });
+
+    y += 10;
+
+    /* ── Terms & Conditions ──────────────────────── */
+    sectionTitle('CONDICIONES DEL ARRIENDO');
+
+    doc.setFontSize(7.5);
+    doc.setFont('helvetica', 'normal');
+    doc.setTextColor(gray[0], gray[1], gray[2]);
+
+    var terms = [
+      '1. El arriendo operativo es una alternativa de financiamiento para empresas e instituciones.',
+      '2. Las cuotas incluyen el uso del equipo durante el plazo contratado.',
+      '3. La gestión remota (MDM) permite administrar los equipos de forma centralizada.',
+      '4. Al finalizar el contrato, el cliente puede ejercer la opción de compra al porcentaje indicado.',
+      '5. Los precios están en pesos chilenos (CLP). Valores netos no incluyen IVA (19%).',
+      '6. Cotización vigente por 15 días desde la fecha de emisión.',
+      '7. Valores referenciales sujetos a aprobación crediticia.'
+    ];
+
+    for (var t = 0; t < terms.length; t++) {
+      var tlines = doc.splitTextToSize(terms[t], CW - 4);
+      checkPage(tlines.length * 3.5 + 1);
+      doc.text(tlines, M + 2, y);
+      y += tlines.length * 3.5;
+    }
+
+    /* ── Footer on last page ─────────────────────── */
+    addFooter();
+
+    /* ── Update page numbers on all pages ────────── */
+    for (var p = 1; p <= totalPages; p++) {
+      doc.setPage(p);
+      /* Overwrite the page number area */
+      var fy = H - M - 2;
+      doc.setFillColor(255, 255, 255);
+      doc.rect(W - M - 30, fy - 4, 30, 6, 'F');
+      doc.setFontSize(7);
+      doc.setTextColor(gray[0], gray[1], gray[2]);
+      doc.setFont('helvetica', 'normal');
+      doc.text('Pág. ' + p + ' de ' + totalPages, W - M, fy, { align: 'right' });
+    }
+
+    /* ── Save PDF ────────────────────────────────── */
+    var fileName = 'Cotizacion_' + productData.title.replace(/[^a-zA-Z0-9]/g, '_').substring(0, 30) + '_' + fmtDateShort().replace(/\//g, '') + '.pdf';
+    doc.save(fileName);
+  }
+
+})();
+</script>

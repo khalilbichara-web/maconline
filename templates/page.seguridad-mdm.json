@@ -1,0 +1,413 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": "no-indent",
+        "padding_bottom": "m"
+      }
+    },
+    "animated_image_collage_eQBHBw": {
+      "type": "animated-image-collage",
+      "custom_css": [
+        "h2.title--simple {background: linear-gradient(91deg, #fff 14.38%, #07abf8 93.41%); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent;}",
+        ".aic.background {background-image: url(https://cdn.shopify.com/s/files/1/0731/0757/0884/files/bg-fondo-centro.webp?v=1785345733) !important; background-repeat: no-repeat; background-position: center; background-size: contain; background-attachment: local;}",
+        ".aic__subtitle.subtitle {background-color: transparent; border: 1px solid; padding: 10px 24px;}"
+      ],
+      "name": "t:sections.animated-image-collage.name",
+      "settings": {
+        "section_type": "background",
+        "color_scheme": "scheme-39e5d4a7-e422-4a30-b12c-b2a059c9acee",
+        "header_overlay": false,
+        "header_transparent": false,
+        "column_to_show": 3,
+        "opacity_overlay": 0.3,
+        "full_width": true,
+        "icon": "none",
+        "icon_color_scheme": "scheme-39e5d4a7-e422-4a30-b12c-b2a059c9acee",
+        "icon_style": "contrast",
+        "icon_fill_type": "gradient",
+        "icon_size": "recommended",
+        "box_shadow": true,
+        "subheading": "Administración Centralizada MDM",
+        "subheading_style": "subtitle subtitle--secondary",
+        "subheading_icon": "none",
+        "heading": "Implementa iPhone, iPad y Mac en minutos con Zero-Touch.",
+        "heading_size": "h1",
+        "heading_level": "h2",
+        "heading_line": "simple",
+        "line_color": "#1566e0",
+        "heading_animation": "none",
+        "text": "Automatiza el enrolamiento a MDM y la configuración inicial de tus dispositivos. Menos trabajo para TI, más seguridad y una experiencia lista para usar desde el primer encendido.",
+        "enable_subscribe": false,
+        "button_label_subscribe": "",
+        "button_style_subscribe": "primary",
+        "show_button": true,
+        "button_label": "Agendar demo",
+        "button_link": "",
+        "button_style": "primary",
+        "show_button_2": true,
+        "button_label_2": "Hablar con un experto",
+        "button_link_2": "",
+        "button_style_2": "tertiary",
+        "padding_top": "m",
+        "padding_bottom": "xs",
+        "margin_top": "no-indent",
+        "margin_bottom": "no-indent"
+      }
+    },
+    "hero_HfX9iK": {
+      "type": "hero",
+      "blocks": {
+        "subtitle_6ryWwA": {
+          "type": "subtitle",
+          "settings": {
+            "subheading": "que es zero touch",
+            "subheading_style": "subtitle",
+            "subheading_icon": "circle"
+          }
+        },
+        "title_aJgXmN": {
+          "type": "title",
+          "settings": {
+            "heading": "Zero-Touch elimina el “armado uno a uno” y deja todo listo para que tus colaboradores solo enciendan e inicien sesión.",
+            "heading_size": "h1",
+            "heading_level": "h2",
+            "heading_line": "simple",
+            "line_color": "#1566e0",
+            "word_break": false,
+            "heading_animation": "none",
+            "word_break_an": false
+          }
+        },
+        "description_D4XCBt": {
+          "type": "description",
+          "settings": {
+            "description": "Zero-Touches un modelo de despliegue automatizado que permite registrar, configurar y asegurar dispositivos corporativos (iPhone, iPad y Mac)de forma remota, sin intervención manual de TI en cada equipo."
+          }
+        },
+        "buttons_JLfmnx": {
+          "type": "buttons",
+          "settings": {
+            "show_button_1": true,
+            "button_label_1": "Agendar demo",
+            "button_link_1": "",
+            "button_style_1": "primary",
+            "show_button_2": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_2": "simple"
+          }
+        }
+      },
+      "block_order": [
+        "subtitle_6ryWwA",
+        "title_aJgXmN",
+        "description_D4XCBt",
+        "buttons_JLfmnx"
+      ],
+      "custom_css": [
+        ".hero__subtitle.subtitle {border-width: 0; padding: 0;}",
+        "h2 {font-size: 245%; font-weight: 700;}",
+        ".hero {background-position: top center;}"
+      ],
+      "name": "t:sections.hero.name",
+      "settings": {
+        "layout": "horizontal",
+        "header_overlay": false,
+        "header_transparent": true,
+        "block_type": "plain",
+        "color_scheme": "",
+        "full_screen": true,
+        "image": "shopify://shop_images/Rectangle_2.png",
+        "show_video": false,
+        "overlay_opacity": 0,
+        "image_ratio": "1/1",
+        "object_fit": "contain",
+        "desktop_image_position": "after",
+        "mobile_image_position": "after",
+        "mobile_image_overlay": "overlay",
+        "horizontal_alignment": "center",
+        "vertical_alignment": "middle",
+        "padding_top": "m",
+        "padding_bottom": "m"
+      }
+    },
+    "device_tabs_eqYVrL": {
+      "type": "device-tabs",
+      "blocks": {
+        "tab_e4hfiD": {
+          "type": "tab",
+          "settings": {
+            "tab_label": "1",
+            "heading": "Compra correcta",
+            "description": "Los Mac se compran a través de los tiendas o distribuidores autorizados.",
+            "features": "",
+            "cta_label": "",
+            "cta_url": ""
+          }
+        },
+        "tab_rQMxm8": {
+          "type": "tab",
+          "settings": {
+            "tab_label": "2",
+            "heading": "Asignación en ABM",
+            "description": "El equipo aparece en tu ABM y se marca \npara tu organización.",
+            "features": "",
+            "cta_label": "Cotizar iPhone",
+            "cta_url": ""
+          }
+        },
+        "tab_JbhxiK": {
+          "type": "tab",
+          "settings": {
+            "tab_label": "3",
+            "heading": "Enlace con MDM",
+            "description": "En ABM asignas la Mac \na tu servidor MDM.",
+            "features": "",
+            "cta_label": "Cotizar iPad",
+            "cta_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "tab_e4hfiD",
+        "tab_rQMxm8",
+        "tab_JbhxiK"
+      ],
+      "name": "Tab Slider",
+      "settings": {
+        "subheading": "beneficios para tu empresa",
+        "heading": "<p>¿Qué significa “propiedad de Mac” en ABM?<br/><br/></p>",
+        "description": "<p><strong>Apple Business Manager es el portal de Apple para organizaciones. </strong>En el caso de Mac, “propiedad” significa que tus equipos quedan asociados a tu empresa a nivel de programa, <br/>permitiendo asignarlos a un servidor MDM y automatizar su enrolamiento y configuración cuando se encienden o se reinstalan.<br/><br/></p>",
+        "color_scheme": "light",
+        "abm_slider_mode": true
+      }
+    },
+    "collapsible_content_3xRgKh": {
+      "type": "collapsible-content",
+      "blocks": {
+        "accordion_E6CJLj": {
+          "type": "accordion",
+          "settings": {
+            "question": "¿Necesito que TI tenga el equipo físicamente?",
+            "answer": "<p>No. La configuración se aplica remotamente desde el primer encendido.<br/><br/></p>",
+            "opened": true
+          }
+        },
+        "accordion_kWyyAA": {
+          "type": "accordion",
+          "settings": {
+            "question": "¿Qué pasa si el usuario borra el equipo?",
+            "answer": "<p>El dispositivo puede volver a enrolarse automáticamente y recuperar políticas y apps según tu estándar.<br/><br/></p>",
+            "opened": false
+          }
+        },
+        "accordion_gXjFPm": {
+          "type": "accordion",
+          "settings": {
+            "question": "¿Puedo segmentar por áreas o perfiles?",
+            "answer": "<p>Sí. Se definen grupos y perfiles (por rol, sede, tipo de dispositivo, etc.).<br/><br/></p>",
+            "opened": false
+          }
+        },
+        "accordion_ayVWGR": {
+          "type": "accordion",
+          "settings": {
+            "question": "¿Esto sirve para empresas con pocas o muchas equipos?",
+            "answer": "<p>Funciona para ambos, pero se vuelve especialmente valioso cuando crecen tus equipos o hay rotación.<br/><br/></p>",
+            "opened": false
+          }
+        }
+      },
+      "block_order": [
+        "accordion_E6CJLj",
+        "accordion_kWyyAA",
+        "accordion_gXjFPm",
+        "accordion_ayVWGR"
+      ],
+      "custom_css": [
+        ".collapsible-content.background {background-image: url(https://cdn.shopify.com/s/files/1/0731/0757/0884/files/bg-pf-zero-touch.webp?v=1785354676); background-repeat: no-repeat; background-position: center; background-size: 100%; background-attachment: local;}",
+        "h2 {font-weight: 700;}",
+        "h3 {font-weight: 600; font-size: 150% !important;}",
+        "p {font-size: 120%; opacity: 0.6;}"
+      ],
+      "name": "t:sections.collapsible-content.name",
+      "settings": {
+        "layout": "background",
+        "color_scheme": "scheme-39e5d4a7-e422-4a30-b12c-b2a059c9acee",
+        "enable_border": false,
+        "border_full": false,
+        "subheading": "",
+        "subheading_style": "subtitle",
+        "subheading_icon": "none",
+        "heading": "Preguntas frecuentes Zero Touch",
+        "heading_size": "h2",
+        "heading_level": "h2",
+        "heading_line": "none",
+        "line_color": "#1566e0",
+        "word_break": false,
+        "heading_animation": "none",
+        "word_break_an": false,
+        "text": "",
+        "text_align": "center",
+        "row_color_scheme": "scheme-cf7617bd-cf5d-43c2-b151-2d92b8b69cd6",
+        "padding_top": "l",
+        "padding_bottom": "l",
+        "margin_top": "no-indent",
+        "margin_bottom": "no-indent"
+      }
+    },
+    "animated_image_collage_wW3JqC": {
+      "type": "animated-image-collage",
+      "blocks": {
+        "column_txbkwG": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/bg-fondo-rental-1_7b23a22c-7495-4282-b2f9-30e39e1443df.webp",
+            "image_width": 420
+          }
+        },
+        "column_hmMcAr": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/bg-fondo-rental-2.webp",
+            "image_width": 420
+          }
+        },
+        "column_dD6Rwy": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/bg-fondo-rental-3.webp",
+            "image_width": 420
+          }
+        },
+        "column_mVwy3c": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/bg-fondo-rental-4.webp",
+            "image_width": 420
+          }
+        },
+        "column_NGfy7x": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/bg-fondo-rental-5.webp",
+            "image_width": 420
+          }
+        },
+        "column_hzt84V": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/bg-fondo-rental-6.webp",
+            "image_width": 420
+          }
+        },
+        "column_NDYkt8": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/bg-fondo-rental-2.webp",
+            "image_width": 420
+          }
+        },
+        "column_7Mr4zP": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/bg-fondo-rental-8.webp",
+            "image_width": 420
+          }
+        },
+        "column_mXdaRd": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/bg-fondo-rental-2.webp",
+            "image_width": 420
+          }
+        },
+        "column_yNDNgL": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/bg-fondo-rental-9.webp",
+            "image_width": 420
+          }
+        }
+      },
+      "block_order": [
+        "column_txbkwG",
+        "column_hmMcAr",
+        "column_dD6Rwy",
+        "column_mVwy3c",
+        "column_NGfy7x",
+        "column_hzt84V",
+        "column_NDYkt8",
+        "column_7Mr4zP",
+        "column_mXdaRd",
+        "column_yNDNgL"
+      ],
+      "custom_css": [
+        "h2 {background: linear-gradient(91deg, #fff 14.38%, #07abf8 93.41%); background-clip: text; font-weight: 700; -webkit-background-clip: text; -webkit-text-fill-color: transparent;}",
+        ".aic--background:before {background: linear-gradient( 180deg, #05070f 0%, rgba(5, 7, 15, 0.53) 53%, #05070f 100% ); opacity: 1;}",
+        ".aic--background .aic__info {max-width: 100rem;}"
+      ],
+      "name": "t:sections.animated-image-collage.name",
+      "settings": {
+        "section_type": "background",
+        "color_scheme": "scheme-39e5d4a7-e422-4a30-b12c-b2a059c9acee",
+        "header_overlay": false,
+        "header_transparent": false,
+        "column_to_show": 3,
+        "opacity_overlay": 0.3,
+        "full_width": true,
+        "icon": "none",
+        "icon_color_scheme": "",
+        "icon_style": "contrast",
+        "icon_fill_type": "gradient",
+        "icon_size": "recommended",
+        "box_shadow": true,
+        "subheading": "",
+        "subheading_style": "subtitle subtitle--secondary",
+        "subheading_icon": "none",
+        "heading": "Pasa a una postura de seguridad gestionada, no improvisada",
+        "heading_size": "h1",
+        "heading_level": "h2",
+        "heading_line": "simple",
+        "line_color": "#1566e0",
+        "heading_animation": "none",
+        "text": "Te ayudamos a definir una base de seguridad (políticas, grupos, cumplimiento, distribución de apps y actualizaciones) y a implementarla con Zero-Touch para que tu flota quede protegida y controlada.",
+        "enable_subscribe": false,
+        "button_label_subscribe": "Agendar Demo",
+        "button_style_subscribe": "primary",
+        "show_button": true,
+        "button_label": "Agenda un demo",
+        "button_link": "#",
+        "button_style": "primary",
+        "show_button_2": false,
+        "button_label_2": "",
+        "button_link_2": "",
+        "button_style_2": "simple",
+        "padding_top": "m",
+        "padding_bottom": "m",
+        "margin_top": "no-indent",
+        "margin_bottom": "no-indent"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "animated_image_collage_eQBHBw",
+    "hero_HfX9iK",
+    "device_tabs_eqYVrL",
+    "collapsible_content_3xRgKh",
+    "animated_image_collage_wW3JqC"
+  ]
+}

@@ -1,0 +1,142 @@
+{{ 'section-portal-variation-row.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  {% render 'section-padding' %}
+  {% render 'section-margin' %}
+{%- endstyle -%}
+
+<section class='portal-variation-row color-{{ section.settings.color_scheme }} background section-{{ section.id }}-padding section-{{ section.id }}-margin'>
+  <div class='portal-variation-row__container'>
+    <div class='portal-variation-row__grid'>
+      {% for block in section.blocks %}
+        {%- liquid
+          assign image_src = blank
+          if block.settings.image != blank
+            assign image_src = block.settings.image | image_url: width: 900
+          elsif block.settings.image_asset != blank
+            assign image_src = block.settings.image_asset | asset_url
+          endif
+        -%}
+
+        {% if image_src != blank %}
+          <div class='portal-variation-row__item portal-variation-row__item--{{ forloop.index }}' {{ block.shopify_attributes }}>
+            <img
+              src='{{ image_src }}'
+              alt=''
+              loading='lazy'
+              decoding='async'
+              class='portal-variation-row__image'
+              width='620'
+              height='708'
+            >
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Portal Variation Row",
+  "tag": "section",
+  "class": "portal-variation-row-section",
+  "enabled_on": {
+    "templates": ["*"]
+  },
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-07ed3b7e-d3e2-404e-97c3-7b69c260dbf0"
+    },
+    {
+      "type": "select",
+      "id": "padding_top",
+      "label": "Padding top",
+      "default": "m",
+      "options": [
+        { "value": "no-indent", "label": "None" },
+        { "value": "xs", "label": "XS" },
+        { "value": "s", "label": "S" },
+        { "value": "m", "label": "M" },
+        { "value": "l", "label": "L" },
+        { "value": "xl", "label": "XL" }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "padding_bottom",
+      "label": "Padding bottom",
+      "default": "m",
+      "options": [
+        { "value": "no-indent", "label": "None" },
+        { "value": "xs", "label": "XS" },
+        { "value": "s", "label": "S" },
+        { "value": "m", "label": "M" },
+        { "value": "l", "label": "L" },
+        { "value": "xl", "label": "XL" }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "margin_top",
+      "label": "Margin top",
+      "default": "no-indent",
+      "options": [
+        { "value": "no-indent", "label": "None" },
+        { "value": "xs", "label": "XS" },
+        { "value": "s", "label": "S" },
+        { "value": "m", "label": "M" },
+        { "value": "l", "label": "L" },
+        { "value": "xl", "label": "XL" }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "margin_bottom",
+      "label": "Margin bottom",
+      "default": "no-indent",
+      "options": [
+        { "value": "no-indent", "label": "None" },
+        { "value": "xs", "label": "XS" },
+        { "value": "s", "label": "S" },
+        { "value": "m", "label": "M" },
+        { "value": "l", "label": "L" },
+        { "value": "xl", "label": "XL" }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "type": "image",
+      "name": "Image",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "image_asset",
+          "label": "Asset filename"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Portal Variation Row",
+      "blocks": [
+        { "type": "image" },
+        { "type": "image" },
+        { "type": "image" },
+        { "type": "image" },
+        { "type": "image" }
+      ]
+    }
+  ]
+}
+{% endschema %}

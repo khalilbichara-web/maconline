@@ -1,0 +1,372 @@
+{{ 'section-icon-cards.css' | asset_url | stylesheet_tag }}
+
+{%- liquid
+  assign columns   = section.settings.columns | default: '4'
+  assign alignment = section.settings.header_alignment | default: 'center'
+  if columns == 'auto'
+    assign col_count = section.blocks.size
+  else
+    assign col_count = columns
+  endif
+-%}
+
+<div
+  class="icon-cards-section icon-cards-section--align-{{ alignment }}{% if section.settings.light_mode %} icon-cards-section--light{% endif %}"
+  style="--icon-cards-cols: {{ col_count }}"
+>
+  {%- assign overlay_top_left = section.settings.overlay_top_left -%}
+  {%- assign overlay_top_right = section.settings.overlay_top_right -%}
+  {%- assign overlay_bottom_left = section.settings.overlay_bottom_left -%}
+  {%- assign overlay_bottom_right = section.settings.overlay_bottom_right -%}
+
+  <div class="icon-cards-section__overlay icon-cards-section__overlay--top-left" aria-hidden="true">
+    {%- if overlay_top_left != blank -%}
+      {{ overlay_top_left | image_url: width: 1600 | image_tag: class: 'icon-cards-section__overlay-img', loading: 'lazy', widths: '800, 1200, 1600' }}
+    {%- elsif section.settings.overlay_image != blank -%}
+      {{ section.settings.overlay_image | image_url: width: 1600 | image_tag: class: 'icon-cards-section__overlay-img', loading: 'lazy', widths: '800, 1200, 1600' }}
+    {%- else -%}
+      <img src="{{ 'figma-overlay-ellipse-top-left.svg' | asset_url }}" alt="" class="icon-cards-section__overlay-img" width="964" height="953" loading="lazy">
+    {%- endif -%}
+  </div>
+
+  {%- if overlay_top_right != blank -%}
+    <div class="icon-cards-section__overlay icon-cards-section__overlay--top-right" aria-hidden="true">
+      {{ overlay_top_right | image_url: width: 1600 | image_tag: class: 'icon-cards-section__overlay-img', loading: 'lazy', widths: '800, 1200, 1600' }}
+    </div>
+  {%- endif -%}
+
+  {%- if overlay_bottom_left != blank -%}
+    <div class="icon-cards-section__overlay icon-cards-section__overlay--bottom-left" aria-hidden="true">
+      {{ overlay_bottom_left | image_url: width: 1600 | image_tag: class: 'icon-cards-section__overlay-img', loading: 'lazy', widths: '800, 1200, 1600' }}
+    </div>
+  {%- endif -%}
+
+  <div class="icon-cards-section__overlay icon-cards-section__overlay--bottom-right" aria-hidden="true">
+    {%- if overlay_bottom_right != blank -%}
+      {{ overlay_bottom_right | image_url: width: 1600 | image_tag: class: 'icon-cards-section__overlay-img', loading: 'lazy', widths: '800, 1200, 1600' }}
+    {%- else -%}
+      <img src="{{ 'figma-overlay-ellipse-bottom-right.svg' | asset_url }}" alt="" class="icon-cards-section__overlay-img" width="1330" height="1312" loading="lazy">
+    {%- endif -%}
+  </div>
+  <div class="icon-cards-section__container">
+
+  
+
+    <div class="icon-cards-section__header">
+      {% if section.settings.subheading != blank %}
+        <div class="icon-cards-section__subheading-wrapper">
+          <div class="icon-cards-section__subheading-dot"></div>
+          <p class="subtitle icon-cards-section__subheading">{{ section.settings.subheading }}</p>
+        </div>
+      {% endif %}
+
+      {% if section.settings.heading != blank %}
+        <h2 class="icon-cards-section__heading">{{ section.settings.heading }}</h2>
+      {% endif %}
+
+      {% if section.settings.description != blank %}
+        <div class="icon-cards-section__description">
+          {{ section.settings.description }}
+        </div>
+      {% endif %}
+    </div>
+
+    {% if section.blocks.size > 0 %}
+      <div class="icon-cards-section__grid">
+        {% for block in section.blocks %}
+          {%- liquid
+            assign card_large_text = block.settings.card_large_text
+            if card_large_text == blank and block.settings.heading_variant == 'number_large' and block.settings.card_label != blank
+              assign card_large_text = block.settings.card_label
+            endif
+          -%}
+          <div class="icon-cards-section__card icon-cards-section__card--index-{{ forloop.index }}{% if card_large_text != blank %} icon-cards-section__card--number-large{% endif %}" {{ block.shopify_attributes }}>
+
+            {% if block.settings.icon_name != blank or block.settings.card_subtitle != blank or block.settings.card_label != blank and card_large_text == blank %}
+              <div class="icon-cards-section__card-top">
+                {% if block.settings.icon_name != blank %}
+                  <div class="icon-cards-section__card-icon">
+                    <img
+                      src="{{ block.settings.icon_name | asset_url }}"
+                      alt="{{ block.settings.heading }}"
+                      width="48"
+                      height="48"
+                      loading="lazy"
+                    >
+                  </div>
+                {% endif %}
+
+                {% if block.settings.card_label != blank and card_large_text == blank %}
+                  <div class="icon-cards-section__card-label">{{ block.settings.card_label }}</div>
+                {% elsif block.settings.card_subtitle != blank %}
+                  <div class="icon-cards-section__subheading-wrapper">
+                    <div class="icon-cards-section__subheading-dot"></div>
+                    <p class="subtitle icon-cards-section__card-subtitle">{{ block.settings.card_subtitle }}</p>
+                  </div>
+                {% endif %}
+              </div>
+            {% endif %}
+
+            <div class="icon-cards-section__card-content">
+              {% if card_large_text != blank %}
+                <div class="icon-cards-section__card-label">{{ card_large_text }}</div>
+              {% endif %}
+
+              {% if block.settings.heading != blank %}
+                <h3 class="icon-cards-section__card-heading">{{ block.settings.heading }}</h3>
+              {% endif %}
+
+              {% if block.settings.description != blank %}
+                <p class="icon-cards-section__card-description">{{ block.settings.description }}</p>
+              {% endif %}
+            </div>
+
+          </div>
+        {% endfor %}
+      </div>
+    {% endif %}
+
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Icon Cards",
+  "tag": "section",
+  "class": "icon-cards-section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "header",
+      "content": "Elipses de fondo"
+    },
+    {
+      "type": "image_picker",
+      "id": "overlay_top_left",
+      "label": "Overlay superior izquierdo"
+    },
+    {
+      "type": "image_picker",
+      "id": "overlay_top_right",
+      "label": "Overlay superior derecho"
+    },
+    {
+      "type": "image_picker",
+      "id": "overlay_bottom_left",
+      "label": "Overlay inferior izquierdo"
+    },
+    {
+      "type": "image_picker",
+      "id": "overlay_bottom_right",
+      "label": "Overlay inferior derecho"
+    },
+    {
+      "type": "image_picker",
+      "id": "overlay_image",
+      "label": "Overlay heredado (superior izquierdo)"
+    },
+    {
+      "type": "select",
+      "id": "columns",
+      "label": "Columnas",
+      "options": [
+        { "value": "auto", "label": "Auto (según cantidad de bloques)" },
+        { "value": "2", "label": "2 columnas" },
+        { "value": "3", "label": "3 columnas" },
+        { "value": "4", "label": "4 columnas" },
+        { "value": "5", "label": "5 columnas" }
+      ],
+      "default": "4"
+    },
+    {
+      "type": "select",
+      "id": "header_alignment",
+      "label": "Alineación del encabezado",
+      "options": [
+        { "value": "center", "label": "Centrado" },
+        { "value": "left",   "label": "Izquierda" }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "checkbox",
+      "id": "light_mode",
+      "label": "Light mode",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Contenido"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subtítulo",
+      "default": "el problema"
+    },
+    {
+      "type": "richtext",
+      "id": "heading",
+      "label": "Título Principal",
+      "default": "<p>La tecnología debería impulsar el crecimiento de tu empresa,</p><p>no convertirse en una carga operativa.</p>"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Descripción",
+      "default": "<p>Cada renovación tecnológica implica decisiones financieras, implementación, soporte, seguridad y administración. Un modelo tradicional hace que estos procesos consuman tiempo, presupuesto y recursos que podrían destinarse al crecimiento del negocio.</p>"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "card",
+      "name": "Tarjeta",
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon_name",
+          "label": "Ícono",
+          "options": [
+            { "value": "",                                "label": "— Sin ícono —" },
+            { "value": "icon-mac.svg",                   "label": "Mac" },
+            { "value": "icon-iphone.svg",                "label": "iPhone" },
+            { "value": "icon-ipad.svg",                  "label": "iPad" },
+            { "value": "solar_shield-check-outline.svg", "label": "Escudo / Seguridad" },
+            { "value": "solar_graph-down-new-outline.svg","label": "Gráfico / Depreciación" },
+            { "value": "solar_clock-circle-outline.svg", "label": "Reloj / Tiempo" },
+            { "value": "solar_chart-outline.svg",        "label": "Chart / Escalabilidad" }
+          ],
+          "default": ""
+        },
+        {
+          "type": "select",
+          "id": "heading_variant",
+          "label": "Variación del título",
+          "options": [
+            { "value": "default", "label": "Normal" },
+            { "value": "number_large", "label": "Número grande" }
+          ],
+          "default": "default"
+        },
+        {
+          "type": "text",
+          "id": "card_label",
+          "label": "Número / Texto grande",
+          "info": "Si se define, se muestra junto al ícono. Ej: 01, 02, 03"
+        },
+        {
+          "type": "text",
+          "id": "card_large_text",
+          "label": "Número / texto grande (arriba del título)",
+          "info": "Opcional. Si se completa, se muestra arriba del título dentro de la tarjeta."
+        },
+        {
+          "type": "text",
+          "id": "card_subtitle",
+          "label": "Subtítulo (clase subtitle)",
+          "info": "Alternativa al ícono y al número grande."
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Título",
+          "default": "Título de la tarjeta"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Descripción",
+          "default": "Descripción de la tarjeta."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Icon Cards — El Problema (4 col)",
+      "category": "Custom",
+      "settings": {
+        "columns": "4",
+        "header_alignment": "center",
+        "subheading": "el problema",
+        "heading": "<p>La tecnología debería impulsar el crecimiento de tu empresa,</p><p>no convertirse en una carga operativa.</p>",
+        "description": "<p>Cada renovación tecnológica implica decisiones financieras, implementación, soporte, seguridad y administración. Un modelo tradicional hace que estos procesos consuman tiempo, presupuesto y recursos que podrían destinarse al crecimiento del negocio.</p>"
+      },
+      "blocks": [
+        {
+          "type": "card",
+          "settings": {
+            "icon_name": "solar_shield-check-outline.svg",
+            "heading": "Alta inversión inicial",
+            "description": "Renovar equipos requiere un importante desembolso de capital que impacta el flujo de caja y limita otras inversiones."
+          }
+        },
+        {
+          "type": "card",
+          "settings": {
+            "icon_name": "solar_graph-down-new-outline.svg",
+            "heading": "Activos que pierden valor",
+            "description": "Los dispositivos comienzan a depreciarse desde el primer día, reduciendo el valor de la inversión realizada."
+          }
+        },
+        {
+          "type": "card",
+          "settings": {
+            "icon_name": "solar_clock-circle-outline.svg",
+            "heading": "Implementación y soporte manual",
+            "description": "El área de TI debe configurar, entregar y administrar cada equipo, aumentando la carga operativa y los tiempos de despliegue."
+          }
+        },
+        {
+          "type": "card",
+          "settings": {
+            "icon_name": "solar_chart-outline.svg",
+            "heading": "Escalar se vuelve más complejo",
+            "description": "Cada nuevo colaborador implica más compras, configuraciones, inventario y soporte, dificultando el crecimiento de la organización."
+          }
+        }
+      ]
+    },
+    {
+      "name": "Icon Cards — La Solución (3 col)",
+      "category": "Custom",
+      "settings": {
+        "columns": "3",
+        "header_alignment": "left",
+        "subheading": "la solución",
+        "heading": "<p>Un modelo flexible, predecible y sin fricciones operativas.</p>",
+        "description": "<p>MacOnline Pro transforma la forma en que tu empresa gestiona la tecnología: sin inversión inicial, con soporte incluido y renovación automática de equipos.</p>"
+      },
+      "blocks": [
+        {
+          "type": "card",
+          "settings": {
+            "icon_name": "solar_shield-check-outline.svg",
+            "heading": "Rental Operativo",
+            "description": "Accede a dispositivos Apple mediante un modelo flexible que elimina grandes inversiones iniciales y acelera la renovación tecnológica."
+          }
+        },
+        {
+          "type": "card",
+          "settings": {
+            "icon_name": "solar_clock-circle-outline.svg",
+            "heading": "Zero Touch",
+            "description": "Implementa dispositivos listos para trabajar con configuración automática, seguridad desde el primer encendido y sin fricción operativa."
+          }
+        },
+        {
+          "type": "card",
+          "settings": {
+            "icon_name": "solar_chart-outline.svg",
+            "heading": "Soporte y Servicio 360°",
+            "description": "Administra tu infraestructura tecnológica con soporte especializado, mantenimiento proactivo y planes de renovación personalizados."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

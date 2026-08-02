@@ -1,0 +1,366 @@
+{%- style -%}
+  {% render 'section-padding' %}
+  {% render 'section-margin' %}
+
+  .portal-challenges {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .portal-challenges__container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 4.6rem 3.125rem 6.2rem;
+  }
+
+  .portal-challenges__header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.8rem;
+    margin-bottom: 3.2rem;
+  }
+
+  .portal-challenges__subheading-wrap {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.625rem;
+  }
+
+  .portal-challenges__subheading-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: radial-gradient(circle, #07abf8, #1566e0);
+    flex-shrink: 0;
+  }
+
+  .portal-challenges__subheading {
+    margin: 0;
+    color: #102333;
+    letter-spacing: 0.06em;
+  }
+
+  .portal-challenges__heading {
+    margin: 0;
+    color: #102333;
+    font-size: clamp(2rem, 2.9vw, 4.6rem);
+    line-height: 1.1;
+  }
+
+  .portal-challenges__description {
+    max-width: 105rem;
+  }
+
+  .portal-challenges__description p {
+    margin: 0;
+    color: #102333;
+    font-size: clamp(1.7rem, 1.45vw, 2.9rem);
+    line-height: 1.35;
+  }
+
+  .portal-challenges__grid {
+    display: grid;
+    grid-template-columns: 1.29fr 1fr 1fr;
+    grid-template-areas:
+      "card1 card2 card3"
+      "card1 card4 card4";
+    gap: 2rem;
+  }
+
+  .portal-challenges__card {
+    border: 0;
+    border-radius: 2.2rem;
+    background:
+      radial-gradient(circle at 0% 20%, rgba(9, 53, 81, 0.95) 0, rgba(8, 42, 64, 0.8) 23%, rgba(5, 24, 38, 0.55) 35%, rgba(5, 24, 38, 0.2) 48%, rgba(5, 24, 38, 0) 58%),
+      #071f31;
+    padding: 2rem 2.4rem 2.2rem;
+    min-height: 27.6rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+  }
+
+  .portal-challenges__card--index-1 {
+    grid-area: card1;
+    min-height: 57.2rem;
+  }
+
+  .portal-challenges__card--index-2 {
+    grid-area: card2;
+  }
+
+  .portal-challenges__card--index-3 {
+    grid-area: card3;
+  }
+
+  .portal-challenges__card--index-4 {
+    grid-area: card4;
+  }
+
+  .portal-challenges__icon {
+    width: 4.2rem;
+    height: 4.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .portal-challenges__icon img {
+    width: 4.2rem;
+    height: 4.2rem;
+    display: block;
+  }
+
+  .portal-challenges__content {
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .portal-challenges__card-title {
+    margin: 0;
+    color: #ffffff;
+    font-size: clamp(2rem, 1.7vw, 3.5rem);
+    line-height: 1.2;
+    font-weight: 590;
+  }
+
+  .portal-challenges__card-text {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.92);
+    font-size: clamp(1.65rem, 1.35vw, 2.8rem);
+    line-height: 1.35;
+  }
+
+  @media screen and (max-width: 989px) {
+    .portal-challenges__container {
+      padding: 3rem 1.25rem 3.5rem;
+    }
+
+    .portal-challenges__grid {
+      grid-template-columns: 1fr;
+      grid-template-areas:
+        "card1"
+        "card2"
+        "card3"
+        "card4";
+    }
+
+    .portal-challenges__card,
+    .portal-challenges__card--index-1 {
+      min-height: 23rem;
+    }
+
+    .portal-challenges__card-title {
+      font-size: 1.55rem;
+    }
+
+    .portal-challenges__card-text {
+      font-size: 1.1rem;
+    }
+  }
+{%- endstyle -%}
+
+<div class="portal-challenges color-{{ section.settings.color_scheme }} background section-{{ section.id }}-padding">
+  <div class="portal-challenges__container section-{{ section.id }}-margin">
+    <div class="portal-challenges__header">
+      {% if section.settings.subheading != blank %}
+        <div class="portal-challenges__subheading-wrap">
+          <span class="portal-challenges__subheading-dot"></span>
+          <p class="subtitle portal-challenges__subheading">{{ section.settings.subheading }}</p>
+        </div>
+      {% endif %}
+
+      {% if section.settings.heading != blank %}
+        <h2 class="portal-challenges__heading">{{ section.settings.heading }}</h2>
+      {% endif %}
+
+      {% if section.settings.description != blank %}
+        <div class="portal-challenges__description">{{ section.settings.description }}</div>
+      {% endif %}
+    </div>
+
+    <div class="portal-challenges__grid">
+      {% for block in section.blocks %}
+        <article class="portal-challenges__card portal-challenges__card--index-{{ forloop.index }}" {{ block.shopify_attributes }}>
+          {% if block.settings.icon_asset != blank %}
+            <div class="portal-challenges__icon">
+              {% comment %} theme-check-disable ImgWidthAndHeight {% endcomment %}
+              <img src="{{ block.settings.icon_asset | asset_url }}" alt="" loading="lazy" width="42" height="42">
+              {% comment %} theme-check-enable ImgWidthAndHeight {% endcomment %}
+            </div>
+          {% endif %}
+
+          <div class="portal-challenges__content">
+            {% if block.settings.heading != blank %}
+              <h3 class="portal-challenges__card-title">{{ block.settings.heading }}</h3>
+            {% endif %}
+
+            {% if block.settings.text != blank %}
+              <p class="portal-challenges__card-text">{{ block.settings.text }}</p>
+            {% endif %}
+          </div>
+        </article>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Portal Challenges",
+  "tag": "section",
+  "class": "portal-challenges-section",
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "background-1"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "BENEFICIOS CLAVE PARA EMPRESAS"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "¿Que significa Seguridad con MDM?"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description",
+      "default": "<p>Sin un portal, cada alta, cambio o solicitud termina en correo, planilla o ticket manual.</p><p>El portal ordena la operacion con flujos claros, aprobaciones, visibilidad y tiempos de respuesta mas cortos, manteniendo el control y la seguridad donde corresponde.</p>"
+    },
+    {
+      "type": "select",
+      "id": "padding_top",
+      "label": "Padding top",
+      "default": "l",
+      "options": [
+        { "value": "no-indent", "label": "None" },
+        { "value": "xs", "label": "XS" },
+        { "value": "s", "label": "S" },
+        { "value": "m", "label": "M" },
+        { "value": "l", "label": "L" },
+        { "value": "xl", "label": "XL" }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "padding_bottom",
+      "label": "Padding bottom",
+      "default": "l",
+      "options": [
+        { "value": "no-indent", "label": "None" },
+        { "value": "xs", "label": "XS" },
+        { "value": "s", "label": "S" },
+        { "value": "m", "label": "M" },
+        { "value": "l", "label": "L" },
+        { "value": "xl", "label": "XL" }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "margin_top",
+      "label": "Margin top",
+      "default": "no-indent",
+      "options": [
+        { "value": "no-indent", "label": "None" },
+        { "value": "xs", "label": "XS" },
+        { "value": "s", "label": "S" },
+        { "value": "m", "label": "M" },
+        { "value": "l", "label": "L" },
+        { "value": "xl", "label": "XL" }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "margin_bottom",
+      "label": "Margin bottom",
+      "default": "no-indent",
+      "options": [
+        { "value": "no-indent", "label": "None" },
+        { "value": "xs", "label": "XS" },
+        { "value": "s", "label": "S" },
+        { "value": "m", "label": "M" },
+        { "value": "l", "label": "L" },
+        { "value": "xl", "label": "XL" }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "type": "card",
+      "name": "Card",
+      "limit": 4,
+      "settings": [
+        {
+          "type": "text",
+          "id": "icon_asset",
+          "label": "Icon asset filename"
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "Card title"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Description",
+          "default": "Card description"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Portal Challenges",
+      "blocks": [
+        {
+          "type": "card",
+          "settings": {
+            "icon_asset": "portal-icon-1.svg",
+            "heading": "Inventario y estado",
+            "text": "Ver equipos por area, ubicacion, usuario, modelo, version y cumplimiento."
+          }
+        },
+        {
+          "type": "card",
+          "settings": {
+            "icon_asset": "portal-icon-2.svg",
+            "heading": "Altas y asignaciones",
+            "text": "Asignar dispositivos a usuarios/equipos de trabajo con trazabilidad."
+          }
+        },
+        {
+          "type": "card",
+          "settings": {
+            "icon_asset": "portal-icon-3.svg",
+            "heading": "Solicitudes de apps",
+            "text": "Catalogo corporativo + solicitudes con aprobacion y despliegue automatico."
+          }
+        },
+        {
+          "type": "card",
+          "settings": {
+            "icon_asset": "portal-icon-4.svg",
+            "heading": "Soporte y tickets",
+            "text": "Levantar incidentes y seguir el estado (con historial por equipo)."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

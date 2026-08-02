@@ -1,0 +1,88 @@
+{{ 'section-rental-closing.css' | asset_url | stylesheet_tag }}
+
+<section class="rental-closing" {{ section.shopify_attributes }}>
+  <div class="rental-closing__collage" aria-hidden="true">
+    {% for index in (1..9) %}
+      {% capture image_setting %}image_{{ index }}{% endcapture %}
+      {% assign image = section.settings[image_setting] %}
+      <div class="rental-closing__tile rental-closing__tile--{{ index }}">
+        {% if image != blank %}
+          {{ image | image_url: width: 900 | image_tag: class: 'rental-closing__image', loading: 'lazy', widths: '450, 700, 900' }}
+        {% elsif product.featured_media != blank %}
+          {{ product.featured_media.preview_image | image_url: width: 900 | image_tag: class: 'rental-closing__image rental-closing__image--fallback', loading: 'lazy', widths: '450, 700, 900' }}
+        {% endif %}
+      </div>
+    {% endfor %}
+  </div>
+
+  <div class="rental-closing__shade"></div>
+
+  <div class="rental-closing__content">
+    {% if section.settings.heading != blank %}
+      <div class="rental-closing__heading">{{ section.settings.heading }}</div>
+    {% endif %}
+
+    {% if section.settings.description != blank %}
+      <div class="rental-closing__description">{{ section.settings.description }}</div>
+    {% endif %}
+
+    {% if section.settings.button_label != blank %}
+      <a class="rental-closing__button" href="{{ section.settings.button_link | default: '#' }}">
+        {{ section.settings.button_label }}
+        <span aria-hidden="true">&#8594;</span>
+      </a>
+    {% endif %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Rental closing",
+  "tag": "section",
+  "class": "rental-closing-section",
+  "enabled_on": {
+    "templates": ["product"]
+  },
+  "settings": [
+    {
+      "type": "richtext",
+      "id": "heading",
+      "label": "Main text",
+      "default": "<p>Cambia la forma en que tu empresa adquiere tecnologia</p>"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description",
+      "default": "<p>Accede a dispositivos Apple con un modelo disenado para crecer contigo, reducir costos operacionales y simplificar toda la gestion tecnologica de tu organizacion.</p>"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button text",
+      "default": "Solicitar asesoria"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    },
+    {
+      "type": "header",
+      "content": "Collage images"
+    },
+    { "type": "image_picker", "id": "image_1", "label": "Image 1" },
+    { "type": "image_picker", "id": "image_2", "label": "Image 2" },
+    { "type": "image_picker", "id": "image_3", "label": "Image 3" },
+    { "type": "image_picker", "id": "image_4", "label": "Image 4" },
+    { "type": "image_picker", "id": "image_5", "label": "Image 5" },
+    { "type": "image_picker", "id": "image_6", "label": "Image 6" },
+    { "type": "image_picker", "id": "image_7", "label": "Image 7" },
+    { "type": "image_picker", "id": "image_8", "label": "Image 8" },
+    { "type": "image_picker", "id": "image_9", "label": "Image 9" }
+  ],
+  "presets": [
+    { "name": "Rental closing" }
+  ]
+}
+{% endschema %}

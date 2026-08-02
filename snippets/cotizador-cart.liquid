@@ -1,0 +1,1188 @@
+{%- comment -%}
+  Cotizador Cart — Snippet for Cart Drawer & Cart Page
+  Renders a "Cotizar orden" button and modal to generate a
+  leasing quote PDF for all items in the cart.
+
+  Usage:
+    {% render 'cotizador-cart' %}
+{%- endcomment -%}
+
+{%- style -%}
+/* ── BOTÓN COTIZAR CART ──────────────────────────────────── */
+.qcot-cart-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0 0;
+  background: transparent;
+  color: #0071e3;
+  border: 2px solid #0071e3;
+  border-radius: 12px;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, transform 0.1s;
+  -webkit-font-smoothing: antialiased;
+}
+.qcot-cart-btn:hover { background: #0071e3; color: #fff; }
+.qcot-cart-btn:active { transform: scale(0.98); }
+.qcot-cart-btn svg { width: 18px; height: 18px; fill: currentColor; flex-shrink: 0; }
+
+/* ── BOTÓN FULL-WIDTH CART PAGE ───────────────────────────── */
+.qcotc-page-btn-wrap {
+  max-width: 1200px;
+  margin: 24px auto;
+  padding: 0 20px;
+}
+.qcotc-page-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 16px 24px;
+  background: #0071e3;
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+  -webkit-font-smoothing: antialiased;
+}
+.qcotc-page-btn:hover { background: #0077ed; }
+.qcotc-page-btn:active { transform: scale(0.98); }
+.qcotc-page-btn svg { width: 20px; height: 20px; fill: currentColor; flex-shrink: 0; }
+
+/* ── OVERLAY + MODAL ─────────────────────────────────────── */
+.qcotc-overlay {
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,0.5);
+  backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
+  z-index: 99998;
+  opacity: 0; visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s;
+}
+.qcotc-overlay.qcotc-open { opacity: 1; visibility: visible; }
+
+.qcotc-modal {
+  position: fixed;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%) scale(0.95);
+  width: min(480px, calc(100vw - 32px));
+  max-height: calc(100vh - 40px);
+  overflow-y: auto;
+  background: #fff;
+  border-radius: 20px;
+  z-index: 99999;
+  overflow-x: hidden;
+  opacity: 0; visibility: hidden;
+  transition: opacity 0.3s, transform 0.3s, visibility 0.3s;
+  box-shadow: 0 24px 80px rgba(0,0,0,0.25);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+.qcotc-overlay.qcotc-open + .qcotc-modal,
+.qcotc-modal.qcotc-open {
+  opacity: 1; visibility: visible; transform: translate(-50%, -50%) scale(1);
+}
+
+/* Modal internals */
+.qcotc-header {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 20px 24px 12px;
+}
+.qcotc-header h3 { margin: 0; font-size: 18px; font-weight: 700; color: #1d1d1f; }
+.qcotc-close {
+  background: none; border: none; cursor: pointer; padding: 4px;
+  color: #86868b; font-size: 22px; line-height: 1;
+}
+.qcotc-close:hover { color: #1d1d1f; }
+
+.qcotc-body { padding: 0 24px 20px; }
+
+/* Cart summary in modal */
+.qcotc-summary {
+  background: #f5f5f7; border-radius: 12px; padding: 14px 16px; margin-bottom: 16px;
+}
+.qcotc-summary-title {
+  font-size: 11px; font-weight: 600; letter-spacing: 0.05em;
+  text-transform: uppercase; color: #86868b; margin: 0 0 10px;
+}
+.qcotc-item {
+  display: flex; align-items: center; gap: 10px;
+  padding: 6px 0;
+  border-bottom: 1px solid #e5e5e7;
+}
+.qcotc-item:last-of-type { border-bottom: none; }
+.qcotc-item-img {
+  width: 40px; height: 40px; border-radius: 6px; object-fit: cover;
+  background: #fff; border: 1px solid #e5e5e7; flex-shrink: 0;
+}
+.qcotc-item-info { flex: 1; min-width: 0; }
+.qcotc-item-name {
+  font-size: 12px; font-weight: 600; color: #1d1d1f;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.qcotc-item-variant { font-size: 11px; color: #86868b; }
+.qcotc-item-price { font-size: 12px; font-weight: 600; color: #1d1d1f; white-space: nowrap; }
+
+/* Editable quantity stepper */
+.qcotc-qty-wrap {
+  display: flex; align-items: center; gap: 0;
+  border: 1.5px solid #d2d2d7; border-radius: 8px;
+  overflow: hidden; flex-shrink: 0; height: 30px;
+}
+.qcotc-qty-btn {
+  width: 28px; height: 30px; border: none; background: #f5f5f7;
+  font-size: 16px; font-weight: 600; color: #1d1d1f; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  font-family: inherit; transition: background 0.15s; padding: 0; line-height: 1;
+}
+.qcotc-qty-btn:hover { background: #e8e8ed; }
+.qcotc-qty-btn:active { background: #d2d2d7; }
+.qcotc-qty-input {
+  width: 38px; height: 30px; border: none; border-left: 1px solid #d2d2d7;
+  border-right: 1px solid #d2d2d7; text-align: center; font-size: 13px;
+  font-weight: 600; color: #1d1d1f; background: #fff; font-family: inherit;
+  -moz-appearance: textfield; padding: 0;
+}
+.qcotc-qty-input::-webkit-inner-spin-button,
+.qcotc-qty-input::-webkit-outer-spin-button { -webkit-appearance: none; margin: 0; }
+.qcotc-item-right { display: flex; align-items: center; gap: 10px; }
+
+.qcotc-total-row {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 10px 0 0; margin-top: 6px;
+}
+.qcotc-total-label { font-size: 13px; font-weight: 600; color: #1d1d1f; }
+.qcotc-total-value { font-size: 15px; font-weight: 700; color: #0071e3; }
+
+/* Lease preview */
+.qcotc-lease-preview {
+  background: #0071e3; color: #fff; border-radius: 12px;
+  padding: 14px 16px; margin-bottom: 16px; text-align: center;
+}
+.qcotc-lease-label { font-size: 11px; color: #fff !important; opacity: 0.85; margin: 0 0 4px; }
+.qcotc-lease-cuota { font-size: 22px; font-weight: 700; color: #fff !important; margin: 0; }
+.qcotc-lease-sub { font-size: 11px; color: #fff !important; opacity: 0.7; margin: 4px 0 0; }
+
+/* Form fields */
+.qcotc-form-group { margin-bottom: 12px; }
+.qcotc-label {
+  display: block; font-size: 11px; font-weight: 600;
+  letter-spacing: 0.05em; text-transform: uppercase;
+  color: #86868b; margin-bottom: 4px;
+}
+.qcotc-input {
+  width: 100%; padding: 10px 14px;
+  background: #f5f5f7; border: 1.5px solid transparent;
+  border-radius: 10px; font-size: 14px; color: #1d1d1f;
+  font-family: inherit; outline: none;
+  transition: border 0.2s, background 0.2s;
+  box-sizing: border-box;
+}
+.qcotc-input:focus { background: #fff; border-color: #0071e3; }
+.qcotc-input-error { border-color: #ff3b30 !important; }
+.qcotc-error-msg {
+  color: #ff3b30; font-size: 11px; margin-top: 3px;
+  display: none;
+}
+.qcotc-error-msg.qcotc-show { display: block; }
+
+.qcotc-name-row { display: flex; gap: 10px; }
+.qcotc-name-row .qcotc-form-group { flex: 1; }
+
+/* Submit button */
+.qcotc-submit {
+  width: 100%; padding: 14px;
+  background: #0071e3; color: #fff; border: none;
+  border-radius: 12px; font-size: 15px; font-weight: 600;
+  font-family: inherit; cursor: pointer;
+  transition: background 0.2s;
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+}
+.qcotc-submit:hover { background: #0077ed; }
+.qcotc-submit:disabled { opacity: 0.6; cursor: not-allowed; }
+.qcotc-submit svg { width: 18px; height: 18px; fill: currentColor; }
+
+.qcotc-disclaimer {
+  text-align: center; font-size: 10px; color: #86868b;
+  margin-top: 10px; line-height: 1.4;
+}
+
+/* Success state */
+.qcotc-success {
+  text-align: center; padding: 30px 10px;
+  display: none;
+}
+.qcotc-success.qcotc-show { display: block; }
+.qcotc-success-check {
+  font-size: 36px; color: #34c759; margin-bottom: 10px;
+}
+.qcotc-success h4 { font-size: 17px; font-weight: 700; color: #1d1d1f; margin: 0 0 6px; }
+.qcotc-success p { font-size: 13px; color: #86868b; margin: 0; }
+
+/* Spinner */
+.qcotc-spinner {
+  display: inline-block; width: 16px; height: 16px;
+  border: 2px solid rgba(255,255,255,0.3);
+  border-top-color: #fff; border-radius: 50%;
+  animation: qcotcSpin 0.6s linear infinite;
+}
+@keyframes qcotcSpin { to { transform: rotate(360deg); } }
+
+/* Plazo toggle */
+.qcotc-plazo-row {
+  display: flex; gap: 8px; margin-bottom: 14px;
+}
+.qcotc-plazo-opt {
+  flex: 1; padding: 10px 8px; border-radius: 10px;
+  border: 2px solid #e5e5e7; background: #fff;
+  text-align: center; cursor: pointer; transition: all 0.2s;
+  font-family: inherit;
+}
+.qcotc-plazo-opt.qcotc-plazo-active {
+  border-color: #0071e3; background: #f0f7ff;
+}
+.qcotc-plazo-opt-months { font-size: 14px; font-weight: 700; color: #1d1d1f; display: block; }
+.qcotc-plazo-opt-buyout { font-size: 10px; color: #86868b; display: block; }
+{%- endstyle -%}
+
+<!-- Hidden logo for PDF -->
+<img id="qcotc-shop-logo" src="{{ shop.brand.logo | image_url: width: 300 }}" alt="" crossorigin="anonymous" style="display:none;">
+
+<!-- Cart Page: full-width button below cart (only on /cart page) -->
+{%- if request.page_type == 'cart' -%}
+<div class="qcotc-page-btn-wrap">
+  <button type="button" class="qcotc-page-btn" id="qcotc-trigger-page">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+    Descargar cotización en PDF
+  </button>
+</div>
+{%- endif -%}
+
+<!-- Cotizar Cart Button — will be injected into drawer via JS -->
+<template id="qcotc-btn-template">
+  <button type="button" class="qcot-cart-btn" id="qcotc-trigger">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+    Descargar cotización en PDF
+  </button>
+</template>
+
+<!-- Overlay + Modal -->
+<div class="qcotc-overlay" id="qcotc-overlay"></div>
+<div class="qcotc-modal" id="qcotc-modal">
+  <div class="qcotc-header">
+    <h3>Cotizar orden</h3>
+    <button class="qcotc-close" id="qcotc-close">&times;</button>
+  </div>
+  <div class="qcotc-body">
+    <!-- Cart summary (populated by JS) -->
+    <div class="qcotc-summary" id="qcotc-summary"></div>
+
+    <!-- Plazo toggle -->
+    <div class="qcotc-plazo-row" id="qcotc-plazo-row">
+      <button type="button" class="qcotc-plazo-opt" data-plazo="12">
+        <span class="qcotc-plazo-opt-months">12 meses</span>
+        <span class="qcotc-plazo-opt-buyout">Compra al final: 50%</span>
+      </button>
+      <button type="button" class="qcotc-plazo-opt" data-plazo="24">
+        <span class="qcotc-plazo-opt-months">24 meses</span>
+        <span class="qcotc-plazo-opt-buyout">Compra al final: 25%</span>
+      </button>
+      <button type="button" class="qcotc-plazo-opt qcotc-plazo-active" data-plazo="36">
+        <span class="qcotc-plazo-opt-months">36 meses</span>
+        <span class="qcotc-plazo-opt-buyout">Compra al final: 15%</span>
+      </button>
+      <button type="button" class="qcotc-plazo-opt" data-plazo="48">
+        <span class="qcotc-plazo-opt-months">48 meses</span>
+        <span class="qcotc-plazo-opt-buyout">Compra al final: 8%</span>
+      </button>
+      <button type="button" class="qcotc-plazo-opt" data-plazo="60">
+        <span class="qcotc-plazo-opt-months">60 meses</span>
+        <span class="qcotc-plazo-opt-buyout">Compra al final: 4%</span>
+      </button>
+    </div>
+
+    <!-- Lease preview (populated by JS) -->
+    <div class="qcotc-lease-preview" id="qcotc-lease-box">
+      <p class="qcotc-lease-label">Cuota mensual estimada (sin IVA)</p>
+      <p class="qcotc-lease-cuota" id="qcotc-lease-cuota">—</p>
+      <p class="qcotc-lease-sub" id="qcotc-lease-sub"></p>
+    </div>
+
+    <!-- Form -->
+    <div id="qcotc-form-area">
+      <div class="qcotc-name-row">
+        <div class="qcotc-form-group">
+          <label class="qcotc-label" for="qcotc-nombre">Nombre</label>
+          <input class="qcotc-input" type="text" id="qcotc-nombre" placeholder="Juan" autocomplete="given-name">
+        </div>
+        <div class="qcotc-form-group">
+          <label class="qcotc-label" for="qcotc-apellido">Apellido</label>
+          <input class="qcotc-input" type="text" id="qcotc-apellido" placeholder="Pérez" autocomplete="family-name">
+        </div>
+      </div>
+      <div class="qcotc-form-group">
+        <label class="qcotc-label" for="qcotc-empresa">Empresa</label>
+        <input class="qcotc-input" type="text" id="qcotc-empresa" placeholder="Mi Empresa SpA" autocomplete="organization">
+      </div>
+      <div class="qcotc-form-group">
+        <label class="qcotc-label" for="qcotc-rut">RUT Empresa</label>
+        <input class="qcotc-input" type="text" id="qcotc-rut" placeholder="76.123.456-7" autocomplete="off">
+      </div>
+      <div class="qcotc-name-row">
+        <div class="qcotc-form-group">
+          <label class="qcotc-label" for="qcotc-telefono">Teléfono *</label>
+          <input class="qcotc-input" type="tel" id="qcotc-telefono" placeholder="+56 9 1234 5678" autocomplete="tel">
+          <div class="qcotc-error-msg" id="qcotc-telefono-error">Ingresa un número de teléfono válido</div>
+        </div>
+        <div class="qcotc-form-group">
+          <label class="qcotc-label" for="qcotc-email">Email corporativo *</label>
+          <input class="qcotc-input" type="email" id="qcotc-email" placeholder="juan@empresa.cl" required autocomplete="email">
+          <div class="qcotc-error-msg" id="qcotc-email-error">Ingresa un email válido</div>
+        </div>
+      </div>
+
+      <button type="button" class="qcotc-submit" id="qcotc-submit-btn">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+        Descargar cotización PDF
+      </button>
+
+      <p class="qcotc-disclaimer">Al descargar, aceptas recibir información sobre nuestros productos y servicios.</p>
+    </div>
+
+    <!-- Success state -->
+    <div class="qcotc-success" id="qcotc-success">
+      <div class="qcotc-success-check">✓</div>
+      <h4>Cotización descargada</h4>
+      <p>Revisa tu carpeta de descargas. Te contactaremos pronto.</p>
+    </div>
+  </div>
+</div>
+
+<script>
+(function() {
+  'use strict';
+
+  /* ── Load jsPDF ──────────────────────────────────────────── */
+  if (!window.jspdf) {
+    var s = document.createElement('script');
+    s.src = 'https://cdn.jsdelivr.net/npm/jspdf@2.5.2/dist/jspdf.umd.min.js';
+    s.onerror = function() { console.error('[CotizadorCart] Failed to load jsPDF'); };
+    document.head.appendChild(s);
+  }
+
+  /* ── Constants ───────────────────────────────────────────── */
+  var FACTOR = { 12: 0.058669, 24: 0.040385, 36: 0.032015, 48: 0.027087, 60: 0.023532 };
+    var BUYOUT = { 12: '50%', 24: '25%', 36: '15%', 48: '8%', 60: '4%' };
+  var APP_PROXY_URL = '/apps/cotizador';
+  var shopName = {{ shop.name | json }};
+  var currentPlazo = 36;
+  var cartItems = []; /* populated from /cart.js */
+
+  /* ── Format helpers ──────────────────────────────────────── */
+  function fmtMiles(n) { return Math.round(n).toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.'); }
+  function fmtDate() {
+    var d = new Date();
+    var months = ['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'];
+    return d.getDate() + ' de ' + months[d.getMonth()] + ' de ' + d.getFullYear();
+  }
+  function fmtDateShort() {
+    var d = new Date();
+    return d.getDate().toString().padStart(2,'0') + '/' + (d.getMonth()+1).toString().padStart(2,'0') + '/' + d.getFullYear();
+  }
+  function addDays(days) {
+    var d = new Date();
+    d.setDate(d.getDate() + days);
+    return d.getDate().toString().padStart(2,'0') + '/' + (d.getMonth()+1).toString().padStart(2,'0') + '/' + d.getFullYear();
+  }
+  function isValidEmail(email) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email); }
+
+  function detectTipo(title, tags) {
+    var t = (title || '').toLowerCase();
+    if (t.indexOf('iphone') > -1) return 'iPhone';
+    if (t.indexOf('ipad') > -1) return 'iPad';
+    return 'Mac';
+  }
+
+  function calcCuota(priceNet, qty, plazo, tipo) {
+    var f = FACTOR[plazo] || FACTOR[36];
+    return priceNet * qty * f;
+  }
+
+  /* ── Inject button near totals ───────────────────────────── */
+  function injectButton() {
+    var template = document.getElementById('qcotc-btn-template');
+    if (!template) return;
+
+    /* Cart Drawer: after .cart-drawer__footer .totals or before checkout button */
+    var drawerFooter = document.querySelector('.cart-drawer__footer');
+    if (drawerFooter && !drawerFooter.querySelector('#qcotc-trigger-drawer')) {
+      var clone1 = template.content.cloneNode(true);
+      var btn1 = clone1.querySelector('.qcot-cart-btn');
+      btn1.id = 'qcotc-trigger-drawer';
+      /* Place after the .cart-drawer__footer div that contains totals */
+      var innerFooter = drawerFooter.querySelector('.cart-drawer__footer');
+      if (innerFooter) {
+        /* Nested .cart-drawer__footer div — place after it */
+        innerFooter.parentNode.insertBefore(clone1, innerFooter.nextSibling);
+      } else {
+        /* Try placing after totals div */
+        var totalsDiv = drawerFooter.querySelector('.totals');
+        if (totalsDiv && totalsDiv.parentNode) {
+          totalsDiv.parentNode.insertBefore(clone1, totalsDiv.nextSibling);
+        } else {
+          drawerFooter.appendChild(clone1);
+        }
+      }
+    }
+
+    /* Cart Page: button is rendered server-side (Liquid), no JS injection needed */
+
+    /* Attach click handlers to all cotizador buttons (drawer + page) */
+    document.querySelectorAll('.qcot-cart-btn, .qcotc-page-btn').forEach(function(btn) {
+      if (!btn._qcotcBound) {
+        btn._qcotcBound = true;
+        btn.addEventListener('click', function(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          openModal();
+        });
+      }
+    });
+  }
+
+  /* ── Modal open/close ────────────────────────────────────── */
+  var overlay = document.getElementById('qcotc-overlay');
+  var modal = document.getElementById('qcotc-modal');
+  var closeBtn = document.getElementById('qcotc-close');
+  var formArea = document.getElementById('qcotc-form-area');
+  var successArea = document.getElementById('qcotc-success');
+
+  function openModal() {
+    formArea.style.display = '';
+    successArea.classList.remove('qcotc-show');
+    /* Refresh cart data, then show modal */
+    fetchCart().then(function() {
+      renderSummary();
+      updateLease();
+      overlay.classList.add('qcotc-open');
+      modal.classList.add('qcotc-open');
+      document.body.style.overflow = 'hidden';
+    });
+  }
+  function closeModal() {
+    overlay.classList.remove('qcotc-open');
+    modal.classList.remove('qcotc-open');
+    document.body.style.overflow = '';
+  }
+
+  closeBtn.addEventListener('click', closeModal);
+  overlay.addEventListener('click', closeModal);
+
+  /* ── Fetch cart ───────────────────────────────────────────── */
+  function fetchCart() {
+    return fetch('/cart.js', { headers: { 'Accept': 'application/json' } })
+      .then(function(r) { return r.json(); })
+      .then(function(cart) {
+        cartItems = cart.items.map(function(item) {
+          return {
+            id: item.id,
+            variantId: item.variant_id,
+            title: item.product_title,
+            variantTitle: item.variant_title && item.variant_title !== 'Default Title' ? item.variant_title : '',
+            qty: item.quantity,
+            priceNet: item.price / 100, /* cents → CLP */
+            image: item.featured_image ? item.featured_image.url : '',
+            handle: item.handle,
+            tipo: detectTipo(item.product_title)
+          };
+        });
+        return cartItems;
+      });
+  }
+
+  /* ── Render cart summary in modal ────────────────────────── */
+  function renderSummary() {
+    var container = document.getElementById('qcotc-summary');
+    var html = '<p class="qcotc-summary-title">Productos a cotizar (' + cartItems.length + ')</p>';
+    var totalNet = 0;
+
+    for (var i = 0; i < cartItems.length; i++) {
+      var it = cartItems[i];
+      var lineTotal = it.priceNet * it.qty;
+      totalNet += lineTotal;
+      html += '<div class="qcotc-item">';
+      if (it.image) {
+        html += '<img class="qcotc-item-img" src="' + it.image + '&width=80" alt="">';
+      }
+      html += '<div class="qcotc-item-info">';
+      html += '<div class="qcotc-item-name">' + it.title + '</div>';
+      if (it.variantTitle) {
+        html += '<div class="qcotc-item-variant">' + it.variantTitle + '</div>';
+      }
+      html += '</div>';
+      html += '<div class="qcotc-item-right">';
+      html += '<div class="qcotc-qty-wrap">';
+      html += '<button type="button" class="qcotc-qty-btn" data-action="minus" data-idx="' + i + '">−</button>';
+      html += '<input type="number" class="qcotc-qty-input" data-idx="' + i + '" value="' + it.qty + '" min="1" max="999">';
+      html += '<button type="button" class="qcotc-qty-btn" data-action="plus" data-idx="' + i + '">+</button>';
+      html += '</div>';
+      html += '<div class="qcotc-item-price" id="qcotc-line-price-' + i + '">$' + fmtMiles(lineTotal) + '</div>';
+      html += '</div>';
+      html += '</div>';
+    }
+
+    html += '<div class="qcotc-total-row">';
+    html += '<span class="qcotc-total-label">Total neto</span>';
+    html += '<span class="qcotc-total-value" id="qcotc-total-value">$' + fmtMiles(totalNet) + '</span>';
+    html += '</div>';
+
+    container.innerHTML = html;
+    bindQtyEvents();
+  }
+
+  /* ── Quantity stepper event handlers ────────────────────── */
+  function bindQtyEvents() {
+    /* +/- buttons */
+    document.querySelectorAll('.qcotc-qty-btn').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var idx = parseInt(btn.getAttribute('data-idx'), 10);
+        var input = document.querySelector('.qcotc-qty-input[data-idx="' + idx + '"]');
+        var current = parseInt(input.value, 10) || 1;
+        if (btn.getAttribute('data-action') === 'minus') {
+          current = Math.max(1, current - 1);
+        } else {
+          current = Math.min(999, current + 1);
+        }
+        input.value = current;
+        cartItems[idx].qty = current;
+        recalcTotals();
+      });
+    });
+    /* Direct input */
+    document.querySelectorAll('.qcotc-qty-input').forEach(function(input) {
+      input.addEventListener('input', function() {
+        var idx = parseInt(input.getAttribute('data-idx'), 10);
+        var val = parseInt(input.value, 10);
+        if (isNaN(val) || val < 1) val = 1;
+        if (val > 999) val = 999;
+        cartItems[idx].qty = val;
+        recalcTotals();
+      });
+      input.addEventListener('blur', function() {
+        var idx = parseInt(input.getAttribute('data-idx'), 10);
+        if (!input.value || parseInt(input.value, 10) < 1) {
+          input.value = 1;
+          cartItems[idx].qty = 1;
+          recalcTotals();
+        }
+      });
+    });
+  }
+
+  /* ── Recalculate line prices + total + lease ────────────── */
+  function recalcTotals() {
+    var totalNet = 0;
+    for (var i = 0; i < cartItems.length; i++) {
+      var lineTotal = cartItems[i].priceNet * cartItems[i].qty;
+      totalNet += lineTotal;
+      var lineEl = document.getElementById('qcotc-line-price-' + i);
+      if (lineEl) lineEl.textContent = '$' + fmtMiles(lineTotal);
+    }
+    var totalEl = document.getElementById('qcotc-total-value');
+    if (totalEl) totalEl.textContent = '$' + fmtMiles(totalNet);
+    updateLease();
+  }
+
+  /* ── Update lease preview ────────────────────────────────── */
+  function updateLease() {
+    var totalCuotaNeta = 0;
+    for (var i = 0; i < cartItems.length; i++) {
+      totalCuotaNeta += calcCuota(cartItems[i].priceNet, cartItems[i].qty, currentPlazo, cartItems[i].tipo);
+    }
+    var totalCuotaIVA = totalCuotaNeta * 1.19;
+
+    document.getElementById('qcotc-lease-cuota').textContent = '$' + fmtMiles(totalCuotaNeta) + '/mes';
+    var totalEquipos = 0;
+    for (var j = 0; j < cartItems.length; j++) totalEquipos += cartItems[j].qty;
+    document.getElementById('qcotc-lease-sub').textContent = currentPlazo + ' meses · ' + totalEquipos + ' equipo(s) · Con IVA: $' + fmtMiles(totalCuotaIVA) + '/mes';
+  }
+
+  /* ── Plazo toggle ────────────────────────────────────────── */
+  document.querySelectorAll('.qcotc-plazo-opt').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      document.querySelectorAll('.qcotc-plazo-opt').forEach(function(b) { b.classList.remove('qcotc-plazo-active'); });
+      btn.classList.add('qcotc-plazo-active');
+      currentPlazo = parseInt(btn.getAttribute('data-plazo'), 10);
+      updateLease();
+    });
+  });
+
+  /* ── Create Draft Order via App Proxy ────────────────────── */
+  function createDraftOrder(leadData) {
+    var items = cartItems.map(function(it) {
+      return {
+        variantId: it.variantId,
+        productTitle: it.title,
+        variantTitle: it.variantTitle,
+        qty: it.qty,
+        priceNet: it.priceNet,
+        tipoProducto: it.tipo,
+        plazo: currentPlazo,
+        cuotaNeta: Math.round(calcCuota(it.priceNet, it.qty, currentPlazo, it.tipo)),
+        cuotaIVA: Math.round(calcCuota(it.priceNet, it.qty, currentPlazo, it.tipo) * 1.19)
+      };
+    });
+
+    var totalNeto = 0;
+    var totalCuotaNeta = 0;
+    for (var i = 0; i < items.length; i++) {
+      totalNeto += items[i].priceNet * items[i].qty;
+      totalCuotaNeta += items[i].cuotaNeta;
+    }
+
+    var payload = {
+      email: leadData.email,
+      nombre: leadData.nombre,
+      apellido: leadData.apellido,
+      empresa: leadData.empresa,
+      rut: leadData.rut,
+      telefono: leadData.telefono,
+      items: items,
+      totalNeto: Math.round(totalNeto),
+      totalCuotaNeta: Math.round(totalCuotaNeta),
+      totalCuotaIVA: Math.round(totalCuotaNeta * 1.19),
+      token: 'CART-' + fmtDateShort().replace(/\//g, '') + '-' + items.length
+    };
+
+    console.log('[CotizadorCart] Creando Draft Order...', payload);
+
+    return fetch(APP_PROXY_URL + '/draft-order-cart', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify(payload)
+    })
+    .then(function(r) {
+      if (!r.ok) {
+        return r.text().then(function(body) {
+          console.warn('[CotizadorCart] Draft Order API error ' + r.status + ':', body);
+          throw new Error('Draft order failed: ' + r.status);
+        });
+      }
+      return r.json();
+    })
+    .then(function(result) {
+      if (result.success) {
+        console.log('[CotizadorCart] Draft Order creado:', result.draftOrder.name, '— ID:', result.draftOrder.id);
+      }
+      return result;
+    })
+    .catch(function(err) {
+      console.error('[CotizadorCart] Error creando Draft Order:', err.message);
+      /* Fallback: save to cart attributes */
+      console.log('[CotizadorCart] Fallback: guardando en cart attributes...');
+      return fetch('/cart/update.js', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({
+          attributes: {
+            'cotizacion_email': leadData.email,
+            'cotizacion_nombre': ((leadData.nombre || '') + ' ' + (leadData.apellido || '')).trim(),
+            'cotizacion_empresa': leadData.empresa || '',
+            'cotizacion_rut': leadData.rut || '',
+            'cotizacion_telefono': leadData.telefono || '',
+            'cotizacion_productos': cartItems.map(function(it) { return it.title; }).join(', '),
+            'cotizacion_fecha': fmtDateShort(),
+            'cotizacion_tag': 'lead-cotizacion-carrito'
+          }
+        })
+      }).then(function(r) { return r.json(); })
+      .then(function(cart) {
+        console.log('[CotizadorCart] Fallback OK — cart attributes guardados');
+        return cart;
+      });
+    });
+  }
+
+  /* ── Submit handler ──────────────────────────────────────── */
+  var submitBtn = document.getElementById('qcotc-submit-btn');
+  var emailInput = document.getElementById('qcotc-email');
+  var emailError = document.getElementById('qcotc-email-error');
+  var telefonoInput = document.getElementById('qcotc-telefono');
+  var telefonoError = document.getElementById('qcotc-telefono-error');
+
+  submitBtn.addEventListener('click', function() {
+    var email = emailInput.value.trim();
+    var nombre = document.getElementById('qcotc-nombre').value.trim();
+    var apellido = document.getElementById('qcotc-apellido').value.trim();
+    var empresa = document.getElementById('qcotc-empresa').value.trim();
+    var rut = document.getElementById('qcotc-rut').value.trim();
+    var telefono = telefonoInput.value.trim();
+
+    /* Validate phone */
+    var phoneClean = telefono.replace(/[\s\-\(\)\.]/g, '');
+    if (!phoneClean || phoneClean.length < 8) {
+      telefonoInput.classList.add('qcotc-input-error');
+      telefonoError.classList.add('qcotc-show');
+      telefonoInput.focus();
+      return;
+    }
+    telefonoInput.classList.remove('qcotc-input-error');
+    telefonoError.classList.remove('qcotc-show');
+
+    if (!isValidEmail(email)) {
+      emailInput.classList.add('qcotc-input-error');
+      emailError.classList.add('qcotc-show');
+      emailInput.focus();
+      return;
+    }
+    emailInput.classList.remove('qcotc-input-error');
+    emailError.classList.remove('qcotc-show');
+
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = '<span class="qcotc-spinner"></span> Generando cotización...';
+
+    var leadData = { email: email, nombre: nombre, apellido: apellido, empresa: empresa, rut: rut, telefono: telefono };
+
+    /* Fire-and-forget Draft Order */
+    createDraftOrder(leadData);
+
+    /* Generate PDF */
+    function attemptPDF(retries) {
+      if (window.jspdf && window.jspdf.jsPDF) {
+        try {
+          generateCartPDF(leadData);
+          formArea.style.display = 'none';
+          successArea.classList.add('qcotc-show');
+        } catch(e) {
+          console.error('[CotizadorCart] PDF error:', e, e.stack);
+          alert('Error al generar el PDF: ' + e.message);
+        }
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg> Descargar cotización PDF';
+      } else if (retries > 0) {
+        setTimeout(function() { attemptPDF(retries - 1); }, 300);
+      } else {
+        alert('No se pudo cargar la librería PDF. Verifica tu conexión e intenta nuevamente.');
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg> Descargar cotización PDF';
+      }
+    }
+    attemptPDF(10);
+  });
+
+  /* ══════════════════════════════════════════════════════════
+     PDF GENERATION (multi-page, multi-product)
+     ══════════════════════════════════════════════════════════ */
+  function generateCartPDF(data) {
+    var jsPDF = window.jspdf.jsPDF;
+    var doc = new jsPDF('p', 'mm', 'a4');
+    var W = 210, H = 297, M = 18, CW = W - 2 * M;
+    var y = 0;
+    var pageNum = 1;
+    var totalPages = 1;
+
+    /* ── Colors ─────────────────────────────────── */
+    var blue = [0, 113, 227];
+    var dark = [29, 29, 31];
+    var gray = [110, 110, 115];
+    var lightBg = [245, 245, 247];
+    var white = [255, 255, 255];
+    var footerH = 14;
+    var maxY = H - M - footerH;
+
+    /* ── Page management ─────────────────────────── */
+    function checkPage(needed) {
+      if (y + needed > maxY) {
+        addFooter();
+        doc.addPage();
+        pageNum++;
+        totalPages++;
+        y = M + 4;
+      }
+    }
+
+    function addFooter() {
+      var fy = H - M - 2;
+      doc.setDrawColor(210, 210, 210);
+      doc.line(M, fy - 4, W - M, fy - 4);
+      doc.setFontSize(7);
+      doc.setTextColor(gray[0], gray[1], gray[2]);
+      doc.setFont('helvetica', 'normal');
+      doc.text(shopName + '  —  Equipos Apple para empresas', M, fy);
+      doc.text('Generado el ' + fmtDateShort(), W / 2, fy, { align: 'center' });
+      doc.text('Pag. ' + pageNum, W - M, fy, { align: 'right' });
+    }
+
+    /* ── Helper: draw striped table rows ─────────── */
+    function drawTable(rows, colWidths, opts) {
+      opts = opts || {};
+      var rowH = opts.rowHeight || 8;
+      var pad = 4;
+      if (opts.header) {
+        checkPage(rowH + 2);
+        doc.setFillColor(dark[0], dark[1], dark[2]);
+        doc.roundedRect(M, y, CW, rowH + 2, 1.5, 1.5, 'F');
+        doc.setTextColor(255, 255, 255);
+        doc.setFontSize(8);
+        doc.setFont('helvetica', 'bold');
+        var hx = M;
+        for (var h = 0; h < opts.header.length; h++) {
+          var ha = opts.headerAlign ? opts.headerAlign[h] : 'left';
+          var hpos = ha === 'right' ? hx + colWidths[h] - pad : (ha === 'center' ? hx + colWidths[h] / 2 : hx + pad);
+          doc.text(opts.header[h], hpos, y + rowH - 1.5, { align: ha });
+          hx += colWidths[h];
+        }
+        y += rowH + 3;
+      }
+      for (var r = 0; r < rows.length; r++) {
+        checkPage(rowH + 1);
+        if (r % 2 === 0) {
+          doc.setFillColor(lightBg[0], lightBg[1], lightBg[2]);
+          doc.rect(M, y, CW, rowH, 'F');
+        }
+        var rx = M;
+        for (var c = 0; c < rows[r].length; c++) {
+          var align = opts.align ? opts.align[c] : 'left';
+          var bold = opts.boldCols && opts.boldCols.indexOf(c) > -1;
+          doc.setFont('helvetica', bold ? 'bold' : 'normal');
+          doc.setTextColor(bold ? dark[0] : gray[0], bold ? dark[1] : gray[1], bold ? dark[2] : gray[2]);
+          doc.setFontSize(8.5);
+          var xpos = align === 'right' ? rx + colWidths[c] - pad : (align === 'center' ? rx + colWidths[c] / 2 : rx + pad);
+          doc.text(rows[r][c], xpos, y + rowH - 2.5, { align: align });
+          rx += colWidths[c];
+        }
+        y += rowH;
+      }
+    }
+
+    function sectionTitle(title) {
+      checkPage(12);
+      doc.setTextColor(gray[0], gray[1], gray[2]);
+      doc.setFontSize(8);
+      doc.setFont('helvetica', 'bold');
+      doc.text(title, M, y + 3);
+      y += 8;
+    }
+
+    /* ════════════════════════════════════════════════
+       PAGE CONTENT
+       ════════════════════════════════════════════════ */
+
+    /* ── Header bar ──────────────────────────────── */
+    doc.setFillColor(blue[0], blue[1], blue[2]);
+    doc.rect(0, 0, W, 40, 'F');
+
+    var logoEl = document.getElementById('qcotc-shop-logo');
+    var logoAdded = false;
+    if (logoEl && logoEl.complete && logoEl.naturalWidth > 0) {
+      try {
+        var canvas = document.createElement('canvas');
+        canvas.width = logoEl.naturalWidth;
+        canvas.height = logoEl.naturalHeight;
+        var ctx = canvas.getContext('2d');
+        ctx.drawImage(logoEl, 0, 0);
+        var logoDataUrl = canvas.toDataURL('image/png');
+        var logoMaxW = 38, logoMaxH = 14;
+        var ratio = Math.min(logoMaxW / logoEl.naturalWidth, logoMaxH / logoEl.naturalHeight);
+        doc.addImage(logoDataUrl, 'PNG', M, 8, logoEl.naturalWidth * ratio, logoEl.naturalHeight * ratio);
+        logoAdded = true;
+      } catch(e) { console.warn('Logo insert error:', e); }
+    }
+    if (!logoAdded) {
+      doc.setTextColor(255, 255, 255);
+      doc.setFontSize(20);
+      doc.setFont('helvetica', 'bold');
+      doc.text(shopName, M, 20);
+    }
+
+    doc.setTextColor(255, 255, 255);
+    doc.setFontSize(9);
+    doc.setFont('helvetica', 'normal');
+    doc.text('Cotización de Arriendo Operativo', M, logoAdded ? 30 : 28);
+
+    doc.setFontSize(8.5);
+    doc.text('Fecha: ' + fmtDate(), W - M, 14, { align: 'right' });
+    doc.text('Válida hasta: ' + addDays(15), W - M, 20, { align: 'right' });
+    doc.setFontSize(7.5);
+    var refCode = (data.email.split('@')[0] || 'CART').toUpperCase().replace(/[^A-Z0-9]/g, '').substring(0, 12) + '-' + fmtDateShort().replace(/\//g, '');
+    doc.text('Ref: ' + refCode, W - M, 26, { align: 'right' });
+
+    y = 48;
+
+    /* ── Client info ─────────────────────────────── */
+    sectionTitle('DATOS DEL SOLICITANTE');
+
+    var clientName = ((data.nombre || '') + ' ' + (data.apellido || '')).trim() || '—';
+    var leftCol = [
+      ['Nombre', clientName],
+      ['Email', data.email],
+      ['Teléfono', data.telefono || '—']
+    ];
+    var rightCol = [
+      ['Empresa', data.empresa || '—'],
+      ['RUT', data.rut || '—']
+    ];
+
+    checkPage(28);
+    doc.setFillColor(lightBg[0], lightBg[1], lightBg[2]);
+    doc.roundedRect(M, y, CW, 24, 2, 2, 'F');
+
+    doc.setFontSize(8.5);
+    var cy = y + 7;
+    for (var li = 0; li < leftCol.length; li++) {
+      doc.setFont('helvetica', 'normal');
+      doc.setTextColor(gray[0], gray[1], gray[2]);
+      doc.text(leftCol[li][0] + ':', M + 5, cy);
+      doc.setFont('helvetica', 'bold');
+      doc.setTextColor(dark[0], dark[1], dark[2]);
+      doc.text(leftCol[li][1], M + 28, cy);
+      cy += 6;
+    }
+    cy = y + 7;
+    var rightX = M + CW / 2 + 4;
+    for (var ri = 0; ri < rightCol.length; ri++) {
+      doc.setFont('helvetica', 'normal');
+      doc.setTextColor(gray[0], gray[1], gray[2]);
+      doc.text(rightCol[ri][0] + ':', rightX, cy);
+      doc.setFont('helvetica', 'bold');
+      doc.setTextColor(dark[0], dark[1], dark[2]);
+      doc.text(rightCol[ri][1], rightX + 22, cy);
+      cy += 6;
+    }
+    y += 30;
+
+    /* ── Product table (multi-product) ───────────── */
+    sectionTitle('DETALLE DE EQUIPOS');
+
+    var prodColWidths = [CW * 0.44, CW * 0.12, CW * 0.10, CW * 0.17, CW * 0.17];
+    var prodHeader = ['Producto', 'Tipo', 'Cant.', 'Precio Unit.', 'Total Neto'];
+    var prodHeaderAlign = ['left', 'left', 'center', 'right', 'right'];
+
+    /* Draw header */
+    checkPage(12);
+    doc.setFillColor(dark[0], dark[1], dark[2]);
+    doc.roundedRect(M, y, CW, 9, 1.5, 1.5, 'F');
+    doc.setTextColor(255, 255, 255);
+    doc.setFontSize(8);
+    doc.setFont('helvetica', 'bold');
+    var hx = M;
+    for (var ph = 0; ph < prodHeader.length; ph++) {
+      var pha = prodHeaderAlign[ph];
+      var phpos = pha === 'right' ? hx + prodColWidths[ph] - 4 : (pha === 'center' ? hx + prodColWidths[ph] / 2 : hx + 4);
+      doc.text(prodHeader[ph], phpos, y + 6.5, { align: pha });
+      hx += prodColWidths[ph];
+    }
+    y += 11;
+
+    /* Draw product rows */
+    var grandTotal = 0;
+    for (var pi = 0; pi < cartItems.length; pi++) {
+      var item = cartItems[pi];
+      var rowH = item.variantTitle ? 13 : 9;
+      checkPage(rowH + 2);
+
+      if (pi % 2 === 0) {
+        doc.setFillColor(lightBg[0], lightBg[1], lightBg[2]);
+        doc.rect(M, y, CW, rowH, 'F');
+      }
+
+      var pName = item.title.length > 42 ? item.title.substring(0, 40) + '...' : item.title;
+      doc.setTextColor(dark[0], dark[1], dark[2]);
+      doc.setFontSize(8.5);
+      doc.setFont('helvetica', 'normal');
+      doc.text(pName, M + 4, y + 6);
+
+      if (item.variantTitle) {
+        doc.setFontSize(7);
+        doc.setTextColor(gray[0], gray[1], gray[2]);
+        doc.text(item.variantTitle.substring(0, 55), M + 4, y + 11);
+      }
+
+      var cx = M + prodColWidths[0];
+      doc.setFontSize(8.5);
+      doc.setTextColor(dark[0], dark[1], dark[2]);
+      doc.setFont('helvetica', 'normal');
+
+      doc.text(item.tipo, cx + 4, y + 6);
+      cx += prodColWidths[1];
+
+      doc.text(item.qty.toString(), cx + prodColWidths[2] / 2, y + 6, { align: 'center' });
+      cx += prodColWidths[2];
+
+      doc.text('$' + fmtMiles(item.priceNet), cx + prodColWidths[3] - 4, y + 6, { align: 'right' });
+      cx += prodColWidths[3];
+
+      doc.setFont('helvetica', 'bold');
+      var lineTotal = item.priceNet * item.qty;
+      doc.text('$' + fmtMiles(lineTotal), cx + prodColWidths[4] - 4, y + 6, { align: 'right' });
+
+      grandTotal += lineTotal;
+      y += rowH + 1;
+    }
+
+    /* Subtotal row */
+    checkPage(10);
+    doc.setDrawColor(210, 210, 210);
+    doc.line(M + CW * 0.6, y, M + CW, y);
+    y += 2;
+    doc.setFontSize(9);
+    doc.setFont('helvetica', 'bold');
+    doc.setTextColor(dark[0], dark[1], dark[2]);
+    doc.text('Total Neto:', M + CW - prodColWidths[4] - 4, y + 5, { align: 'right' });
+    doc.text('$' + fmtMiles(grandTotal), M + CW - 4, y + 5, { align: 'right' });
+    y += 12;
+
+    /* ── Lease hero box ──────────────────────────── */
+    sectionTitle('OPCIÓN DE ARRIENDO OPERATIVO');
+
+    var totalCuotaNeta = 0;
+    for (var ci = 0; ci < cartItems.length; ci++) {
+      totalCuotaNeta += calcCuota(cartItems[ci].priceNet, cartItems[ci].qty, currentPlazo, cartItems[ci].tipo);
+    }
+    var totalCuotaIVA = totalCuotaNeta * 1.19;
+
+    checkPage(34);
+    doc.setFillColor(blue[0], blue[1], blue[2]);
+    doc.roundedRect(M, y, CW, 28, 3, 3, 'F');
+
+    doc.setTextColor(255, 255, 255);
+    doc.setFontSize(9);
+    doc.setFont('helvetica', 'normal');
+    doc.text('Cuota mensual neta (sin IVA)', M + 6, y + 9);
+
+    doc.setFontSize(24);
+    doc.setFont('helvetica', 'bold');
+    doc.text('$' + fmtMiles(totalCuotaNeta) + '/mes', M + 6, y + 22);
+
+    doc.setFontSize(10);
+    doc.setFont('helvetica', 'normal');
+    doc.text('Con IVA: $' + fmtMiles(totalCuotaIVA) + '/mes', M + CW - 6, y + 22, { align: 'right' });
+
+    y += 34;
+
+    /* ── Lease detail table ──────────────────────── */
+    var leaseRows = [
+      ['Plazo del contrato', currentPlazo + ' meses'],
+      ['Cantidad de equipos', cartItems.reduce(function(s, it) { return s + it.qty; }, 0).toString()],
+      ['Valor total equipos (neto)', '$' + fmtMiles(grandTotal)],
+      ['Gestión remota (MDM)', 'Incluido — $3.000/equipo/mes'],
+      ['Opción de compra al final', BUYOUT[currentPlazo]]
+    ];
+
+    var lColW = [CW * 0.6, CW * 0.4];
+    drawTable(leaseRows, lColW, {
+      align: ['left', 'right'],
+      boldCols: [1],
+      rowHeight: 8
+    });
+
+    y += 6;
+
+    /* ── Per-product cuota breakdown ─────────────── */
+    if (cartItems.length > 1) {
+      sectionTitle('DESGLOSE DE CUOTA POR PRODUCTO');
+
+      var breakdownRows = [];
+      for (var bi = 0; bi < cartItems.length; bi++) {
+        var bItem = cartItems[bi];
+        var bCuota = calcCuota(bItem.priceNet, bItem.qty, currentPlazo, bItem.tipo);
+        var bName = bItem.title.length > 38 ? bItem.title.substring(0, 36) + '...' : bItem.title;
+        breakdownRows.push([bName, '× ' + bItem.qty, '$' + fmtMiles(bCuota) + '/mes']);
+      }
+      breakdownRows.push(['TOTAL CUOTA MENSUAL', '', '$' + fmtMiles(totalCuotaNeta) + '/mes']);
+
+      var bColW = [CW * 0.55, CW * 0.15, CW * 0.30];
+      drawTable(breakdownRows, bColW, {
+        header: ['Producto', 'Cant.', 'Cuota Neta'],
+        headerAlign: ['left', 'center', 'right'],
+        align: ['left', 'center', 'right'],
+        boldCols: [2],
+        rowHeight: 8
+      });
+
+      y += 6;
+    }
+
+    /* ── Terms & Conditions ──────────────────────── */
+    sectionTitle('CONDICIONES DEL ARRIENDO');
+
+    doc.setFontSize(7.5);
+    doc.setFont('helvetica', 'normal');
+    doc.setTextColor(gray[0], gray[1], gray[2]);
+
+    var terms = [
+      '1. El arriendo operativo es una alternativa de financiamiento para empresas e instituciones.',
+      '2. Las cuotas incluyen el uso del equipo durante el plazo contratado.',
+      '3. La gestión remota (MDM) permite administrar los equipos de forma centralizada.',
+      '4. Al finalizar el contrato, el cliente puede ejercer la opción de compra al porcentaje indicado.',
+      '5. Los precios están en pesos chilenos (CLP). Valores netos no incluyen IVA (19%).',
+      '6. Cotización vigente por 15 días desde la fecha de emisión.',
+      '7. Valores referenciales sujetos a aprobación crediticia.'
+    ];
+
+    for (var t = 0; t < terms.length; t++) {
+      var tlines = doc.splitTextToSize(terms[t], CW - 4);
+      checkPage(tlines.length * 3.5 + 1);
+      doc.text(tlines, M + 2, y);
+      y += tlines.length * 3.5;
+    }
+
+    /* ── Footer on last page ─────────────────────── */
+    addFooter();
+
+    /* ── Update page numbers ─────────────────────── */
+    for (var p = 1; p <= totalPages; p++) {
+      doc.setPage(p);
+      var fy = H - M - 2;
+      doc.setFillColor(255, 255, 255);
+      doc.rect(W - M - 30, fy - 4, 30, 6, 'F');
+      doc.setFontSize(7);
+      doc.setTextColor(gray[0], gray[1], gray[2]);
+      doc.setFont('helvetica', 'normal');
+      doc.text('Pág. ' + p + ' de ' + totalPages, W - M, fy, { align: 'right' });
+    }
+
+    /* ── Save ─────────────────────────────────────── */
+    var fileName = 'Cotizacion_Orden_' + fmtDateShort().replace(/\//g, '') + '.pdf';
+    doc.save(fileName);
+  }
+
+  /* ── Initialize ──────────────────────────────────────────── */
+  /* Inject button on DOMContentLoaded and also after AJAX cart updates */
+  function init() {
+    injectButton();
+    /* Re-inject after Shopify's cart updates (for dynamically reloaded drawers) */
+    var observer = new MutationObserver(function() {
+      setTimeout(injectButton, 200);
+    });
+    var drawerEl = document.querySelector('cart-drawer');
+    if (drawerEl) {
+      observer.observe(drawerEl, { childList: true, subtree: true });
+    }
+    var cartItemsEl = document.querySelector('cart-items');
+    if (cartItemsEl) {
+      observer.observe(cartItemsEl, { childList: true, subtree: true });
+    }
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+
+})();
+</script>
+

@@ -1,0 +1,244 @@
+{%- style -%}
+.qrc {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  background: #fff;
+  border-radius: 16px;
+  border: 1px solid #e5e5ea;
+  padding: 20px;
+  margin: 16px 0;
+  color: #1d1d1f;
+}
+.qrc *, .qrc *::before, .qrc *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* — Header — */
+.qrc-header { margin-bottom: 16px; }
+.qrc-badge { display: inline-block; font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: #fff; background: #0071e3; padding: 2px 8px; border-radius: 100px; margin-bottom: 8px; }
+.qrc-title { font-size: 17px; font-weight: 600; letter-spacing: -0.02em; color: #1d1d1f; }
+.qrc-subtitle { font-size: 13px; color: #6e6e73; margin-top: 2px; }
+
+/* — Plazo + MDM row — */
+.qrc-options { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin-bottom: 16px; }
+.qrc-plazo-group { display: flex; gap: 6px; }
+.qrc-plazo { padding: 8px 14px; border: 1.5px solid #d2d2d7; border-radius: 10px; background: #fff; cursor: pointer; font-family: inherit; text-align: center; transition: all 0.2s; font-size: 13px; font-weight: 600; color: #1d1d1f; }
+.qrc-plazo[aria-pressed="true"] { border-color: #1d1d1f; background: #1d1d1f; color: #fff; }
+.qrc-mdm-group { display: flex; align-items: center; gap: 8px; margin-left: auto; }
+.qrc-mdm-label { font-size: 13px; color: #1d1d1f; }
+.qrc-tog { position: relative; width: 42px; height: 26px; flex-shrink: 0; }
+.qrc-tog input { opacity: 0; width: 0; height: 0; position: absolute; }
+.qrc-tog-track { position: absolute; inset: 0; background: #d2d2d7; border-radius: 100px; cursor: pointer; transition: background 0.3s; }
+.qrc-tog-track::after { content: ''; position: absolute; width: 22px; height: 22px; border-radius: 50%; background: #fff; top: 2px; left: 2px; transition: transform 0.3s cubic-bezier(0.34,1.56,0.64,1); box-shadow: 0 1px 3px rgba(0,0,0,0.18); }
+.qrc-tog input:checked + .qrc-tog-track { background: #34c759; }
+.qrc-tog input:checked + .qrc-tog-track::after { transform: translateX(16px); }
+
+/* — Line items — */
+.qrc-sep { height: 1px; background: #e5e5ea; margin: 12px 0; }
+.qrc-items { list-style: none; }
+.qrc-item { display: flex; align-items: center; gap: 12px; padding: 10px 0; }
+.qrc-item + .qrc-item { border-top: 1px solid #f0f0f0; }
+.qrc-item-img { width: 48px; height: 48px; border-radius: 8px; background: #f5f5f7; overflow: hidden; flex-shrink: 0; display: flex; align-items: center; justify-content: center; }
+.qrc-item-img img { width: 100%; height: 100%; object-fit: contain; }
+.qrc-item-info { flex: 1; min-width: 0; }
+.qrc-item-name { font-size: 13px; font-weight: 600; color: #1d1d1f; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.qrc-item-detail { font-size: 11px; color: #6e6e73; margin-top: 1px; }
+.qrc-item-type { display: inline-block; font-size: 10px; font-weight: 500; color: #0071e3; background: rgba(0,113,227,0.08); padding: 1px 6px; border-radius: 4px; }
+.qrc-item-cuota { text-align: right; flex-shrink: 0; }
+.qrc-item-cuota-val { font-size: 15px; font-weight: 600; color: #1d1d1f; letter-spacing: -0.02em; }
+.qrc-item-cuota-sub { font-size: 11px; color: #6e6e73; }
+
+/* — Total — */
+.qrc-total { display: flex; align-items: baseline; justify-content: space-between; padding: 14px 0 0; }
+.qrc-total-label { font-size: 13px; font-weight: 600; color: #1d1d1f; text-transform: uppercase; letter-spacing: 0.04em; }
+.qrc-total-val { font-size: 24px; font-weight: 600; letter-spacing: -0.04em; color: #1d1d1f; }
+.qrc-total-val sup { font-size: 14px; font-weight: 500; vertical-align: top; margin-top: 2px; display: inline-block; }
+.qrc-total-suffix { font-size: 14px; font-weight: 400; color: #6e6e73; }
+.qrc-total-meta { text-align: right; }
+.qrc-total-iva { font-size: 13px; color: #757575; font-weight: 600; }
+.qrc-total-plazo { font-size: 11px; color: #6e6e73; margin-top: 2px; }
+
+/* CTA removed — cotizador handles quoting */
+
+/* — Empty state — */
+.qrc-empty { text-align: center; padding: 20px 0; color: #6e6e73; font-size: 14px; }
+
+/* — Animation — */
+@keyframes qrcPop { from { opacity: 0.25; transform: translateY(2px); } to { opacity: 1; transform: none; } }
+.qrc-pop { animation: qrcPop 0.2s ease-out both; }
+
+/* — Responsive — */
+@media (max-width: 480px) {
+  .qrc-options { flex-direction: column; align-items: stretch; }
+  .qrc-mdm-group { margin-left: 0; justify-content: space-between; }
+  .qrc-total-val { font-size: 20px; }
+}
+{%- endstyle -%}
+
+{%- if cart.item_count > 0 -%}
+<div class="qrc" id="qrc-widget">
+  <div class="qrc-header">
+    <div class="qrc-badge">Arriendo Operativo</div>
+    <div class="qrc-title">Arrienda tu carrito completo</div>
+    <div class="qrc-subtitle">Cuotas mensuales estimadas para todos tus equipos</div>
+  </div>
+
+  <!-- Plazo + MDM -->
+  <div class="qrc-options">
+    <div class="qrc-plazo-group" role="group" aria-label="Plazo del arriendo">
+      <button class="qrc-plazo" id="qrc-p24" aria-pressed="false">24 meses</button>
+      <button class="qrc-plazo" id="qrc-p36" aria-pressed="true">36 meses</button>
+    </div>
+    <div class="qrc-mdm-group">
+      <span class="qrc-mdm-label">MDM ($3.000/eq)</span>
+      <label class="qrc-tog" aria-label="Activar MDM">
+        <input type="checkbox" id="qrc-mdm" checked>
+        <div class="qrc-tog-track"></div>
+      </label>
+    </div>
+  </div>
+
+  <div class="qrc-sep"></div>
+
+  <!-- Line items -->
+  <ul class="qrc-items" id="qrc-items">
+    {%- for item in cart.items -%}
+    <li class="qrc-item" data-qrc-index="{{ forloop.index0 }}">
+      <div class="qrc-item-img">
+        {%- if item.image -%}
+          <img src="{{ item.image | image_url: width: 96 }}" alt="{{ item.product.title | escape }}" loading="lazy">
+        {%- endif -%}
+      </div>
+      <div class="qrc-item-info">
+        <div class="qrc-item-name">{{ item.product.title }}</div>
+        <div class="qrc-item-detail">
+          <span class="qrc-item-type" id="qrc-type-{{ forloop.index0 }}">-</span>
+          · {{ item.quantity }} {{ item.quantity | pluralize: 'equipo', 'equipos' }}
+        </div>
+      </div>
+      <div class="qrc-item-cuota">
+        <div class="qrc-item-cuota-val" id="qrc-cuota-{{ forloop.index0 }}">$-</div>
+        <div class="qrc-item-cuota-sub">/mes sin IVA</div>
+      </div>
+    </li>
+    {%- endfor -%}
+  </ul>
+
+  <div class="qrc-sep"></div>
+
+  <!-- Total -->
+  <div class="qrc-total">
+    <div class="qrc-total-label">Cuota total mensual</div>
+    <div class="qrc-total-meta">
+      <div class="qrc-total-val"><sup>$</sup><span id="qrc-total">-</span><span class="qrc-total-suffix">/mes</span></div>
+      <div class="qrc-total-iva" id="qrc-total-iva">Con IVA: $-/mes</div>
+      <div class="qrc-total-plazo" id="qrc-total-plazo">36 meses · sin IVA</div>
+    </div>
+  </div>
+
+
+</div>
+{%- else -%}
+<div class="qrc" id="qrc-widget">
+  <div class="qrc-empty">Agrega productos al carrito para ver las cuotas de arriendo.</div>
+</div>
+{%- endif -%}
+
+<script>
+(function() {
+  'use strict';
+  if ({{ cart.item_count }} === 0) return;
+
+  /* --- Cart items data from Liquid --- */
+  var cartItems = [
+    {%- for item in cart.items -%}
+    {
+      price: {{ item.price }} / 100,
+      qty: {{ item.quantity }},
+      tags: {{ item.product.tags | json }},
+      title: {{ item.product.title | json }}
+    }{%- unless forloop.last -%},{%- endunless -%}
+    {%- endfor -%}
+  ];
+
+  /* Detect product type */
+  function detectType(item) {
+    var t = item.title.toLowerCase();
+    var tags = item.tags;
+    if (tags.indexOf('iPhone') > -1 || t.indexOf('iphone') > -1) return 'iPhone';
+    if (tags.indexOf('iPad') > -1 || t.indexOf('ipad') > -1) return 'iPad';
+    return 'Mac';
+  }
+
+  /* Assign types */
+  for (var i = 0; i < cartItems.length; i++) {
+    cartItems[i].type = detectType(cartItems[i]);
+    var typeEl = document.getElementById('qrc-type-' + i);
+    if (typeEl) typeEl.textContent = cartItems[i].type;
+  }
+
+  var FACTOR = { 36: 0.0374, 24: 0.0421 };
+  var IPHONE_MULT = 1.07155;
+  var cMeses = 36;
+
+  function fmtMiles(n) { return Math.round(n).toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.'); }
+
+  /* Plazo */
+  document.getElementById('qrc-p24').addEventListener('click', function() { setCMeses(24); });
+  document.getElementById('qrc-p36').addEventListener('click', function() { setCMeses(36); });
+  function setCMeses(m) {
+    cMeses = m;
+    document.getElementById('qrc-p24').setAttribute('aria-pressed', m === 24);
+    document.getElementById('qrc-p36').setAttribute('aria-pressed', m === 36);
+    cCalcular();
+  }
+
+  /* MDM */
+  document.getElementById('qrc-mdm').addEventListener('change', function() { cCalcular(); });
+
+  /* Animation helper */
+  function cSet(id, val) {
+    var el = document.getElementById(id);
+    if (!el) return;
+    el.classList.remove('qrc-pop');
+    void el.offsetWidth;
+    el.textContent = val;
+    el.classList.add('qrc-pop');
+  }
+
+  /* Main calculation */
+  function cCalcular() {
+    var mdm = document.getElementById('qrc-mdm').checked;
+    var totalCuota = 0;
+    var totalEquipos = 0;
+
+    for (var i = 0; i < cartItems.length; i++) {
+      var item = cartItems[i];
+      var factor = FACTOR[cMeses] * (item.type === 'iPhone' ? IPHONE_MULT : 1);
+      var descMDM = mdm ? 0 : 3000 * item.qty;
+      var cuotaLinea = (item.price * item.qty) * factor - descMDM;
+
+      cSet('qrc-cuota-' + i, '$' + fmtMiles(cuotaLinea));
+      totalCuota += cuotaLinea;
+      totalEquipos += item.qty;
+    }
+
+    cSet('qrc-total', fmtMiles(totalCuota));
+    cSet('qrc-total-iva', 'Con IVA: $' + fmtMiles(totalCuota * 1.19) + '/mes');
+    document.getElementById('qrc-total-plazo').textContent = cMeses + ' meses \u00b7 ' + totalEquipos + (totalEquipos === 1 ? ' equipo' : ' equipos') + ' \u00b7 sin IVA';
+  }
+
+  cCalcular();
+})();
+</script>
+
+{% schema %}
+{
+  "name": "Arriendo Carrito",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Arriendo Carrito",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}

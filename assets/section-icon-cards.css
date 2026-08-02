@@ -1,0 +1,475 @@
+.icon-cards-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.icon-cards-section--light {
+  background: #ffffff;
+}
+
+/* ── Overlay (ellipses background image) ────────────── */
+/* sits above section background, below all content */
+.icon-cards-section__overlay {
+  position: absolute;
+  z-index: 0;
+  pointer-events: none;
+  overflow: visible;
+}
+
+.icon-cards-section__overlay-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: fill;
+}
+
+.icon-cards-section__overlay--top-left {
+  top: -25.5rem;
+  left: -30.125rem;
+  width: 61.25rem;
+  height: 59.5625rem;
+}
+
+.icon-cards-section__overlay--top-right {
+  top: -25.5rem;
+  right: -30.125rem;
+  width: 61.25rem;
+  height: 59.5625rem;
+}
+
+.icon-cards-section__overlay--bottom-left {
+  bottom: -25.5rem;
+  left: -30.125rem;
+  width: 61.25rem;
+  height: 59.5625rem;
+}
+
+.icon-cards-section__overlay--bottom-right {
+  top: -6.5625rem;
+  right: -31.625rem;
+  width: 84rem;
+  height: 82rem;
+}
+
+.icon-cards-section__container {
+  max-width: 1400px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+  padding: 6.25rem 3.125rem;
+}
+
+/* Scoped replica for node 1:4552 on /pages/seguridad-mdm */
+[id*="icon_cards_casos_reales"] .icon-cards-section {
+  background: #060911;
+}
+
+[id*="icon_cards_casos_reales"] .icon-cards-section__overlay {
+  display: none;
+}
+
+[id*="icon_cards_casos_reales"] .icon-cards-section__container {
+  max-width: 1440px;
+  padding: 5.5rem 3.125rem 6.25rem;
+}
+
+[id*="icon_cards_casos_reales"] .icon-cards-section__header {
+  gap: 0.875rem;
+  margin-bottom: 3.2rem;
+}
+
+[id*="icon_cards_casos_reales"] .icon-cards-section__subheading {
+  color: rgba(255, 255, 255, 0.95);
+  letter-spacing: 0.06em;
+}
+
+[id*="icon_cards_casos_reales"] .icon-cards-section__heading {
+  font-size: clamp(2rem, 2.8vw, 3.1rem);
+  line-height: 1.1;
+}
+
+[id*="icon_cards_casos_reales"] .icon-cards-section__description {
+  max-width: 780px;
+}
+
+[id*="icon_cards_casos_reales"] .icon-cards-section__description p {
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 2rem;
+  line-height: 1.3;
+}
+
+[id*="icon_cards_casos_reales"] .icon-cards-section__grid {
+  gap: 1.25rem;
+}
+
+[id*="icon_cards_casos_reales"] .icon-cards-section__card {
+  background: transparent;
+  border: 0;
+  padding: 0;
+  gap: 1.75rem;
+}
+
+[id*="icon_cards_casos_reales"] .icon-cards-section__card:hover {
+  transform: none;
+  border-color: transparent;
+}
+
+[id*="icon_cards_casos_reales"] .icon-cards-section__card-top {
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  min-height: 16.7rem;
+  border-radius: 1.5rem;
+  background:
+    radial-gradient(circle at 50% 50%, rgba(10, 38, 58, 0.9) 0 35%, transparent 35%),
+    repeating-radial-gradient(circle at 50% 50%, rgba(8, 36, 56, 0.7) 0 72px, rgba(5, 24, 38, 0.82) 72px 144px);
+}
+
+[id*="icon_cards_casos_reales"] .icon-cards-section__card-icon {
+  width: 5.75rem;
+  height: 5.75rem;
+}
+
+[id*="icon_cards_casos_reales"] .icon-cards-section__card-icon img {
+  width: 5.75rem;
+  height: 5.75rem;
+}
+
+[id*="icon_cards_casos_reales"] .icon-cards-section__card-label {
+  position: absolute;
+  bottom: -1.4rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 3rem;
+  height: 3rem;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  background: #060911;
+  color: #ffffff;
+  font-family: "SF Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 1.95rem;
+  font-weight: 500;
+  line-height: 1;
+  -webkit-text-fill-color: initial;
+}
+
+[id*="icon_cards_casos_reales"] .icon-cards-section__card-content {
+  align-items: center;
+  text-align: center;
+  gap: 0.65rem;
+}
+
+[id*="icon_cards_casos_reales"] .icon-cards-section__card-heading {
+  font-size: 1.85rem;
+  line-height: 1.2;
+  font-weight: 590;
+}
+
+[id*="icon_cards_casos_reales"] .icon-cards-section__card-description {
+  color: rgba(255, 255, 255, 0.62);
+  font-size: 1.65rem;
+  line-height: 1.3;
+}
+
+@media screen and (max-width: 989px) {
+  [id*="icon_cards_casos_reales"] .icon-cards-section__container {
+    padding: 3.5rem 1.25rem 4rem;
+  }
+
+  [id*="icon_cards_casos_reales"] .icon-cards-section__card-top {
+    min-height: 14.2rem;
+  }
+
+  [id*="icon_cards_casos_reales"] .icon-cards-section__card-heading {
+    font-size: 1.35rem;
+  }
+
+  [id*="icon_cards_casos_reales"] .icon-cards-section__card-description {
+    font-size: 0.98rem;
+  }
+}
+
+/* ── Header ─────────────────────────────────────────── */
+.icon-cards-section__header {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+/* Center variant */
+.icon-cards-section--align-center .icon-cards-section__header {
+  align-items: center;
+  text-align: center;
+  margin-bottom: 7.625rem;
+}
+
+/* Left variant */
+.icon-cards-section--align-left .icon-cards-section__header {
+  align-items: flex-start;
+  text-align: left;
+}
+
+.icon-cards-section__subheading-wrapper {
+  display: inline-flex;
+  gap: 0.625rem;
+  align-items: center;
+  border-radius: 100px;
+  backdrop-filter: blur(10px);
+  padding-bottom: 15px;
+}
+
+.icon-cards-section__subheading-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #07abf8, #1566e0);
+  flex-shrink: 0;
+}
+
+.icon-cards-section__subheading {
+  color: #e6f2f8;
+}
+
+.subtitle.icon-cards-section__card-subtitle {
+  color: #ffff;
+}
+
+.icon-cards-section__heading {
+  margin: 0;
+  font-family: "Geist", system-ui, -apple-system, sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 0;
+  background: linear-gradient(63.9deg, #ffffff 21.6%, #07abf8 62.3%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  max-width: 900px;
+}
+
+.icon-cards-section__description {
+  max-width: 860px;
+}
+
+.icon-cards-section__description p {
+  margin: 0;
+  font-family: "SF Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #fff;
+}
+
+.icon-cards-section--light .icon-cards-section__overlay {
+  display: none;
+}
+
+.icon-cards-section--light .icon-cards-section__subheading {
+  color: #0f2435;
+}
+
+.icon-cards-section--light .icon-cards-section__heading {
+  color: #0f2435;
+  background: none;
+  -webkit-text-fill-color: initial;
+}
+
+.icon-cards-section--light .icon-cards-section__description p {
+  color: #1f3444;
+}
+
+/* ── Grid ───────────────────────────────────────────── */
+.icon-cards-section__grid {
+  display: grid;
+  grid-template-columns: repeat(var(--icon-cards-cols), 1fr);
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+/* ── Cards ──────────────────────────────────────────── */
+.icon-cards-section__card {
+  padding: 1.25rem;
+  border-radius: 0.625rem;
+  border: 1px solid #007cb7;
+  background: rgba(14, 20, 35, 0.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 2.25rem;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+/* First card: darker style */
+.icon-cards-section__card--index-1 {
+  background: rgba(5, 26, 42, 0.8);
+  border-color: rgba(63, 67, 120, 0.5);
+}
+
+/* Left-aligned variant: all cards same style */
+.icon-cards-section--align-left .icon-cards-section__card--index-1 {
+  background: rgba(14, 20, 35, 0.5);
+  border-color: #007cb7;
+}
+
+.icon-cards-section__card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(7, 171, 248, 0.8);
+}
+
+.icon-cards-section__card-top {
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+  flex-wrap: wrap;
+}
+
+/* ── Card Icon ──────────────────────────────────────── */
+.icon-cards-section__card-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  flex-shrink: 0;
+}
+
+.icon-cards-section__card-icon img {
+  width: 48px;
+  height: 48px;
+  display: block;
+}
+
+/* ── Card Label (number/text variant replacing icon) ── */
+.icon-cards-section__card-label {
+  font-family: "Geist", system-ui, -apple-system, sans-serif;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 52px;
+  letter-spacing: 0;
+  background: linear-gradient(93deg, #007cb7 9.25%, #07abf8 52.63%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.icon-cards-section__card--number-large {
+  justify-content: flex-start;
+  gap: 1.6rem;
+}
+
+.icon-cards-section__card--number-large .icon-cards-section__card-content {
+  min-height: 0;
+}
+
+/* ── Card Content ───────────────────────────────────── */
+.icon-cards-section__card-content {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  gap: 0.625rem;
+}
+
+.icon-cards-section__card-heading {
+  margin: 0;
+  font-family: "SF Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 590;
+  line-height: 1.2;
+  color: #fff;
+  word-break: break-word;
+}
+
+.icon-cards-section__card-description {
+  margin: 0;
+  font-family: "SF Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.25;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.icon-cards-section--light .icon-cards-section__card {
+  border-color: #b7ddff;
+  background: #ffffff;
+}
+
+.icon-cards-section--light .icon-cards-section__card--index-1,
+.icon-cards-section--align-left.icon-cards-section--light .icon-cards-section__card--index-1 {
+  border-color: #b7ddff;
+  background: #ffffff;
+}
+
+.icon-cards-section--light .icon-cards-section__card-heading {
+  color: #10293d;
+}
+
+.icon-cards-section--light .icon-cards-section__card-description {
+  color: #5f7280;
+}
+
+/* ── Responsive ─────────────────────────────────────── */
+@media screen and (max-width: 1200px) {
+  .icon-cards-section__grid {
+    grid-template-columns: repeat(min(var(--icon-cards-cols, 4), 3), 1fr);
+  }
+}
+
+@media screen and (max-width: 989px) {
+  .icon-cards-section__grid {
+    grid-template-columns: repeat(min(var(--icon-cards-cols, 4), 2), 1fr);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .icon-cards-section {
+    padding: 4rem 1.5rem;
+  }
+
+  .icon-cards-section--align-center .icon-cards-section__header {
+    margin-bottom: 1rem;
+  }
+
+  .icon-cards-section__heading {
+    font-size: 1.75rem;
+  }
+
+  .icon-cards-section__description p {
+    font-size: 1rem;
+  }
+
+  .icon-cards-section__grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .icon-cards-section__card {
+    padding: 1rem 1rem 1.5rem;
+  }
+
+  .icon-cards-section__overlay--top-left,
+  .icon-cards-section__overlay--top-right,
+  .icon-cards-section__overlay--bottom-left {
+    width: 42rem;
+    height: 40.875rem;
+  }
+
+  .icon-cards-section__overlay--top-left,
+  .icon-cards-section__overlay--top-right {
+    top: -18rem;
+  }
+
+  .icon-cards-section__overlay--bottom-left {
+    bottom: -18rem;
+  }
+
+  .icon-cards-section__overlay--bottom-right {
+    top: auto;
+    right: -22rem;
+    bottom: -18rem;
+    width: 56rem;
+    height: 54.625rem;
+  }
+}

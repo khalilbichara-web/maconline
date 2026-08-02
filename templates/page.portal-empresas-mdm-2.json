@@ -1,0 +1,156 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": "no-indent",
+        "padding_bottom": "m"
+      }
+    },
+    "animated_image_collage_UaQyDT": {
+      "type": "animated-image-collage",
+      "custom_css": [
+        "h2.title--simple {background: linear-gradient(91deg, #fff 14.38%, #07abf8 93.41%); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent;}",
+        ".aic.background {background-image: url(https://cdn.shopify.com/s/files/1/0731/0757/0884/files/bg-fondo-centro.webp?v=1785345733) !important; background-repeat: no-repeat; background-position: center; background-size: contain; background-attachment: local;}",
+        ".aic__subtitle.subtitle {background-color: transparent; border: 1px solid; padding: 10px 24px;}"
+      ],
+      "name": "t:sections.animated-image-collage.name",
+      "settings": {
+        "section_type": "background",
+        "color_scheme": "scheme-39e5d4a7-e422-4a30-b12c-b2a059c9acee",
+        "header_overlay": false,
+        "header_transparent": false,
+        "column_to_show": 3,
+        "opacity_overlay": 0.3,
+        "full_width": true,
+        "icon": "none",
+        "icon_color_scheme": "scheme-39e5d4a7-e422-4a30-b12c-b2a059c9acee",
+        "icon_style": "contrast",
+        "icon_fill_type": "gradient",
+        "icon_size": "recommended",
+        "box_shadow": true,
+        "subheading": "Portal MDM Empresas",
+        "subheading_style": "subtitle subtitle--secondary",
+        "subheading_icon": "none",
+        "heading": "Cuando todo pasa por TI, se generan cuellos de botella",
+        "heading_size": "h1",
+        "heading_level": "h2",
+        "heading_line": "simple",
+        "line_color": "#1566e0",
+        "word_break": false,
+        "heading_animation": "none",
+        "word_break_an": false,
+        "text": "Un portal simple para que tu empresa gestione solicitudes, equipos, usuarios, apps y soporte, mientras TI mantiene políticas y seguridad centralizadas.",
+        "enable_subscribe": false,
+        "button_label_subscribe": "Agendar un demo",
+        "color_scheme_subscribe": "",
+        "enable_box_shadow": true,
+        "button_style_subscribe": "primary",
+        "show_button": true,
+        "button_label": "Shop Now",
+        "button_link": "",
+        "button_style": "primary",
+        "show_button_2": true,
+        "button_label_2": "Hablar con un experto",
+        "button_link_2": "",
+        "button_style_2": "tertiary",
+        "padding_top": "m",
+        "padding_bottom": "xs",
+        "margin_top": "no-indent",
+        "margin_bottom": "no-indent"
+      }
+    },
+    "hero_jew377": {
+      "type": "hero",
+      "blocks": {
+        "subtitle_m6mqqY": {
+          "type": "subtitle",
+          "settings": {
+            "subheading": "portal de empresas",
+            "subheading_style": "subtitle",
+            "subheading_icon": "circle"
+          }
+        },
+        "title_gTnXXa": {
+          "type": "title",
+          "settings": {
+            "heading": "¿Qué es el Portal de Empresas?",
+            "heading_size": "h1",
+            "heading_level": "h2",
+            "heading_line": "simple",
+            "line_color": "#1566e0",
+            "word_break": false,
+            "heading_animation": "none",
+            "word_break_an": false
+          }
+        },
+        "description_hfE7UD": {
+          "type": "description",
+          "settings": {
+            "description": "Es una capa de autoservicio sobre tu MDM para que usuarios autorizados puedan operar el día a día:\n\nSolicitar enrolamiento, asignar equipos, pedir aplicaciones, revisar estados, levantar tickets y ver reportes, con flujos controlados y trazabilidad."
+          }
+        },
+        "buttons_QXcrfR": {
+          "type": "buttons",
+          "settings": {
+            "show_button_1": true,
+            "button_label_1": "Agendar demo",
+            "button_link_1": "",
+            "button_style_1": "primary",
+            "show_button_2": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_2": "simple"
+          }
+        }
+      },
+      "block_order": [
+        "subtitle_m6mqqY",
+        "title_gTnXXa",
+        "description_hfE7UD",
+        "buttons_QXcrfR"
+      ],
+      "custom_css": [
+        ".hero__subtitle.subtitle {border-width: 0; padding: 0;}",
+        "h2 {font-size: 245%; font-weight: 700;}",
+        ".hero {background-position: top center;}"
+      ],
+      "name": "t:sections.hero.name",
+      "settings": {
+        "layout": "horizontal",
+        "header_overlay": false,
+        "header_transparent": true,
+        "block_type": "plain",
+        "color_scheme": "",
+        "full_screen": true,
+        "image": "shopify://shop_images/Rectangle_3.png",
+        "show_video": false,
+        "overlay_opacity": 0,
+        "image_ratio": "1/1",
+        "object_fit": "contain",
+        "desktop_image_position": "after",
+        "mobile_image_position": "after",
+        "mobile_image_overlay": "overlay",
+        "horizontal_alignment": "center",
+        "vertical_alignment": "middle",
+        "padding_top": "m",
+        "padding_bottom": "m"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "animated_image_collage_UaQyDT",
+    "hero_jew377"
+  ]
+}

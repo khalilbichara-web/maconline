@@ -1,0 +1,503 @@
+.device-tabs {
+  padding: 6.25rem 3.125rem;
+  background: #060b14;
+}
+
+/* ── Color schemes ────────────────────────────────────── */
+.device-tabs--dark {
+  background: transparent;
+}
+
+.device-tabs--light {
+  background: #ffffff;
+}
+
+.device-tabs--light .device-tabs__section-heading {
+  background: linear-gradient(91deg, #0a0a0a 14%, #007cb7 93%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.device-tabs--light .device-tabs__section-description p {
+  color: rgba(0, 0, 0, 0.65);
+}
+
+.device-tabs--light .device-tabs__subheading {
+  color: #007cb7;
+}
+
+.device-tabs--light .device-tabs__card {
+  background: #02182f;
+  border-color: rgba(0, 124, 183, 0.2);
+}
+
+
+.device-tabs--light .device-tabs__nav-btn.is-active {
+  background: rgba(0, 124, 183, 0.1);
+  border-color: #007cb7;
+  color: #007cb7;
+}
+
+/* ── Section header ───────────────────────────────────── */
+.device-tabs__section-header {
+  max-width: 1400px;
+  margin: 0 auto 3.75rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: .5rem;
+}
+
+.device-tabs__subheading-wrapper {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.device-tabs__subheading-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #07abf8, #1566e0);
+  flex-shrink: 0;
+}
+
+.device-tabs__subheading {
+  margin: 0;
+  font-family: "SF Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 400;
+  letter-spacing: 0;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.device-tabs__section-heading {
+  margin: 0;
+  font-family: "Geist", system-ui, -apple-system, sans-serif;
+  font-size: clamp(2rem, 3vw, 2.5rem);
+  font-weight: 700;
+  line-height: 0;
+  background: linear-gradient(91deg, #fff 14%, #07abf8 93%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  max-width: 1000px;
+}
+
+.device-tabs__section-description {
+  max-width: 800px;
+}
+
+.device-tabs__section-description p {
+  margin: 0;
+  font-size: 1.25rem;
+  line-height: 1.2;
+  color: #fff;
+}
+
+/* ── Card ─────────────────────────────────────────────── */
+.device-tabs__devices {
+  max-width: 1340px;
+  margin: 0 auto;
+}
+
+.device-tabs__card {
+  background: linear-gradient(90deg, #011829 0%, #010a11 69.712%, #01192a 100%);
+  border: 0;
+  border-radius: 1.5625rem;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Slides ───────────────────────────────────────────── */
+.device-tabs__slide {
+  display: none;
+  min-height: 28.8125rem;
+  gap: 8.5625rem;
+  padding: 0 0 0 3.125rem;
+  align-items: center;
+  grid-template-columns: 1fr 1fr;
+}
+
+.device-tabs__slide.is-active {
+  display: grid;
+}
+
+/* ── Content ──────────────────────────────────────────── */
+.device-tabs__content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+  width: 30.5rem;
+}
+
+.device-tabs__heading {
+  margin: 0;
+  font-family: "Geist", system-ui, -apple-system, sans-serif;
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: 1.125;
+  color: #fff;
+}
+
+.device-tabs__description {
+  margin: 0;
+  font-family: "SF Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.25;
+  color: #fff;
+}
+
+/* ── Features list ────────────────────────────────────── */
+.device-tabs__features {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+  padding: 0.625rem 0 1.4375rem;
+}
+
+.device-tabs__feature {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  font-family: "SF Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 1rem;
+  line-height: 1.25;
+  color: #fff;
+}
+
+.device-tabs__feature-icon {
+  flex-shrink: 0;
+  color: #07abf8;
+}
+
+/* ── CTA ──────────────────────────────────────────────── */
+.device-tabs__cta {
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-height: 2.75rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6.25rem;
+  background: #2b92c3;
+  color: #fff;
+  font-size: 1rem;
+  line-height: 1.25;
+}
+
+/* ── Image ────────────────────────────────────────────── */
+.device-tabs__image-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: stretch;
+  min-width: 0;
+}
+
+.device-tabs__image {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  max-height: 21.75rem;
+}
+
+/* ── Tab nav ──────────────────────────────────────────── */
+.device-tabs__nav {
+  display: flex;
+  gap: 0.625rem;
+  padding: 1.25rem 0 0;
+  border-top: 0;
+}
+
+.device-tabs__nav-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-height: 3.0625rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 100px;
+  border: 1px solid #007cb7;
+  background: transparent;
+  color: #007cb7;
+  font-family: "Geist", "SF Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.device-tabs__nav-icon {
+  display: inline-flex;
+  color: #007cb7;
+}
+
+.device-tabs__nav-icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.device-tabs__nav-icon svg path {
+  fill: currentColor;
+}
+
+.device-tabs__nav-btn.is-active {
+  background: linear-gradient(97deg, #007cb7 9%, #07abf8 53%);
+  border-color: transparent;
+  color: #fff;
+}
+
+.device-tabs__nav-btn.is-active .device-tabs__nav-icon {
+  color: #fff;
+}
+
+.device-tabs__nav-btn:hover:not(.is-active) {
+  border-color: #2b92c3;
+  color: #2b92c3;
+}
+
+/* ── ABM slider variant (node 1:4544 / 1:2698) ───────────────────── */
+.device-tabs--abm {
+  padding: 4.1rem 3.125rem 2.6rem;
+  background: linear-gradient(180deg, #f7fbff 0%, #f3f8fc 100%);
+}
+
+.device-tabs--abm .device-tabs__section-header {
+  max-width: 1040px;
+  gap: 0.7rem;
+  margin-bottom: 2.7rem;
+}
+
+.device-tabs--abm .device-tabs__subheading {
+  color: #5c6f7e;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0.055em;
+}
+
+.device-tabs--abm .device-tabs__section-heading {
+  max-width: 900px;
+  font-size: clamp(2.05rem, 2.38vw, 2.72rem);
+  line-height: 1.11;
+  color: #102536;
+  background: none;
+  -webkit-text-fill-color: #102536;
+}
+
+.device-tabs--abm .device-tabs__section-description {
+  max-width: 980px;
+}
+
+.device-tabs--abm .device-tabs__section-description p {
+  color: #2d4453;
+  font-size: 1.01rem;
+  line-height: 1.35;
+}
+
+.device-tabs--abm .device-tabs__card {
+  position: relative;
+  border-radius: 1rem;
+  background: #060911;
+  box-shadow: 0 8px 20px rgba(4, 8, 15, 0.18);
+  border: 0;
+  overflow: hidden;
+}
+
+.device-tabs--abm .device-tabs__slide {
+  min-height: 25.3125rem;
+  padding: 0 0 0 2.8rem;
+  gap: 0;
+  grid-template-columns: minmax(330px, 418px) minmax(420px, 1fr);
+}
+
+.device-tabs--abm .device-tabs__content {
+  width: auto;
+  max-width: 24rem;
+  gap: 0.62rem;
+  padding: 0 0 3.45rem;
+}
+
+.device-tabs--abm .device-tabs__heading {
+  font-size: clamp(2.15rem, 2.5vw, 3rem);
+  line-height: 1.03;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+}
+
+.device-tabs--abm .device-tabs__description {
+  font-size: 1.125rem;
+  line-height: 1.3;
+  color: rgba(255, 255, 255, 0.94);
+  max-width: 17rem;
+}
+
+.device-tabs--abm .device-tabs__abm-visual {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  align-self: stretch;
+  min-height: 100%;
+  overflow: hidden;
+  background-image: var(--device-tabs-slide-bg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding-right: 2rem;
+}
+
+.device-tabs--abm .device-tabs__abm-image {
+  display: block;
+  width: auto;
+  height: clamp(14.5rem, 24vw, 20.5rem);
+  max-width: 100%;
+  object-fit: contain;
+  object-position: right center;
+}
+
+.device-tabs--abm .device-tabs__nav {
+  position: absolute;
+  left: 2.8rem;
+  bottom: 1.6rem;
+  z-index: 4;
+  padding: 0;
+  border: 0;
+  gap: 1.12rem;
+}
+
+.device-tabs--abm .device-tabs__nav-icon {
+  display: none;
+}
+
+.device-tabs--abm .device-tabs__nav-btn {
+  width: 2rem;
+  height: 2rem;
+  min-height: 2rem;
+  border-radius: 999px;
+  padding: 0;
+  justify-content: center;
+  border: 1px solid transparent;
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 1.02rem;
+  font-weight: 600;
+}
+
+.device-tabs--abm .device-tabs__nav-btn.is-active {
+  background: rgba(255, 255, 255, 0.14);
+  border-color: rgba(255, 255, 255, 0.55);
+  color: #ffffff;
+}
+
+.device-tabs--abm .device-tabs__nav-btn:hover:not(.is-active) {
+  border-color: rgba(255, 255, 255, 0.45);
+  color: #ffffff;
+}
+
+/* ── Responsive ───────────────────────────────────────── */
+@media screen and (max-width: 989px) {
+  .device-tabs {
+    padding: 4rem 1.5rem;
+  }
+
+  .device-tabs__slide {
+    grid-template-columns: 1fr;
+    min-height: 0;
+    padding: 2rem;
+    gap: 2rem;
+  }
+
+  .device-tabs__image-wrap {
+    order: -1;
+  }
+
+  .device-tabs__image {
+    max-height: 220px;
+  }
+
+  .device-tabs__nav {
+    padding: 1.25rem 0 0;
+  }
+
+  .device-tabs--abm {
+    padding: 3.2rem 1.25rem 1.8rem;
+  }
+
+  .device-tabs--abm .device-tabs__slide {
+    grid-template-columns: 1fr;
+    min-height: 0;
+    padding: 1.7rem 1.2rem 4.1rem;
+    gap: 1.45rem;
+  }
+
+  .device-tabs--abm .device-tabs__content {
+    padding-bottom: 0;
+  }
+
+  .device-tabs--abm .device-tabs__abm-visual {
+    min-height: 220px;
+    border-radius: 0.9rem;
+    justify-content: center;
+    padding-right: 0;
+  }
+
+  .device-tabs--abm .device-tabs__abm-image {
+    height: auto;
+    max-height: 220px;
+    max-width: 100%;
+  }
+
+  .device-tabs--abm .device-tabs__description {
+    font-size: 1.25rem;
+    max-width: 100%;
+  }
+
+  .device-tabs--abm .device-tabs__nav {
+    left: 1.1rem;
+    bottom: 1rem;
+  }
+
+  .device-tabs--abm .device-tabs__description {
+    font-size: 1.02rem;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .device-tabs {
+    padding: 3rem 1rem;
+  }
+
+  .device-tabs__card {
+    border-radius: 1rem;
+  }
+
+  .device-tabs__slide {
+    padding: 1.5rem;
+  }
+
+  .device-tabs__nav {
+    padding: 1rem 0 0;
+    flex-wrap: wrap;
+  }
+
+  .device-tabs__section-description p {
+    font-size: 1rem;
+  }
+
+  .device-tabs__heading {
+    font-size: 1.75rem;
+  }
+
+  .device-tabs__content {
+    width: auto;
+  }
+}

@@ -1,0 +1,111 @@
+<div class="qrw" data-rental-calculator>
+  <div class="qrw-cuota-section" aria-live="polite">
+    <p class="qrw-eyebrow">Arri&eacute;ndalo desde</p>
+    <div class="qrw-price-row">
+      <span class="qrw-cuota">$<span id="qrw-cuota">0</span></span>
+      <span class="qrw-cuota-suffix">/por mes</span>
+    </div>
+    <p class="qrw-meta" id="qrw-meta">12 meses &middot; 1 equipo &middot; sin IVA</p>
+    <p class="qrw-iva" id="qrw-iva">Con IVA: $0/mes</p>
+  </div>
+
+  <p class="qrw-plazo-label" id="qrw-plazo-label">Plazo</p>
+  <div class="qrw-plazos" role="group" aria-labelledby="qrw-plazo-label">
+    {% for months in (1..3) %}
+      {% liquid
+        case months
+          when 1
+            assign term = 12
+          when 2
+            assign term = 24
+          else
+            assign term = 36
+        endcase
+      %}
+      <button
+        class="qrw-plazo{% if term == 12 %} is-active{% endif %}"
+        id="qrw-p{{ term }}"
+        type="button"
+        aria-pressed="{% if term == 12 %}true{% else %}false{% endif %}"
+        data-term="{{ term }}"
+      >
+        <span class="qrw-plazo-num">{{ term }} meses</span>
+        <span class="qrw-plazo-sub">Valor de cuota $<span data-term-price="{{ term }}">0</span></span>
+      </button>
+    {% endfor %}
+  </div>
+
+  <div class="qrw-mdm-row">
+    <div>
+      <label class="qrw-mdm-label" for="qrw-mdm">Gesti&oacute;n remota (MDM)</label>
+      <p class="qrw-mdm-sub">$3.000/equipo/mes</p>
+    </div>
+    <label class="qrw-switch">
+      <input id="qrw-mdm" type="checkbox">
+      <span class="qrw-switch-track" aria-hidden="true"></span>
+    </label>
+  </div>
+</div>
+
+<script>
+  (() => {
+    const calculator = document.querySelector('[data-rental-calculator]');
+    if (!calculator || calculator.dataset.initialized === 'true') return;
+    calculator.dataset.initialized = 'true';
+
+    const factors = { 12: 0.058669, 24: 0.040385, 36: 0.032015 };
+    const variants = {{ product.variants | json }};
+    let selectedTerm = 12;
+
+    const formatAmount = (amount) => Math.round(amount).toLocaleString('es-CL');
+    const quantityInput = () => document.querySelector('form[action*="/cart/add"] input[name="quantity"]');
+    const selectedVariant = () => {
+      const variantInput = document.querySelector('form[action*="/cart/add"] input[name="id"]');
+      return variants.find((variant) => String(variant.id) === variantInput?.value) || variants[0];
+    };
+
+    const calculatePayment = (term) => {
+      const quantity = Math.max(1, Number.parseInt(quantityInput()?.value || '1', 10));
+      const price = (selectedVariant()?.price || {{ product.price }}) / 100;
+      const mdmEnabled = calculator.querySelector('#qrw-mdm').checked;
+      return (price * quantity * factors[term]) - (mdmEnabled ? 0 : 3000 * quantity);
+    };
+
+    const render = () => {
+      const quantity = Math.max(1, Number.parseInt(quantityInput()?.value || '1', 10));
+      const payment = calculatePayment(selectedTerm);
+
+      calculator.querySelector('#qrw-cuota').textContent = formatAmount(payment);
+      calculator.querySelector('#qrw-meta').textContent = `${selectedTerm} meses \u00b7 ${quantity} ${quantity === 1 ? 'equipo' : 'equipos'} \u00b7 sin IVA`;
+      calculator.querySelector('#qrw-iva').textContent = `Con IVA: $${formatAmount(payment * 1.19)}/mes`;
+
+      Object.keys(factors).forEach((term) => {
+        calculator.querySelector(`[data-term-price="${term}"]`).textContent = formatAmount(calculatePayment(term));
+      });
+    };
+
+    calculator.querySelectorAll('.qrw-plazo').forEach((button) => {
+      button.addEventListener('click', () => {
+        selectedTerm = Number.parseInt(button.dataset.term, 10);
+        calculator.querySelectorAll('.qrw-plazo').forEach((termButton) => {
+          const isActive = termButton === button;
+          termButton.classList.toggle('is-active', isActive);
+          termButton.setAttribute('aria-pressed', String(isActive));
+        });
+        render();
+      });
+    });
+
+    calculator.querySelector('#qrw-mdm').addEventListener('change', render);
+    document.addEventListener('change', (event) => {
+      if (event.target.matches('variant-selects select, variant-radios input, input[name="quantity"]')) {
+        window.setTimeout(render, 0);
+      }
+    });
+    document.addEventListener('click', (event) => {
+      if (event.target.closest('quantity-input button')) window.setTimeout(render, 0);
+    });
+
+    render();
+  })();
+</script>

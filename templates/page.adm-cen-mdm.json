@@ -1,0 +1,443 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": "no-indent",
+        "padding_bottom": "m"
+      }
+    },
+    "animated_image_collage_UNpUYN": {
+      "type": "animated-image-collage",
+      "custom_css": [
+        "h2.title--simple {background: linear-gradient(91deg, #fff 14.38%, #07abf8 93.41%); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent;}",
+        ".aic.background {background-image: url(https://cdn.shopify.com/s/files/1/0731/0757/0884/files/bg-fondo-centro.webp?v=1785345733) !important; background-repeat: no-repeat; background-position: center; background-size: contain; background-attachment: local;}",
+        ".aic__subtitle.subtitle {background-color: transparent; border: 1px solid; padding: 10px 24px;}"
+      ],
+      "name": "t:sections.animated-image-collage.name",
+      "settings": {
+        "section_type": "background",
+        "color_scheme": "scheme-39e5d4a7-e422-4a30-b12c-b2a059c9acee",
+        "header_overlay": false,
+        "header_transparent": false,
+        "column_to_show": 3,
+        "opacity_overlay": 0.3,
+        "full_width": true,
+        "icon": "none",
+        "icon_color_scheme": "scheme-39e5d4a7-e422-4a30-b12c-b2a059c9acee",
+        "icon_style": "contrast",
+        "icon_fill_type": "gradient",
+        "icon_size": "recommended",
+        "box_shadow": true,
+        "subheading": "Administración Centralizada MDM",
+        "subheading_style": "subtitle subtitle--secondary",
+        "subheading_icon": "none",
+        "heading": "Administración centralizada de tus dispositivos Apple, sin fricción (Zero-Touch MDM)",
+        "heading_size": "h1",
+        "heading_level": "h2",
+        "heading_line": "simple",
+        "line_color": "#1566e0",
+        "heading_animation": "none",
+        "text": "Controla tus iPhone, iPad y Mac desde un solo panel: \npolíticas, apps, seguridad, actualizaciones y soporte remoto. \nTodo se aplica automáticamente desde el primer encendido, sin pasar por TI.",
+        "enable_subscribe": false,
+        "button_label_subscribe": "",
+        "button_style_subscribe": "primary",
+        "show_button": true,
+        "button_label": "Agendar un demo",
+        "button_link": "",
+        "button_style": "primary",
+        "show_button_2": true,
+        "button_label_2": "Hablar con un experto",
+        "button_link_2": "",
+        "button_style_2": "tertiary",
+        "padding_top": "m",
+        "padding_bottom": "xs",
+        "margin_top": "no-indent",
+        "margin_bottom": "no-indent"
+      }
+    },
+    "hero_kL9X9a": {
+      "type": "hero",
+      "blocks": {
+        "subtitle_R9H7pj": {
+          "type": "subtitle",
+          "settings": {
+            "subheading": "¿que es mdm zero touch?",
+            "subheading_style": "subtitle",
+            "subheading_icon": "circle"
+          }
+        },
+        "title_Wnwqxz": {
+          "type": "title",
+          "settings": {
+            "heading": "Cuando tu empresa crece, el “uno a uno” se vuelve imposible",
+            "heading_size": "h1",
+            "heading_level": "h2",
+            "heading_line": "simple",
+            "line_color": "#1566e0",
+            "word_break": false,
+            "heading_animation": "none",
+            "word_break_an": false
+          }
+        },
+        "description_RraEcP": {
+          "type": "description",
+          "settings": {
+            "description": "Reparar equipos uno por uno, resolver incidentes básicos y asegurar configuración homogénea consume horas y crea riesgos. \n\nCon administración centralizada, la flota se estandariza, se monitorea en tiempo real y se gestiona con acciones remotas, sin depender de la presencia física del equipo."
+          }
+        },
+        "buttons_ryxmDJ": {
+          "type": "buttons",
+          "settings": {
+            "show_button_1": true,
+            "button_label_1": "Agendar demo",
+            "button_link_1": "",
+            "button_style_1": "primary",
+            "show_button_2": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_2": "simple"
+          }
+        }
+      },
+      "block_order": [
+        "subtitle_R9H7pj",
+        "title_Wnwqxz",
+        "description_RraEcP",
+        "buttons_ryxmDJ"
+      ],
+      "custom_css": [
+        ".hero__subtitle.subtitle {border-width: 0; padding: 0;}",
+        "h2 {font-size: 245%; font-weight: 700;}",
+        ".hero {background-position: top center;}"
+      ],
+      "name": "t:sections.hero.name",
+      "settings": {
+        "layout": "horizontal",
+        "header_overlay": false,
+        "header_transparent": true,
+        "block_type": "plain",
+        "color_scheme": "",
+        "full_screen": true,
+        "image": "shopify://shop_images/Rectangle.png",
+        "show_video": false,
+        "overlay_opacity": 0,
+        "image_ratio": "1/1",
+        "object_fit": "contain",
+        "desktop_image_position": "after",
+        "mobile_image_position": "after",
+        "mobile_image_overlay": "overlay",
+        "horizontal_alignment": "center",
+        "vertical_alignment": "middle",
+        "padding_top": "m",
+        "padding_bottom": "m"
+      }
+    },
+    "split_features_YPiY8f": {
+      "type": "split-features",
+      "blocks": {
+        "feature_ybtTVr": {
+          "type": "feature",
+          "settings": {
+            "icon_name": "solar_graph-down-new-outline.svg",
+            "heading": "Asignación",
+            "description": "Los dispositivos se registran y se asignan al MDM desde el portal corporativo (idealmente vía Apple Business Manager)."
+          }
+        },
+        "feature_DiL9LK": {
+          "type": "feature",
+          "settings": {
+            "icon_name": "solar_clock-circle-outline.svg",
+            "heading": "Primer encendido",
+            "description": "El usuario enciende el equipo y comienza una configuración simplificada."
+          }
+        },
+        "feature_cJUXTK": {
+          "type": "feature",
+          "settings": {
+            "icon_name": "solar_chart-outline.svg",
+            "heading": "Enrolamiento automático",
+            "description": "El dispositivo se enrola en el MDM y \nrecibe políticas, cuentas y ajustes."
+          }
+        },
+        "feature_b7qhRt": {
+          "type": "feature",
+          "settings": {
+            "icon_name": "solar_shield-check-outline.svg",
+            "heading": "Listo para trabajar",
+            "description": "Apps, seguridad y configuración quedan aplicadas sin intervención de TI.\n Cero preparación manual.  Cero filas de equipos en soporte."
+          }
+        }
+      },
+      "block_order": [
+        "feature_ybtTVr",
+        "feature_DiL9LK",
+        "feature_cJUXTK",
+        "feature_b7qhRt"
+      ],
+      "name": "Split Features",
+      "settings": {
+        "color_scheme": "light",
+        "layout": "image_left",
+        "image": "shopify://shop_images/Frame_59_2.png",
+        "subheading": "cómo funciona",
+        "heading": "¿Cómo funciona Zero Touch?",
+        "description": "<p>Asigna los dispositivos a tu MDM y define tu estándar. Al primer encendido, el equipo se enrola solo y recibe automáticamente políticas, apps y configuraciones. Todo queda listo para el usuario, con control total para TI.</p>",
+        "show_button": true,
+        "button_label": "Agendar un demo",
+        "button_link": "",
+        "button_style": "primary"
+      }
+    },
+    "icon_cards_nRqPrE": {
+      "type": "icon-cards",
+      "blocks": {
+        "card_pU8hcD": {
+          "type": "card",
+          "settings": {
+            "icon_name": "",
+            "heading_variant": "default",
+            "card_label": "01",
+            "card_large_text": "",
+            "card_subtitle": "",
+            "heading": "Estandariza",
+            "description": "Políticas por perfil/área \n(Finanzas, Ventas, Operaciones)."
+          }
+        },
+        "card_DHzMF6": {
+          "type": "card",
+          "settings": {
+            "icon_name": "",
+            "heading_variant": "default",
+            "card_label": "02",
+            "card_large_text": "",
+            "card_subtitle": "",
+            "heading": "Asegura",
+            "description": "Reglas de seguridad y compliance \ndesde el día uno."
+          }
+        },
+        "card_Jtjmie": {
+          "type": "card",
+          "settings": {
+            "icon_name": "",
+            "heading_variant": "default",
+            "card_label": "03",
+            "card_large_text": "",
+            "card_subtitle": "",
+            "heading": "Implementa",
+            "description": "Apps y configuraciones \nen minutos, no en días."
+          }
+        },
+        "card_t7VqVi": {
+          "type": "card",
+          "settings": {
+            "icon_name": "",
+            "heading_variant": "default",
+            "card_label": "04",
+            "card_large_text": "",
+            "card_subtitle": "",
+            "heading": "Soporte",
+            "description": "Acciones remotas para resolver \nincidentes sin mover el equipo."
+          }
+        }
+      },
+      "block_order": [
+        "card_pU8hcD",
+        "card_DHzMF6",
+        "card_Jtjmie",
+        "card_t7VqVi"
+      ],
+      "name": "Icon Cards — El Problema (4 col)",
+      "settings": {
+        "columns": "auto",
+        "header_alignment": "center",
+        "light_mode": false,
+        "subheading": "cómo funciona",
+        "heading": "<p>Un solo panel para toda tus equipos Apple</p>",
+        "description": "<p>Desde un único dashboard puedes configurar, actualizar, monitorear y dar soporte a Mac, iPhone y iPad: <br/>redes Wi-Fi, correo, VPN, restricciones, cumplimiento y actualizaciones del sistema. <br/>Visibilidad total, control en tiempo real y operación sin intervención física.<br/><br/></p>"
+      }
+    },
+    "collapsible_content_6fQmY5": {
+      "type": "collapsible-content",
+      "blocks": {
+        "accordion_1": {
+          "type": "accordion",
+          "settings": {
+            "question": "¿Necesito Apple Business Manager?",
+            "answer": "<p>Recomendado. Permite asignación y propiedad corporativa para que el enrolamiento sea realmente Zero-Touch.</p>",
+            "opened": true
+          }
+        },
+        "accordion_2": {
+          "type": "accordion",
+          "settings": {
+            "question": "¿Funciona para Mac y para iPhone/iPad?",
+            "answer": "<p>Sí. La administración centralizada aplica a toda la flota Apple y se adapta por sistema operativo.</p>",
+            "opened": false
+          }
+        },
+        "accordion_3": {
+          "type": "accordion",
+          "settings": {
+            "question": "¿Puedo segmentar por áreas o perfiles?",
+            "answer": "<p>Sí. Se definen políticas por grupos (rol, área, ubicación y tipo de dispositivo) para mantener estándar y control.</p>",
+            "opened": false
+          }
+        },
+        "accordion_4": {
+          "type": "accordion",
+          "settings": {
+            "question": "¿Qué pasa si un equipo se pierde o sale de la empresa?",
+            "answer": "<p>Puedes aplicar acciones remotas, bloquear o borrar datos corporativos y mantener cumplimiento de seguridad.</p>",
+            "opened": false
+          }
+        }
+      },
+      "block_order": [
+        "accordion_1",
+        "accordion_2",
+        "accordion_3",
+        "accordion_4"
+      ],
+      "name": "t:sections.collapsible-content.name",
+      "settings": {
+        "layout": "background",
+        "color_scheme": "scheme-39e5d4a7-e422-4a30-b12c-b2a059c9acee",
+        "enable_border": false,
+        "border_full": false,
+        "subheading": "",
+        "subheading_style": "subtitle",
+        "subheading_icon": "none",
+        "heading": "Preguntas frecuentes MDM Zero Touch",
+        "heading_size": "h2",
+        "heading_level": "h2",
+        "heading_line": "none",
+        "line_color": "#1566e0",
+        "word_break": false,
+        "heading_animation": "none",
+        "word_break_an": false,
+        "text": "",
+        "text_align": "center",
+        "row_color_scheme": "scheme-cf7617bd-cf5d-43c2-b151-2d92b8b69cd6",
+        "padding_top": "l",
+        "padding_bottom": "l",
+        "margin_top": "no-indent",
+        "margin_bottom": "no-indent"
+      }
+    },
+    "animated_image_collage_8N9hVg": {
+      "type": "animated-image-collage",
+      "name": "t:sections.animated-image-collage.name",
+      "settings": {
+        "section_type": "background",
+        "color_scheme": "scheme-39e5d4a7-e422-4a30-b12c-b2a059c9acee",
+        "header_overlay": false,
+        "header_transparent": false,
+        "column_to_show": 3,
+        "opacity_overlay": 0.3,
+        "full_width": true,
+        "icon": "none",
+        "icon_color_scheme": "",
+        "icon_style": "contrast",
+        "icon_fill_type": "gradient",
+        "icon_size": "recommended",
+        "box_shadow": true,
+        "subheading": "",
+        "subheading_style": "subtitle subtitle--secondary",
+        "subheading_icon": "none",
+        "heading": "Pasa de “soporte reactivo” a control centralizado real",
+        "heading_size": "h1",
+        "heading_level": "h2",
+        "heading_line": "simple",
+        "line_color": "#1566e0",
+        "heading_animation": "none",
+        "text": "Te ayudamos a diseñar el modelo de enrolamiento, perfiles, seguridad base y distribución de apps para que tu empresa quede estandarizada y lista para escalar.",
+        "enable_subscribe": false,
+        "button_label_subscribe": "",
+        "button_style_subscribe": "primary",
+        "show_button": true,
+        "button_label": "Agenda un demo",
+        "button_link": "",
+        "button_style": "primary",
+        "show_button_2": true,
+        "button_label_2": "",
+        "button_link_2": "",
+        "button_style_2": "simple",
+        "padding_top": "m",
+        "padding_bottom": "m",
+        "margin_top": "no-indent",
+        "margin_bottom": "no-indent"
+      }
+    },
+    "portal_variation_row_hX3CTN": {
+      "type": "portal-variation-row",
+      "blocks": {
+        "image_6NFxmG": {
+          "type": "image",
+          "settings": {
+            "image_asset": "portal-variation-row-1.png"
+          }
+        },
+        "image_TYCFn8": {
+          "type": "image",
+          "settings": {
+            "image_asset": "portal-variation-row-2.png"
+          }
+        },
+        "image_KKnmCM": {
+          "type": "image",
+          "settings": {
+            "image_asset": "portal-variation-row-3.png"
+          }
+        },
+        "image_p7Vjwb": {
+          "type": "image",
+          "settings": {
+            "image_asset": "portal-variation-row-4.png"
+          }
+        },
+        "image_6fnJUi": {
+          "type": "image",
+          "settings": {
+            "image_asset": "portal-variation-row-5.png"
+          }
+        }
+      },
+      "block_order": [
+        "image_6NFxmG",
+        "image_TYCFn8",
+        "image_KKnmCM",
+        "image_p7Vjwb",
+        "image_6fnJUi"
+      ],
+      "name": "Portal Variation Row",
+      "settings": {
+        "color_scheme": "scheme-39e5d4a7-e422-4a30-b12c-b2a059c9acee",
+        "padding_top": "no-indent",
+        "padding_bottom": "m",
+        "margin_top": "no-indent",
+        "margin_bottom": "no-indent"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "animated_image_collage_UNpUYN",
+    "hero_kL9X9a",
+    "split_features_YPiY8f",
+    "icon_cards_nRqPrE",
+    "collapsible_content_6fQmY5",
+    "animated_image_collage_8N9hVg",
+    "portal_variation_row_hX3CTN"
+  ]
+}

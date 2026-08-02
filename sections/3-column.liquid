@@ -1,0 +1,480 @@
+{%- style -%}
+	{% render 'section-padding' %}
+	{% render 'section-margin' %}
+
+	.three-column-abm__head {
+		max-width: 96rem;
+		margin: 0 auto;
+		text-align: center;
+	}
+
+	.three-column-abm__subheading {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.8rem;
+		margin: 0 0 1.2rem;
+		font-size: 1.4rem;
+		letter-spacing: 0.08em;
+		text-transform: uppercase;
+		opacity: 0.9;
+    color: #000000;
+	}
+
+	.three-column-abm__dot {
+		width: 0.9rem;
+		height: 0.9rem;
+		border-radius: 50%;
+		background: #1da2ff;
+	}
+
+	.three-column-abm__title {
+		margin: 0 0 1.2rem;
+	}
+
+	.three-column-abm__text {
+		margin: 0;
+	}
+
+	.three-column-abm__grid {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 2rem;
+		margin-top: 3.2rem;
+	}
+
+	.three-column-abm__decor {
+		position: absolute;
+		width: 4.8rem;
+		height: 4.8rem;
+		z-index: 1;
+		opacity: 0.9;
+		pointer-events: none;
+	}
+
+	.three-column-abm__decor img {
+		display: block;
+		width: 100%;
+		height: 100%;
+	}
+
+	.three-column-abm__decor--top-left {
+		top: 0;
+		left: 0;
+		transform: translate(-30%, -10%);
+	}
+
+	.three-column-abm__decor--top-right {
+		top: 0;
+		right: 0;
+		transform: translate(30%, -10%);
+	}
+
+	.three-column-abm__decor--bottom-left {
+		bottom: 0;
+		left: 0;
+		transform: translate(-30%, 20%);
+	}
+
+	.three-column-abm__decor--bottom-right {
+		bottom: 0;
+		right: 0;
+		transform: translate(30%, 20%);
+	}
+
+	.three-column-abm__card {
+		text-align: center;
+	}
+
+	.three-column-abm__media {
+		position: relative;
+		border-radius: 2.4rem;
+		min-height: 21rem;
+		padding: 3.2rem;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background: radial-gradient(circle at center, rgba(20, 73, 107, 0.6) 0%, rgba(11, 49, 73, 0) 58%), {{ section.settings.card_background }};
+		overflow: hidden;
+	}
+
+	.three-column-abm__media:before {
+		content: "";
+		position: absolute;
+		inset: -42% -15%;
+		border-radius: 50%;
+		border: 1px solid rgba(29, 162, 255, 0.15);
+	}
+
+	.three-column-abm__media:after {
+		content: "";
+		position: absolute;
+		inset: -28% -8%;
+		border-radius: 50%;
+		border: 1px solid rgba(29, 162, 255, 0.1);
+	}
+
+	.three-column-abm__image-wrap {
+		position: relative;
+		z-index: 2;
+		width: 9.6rem;
+		height: 9.6rem;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.three-column-abm__image {
+		max-width: 100%;
+		max-height: 100%;
+		object-fit: contain;
+	}
+
+	.three-column-abm__number {
+		width: 4.2rem;
+		height: 4.2rem;
+		border-radius: 50%;
+		margin: -1.8rem auto 0;
+		background: #fff;
+		color: #1da2ff;
+		font-size: 3.2rem;
+		line-height: 1;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		position: relative;
+		z-index: 3;
+	}
+
+	.three-column-abm__card-title {
+		margin: 1.8rem 0 0.8rem;
+	}
+
+	.three-column-abm__card-text {
+		margin: 0 auto;
+		max-width: 34rem;
+		opacity: 0.72;
+	}
+
+	@media screen and (min-width: 990px) {
+		.three-column-abm__grid {
+			grid-template-columns: repeat(3, minmax(0, 1fr));
+			gap: 2rem;
+		}
+	}
+
+	@media screen and (max-width: 989px) {
+		.three-column-abm__decor {
+			display: none;
+		}
+	}
+{%- endstyle -%}
+
+<div class="three-column-abm color-{{ section.settings.color_scheme }} background section-{{ section.id }}-padding">
+	<div class="container">
+		{% if section.settings.overlay_top_left != blank %}
+			<div class="three-column-abm__decor three-column-abm__decor--top-left">
+				<img src="{{ section.settings.overlay_top_left | asset_url }}" alt="" loading="lazy">
+			</div>
+		{% endif %}
+		{% if section.settings.overlay_top_right != blank %}
+			<div class="three-column-abm__decor three-column-abm__decor--top-right">
+				<img src="{{ section.settings.overlay_top_right | asset_url }}" alt="" loading="lazy">
+			</div>
+		{% endif %}
+		{% if section.settings.overlay_bottom_left != blank %}
+			<div class="three-column-abm__decor three-column-abm__decor--bottom-left">
+				<img src="{{ section.settings.overlay_bottom_left | asset_url }}" alt="" loading="lazy">
+			</div>
+		{% endif %}
+		{% if section.settings.overlay_bottom_right != blank %}
+			<div class="three-column-abm__decor three-column-abm__decor--bottom-right">
+				<img src="{{ section.settings.overlay_bottom_right | asset_url }}" alt="" loading="lazy">
+			</div>
+		{% endif %}
+
+		<div class="three-column-abm__head">
+			{% if section.settings.subheading != blank %}
+				<p class="three-column-abm__subheading {{ section.settings.subheading_style }}">
+					<span class="three-column-abm__dot"></span>
+					<span>{{ section.settings.subheading }}</span>
+				</p>
+			{% endif %}
+
+			{% if section.settings.heading != blank %}
+				<h2 class="three-column-abm__title {{ section.settings.heading_size }}">{{ section.settings.heading }}</h2>
+			{% endif %}
+
+			{% if section.settings.text != blank %}
+				<div class="three-column-abm__text rte">{{ section.settings.text }}</div>
+			{% endif %}
+		</div>
+
+		<div class="three-column-abm__grid">
+			{%- for block in section.blocks -%}
+				<article class="three-column-abm__card" {{ block.shopify_attributes }}>
+					<div class="three-column-abm__media">
+						<div class="three-column-abm__image-wrap">
+							{% if block.settings.image != blank %}
+								{{
+									block.settings.image
+									| image_url: width: 240
+									| image_tag:
+										loading: 'lazy',
+										widths: '120,160,200,240',
+										class: 'three-column-abm__image'
+								}}
+							{% elsif block.settings.icon_asset != blank %}
+								<img src="{{ block.settings.icon_asset | asset_url }}" alt="" loading="lazy" class="three-column-abm__image">
+							{% endif %}
+						</div>
+					</div>
+
+					{% if section.settings.show_numbers %}
+						<div class="three-column-abm__number">{{ block.settings.number }}</div>
+					{% endif %}
+
+					{% if block.settings.heading != blank %}
+						<h3 class="three-column-abm__card-title h3">{{ block.settings.heading }}</h3>
+					{% endif %}
+
+					{% if block.settings.text != blank %}
+						<p class="three-column-abm__card-text body-normal">{{ block.settings.text }}</p>
+					{% endif %}
+				</article>
+			{%- endfor -%}
+		</div>
+	</div>
+</div>
+
+{% schema %}
+{
+	"name": "3 Column ABM",
+	"tag": "section",
+	"class": "three-column-abm-section",
+	"enabled_on": {
+		"templates": ["*"]
+	},
+	"settings": [
+		{
+			"type": "color_scheme",
+			"id": "color_scheme",
+			"label": "Color scheme",
+			"default": "background-1"
+		},
+		{
+			"type": "color",
+			"id": "card_background",
+			"label": "Card background",
+			"default": "#0b3149"
+		},
+		{
+			"type": "text",
+			"id": "overlay_top_left",
+			"label": "Overlay icon top left",
+			"default": "slide-1-icon.svg"
+		},
+		{
+			"type": "text",
+			"id": "overlay_top_right",
+			"label": "Overlay icon top right",
+			"default": "slide-2-icon.svg"
+		},
+		{
+			"type": "text",
+			"id": "overlay_bottom_left",
+			"label": "Overlay icon bottom left",
+			"default": "slide-3-icon.svg"
+		},
+		{
+			"type": "text",
+			"id": "overlay_bottom_right",
+			"label": "Overlay icon bottom right",
+			"default": "slide-4-icon.svg"
+		},
+		{
+			"type": "text",
+			"id": "subheading",
+			"label": "Subheading",
+			"default": "BENEFICIOS PARA TU EMPRESA"
+		},
+		{
+			"type": "select",
+			"id": "subheading_style",
+			"label": "Subheading style",
+			"default": "subtitle",
+			"options": [
+				{
+					"value": "subtitle",
+					"label": "Primary"
+				},
+				{
+					"value": "subtitle subtitle--secondary",
+					"label": "Secondary"
+				}
+			]
+		},
+		{
+			"type": "text",
+			"id": "heading",
+			"label": "Heading",
+			"default": "¿Qué significa \"propiedad de Mac\" en ABM?"
+		},
+		{
+			"type": "select",
+			"id": "heading_size",
+			"label": "Heading size",
+			"default": "h2",
+			"options": [
+				{
+					"value": "h1",
+					"label": "H1"
+				},
+				{
+					"value": "h2",
+					"label": "H2"
+				},
+				{
+					"value": "h3",
+					"label": "H3"
+				}
+			]
+		},
+		{
+			"type": "richtext",
+			"id": "text",
+			"label": "Description",
+			"default": "<p><strong>Apple Business Manager es el portal de Apple para organizaciones.</strong><br>En el caso de Mac, \"propiedad\" significa que tus equipos quedan asociados a tu empresa a nivel de programa, permitiendo asignarlos a un servidor MDM y automatizar su enrolamiento y configuración cuando se encienden o se reinstalan.</p>"
+		},
+		{
+			"type": "checkbox",
+			"id": "show_numbers",
+			"label": "Show numbers",
+			"default": true
+		},
+		{
+			"type": "select",
+			"id": "padding_top",
+			"label": "Padding top",
+			"default": "l",
+			"options": [
+				{ "value": "no-indent", "label": "None" },
+				{ "value": "xs", "label": "XS" },
+				{ "value": "s", "label": "S" },
+				{ "value": "m", "label": "M" },
+				{ "value": "l", "label": "L" },
+				{ "value": "xl", "label": "XL" }
+			]
+		},
+		{
+			"type": "select",
+			"id": "padding_bottom",
+			"label": "Padding bottom",
+			"default": "l",
+			"options": [
+				{ "value": "no-indent", "label": "None" },
+				{ "value": "xs", "label": "XS" },
+				{ "value": "s", "label": "S" },
+				{ "value": "m", "label": "M" },
+				{ "value": "l", "label": "L" },
+				{ "value": "xl", "label": "XL" }
+			]
+		},
+		{
+			"type": "select",
+			"id": "margin_top",
+			"label": "Margin top",
+			"default": "no-indent",
+			"options": [
+				{ "value": "no-indent", "label": "None" },
+				{ "value": "xs", "label": "XS" },
+				{ "value": "s", "label": "S" },
+				{ "value": "m", "label": "M" },
+				{ "value": "l", "label": "L" },
+				{ "value": "xl", "label": "XL" }
+			]
+		},
+		{
+			"type": "select",
+			"id": "margin_bottom",
+			"label": "Margin bottom",
+			"default": "no-indent",
+			"options": [
+				{ "value": "no-indent", "label": "None" },
+				{ "value": "xs", "label": "XS" },
+				{ "value": "s", "label": "S" },
+				{ "value": "m", "label": "M" },
+				{ "value": "l", "label": "L" },
+				{ "value": "xl", "label": "XL" }
+			]
+		}
+	],
+	"blocks": [
+		{
+			"type": "step",
+			"name": "Step",
+			"limit": 3,
+			"settings": [
+				{
+					"type": "text",
+					"id": "number",
+					"label": "Number",
+					"default": "1"
+				},
+				{
+					"type": "image_picker",
+					"id": "image",
+					"label": "Icon image"
+				},
+				{
+					"type": "text",
+					"id": "icon_asset",
+					"label": "Icon asset filename"
+				},
+				{
+					"type": "text",
+					"id": "heading",
+					"label": "Heading",
+					"default": "Compra correcta"
+				},
+				{
+					"type": "text",
+					"id": "text",
+					"label": "Description",
+					"default": "Los Mac se compran a través de los distribuidores autorizados."
+				}
+			]
+		}
+	],
+	"presets": [
+		{
+			"name": "3 Column ABM",
+			"blocks": [
+				{
+					"type": "step",
+					"settings": {
+						"number": "1",
+						"heading": "Compra correcta",
+						"text": "Los Mac se compran a través de distribuidores autorizados."
+					}
+				},
+				{
+					"type": "step",
+					"settings": {
+						"number": "2",
+						"heading": "Asignación en ABM",
+						"text": "El equipo aparece en tu ABM y se marca para tu organización."
+					}
+				},
+				{
+					"type": "step",
+					"settings": {
+						"number": "3",
+						"heading": "Enlace con MDM",
+						"text": "En ABM asignas la Mac a tu servidor MDM."
+					}
+				}
+			]
+		}
+	]
+}
+{% endschema %}

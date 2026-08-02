@@ -1,0 +1,64 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "type": "footer",
+  "name": "t:sections.footer.settings.footer-group.label",
+  "sections": {
+    "footer": {
+      "type": "footer",
+      "blocks": {
+        "footer-0": {
+          "type": "logo_info",
+          "settings": {
+            "logo": "shopify://shop_images/mac-online-pro.svg",
+            "logo_width": 250,
+            "description": "Liderando la integración tecnológica en las principales empresas de Chile."
+          }
+        },
+        "footer-3": {
+          "type": "subscribe",
+          "settings": {
+            "color_scheme_subscribe": "scheme-fe7d2251-16e5-4b62-ab94-d700f64f3bbf",
+            "enable_box_shadow": false,
+            "heading": "Mantente al día con la tecnología para empresas",
+            "text": "Recibe tendencias, casos de éxito, novedades del ecosistema Apple y contenido exclusivo para impulsar la productividad de tu organización.",
+            "additional_text": "Al suscribirte, aceptas nuestras <a href=\"/policies/privacy-policy\">Política de privacidad</a> y brinda tu consentimiento para recibir actualizaciones de MacOnline.",
+            "button_style": "primary"
+          }
+        }
+      },
+      "block_order": [
+        "footer-0",
+        "footer-3"
+      ],
+      "custom_css": [
+        "h3 {font-size: 120%;}",
+        ".footer__copyright .copyright__content a,.footer__copyright,.footer__policies,.footer__menu-bottom li a {color: #fff; font-weight: 400; transition: all .4s;}",
+        ".footer__menu-bottom li a:hover {opacity: 0.4;}"
+      ],
+      "settings": {
+        "color_scheme": "scheme-39e5d4a7-e422-4a30-b12c-b2a059c9acee",
+        "content_alignment": "left",
+        "enable_country_selector": true,
+        "enable_language_selector": true,
+        "payment_enable": true,
+        "show_social": false,
+        "enable_copyright_date": true,
+        "enable_copyright_shopname": true,
+        "menu_bottom": "footer",
+        "show_policy": false,
+        "enable_follow_on_shop": false
+      }
+    }
+  },
+  "order": [
+    "footer"
+  ]
+}

@@ -1,0 +1,708 @@
+{% comment %}
+  ============================================================
+  Simulador de Arriendo Operativo — MacOnline Pro
+  Sección Liquid para Shopify (popup modal)
+
+  INSTRUCCIONES:
+  1. En tu admin de Shopify, ve a Online Store → Themes → Edit code
+  2. En la carpeta "sections/", crea un archivo nuevo: simulador-arriendo.liquid
+  3. Pega todo este contenido
+  4. Para usarlo en una página, ve a Customize y agrega la sección
+     O inclúyelo en un template con: {% section 'simulador-arriendo' %}
+  ============================================================
+{% endcomment %}
+
+{%- style -%}
+/* ── OVERLAY + MODAL ───────────────────────────────────── */
+.qr-overlay {
+  position: fixed; inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  z-index: 9998;
+  opacity: 0; visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s;
+}
+.qr-overlay.qr-open { opacity: 1; visibility: visible; }
+
+.qr-modal {
+  position: fixed;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%) scale(0.95);
+  width: min(720px, calc(100vw - 32px));
+  max-height: calc(100vh - 48px);
+  background: #f5f5f7;
+  border-radius: 20px;
+  z-index: 9999;
+  overflow: hidden;
+  opacity: 0; visibility: hidden;
+  transition: opacity 0.3s, transform 0.3s, visibility 0.3s;
+  box-shadow: 0 24px 80px rgba(0,0,0,0.25);
+}
+.qr-modal.qr-open {
+  opacity: 1; visibility: visible;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* ── MODAL HEADER ──────────────────────────────────────── */
+.qr-modal-header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 16px 20px;
+  background: rgba(255,255,255,0.9);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+  position: sticky; top: 0; z-index: 10;
+}
+.qr-modal-title {
+  font-size: 15px; font-weight: 600; color: #1d1d1f;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+.qr-modal-close {
+  width: 30px; height: 30px; border-radius: 50%;
+  background: rgba(0,0,0,0.06); border: none;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; transition: background 0.2s;
+  color: #1d1d1f; font-size: 16px; line-height: 1;
+}
+.qr-modal-close:hover { background: rgba(0,0,0,0.12); }
+
+/* ── MODAL BODY (scrollable) ───────────────────────────── */
+.qr-modal-body {
+  overflow-y: auto;
+  max-height: calc(100vh - 48px - 62px);
+  padding: 24px 20px 32px;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* ── SIMULADOR STYLES (namespaced con .qr-sim) ─────────── */
+.qr-sim {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  color: #1d1d1f;
+}
+.qr-sim *,
+.qr-sim *::before,
+.qr-sim *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+.qr-sim .qr-hero {
+  text-align: center;
+  padding: 0 0 24px; max-width: 600px; margin: 0 auto;
+}
+.qr-sim .qr-eyebrow {
+  font-size: 13px; font-weight: 500; color: #0071e3; margin-bottom: 6px;
+}
+.qr-sim .qr-h1 {
+  font-size: clamp(28px, 5vw, 40px);
+  font-weight: 600; letter-spacing: -0.04em; line-height: 1.05;
+  margin-bottom: 8px; color: #1d1d1f;
+}
+.qr-sim .qr-hero-sub {
+  font-size: 15px; color: #6e6e73; line-height: 1.5;
+}
+
+.qr-sim .qr-card {
+  background: #ffffff;
+  border-radius: 18px;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.04), 0 4px 20px rgba(0,0,0,0.06);
+  overflow: hidden;
+  margin-bottom: 12px;
+}
+
+.qr-sim .qr-section-label {
+  font-size: 11px; font-weight: 600; letter-spacing: 0.07em;
+  text-transform: uppercase; color: #6e6e73;
+  padding: 18px 24px 4px;
+}
+
+.qr-sim .qr-row {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 15px 24px; border-bottom: 1px solid #d2d2d7; gap: 12px;
+}
+.qr-sim .qr-row:last-child { border-bottom: none; }
+.qr-sim .qr-row-label { font-size: 15px; font-weight: 400; color: #1d1d1f; flex: 1; }
+.qr-sim .qr-row-label small { display: block; font-size: 12px; color: #757575; margin-top: 2px; }
+
+/* Pills */
+.qr-sim .qr-pills { display: flex; gap: 6px; flex-wrap: wrap; justify-content: flex-end; }
+.qr-sim .qr-pill {
+  padding: 6px 16px; border-radius: 100px;
+  font-size: 13px; font-weight: 500;
+  border: 1.5px solid #d2d2d7;
+  background: transparent; color: #6e6e73;
+  cursor: pointer; transition: all 0.2s; font-family: inherit;
+}
+.qr-sim .qr-pill[aria-pressed="true"] { border-color: #1d1d1f; background: #1d1d1f; color: #fff; }
+
+/* Price input */
+.qr-sim .qr-input-wrap { position: relative; display: inline-flex; align-items: flex-start; flex-direction: column; }
+.qr-sim .qr-input-row { position: relative; display: inline-flex; align-items: center; }
+.qr-sim .qr-input-row .qr-prefix {
+  position: absolute; left: 13px;
+  font-size: 15px; color: #6e6e73; pointer-events: none;
+}
+.qr-sim .qr-price-input {
+  background: #f5f5f7; border: 1px solid transparent;
+  border-radius: 12px; padding: 9px 13px 9px 28px;
+  font-size: 15px; font-weight: 500; color: #1d1d1f;
+  width: 170px; text-align: right; outline: none; font-family: inherit;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.qr-sim .qr-price-input:focus {
+  border-color: #0071e3; box-shadow: 0 0 0 3px rgba(0,113,227,0.15);
+  background: #fff;
+}
+.qr-sim .qr-price-input.qr-error {
+  border-color: #ff3b30; box-shadow: 0 0 0 3px rgba(255,59,48,0.15);
+}
+.qr-sim .qr-input-error {
+  font-size: 11px; color: #ff3b30; text-align: right;
+  width: 170px; display: none; margin-top: 4px;
+}
+.qr-sim .qr-input-error.qr-visible { display: block; }
+
+/* Qty stepper */
+.qr-sim .qr-qty { display: flex; align-items: center; gap: 0; background: #f5f5f7; border-radius: 12px; overflow: hidden; }
+.qr-sim .qr-qty-btn {
+  width: 44px; height: 44px; border: none; background: transparent;
+  color: #0071e3; font-size: 21px; cursor: pointer; font-family: inherit;
+  display: flex; align-items: center; justify-content: center;
+  transition: background 0.15s; font-weight: 300; line-height: 1;
+}
+.qr-sim .qr-qty-btn:hover { background: rgba(0,0,0,0.06); }
+.qr-sim .qr-qty-btn:active { background: rgba(0,0,0,0.1); }
+.qr-sim .qr-qty-input {
+  width: 52px; text-align: center; font-size: 15px; font-weight: 600;
+  border: none; background: transparent; outline: none; font-family: inherit;
+  color: #1d1d1f; -moz-appearance: textfield;
+}
+.qr-sim .qr-qty-input::-webkit-inner-spin-button,
+.qr-sim .qr-qty-input::-webkit-outer-spin-button { -webkit-appearance: none; }
+.qr-sim .qr-qty-input:focus { background: rgba(0,113,227,0.08); border-radius: 4px; }
+
+/* Toggle */
+.qr-sim .qr-tog { position: relative; width: 51px; height: 31px; flex-shrink: 0; }
+.qr-sim .qr-tog input { opacity: 0; width: 0; height: 0; position: absolute; }
+.qr-sim .qr-tog-track {
+  position: absolute; inset: 0;
+  background: #d2d2d7; border-radius: 100px; cursor: pointer; transition: background 0.3s;
+}
+.qr-sim .qr-tog-track::after {
+  content: ''; position: absolute;
+  width: 27px; height: 27px; border-radius: 50%; background: #fff;
+  top: 2px; left: 2px;
+  transition: transform 0.3s cubic-bezier(0.34,1.56,0.64,1);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.18);
+}
+.qr-sim .qr-tog input:checked + .qr-tog-track { background: #34c759; }
+.qr-sim .qr-tog input:checked + .qr-tog-track::after { transform: translateX(20px); }
+.qr-sim .qr-mdm-feedback { transition: color 0.2s; }
+.qr-sim .qr-mdm-feedback.qr-off { color: #ff3b30 !important; }
+
+/* Plazo selector */
+.qr-sim .qr-plazo-pills { display: flex; gap: 0; }
+.qr-sim .qr-plazo-opt {
+  flex: 1;
+  padding: 22px 22px 20px; cursor: pointer; position: relative;
+  border: none; background: transparent; text-align: left; font-family: inherit;
+  transition: background 0.2s;
+}
+.qr-sim .qr-plazo-opt + .qr-plazo-opt { border-left: 1px solid #d2d2d7; }
+.qr-sim .qr-plazo-opt[aria-pressed="true"] { background: #1d1d1f; }
+.qr-sim .qr-plazo-num {
+  font-size: 26px; font-weight: 600; letter-spacing: -0.03em; color: #1d1d1f;
+  margin-bottom: 2px;
+}
+.qr-sim .qr-plazo-opt[aria-pressed="true"] .qr-plazo-num { color: #fff; }
+.qr-sim .qr-plazo-vr { font-size: 13px; color: #6e6e73; }
+.qr-sim .qr-plazo-opt[aria-pressed="true"] .qr-plazo-vr { color: rgba(255,255,255,0.6); }
+.qr-sim .qr-plazo-check {
+  position: absolute; top: 18px; right: 18px;
+  width: 22px; height: 22px; border-radius: 50%;
+  border: 2px solid #d2d2d7;
+  display: flex; align-items: center; justify-content: center;
+}
+.qr-sim .qr-plazo-opt[aria-pressed="true"] .qr-plazo-check { background: #fff; border-color: #fff; }
+.qr-sim .qr-plazo-check::after {
+  content: ''; width: 10px; height: 10px; border-radius: 50%; background: transparent;
+}
+.qr-sim .qr-plazo-opt[aria-pressed="true"] .qr-plazo-check::after { background: #1d1d1f; }
+
+/* Results */
+.qr-sim .qr-result-hero {
+  padding: 28px 28px 0;
+  display: flex; align-items: flex-start; justify-content: space-between;
+  flex-wrap: wrap; gap: 20px;
+}
+.qr-sim .qr-r-label { font-size: 11px; font-weight: 600; letter-spacing: 0.07em; text-transform: uppercase; color: #6e6e73; margin-bottom: 8px; }
+.qr-sim .qr-r-big {
+  font-size: 48px; font-weight: 600; letter-spacing: -0.045em; line-height: 1; color: #1d1d1f;
+}
+.qr-sim .qr-r-big sup { font-size: 22px; font-weight: 500; vertical-align: top; margin-top: 8px; display: inline-block; letter-spacing: 0; }
+.qr-sim .qr-r-note { font-size: 13px; color: #6e6e73; margin-top: 8px; }
+.qr-sim .qr-r-iva-label { font-size: 11px; font-weight: 600; letter-spacing: 0.07em; text-transform: uppercase; color: #6e6e73; margin-bottom: 8px; text-align: right; }
+.qr-sim .qr-r-iva { font-size: 28px; font-weight: 600; letter-spacing: -0.03em; color: #757575; text-align: right; }
+.qr-sim .qr-r-iva-note { font-size: 12px; color: #757575; margin-top: 4px; text-align: right; }
+
+.qr-sim .qr-r-grid { display: grid; grid-template-columns: repeat(3,1fr); border-top: 1px solid #d2d2d7; margin-top: 24px; }
+.qr-sim .qr-r-cell { padding: 18px 22px; border-right: 1px solid #d2d2d7; }
+.qr-sim .qr-r-cell:last-child { border-right: none; }
+.qr-sim .qr-r-cell-label { font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.06em; color: #757575; margin-bottom: 6px; }
+.qr-sim .qr-r-cell-val { font-size: 17px; font-weight: 600; letter-spacing: -0.02em; color: #1d1d1f; }
+.qr-sim .qr-r-cell-sub { font-size: 11px; color: #757575; margin-top: 2px; }
+
+/* Penalties & purchase */
+.qr-sim .qr-detail-head { padding: 18px 24px 14px; border-bottom: 1px solid #d2d2d7; }
+.qr-sim .qr-detail-head-title { font-size: 15px; font-weight: 600; color: #1d1d1f; }
+.qr-sim .qr-detail-head-sub { font-size: 13px; color: #6e6e73; margin-top: 2px; }
+.qr-sim .qr-pen-row {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 13px 24px; border-bottom: 1px solid #d2d2d7;
+}
+.qr-sim .qr-pen-row:last-child { border-bottom: none; }
+.qr-sim .qr-pen-when { font-size: 14px; color: #1d1d1f; font-weight: 500; }
+.qr-sim .qr-pen-badge {
+  display: inline-block; font-size: 11px; font-weight: 600;
+  padding: 2px 8px; border-radius: 6px;
+  background: #f5f5f7; color: #6e6e73; margin-left: 8px;
+}
+.qr-sim .qr-pen-right { text-align: right; }
+.qr-sim .qr-pen-val { font-size: 15px; font-weight: 600; color: #1d1d1f; }
+
+.qr-sim .qr-compra-row {
+  padding: 20px 24px;
+  display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap;
+}
+.qr-sim .qr-compra-title { font-size: 15px; font-weight: 600; color: #1d1d1f; }
+.qr-sim .qr-compra-sub { font-size: 13px; color: #6e6e73; margin-top: 2px; }
+.qr-sim .qr-compra-val { font-size: 22px; font-weight: 600; letter-spacing: -0.02em; text-align: right; color: #1d1d1f; }
+.qr-sim .qr-compra-note { font-size: 12px; color: #757575; margin-top: 2px; text-align: right; }
+.qr-sim .qr-disc { text-align: center; font-size: 12px; color: #757575; padding: 8px 0 0; line-height: 1.5; }
+
+/* Animate */
+@keyframes qrPop { from { opacity: 0.25; transform: translateY(3px); } to { opacity: 1; transform: none; } }
+.qr-sim .qr-pop { animation: qrPop 0.22s ease-out both; }
+
+/* Responsive inside modal */
+@media (max-width: 580px) {
+  .qr-sim .qr-h1 { font-size: 28px; }
+  .qr-sim .qr-r-big { font-size: 38px; }
+  .qr-sim .qr-r-grid { grid-template-columns: 1fr 1fr; }
+  .qr-sim .qr-r-cell:nth-child(2) { border-right: none; }
+  .qr-sim .qr-r-cell:nth-child(3) { grid-column: 1/-1; border-top: 1px solid #d2d2d7; }
+  .qr-sim .qr-plazo-pills { flex-direction: column; }
+  .qr-sim .qr-plazo-opt + .qr-plazo-opt { border-left: none; border-top: 1px solid #d2d2d7; }
+  .qr-sim .qr-price-input { width: 140px; }
+  .qr-sim .qr-input-error { width: 140px; }
+  .qr-sim .qr-result-hero { flex-direction: column; gap: 12px; }
+  .qr-sim .qr-r-iva { text-align: left; }
+  .qr-sim .qr-r-iva-label { text-align: left; }
+  .qr-sim .qr-r-iva-note { text-align: left; }
+  .qr-modal { border-radius: 16px; }
+  .qr-modal-body { padding: 16px 16px 24px; }
+}
+{%- endstyle -%}
+
+<!-- ── OVERLAY ──────────────────────────────────────────── -->
+<div class="qr-overlay" id="qr-overlay" aria-hidden="true"></div>
+
+<!-- ── MODAL ───────────────────────────────────────────── -->
+<div class="qr-modal" id="qr-modal" role="dialog" aria-modal="true" aria-label="Simulador de Arriendo Operativo">
+  <div class="qr-modal-header">
+    <span class="qr-modal-title">Simulador de Cuotas</span>
+    <button class="qr-modal-close" id="qr-close-btn" aria-label="Cerrar simulador">✕</button>
+  </div>
+  <div class="qr-modal-body">
+    <div class="qr-sim">
+
+      <!-- Hero compacto -->
+      <div class="qr-hero">
+        <p class="qr-eyebrow">Arriendo Operativo</p>
+        <div class="qr-h1">Calcula tu cuota mensual</div>
+        <p class="qr-hero-sub">Para equipos Apple en tu empresa o institución.</p>
+      </div>
+
+      <!-- Producto -->
+      <div class="qr-card">
+        <div class="qr-section-label">Producto</div>
+
+        <div class="qr-row">
+          <span class="qr-row-label" id="qr-tipo-label">Tipo de equipo</span>
+          <div class="qr-pills" role="group" aria-labelledby="qr-tipo-label">
+            <button class="qr-pill" aria-pressed="true" id="qr-pill-Mac">Mac</button>
+            <button class="qr-pill" aria-pressed="false" id="qr-pill-iPad">iPad</button>
+            <button class="qr-pill" aria-pressed="false" id="qr-pill-iPhone">iPhone</button>
+          </div>
+        </div>
+
+        <div class="qr-row">
+          <label class="qr-row-label" for="qr-montoUnitario">
+            Precio por equipo
+            <small>Sin IVA · precio de lista del equipo</small>
+          </label>
+          <div class="qr-input-wrap">
+            <div class="qr-input-row">
+              <span class="qr-prefix">$</span>
+              <input type="text" inputmode="numeric" class="qr-price-input" id="qr-montoUnitario" value="999.990" aria-label="Precio por equipo sin IVA">
+            </div>
+            <div class="qr-input-error" id="qr-priceError">Ingresa un monto válido</div>
+          </div>
+        </div>
+
+        <div class="qr-row">
+          <label class="qr-row-label" for="qr-qtyInput">Cantidad de equipos</label>
+          <div class="qr-qty">
+            <button class="qr-qty-btn" id="qr-qty-minus" aria-label="Disminuir cantidad">−</button>
+            <input type="text" inputmode="numeric" class="qr-qty-input" id="qr-qtyInput" value="1" aria-label="Cantidad de equipos">
+            <button class="qr-qty-btn" id="qr-qty-plus" aria-label="Aumentar cantidad">+</button>
+          </div>
+        </div>
+
+        <div class="qr-row" style="flex-wrap: wrap;">
+          <span class="qr-row-label">
+            Gestión de dispositivos (MDM)
+            <small id="qr-mdmFeedback" class="qr-mdm-feedback">Administración remota de los equipos · $3.000/equipo/mes</small>
+          </span>
+          <label class="qr-tog" aria-label="Activar o desactivar MDM">
+            <input type="checkbox" id="qr-mdm">
+            <div class="qr-tog-track"></div>
+          </label>
+        </div>
+      </div>
+
+      <!-- Plazo -->
+      <div class="qr-card">
+        <div class="qr-plazo-pills" role="group" aria-label="Plazo del contrato">
+          <button class="qr-plazo-opt" id="qr-opt-12" aria-pressed="false">
+            <div class="qr-plazo-check"></div>
+            <div class="qr-plazo-num">12 meses</div>
+            <div class="qr-plazo-vr">Compra: 50%</div>
+          </button>
+          <button class="qr-plazo-opt" id="qr-opt-24" aria-pressed="false">
+            <div class="qr-plazo-check"></div>
+            <div class="qr-plazo-num">24 meses</div>
+            <div class="qr-plazo-vr">Compra: 25%</div>
+          </button>
+          <button class="qr-plazo-opt" id="qr-opt-36" aria-pressed="true">
+            <div class="qr-plazo-check"></div>
+            <div class="qr-plazo-num">36 meses</div>
+            <div class="qr-plazo-vr">Compra: 15%</div>
+          </button>
+          <button class="qr-plazo-opt" id="qr-opt-48" aria-pressed="false">
+            <div class="qr-plazo-check"></div>
+            <div class="qr-plazo-num">48 meses</div>
+            <div class="qr-plazo-vr">Compra: 8%</div>
+          </button>
+          <button class="qr-plazo-opt" id="qr-opt-60" aria-pressed="false">
+            <div class="qr-plazo-check"></div>
+            <div class="qr-plazo-num">60 meses</div>
+            <div class="qr-plazo-vr">Compra: 4%</div>
+          </button>
+        </div>
+      </div>
+
+      <!-- Resultado -->
+      <div class="qr-card">
+        <div class="qr-result-hero">
+          <div>
+            <div class="qr-r-label">Cuota mensual sin IVA</div>
+            <div class="qr-r-big"><sup>$</sup><span id="qr-cuotaNeta">—</span></div>
+            <div class="qr-r-note">Monto facturado por mes · sin IVA</div>
+          </div>
+          <div>
+            <div class="qr-r-iva-label">Con IVA (19%)</div>
+            <div class="qr-r-iva" id="qr-cuotaIVA">—</div>
+            <div class="qr-r-iva-note">Pago mensual total</div>
+          </div>
+        </div>
+
+        <div class="qr-r-grid">
+          <div class="qr-r-cell">
+            <div class="qr-r-cell-label">Costo total equipos</div>
+            <div class="qr-r-cell-val" id="qr-totalNeto">—</div>
+            <div class="qr-r-cell-sub">sin IVA</div>
+          </div>
+          <div class="qr-r-cell">
+            <div class="qr-r-cell-label">Gasto total del contrato</div>
+            <div class="qr-r-cell-val" id="qr-totalPer">—</div>
+            <div class="qr-r-cell-sub" id="qr-totalPerSub">sin IVA</div>
+          </div>
+          <div class="qr-r-cell">
+            <div class="qr-r-cell-label">Compra al final</div>
+            <div class="qr-r-cell-val" id="qr-recompra">—</div>
+            <div class="qr-r-cell-sub">por equipo · sin IVA</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Penalizaciones -->
+      <div class="qr-card">
+        <div class="qr-detail-head">
+          <div class="qr-detail-head-title">Término anticipado</div>
+          <div class="qr-detail-head-sub">Costo adicional si terminas el contrato antes del plazo</div>
+        </div>
+        <div id="qr-penList"></div>
+      </div>
+
+      <!-- Opción de compra -->
+      <div class="qr-card">
+        <div class="qr-compra-row">
+          <div>
+            <div class="qr-compra-title">Opción de compra</div>
+            <div class="qr-compra-sub" id="qr-compraSub">Al finalizar el contrato (mes 37)</div>
+          </div>
+          <div>
+            <div class="qr-compra-val" id="qr-compraVal">—</div>
+            <div class="qr-compra-note">Total por todos los equipos · sin IVA</div>
+          </div>
+        </div>
+      </div>
+
+      <p class="qr-disc">Valores referenciales en pesos chilenos sin IVA. Para una cotización formal, contacta a tu ejecutivo MacOnline Pro.</p>
+
+    </div>
+  </div>
+</div>
+
+<!-- ── JAVASCRIPT ───────────────────────────────────────── -->
+<script>
+(function() {
+  'use strict';
+
+  // ── Modal open/close ─────────────────────────────────
+  var overlay = document.getElementById('qr-overlay');
+  var modal   = document.getElementById('qr-modal');
+  // Sin botón propio — se abre desde botones del tema con data-qr-open o por texto
+  var closeBtn = document.getElementById('qr-close-btn');
+
+  function openModal() {
+    overlay.style.opacity = '1';
+    overlay.style.visibility = 'visible';
+    modal.style.opacity = '1';
+    modal.style.visibility = 'visible';
+    modal.style.transform = 'translate(-50%, -50%) scale(1)';
+    overlay.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+    qrCalcular();
+  }
+  function closeModal() {
+    overlay.style.opacity = '0';
+    overlay.style.visibility = 'hidden';
+    modal.style.opacity = '0';
+    modal.style.visibility = 'hidden';
+    modal.style.transform = 'translate(-50%, -50%) scale(0.95)';
+    overlay.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+
+  // Abre el modal desde CUALQUIER botón con data-qr-open
+  document.querySelectorAll('[data-qr-open]').forEach(function(btn) {
+    btn.addEventListener('click', function(e) { e.preventDefault(); openModal(); });
+  });
+
+  // También detectar botones/links del tema que contengan texto de cotización
+  document.querySelectorAll('a, button').forEach(function(el) {
+    var txt = (el.textContent || '').trim().toLowerCase();
+    if (txt.indexOf('cotiza') === 0 || txt === 'cotizar arriendo' || txt === 'solicitar cotización') {
+      el.addEventListener('click', function(e) { e.preventDefault(); openModal(); });
+    }
+  });
+
+  closeBtn.addEventListener('click', closeModal);
+  overlay.addEventListener('click', closeModal);
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && modal.style.visibility === 'visible') closeModal();
+  });
+
+  // ── Datos ────────────────────────────────────────────
+  var FACTOR_CUOTA_BASE = { 12: 0.058669, 24: 0.040385, 36: 0.032015, 48: 0.027087, 60: 0.023532 };
+  var VR_PCT = { 12: 0.50, 24: 0.25, 36: 0.15, 48: 0.08, 60: 0.04 };
+  var CUOTA_OC = { 12: 13, 24: 25, 36: 37, 48: 49, 60: 61 };
+  var PENS = {
+    12: [
+      { txt: 'Meses 1 \u2013 3', c: 2 },
+      { txt: 'Meses 4 \u2013 6', c: 1.5 },
+      { txt: 'Meses 7 \u2013 9', c: 1 }
+    ],
+    24: [
+      { txt: 'Meses 1 \u2013 6', c: 4 },
+      { txt: 'Meses 7 \u2013 12', c: 3 },
+      { txt: 'Meses 13 \u2013 18', c: 2 }
+    ],
+    36: [
+      { txt: 'Meses 1 \u2013 9', c: 5 },
+      { txt: 'Meses 10 \u2013 18', c: 4 },
+      { txt: 'Meses 19 \u2013 27', c: 2.52 }
+    ],
+    48: [
+      { txt: 'Meses 1 \u2013 12', c: 8 },
+      { txt: 'Meses 13 \u2013 24', c: 6 },
+      { txt: 'Meses 25 \u2013 36', c: 4 }
+    ],
+    60: [
+      { txt: 'Meses 1 \u2013 15', c: 10 },
+      { txt: 'Meses 16 \u2013 30', c: 7.5 },
+      { txt: 'Meses 31 \u2013 45', c: 5 }
+    ]
+  };
+
+  // ── Estado ───────────────────────────────────────────
+  var qrMeses = 36, qrProducto = 'Mac', qrCantidad = 1;
+
+  // ── Elementos ────────────────────────────────────────
+  var priceInput = document.getElementById('qr-montoUnitario');
+  var priceError = document.getElementById('qr-priceError');
+  var qtyInput   = document.getElementById('qr-qtyInput');
+
+  // ── Producto pills ───────────────────────────────────
+  ['Mac', 'iPad', 'iPhone'].forEach(function(p) {
+    document.getElementById('qr-pill-' + p).addEventListener('click', function() {
+      qrProducto = p;
+      ['Mac', 'iPad', 'iPhone'].forEach(function(x) {
+        document.getElementById('qr-pill-' + x).setAttribute('aria-pressed', x === p);
+      });
+      qrCalcular();
+    });
+  });
+
+  // ── Plazo ────────────────────────────────────────────
+  [12, 24, 36, 48, 60].forEach(function(p) {
+    document.getElementById('qr-opt-' + p).addEventListener('click', function() { setQrMeses(p); });
+  });
+
+  function setQrMeses(m) {
+    qrMeses = m;
+    [12, 24, 36, 48, 60].forEach(function(p) {
+      document.getElementById('qr-opt-' + p).setAttribute('aria-pressed', m === p);
+    });
+    qrCalcular();
+  }
+
+  // ── Cantidad ─────────────────────────────────────────
+  document.getElementById('qr-qty-minus').addEventListener('click', function() { chgQrQty(-1); });
+  document.getElementById('qr-qty-plus').addEventListener('click', function() { chgQrQty(1); });
+
+  function chgQrQty(d) {
+    qrCantidad = Math.max(1, qrCantidad + d);
+    qtyInput.value = qrCantidad;
+    qrCalcular();
+  }
+
+  qtyInput.addEventListener('input', function() {
+    var val = parseInt(this.value.replace(/[^0-9]/g, ''), 10);
+    if (val > 0) { qrCantidad = val; qrCalcular(); }
+  });
+  qtyInput.addEventListener('blur', function() {
+    if (!this.value || parseInt(this.value) < 1) { qrCantidad = 1; this.value = 1; }
+    else { qrCantidad = parseInt(this.value); this.value = qrCantidad; }
+    qrCalcular();
+  });
+
+  // ── MDM toggle ───────────────────────────────────────
+  document.getElementById('qr-mdm').addEventListener('change', function() { qrCalcular(); });
+
+  // ── Precio con formato de miles ──────────────────────
+  function formatMiles(n) {
+    return n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+  }
+  function parsePrecio(str) {
+    return parseInt(str.replace(/\./g, '').replace(/[^0-9]/g, ''), 10) || 0;
+  }
+
+  priceInput.addEventListener('input', function() {
+    var cursorPos = this.selectionStart;
+    var oldLen = this.value.length;
+    var raw = parsePrecio(this.value);
+    if (raw > 0) {
+      this.value = formatMiles(raw);
+      priceInput.classList.remove('qr-error');
+      priceError.classList.remove('qr-visible');
+    } else if (this.value === '') {
+      // allow empty
+    } else {
+      this.value = '';
+    }
+    var newLen = this.value.length;
+    var diff = newLen - oldLen;
+    this.setSelectionRange(cursorPos + diff, cursorPos + diff);
+    qrCalcular();
+  });
+  priceInput.addEventListener('blur', function() {
+    var raw = parsePrecio(this.value);
+    if (raw <= 0) {
+      priceInput.classList.add('qr-error');
+      priceError.classList.add('qr-visible');
+    } else {
+      this.value = formatMiles(raw);
+      priceInput.classList.remove('qr-error');
+      priceError.classList.remove('qr-visible');
+    }
+  });
+
+  // ── Utilidades ───────────────────────────────────────
+  var fmt = function(n) { return '$' + Math.round(n).toLocaleString('es-CL'); };
+
+  function qrSet(id, val) {
+    var el = document.getElementById(id);
+    el.classList.remove('qr-pop'); void el.offsetWidth;
+    el.textContent = val; el.classList.add('qr-pop');
+  }
+
+  // ── Cálculo ──────────────────────────────────────────
+  function qrCalcular() {
+    var monto = parsePrecio(priceInput.value);
+    var mdm = document.getElementById('qr-mdm').checked;
+
+    // Feedback MDM
+    var fb = document.getElementById('qr-mdmFeedback');
+    if (mdm) {
+      fb.textContent = 'Administración remota de los equipos · $' + formatMiles(3000) + '/equipo/mes';
+      fb.classList.remove('qr-off');
+    } else {
+      fb.textContent = 'Sin gestión remota · se descuentan $' + formatMiles(3000 * qrCantidad) + '/mes de la cuota';
+      fb.classList.add('qr-off');
+    }
+
+    var total = monto * qrCantidad;
+    var factorAjustado = FACTOR_CUOTA_BASE[qrMeses];
+    var descMDM = mdm ? 0 : 3000 * qrCantidad;
+    var cuota = total * factorAjustado - descMDM;
+
+    qrSet('qr-cuotaNeta', Math.round(cuota).toLocaleString('es-CL'));
+    qrSet('qr-cuotaIVA', fmt(cuota * 1.19));
+    qrSet('qr-totalNeto', fmt(total));
+    qrSet('qr-totalPer', fmt(cuota * qrMeses));
+    document.getElementById('qr-totalPerSub').textContent = qrMeses + ' cuotas · sin IVA';
+    qrSet('qr-recompra', fmt(monto * VR_PCT[qrMeses]));
+
+    qrSet('qr-compraVal', fmt(total * VR_PCT[qrMeses]));
+    document.getElementById('qr-compraSub').textContent = 'Al finalizar el contrato (mes ' + CUOTA_OC[qrMeses] + ')';
+
+    document.getElementById('qr-penList').innerHTML = PENS[qrMeses].map(function(p) {
+      return '<div class="qr-pen-row">' +
+        '<span class="qr-pen-when">' + p.txt + '<span class="qr-pen-badge">' + p.c + (p.c === 1 ? ' cuota' : ' cuotas') + '</span></span>' +
+        '<div class="qr-pen-right"><div class="qr-pen-val">' + fmt(p.c * cuota) + '</div></div>' +
+        '</div>';
+    }).join('');
+  }
+
+  qrCalcular();
+
+  // CTA hook removed — cotizador handles quoting
+})();
+</script>
+
+{% schema %}
+{
+  "name": "Arriendo Popup",
+  "tag": "section",
+  "class": "qr-simulador-section",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Arriendo Popup",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}
