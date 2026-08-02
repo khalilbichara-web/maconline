@@ -443,6 +443,61 @@
 		"animated_image_collage_apple_accounts_cta": {
 			"type": "animated-image-collage",
 			"blocks": {
+      },
+			"custom_css": [
+			"h2.title--simple {background: linear-gradient(91deg, #fff 14.38%, #07abf8 93.41%); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent;}",
+        ".aic.background {background-image: url(https://cdn.shopify.com/s/files/1/0731/0757/0884/files/bg-fondo-centro.webp?v=1785345733) !important; background-repeat: no-repeat; background-position: center; background-size: contain; background-attachment: local;}",
+        ".aic__subtitle.subtitle {background-color: transparent; border: 1px solid; padding: 10px 24px;}"
+			],
+			"name": "t:sections.animated-image-collage.name",
+			"settings": {
+				"section_type": "background",
+				"color_scheme": "scheme-39e5d4a7-e422-4a30-b12c-b2a059c9acee",
+				"header_overlay": false,
+				"header_transparent": false,
+				"column_to_show": 3,
+				"opacity_overlay": 0.3,
+				"full_width": true,
+				"icon": "none",
+				"icon_color_scheme": "scheme-39e5d4a7-e422-4a30-b12c-b2a059c9acee",
+				"icon_style": "contrast",
+				"icon_fill_type": "gradient",
+				"icon_size": "recommended",
+				"box_shadow": true,
+				"subheading": "Managed Services Zero Touch",
+				"subheading_style": "subtitle subtitle--secondary",
+				"subheading_icon": "none",
+				"heading": "Administra las identidades Apple de tu organización de forma segura y centralizada ",
+				"heading_size": "h1",
+				"heading_level": "h2",
+				"heading_line": "simple",
+				"line_color": "#1566e0",
+				"word_break": false,
+				"heading_animation": "none",
+				"word_break_an": false,
+				"text": "Implementa Apple Accounts Gestionadas para que cada colaborador acceda a dispositivos, aplicaciones y servicios corporativos con una identidad administrada por tu empresa, manteniendo separados los datos personales y la información corporativa.",
+				"enable_subscribe": false,
+				"button_label_subscribe": "",
+				"color_scheme_subscribe": "",
+				"enable_box_shadow": true,
+				"button_style_subscribe": "primary",
+				"show_button": true,
+				"button_label": "Solicitar asesoría",
+				"button_link": "",
+				"button_style": "primary",
+				"show_button_2": true,
+				"button_label_2": "Hablar con un especialista",
+				"button_link_2": "",
+				"button_style_2": "simple",
+				"padding_top": "m",
+				"padding_bottom": "m",
+				"margin_top": "no-indent",
+				"margin_bottom": "no-indent"
+			}
+		},
+		"animated_image_collage_apple_accounts_closing": {
+			"type": "animated-image-collage",
+			"blocks": {
 				"column_1": {
 					"type": "column",
 					"settings": {
@@ -586,6 +641,7 @@
 		}
 	},
 	"order": [
+		"animated_image_collage_apple_accounts_cta",
 		"icon_cards_23872",
 		"main",
 		"split_features_apple_accounts_intro",
@@ -595,6 +651,6 @@
 		"portal_admin_scope_2",
 		"icon_cards_apple_accounts_use_cases",
 		"split_features_apple_accounts_why_maconline",
-		"animated_image_collage_apple_accounts_cta"
+		"animated_image_collage_apple_accounts_closing"
 	]
 }
