@@ -61,89 +61,6 @@
         "margin_bottom": "no-indent"
       }
     },
-    "hero_pbQt96": {
-      "type": "hero",
-      "blocks": {
-        "subtitle_CkwCL4": {
-          "type": "subtitle",
-          "settings": {
-            "subheading": "iPhone para empresas",
-            "subheading_style": "subtitle subtitle--secondary",
-            "subheading_icon": "none"
-          }
-        },
-        "title_UAcC9Y": {
-          "type": "title",
-          "settings": {
-            "heading": "El iPhone que quieres.Sin ataduras de plan.",
-            "heading_size": "h1",
-            "heading_level": "h2",
-            "heading_line": "simple",
-            "line_color": "#1566e0",
-            "word_break": false,
-            "heading_animation": "rolling",
-            "word_break_an": false
-          }
-        },
-        "description_HNkFnf": {
-          "type": "description",
-          "settings": {
-            "description": "Arrienda el iPhone de tu elección con una cuota mensual simple.\nElige el operador que quieras. Cambia cuando quieras.\nTu equipo, tu libertad."
-          }
-        },
-        "buttons_hP3hjN": {
-          "type": "buttons",
-          "settings": {
-            "show_button_1": true,
-            "button_label_1": "Ver modelos disponibles",
-            "button_link_1": "",
-            "button_style_1": "primary",
-            "show_button_2": true,
-            "button_label_2": "¿Cómo funciona?",
-            "button_link_2": "",
-            "button_style_2": "tertiary"
-          }
-        },
-        "users_azBfCz": {
-          "type": "users",
-          "settings": {
-            "user_text": ""
-          }
-        }
-      },
-      "block_order": [
-        "subtitle_CkwCL4",
-        "title_UAcC9Y",
-        "description_HNkFnf",
-        "buttons_hP3hjN",
-        "users_azBfCz"
-      ],
-      "custom_css": [
-        ".hero__subtitle {background-color: transparent; border: 1px solid; padding: 10px 24px;}",
-        "h2 {background: linear-gradient(91deg, #fff 14.38%, #07abf8 93.41%); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent;}",
-        ".hero__description {color: #fff; font-size: 150%;}"
-      ],
-      "settings": {
-        "layout": "vertical",
-        "header_overlay": false,
-        "header_transparent": false,
-        "block_type": "plain",
-        "color_scheme": "scheme-39e5d4a7-e422-4a30-b12c-b2a059c9acee",
-        "full_screen": true,
-        "image": "shopify://shop_images/image_3.png",
-        "show_video": false,
-        "overlay_opacity": 0.3,
-        "image_ratio": "1/1",
-        "object_fit": "contain",
-        "desktop_image_position": "after",
-        "mobile_image_position": "after",
-        "mobile_image_overlay": "after",
-        "horizontal_alignment": "center",
-        "vertical_alignment": "middle",
-        "padding_top": "m",
-        "padding_bottom": "no-indent"
-      }
-    },
     "icon_cards_23872": {
       "type": "icon-cards",
       "blocks": {
@@ -741,7 +658,6 @@
   "order": [
     "main",
     "animated_image_collage_4UyP6W",
-    "hero_pbQt96",
     "icon_cards_23872",
     "split_features_aQmL29",
     "split_features_process",
