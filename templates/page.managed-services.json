@@ -67,7 +67,8 @@
         "card_zRp4D7": {
           "type": "card",
           "settings": {
-            "icon_name": "solar_shield-check-outline.svg",
+            "icon_name": "solar_clock-circle-outline.svg",
+            "icon_asset": "",
             "heading_variant": "default",
             "card_label": "",
             "card_large_text": "",
@@ -80,6 +81,7 @@
           "type": "card",
           "settings": {
             "icon_name": "solar_clock-circle-outline.svg",
+            "icon_asset": "",
             "heading_variant": "default",
             "card_label": "",
             "card_large_text": "",
@@ -91,7 +93,8 @@
         "card_N4k6Fp": {
           "type": "card",
           "settings": {
-            "icon_name": "solar_chart-outline.svg",
+            "icon_name": "solar_clock-circle-outline.svg",
+            "icon_asset": "",
             "heading_variant": "default",
             "card_label": "",
             "card_large_text": "",
@@ -103,7 +106,8 @@
         "card_fehaFE": {
           "type": "card",
           "settings": {
-            "icon_name": "solar_chart-outline.svg",
+            "icon_name": "solar_clock-circle-outline.svg",
+            "icon_asset": "",
             "heading_variant": "default",
             "card_label": "",
             "card_large_text": "",
@@ -124,6 +128,7 @@
         "columns": "auto",
         "header_alignment": "left",
         "light_mode": true,
+        "show_card_description": true,
         "subheading": "beneficios clave para empresas",
         "heading": "<p>¿Cómo funciona Zero Touch?<br/><br/><br/></p>",
         "description": "<p>Un servicio continuo donde nos hacemos cargo del ciclo completo: diseño + implementación + operación. Nos encargamos de que cada dispositivo se configure automáticamente desde el primer encendido y se mantenga en cumplimiento durante toda su vida útil, con soporte y mejoras continuas.</p>"

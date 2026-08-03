@@ -17,6 +17,50 @@
         "padding_bottom": "m"
       }
     },
+    "animated_image_collage_4UyP6W": {
+      "type": "animated-image-collage",
+      "name": "t:sections.animated-image-collage.name",
+      "settings": {
+        "section_type": "background",
+        "color_scheme": "scheme-39e5d4a7-e422-4a30-b12c-b2a059c9acee",
+        "header_overlay": false,
+        "header_transparent": false,
+        "column_to_show": 3,
+        "opacity_overlay": 0.3,
+        "full_width": true,
+        "icon": "none",
+        "icon_color_scheme": "",
+        "icon_style": "contrast",
+        "icon_fill_type": "gradient",
+        "icon_size": "recommended",
+        "box_shadow": true,
+        "subheading": "iPhone para empresas",
+        "subheading_style": "subtitle subtitle--secondary",
+        "subheading_icon": "none",
+        "heading": "El iPhone que quieres.Sin ataduras de plan.",
+        "heading_size": "h1",
+        "heading_level": "h2",
+        "heading_line": "simple",
+        "line_color": "#1566E0",
+        "heading_animation": "none",
+        "text": "Arrienda el iPhone de tu elección con una cuota mensual simple.\nElige el operador que quieras. Cambia cuando quieras.\nTu equipo, tu libertad.",
+        "enable_subscribe": false,
+        "button_label_subscribe": "Shop Now",
+        "button_style_subscribe": "primary",
+        "show_button": true,
+        "button_label": "Ver modelos disponibles",
+        "button_link": "",
+        "button_style": "primary",
+        "show_button_2": true,
+        "button_label_2": "¿Cómo funciona?",
+        "button_link_2": "",
+        "button_style_2": "tertiary",
+        "padding_top": "m",
+        "padding_bottom": "m",
+        "margin_top": "no-indent",
+        "margin_bottom": "no-indent"
+      }
+    },
     "hero_pbQt96": {
       "type": "hero",
       "blocks": {
@@ -203,12 +247,16 @@
     },
     "split_features_aQmL29": {
       "type": "split-features",
+      "custom_css": [
+        ".split-features__image {object-fit: contain;}"
+      ],
       "settings": {
         "color_scheme": "dark",
         "layout": "image_right",
+        "image": "shopify://shop_images/Frame_26.png",
         "image_asset": "iphone-empresas-split-graphic.svg",
         "subheading": "LIBERTAD DE OPERADOR",
-        "heading": "Tú eliges.<br>Siempre.",
+        "heading": "Tú eliges.Siempre.",
         "description": "<p>Con nuestros iPhones en arriendo, puedes contratar el plan de datos que más te conviene en cualquier operador. Cambia de plan o de operador en cualquier momento sin afectar tu equipo.</p>",
         "show_button": true,
         "button_label": "Elige tu iPhone",
@@ -218,18 +266,6 @@
     },
     "split_features_process": {
       "type": "split-features",
-      "settings": {
-        "color_scheme": "light",
-        "layout": "image_left",
-        "image_asset": "iphone-empresas-process-split.png",
-        "subheading": "proceso",
-        "heading": "Tan simple como debería ser",
-        "description": "",
-        "show_button": false,
-        "button_label": "",
-        "button_link": "",
-        "button_style": "primary"
-      },
       "blocks": {
         "feature_1": {
           "type": "feature",
@@ -273,17 +309,77 @@
         "feature_2",
         "feature_3",
         "feature_4"
-      ]
+      ],
+      "settings": {
+        "color_scheme": "light",
+        "layout": "image_left",
+        "image_asset": "iphone-empresas-process-split.png",
+        "subheading": "proceso",
+        "heading": "Tan simple como debería ser",
+        "description": "",
+        "show_button": false,
+        "button_label": "",
+        "button_link": "",
+        "button_style": "primary"
+      }
+    },
+    "iphone_empresas_catalog": {
+      "type": "iphone-empresas-catalog",
+      "blocks": {
+        "product_card_LB6gEp": {
+          "type": "product_card",
+          "settings": {
+            "product": "iphone-16",
+            "title": "iPhone 15",
+            "subtitle": "128 GB · Dynamic Island",
+            "price_label": "Desde",
+            "price_fallback": "$19.990/mes",
+            "list_items": "Chip A16 Bionic\nCámara 48 MP principal\nDynamic Island\nUSB-C\nGarantía Apple 1 año",
+            "button_label": "Cotizar para mi empresa",
+            "button_style": "primary"
+          }
+        },
+        "product_card_eWRJ8G": {
+          "type": "product_card",
+          "settings": {
+            "product": "iphone-16",
+            "title": "iPhone 15",
+            "subtitle": "128 GB · Dynamic Island",
+            "price_label": "Desde",
+            "price_fallback": "$19.990/mes",
+            "list_items": "Chip A16 Bionic\nCámara 48 MP principal\nDynamic Island\nUSB-C\nGarantía Apple 1 año",
+            "button_label": "Cotizar para mi empresa",
+            "button_style": "primary"
+          }
+        },
+        "product_card_3KVtnA": {
+          "type": "product_card",
+          "settings": {
+            "product": "iphone-16",
+            "title": "iPhone 15",
+            "subtitle": "128 GB · Dynamic Island",
+            "price_label": "Desde",
+            "price_fallback": "$19.990/mes",
+            "list_items": "Chip A16 Bionic\nCámara 48 MP principal\nDynamic Island\nUSB-C\nGarantía Apple 1 año",
+            "button_label": "Cotizar para mi empresa",
+            "button_style": "primary"
+          }
+        }
+      },
+      "block_order": [
+        "product_card_LB6gEp",
+        "product_card_eWRJ8G",
+        "product_card_3KVtnA"
+      ],
+      "settings": {
+        "subheading": "catálogo",
+        "heading": "Elige tu iPhone",
+        "description": "Todos los modelos incluyen garantía Apple, soporte prioritario y entrega en 24 horas en Santiago.",
+        "note": "* Precios referenciales por unidad para contratos de 24 meses. Descuentos por volumen disponibles."
+      }
     },
     "iphone_empresas_comparison": {
       "type": "iphone-empresas-comparison",
-      "settings": {
-        "subheading": "comparativa",
-        "heading": "Nosotros vs el modelo tradicional.",
-        "description": "",
-        "us_header": "iPhone B2B (Nosotros)",
-        "them_header": "Arriendo con plan de operador"
-      },
       "blocks": {
         "row_1": {
           "type": "comparison_row",
@@ -364,14 +460,17 @@
         "row_5",
         "row_6",
         "row_7"
-      ]
+      ],
+      "settings": {
+        "subheading": "comparativa",
+        "heading": "Nosotros vs el modelo tradicional.",
+        "description": "",
+        "us_header": "iPhone B2B (Nosotros)",
+        "them_header": "Arriendo con plan de operador"
+      }
     },
     "iphone_empresas_testimonials": {
       "type": "iphone-empresas-testimonials",
-      "settings": {
-        "subheading": "clientes",
-        "heading": "Empresas que ya eligieron la libertad"
-      },
       "blocks": {
         "testimonial_1": {
           "type": "testimonial_card",
@@ -408,55 +507,248 @@
         "testimonial_1",
         "testimonial_2",
         "testimonial_3"
-      ]
-    },
-    "iphone_empresas_catalog": {
-      "type": "iphone-empresas-catalog",
+      ],
       "settings": {
-        "subheading": "catálogo",
-        "heading": "Elige tu iPhone",
-        "description": "Todos los modelos incluyen garantía Apple, soporte prioritario y entrega en 24 horas en Santiago."
-      },
+        "subheading": "clientes",
+        "heading": "Empresas que ya eligieron la libertad"
+      }
+    },
+    "collapsible_content_NFL8N3": {
+      "type": "collapsible-content",
       "blocks": {
-        "product_card_1": {
-          "type": "product_card",
+        "accordion_nKxnA3": {
+          "type": "accordion",
           "settings": {
-            "title": "iPhone 15",
-            "subtitle": "128 GB · Dynamic Island",
-            "price_label": "Desde",
-            "price_fallback": "$19.990/mes",
-            "list_items": "Chip A16 Bionic\nCámara 48 MP principal\nDynamic Island\nUSB-C\nGarantía Apple 1 año",
-            "button_label": "Cotizar para mi empresa",
-            "button_style": "primary"
+            "question": "¿Qué significa que sea libre de planes?",
+            "answer": "<p>Significa que el contrato de arriendo es solo por el equipo iPhone. Tú eliges y contratas por separado el plan de datos con el operador que prefieras (Entel, Movistar, WOM, Claro, etc.). Puedes cambiar de operador o plan en cualquier momento sin que eso afecte tu contrato de arriendo.<br/><br/></p>",
+            "opened": true
           }
         },
-        "product_card_2": {
-          "type": "product_card",
+        "accordion_gL7AkM": {
+          "type": "accordion",
           "settings": {
-            "title": "iPhone 16 Pro",
-            "subtitle": "255 GB · Titanio Natural",
-            "price_label": "Desde",
-            "price_fallback": "$34.990/mes",
-            "list_items": "Chip A18 Pro con IA\nCámara Fusión 48 MP\nProRes Video 4k 120fps\nAction Button\nCamera Control\nGarantía Apple 1 año",
-            "button_label": "Cotizar para mi empresa",
-            "button_style": "primary"
+            "question": "¿Cuál es el plazo mínimo de arriendo?",
+            "answer": "<p>Sí. Partimos con un diagnóstico y proponemos mejoras sin “romper” tu operación.</p>",
+            "opened": false
+          }
+        },
+        "accordion_ExpiNx": {
+          "type": "accordion",
+          "settings": {
+            "question": "¿Qué pasa si se daña un equipo?",
+            "answer": "<p>Todos los equipos vienen con garantía Apple de 1 año para fallas de fabricación. Adicionalmente, ofrecemos seguro de daños accidentales opcional. En caso de falla, hacemos reposición exprés en 24 horas en Santiago.<br/><br/></p>",
+            "opened": false
+          }
+        },
+        "accordion_X6wLV4": {
+          "type": "accordion",
+          "settings": {
+            "question": "¿Puedo agregar o quitar equipos durante el contrato?",
+            "answer": "<p>Sí. Puedes agregar nuevos equipos en cualquier momento. Para reducir la flota, hay condiciones según el plazo del contrato de cada equipo. Consulta a tu ejecutivo de cuenta para más detalles.<br/><br/></p>",
+            "opened": false
+          }
+        },
+        "accordion_UxB76A": {
+          "type": "accordion",
+          "settings": {
+            "question": "¿Cuántos equipos es el mínimo para contratar?",
+            "answer": "<p>Here can be a brief but clear response to the question, giving customers a quick answer without unnecessary details.</p>",
+            "opened": false
+          }
+        },
+        "accordion_nNTYTW": {
+          "type": "accordion",
+          "settings": {
+            "question": "¿Cómo es la facturación?",
+            "answer": "<p>Emitimos una factura electrónica mensual por el total de equipos. El pago es mediante transferencia o cargo automático. Compatible con cualquier sistema contable o ERP.<br/></p>",
+            "opened": false
           }
         }
       },
       "block_order": [
-        "product_card_1",
-        "product_card_2"
-      ]
+        "accordion_nKxnA3",
+        "accordion_gL7AkM",
+        "accordion_ExpiNx",
+        "accordion_X6wLV4",
+        "accordion_UxB76A",
+        "accordion_nNTYTW"
+      ],
+      "name": "t:sections.collapsible-content.name",
+      "settings": {
+        "layout": "background",
+        "color_scheme": "scheme-39e5d4a7-e422-4a30-b12c-b2a059c9acee",
+        "enable_border": false,
+        "border_full": false,
+        "subheading": "",
+        "subheading_style": "subtitle",
+        "subheading_icon": "none",
+        "heading": "Todo lo que necesitas saber.",
+        "heading_size": "h2",
+        "heading_level": "h2",
+        "heading_line": "none",
+        "line_color": "#1566e0",
+        "word_break": false,
+        "heading_animation": "none",
+        "word_break_an": false,
+        "text": "",
+        "text_align": "center",
+        "row_color_scheme": "scheme-cf7617bd-cf5d-43c2-b151-2d92b8b69cd6",
+        "padding_top": "l",
+        "padding_bottom": "l",
+        "margin_top": "no-indent",
+        "margin_bottom": "no-indent"
+      }
+    },
+    "animated_image_collage_cyyxgn": {
+      "type": "animated-image-collage",
+      "blocks": {
+        "column_KQYWCc": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/bg-fondo-rental-1_7b23a22c-7495-4282-b2f9-30e39e1443df.webp",
+            "image_asset": "",
+            "image_width": 420
+          }
+        },
+        "column_F6WJn9": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/bg-fondo-rental-2.webp",
+            "image_asset": "",
+            "image_width": 420
+          }
+        },
+        "column_yJeNwy": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/bg-fondo-rental-3.webp",
+            "image_asset": "",
+            "image_width": 420
+          }
+        },
+        "column_pVKAzA": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/bg-fondo-rental-4.webp",
+            "image_asset": "",
+            "image_width": 420
+          }
+        },
+        "column_LWTrKU": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/bg-fondo-rental-5.webp",
+            "image_asset": "",
+            "image_width": 420
+          }
+        },
+        "column_K4AffD": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/bg-fondo-rental-6.webp",
+            "image_asset": "",
+            "image_width": 420
+          }
+        },
+        "column_NV4JLY": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/bg-fondo-rental-2.webp",
+            "image_asset": "",
+            "image_width": 420
+          }
+        },
+        "column_rf8CJd": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/bg-fondo-rental-8.webp",
+            "image_asset": "",
+            "image_width": 420
+          }
+        },
+        "column_zJeVaq": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/bg-fondo-rental-2.webp",
+            "image_asset": "",
+            "image_width": 420
+          }
+        },
+        "column_GpTnJU": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/bg-fondo-rental-9.webp",
+            "image_asset": "",
+            "image_width": 420
+          }
+        }
+      },
+      "block_order": [
+        "column_KQYWCc",
+        "column_F6WJn9",
+        "column_yJeNwy",
+        "column_pVKAzA",
+        "column_LWTrKU",
+        "column_K4AffD",
+        "column_NV4JLY",
+        "column_rf8CJd",
+        "column_zJeVaq",
+        "column_GpTnJU"
+      ],
+      "name": "t:sections.animated-image-collage.name",
+      "settings": {
+        "section_type": "background",
+        "color_scheme": "scheme-39e5d4a7-e422-4a30-b12c-b2a059c9acee",
+        "header_overlay": false,
+        "header_transparent": false,
+        "column_to_show": 3,
+        "opacity_overlay": 0.3,
+        "full_width": true,
+        "icon": "none",
+        "icon_color_scheme": "",
+        "icon_style": "contrast",
+        "icon_fill_type": "gradient",
+        "icon_size": "recommended",
+        "box_shadow": true,
+        "subheading": "",
+        "subheading_style": "subtitle subtitle--secondary",
+        "subheading_icon": "none",
+        "heading": "Cotiza para tu empresahoy mismo.",
+        "heading_size": "h1",
+        "heading_level": "h2",
+        "heading_line": "simple",
+        "line_color": "#1566e0",
+        "heading_animation": "none",
+        "text": "Sin compromisos. Respuesta en menos de 2 horas hábiles.",
+        "enable_subscribe": false,
+        "button_label_subscribe": "",
+        "button_style_subscribe": "primary",
+        "show_button": true,
+        "button_label": "Solicitar cotización",
+        "button_link": "#",
+        "button_style": "primary",
+        "show_button_2": true,
+        "button_label_2": "+56 2 2345 6789",
+        "button_link_2": "",
+        "button_style_2": "tertiary",
+        "padding_top": "m",
+        "padding_bottom": "m",
+        "margin_top": "no-indent",
+        "margin_bottom": "no-indent"
+      }
     }
   },
   "order": [
     "main",
+    "animated_image_collage_4UyP6W",
     "hero_pbQt96",
     "icon_cards_23872",
     "split_features_aQmL29",
+    "split_features_process",
+    "iphone_empresas_catalog",
     "iphone_empresas_comparison",
     "iphone_empresas_testimonials",
-    "split_features_process",
-    "iphone_empresas_catalog"
+    "collapsible_content_NFL8N3",
+    "animated_image_collage_cyyxgn"
   ]
 }

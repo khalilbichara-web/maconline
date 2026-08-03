@@ -1189,6 +1189,7 @@
           "type": "column",
           "settings": {
             "image": "shopify://shop_images/bg-fondo-rental-1_7b23a22c-7495-4282-b2f9-30e39e1443df.webp",
+            "image_asset": "",
             "image_width": 420
           }
         },
@@ -1196,6 +1197,7 @@
           "type": "column",
           "settings": {
             "image": "shopify://shop_images/bg-fondo-rental-2.webp",
+            "image_asset": "",
             "image_width": 420
           }
         },
@@ -1203,6 +1205,7 @@
           "type": "column",
           "settings": {
             "image": "shopify://shop_images/bg-fondo-rental-3.webp",
+            "image_asset": "",
             "image_width": 420
           }
         },
@@ -1210,6 +1213,7 @@
           "type": "column",
           "settings": {
             "image": "shopify://shop_images/bg-fondo-rental-4.webp",
+            "image_asset": "",
             "image_width": 420
           }
         },
@@ -1217,6 +1221,7 @@
           "type": "column",
           "settings": {
             "image": "shopify://shop_images/bg-fondo-rental-5.webp",
+            "image_asset": "",
             "image_width": 420
           }
         },
@@ -1224,6 +1229,7 @@
           "type": "column",
           "settings": {
             "image": "shopify://shop_images/bg-fondo-rental-6.webp",
+            "image_asset": "",
             "image_width": 420
           }
         },
@@ -1231,6 +1237,7 @@
           "type": "column",
           "settings": {
             "image": "shopify://shop_images/bg-fondo-rental-2.webp",
+            "image_asset": "",
             "image_width": 420
           }
         },
@@ -1238,6 +1245,7 @@
           "type": "column",
           "settings": {
             "image": "shopify://shop_images/bg-fondo-rental-8.webp",
+            "image_asset": "",
             "image_width": 420
           }
         },
@@ -1245,6 +1253,7 @@
           "type": "column",
           "settings": {
             "image": "shopify://shop_images/bg-fondo-rental-2.webp",
+            "image_asset": "",
             "image_width": 420
           }
         },
@@ -1252,6 +1261,7 @@
           "type": "column",
           "settings": {
             "image": "shopify://shop_images/bg-fondo-rental-9.webp",
+            "image_asset": "",
             "image_width": 420
           }
         }

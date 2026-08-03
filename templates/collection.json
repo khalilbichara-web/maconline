@@ -27,7 +27,7 @@
         "columns": 4,
         "image_ratio": "5/4",
         "image_fit": "cover",
-        "add_border_radius_when_contain": false,
+        "add_border_radius_when_contain": true,
         "show_secondary_image": true,
         "show_vendor": false,
         "show_desc": false,
@@ -42,133 +42,148 @@
         "padding_bottom": "l"
       }
     },
-    "d75c40e7-4781-423a-a8c1-a6f08964fe67": {
-      "type": "hero",
+    "animated_image_collage_KMFRfx": {
+      "type": "animated-image-collage",
       "blocks": {
-        "template--15335004602429__d75c40e7-4781-423a-a8c1-a6f08964fe67-subtitle-1": {
-          "type": "subtitle",
+        "column_erhCJh": {
+          "type": "column",
           "settings": {
-            "subheading": "Collection",
-            "subheading_style": "subtitle subtitle--secondary",
-            "subheading_icon": "star"
+            "image": "shopify://shop_images/bg-fondo-rental-1_7b23a22c-7495-4282-b2f9-30e39e1443df.webp",
+            "image_asset": "",
+            "image_width": 420
           }
         },
-        "template--15335004602429__d75c40e7-4781-423a-a8c1-a6f08964fe67-title-1": {
-          "type": "title",
+        "column_DHx6FA": {
+          "type": "column",
           "settings": {
-            "heading": "Exciting announcement",
-            "heading_size": "h1",
-            "heading_level": "h2",
-            "heading_line": "simple",
-            "line_color": "#1566e0",
-            "word_break": false,
-            "heading_animation": "none",
-            "word_break_an": false
+            "image": "shopify://shop_images/bg-fondo-rental-2.webp",
+            "image_asset": "",
+            "image_width": 420
           }
         },
-        "template--15335004602429__d75c40e7-4781-423a-a8c1-a6f08964fe67-description-1": {
-          "type": "description",
+        "column_yxbidm": {
+          "type": "column",
           "settings": {
-            "description": "Use this text to describe your products, explain your brand philosophy, or tell about your latest offerings."
+            "image": "shopify://shop_images/bg-fondo-rental-3.webp",
+            "image_asset": "",
+            "image_width": 420
           }
         },
-        "template--15335004602429__d75c40e7-4781-423a-a8c1-a6f08964fe67-buttons-1": {
-          "type": "buttons",
+        "column_ig8EXF": {
+          "type": "column",
           "settings": {
-            "show_button_1": true,
-            "button_label_1": "Shop Now",
-            "button_link_1": "",
-            "button_style_1": "primary",
-            "show_button_2": false,
-            "button_label_2": "See More",
-            "button_link_2": "",
-            "button_style_2": "simple"
+            "image": "shopify://shop_images/bg-fondo-rental-4.webp",
+            "image_asset": "",
+            "image_width": 420
+          }
+        },
+        "column_4VWLVT": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/bg-fondo-rental-5.webp",
+            "image_asset": "",
+            "image_width": 420
+          }
+        },
+        "column_k7CUwp": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/bg-fondo-rental-6.webp",
+            "image_asset": "",
+            "image_width": 420
+          }
+        },
+        "column_8V6rtk": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/bg-fondo-rental-2.webp",
+            "image_asset": "",
+            "image_width": 420
+          }
+        },
+        "column_ArBFct": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/bg-fondo-rental-8.webp",
+            "image_asset": "",
+            "image_width": 420
+          }
+        },
+        "column_yhXyNU": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/bg-fondo-rental-2.webp",
+            "image_asset": "",
+            "image_width": 420
+          }
+        },
+        "column_aHDBaq": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/bg-fondo-rental-9.webp",
+            "image_asset": "",
+            "image_width": 420
           }
         }
       },
       "block_order": [
-        "template--15335004602429__d75c40e7-4781-423a-a8c1-a6f08964fe67-subtitle-1",
-        "template--15335004602429__d75c40e7-4781-423a-a8c1-a6f08964fe67-title-1",
-        "template--15335004602429__d75c40e7-4781-423a-a8c1-a6f08964fe67-description-1",
-        "template--15335004602429__d75c40e7-4781-423a-a8c1-a6f08964fe67-buttons-1"
+        "column_erhCJh",
+        "column_DHx6FA",
+        "column_yxbidm",
+        "column_ig8EXF",
+        "column_4VWLVT",
+        "column_k7CUwp",
+        "column_8V6rtk",
+        "column_ArBFct",
+        "column_yhXyNU",
+        "column_aHDBaq"
       ],
+      "name": "t:sections.animated-image-collage.name",
       "settings": {
-        "layout": "overlay",
+        "section_type": "background",
+        "color_scheme": "scheme-39e5d4a7-e422-4a30-b12c-b2a059c9acee",
         "header_overlay": false,
         "header_transparent": false,
-        "block_type": "subtle",
-        "color_scheme": "",
-        "full_screen": true,
-        "show_video": false,
-        "overlay_opacity": 0.5,
-        "image_ratio": "16/9",
-        "object_fit": "cover",
-        "desktop_image_position": "after",
-        "mobile_image_position": "after",
-        "mobile_image_overlay": "overlay",
-        "horizontal_alignment": "center",
-        "vertical_alignment": "bottom",
-        "padding_top": "no-indent",
-        "padding_bottom": "no-indent"
+        "column_to_show": 3,
+        "opacity_overlay": 0.3,
+        "full_width": true,
+        "icon": "none",
+        "icon_color_scheme": "",
+        "icon_style": "contrast",
+        "icon_fill_type": "gradient",
+        "icon_size": "recommended",
+        "box_shadow": true,
+        "subheading": "",
+        "subheading_style": "subtitle subtitle--secondary",
+        "subheading_icon": "none",
+        "heading": "Lorem ipsum dolor sit  amet consectetur",
+        "heading_size": "h1",
+        "heading_level": "h2",
+        "heading_line": "simple",
+        "line_color": "#000000",
+        "heading_animation": "none",
+        "text": "Orci orci cras laoreet gravida. Metus massa velit sit elit aenean quam. \nPretium pharetra est nullam amet.",
+        "enable_subscribe": false,
+        "button_label_subscribe": "",
+        "button_style_subscribe": "primary",
+        "show_button": true,
+        "button_label": "Solicitar asesoría",
+        "button_link": "#",
+        "button_style": "primary",
+        "show_button_2": true,
+        "button_label_2": "Hablar con un especialista",
+        "button_link_2": "",
+        "button_style_2": "tertiary",
+        "padding_top": "m",
+        "padding_bottom": "m",
+        "margin_top": "no-indent",
+        "margin_bottom": "no-indent"
       }
-    },
-    "1785185159fad6ba95": {
-      "type": "_blocks",
-      "blocks": {
-        "ai_gen_block_f99d15a_xCKEMi": {
-          "type": "ai_gen_block_f99d15a",
-          "settings": {
-            "heading": "Explora nuestras colecciones",
-            "heading_size": 32,
-            "heading_color": "#011624",
-            "heading_alignment": "center",
-            "heading_spacing": 32,
-            "collection_1": "apple-watch",
-            "collection_2": "ipad",
-            "collection_3": "mac",
-            "collection_4": "iphone",
-            "collection_5": "",
-            "collection_6": "",
-            "collection_7": "",
-            "collection_8": "",
-            "columns_desktop": 3,
-            "columns_mobile": "1",
-            "gap": 20,
-            "desktop_width_percent": 100,
-            "section_padding": 40,
-            "image_aspect_ratio": 75,
-            "card_border_radius": 8,
-            "show_overlay": true,
-            "overlay_color": "#000000",
-            "overlay_opacity": 0.3,
-            "collection_title_size": 20,
-            "show_description": false,
-            "collection_description_size": 14,
-            "text_color": "#FFFFFF",
-            "content_padding": 20,
-            "show_controls": true,
-            "controls_spacing": 32,
-            "button_background": "#FFFFFF",
-            "button_color": "#011624",
-            "button_hover_background": "#278BFF",
-            "button_hover_color": "#FFFFFF",
-            "dot_color": "#011624",
-            "autoplay": false,
-            "autoplay_speed": 5
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "ai_gen_block_f99d15a_xCKEMi"
-      ],
-      "settings": {}
     }
   },
   "order": [
     "banner",
     "product-grid",
-    "d75c40e7-4781-423a-a8c1-a6f08964fe67",
-    "1785185159fad6ba95"
+    "animated_image_collage_KMFRfx"
   ]
 }

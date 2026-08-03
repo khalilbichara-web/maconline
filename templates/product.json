@@ -127,498 +127,6 @@
         "padding_bottom": "l"
       }
     },
-    "576dad4a-7ffe-4bdd-9a60-a4572834977d": {
-      "type": "multicolumn",
-      "blocks": {
-        "template--15231063359549__576dad4a-7ffe-4bdd-9a60-a4572834977d-column-1": {
-          "type": "column",
-          "settings": {
-            "icon": "none",
-            "icon_color_scheme": "",
-            "icon_fill_type": "gradient",
-            "enable_link": false,
-            "link": "",
-            "heading": "Feature Title Here",
-            "text": "<p>Showcase craftsmanship, product benefits, or an exclusive offer.</p>",
-            "show_button": false,
-            "button_label": "Label",
-            "button_link": "",
-            "button_style": "simple"
-          }
-        },
-        "template--15231063359549__576dad4a-7ffe-4bdd-9a60-a4572834977d-column-2": {
-          "type": "column",
-          "settings": {
-            "icon": "none",
-            "icon_color_scheme": "",
-            "icon_fill_type": "gradient",
-            "enable_link": false,
-            "link": "",
-            "heading": "Feature Title Here",
-            "text": "<p>Showcase craftsmanship, product benefits, or an exclusive offer.</p>",
-            "show_button": false,
-            "button_label": "Label",
-            "button_link": "",
-            "button_style": "simple"
-          }
-        },
-        "template--15231063359549__576dad4a-7ffe-4bdd-9a60-a4572834977d-column-3": {
-          "type": "column",
-          "settings": {
-            "icon": "none",
-            "icon_color_scheme": "",
-            "icon_fill_type": "gradient",
-            "enable_link": false,
-            "link": "",
-            "heading": "Feature Title Here",
-            "text": "<p>Showcase craftsmanship, product benefits, or an exclusive offer.</p>",
-            "show_button": false,
-            "button_label": "Label",
-            "button_link": "",
-            "button_style": "simple"
-          }
-        }
-      },
-      "block_order": [
-        "template--15231063359549__576dad4a-7ffe-4bdd-9a60-a4572834977d-column-1",
-        "template--15231063359549__576dad4a-7ffe-4bdd-9a60-a4572834977d-column-2",
-        "template--15231063359549__576dad4a-7ffe-4bdd-9a60-a4572834977d-column-3"
-      ],
-      "disabled": true,
-      "settings": {
-        "section_type": "transparent",
-        "color_scheme": "background-2",
-        "enable_border": false,
-        "border_full": false,
-        "multicolumn_to_show": 3,
-        "content_horizontal_alignment": "left",
-        "content_vertical_alignment": "top",
-        "gap": "small",
-        "enable_mobile_overflow_slider": false,
-        "subheading": "Featured content intro",
-        "subheading_style": "subtitle",
-        "subheading_icon": "none",
-        "heading": "Showcase Multiple Categories Here",
-        "heading_size": "h2",
-        "heading_level": "h2",
-        "heading_line": "simple",
-        "line_color": "#1566e0",
-        "word_break": false,
-        "heading_animation": "none",
-        "word_break_an": false,
-        "text": "",
-        "text_align": "left",
-        "icon_size": "recommended",
-        "box_shadow": true,
-        "icon_style": "colored",
-        "image_width": "full-width",
-        "image_ratio": "square",
-        "object_fit": "cover",
-        "card_heading_size": "h5",
-        "padding_top": "l",
-        "padding_bottom": "l",
-        "margin_top": "no-indent",
-        "margin_bottom": "no-indent"
-      }
-    },
-    "6284d95d-0127-47a7-b977-2a630c6f9383": {
-      "type": "numbers",
-      "blocks": {
-        "template--15231063359549__6284d95d-0127-47a7-b977-2a630c6f9383-column-1": {
-          "type": "column",
-          "settings": {
-            "number": "24 800",
-            "heading": "Meaningful Results and Outcomes",
-            "description": "Describes key highlights and provides context to milestones or metrics in a clear, concise, and easy-to-understand format.",
-            "icon": "battery-3",
-            "icon_color": "subtle",
-            "icon_fill_type": "gradient",
-            "show_button": false,
-            "button_label": "Label",
-            "button_link": ""
-          }
-        },
-        "template--15231063359549__6284d95d-0127-47a7-b977-2a630c6f9383-column-2": {
-          "type": "column",
-          "settings": {
-            "number": "50.6%",
-            "heading": "Meaningful Results and Outcomes",
-            "description": "Describes key highlights and provides context to milestones or metrics in a clear, concise, and easy-to-understand format.",
-            "icon": "computer",
-            "icon_color": "subtle",
-            "icon_fill_type": "solid",
-            "show_button": false,
-            "button_label": "Label",
-            "button_link": ""
-          }
-        },
-        "template--15231063359549__6284d95d-0127-47a7-b977-2a630c6f9383-column-3": {
-          "type": "column",
-          "settings": {
-            "number": "10 000+",
-            "heading": "Meaningful Results and Outcomes",
-            "description": "Describes key highlights and provides context to milestones or metrics in a clear, concise, and easy-to-understand format.",
-            "icon": "clock-2",
-            "icon_color": "subtle",
-            "icon_fill_type": "solid",
-            "show_button": false,
-            "button_label": "Label",
-            "button_link": ""
-          }
-        }
-      },
-      "block_order": [
-        "template--15231063359549__6284d95d-0127-47a7-b977-2a630c6f9383-column-1",
-        "template--15231063359549__6284d95d-0127-47a7-b977-2a630c6f9383-column-2",
-        "template--15231063359549__6284d95d-0127-47a7-b977-2a630c6f9383-column-3"
-      ],
-      "disabled": true,
-      "settings": {
-        "layout": "columns",
-        "block_type": "subtle",
-        "columns_to_row": 3,
-        "color_scheme": "",
-        "enable_border": false,
-        "border_full": false,
-        "subheading": "Achievement highlights",
-        "subheading_style": "subtitle",
-        "subheading_icon": "none",
-        "heading": "By the Numbers",
-        "heading_size": "h2",
-        "heading_level": "h2",
-        "heading_line": "simple",
-        "line_color": "#1566e0",
-        "word_break": true,
-        "text": "These numbers reflect our vision and passion. Take a look at how far we’ve come together.",
-        "text_align": "left",
-        "number_size": "recommended",
-        "icon_size": "recommended",
-        "card_heading_size": "recommended",
-        "number_size_first": "large",
-        "icon_size_first": "extra-large",
-        "card_heading_size_first": "h4",
-        "padding_top": "l",
-        "padding_bottom": "l"
-      }
-    },
-    "slideshow": {
-      "type": "slideshow",
-      "blocks": {
-        "template--15231063785533__59c2a073-1c05-4ba6-8228-ac87d36b0076-slide-1": {
-          "type": "slide",
-          "settings": {
-            "color_scheme": "",
-            "icon": "presentation-1",
-            "overlay_opacity": 0.4,
-            "show_video": false,
-            "loop_video": true,
-            "heading": "Spotlight on Bestsellers",
-            "heading_size": "recommended",
-            "heading_level": "h2",
-            "description": "This section is perfect for adding context—describe what makes this offer or collection special and why customers should check it out.",
-            "tab_heading": "Heading",
-            "show_button": true,
-            "button_style": "simple_link",
-            "button_label": "Know More",
-            "button_link": "",
-            "overlay_link": false
-          }
-        },
-        "template--15231063785533__59c2a073-1c05-4ba6-8228-ac87d36b0076-slide-2": {
-          "type": "slide",
-          "settings": {
-            "color_scheme": "",
-            "icon": "battery-2",
-            "overlay_opacity": 0.4,
-            "show_video": false,
-            "loop_video": true,
-            "heading": "Spotlight on Bestsellers",
-            "heading_size": "recommended",
-            "heading_level": "h2",
-            "description": "This section is perfect for adding context—describe what makes this offer or collection special and why customers should check it out.",
-            "tab_heading": "Heading",
-            "show_button": true,
-            "button_style": "simple_link",
-            "button_label": "Know More",
-            "button_link": "",
-            "overlay_link": false
-          }
-        },
-        "99602783-31ed-464e-b990-f524041efea0": {
-          "type": "slide",
-          "settings": {
-            "color_scheme": "background-3",
-            "icon": "wifi-1",
-            "overlay_opacity": 0.4,
-            "show_video": false,
-            "loop_video": true,
-            "heading": "Spotlight on Bestsellers",
-            "heading_size": "recommended",
-            "heading_level": "h2",
-            "description": "This section is perfect for adding context—describe what makes this offer or collection special and why customers should check it out.",
-            "tab_heading": "Heading",
-            "show_button": true,
-            "button_style": "simple_link",
-            "button_label": "Know More",
-            "button_link": "",
-            "overlay_link": false
-          }
-        },
-        "0ea01af6-b55f-434d-bb8e-feadead05b6b": {
-          "type": "slide",
-          "settings": {
-            "color_scheme": "background-3",
-            "icon": "server-2",
-            "overlay_opacity": 0.4,
-            "show_video": false,
-            "loop_video": true,
-            "heading": "Spotlight on Bestsellers",
-            "heading_size": "recommended",
-            "heading_level": "h2",
-            "description": "This section is perfect for adding context—describe what makes this offer or collection special and why customers should check it out.",
-            "tab_heading": "Heading",
-            "show_button": true,
-            "button_style": "simple_link",
-            "button_label": "Know More",
-            "button_link": "",
-            "overlay_link": false
-          }
-        }
-      },
-      "block_order": [
-        "template--15231063785533__59c2a073-1c05-4ba6-8228-ac87d36b0076-slide-1",
-        "template--15231063785533__59c2a073-1c05-4ba6-8228-ac87d36b0076-slide-2",
-        "99602783-31ed-464e-b990-f524041efea0",
-        "0ea01af6-b55f-434d-bb8e-feadead05b6b"
-      ],
-      "disabled": true,
-      "settings": {
-        "layout": "overlay",
-        "header_overlay": false,
-        "full_width": true,
-        "color_scheme": "",
-        "enable_border": false,
-        "border_full": false,
-        "subheading": "",
-        "subheading_style": "subtitle",
-        "subheading_icon": "none",
-        "heading": "",
-        "heading_size": "h2",
-        "heading_level": "h2",
-        "heading_line": "simple",
-        "line_color": "#1566e0",
-        "word_break": false,
-        "text": "",
-        "heading_animation": "none",
-        "word_break_an": false,
-        "text_align": "left",
-        "height": "21/9",
-        "text_align_content": "top-left",
-        "enable_autoplay": true,
-        "enable_parallax": false,
-        "enable_pagination": true,
-        "pagination_type": "numbers",
-        "pagination_color_scheme": "",
-        "pagination_width": "medium",
-        "enable_navigation": false,
-        "navigation_color_scheme": "",
-        "slide_duration": 5,
-        "icon_size": "recommended",
-        "icon_style": "contrast",
-        "icon_fill_type": "solid",
-        "show_tab_icon": true,
-        "padding_top": "no-indent",
-        "padding_bottom": "no-indent",
-        "margin_top": "no-indent",
-        "margin_bottom": "no-indent"
-      }
-    },
-    "testimonials": {
-      "type": "testimonials",
-      "blocks": {
-        "block_1": {
-          "type": "testimonials_slide",
-          "settings": {
-            "rating": 5,
-            "slide_text": "“A satisfied customer’s words will be displayed here, sharing their thoughts on the product.”",
-            "slide_name": "Customer's name",
-            "slide_position": "Customer's position"
-          }
-        },
-        "block_2": {
-          "type": "testimonials_slide",
-          "settings": {
-            "rating": 5,
-            "slide_text": "“A satisfied customer’s words will be displayed here, sharing their thoughts on the product.”",
-            "slide_name": "Customer's name",
-            "slide_position": "Customer's position"
-          }
-        },
-        "block_3": {
-          "type": "testimonials_slide",
-          "settings": {
-            "rating": 5,
-            "slide_text": "“A satisfied customer’s words will be displayed here, sharing their thoughts on the product.”",
-            "slide_name": "Customer's name",
-            "slide_position": "Customer's position"
-          }
-        },
-        "ec4d0210-9771-4cf8-8d64-44b9e56bcf71": {
-          "type": "testimonials_slide",
-          "settings": {
-            "rating": 5,
-            "slide_text": "“A satisfied customer’s words will be displayed here, sharing their thoughts on the product.”",
-            "slide_name": "Customer's name",
-            "slide_position": "Customer's position"
-          }
-        },
-        "53e60b71-8b96-4160-84a1-be5d5f4b59a1": {
-          "type": "testimonials_slide",
-          "settings": {
-            "rating": 5,
-            "slide_text": "“A satisfied customer’s words will be displayed here, sharing their thoughts on the product.”",
-            "slide_name": "Customer's name",
-            "slide_position": "Customer's position"
-          }
-        },
-        "7e20238a-4d79-4587-93de-f5cd87502470": {
-          "type": "testimonials_slide",
-          "settings": {
-            "rating": 5,
-            "slide_text": "“A satisfied customer’s words will be displayed here, sharing their thoughts on the product.”",
-            "slide_name": "Customer's name",
-            "slide_position": "Customer's position"
-          }
-        },
-        "e3264945-d04f-4d3e-bf9b-ee40986efa51": {
-          "type": "testimonials_slide",
-          "settings": {
-            "rating": 5,
-            "slide_text": "“A satisfied customer’s words will be displayed here, sharing their thoughts on the product.”",
-            "slide_name": "Customer's name",
-            "slide_position": "Customer's position"
-          }
-        },
-        "60b58f96-2361-48db-b63a-bbc01db78f1f": {
-          "type": "testimonials_slide",
-          "settings": {
-            "rating": 5,
-            "slide_text": "“A satisfied customer’s words will be displayed here, sharing their thoughts on the product.”",
-            "slide_name": "Customer's name",
-            "slide_position": "Customer's position"
-          }
-        },
-        "50871a12-c9bc-412f-9d5b-1bef770b924f": {
-          "type": "testimonials_slide",
-          "settings": {
-            "rating": 5,
-            "slide_text": "“A satisfied customer’s words will be displayed here, sharing their thoughts on the product.”",
-            "slide_name": "Customer's name",
-            "slide_position": "Customer's position"
-          }
-        }
-      },
-      "block_order": [
-        "block_1",
-        "block_2",
-        "block_3",
-        "ec4d0210-9771-4cf8-8d64-44b9e56bcf71",
-        "53e60b71-8b96-4160-84a1-be5d5f4b59a1",
-        "7e20238a-4d79-4587-93de-f5cd87502470",
-        "e3264945-d04f-4d3e-bf9b-ee40986efa51",
-        "60b58f96-2361-48db-b63a-bbc01db78f1f",
-        "50871a12-c9bc-412f-9d5b-1bef770b924f"
-      ],
-      "disabled": true,
-      "settings": {
-        "layout": "marquee",
-        "color_scheme": "",
-        "subheading": "Satisfied customer count",
-        "subheading_style": "subtitle",
-        "subheading_icon": "none",
-        "heading": "Testimonials Title",
-        "heading_size": "h2",
-        "heading_level": "h2",
-        "heading_line": "simple",
-        "line_color": "#1566e0",
-        "word_break": false,
-        "heading_animation": "none",
-        "word_break_an": false,
-        "text": "Showcase positive reviews, ratings, or a statement about customer trust and product quality.",
-        "text_align": "left",
-        "slide_color_scheme": "",
-        "slide_text_size": "recommended",
-        "enable_navigation": true,
-        "enable_navigation_mobile": false,
-        "navigation_color_scheme": "",
-        "enable_pagination": false,
-        "enable_pagination_mobile": true,
-        "pagination_color_scheme": "",
-        "padding_top": "l",
-        "padding_bottom": "l",
-        "margin_top": "no-indent",
-        "margin_bottom": "no-indent"
-      }
-    },
-    "multirow": {
-      "type": "multirow",
-      "blocks": {
-        "template--15231063785533__1f309bc4-1a66-455b-90cb-63c739d1df21-column-1": {
-          "type": "column",
-          "settings": {
-            "icon": "lightning-bolt-1",
-            "icon_color_scheme": "",
-            "icon_fill_type": "gradient",
-            "show_video": false,
-            "autoplay_video": true,
-            "muted_video": true,
-            "loop_video": true,
-            "heading": "Add a Short, Engaging Title That Highlights The Key Feature",
-            "heading_line": "simple",
-            "line_color": "#1566e0",
-            "word_break": false,
-            "text": "<p>Here, you can highlight different features of your service, such as key benefits, unique offerings, or standout qualities.</p>",
-            "show_button": true,
-            "button_label": "Shop Now",
-            "button_link": "",
-            "button_style": "primary"
-          }
-        }
-      },
-      "block_order": [
-        "template--15231063785533__1f309bc4-1a66-455b-90cb-63c739d1df21-column-1"
-      ],
-      "disabled": true,
-      "settings": {
-        "section_type": "transparent",
-        "color_scheme": "background-2",
-        "subheading": "",
-        "subheading_style": "subtitle",
-        "subheading_icon": "none",
-        "heading": "",
-        "heading_size": "h2",
-        "heading_level": "h2",
-        "heading_line": "simple",
-        "line_color": "#1566e0",
-        "word_break": false,
-        "heading_animation": "none",
-        "word_break_an": false,
-        "text": "",
-        "text_align": "left",
-        "icon_size": "recommended",
-        "box_shadow": true,
-        "icon_style": "colored",
-        "image_alignment": "right",
-        "image_width": "large",
-        "image_ratio": "landscape",
-        "object_fit": "cover",
-        "card_heading_size": "h2",
-        "padding_top": "l",
-        "padding_bottom": "m",
-        "margin_top": "no-indent",
-        "margin_bottom": "no-indent"
-      }
-    },
     "product-recommendations": {
       "type": "product-recommendations",
       "custom_css": [
@@ -643,92 +151,148 @@
         "padding_bottom": "l"
       }
     },
-    "9b6afe8a-c2c6-4c06-ab47-03a55d729b4b": {
-      "type": "hero",
+    "animated_image_collage_f94jV4": {
+      "type": "animated-image-collage",
       "blocks": {
-        "template--21599211356476__9b6afe8a-c2c6-4c06-ab47-03a55d729b4b-subtitle-1": {
-          "type": "subtitle",
+        "column_ybXXA9": {
+          "type": "column",
           "settings": {
-            "subheading": "Feature",
-            "subheading_style": "subtitle subtitle--secondary",
-            "subheading_icon": "star"
+            "image": "shopify://shop_images/bg-fondo-rental-1_7b23a22c-7495-4282-b2f9-30e39e1443df.webp",
+            "image_asset": "",
+            "image_width": 420
           }
         },
-        "template--21599211356476__9b6afe8a-c2c6-4c06-ab47-03a55d729b4b-title-1": {
-          "type": "title",
+        "column_axNkPT": {
+          "type": "column",
           "settings": {
-            "heading": "Discover What’s New: An Exciting Announcement Awaits You",
-            "heading_size": "h1",
-            "heading_level": "h2",
-            "heading_line": "simple",
-            "line_color": "#1566e0",
-            "word_break": false,
-            "heading_animation": "none",
-            "word_break_an": false
+            "image": "shopify://shop_images/bg-fondo-rental-2.webp",
+            "image_asset": "",
+            "image_width": 420
           }
         },
-        "template--21599211356476__9b6afe8a-c2c6-4c06-ab47-03a55d729b4b-description-1": {
-          "type": "description",
+        "column_k9yaiJ": {
+          "type": "column",
           "settings": {
-            "description": "Showcase what makes your brand unique and valuable by highlighting strengths that set you apart from others."
+            "image": "shopify://shop_images/bg-fondo-rental-3.webp",
+            "image_asset": "",
+            "image_width": 420
           }
         },
-        "template--21599211356476__9b6afe8a-c2c6-4c06-ab47-03a55d729b4b-buttons-1": {
-          "type": "buttons",
+        "column_Y9HdeM": {
+          "type": "column",
           "settings": {
-            "show_button_1": true,
-            "button_label_1": "Shop Now",
-            "button_link_1": "",
-            "button_style_1": "primary",
-            "show_button_2": false,
-            "button_label_2": "Label",
-            "button_link_2": "",
-            "button_style_2": "simple"
+            "image": "shopify://shop_images/bg-fondo-rental-4.webp",
+            "image_asset": "",
+            "image_width": 420
           }
         },
-        "308c39e5-3469-4c38-8a53-239ca969eaa1": {
-          "type": "users",
+        "column_MV3QY4": {
+          "type": "column",
           "settings": {
-            "user_text": "Happy Customer Count"
+            "image": "shopify://shop_images/bg-fondo-rental-5.webp",
+            "image_asset": "",
+            "image_width": 420
+          }
+        },
+        "column_93hQjf": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/bg-fondo-rental-6.webp",
+            "image_asset": "",
+            "image_width": 420
+          }
+        },
+        "column_ND4rAW": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/bg-fondo-rental-2.webp",
+            "image_asset": "",
+            "image_width": 420
+          }
+        },
+        "column_xTe9fj": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/bg-fondo-rental-8.webp",
+            "image_asset": "",
+            "image_width": 420
+          }
+        },
+        "column_nKJQak": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/bg-fondo-rental-2.webp",
+            "image_asset": "",
+            "image_width": 420
+          }
+        },
+        "column_N6DFKk": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/bg-fondo-rental-9.webp",
+            "image_asset": "",
+            "image_width": 420
           }
         }
       },
       "block_order": [
-        "template--21599211356476__9b6afe8a-c2c6-4c06-ab47-03a55d729b4b-subtitle-1",
-        "template--21599211356476__9b6afe8a-c2c6-4c06-ab47-03a55d729b4b-title-1",
-        "template--21599211356476__9b6afe8a-c2c6-4c06-ab47-03a55d729b4b-description-1",
-        "template--21599211356476__9b6afe8a-c2c6-4c06-ab47-03a55d729b4b-buttons-1",
-        "308c39e5-3469-4c38-8a53-239ca969eaa1"
+        "column_ybXXA9",
+        "column_axNkPT",
+        "column_k9yaiJ",
+        "column_Y9HdeM",
+        "column_MV3QY4",
+        "column_93hQjf",
+        "column_ND4rAW",
+        "column_xTe9fj",
+        "column_nKJQak",
+        "column_N6DFKk"
       ],
+      "name": "t:sections.animated-image-collage.name",
       "settings": {
-        "layout": "overlay",
+        "section_type": "background",
+        "color_scheme": "scheme-39e5d4a7-e422-4a30-b12c-b2a059c9acee",
         "header_overlay": false,
         "header_transparent": false,
-        "block_type": "subtle",
-        "color_scheme": "",
-        "full_screen": true,
-        "show_video": false,
-        "overlay_opacity": 0.6,
-        "image_ratio": "adapt",
-        "object_fit": "cover",
-        "desktop_image_position": "after",
-        "mobile_image_position": "after",
-        "mobile_image_overlay": "overlay",
-        "horizontal_alignment": "center",
-        "vertical_alignment": "middle",
-        "padding_top": "no-indent",
-        "padding_bottom": "no-indent"
+        "column_to_show": 3,
+        "opacity_overlay": 0.3,
+        "full_width": true,
+        "icon": "none",
+        "icon_color_scheme": "",
+        "icon_style": "contrast",
+        "icon_fill_type": "gradient",
+        "icon_size": "recommended",
+        "box_shadow": true,
+        "subheading": "",
+        "subheading_style": "subtitle subtitle--secondary",
+        "subheading_icon": "none",
+        "heading": "Lorem ipsum dolor sit  amet consectetur",
+        "heading_size": "h1",
+        "heading_level": "h2",
+        "heading_line": "simple",
+        "line_color": "#000000",
+        "heading_animation": "none",
+        "text": "Orci orci cras laoreet gravida. Metus massa velit sit elit aenean quam. \nPretium pharetra est nullam amet.",
+        "enable_subscribe": false,
+        "button_label_subscribe": "",
+        "button_style_subscribe": "primary",
+        "show_button": true,
+        "button_label": "Solicitar asesoría",
+        "button_link": "#",
+        "button_style": "primary",
+        "show_button_2": true,
+        "button_label_2": "Hablar con un especialista",
+        "button_link_2": "",
+        "button_style_2": "tertiary",
+        "padding_top": "m",
+        "padding_bottom": "m",
+        "margin_top": "no-indent",
+        "margin_bottom": "no-indent"
       }
     }
   },
   "order": [
     "main",
-    "576dad4a-7ffe-4bdd-9a60-a4572834977d",
-    "6284d95d-0127-47a7-b977-2a630c6f9383",
-    "slideshow",
-    "testimonials",
-    "multirow",
     "product-recommendations",
-    "9b6afe8a-c2c6-4c06-ab47-03a55d729b4b"
+    "animated_image_collage_f94jV4"
   ]
 }
