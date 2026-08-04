@@ -1,0 +1,604 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": "no-indent",
+        "padding_bottom": "m"
+      }
+    },
+    "animated_image_collage_pMaBwE": {
+      "type": "animated-image-collage",
+      "name": "t:sections.animated-image-collage.name",
+      "settings": {
+        "section_type": "background",
+        "color_scheme": "scheme-39e5d4a7-e422-4a30-b12c-b2a059c9acee",
+        "header_overlay": false,
+        "header_transparent": false,
+        "column_to_show": 3,
+        "opacity_overlay": 0.3,
+        "full_width": true,
+        "icon": "none",
+        "icon_color_scheme": "scheme-39e5d4a7-e422-4a30-b12c-b2a059c9acee",
+        "icon_style": "contrast",
+        "icon_fill_type": "gradient",
+        "icon_size": "recommended",
+        "box_shadow": true,
+        "subheading": "Servicios para Empresas",
+        "subheading_style": "subtitle subtitle--secondary",
+        "subheading_icon": "none",
+        "heading": "Tecnología Apple.Sin fricciones.",
+        "heading_size": "h1",
+        "heading_level": "h2",
+        "heading_line": "simple",
+        "line_color": "#1566e0",
+        "heading_animation": "none",
+        "text": "Renueva el equipamiento de tu empresa con el programa Trade In más completo del mercado. Valorizamos tus equipos, gestionamos el proceso y te entregamos tecnología nueva al instante.",
+        "enable_subscribe": false,
+        "button_label_subscribe": "",
+        "button_style_subscribe": "primary",
+        "show_button": true,
+        "button_label": "Cotizar  Trade In",
+        "button_link": "",
+        "button_style": "primary",
+        "show_button_2": true,
+        "button_label_2": "Ver todos los servicios",
+        "button_link_2": "",
+        "button_style_2": "tertiary",
+        "padding_top": "m",
+        "padding_bottom": "xs",
+        "margin_top": "no-indent",
+        "margin_bottom": "no-indent"
+      }
+    },
+    "hero_wM7mKM": {
+      "type": "hero",
+      "blocks": {
+        "subtitle_zRrjUb": {
+          "type": "subtitle",
+          "settings": {
+            "subheading": "empresas",
+            "subheading_style": "subtitle",
+            "subheading_icon": "circle"
+          }
+        },
+        "title_d8CMBK": {
+          "type": "title",
+          "settings": {
+            "heading": "Renueva tu flota. Recupera tu valor.",
+            "heading_size": "h1",
+            "heading_level": "h2",
+            "heading_line": "simple",
+            "line_color": "#1566e0",
+            "word_break": false,
+            "heading_animation": "none",
+            "word_break_an": false
+          }
+        },
+        "description_NxRcEy": {
+          "type": "description",
+          "settings": {
+            "description": "Diseñado específicamente para empresas que quieren modernizar sus equipos Apple sin perder el valor acumulado de su inversión anterior."
+          }
+        }
+      },
+      "block_order": [
+        "subtitle_zRrjUb",
+        "title_d8CMBK",
+        "description_NxRcEy"
+      ],
+      "name": "t:sections.hero.name",
+      "settings": {
+        "layout": "horizontal",
+        "header_overlay": false,
+        "header_transparent": true,
+        "block_type": "plain",
+        "color_scheme": "",
+        "full_screen": true,
+        "image": "shopify://shop_images/bg-zero-touch.webp",
+        "show_video": false,
+        "overlay_opacity": 0,
+        "image_ratio": "1/1",
+        "object_fit": "contain",
+        "desktop_image_position": "after",
+        "mobile_image_position": "after",
+        "mobile_image_overlay": "overlay",
+        "horizontal_alignment": "center",
+        "vertical_alignment": "middle",
+        "padding_top": "m",
+        "padding_bottom": "m"
+      }
+    },
+    "icon_cards_PhdCr4": {
+      "type": "icon-cards",
+      "blocks": {
+        "card_KdygmT": {
+          "type": "card",
+          "settings": {
+            "icon_name": "solar_shield-check-outline.svg",
+            "icon_asset": "",
+            "heading_variant": "default",
+            "card_label": "",
+            "card_large_text": "",
+            "card_subtitle": "",
+            "heading": "Crédito inmediato",
+            "description": "El valor de tus equipos se aplica directamente al descuento de la compra. Sin esperas, sin cheques."
+          }
+        },
+        "card_hcMYJF": {
+          "type": "card",
+          "settings": {
+            "icon_name": "solar_graph-down-new-outline.svg",
+            "icon_asset": "",
+            "heading_variant": "default",
+            "card_label": "",
+            "card_large_text": "",
+            "card_subtitle": "",
+            "heading": "Flota completa",
+            "description": "Evaluamos y procesamos lotes de 5 a 500 equipos. Ideal para renovaciones masivas de empresas."
+          }
+        },
+        "card_9RRj4f": {
+          "type": "card",
+          "settings": {
+            "icon_name": "solar_clock-circle-outline.svg",
+            "icon_asset": "",
+            "heading_variant": "default",
+            "card_label": "",
+            "card_large_text": "",
+            "card_subtitle": "",
+            "heading": "Borrado certificado",
+            "description": "Todos los equipos pasan por un proceso de borrado seguro certificado antes de ser reacondicionados."
+          }
+        },
+        "card_btPtyV": {
+          "type": "card",
+          "settings": {
+            "icon_name": "solar_chart-outline.svg",
+            "icon_asset": "",
+            "heading_variant": "default",
+            "card_label": "",
+            "card_large_text": "",
+            "card_subtitle": "",
+            "heading": "Reciclaje responsable",
+            "description": "Los equipos que no pueden ser revendidos se reciclan de forma certificada y responsable con el medio ambiente."
+          }
+        },
+        "card_xQNVTG": {
+          "type": "card",
+          "settings": {
+            "icon_name": "solar_clock-circle-outline.svg",
+            "icon_asset": "",
+            "heading_variant": "default",
+            "card_label": "",
+            "card_large_text": "",
+            "card_subtitle": "",
+            "heading": "Reporte para contabilidad",
+            "description": "Entregamos documentación completa para que tu equipo de finanzas pueda registrar la transacción correctamente."
+          }
+        },
+        "card_3PeMMF": {
+          "type": "card",
+          "settings": {
+            "icon_name": "solar_chart-outline.svg",
+            "icon_asset": "",
+            "heading_variant": "default",
+            "card_label": "",
+            "card_large_text": "",
+            "card_subtitle": "",
+            "heading": "Gestor dedicado",
+            "description": "Cada empresa tiene un especialista asignado que acompaña el proceso de inicio a fin."
+          }
+        }
+      },
+      "block_order": [
+        "card_KdygmT",
+        "card_hcMYJF",
+        "card_9RRj4f",
+        "card_btPtyV",
+        "card_xQNVTG",
+        "card_3PeMMF"
+      ],
+      "name": "Icon Cards — El Problema (4 col)",
+      "settings": {
+        "columns": "4",
+        "header_alignment": "left",
+        "light_mode": false,
+        "show_card_description": true,
+        "subheading": "",
+        "heading": "",
+        "description": ""
+      }
+    },
+    "vertical_slideshow_hYcJcN": {
+      "type": "vertical-slideshow",
+      "blocks": {
+        "slide_KptB9K": {
+          "type": "slide",
+          "settings": {
+            "label": "AppleCare+ iPhone",
+            "details": "<ul><li>Daños en pantalla y estructura</li><li>Daños por líquidos</li><li>Reemplazo express</li><li>Soporte prioritario<br/><br/></li></ul>",
+            "image": "shopify://shop_images/Group_21_1.png",
+            "image_asset": "",
+            "pill_1_text": "",
+            "pill_2_text": "",
+            "pill_3_text": "",
+            "pill_4_text": "",
+            "pill_5_text": ""
+          }
+        },
+        "slide_dXLXFA": {
+          "type": "slide",
+          "settings": {
+            "label": "AppleCare+ Mac",
+            "details": "<ul><li>Daños accidentales incluidos</li><li>Reemplazo de batería sin costo</li><li>Cobertura para monitor incluido</li><li>Servicio on-site disponible<br/><br/></li></ul>",
+            "image": "shopify://shop_images/Group_21_2.png",
+            "image_asset": "",
+            "pill_1_text": "",
+            "pill_2_text": "",
+            "pill_3_text": "",
+            "pill_4_text": "",
+            "pill_5_text": ""
+          }
+        },
+        "slide_VbnBxa": {
+          "type": "slide",
+          "settings": {
+            "label": "AppleCare+ iPad",
+            "details": "<ul><li>Daños en pantalla con tarifa fija</li><li>Apple Pencil y teclado incluidos</li><li>Reemplazo express disponible</li><li>Soporte prioritario<br/><br/></li></ul>",
+            "image": "shopify://shop_images/Group_21_3.png",
+            "image_asset": "",
+            "pill_1_text": "",
+            "pill_2_text": "",
+            "pill_3_text": "",
+            "pill_4_text": "",
+            "pill_5_text": ""
+          }
+        },
+        "slide_nE6cPa": {
+          "type": "slide",
+          "settings": {
+            "label": "AppleCare+ Watch",
+            "details": "<ul><li>Daños accidentales incluidos</li><li>Correa y eslabón cubiertos</li><li>Reemplazo de batería sin costo</li><li>Soporte prioritario<br/><br/></li></ul>",
+            "image": "shopify://shop_images/Group_21.png",
+            "image_asset": "",
+            "pill_1_text": "Tickets",
+            "pill_2_text": "",
+            "pill_3_text": "",
+            "pill_4_text": "",
+            "pill_5_text": ""
+          }
+        }
+      },
+      "block_order": [
+        "slide_KptB9K",
+        "slide_dXLXFA",
+        "slide_VbnBxa",
+        "slide_nE6cPa"
+      ],
+      "name": "Vertical Slideshow",
+      "settings": {
+        "color_scheme": "",
+        "subheading": "planes applecare+ disponibles",
+        "heading": "Cobertura para cada dispositivo de tu flota.",
+        "force_light_mode": false,
+        "description": "<p>Contrata por equipo o negocia un plan corporativo para toda tu empresa.<br/></p>",
+        "padding_top": "l",
+        "padding_bottom": "l",
+        "margin_top": "no-indent",
+        "margin_bottom": "no-indent"
+      }
+    },
+    "icon_cards_6nzWzm": {
+      "type": "icon-cards",
+      "name": "Icon Cards — La Solución (3 col)",
+      "settings": {
+        "columns": "3",
+        "header_alignment": "center",
+        "light_mode": false,
+        "show_card_description": false,
+        "subheading": "servicio técnico",
+        "heading": "<p>Reparaciones certificadas Apple.<br/><br/></p>",
+        "description": "<p>Centro de servicio técnico autorizado con técnicos certificados Apple. Piezas originales, tiempos garantizados y seguimiento en tiempo real de tu equipo.<br/></p>"
+      }
+    },
+    "portal_challenges_TTxDqp": {
+      "type": "portal-challenges",
+      "blocks": {
+        "card_x8ad7f": {
+          "type": "card",
+          "settings": {
+            "icon_asset": "portal-icon-1.svg",
+            "heading": "Retiro express en 24 horas",
+            "text": "Coodinamos retiro en tu empresa o domicilio"
+          }
+        },
+        "card_Ldg9ea": {
+          "type": "card",
+          "settings": {
+            "icon_asset": "portal-icon-2.svg",
+            "heading": "Entrega onsite",
+            "text": "Devolvemos el equipo reparado directamente en tu oficina"
+          }
+        },
+        "card_GAPCbc": {
+          "type": "card",
+          "settings": {
+            "icon_asset": "portal-icon-3.svg",
+            "heading": "Técnicos certificados Apple",
+            "text": "Reparaciones con piezas originales Apple"
+          }
+        },
+        "card_WnctpH": {
+          "type": "card",
+          "settings": {
+            "icon_asset": "portal-icon-4.svg",
+            "heading": "Reparaciones con piezas originales Apple",
+            "text": "Evaluación gratuita antes de cualquier reparación"
+          }
+        }
+      },
+      "block_order": [
+        "card_x8ad7f",
+        "card_Ldg9ea",
+        "card_GAPCbc",
+        "card_WnctpH"
+      ],
+      "settings": {
+        "color_scheme": "background-3",
+        "subheading": "",
+        "heading": "Express con retiro en 24 horas y entrega onsite.",
+        "description": "<p>Sin un portal, cada alta, cambio o solicitud termina en correo, planilla o ticket manual.</p><p>No necesitas desplazarte. Coordinamos el retiro de tu equipo en tu empresa, realizamos el diagnóstico y la reparación, y lo devolvemos en tu oficina. Sin interrumpir tu operación.<br/></p>",
+        "padding_top": "l",
+        "padding_bottom": "l",
+        "margin_top": "no-indent",
+        "margin_bottom": "no-indent"
+      }
+    },
+    "collapsible_content_3Urj9b": {
+      "type": "collapsible-content",
+      "blocks": {
+        "accordion_UXELHB": {
+          "type": "accordion",
+          "settings": {
+            "question": "¿Cuántos equipos mínimos necesito para el programa empresarial?",
+            "answer": "<p>El programa Trade In Empresas está disponible desde 5 equipos. Para lotes de 50 o más dispositivos, asignamos un gestor dedicado y ofrecemos condiciones preferenciales adicionales.<br/><br/></p>",
+            "opened": true
+          }
+        },
+        "accordion_pj6xC6": {
+          "type": "accordion",
+          "settings": {
+            "question": "¿Los equipos deben estar desbloqueados y sin contraseña?",
+            "answer": "<p>Sí. Antes de entregar cualquier dispositivo, es necesario cerrar sesión en la cuenta Apple ID, desactivar \"Buscar mi\" y restaurar el equipo a fábrica. Nuestro equipo te guía en el proceso si lo necesitas.</p>",
+            "opened": false
+          }
+        },
+        "accordion_iknjrF": {
+          "type": "accordion",
+          "settings": {
+            "question": "¿Qué pasa si el estado real del equipo difiere de la cotización?",
+            "answer": "<p>En la evaluación presencial confirmamos el estado exacto. Si hay diferencia, te informamos antes de proceder. Nunca ajustamos el crédito sin tu aprobación previa.<br/><br/></p>",
+            "opened": false
+          }
+        },
+        "accordion_cykKqW": {
+          "type": "accordion",
+          "settings": {
+            "question": "¿Puedo mezclar Trade In con financiamiento?",
+            "answer": "<p>Sí. El crédito Trade In se aplica como pie y el saldo restante puede financiarse en cuotas. Esta combinación es muy popular entre empresas que quieren renovar sin impacto en el flujo de caja.<br/><br/></p>",
+            "opened": false
+          }
+        },
+        "accordion_VVKctQ": {
+          "type": "accordion",
+          "settings": {
+            "question": "¿Cuánto tarda todo el proceso desde la cotización hasta la entrega?",
+            "answer": "<p>Para lotes estándar (5–20 equipos), el proceso completo toma entre 5 y 10 días hábiles. Para lotes grandes coordinamos un calendario de renovación por etapas para no interrumpir tu operación.<br/><br/></p>",
+            "opened": false
+          }
+        },
+        "accordion_r6c7Mf": {
+          "type": "accordion",
+          "settings": {
+            "question": "¿Recibo documentación para contabilidad?",
+            "answer": "<p>Sí. Emitimos factura electrónica por los equipos nuevos con el crédito Trade In detallado, y entregamos un reporte de dispositivos procesados para tu área de activos fijos.</p>",
+            "opened": false
+          }
+        }
+      },
+      "block_order": [
+        "accordion_UXELHB",
+        "accordion_pj6xC6",
+        "accordion_iknjrF",
+        "accordion_cykKqW",
+        "accordion_VVKctQ",
+        "accordion_r6c7Mf"
+      ],
+      "name": "t:sections.collapsible-content.name",
+      "settings": {
+        "layout": "background",
+        "color_scheme": "scheme-39e5d4a7-e422-4a30-b12c-b2a059c9acee",
+        "enable_border": false,
+        "border_full": false,
+        "subheading": "",
+        "subheading_style": "subtitle",
+        "subheading_icon": "none",
+        "heading": "Todo lo que necesitas saber",
+        "heading_size": "h2",
+        "heading_level": "h2",
+        "heading_line": "none",
+        "line_color": "#1566e0",
+        "word_break": false,
+        "heading_animation": "none",
+        "word_break_an": false,
+        "text": "",
+        "text_align": "center",
+        "row_color_scheme": "scheme-cf7617bd-cf5d-43c2-b151-2d92b8b69cd6",
+        "padding_top": "l",
+        "padding_bottom": "l",
+        "margin_top": "no-indent",
+        "margin_bottom": "no-indent"
+      }
+    },
+    "animated_image_collage_nhGarD": {
+      "type": "animated-image-collage",
+      "blocks": {
+        "column_6Prrwn": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/bg-fondo-rental-1_7b23a22c-7495-4282-b2f9-30e39e1443df.webp",
+            "image_asset": "",
+            "image_width": 420
+          }
+        },
+        "column_WVcMHH": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/bg-fondo-rental-2.webp",
+            "image_asset": "",
+            "image_width": 420
+          }
+        },
+        "column_Re3dXz": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/bg-fondo-rental-3.webp",
+            "image_asset": "",
+            "image_width": 420
+          }
+        },
+        "column_dHaGLA": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/bg-fondo-rental-4.webp",
+            "image_asset": "",
+            "image_width": 420
+          }
+        },
+        "column_dGL7mz": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/bg-fondo-rental-5.webp",
+            "image_asset": "",
+            "image_width": 420
+          }
+        },
+        "column_deicR4": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/bg-fondo-rental-6.webp",
+            "image_asset": "",
+            "image_width": 420
+          }
+        },
+        "column_eqGd9p": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/bg-fondo-rental-2.webp",
+            "image_asset": "",
+            "image_width": 420
+          }
+        },
+        "column_PKAqfd": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/bg-fondo-rental-8.webp",
+            "image_asset": "",
+            "image_width": 420
+          }
+        },
+        "column_CMBayt": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/bg-fondo-rental-2.webp",
+            "image_asset": "",
+            "image_width": 420
+          }
+        },
+        "column_QT9A9d": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/bg-fondo-rental-9.webp",
+            "image_asset": "",
+            "image_width": 420
+          }
+        }
+      },
+      "block_order": [
+        "column_6Prrwn",
+        "column_WVcMHH",
+        "column_Re3dXz",
+        "column_dHaGLA",
+        "column_dGL7mz",
+        "column_deicR4",
+        "column_eqGd9p",
+        "column_PKAqfd",
+        "column_CMBayt",
+        "column_QT9A9d"
+      ],
+      "name": "t:sections.animated-image-collage.name",
+      "settings": {
+        "section_type": "background",
+        "color_scheme": "scheme-39e5d4a7-e422-4a30-b12c-b2a059c9acee",
+        "header_overlay": false,
+        "header_transparent": false,
+        "column_to_show": 3,
+        "opacity_overlay": 0.3,
+        "full_width": true,
+        "icon": "none",
+        "icon_color_scheme": "",
+        "icon_style": "contrast",
+        "icon_fill_type": "gradient",
+        "icon_size": "recommended",
+        "box_shadow": true,
+        "subheading": "",
+        "subheading_style": "subtitle subtitle--secondary",
+        "subheading_icon": "none",
+        "heading": "¿Listo para renovar tu flota?",
+        "heading_size": "h1",
+        "heading_level": "h2",
+        "heading_line": "simple",
+        "line_color": "#1566e0",
+        "heading_animation": "none",
+        "text": "Habla con un especialista hoy. Sin costo, sin compromiso.",
+        "enable_subscribe": false,
+        "button_label_subscribe": "",
+        "button_style_subscribe": "primary",
+        "show_button": true,
+        "button_label": "Escribir al equipo",
+        "button_link": "#",
+        "button_style": "primary",
+        "show_button_2": true,
+        "button_label_2": "+56 2 2345 6789",
+        "button_link_2": "",
+        "button_style_2": "tertiary",
+        "padding_top": "m",
+        "padding_bottom": "m",
+        "margin_top": "no-indent",
+        "margin_bottom": "no-indent"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "animated_image_collage_pMaBwE",
+    "hero_wM7mKM",
+    "icon_cards_PhdCr4",
+    "vertical_slideshow_hYcJcN",
+    "icon_cards_6nzWzm",
+    "portal_challenges_TTxDqp",
+    "collapsible_content_3Urj9b",
+    "animated_image_collage_nhGarD"
+  ]
+}

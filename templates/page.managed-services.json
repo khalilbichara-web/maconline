@@ -61,6 +61,78 @@
         "margin_bottom": "no-indent"
       }
     },
+    "hero_qchMEq": {
+      "type": "hero",
+      "blocks": {
+        "subtitle_LYDgNp": {
+          "type": "subtitle",
+          "settings": {
+            "subheading": "que es zero touch",
+            "subheading_style": "subtitle",
+            "subheading_icon": "circle"
+          }
+        },
+        "title_peX3mw": {
+          "type": "title",
+          "settings": {
+            "heading": "Tener MDM no es lo mismo que operarlo bien",
+            "heading_size": "h1",
+            "heading_level": "h2",
+            "heading_line": "simple",
+            "line_color": "#1566e0",
+            "word_break": false,
+            "heading_animation": "none",
+            "word_break_an": false
+          }
+        },
+        "description_wt3DjB": {
+          "type": "description",
+          "settings": {
+            "description": "Configurar el MDM es solo el inicio. La operación real requiere mantener políticas, responder incidentes, gestionar altas/bajas, apps, actualizaciones, cumplimiento y cambios del negocio. \n\nCon Managed Services, tu flota se mantiene segura y estandarizada sin cargar a tu equipo interno."
+          }
+        },
+        "buttons_nenhhV": {
+          "type": "buttons",
+          "settings": {
+            "show_button_1": true,
+            "button_label_1": "Agendar demo",
+            "button_link_1": "",
+            "button_style_1": "primary",
+            "show_button_2": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_2": "tertiary"
+          }
+        }
+      },
+      "block_order": [
+        "subtitle_LYDgNp",
+        "title_peX3mw",
+        "description_wt3DjB",
+        "buttons_nenhhV"
+      ],
+      "name": "t:sections.hero.name",
+      "settings": {
+        "layout": "horizontal",
+        "header_overlay": false,
+        "header_transparent": true,
+        "block_type": "plain",
+        "color_scheme": "",
+        "full_screen": true,
+        "image": "shopify://shop_images/Rectangle_5.png",
+        "show_video": false,
+        "overlay_opacity": 0,
+        "image_ratio": "1/1",
+        "object_fit": "contain",
+        "desktop_image_position": "after",
+        "mobile_image_position": "after",
+        "mobile_image_overlay": "overlay",
+        "horizontal_alignment": "center",
+        "vertical_alignment": "middle",
+        "padding_top": "m",
+        "padding_bottom": "m"
+      }
+    },
     "icon_cards_AfcHEg": {
       "type": "icon-cards",
       "blocks": {
@@ -371,6 +443,7 @@
   "order": [
     "main",
     "animated_image_collage_aYY4b8",
+    "hero_qchMEq",
     "icon_cards_AfcHEg",
     "device_tabs_9fqXhT",
     "collapsible_content_3TzhGG",

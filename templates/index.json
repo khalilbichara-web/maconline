@@ -99,6 +99,7 @@
           "type": "card",
           "settings": {
             "icon_name": "solar_shield-check-outline.svg",
+            "icon_asset": "",
             "heading_variant": "number_large",
             "card_label": "",
             "card_large_text": "",
@@ -111,6 +112,7 @@
           "type": "card",
           "settings": {
             "icon_name": "solar_graph-down-new-outline.svg",
+            "icon_asset": "",
             "heading_variant": "number_large",
             "card_label": "",
             "card_large_text": "",
@@ -123,6 +125,7 @@
           "type": "card",
           "settings": {
             "icon_name": "solar_clock-circle-outline.svg",
+            "icon_asset": "",
             "heading_variant": "number_large",
             "card_label": "",
             "card_large_text": "",
@@ -135,6 +138,7 @@
           "type": "card",
           "settings": {
             "icon_name": "solar_chart-outline.svg",
+            "icon_asset": "",
             "heading_variant": "default",
             "card_label": "",
             "card_large_text": "",
@@ -154,6 +158,8 @@
       "settings": {
         "columns": "4",
         "header_alignment": "center",
+        "light_mode": false,
+        "show_card_description": true,
         "subheading": "el problema",
         "heading": "<p>La tecnología debería impulsar el crecimiento de tu empresa,</p><p>no convertirse en una carga operativa.</p>",
         "description": "<p>Cada renovación tecnológica implica decisiones financieras, implementación, soporte, seguridad y administración. Un modelo tradicional hace que estos procesos consuman tiempo, presupuesto y recursos que podrían destinarse al crecimiento del negocio.</p>"
@@ -208,6 +214,7 @@
           "type": "feature",
           "settings": {
             "icon_name": "solar_graph-down-new-outline.svg",
+            "number": "",
             "heading": "Libera capital para crecer",
             "description": "Evita grandes inversiones iniciales y destina recursos a iniciativas estratégicas."
           }
@@ -216,6 +223,7 @@
           "type": "feature",
           "settings": {
             "icon_name": "solar_clock-circle-outline.svg",
+            "number": "",
             "heading": "Renueva sin volver a comenzar",
             "description": "Mantén una flota siempre vigente mediante ciclos de renovación planificados."
           }
@@ -223,7 +231,8 @@
         "feature_jcAWeD": {
           "type": "feature",
           "settings": {
-            "icon_name": "solar_chart-outline.svg",
+            "icon_name": "solar_clock-circle-outline.svg",
+            "number": "",
             "heading": "Costos predecibles",
             "description": "Centraliza la inversión tecnológica en una cuota mensual simple de administrar."
           }
@@ -231,7 +240,8 @@
         "feature_gy7pG8": {
           "type": "feature",
           "settings": {
-            "icon_name": "solar_shield-check-outline.svg",
+            "icon_name": "solar_graph-down-new-outline.svg",
+            "number": "",
             "heading": "Gestión durante todo el ciclo de vida",
             "description": "Desde la entrega hasta la renovación, administramos cada etapa para reducir la carga operativa de tu organización."
           }
@@ -254,6 +264,7 @@
         "color_scheme": "light",
         "layout": "image_left",
         "image": "shopify://shop_images/img_rental.png",
+        "image_asset": "",
         "subheading": "RENTAL OPERATIVO",
         "heading": "Deja de comprar tecnología. Empieza a administrarla de forma inteligente",
         "description": "<p>Transforma la adquisición de dispositivos Apple en un servicio integral que combina financiamiento, soporte, administración y renovación, permitiendo que tu empresa crezca con una infraestructura tecnológica siempre actualizada.</p>",
@@ -270,6 +281,7 @@
           "type": "card",
           "settings": {
             "icon_name": "",
+            "icon_asset": "",
             "heading_variant": "default",
             "card_label": "",
             "card_large_text": "",
@@ -282,6 +294,7 @@
           "type": "card",
           "settings": {
             "icon_name": "",
+            "icon_asset": "",
             "heading_variant": "default",
             "card_label": "",
             "card_large_text": "",
@@ -294,6 +307,7 @@
           "type": "card",
           "settings": {
             "icon_name": "",
+            "icon_asset": "",
             "heading_variant": "default",
             "card_label": "",
             "card_large_text": "",
@@ -312,6 +326,8 @@
       "settings": {
         "columns": "3",
         "header_alignment": "left",
+        "light_mode": false,
+        "show_card_description": true,
         "subheading": "la solución",
         "heading": "<p>Un modelo flexible, predecible y sin fricciones operativas.</p>",
         "description": "<p>Reducimos la inversión inicial, simplificamos la gestión técnica y financiera de tus dispositivos Apple para que tu foco esté 100% en hacer crecer tu negocio.</p>"
@@ -324,6 +340,7 @@
           "type": "feature",
           "settings": {
             "icon_name": "solar_graph-down-new-outline.svg",
+            "number": "",
             "heading": "Implementación automática",
             "description": "Las políticas corporativas se aplican automáticamente durante el proceso de activación."
           }
@@ -332,6 +349,7 @@
           "type": "feature",
           "settings": {
             "icon_name": "solar_clock-circle-outline.svg",
+            "number": "",
             "heading": "Renueva sin volver a comenzar",
             "description": "Elimina tareas repetitivas y reduce los tiempos de configuración manual."
           }
@@ -339,7 +357,8 @@
         "feature_LzFwha": {
           "type": "feature",
           "settings": {
-            "icon_name": "solar_chart-outline.svg",
+            "icon_name": "solar_clock-circle-outline.svg",
+            "number": "",
             "heading": "Costos predecibles",
             "description": "Centraliza la inversión tecnológica en una cuota mensual simple de administrar."
           }
@@ -347,7 +366,8 @@
         "feature_qQEzTx": {
           "type": "feature",
           "settings": {
-            "icon_name": "solar_shield-check-outline.svg",
+            "icon_name": "solar_clock-circle-outline.svg",
+            "number": "",
             "heading": "Escalabilidad",
             "description": "Implementa decenas o cientos de dispositivos manteniendo una experiencia consistente para todos los colaboradores."
           }
@@ -364,6 +384,7 @@
         "color_scheme": "light",
         "layout": "image_right",
         "image": "shopify://shop_images/Frame_59.png",
+        "image_asset": "",
         "subheading": "Zero Touch",
         "heading": "La tecnología debería llegar lista para trabajar. No para ser configurada.",
         "description": "<p>Automatiza la implementación de dispositivos Apple para que cada colaborador reciba un equipo configurado, protegido y completamente operativo desde el primer encendido, reduciendo tiempos de despliegue y la carga operativa del área TI</p>",
@@ -380,6 +401,7 @@
           "type": "card",
           "settings": {
             "icon_name": "",
+            "icon_asset": "",
             "heading_variant": "default",
             "card_label": "01",
             "card_large_text": "",
@@ -392,6 +414,7 @@
           "type": "card",
           "settings": {
             "icon_name": "",
+            "icon_asset": "",
             "heading_variant": "default",
             "card_label": "02",
             "card_large_text": "",
@@ -404,6 +427,7 @@
           "type": "card",
           "settings": {
             "icon_name": "",
+            "icon_asset": "",
             "heading_variant": "default",
             "card_label": "03",
             "card_large_text": "",
@@ -416,6 +440,7 @@
           "type": "card",
           "settings": {
             "icon_name": "",
+            "icon_asset": "",
             "heading_variant": "default",
             "card_label": "04",
             "card_large_text": "",
@@ -428,6 +453,7 @@
           "type": "card",
           "settings": {
             "icon_name": "",
+            "icon_asset": "",
             "heading_variant": "default",
             "card_label": "05",
             "card_large_text": "",
@@ -448,6 +474,8 @@
       "settings": {
         "columns": "5",
         "header_alignment": "center",
+        "light_mode": false,
+        "show_card_description": true,
         "subheading": "representante oficial de apple en chile",
         "heading": "<p>Un partner para todo el ciclo de vida de tu infraestructura tecnológica</p>",
         "description": ""
@@ -574,6 +602,7 @@
           "type": "card",
           "settings": {
             "icon_name": "solar_shield-check-outline.svg",
+            "icon_asset": "",
             "heading_variant": "default",
             "card_label": "",
             "card_large_text": "+4.000",
@@ -586,6 +615,7 @@
           "type": "card",
           "settings": {
             "icon_name": "solar_clock-circle-outline.svg",
+            "icon_asset": "",
             "heading_variant": "default",
             "card_label": "",
             "card_large_text": "+100.000",
@@ -598,6 +628,7 @@
           "type": "card",
           "settings": {
             "icon_name": "solar_chart-outline.svg",
+            "icon_asset": "",
             "heading_variant": "default",
             "card_label": "",
             "card_large_text": "+10.000",
@@ -617,6 +648,8 @@
         "overlay_image": "shopify://shop_images/bg-pf-zero-touch.webp",
         "columns": "3",
         "header_alignment": "left",
+        "light_mode": false,
+        "show_card_description": true,
         "subheading": "respaldo líder en chile",
         "heading": "<p>Resultados garantizados para tu empresa</p>",
         "description": "<p>Acompañamos a organizaciones en su transformación digital reduciendo costos de TI y optimizando el retorno de inversión.</p>"
@@ -714,6 +747,7 @@
           "type": "column",
           "settings": {
             "image": "shopify://shop_images/bg-fondo-rental-1_7b23a22c-7495-4282-b2f9-30e39e1443df.webp",
+            "image_asset": "",
             "image_width": 420
           }
         },
@@ -721,6 +755,7 @@
           "type": "column",
           "settings": {
             "image": "shopify://shop_images/bg-fondo-rental-2.webp",
+            "image_asset": "",
             "image_width": 420
           }
         },
@@ -728,6 +763,7 @@
           "type": "column",
           "settings": {
             "image": "shopify://shop_images/bg-fondo-rental-3.webp",
+            "image_asset": "",
             "image_width": 420
           }
         },
@@ -735,6 +771,7 @@
           "type": "column",
           "settings": {
             "image": "shopify://shop_images/bg-fondo-rental-4.webp",
+            "image_asset": "",
             "image_width": 420
           }
         },
@@ -742,6 +779,7 @@
           "type": "column",
           "settings": {
             "image": "shopify://shop_images/bg-fondo-rental-5.webp",
+            "image_asset": "",
             "image_width": 420
           }
         },
@@ -749,6 +787,7 @@
           "type": "column",
           "settings": {
             "image": "shopify://shop_images/bg-fondo-rental-6.webp",
+            "image_asset": "",
             "image_width": 420
           }
         },
@@ -756,6 +795,7 @@
           "type": "column",
           "settings": {
             "image": "shopify://shop_images/bg-fondo-rental-2.webp",
+            "image_asset": "",
             "image_width": 420
           }
         },
@@ -763,6 +803,7 @@
           "type": "column",
           "settings": {
             "image": "shopify://shop_images/bg-fondo-rental-8.webp",
+            "image_asset": "",
             "image_width": 420
           }
         },
@@ -770,6 +811,7 @@
           "type": "column",
           "settings": {
             "image": "shopify://shop_images/bg-fondo-rental-9.webp",
+            "image_asset": "",
             "image_width": 420
           }
         }
@@ -812,14 +854,10 @@
         "heading_level": "h2",
         "heading_line": "simple",
         "line_color": "#1566e0",
-        "word_break": false,
         "heading_animation": "none",
-        "word_break_an": false,
         "text": "Accede a dispositivos Apple con un modelo diseñado para crecer contigo, reducir costos operacionales y simplificar toda la gestión tecnológica de tu organización.",
         "enable_subscribe": false,
         "button_label_subscribe": "cotización",
-        "color_scheme_subscribe": "background-1",
-        "enable_box_shadow": true,
         "button_style_subscribe": "primary",
         "show_button": true,
         "button_label": "Solicitar una cotización",

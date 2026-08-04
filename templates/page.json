@@ -140,6 +140,7 @@
           "type": "card",
           "settings": {
             "icon_name": "solar_shield-check-outline.svg",
+            "icon_asset": "",
             "heading_variant": "default",
             "card_label": "",
             "card_large_text": "",
@@ -152,6 +153,7 @@
           "type": "card",
           "settings": {
             "icon_name": "solar_graph-down-new-outline.svg",
+            "icon_asset": "",
             "heading_variant": "default",
             "card_label": "",
             "card_large_text": "",
@@ -164,6 +166,7 @@
           "type": "card",
           "settings": {
             "icon_name": "solar_clock-circle-outline.svg",
+            "icon_asset": "",
             "heading_variant": "default",
             "card_label": "",
             "card_large_text": "",
@@ -176,6 +179,7 @@
           "type": "card",
           "settings": {
             "icon_name": "solar_chart-outline.svg",
+            "icon_asset": "",
             "heading_variant": "default",
             "card_label": "",
             "card_large_text": "",
@@ -195,6 +199,8 @@
       "settings": {
         "columns": "4",
         "header_alignment": "left",
+        "light_mode": false,
+        "show_card_description": true,
         "subheading": "cómo funciona",
         "heading": "<p>Qué habilita Apple Business Manager para Mac<br/><br/></p>",
         "description": "<p>Lo que habilitas al tener tus Mac “propiedad empresa\".<br/></p>"
@@ -246,7 +252,7 @@
         "heading_size": "h2",
         "heading_level": "h2",
         "heading_line": "simple",
-        "line_color": "#1566E0",
+        "line_color": "#1566e0",
         "word_break": false,
         "heading_animation": "none",
         "word_break_an": false,
@@ -265,72 +271,84 @@
         "column_ptim8i": {
           "type": "column",
           "settings": {
+            "image_asset": "",
             "image_width": 420
           }
         },
         "column_HkGd6W": {
           "type": "column",
           "settings": {
+            "image_asset": "",
             "image_width": 420
           }
         },
         "column_PtkbxC": {
           "type": "column",
           "settings": {
+            "image_asset": "",
             "image_width": 420
           }
         },
         "column_DUwaee": {
           "type": "column",
           "settings": {
+            "image_asset": "",
             "image_width": 420
           }
         },
         "column_Jgfj8w": {
           "type": "column",
           "settings": {
+            "image_asset": "",
             "image_width": 420
           }
         },
         "column_fr4m77": {
           "type": "column",
           "settings": {
+            "image_asset": "",
             "image_width": 420
           }
         },
         "column_QqMJ9J": {
           "type": "column",
           "settings": {
+            "image_asset": "",
             "image_width": 420
           }
         },
         "column_nd8bYd": {
           "type": "column",
           "settings": {
+            "image_asset": "",
             "image_width": 420
           }
         },
         "column_h9EpBG": {
           "type": "column",
           "settings": {
+            "image_asset": "",
             "image_width": 420
           }
         },
         "column_Pgktec": {
           "type": "column",
           "settings": {
+            "image_asset": "",
             "image_width": 420
           }
         },
         "column_GExaWn": {
           "type": "column",
           "settings": {
+            "image_asset": "",
             "image_width": 420
           }
         },
         "column_97YTrG": {
           "type": "column",
           "settings": {
+            "image_asset": "",
             "image_width": 420
           }
         }
@@ -371,7 +389,7 @@
         "heading_size": "h1",
         "heading_level": "h2",
         "heading_line": "simple",
-        "line_color": "#1566E0",
+        "line_color": "#1566e0",
         "heading_animation": "none",
         "text": "Use this space to provide context for the images, helping visitors understand the purpose of each featured category or product.",
         "enable_subscribe": false,

@@ -140,6 +140,7 @@
           "type": "feature",
           "settings": {
             "icon_name": "solar_graph-down-new-outline.svg",
+            "number": "",
             "heading": "Asignación",
             "description": "Los dispositivos se registran y se asignan al MDM desde el portal corporativo (idealmente vía Apple Business Manager)."
           }
@@ -148,6 +149,7 @@
           "type": "feature",
           "settings": {
             "icon_name": "solar_clock-circle-outline.svg",
+            "number": "",
             "heading": "Primer encendido",
             "description": "El usuario enciende el equipo y comienza una configuración simplificada."
           }
@@ -155,7 +157,8 @@
         "feature_cJUXTK": {
           "type": "feature",
           "settings": {
-            "icon_name": "solar_chart-outline.svg",
+            "icon_name": "solar_clock-circle-outline.svg",
+            "number": "",
             "heading": "Enrolamiento automático",
             "description": "El dispositivo se enrola en el MDM y \nrecibe políticas, cuentas y ajustes."
           }
@@ -163,7 +166,8 @@
         "feature_b7qhRt": {
           "type": "feature",
           "settings": {
-            "icon_name": "solar_shield-check-outline.svg",
+            "icon_name": "solar_clock-circle-outline.svg",
+            "number": "",
             "heading": "Listo para trabajar",
             "description": "Apps, seguridad y configuración quedan aplicadas sin intervención de TI.\n Cero preparación manual.  Cero filas de equipos en soporte."
           }
@@ -180,6 +184,7 @@
         "color_scheme": "light",
         "layout": "image_left",
         "image": "shopify://shop_images/Frame_59_2.png",
+        "image_asset": "",
         "subheading": "cómo funciona",
         "heading": "¿Cómo funciona Zero Touch?",
         "description": "<p>Asigna los dispositivos a tu MDM y define tu estándar. Al primer encendido, el equipo se enrola solo y recibe automáticamente políticas, apps y configuraciones. Todo queda listo para el usuario, con control total para TI.</p>",
@@ -196,6 +201,7 @@
           "type": "card",
           "settings": {
             "icon_name": "",
+            "icon_asset": "",
             "heading_variant": "default",
             "card_label": "01",
             "card_large_text": "",
@@ -208,6 +214,7 @@
           "type": "card",
           "settings": {
             "icon_name": "",
+            "icon_asset": "",
             "heading_variant": "default",
             "card_label": "02",
             "card_large_text": "",
@@ -220,6 +227,7 @@
           "type": "card",
           "settings": {
             "icon_name": "",
+            "icon_asset": "",
             "heading_variant": "default",
             "card_label": "03",
             "card_large_text": "",
@@ -232,6 +240,7 @@
           "type": "card",
           "settings": {
             "icon_name": "",
+            "icon_asset": "",
             "heading_variant": "default",
             "card_label": "04",
             "card_large_text": "",
@@ -252,6 +261,7 @@
         "columns": "auto",
         "header_alignment": "center",
         "light_mode": false,
+        "show_card_description": true,
         "subheading": "cómo funciona",
         "heading": "<p>Un solo panel para toda tus equipos Apple</p>",
         "description": "<p>Desde un único dashboard puedes configurar, actualizar, monitorear y dar soporte a Mac, iPhone y iPad: <br/>redes Wi-Fi, correo, VPN, restricciones, cumplimiento y actualizaciones del sistema. <br/>Visibilidad total, control en tiempo real y operación sin intervención física.<br/><br/></p>"
