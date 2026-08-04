@@ -1983,7 +1983,7 @@ details > * {
   letter-spacing: var(--font-subtitle-letter-spacing);
   text-transform: var(--font-subtitle-text-transform);
   color: rgba(var(--color-foreground-secondary));
-  font-size: calc(var(--font-subtitle-scale) * 1rem - 0.1rem);
+  font-size: 14px;
 }
 @media only screen and (min-width: 1360px) {
   .subtitle {
@@ -2007,7 +2007,7 @@ details > * {
   font-family: var(--font-subtitle-secondary-family);
   font-weight: var(--font-subtitle-secondary-weight);
   font-style: var(--font-subtitle-secondary-style);
-  font-size: calc(var(--font-subtitle-secondary-scale) * 1rem - 0.1rem);
+  font-size: 14px;
   letter-spacing: var(--font-subtitle-secondary-letter-spacing);
   text-transform: var(--font-subtitle-secondary-text-transform);
   color: rgba(var(--color-foreground-title));
