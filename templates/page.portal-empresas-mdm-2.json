@@ -179,7 +179,18 @@
         "color_scheme": "background-1",
         "subheading": "BENEFICIOS CLAVE PARA EMPRESAS",
         "heading": "¿Qué significa “Seguridad con MDM”?",
-        "description": "<p>Sin un portal, cada alta, cambio o solicitud termina en correo, planilla o ticket manual.</p><p>El portal ordena la operación con flujos claros, aprobaciones, visibilidad y tiempos de respuesta más cortos, manteniendo el control y la seguridad donde corresponde.</p>"
+        "description": "<p>Sin un portal, cada alta, cambio o solicitud termina en correo, planilla o ticket manual.</p><p>El portal ordena la operación con flujos claros, aprobaciones, visibilidad y tiempos de respuesta más cortos, manteniendo el control y la seguridad donde corresponde.</p>",
+        "content_alignment": "center",
+        "button_label_1": "",
+        "button_link_1": "",
+        "button_style_1": "primary",
+        "button_label_2": "",
+        "button_link_2": "",
+        "button_style_2": "tertiary",
+        "padding_top": "l",
+        "padding_bottom": "l",
+        "margin_top": "no-indent",
+        "margin_bottom": "no-indent"
       }
     },
     "vertical_slideshow_portal": {
@@ -190,9 +201,13 @@
           "settings": {
             "label": "Dashboard",
             "details": "<ul><li>Indicadores de flota</li><li>Alertas</li><li>Accesos rápidos</li></ul>",
-            "pill_1_text": "Indicadores de flota",
-            "pill_2_text": "Alertas",
-            "pill_3_text": "Accesos rápidos"
+            "image": "shopify://shop_images/Dashboard.png",
+            "image_asset": "",
+            "pill_1_text": "",
+            "pill_2_text": "",
+            "pill_3_text": "",
+            "pill_4_text": "",
+            "pill_5_text": ""
           }
         },
         "slide_2": {
@@ -200,10 +215,13 @@
           "settings": {
             "label": "Dispositivos",
             "details": "<ul><li>Búsqueda avanzada</li><li>Etiquetas</li><li>Asignación</li><li>Estado y acciones permitidas</li></ul>",
-            "pill_1_text": "Búsqueda avanzada",
-            "pill_2_text": "Estado y acciones permitidas",
-            "pill_3_text": "Asignación",
-            "pill_4_text": "Etiquetas"
+            "image": "shopify://shop_images/Dispositivos.png",
+            "image_asset": "",
+            "pill_1_text": "",
+            "pill_2_text": "",
+            "pill_3_text": "",
+            "pill_4_text": "",
+            "pill_5_text": ""
           }
         },
         "slide_3": {
@@ -211,10 +229,13 @@
           "settings": {
             "label": "Aplicaciones",
             "details": "<ul><li>Catálogo</li><li>Solicitudes</li><li>Aprobaciones</li><li>Despliegue y control</li></ul>",
-            "pill_1_text": "Catálogo",
-            "pill_2_text": "Despliegue y control",
-            "pill_3_text": "Solicitudes",
-            "pill_4_text": "Aprobaciones"
+            "image": "shopify://shop_images/Aplicaciones.png",
+            "image_asset": "",
+            "pill_1_text": "",
+            "pill_2_text": "",
+            "pill_3_text": "",
+            "pill_4_text": "",
+            "pill_5_text": ""
           }
         },
         "slide_4": {
@@ -222,11 +243,13 @@
           "settings": {
             "label": "Soporte/Reporte",
             "details": "<ul><li>Tickets</li><li>Adjuntos</li><li>SLA</li><li>Historial por dispositivo</li><li>Inventario, cumplimiento, adopción, incidentes y actividad</li></ul>",
-            "pill_1_text": "Tickets",
-            "pill_2_text": "Adjuntos",
-            "pill_3_text": "Inventario y cumplimiento",
-            "pill_4_text": "Historial por dispositivo",
-            "pill_5_text": "Incidentes y actividad"
+            "image": "shopify://shop_images/Reporte.png",
+            "image_asset": "",
+            "pill_1_text": "",
+            "pill_2_text": "",
+            "pill_3_text": "",
+            "pill_4_text": "",
+            "pill_5_text": ""
           }
         }
       },
@@ -238,8 +261,9 @@
       ],
       "settings": {
         "color_scheme": "scheme-39e5d4a7-e422-4a30-b12c-b2a059c9acee",
-        "subheading": "como funciona ",
+        "subheading": "como funciona",
         "heading": "<p>Un portal pensado para operación real</p>",
+        "force_light_mode": false,
         "description": "<p>Todo ordenado por módulos, con permisos por rol.</p>",
         "padding_top": "l",
         "padding_bottom": "l",
@@ -317,8 +341,6 @@
     },
     "animated_image_collage_portal": {
       "type": "animated-image-collage",
-      "blocks": {},
-      "block_order": [],
       "name": "t:sections.animated-image-collage.name",
       "settings": {
         "section_type": "background",
