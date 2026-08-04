@@ -60,6 +60,10 @@
   padding: 6.25rem 3.125rem;
 }
 
+.icon-cards-section__container h2 p {
+  margin: 0;
+}
+
 /* Scoped replica for node 1:4552 on /pages/seguridad-mdm */
 [id*="icon_cards_casos_reales"] .icon-cards-section {
   background: #060911;
@@ -204,6 +208,19 @@
 
 [id*="icon_cards_23872"] .icon-cards-section__description {
   max-width: 59.2rem;
+}
+
+/* Scoped replica for node 1:5136 on /pages/managed-services */
+[id*="icon_cards_AfcHEg"] .icon-cards-section__card-icon,
+[id*="icon_cards_AfcHEg"] .icon-cards-section__card-icon img {
+  width: 38px;
+  height: 38px;
+}
+
+[id*="icon_cards_AfcHEg"] .icon-cards-section__card-icon {
+  background: transparent;
+  border: 0;
+  padding: 0;
 }
 
 /* Scoped replica for node 1:6793 on /pages/iphone-empresas-dep */
@@ -511,14 +528,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 3rem;
-  height: 3rem;
   flex-shrink: 0;
 }
 
 .icon-cards-section__card-icon img {
-  width: 48px;
-  height: 48px;
+  width: 35px;
+  height: 35px;
   display: block;
 }
 

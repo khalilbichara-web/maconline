@@ -139,8 +139,8 @@
         "card_zRp4D7": {
           "type": "card",
           "settings": {
-            "icon_name": "solar_clock-circle-outline.svg",
-            "icon_asset": "",
+            "icon_name": "",
+              "icon_asset": "managed-services-icon-1.svg",
             "heading_variant": "default",
             "card_label": "",
             "card_large_text": "",
@@ -152,8 +152,8 @@
         "card_jAbh3D": {
           "type": "card",
           "settings": {
-            "icon_name": "solar_clock-circle-outline.svg",
-            "icon_asset": "",
+            "icon_name": "",
+              "icon_asset": "managed-services-icon-2.svg",
             "heading_variant": "default",
             "card_label": "",
             "card_large_text": "",
@@ -165,8 +165,8 @@
         "card_N4k6Fp": {
           "type": "card",
           "settings": {
-            "icon_name": "solar_clock-circle-outline.svg",
-            "icon_asset": "",
+            "icon_name": "",
+              "icon_asset": "managed-services-icon-3.svg",
             "heading_variant": "default",
             "card_label": "",
             "card_large_text": "",
@@ -178,8 +178,8 @@
         "card_fehaFE": {
           "type": "card",
           "settings": {
-            "icon_name": "solar_clock-circle-outline.svg",
-            "icon_asset": "",
+            "icon_name": "",
+              "icon_asset": "managed-services-icon-4.svg",
             "heading_variant": "default",
             "card_label": "",
             "card_large_text": "",
@@ -265,6 +265,7 @@
         "subheading": "",
         "heading": "<p>Cómo partimos (sin interrumpir tu operación)</p>",
         "description": "<p>Ejemplos concretos de cómo el MDM te ahorra tiempo y te sube el estándar de seguridad, <br/>sin depender de configuraciones manuales ni del usuario.<br/><br/></p>",
+        "header_alignment": "left",
         "color_scheme": "light",
         "abm_slider_mode": true
       }

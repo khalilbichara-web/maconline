@@ -8,7 +8,7 @@
 <div class="tab-slider tab-slider--{{ scheme }}{% if abm_mode %} tab-slider--abm{% endif %}" style="--tab-slider-slide-bg: url('{{ slide_bg_asset | asset_url }}');">
 
   {%- if section.settings.subheading != blank or section.settings.heading != blank or section.settings.description != blank -%}
-    <div class="tab-slider__section-header">
+    <div class="tab-slider__section-header tab-slider__section-header--{{ section.settings.header_alignment | default: 'center' }}">
       {%- if section.settings.subheading != blank -%}
         <div class="tab-slider__subheading-wrapper">
           <div class="tab-slider__subheading-dot"></div>
@@ -66,6 +66,10 @@
 
             {% if block.settings.heading != blank %}
               <h2 class="tab-slider__heading">{{ block.settings.heading }}</h2>
+            {% endif %}
+
+            {% if block.settings.left_text != blank %}
+              <p class="tab-slider__left-text">{{ block.settings.left_text }}</p>
             {% endif %}
 
             {% if block.settings.description != blank %}
@@ -182,6 +186,16 @@
       "default": "<p>Desde el diagnóstico hasta el soporte, implementamos soluciones Apple pensadas para impulsar la productividad, la seguridad y el crecimiento de tu empresa.</p>"
     },
     {
+      "type": "select",
+      "id": "header_alignment",
+      "label": "Alineación del encabezado",
+      "options": [
+        { "value": "center", "label": "Centrado" },
+        { "value": "left", "label": "Izquierda" }
+      ],
+      "default": "center"
+    },
+    {
       "type": "header",
       "content": "Estilo"
     },
@@ -232,6 +246,11 @@
           "id": "heading",
           "label": "Título",
           "default": "Mac para trabajar sin límites"
+        },
+        {
+          "type": "textarea",
+          "id": "left_text",
+          "label": "Texto izquierdo"
         },
         {
           "type": "textarea",

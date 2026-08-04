@@ -69,6 +69,10 @@
   font-size: clamp(2rem, 3vw, 2.9rem);
   line-height: 1.05;
   color: #ffffff;
+  background: linear-gradient(63.9deg, #ffffff 21.6%, #07abf8 62.3%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .portal-admin-scope__heading strong,

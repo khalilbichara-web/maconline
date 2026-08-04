@@ -202,6 +202,13 @@
   color: #fff;
 }
 
+.split-features--dark .split-features__heading--portal-empresas-mdm {
+  background: linear-gradient(63.9deg, #ffffff 21.6%, #07abf8 62.3%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
 /* ── Description ──────────────────────────────────────── */
 .split-features__description p {
   margin: 0;

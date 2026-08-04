@@ -76,7 +76,7 @@
       {% endif %}
 
       {% if section.settings.heading != blank %}
-        <h2 class="split-features__heading">{{ section.settings.heading }}</h2>
+        <h2 class="split-features__heading{% if template.suffix == 'portal-empresas-mdm' %} split-features__heading--portal-empresas-mdm{% endif %}">{{ section.settings.heading }}</h2>
       {% endif %}
 
       {% if section.settings.description != blank %}
