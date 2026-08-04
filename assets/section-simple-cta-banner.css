@@ -1,11 +1,12 @@
 .simple-cta-banner {
-  background: #050914;
+  min-height: 100vh;
 }
-
 .simple-cta-banner__container {
   max-width: 1440px;
-  margin: 0 auto;
   padding: 0 3.125rem;
+  display: grid;
+  margin: auto;
+  width: 100%;
 }
 
 .simple-cta-banner__panel {

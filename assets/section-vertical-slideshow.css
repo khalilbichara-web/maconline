@@ -1,6 +1,6 @@
 .vertical-slideshow {
   position: relative;
-  overflow: hidden;
+  padding: 2rem 0;
 }
 
 .vertical-slideshow__container {
@@ -140,7 +140,6 @@
 .vertical-slideshow__detail {
   max-height: 0;
   opacity: 0;
-  overflow: hidden;
   transition: max-height 0.25s ease, opacity 0.2s ease;
   margin-left: 4.1rem;
 }
@@ -178,7 +177,7 @@
   position: absolute;
   width: 74rem;
   height: 74rem;
-  right: -19rem;
+  right: 0;
   top: -20rem;
   border-radius: 50%;
   background: repeating-radial-gradient(
@@ -208,7 +207,6 @@
   position: absolute;
   right: 12%;
   bottom: 12%;
-  width: min(58%, 42rem);
 }
 
 .vertical-slideshow__image {
@@ -218,23 +216,7 @@
   object-fit: contain;
 }
 
-.vertical-slideshow__image-wrap--2 {
-  width: min(44%, 32rem);
-  right: 17%;
-  bottom: 16%;
-}
 
-.vertical-slideshow__image-wrap--3 {
-  width: min(33%, 19.5rem);
-  right: 20%;
-  bottom: 19%;
-}
-
-.vertical-slideshow__image-wrap--4 {
-  width: min(56%, 41rem);
-  right: 12%;
-  bottom: 14%;
-}
 
 .vertical-slideshow__pills {
   position: absolute;
@@ -380,7 +362,6 @@
 .vertical-slideshow.vertical-slideshow--force-light .vertical-slideshow__visual {
   min-height: 32rem;
   border-radius: 2.5rem;
-  overflow: hidden;
   background: #05070f;
 }
 
@@ -424,27 +405,14 @@
   }
 
   .vertical-slideshow__image-wrap {
-    right: 8%;
-    bottom: 11%;
-    width: min(58%, 28rem);
+    right: 1%;
+    bottom: 0;
+    width: 75%;
   }
 
-  .vertical-slideshow__image-wrap--2,
-  .vertical-slideshow__image-wrap--3 {
-    width: min(42%, 19rem);
-    right: 13%;
-    bottom: 15%;
-  }
-
-  .vertical-slideshow__image-wrap--4 {
-    width: min(60%, 29rem);
-    right: 9%;
-    bottom: 12%;
-  }
 
   .vertical-slideshow__pill {
     max-width: 44vw;
-    overflow: hidden;
     text-overflow: ellipsis;
   }
 }
