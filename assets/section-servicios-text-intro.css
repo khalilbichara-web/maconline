@@ -1,0 +1,99 @@
+.servicios-text-intro {
+  color: rgb(var(--color-foreground));
+}
+
+.servicios-text-intro__container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 3.125rem;
+}
+
+.servicios-text-intro__inner {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  align-items: center;
+  text-align: center;
+}
+
+.servicios-text-intro--left .servicios-text-intro__inner {
+  align-items: flex-start;
+  text-align: left;
+}
+
+.servicios-text-intro__subheading-wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+
+.servicios-text-intro__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: radial-gradient(circle, #07abf8, #1566e0);
+  flex-shrink: 0;
+}
+
+.servicios-text-intro__subheading {
+  margin: 0;
+  color: rgba(var(--color-foreground), 0.96);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 0.72rem;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.servicios-text-intro__heading {
+  margin: 0;
+  max-width: 56rem;
+  color: rgb(var(--color-foreground));
+  font-size: clamp(2.35rem, 4.9vw, 4.2rem);
+  line-height: 1.04;
+  letter-spacing: -0.02em;
+  font-weight: 620;
+}
+
+.servicios-text-intro__heading span {
+  background: linear-gradient(63.9deg, #ffffff 21.6%, #07abf8 62.3%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.servicios-text-intro__description {
+  max-width: 56rem;
+}
+
+.servicios-text-intro__description p {
+  margin: 0;
+  color: rgba(var(--color-foreground), 0.9);
+  font-size: clamp(1.02rem, 1.2vw, 1.52rem);
+  line-height: 1.28;
+}
+
+@media screen and (max-width: 989px) {
+  .servicios-text-intro__container {
+    padding: 0 1.25rem;
+  }
+
+  .servicios-text-intro__inner {
+    gap: 0.8rem;
+  }
+
+  .servicios-text-intro__subheading {
+    font-size: 0.68rem;
+    letter-spacing: 0.06em;
+  }
+
+  .servicios-text-intro__heading {
+    font-size: clamp(1.95rem, 7vw, 2.6rem);
+    line-height: 1.08;
+  }
+
+  .servicios-text-intro__description p {
+    font-size: 0.95rem;
+    line-height: 1.32;
+  }
+}

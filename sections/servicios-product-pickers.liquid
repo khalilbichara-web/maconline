@@ -1,0 +1,257 @@
+{{ 'component-price.css' | asset_url | stylesheet_tag }}
+{{ 'section-servicios-product-pickers.css' | asset_url | stylesheet_tag }}
+
+{%- liquid
+  assign cards = section.blocks | where: 'type', 'product_card'
+-%}
+
+<section class="servicios-product-pickers section-{{ section.id }}-padding">
+  <div class="servicios-product-pickers__container">
+    <div class="servicios-product-pickers__header">
+      {% if section.settings.subheading != blank %}
+        <div class="servicios-product-pickers__subheading-wrap">
+          <span class="servicios-product-pickers__dot" aria-hidden="true"></span>
+          <p class="servicios-product-pickers__subheading">{{ section.settings.subheading }}</p>
+        </div>
+      {% endif %}
+
+      {% if section.settings.heading != blank %}
+        <h2 class="servicios-product-pickers__heading">{{ section.settings.heading }}</h2>
+      {% endif %}
+
+      {% if section.settings.description != blank %}
+        <p class="servicios-product-pickers__description">{{ section.settings.description }}</p>
+      {% endif %}
+    </div>
+
+    {% if section.settings.button_label_1 != blank or section.settings.button_label_2 != blank %}
+      <div class="servicios-product-pickers__actions">
+        {% if section.settings.button_label_1 != blank %}
+          {% render 'button',
+            link: section.settings.button_link_1,
+            label: section.settings.button_label_1,
+            style: 'primary',
+            class: 'servicios-product-pickers__button'
+          %}
+        {% endif %}
+
+        {% if section.settings.button_label_2 != blank %}
+          {% render 'button',
+            link: section.settings.button_link_2,
+            label: section.settings.button_label_2,
+            style: 'tertiary',
+            class: 'servicios-product-pickers servicios-product-pickers__button'
+          %}
+        {% endif %}
+      </div>
+    {% endif %}
+
+    {% if cards.size > 0 %}
+      <div class="servicios-product-pickers__grid">
+        {% for block in cards %}
+          {%- liquid
+            assign card_product = block.settings.product
+            assign card_title = block.settings.title
+            assign card_subtitle = block.settings.subtitle
+          -%}
+
+          <article class="servicios-product-pickers__card" {{ block.shopify_attributes }}>
+            <div class="servicios-product-pickers__media">
+              {% if card_product != blank and card_product.featured_media != blank %}
+                <a href="{{ card_product.url }}" class="servicios-product-pickers__media-link" aria-label="{{ card_title | default: card_product.title | escape }}">
+                  {{
+                    card_product.featured_media
+                    | image_url: width: 1000
+                    | image_tag:
+                      class: 'servicios-product-pickers__image',
+                      loading: 'lazy',
+                      widths: '320, 480, 640, 1000',
+                      sizes: '(min-width: 1200px) 22vw, (min-width: 750px) 48vw, 100vw',
+                      alt: card_product.title
+                  }}
+                </a>
+              {% else %}
+                <div class="servicios-product-pickers__placeholder" aria-hidden="true">
+                  {{ 'product-1' | placeholder_svg_tag: 'servicios-product-pickers__image' }}
+                </div>
+              {% endif %}
+            </div>
+
+            <div class="servicios-product-pickers__content">
+              {% if card_title != blank %}
+                <h3 class="servicios-product-pickers__title">{{ card_title }}</h3>
+              {% elsif card_product != blank %}
+                <h3 class="servicios-product-pickers__title">{{ card_product.title }}</h3>
+              {% endif %}
+
+              {% if card_subtitle != blank %}
+                <p class="servicios-product-pickers__subtitle">{{ card_subtitle }}</p>
+              {% elsif card_product != blank and card_product.metafields.custom.modelo_corto != blank %}
+                <p class="servicios-product-pickers__subtitle">{{ card_product.metafields.custom.modelo_corto }}</p>
+              {% endif %}
+
+              <div class="servicios-product-pickers__price-wrap">
+                {% if section.settings.price_label != blank %}
+                  <span class="servicios-product-pickers__price-label">{{ section.settings.price_label }}</span>
+                {% endif %}
+
+                {% if card_product != blank %}
+                  <div class="servicios-product-pickers__price">
+                    {{ card_product.price | money }}
+                  </div>
+                {% elsif block.settings.price_fallback != blank %}
+                  <div class="servicios-product-pickers__price servicios-product-pickers__price--fallback">
+                    {{ block.settings.price_fallback }}
+                  </div>
+                {% endif %}
+              </div>
+            </div>
+          </article>
+        {% endfor %}
+      </div>
+    {% endif %}
+
+    {% if section.settings.note != blank %}
+      <p class="servicios-product-pickers__note">{{ section.settings.note }}</p>
+    {% endif %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Servicios product pickers",
+  "tag": "section",
+  "class": "section-servicios-product-pickers",
+  "settings": [
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subtítulo",
+      "default": "disponibles para empresas"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Título",
+      "default": "Entrega tus equipos. Obtén crédito inmediato."
+    },
+    {
+      "type": "text",
+      "id": "description",
+      "label": "Descripción",
+      "default": "Evaluamos tu flota completa iPhone, Mac, iPad y Apple Watch y aplicamos el crédito directamente a tu próxima compra. Sin trámites complicados, sin intermediarios."
+    },
+    {
+      "type": "text",
+      "id": "price_label",
+      "label": "Etiqueta de precio",
+      "default": "Desde"
+    },
+    {
+      "type": "text",
+      "id": "button_label_1",
+      "label": "Botón izquierdo",
+      "default": "Iniciar evaluación"
+    },
+    {
+      "type": "url",
+      "id": "button_link_1",
+      "label": "Enlace botón izquierdo"
+    },
+    {
+      "type": "text",
+      "id": "button_label_2",
+      "label": "Botón derecho",
+      "default": "¿Cómo funciona?"
+    },
+    {
+      "type": "url",
+      "id": "button_link_2",
+      "label": "Enlace botón derecho"
+    },
+    {
+      "type": "text",
+      "id": "note",
+      "label": "Nota inferior",
+      "default": "* Valores estimados sujetos a evaluación presencial. Cotización válida por 14 días. Precios en CLP."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "product_card",
+      "name": "Producto",
+      "limit": 4,
+      "settings": [
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Producto"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Título",
+          "default": "MacBook Pro"
+        },
+        {
+          "type": "text",
+          "id": "subtitle",
+          "label": "Subtítulo",
+          "default": "Apple Silicon"
+        },
+        {
+          "type": "text",
+          "id": "price_fallback",
+          "label": "Precio de respaldo",
+          "default": "$0"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Servicios product pickers",
+      "category": "Custom",
+      "settings": {
+        "subheading": "trade in empresas",
+        "heading": "Elige los equipos para cotizar",
+        "description": "Selecciona hasta 4 modelos para armar una valorización referencial de recambio para tu empresa.",
+        "price_label": "Desde",
+        "button_label_1": "Iniciar evaluación",
+        "button_label_2": "¿Cómo funciona?",
+        "note": "* Valores estimados sujetos a evaluación presencial. Cotización válida por 14 días. Precios en CLP."
+      },
+      "blocks": [
+        {
+          "type": "product_card",
+          "settings": {
+            "title": "MacBook Air",
+            "subtitle": "13 pulgadas"
+          }
+        },
+        {
+          "type": "product_card",
+          "settings": {
+            "title": "MacBook Pro",
+            "subtitle": "14 pulgadas"
+          }
+        },
+        {
+          "type": "product_card",
+          "settings": {
+            "title": "iMac",
+            "subtitle": "24 pulgadas"
+          }
+        },
+        {
+          "type": "product_card",
+          "settings": {
+            "title": "Mac mini",
+            "subtitle": "Apple Silicon"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

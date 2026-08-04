@@ -119,6 +119,61 @@
         "padding_bottom": "m"
       }
     },
+    "servicios_product_pickers_Ab3kZp": {
+      "type": "servicios-product-pickers",
+      "blocks": {
+        "product_card_eQ2Dmn": {
+          "type": "product_card",
+          "settings": {
+            "product": "",
+            "title": "MacBook Air",
+            "subtitle": "13 pulgadas",
+            "price_fallback": "$0"
+          }
+        },
+        "product_card_h3GxTv": {
+          "type": "product_card",
+          "settings": {
+            "product": "",
+            "title": "MacBook Pro",
+            "subtitle": "14 pulgadas",
+            "price_fallback": "$0"
+          }
+        },
+        "product_card_Nr8wKs": {
+          "type": "product_card",
+          "settings": {
+            "product": "",
+            "title": "iMac",
+            "subtitle": "24 pulgadas",
+            "price_fallback": "$0"
+          }
+        },
+        "product_card_qT9mRb": {
+          "type": "product_card",
+          "settings": {
+            "product": "",
+            "title": "Mac mini",
+            "subtitle": "Apple Silicon",
+            "price_fallback": "$0"
+          }
+        }
+      },
+      "block_order": [
+        "product_card_eQ2Dmn",
+        "product_card_h3GxTv",
+        "product_card_Nr8wKs",
+        "product_card_qT9mRb"
+      ],
+      "name": "Servicios Product Pickers",
+      "settings": {
+        "subheading": "trade in empresas",
+        "heading": "Elige los equipos para cotizar",
+        "description": "Selecciona hasta 4 modelos para armar una valorización referencial de recambio para tu empresa.",
+        "price_label": "Desde",
+        "note": "* Valores estimados sujetos a evaluación presencial. Cotización válida por 14 días. Precios en CLP."
+      }
+    },
     "icon_cards_PhdCr4": {
       "type": "icon-cards",
       "blocks": {
@@ -220,6 +275,297 @@
         "description": ""
       }
     },
+    "tradein_devices_table_m9Qk2N": {
+      "type": "tradein-devices-table",
+      "blocks": {
+        "tab_iphone_5rN3Lp": {
+          "type": "tab",
+          "settings": {
+            "tab_key": "iphone",
+            "tab_label": "iPhone",
+            "rows": "iPhone 16 Pro Max 256 GB|Estado A|$820.000\niPhone 16 Pro 128 GB|Estado A|$710.000\niPhone 15 Pro Max 256 GB|Estado A|$680.000\niPhone 15 Pro 128 GB|Estado A|$620.000\niPhone 15 128 GB|Estado B|$380.000\niPhone 14 Pro 128 GB|Estado B|$320.000\niPhone 14 128 GB|Estado B|$240.000\niPhone 13 128 GB|Estado B|$160.000"
+          }
+        },
+        "tab_mac_2fLg8M": {
+          "type": "tab",
+          "settings": {
+            "tab_key": "mac",
+            "tab_label": "Mac",
+            "rows": "MacBook Pro 16\" M3 Max|Estado A|$2.100.000\nMacBook Pro 14\" M3 Pro|Estado A|$1.480.000\nMacBook Air 15\" M3|Estado A|$940.000\nMacBook Air 13\" M2|Estado B|$640.000\niMac 24\" M3|Estado A|$960.000\nMac mini M2 Pro|Estado B|$540.000\nMac Studio M2 Max|Estado B|$1.200.000"
+          }
+        },
+        "tab_ipad_a7Nc4J": {
+          "type": "tab",
+          "settings": {
+            "tab_key": "ipad",
+            "tab_label": "iPad",
+            "rows": "iPad Pro 13\" M4 256 GB|Estado A|$820.000\niPad Pro 11\" M4 256 GB|Estado A|$680.000\niPad Air 13\" M2|Estado A|$590.000\niPad Air 11\" M2|Estado B|$420.000\niPad 10a gen 256 GB|Estado B|$250.000\niPad mini 7a gen|Estado B|$310.000"
+          }
+        },
+        "tab_watch_9hX2Rt": {
+          "type": "tab",
+          "settings": {
+            "tab_key": "watch",
+            "tab_label": "Apple Watch",
+            "rows": "Apple Watch Ultra 2|Estado A|$420.000\nApple Watch Series 10 45mm|Estado A|$210.000\nApple Watch Series 10 42mm|Estado B|$160.000\nApple Watch Series 9 45mm|Estado B|$140.000\nApple Watch SE (2a gen)|Estado B|$85.000"
+          }
+        }
+      },
+      "block_order": [
+        "tab_iphone_5rN3Lp",
+        "tab_mac_2fLg8M",
+        "tab_ipad_a7Nc4J",
+        "tab_watch_9hX2Rt"
+      ],
+      "name": "Trade In Devices Table",
+      "settings": {
+        "subheading": "catálogo trade in",
+        "heading": "Dispositivos aceptados",
+        "description": "Aceptamos la mayoría de los modelos Apple en dos condiciones: A (excelente estado) y B (buen estado con uso normal).",
+        "note": "* Valores de referencia en CLP. El crédito definitivo se determina tras evaluación en tienda o visita técnica. Válido por 14 días desde la cotización.",
+        "slides_link_label": "",
+        "slides_link_url": ""
+      }
+    },
+    "split_features_servicios_process": {
+      "type": "split-features",
+      "blocks": {
+        "feature_1": {
+          "type": "feature",
+          "settings": {
+            "icon_name": "",
+            "number": "01",
+            "heading": "Comparte tu inventario",
+            "description": "Nos envías el listado de equipos Apple de tu empresa y su estado general para una preevaluación rápida."
+          }
+        },
+        "feature_2": {
+          "type": "feature",
+          "settings": {
+            "icon_name": "",
+            "number": "02",
+            "heading": "Valorizamos por lote",
+            "description": "Definimos un crédito estimado por modelo y condición para que visualices el impacto real en tu próxima compra."
+          }
+        },
+        "feature_3": {
+          "type": "feature",
+          "settings": {
+            "icon_name": "",
+            "number": "03",
+            "heading": "Evaluación presencial",
+            "description": "Confirmamos estado final en tienda o en visita técnica y validamos el crédito definitivo con total transparencia."
+          }
+        },
+        "feature_4": {
+          "type": "feature",
+          "settings": {
+            "icon_name": "",
+            "number": "04",
+            "heading": "Renueva tu flota",
+            "description": "Aplicamos el crédito al instante y coordinamos la entrega de tus nuevos equipos para continuidad operacional."
+          }
+        }
+      },
+      "block_order": [
+        "feature_1",
+        "feature_2",
+        "feature_3",
+        "feature_4"
+      ],
+      "settings": {
+        "color_scheme": "light",
+        "layout": "image_left",
+        "image_asset": "iphone-empresas-process-split.png",
+        "subheading": "proceso trade in",
+        "heading": "Así funciona la renovación para empresas",
+        "description": "<p>Un flujo claro para convertir equipos actuales en crédito inmediato y modernizar tu operación sin fricciones.</p>",
+        "show_button": false,
+        "button_label": "",
+        "button_link": "",
+        "button_style": "primary"
+      }
+    },
+    "icon_cards_servicios_empresariales_7612": {
+      "type": "icon-cards",
+      "blocks": {
+        "card_1a": {
+          "type": "card",
+          "settings": {
+            "icon_name": "solar_shield-check-outline.svg",
+            "icon_asset": "",
+            "heading_variant": "default",
+            "card_label": "",
+            "card_large_text": "",
+            "card_subtitle": "",
+            "heading": "Apple Business Essentials",
+            "description": "Gestión de dispositivos (MDM), soporte técnico prioritario y almacenamiento iCloud unificado para todo tu equipo.",
+            "link_label": "Saber más",
+            "link_url": ""
+          }
+        },
+        "card_2a": {
+          "type": "card",
+          "settings": {
+            "icon_name": "",
+            "icon_asset": "solar_refresh-square-outline.svg",
+            "heading_variant": "default",
+            "card_label": "",
+            "card_large_text": "",
+            "card_subtitle": "",
+            "heading": "Configuración y Despliegue",
+            "description": "Configuramos cada dispositivo con perfiles corporativos, apps y cuentas listas para el primer encendido.",
+            "link_label": "Saber más",
+            "link_url": ""
+          }
+        },
+        "card_3a": {
+          "type": "card",
+          "settings": {
+            "icon_name": "solar_shield-minimalistic-outline.svg",
+            "icon_asset": "",
+            "heading_variant": "default",
+            "card_label": "",
+            "card_large_text": "",
+            "card_subtitle": "",
+            "heading": "Soporte y Garantía",
+            "description": "AppleCare+ para empresas con tiempo de respuesta garantizado y equipos de reemplazo mientras tu dispositivo es reparado.",
+            "link_label": "Saber más",
+            "link_url": ""
+          }
+        },
+        "card_4a": {
+          "type": "card",
+          "settings": {
+            "icon_name": "",
+            "icon_asset": "solar_file-text-outline.svg",
+            "heading_variant": "default",
+            "card_label": "",
+            "card_large_text": "",
+            "card_subtitle": "",
+            "heading": "Financiamiento Empresarial",
+            "description": "Planes de pago a 12, 24 o 36 meses con condiciones especiales para empresas. Incluye opción de leasing operacional.",
+            "link_label": "Consultar condiciones",
+            "link_url": ""
+          }
+        },
+        "card_5a": {
+          "type": "card",
+          "settings": {
+            "icon_name": "",
+            "icon_asset": "solar_clock-circle-outline.svg",
+            "heading_variant": "default",
+            "card_label": "",
+            "card_large_text": "",
+            "card_subtitle": "",
+            "heading": "Capacitación Apple",
+            "description": "Talleres presenciales y remotos para que tu equipo saque el máximo provecho de sus dispositivos Apple.",
+            "link_label": "Ver programa",
+            "link_url": ""
+          }
+        },
+        "card_6a": {
+          "type": "card",
+          "settings": {
+            "icon_name": "solar_chart-outline.svg",
+            "icon_asset": "",
+            "heading_variant": "default",
+            "card_label": "",
+            "card_large_text": "",
+            "card_subtitle": "",
+            "heading": "Gestión de Inventario",
+            "description": "Portal online para controlar, asignar y monitorear todos los dispositivos Apple de tu empresa en un solo lugar.",
+            "link_label": "Más información",
+            "link_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "card_1a",
+        "card_2a",
+        "card_3a",
+        "card_4a",
+        "card_5a",
+        "card_6a"
+      ],
+      "name": "Icon Cards — Servicios Empresariales",
+      "settings": {
+        "columns": "3",
+        "header_alignment": "center",
+        "light_mode": false,
+        "show_card_description": true,
+        "subheading": "servicios empresariales",
+        "heading": "<p>Todo lo que tu empresa necesita.</p>",
+        "description": "<p>Además del Trade In, ofrecemos un ecosistema completo de servicios Apple para empresas de todos los tamaños.</p>"
+      }
+    },
+    "coverage_slideshow_1aB77Q": {
+      "type": "coverage-slideshow",
+      "blocks": {
+        "slide_applecare_r1": {
+          "type": "slide",
+          "settings": {
+            "tab_label": "Apple Authorized Reseller",
+            "eyebrow": "Apple Authorized Reseller",
+            "title": "AppleCare+ para empresas",
+            "text": "Extiende la garantía original de Apple y agrega protección contra daños accidentales, soporte técnico prioritario y reemplazo express todo por una tarifa fija y predecible.",
+            "checklist": "Cobertura de hardware por 2 años extendidos\nDaños accidentales incluidos (caídas, líquidos)\nReemplazo de batería sin costo si baja del 80%\nSoporte técnico prioritario 24/7 por chat y teléfono\nReemplazo express: equipo nuevo mientras el tuyo se repara\nMás de 5.000 centros de servicio autorizados en el mundo\nCobertura para accesorios Apple originales incluidos",
+            "button_label": "Ver planes AppleCare+",
+            "button_link": "",
+            "button_style": "primary"
+          }
+        },
+        "slide_onsafe_r2": {
+          "type": "slide",
+          "settings": {
+            "tab_label": "Seguro de Robo",
+            "eyebrow": "Seguro de robo",
+            "title": "Onsafe\nSeguro Empresarial",
+            "text": "Cobertura específica contra robo con o sin violencia, pérdida y daño total de tus equipos Apple. Diseñado para flotas corporativas con gestión centralizada de siniestros.",
+            "checklist": "Cobertura ante robo con y sin violencia\nPérdida total del dispositivo incluida\nReposición del equipo en menos de 72 horas\nGestión online de siniestros sin papeleo\nPóliza corporativa: un contrato para toda la flota\nSin franquicia los primeros 12 meses del plan\nCompatible y complementario con AppleCare+",
+            "button_label": "Cotizar Onsafe",
+            "button_link": "",
+            "button_style": "primary"
+          }
+        }
+      },
+      "block_order": [
+        "slide_applecare_r1",
+        "slide_onsafe_r2"
+      ],
+      "name": "Coverage Slideshow",
+      "settings": {
+        "subheading": "coberturas",
+        "heading": "Protege tu inversión",
+        "description": "<p>Dos soluciones complementarias para que tu empresa esté cubierta ante cualquier imprevisto: daños, fallas técnicas y robo.</p>",
+        "padding_top": "l",
+        "padding_bottom": "l",
+        "margin_top": "no-indent",
+        "margin_bottom": "no-indent"
+      }
+    },
+    "simple_cta_banner_1a7725": {
+      "type": "simple-cta-banner",
+      "settings": {
+        "background_image": "",
+        "background_image_asset": "Group 34.png",
+        "image": "",
+        "image_asset": "Group 32.png",
+        "subheading": "asesoría empresarial",
+        "heading": "¿Listo para activar tu plan de renovación?",
+        "description": "<p>Conversemos tu caso y definamos la mejor combinación entre Trade In, coberturas y servicios para tu flota Apple.</p>",
+        "button_label_1": "Hablar con un especialista",
+        "button_link_1": "",
+        "button_style_1": "primary",
+        "button_label_2": "Ver más servicios",
+        "button_link_2": "",
+        "button_style_2": "tertiary",
+        "padding_top": "l",
+        "padding_bottom": "l",
+        "margin_top": "no-indent",
+        "margin_bottom": "no-indent"
+      }
+    },
     "vertical_slideshow_hYcJcN": {
       "type": "vertical-slideshow",
       "blocks": {
@@ -299,17 +645,136 @@
         "margin_bottom": "no-indent"
       }
     },
-    "icon_cards_6nzWzm": {
-      "type": "icon-cards",
-      "name": "Icon Cards — La Solución (3 col)",
+    "rich_text_servicios_tecnico_intro": {
+      "type": "servicios-text-intro",
       "settings": {
+        "color_scheme": "background-3",
+        "subheading": "SERVICIO TÉCNICO",
+        "heading": "Reparaciones certificadas <span>Apple.</span>",
+        "description": "<p>Centro de servicio técnico autorizado con técnicos certificados Apple.<br/>Piezas originales, tiempos garantizados y seguimiento en tiempo real de tu equipo.</p>",
+        "alignment": "center",
+        "margin_top": "no-indent",
+        "margin_bottom": "no-indent",
+        "padding_top": "l",
+        "padding_bottom": "m"
+      }
+    },
+    "icon_cards_servicio_tecnico_7771": {
+      "type": "icon-cards",
+      "blocks": {
+        "card_st_1": {
+          "type": "card",
+          "settings": {
+            "icon_name": "",
+            "icon_asset": "solar-shield-check-outline-fg.svg",
+            "heading_variant": "default",
+            "card_label": "",
+            "card_large_text": "",
+            "card_subtitle": "",
+            "heading": "Servicio Express con Retiro",
+            "description": "Coordina el retiro de tu equipo en tu empresa. Lo reparamos y lo devolvemos en tu oficina en el plazo acordado. Ideal para empresas que no pueden prescindir de sus equipos.",
+            "link_label": "Solicitar ahora",
+            "link_url": ""
+          }
+        },
+        "card_st_2": {
+          "type": "card",
+          "settings": {
+            "icon_name": "",
+            "icon_asset": "solar-settings-outline-fg.svg",
+            "heading_variant": "default",
+            "card_label": "",
+            "card_large_text": "",
+            "card_subtitle": "",
+            "heading": "Pantallas y Displays",
+            "description": "Cambio de pantalla para iPhone, iPad y Mac con vidrio original Apple. Piezas certificadas y garantía de reparación incluida.",
+            "link_label": "Consultar precio",
+            "link_url": ""
+          }
+        },
+        "card_st_3": {
+          "type": "card",
+          "settings": {
+            "icon_name": "",
+            "icon_asset": "solar-verified-check-outline-fg.svg",
+            "heading_variant": "default",
+            "card_label": "",
+            "card_large_text": "",
+            "card_subtitle": "",
+            "heading": "Baterías y Energía",
+            "description": "Reemplazo de batería para todos los modelos Apple. Si tienes AppleCare+, incluida sin costo cuando la capacidad baja del 80%.",
+            "link_label": "Consultar precio",
+            "link_url": ""
+          }
+        },
+        "card_st_4": {
+          "type": "card",
+          "settings": {
+            "icon_name": "",
+            "icon_asset": "solar-shield-check-outline-fg.svg",
+            "heading_variant": "default",
+            "card_label": "",
+            "card_large_text": "",
+            "card_subtitle": "",
+            "heading": "Diagnóstico y Reparación",
+            "description": "Diagnóstico gratuito de hardware y software para Mac, iPhone, iPad y Apple Watch. Presupuesto detallado antes de iniciar cualquier reparación.",
+            "link_label": "Agendar diagnóstico",
+            "link_url": ""
+          }
+        },
+        "card_st_5": {
+          "type": "card",
+          "settings": {
+            "icon_name": "",
+            "icon_asset": "solar-notebook-minimalistic-outline-fg.svg",
+            "heading_variant": "default",
+            "card_label": "",
+            "card_large_text": "",
+            "card_subtitle": "",
+            "heading": "Fallas de Software",
+            "description": "Restauración de sistema, migración de datos, eliminación de malware y configuración de macOS e iOS para equipos corporativos.",
+            "link_label": "Consultar precio",
+            "link_url": ""
+          }
+        },
+        "card_st_6": {
+          "type": "card",
+          "settings": {
+            "icon_name": "",
+            "icon_asset": "solar-box-outline-fg.svg",
+            "heading_variant": "default",
+            "card_label": "",
+            "card_large_text": "",
+            "card_subtitle": "",
+            "heading": "Daños por Líquidos",
+            "description": "Tratamiento especializado para equipos con daño por agua u otros líquidos. Recuperación de datos y evaluación sin costo previo.",
+            "link_label": "Consultar precio",
+            "link_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "card_st_1",
+        "card_st_2",
+        "card_st_3",
+        "card_st_4",
+        "card_st_5",
+        "card_st_6"
+      ],
+      "name": "Icon Cards — Servicio Técnico",
+      "settings": {
+        "overlay_top_left": "",
+        "overlay_top_right": "",
+        "overlay_bottom_left": "",
+        "overlay_bottom_right": "",
+        "overlay_image": "",
         "columns": "3",
         "header_alignment": "center",
         "light_mode": false,
-        "show_card_description": false,
-        "subheading": "servicio técnico",
-        "heading": "<p>Reparaciones certificadas Apple.<br/><br/></p>",
-        "description": "<p>Centro de servicio técnico autorizado con técnicos certificados Apple. Piezas originales, tiempos garantizados y seguimiento en tiempo real de tu equipo.<br/></p>"
+        "show_card_description": true,
+        "subheading": "",
+        "heading": "<p>Reparaciones disponibles</p>",
+        "description": ""
       }
     },
     "portal_challenges_TTxDqp": {
@@ -357,8 +822,15 @@
       "settings": {
         "color_scheme": "background-3",
         "subheading": "",
-        "heading": "Express con retiro en 24 horas y entrega onsite.",
+        "heading": "Express con retiro en 24 horas <span>y entrega onsite.</span>",
         "description": "<p>Sin un portal, cada alta, cambio o solicitud termina en correo, planilla o ticket manual.</p><p>No necesitas desplazarte. Coordinamos el retiro de tu equipo en tu empresa, realizamos el diagnóstico y la reparación, y lo devolvemos en tu oficina. Sin interrumpir tu operación.<br/></p>",
+        "content_alignment": "left",
+        "button_label_1": "Solicitar servicio express",
+        "button_link_1": "",
+        "button_style_1": "primary",
+        "button_label_2": "Consultar mi OT",
+        "button_link_2": "",
+        "button_style_2": "tertiary",
         "padding_top": "l",
         "padding_bottom": "l",
         "margin_top": "no-indent",
@@ -594,9 +1066,16 @@
     "main",
     "animated_image_collage_pMaBwE",
     "hero_wM7mKM",
+    "servicios_product_pickers_Ab3kZp",
     "icon_cards_PhdCr4",
+    "tradein_devices_table_m9Qk2N",
+    "split_features_servicios_process",
+    "icon_cards_servicios_empresariales_7612",
+    "coverage_slideshow_1aB77Q",
+    "simple_cta_banner_1a7725",
     "vertical_slideshow_hYcJcN",
-    "icon_cards_6nzWzm",
+    "rich_text_servicios_tecnico_intro",
+    "icon_cards_servicio_tecnico_7771",
     "portal_challenges_TTxDqp",
     "collapsible_content_3Urj9b",
     "animated_image_collage_nhGarD"

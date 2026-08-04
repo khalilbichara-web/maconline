@@ -5,6 +5,7 @@
   .portal-challenges {
     position: relative;
     overflow: hidden;
+    color: rgb(var(--color-foreground));
   }
 
   .portal-challenges__container {
@@ -38,15 +39,24 @@
 
   .portal-challenges__subheading {
     margin: 0;
-    color: #102333;
+    color: inherit;
     letter-spacing: 0.06em;
   }
 
   .portal-challenges__heading {
     margin: 0;
-    color: #102333;
-    font-size: clamp(2rem, 2.9vw, 4.6rem);
-    line-height: 1.1;
+    color: inherit;
+    font-size: clamp(2.05rem, 3.05vw, 3.65rem);
+    line-height: 1.08;
+    letter-spacing: -0.015em;
+    font-weight: 590;
+  }
+
+  .portal-challenges__heading span {
+    background: linear-gradient(63.9deg, #ffffff 21.6%, #07abf8 62.3%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
 
   .portal-challenges__description {
@@ -55,9 +65,18 @@
 
   .portal-challenges__description p {
     margin: 0;
-    color: #102333;
-    font-size: clamp(1.7rem, 1.45vw, 2.9rem);
-    line-height: 1.35;
+    color: rgba(var(--color-foreground), 0.88);
+    font-size: clamp(1rem, 1.06vw, 1.34rem);
+    line-height: 1.32;
+  }
+
+  .portal-challenges--align-left .portal-challenges__header {
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .portal-challenges--align-left .portal-challenges__description {
+    max-width: 72rem;
   }
 
   .portal-challenges__grid {
@@ -136,6 +155,14 @@
     line-height: 1.35;
   }
 
+  .portal-challenges__actions {
+    margin-top: 1.6rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    justify-content: flex-start;
+  }
+
   @media screen and (max-width: 989px) {
     .portal-challenges__container {
       padding: 3rem 1.25rem 3.5rem;
@@ -159,13 +186,23 @@
       font-size: 1.55rem;
     }
 
+    .portal-challenges__heading {
+      font-size: clamp(1.65rem, 7vw, 2.25rem);
+      line-height: 1.12;
+    }
+
     .portal-challenges__card-text {
       font-size: 1.1rem;
+    }
+
+    .portal-challenges__actions {
+      margin-top: 1.25rem;
+      gap: 0.6rem;
     }
   }
 {%- endstyle -%}
 
-<div class="portal-challenges color-{{ section.settings.color_scheme }} background section-{{ section.id }}-padding">
+<div class="portal-challenges portal-challenges--align-{{ section.settings.content_alignment }} color-{{ section.settings.color_scheme }} background section-{{ section.id }}-padding">
   <div class="portal-challenges__container section-{{ section.id }}-margin">
     <div class="portal-challenges__header">
       {% if section.settings.subheading != blank %}
@@ -207,6 +244,28 @@
         </article>
       {% endfor %}
     </div>
+
+    {% if section.settings.button_label_1 != blank or section.settings.button_label_2 != blank %}
+      <div class="portal-challenges__actions">
+        {% if section.settings.button_label_1 != blank %}
+          {% render 'button',
+            link: section.settings.button_link_1,
+            label: section.settings.button_label_1,
+            style: section.settings.button_style_1,
+            class: 'portal-challenges'
+          %}
+        {% endif %}
+
+        {% if section.settings.button_label_2 != blank %}
+          {% render 'button',
+            link: section.settings.button_link_2,
+            label: section.settings.button_label_2,
+            style: section.settings.button_style_2,
+            class: 'portal-challenges'
+          %}
+        {% endif %}
+      </div>
+    {% endif %}
   </div>
 </div>
 
@@ -239,6 +298,60 @@
       "id": "description",
       "label": "Description",
       "default": "<p>Sin un portal, cada alta, cambio o solicitud termina en correo, planilla o ticket manual.</p><p>El portal ordena la operacion con flujos claros, aprobaciones, visibilidad y tiempos de respuesta mas cortos, manteniendo el control y la seguridad donde corresponde.</p>"
+    },
+    {
+      "type": "select",
+      "id": "content_alignment",
+      "label": "Content alignment",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "text",
+      "id": "button_label_1",
+      "label": "Button 1 label"
+    },
+    {
+      "type": "url",
+      "id": "button_link_1",
+      "label": "Button 1 link"
+    },
+    {
+      "type": "select",
+      "id": "button_style_1",
+      "label": "Button 1 style",
+      "options": [
+        { "value": "primary", "label": "Primary" },
+        { "value": "secondary", "label": "Secondary" },
+        { "value": "tertiary", "label": "Tertiary" },
+        { "value": "simple", "label": "Simple" }
+      ],
+      "default": "primary"
+    },
+    {
+      "type": "text",
+      "id": "button_label_2",
+      "label": "Button 2 label"
+    },
+    {
+      "type": "url",
+      "id": "button_link_2",
+      "label": "Button 2 link"
+    },
+    {
+      "type": "select",
+      "id": "button_style_2",
+      "label": "Button 2 style",
+      "options": [
+        { "value": "primary", "label": "Primary" },
+        { "value": "secondary", "label": "Secondary" },
+        { "value": "tertiary", "label": "Tertiary" },
+        { "value": "simple", "label": "Simple" }
+      ],
+      "default": "tertiary"
     },
     {
       "type": "select",

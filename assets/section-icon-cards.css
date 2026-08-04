@@ -210,11 +210,84 @@
   max-width: 59.2rem;
 }
 
-[id*="icon_cards_23872"] .icon-cards-section__description p {
-  color: #ffffff;
+/* Scoped replica for node 1:6793 on /pages/iphone-empresas-dep */
+[id*="icon_cards_iphone_empresas_kpi_6793"] .icon-cards-section {
+  background: #040811;
+}
+
+[id*="icon_cards_iphone_empresas_kpi_6793"] .icon-cards-section__overlay {
+  display: none;
+}
+
+[id*="icon_cards_iphone_empresas_kpi_6793"] .icon-cards-section__container {
+  max-width: 1440px;
+  padding: 1.5rem 3.125rem 3.125rem;
+}
+
+[id*="icon_cards_iphone_empresas_kpi_6793"] .icon-cards-section__header {
+  display: none;
+}
+
+[id*="icon_cards_iphone_empresas_kpi_6793"] .icon-cards-section__grid {
+  gap: 1.25rem;
+}
+
+[id*="icon_cards_iphone_empresas_kpi_6793"] .icon-cards-section__card {
+  gap: 0.75rem;
+  padding: 1.25rem;
+  border: 1px solid rgba(42, 57, 97, 0.75);
+  border-radius: 0.625rem;
+  background: #0b0f1c;
+}
+
+[id*="icon_cards_iphone_empresas_kpi_6793"] .icon-cards-section__card--index-1 {
+  background: #092131;
+  border-color: #0f5f89;
+}
+
+[id*="icon_cards_iphone_empresas_kpi_6793"] .icon-cards-section__card:hover {
+  transform: none;
+  border-color: rgba(42, 57, 97, 0.75);
+}
+
+[id*="icon_cards_iphone_empresas_kpi_6793"] .icon-cards-section__card-top {
+  min-height: 1.625rem;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+[id*="icon_cards_iphone_empresas_kpi_6793"] .icon-cards-section__card-icon,
+[id*="icon_cards_iphone_empresas_kpi_6793"] .icon-cards-section__card-icon img {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+[id*="icon_cards_iphone_empresas_kpi_6793"] .icon-cards-section__card-content {
+  gap: 0.5rem;
+}
+
+[id*="icon_cards_iphone_empresas_kpi_6793"] .icon-cards-section__card-label {
+  display: none;
+}
+
+[id*="icon_cards_iphone_empresas_kpi_6793"] .icon-cards-section__card-heading {
   font-family: "SF Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  font-size: 1rem;
-  line-height: 1.25rem;
+  font-size: clamp(2.5rem, 4.1vw, 3.625rem);
+  font-weight: 700;
+  line-height: 1;
+  color: #11abf1;
+}
+
+[id*="icon_cards_iphone_empresas_kpi_6793"] .icon-cards-section.icon-cards-section--show-card-description .icon-cards-section__card-description {
+  display: block;
+}
+
+[id*="icon_cards_iphone_empresas_kpi_6793"] .icon-cards-section__card-description {
+  color: #f2f6fb;
+  font-size: clamp(1.25rem, 2.2vw, 2.25rem);
+  font-weight: 400;
+  line-height: 1.12;
+  letter-spacing: -0.01em;
 }
 
 [id*="icon_cards_23872"] .icon-cards-section__grid {
@@ -255,6 +328,26 @@
 }
 
 @media screen and (max-width: 989px) {
+  [id*="icon_cards_iphone_empresas_kpi_6793"] .icon-cards-section__container {
+    padding: 1.25rem 1.25rem 2.5rem;
+  }
+
+  [id*="icon_cards_iphone_empresas_kpi_6793"] .icon-cards-section__grid {
+    gap: 1rem;
+  }
+
+  [id*="icon_cards_iphone_empresas_kpi_6793"] .icon-cards-section__card {
+    min-height: 11.5rem;
+  }
+
+  [id*="icon_cards_iphone_empresas_kpi_6793"] .icon-cards-section__card-heading {
+    font-size: clamp(2.125rem, 10vw, 2.75rem);
+  }
+
+  [id*="icon_cards_iphone_empresas_kpi_6793"] .icon-cards-section__card-description {
+    font-size: clamp(1.05rem, 4.9vw, 1.5rem);
+  }
+
   [id*="icon_cards_23872"] .icon-cards-section__container {
     padding: 4rem 1.25rem;
   }
@@ -298,7 +391,6 @@
 .icon-cards-section--align-center .icon-cards-section__header {
   align-items: center;
   text-align: center;
-  margin-bottom: 7.625rem;
 }
 
 /* Left variant */
@@ -483,6 +575,27 @@
   color: rgba(255, 255, 255, 0.6);
 }
 
+.icon-cards-section__card-link {
+  margin-top: 0.35rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-family: "SF Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 1rem;
+  line-height: 1.2;
+  color: #07abf8;
+  text-decoration: none;
+}
+
+.icon-cards-section__card-link::after {
+  content: "\2197";
+  font-size: 0.95em;
+}
+
+.icon-cards-section__card-link:hover {
+  color: #63cdfc;
+}
+
 .icon-cards-section--light .icon-cards-section__card {
   border-color: #b7ddff;
   background: #ffffff;
@@ -500,6 +613,10 @@
 
 .icon-cards-section--light .icon-cards-section__card-description {
   color: #5f7280;
+}
+
+.icon-cards-section--light .icon-cards-section__card-link {
+  color: #007cb7;
 }
 
 /* ── Responsive ─────────────────────────────────────── */

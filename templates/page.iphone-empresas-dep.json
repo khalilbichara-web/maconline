@@ -61,6 +61,96 @@
         "margin_bottom": "no-indent"
       }
     },
+        "iphone_empresas_centered_cta_2nd": {
+      "type": "centered-image-cta",
+      "settings": {
+        "color_scheme": "scheme-39e5d4a7-e422-4a30-b12c-b2a059c9acee",
+        "full_width": false,
+        "image": "",
+        "image_asset": "iphone-empresas-centered-cta-default-1-6791.png",
+        "image_alt": "iPhone para empresas",
+        "image_width": 760,
+        "button_label": "Ver modelos disponibles",
+        "button_link": "#",
+        "button_style": "primary",
+        "padding_top": "m",
+        "padding_bottom": "m",
+        "margin_top": "no-indent",
+        "margin_bottom": "no-indent"
+      }
+    },
+    "icon_cards_iphone_empresas_kpi_6793": {
+      "type": "icon-cards",
+      "blocks": {
+        "card_1": {
+          "type": "card",
+          "settings": {
+            "icon_name": "",
+            "icon_asset": "apple-accounts-benefit-users-group.svg",
+            "heading_variant": "number_large",
+            "card_label": "+500",
+            "card_large_text": "+500",
+            "card_subtitle": "",
+            "heading": "+500",
+            "description": "Empresas confían en nosotros"
+          }
+        },
+        "card_2": {
+          "type": "card",
+          "settings": {
+            "icon_name": "",
+            "icon_asset": "solar_file-text-outline.svg",
+            "heading_variant": "number_large",
+            "card_label": "$0",
+            "card_large_text": "$0",
+            "card_subtitle": "",
+            "heading": "$0",
+            "description": "Costo de instalación"
+          }
+        },
+        "card_3": {
+          "type": "card",
+          "settings": {
+            "icon_name": "",
+            "icon_asset": "solar_lock-unlocked-outline.svg",
+            "heading_variant": "number_large",
+            "card_label": "100%",
+            "card_large_text": "100%",
+            "card_subtitle": "",
+            "heading": "100%",
+            "description": "Libre de planes de operador"
+          }
+        },
+        "card_4": {
+          "type": "card",
+          "settings": {
+            "icon_name": "",
+            "icon_asset": "solar_clock-circle-outline.svg",
+            "heading_variant": "number_large",
+            "card_label": "24h",
+            "card_large_text": "24h",
+            "card_subtitle": "",
+            "heading": "24h",
+            "description": "Entrega en Santiago"
+          }
+        }
+      },
+      "block_order": [
+        "card_1",
+        "card_2",
+        "card_3",
+        "card_4"
+      ],
+      "settings": {
+        "columns": "4",
+        "header_alignment": "left",
+        "light_mode": false,
+        "show_card_description": true,
+        "subheading": "",
+        "heading": "",
+        "description": ""
+      }
+    },
     "icon_cards_23872": {
       "type": "icon-cards",
       "blocks": {
@@ -658,6 +748,8 @@
   "order": [
     "main",
     "animated_image_collage_4UyP6W",
+    "iphone_empresas_centered_cta_2nd",
+    "icon_cards_iphone_empresas_kpi_6793",
     "icon_cards_23872",
     "split_features_aQmL29",
     "split_features_process",

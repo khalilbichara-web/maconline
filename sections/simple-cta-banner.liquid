@@ -1,0 +1,242 @@
+<link rel="stylesheet" href="{{ 'section-simple-cta-banner.css' | asset_url }}">
+
+{%- style -%}
+  {% render 'section-padding' %}
+  {% render 'section-margin' %}
+{%- endstyle -%}
+
+<section class="simple-cta-banner section-{{ section.id }}-padding section-{{ section.id }}-margin">
+  <div class="simple-cta-banner__container">
+    <div class="simple-cta-banner__panel">
+      <div class="simple-cta-banner__content">
+        {% if section.settings.subheading != blank %}
+          <div class="simple-cta-banner__subheading-wrap">
+            <span class="simple-cta-banner__dot" aria-hidden="true"></span>
+            <p class="simple-cta-banner__subheading">{{ section.settings.subheading }}</p>
+          </div>
+        {% endif %}
+
+        {% if section.settings.heading != blank %}
+          <h2 class="simple-cta-banner__heading">{{ section.settings.heading }}</h2>
+        {% endif %}
+
+        {% if section.settings.description != blank %}
+          <div class="simple-cta-banner__description">{{ section.settings.description }}</div>
+        {% endif %}
+
+        {% if section.settings.button_label_1 != blank or section.settings.button_label_2 != blank %}
+          <div class="simple-cta-banner__actions">
+            {% if section.settings.button_label_1 != blank %}
+              {% render 'button',
+                link: section.settings.button_link_1,
+                label: section.settings.button_label_1,
+                style: section.settings.button_style_1,
+                class: 'simple-cta-banner'
+              %}
+            {% endif %}
+
+            {% if section.settings.button_label_2 != blank %}
+              {% render 'button',
+                link: section.settings.button_link_2,
+                label: section.settings.button_label_2,
+                style: section.settings.button_style_2,
+                class: 'simple-cta-banner'
+              %}
+            {% endif %}
+          </div>
+        {% endif %}
+      </div>
+
+      <div class="simple-cta-banner__media">
+        {% if section.settings.background_image != blank %}
+          {{
+            section.settings.background_image
+            | image_url: width: 1600
+            | image_tag:
+              class: 'simple-cta-banner__bg-image',
+              loading: 'lazy',
+              widths: '550, 800, 1100, 1600',
+              sizes: '(min-width: 1200px) 42vw, 100vw'
+          }}
+        {% elsif section.settings.background_image_asset != blank %}
+          <img src="{{ section.settings.background_image_asset | asset_url }}" alt="" loading="lazy" class="simple-cta-banner__bg-image" width="1600" height="1200">
+        {% else %}
+          <div class="simple-cta-banner__bg-fallback"></div>
+        {% endif %}
+
+        <div class="simple-cta-banner__media-overlay" aria-hidden="true"></div>
+
+        {% if section.settings.image != blank %}
+          {{
+            section.settings.image
+            | image_url: width: 1600
+            | image_tag:
+              class: 'simple-cta-banner__fg-image',
+              loading: 'lazy',
+              widths: '550, 800, 1100, 1600',
+              sizes: '(min-width: 1200px) 42vw, 100vw'
+          }}
+        {% elsif section.settings.image_asset != blank %}
+          <img src="{{ section.settings.image_asset | asset_url }}" alt="" loading="lazy" class="simple-cta-banner__fg-image" width="1600" height="1200">
+        {% else %}
+          <div class="simple-cta-banner__fg-fallback"></div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Simple CTA Banner",
+  "tag": "section",
+  "class": "simple-cta-banner-section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "Background derecha"
+    },
+    {
+      "type": "text",
+      "id": "background_image_asset",
+      "label": "Background derecha desde assets"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Imagen derecha superpuesta"
+    },
+    {
+      "type": "text",
+      "id": "image_asset",
+      "label": "Imagen derecha superpuesta desde assets"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subtítulo",
+      "default": "asesoría empresarial"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Título",
+      "default": "Conversemos tu renovación"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Descripción",
+      "default": "<p>Te ayudamos a definir la mejor combinación de Trade In, cobertura y servicios para tu flota Apple.</p>"
+    },
+    {
+      "type": "text",
+      "id": "button_label_1",
+      "label": "Botón 1",
+      "default": "Hablar con un especialista"
+    },
+    {
+      "type": "url",
+      "id": "button_link_1",
+      "label": "URL botón 1"
+    },
+    {
+      "type": "select",
+      "id": "button_style_1",
+      "label": "Estilo botón 1",
+      "options": [
+        { "value": "primary", "label": "Primary" },
+        { "value": "secondary", "label": "Secondary" },
+        { "value": "tertiary", "label": "Tertiary" },
+        { "value": "simple", "label": "Simple" }
+      ],
+      "default": "primary"
+    },
+    {
+      "type": "text",
+      "id": "button_label_2",
+      "label": "Botón 2"
+    },
+    {
+      "type": "url",
+      "id": "button_link_2",
+      "label": "URL botón 2"
+    },
+    {
+      "type": "select",
+      "id": "button_style_2",
+      "label": "Estilo botón 2",
+      "options": [
+        { "value": "primary", "label": "Primary" },
+        { "value": "secondary", "label": "Secondary" },
+        { "value": "tertiary", "label": "Tertiary" },
+        { "value": "simple", "label": "Simple" }
+      ],
+      "default": "tertiary"
+    },
+    {
+      "type": "select",
+      "id": "padding_top",
+      "label": "Padding top",
+      "default": "l",
+      "options": [
+        { "value": "no-indent", "label": "None" },
+        { "value": "xs", "label": "XS" },
+        { "value": "s", "label": "S" },
+        { "value": "m", "label": "M" },
+        { "value": "l", "label": "L" },
+        { "value": "xl", "label": "XL" }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "padding_bottom",
+      "label": "Padding bottom",
+      "default": "l",
+      "options": [
+        { "value": "no-indent", "label": "None" },
+        { "value": "xs", "label": "XS" },
+        { "value": "s", "label": "S" },
+        { "value": "m", "label": "M" },
+        { "value": "l", "label": "L" },
+        { "value": "xl", "label": "XL" }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "margin_top",
+      "label": "Margin top",
+      "default": "no-indent",
+      "options": [
+        { "value": "no-indent", "label": "None" },
+        { "value": "xs", "label": "XS" },
+        { "value": "s", "label": "S" },
+        { "value": "m", "label": "M" },
+        { "value": "l", "label": "L" },
+        { "value": "xl", "label": "XL" }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "margin_bottom",
+      "label": "Margin bottom",
+      "default": "no-indent",
+      "options": [
+        { "value": "no-indent", "label": "None" },
+        { "value": "xs", "label": "XS" },
+        { "value": "s", "label": "S" },
+        { "value": "m", "label": "M" },
+        { "value": "l", "label": "L" },
+        { "value": "xl", "label": "XL" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Simple CTA Banner",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,179 @@
+{{ 'section-centered-image-cta.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  {% render 'section-padding' %}
+  {% render 'section-margin' %}
+{%- endstyle -%}
+
+<section class='centered-image-cta color-{{ section.settings.color_scheme }} background section-{{ section.id }}-padding section-{{ section.id }}-margin'>
+  <div class='centered-image-cta__container{% if section.settings.full_width %} centered-image-cta__container--full{% endif %}'>
+    <div class='centered-image-cta__media' style='--centered-image-width: {{ section.settings.image_width }}px;'>
+      {% if section.settings.image != blank %}
+        {{
+          section.settings.image
+          | image_url: width: 2000
+          | image_tag:
+            class: 'centered-image-cta__image',
+            loading: 'lazy',
+            widths: '550, 800, 1100, 1400, 2000',
+            sizes: '(min-width: 1200px) 1000px, (min-width: 750px) 85vw, 92vw'
+        }}
+      {% elsif section.settings.image_asset != blank %}
+        <img
+          src='{{ section.settings.image_asset | asset_url }}'
+          alt='{{ section.settings.image_alt | escape }}'
+          loading='lazy'
+          class='centered-image-cta__image'
+          width='2000'
+          height='1200'
+        >
+      {% else %}
+        <div class='centered-image-cta__placeholder' aria-hidden='true'></div>
+      {% endif %}
+
+      {% if section.settings.button_label != blank %}
+        <div class='centered-image-cta__cta'>
+          {% render 'button',
+            link: section.settings.button_link,
+            label: section.settings.button_label,
+            style: section.settings.button_style,
+            class: 'centered-image-cta'
+          %}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Centered Image CTA",
+  "tag": "section",
+  "class": "centered-image-cta-section",
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "default": "background-3",
+      "label": "Esquema de color"
+    },
+    {
+      "type": "checkbox",
+      "id": "full_width",
+      "label": "Ancho completo",
+      "default": false
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Imagen"
+    },
+    {
+      "type": "text",
+      "id": "image_asset",
+      "label": "Imagen desde assets",
+      "default": "iphone-empresas-centered-cta-default-1-6791.png"
+    },
+    {
+      "type": "text",
+      "id": "image_alt",
+      "label": "Texto alternativo",
+      "default": "Producto"
+    },
+    {
+      "type": "range",
+      "id": "image_width",
+      "label": "Ancho de imagen (px)",
+      "min": 280,
+      "max": 1400,
+      "step": 20,
+      "default": 760
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Texto CTA",
+      "default": "Solicitar cotización"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Enlace CTA"
+    },
+    {
+      "type": "select",
+      "id": "button_style",
+      "label": "Estilo CTA",
+      "options": [
+        { "value": "primary", "label": "Primary" },
+        { "value": "secondary", "label": "Secondary" },
+        { "value": "tertiary", "label": "Tertiary" },
+        { "value": "simple", "label": "Simple" }
+      ],
+      "default": "primary"
+    },
+    {
+      "type": "select",
+      "id": "padding_top",
+      "label": "Padding top",
+      "default": "m",
+      "options": [
+        { "value": "no-indent", "label": "None" },
+        { "value": "xs", "label": "XS" },
+        { "value": "s", "label": "S" },
+        { "value": "m", "label": "M" },
+        { "value": "l", "label": "L" },
+        { "value": "xl", "label": "XL" }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "padding_bottom",
+      "label": "Padding bottom",
+      "default": "m",
+      "options": [
+        { "value": "no-indent", "label": "None" },
+        { "value": "xs", "label": "XS" },
+        { "value": "s", "label": "S" },
+        { "value": "m", "label": "M" },
+        { "value": "l", "label": "L" },
+        { "value": "xl", "label": "XL" }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "margin_top",
+      "label": "Margin top",
+      "default": "no-indent",
+      "options": [
+        { "value": "no-indent", "label": "None" },
+        { "value": "xs", "label": "XS" },
+        { "value": "s", "label": "S" },
+        { "value": "m", "label": "M" },
+        { "value": "l", "label": "L" },
+        { "value": "xl", "label": "XL" }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "margin_bottom",
+      "label": "Margin bottom",
+      "default": "no-indent",
+      "options": [
+        { "value": "no-indent", "label": "None" },
+        { "value": "xs", "label": "XS" },
+        { "value": "s", "label": "S" },
+        { "value": "m", "label": "M" },
+        { "value": "l", "label": "L" },
+        { "value": "xl", "label": "XL" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Centered Image CTA",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}

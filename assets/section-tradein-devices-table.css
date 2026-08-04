@@ -1,0 +1,257 @@
+.tradein-devices-table {
+  background: radial-gradient(circle at 16% 22%, rgba(9, 55, 88, 0.32) 0, rgba(6, 16, 30, 0) 42%), #050914;
+}
+
+.tradein-devices-table__container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 5rem 3.125rem;
+}
+
+.tradein-devices-table__header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.7rem;
+  margin-bottom: 2.6rem;
+}
+
+.tradein-devices-table__subheading-wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+
+.tradein-devices-table__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: radial-gradient(circle, #07abf8, #1566e0);
+}
+
+.tradein-devices-table__subheading {
+  margin: 0;
+  font-family: "SF Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #d7e8f8;
+}
+
+.tradein-devices-table__heading {
+  margin: 0;
+  font-family: "Geist", system-ui, -apple-system, sans-serif;
+  font-size: clamp(2.2rem, 3vw, 3.2rem);
+  line-height: 1.08;
+  color: #ffffff;
+}
+
+.tradein-devices-table__description {
+  max-width: 980px;
+  margin: 0;
+  font-family: "SF Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 1.05rem;
+  line-height: 1.45;
+  color: rgba(235, 244, 253, 0.92);
+}
+
+.tradein-devices-table__panel-wrap {
+  border-radius: 1.6rem;
+  background: linear-gradient(180deg, #101a24 0%, #0f1721 100%);
+  border: 1px solid rgba(114, 148, 178, 0.2);
+  overflow: hidden;
+}
+
+.tradein-devices-table__panel {
+  display: none;
+}
+
+.tradein-devices-table__panel.is-active {
+  display: block;
+}
+
+.tradein-devices-table__table-head,
+.tradein-devices-table__row {
+  display: grid;
+  grid-template-columns: minmax(280px, 1fr) 220px 220px;
+  gap: 1rem;
+  align-items: center;
+  padding: 1rem 2.2rem;
+}
+
+.tradein-devices-table__table-head {
+  border-bottom: 1px solid rgba(118, 144, 167, 0.24);
+}
+
+.tradein-devices-table__row {
+  border-bottom: 1px solid rgba(118, 144, 167, 0.16);
+}
+
+.tradein-devices-table__row:last-child {
+  border-bottom: 0;
+}
+
+.tradein-devices-table__col {
+  font-family: "SF Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #e7f1fb;
+}
+
+.tradein-devices-table__table-head .tradein-devices-table__col {
+  font-size: 1.02rem;
+  color: rgba(215, 232, 248, 0.9);
+}
+
+.tradein-devices-table__table-body .tradein-devices-table__col {
+  font-size: 1.04rem;
+  line-height: 1.35;
+}
+
+.tradein-devices-table__col--credit {
+  text-align: right;
+}
+
+.tradein-devices-table__tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.15rem;
+}
+
+.tradein-devices-table__tab-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 999px;
+  border: 1px solid rgba(201, 218, 234, 0.42);
+  background: rgba(8, 15, 24, 0.62);
+  color: rgba(228, 238, 248, 0.66);
+  padding: 0.7rem 1.18rem;
+  font-family: "Geist", "SF Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1;
+  cursor: pointer;
+  transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease, transform 0.2s ease;
+}
+
+.tradein-devices-table__tab-btn:hover {
+  color: #ffffff;
+  border-color: rgba(227, 240, 252, 0.72);
+  background: rgba(11, 21, 33, 0.86);
+}
+
+.tradein-devices-table__tab-btn.is-active {
+  background: rgba(247, 251, 255, 0.16);
+  color: #ffffff;
+  border-color: rgba(228, 238, 248, 0.92);
+  transform: translateY(-1px);
+}
+
+.tradein-devices-table__tab-icon {
+  width: 1rem;
+  height: 1rem;
+  display: inline-flex;
+}
+
+.tradein-devices-table__tab-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.tradein-devices-table__note {
+  margin: 2rem auto 0;
+  max-width: 980px;
+  text-align: center;
+  font-family: "SF Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.45;
+  color: rgba(184, 201, 217, 0.78);
+}
+
+.tradein-devices-table__footer-link-wrap {
+  margin-top: 0.95rem;
+  text-align: center;
+}
+
+.tradein-devices-table__footer-link {
+  color: #74c8f7;
+  text-decoration: underline;
+  text-underline-offset: 0.2rem;
+  font-size: 0.95rem;
+}
+
+.tradein-devices-table__footer-link:hover {
+  color: #9ad7fc;
+}
+
+@media screen and (max-width: 1199px) {
+  .tradein-devices-table__table-head,
+  .tradein-devices-table__row {
+    grid-template-columns: minmax(220px, 1fr) 180px 170px;
+    padding: 0.92rem 1.25rem;
+  }
+}
+
+@media screen and (max-width: 989px) {
+  .tradein-devices-table__container {
+    padding: 3.5rem 1.25rem 3.75rem;
+  }
+
+  .tradein-devices-table__table-head,
+  .tradein-devices-table__row {
+    grid-template-columns: 1.45fr 0.9fr 0.9fr;
+    gap: 0.65rem;
+  }
+
+  .tradein-devices-table__table-head .tradein-devices-table__col,
+  .tradein-devices-table__table-body .tradein-devices-table__col {
+    font-size: 0.93rem;
+  }
+
+  .tradein-devices-table__tab-btn {
+    font-size: 0.95rem;
+    padding: 0.62rem 1rem;
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .tradein-devices-table__table-head {
+    display: none;
+  }
+
+  .tradein-devices-table__row {
+    grid-template-columns: 1fr;
+    padding: 0.95rem 1rem;
+    gap: 0.25rem;
+  }
+
+  .tradein-devices-table__col--condition::before,
+  .tradein-devices-table__col--credit::before {
+    font-size: 0.76rem;
+    color: rgba(187, 205, 221, 0.8);
+    margin-right: 0.35rem;
+  }
+
+  .tradein-devices-table__col--condition::before {
+    content: "Condición:";
+  }
+
+  .tradein-devices-table__col--credit::before {
+    content: "Crédito:";
+  }
+
+  .tradein-devices-table__col--credit {
+    text-align: left;
+  }
+
+  .tradein-devices-table__tabs {
+    gap: 0.5rem;
+  }
+
+  .tradein-devices-table__tab-btn {
+    font-size: 0.92rem;
+    padding: 0.52rem 0.84rem;
+  }
+}

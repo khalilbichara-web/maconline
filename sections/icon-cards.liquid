@@ -123,6 +123,12 @@
               {% if section.settings.show_card_description and block.settings.description != blank %}
                 <p class="icon-cards-section__card-description">{{ block.settings.description }}</p>
               {% endif %}
+
+              {% if block.settings.link_label != blank %}
+                <a href="{{ block.settings.link_url | default: '#' }}" class="icon-cards-section__card-link">
+                  {{ block.settings.link_label }}
+                </a>
+              {% endif %}
             </div>
 
           </div>
@@ -296,6 +302,16 @@
           "id": "description",
           "label": "Descripción",
           "default": "Descripción de la tarjeta."
+        },
+        {
+          "type": "text",
+          "id": "link_label",
+          "label": "Texto enlace"
+        },
+        {
+          "type": "url",
+          "id": "link_url",
+          "label": "URL enlace"
         }
       ]
     }

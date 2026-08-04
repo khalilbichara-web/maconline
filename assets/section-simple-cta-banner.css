@@ -1,0 +1,202 @@
+.simple-cta-banner {
+  background: #050914;
+}
+
+.simple-cta-banner__container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 3.125rem;
+}
+
+.simple-cta-banner__panel {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(420px, 44%);
+  align-items: stretch;
+  gap: 1.25rem;
+  border-radius: 1.65rem;
+  overflow: hidden;
+  min-height: 28rem;
+  background: #07121c;
+  border: 1px solid rgba(72, 122, 158, 0.3);
+}
+
+.simple-cta-banner__content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  text-align: left;
+  padding: 3rem 1.75rem 3rem 3rem;
+}
+
+.simple-cta-banner__subheading-wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+
+.simple-cta-banner__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: radial-gradient(circle, #07abf8, #1566e0);
+}
+
+.simple-cta-banner__subheading {
+  margin: 0;
+  color: #e6f2f8;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.86rem;
+}
+
+.simple-cta-banner__heading {
+  margin: 0.72rem 0 0;
+  color: #ffffff;
+  font-family: "Geist", system-ui, -apple-system, sans-serif;
+  font-size: clamp(2rem, 2.5vw, 3rem);
+  line-height: 1.06;
+  max-width: 30rem;
+}
+
+.simple-cta-banner__description {
+  margin-top: 0.95rem;
+  max-width: 30rem;
+  color: rgba(233, 242, 250, 0.94);
+}
+
+.simple-cta-banner__description p {
+  margin: 0;
+  font-size: clamp(1rem, 1.05vw, 1.22rem);
+  line-height: 1.32;
+  color: inherit;
+}
+
+.simple-cta-banner__actions {
+  margin-top: 1.55rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 0.72rem;
+}
+
+.simple-cta-banner__media {
+  position: relative;
+  min-height: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.simple-cta-banner__bg-image,
+.simple-cta-banner__bg-fallback,
+.simple-cta-banner__media-overlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.simple-cta-banner__bg-image {
+  width: min(94%, 38rem);
+  max-width: 94%;
+  height: auto;
+  z-index: 1;
+  object-fit: contain;
+  inset: auto;
+}
+
+.simple-cta-banner__bg-fallback {
+  background:
+    radial-gradient(circle at 62% 34%, rgba(22, 134, 214, 0.55) 0, rgba(5, 18, 29, 0) 52%),
+    linear-gradient(145deg, #0d2033 0%, #081420 70%);
+}
+
+.simple-cta-banner__media-overlay {
+  background: none;
+}
+
+.simple-cta-banner__fg-image,
+.simple-cta-banner__fg-fallback {
+  position: absolute;
+  max-width: 85%;
+  height: auto;
+  z-index: 3;
+}
+
+.simple-cta-banner__fg-fallback {
+  aspect-ratio: 1 / 1.15;
+  border-radius: 1.2rem 1.2rem 0 0;
+  background: linear-gradient(180deg, rgba(214, 232, 246, 0.16) 0%, rgba(214, 232, 246, 0.05) 100%);
+  border: 1px solid rgba(214, 232, 246, 0.24);
+}
+
+.simple-cta-banner .button {
+  min-height: 2.85rem;
+  padding: 0.7rem 1.45rem;
+}
+
+@media screen and (max-width: 1200px) {
+  .simple-cta-banner__panel {
+    grid-template-columns: minmax(0, 1fr) minmax(330px, 42%);
+    min-height: 25rem;
+  }
+
+  .simple-cta-banner__content {
+    padding: 2.4rem 1.4rem 2.4rem 2.25rem;
+  }
+}
+
+@media screen and (max-width: 989px) {
+  .simple-cta-banner__container {
+    padding: 0 1.25rem;
+  }
+
+  .simple-cta-banner__panel {
+    grid-template-columns: 1fr;
+    min-height: auto;
+    border-radius: 1.2rem;
+    gap: 0;
+  }
+
+  .simple-cta-banner__content {
+    padding: 1.75rem 1rem 1.25rem;
+  }
+
+  .simple-cta-banner__heading {
+    font-size: 2rem;
+    max-width: none;
+  }
+
+  .simple-cta-banner__description {
+    max-width: none;
+  }
+
+  .simple-cta-banner__description p {
+    font-size: 0.96rem;
+  }
+
+  .simple-cta-banner__media {
+    border-left: 0;
+    border-top: 1px solid rgba(92, 140, 173, 0.28);
+    min-height: 15.5rem;
+  }
+
+  .simple-cta-banner__fg-image,
+  .simple-cta-banner__fg-fallback {
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(84%, 19rem);
+  }
+
+
+  .simple-cta-banner__actions {
+    gap: 0.6rem;
+  }
+
+  .simple-cta-banner .button {
+    min-height: 2.65rem;
+    padding: 0.62rem 1.1rem;
+  }
+}

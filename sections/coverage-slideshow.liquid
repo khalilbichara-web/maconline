@@ -1,0 +1,280 @@
+{{ 'section-coverage-slideshow.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'coverage-slideshow.js' | asset_url }}" defer></script>
+
+{%- style -%}
+  {% render 'section-padding' %}
+  {% render 'section-margin' %}
+{%- endstyle -%}
+
+<section class="coverage-slideshow section-{{ section.id }}-padding section-{{ section.id }}-margin" data-coverage-slideshow>
+  <div class="coverage-slideshow__container">
+    <header class="coverage-slideshow__header">
+      {% if section.settings.subheading != blank %}
+        <div class="coverage-slideshow__subheading-wrap">
+          <span class="coverage-slideshow__dot" aria-hidden="true"></span>
+          <p class="coverage-slideshow__subheading">{{ section.settings.subheading }}</p>
+        </div>
+      {% endif %}
+
+      {% if section.settings.heading != blank %}
+        <h2 class="coverage-slideshow__heading">{{ section.settings.heading }}</h2>
+      {% endif %}
+
+      {% if section.settings.description != blank %}
+        <div class="coverage-slideshow__description">{{ section.settings.description }}</div>
+      {% endif %}
+    </header>
+
+    <div class="coverage-slideshow__slides-wrap">
+      {% for block in section.blocks %}
+        {%- liquid
+          assign checks = block.settings.checklist | newline_to_br | split: '<br />'
+        -%}
+        <article
+          class="coverage-slideshow__slide{% if forloop.first %} is-active{% endif %}"
+          data-coverage-panel="{{ forloop.index0 }}"
+          id="coverage-panel-{{ section.id }}-{{ forloop.index0 }}"
+          role="tabpanel"
+          aria-labelledby="coverage-tab-{{ section.id }}-{{ forloop.index0 }}"
+          {% unless forloop.first %}hidden{% endunless %}
+          {{ block.shopify_attributes }}
+        >
+          <div class="coverage-slideshow__slide-col coverage-slideshow__slide-col--left">
+            {% if block.settings.eyebrow != blank %}
+              <p class="coverage-slideshow__eyebrow">{{ block.settings.eyebrow }}</p>
+            {% endif %}
+
+            {% if block.settings.title != blank %}
+              <h3 class="coverage-slideshow__title">{{ block.settings.title }}</h3>
+            {% endif %}
+
+            {% if block.settings.text != blank %}
+              <p class="coverage-slideshow__text">{{ block.settings.text }}</p>
+            {% endif %}
+
+            {% if block.settings.button_label != blank %}
+              <div class="coverage-slideshow__actions">
+                {% render 'button',
+                  link: block.settings.button_link,
+                  label: block.settings.button_label,
+                  style: block.settings.button_style,
+                  class: 'coverage-slideshow'
+                %}
+              </div>
+            {% endif %}
+          </div>
+
+          <div class="coverage-slideshow__slide-col coverage-slideshow__slide-col--right">
+            {% if checks.size > 0 %}
+              <ul class="coverage-slideshow__checklist" role="list">
+                {% for item in checks %}
+                  {% assign line = item | strip %}
+                  {% if line != blank %}
+                    <li class="coverage-slideshow__check-item">
+                      <span class="coverage-slideshow__check-icon" aria-hidden="true">✓</span>
+                      <span>{{ line }}</span>
+                    </li>
+                  {% endif %}
+                {% endfor %}
+              </ul>
+            {% endif %}
+          </div>
+        </article>
+      {% endfor %}
+    </div>
+
+    {% if section.blocks.size > 1 %}
+      <div class="coverage-slideshow__tabs" role="tablist" aria-label="Coberturas disponibles">
+        {% for block in section.blocks %}
+          <button
+            type="button"
+            class="coverage-slideshow__tab-btn{% if forloop.first %} is-active{% endif %}"
+            data-coverage-target="{{ forloop.index0 }}"
+            role="tab"
+            id="coverage-tab-{{ section.id }}-{{ forloop.index0 }}"
+            aria-controls="coverage-panel-{{ section.id }}-{{ forloop.index0 }}"
+            aria-selected="{% if forloop.first %}true{% else %}false{% endif %}"
+            tabindex="{% if forloop.first %}0{% else %}-1{% endif %}"
+          >
+            <span class="coverage-slideshow__tab-icon" aria-hidden="true">
+              {% if forloop.first %}
+                <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" fill="none"><path d="M5.4 13.7h8.1a3.3 3.3 0 0 0 0-6.6h-.8A4.6 4.6 0 0 0 4.4 8.6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M9.2 11.2l-2 2 2 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              {% else %}
+                <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" fill="none"><path d="M10 2.8a5 5 0 0 1 5 5v2.2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M6.1 9h7.8a1.8 1.8 0 0 1 1.8 1.8v4a1.8 1.8 0 0 1-1.8 1.8H6.1a1.8 1.8 0 0 1-1.8-1.8v-4A1.8 1.8 0 0 1 6.1 9Z" stroke="currentColor" stroke-width="1.5"/></svg>
+              {% endif %}
+            </span>
+            <span>{{ block.settings.tab_label }}</span>
+          </button>
+        {% endfor %}
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Coverage Slideshow",
+  "tag": "section",
+  "class": "coverage-slideshow-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subtítulo",
+      "default": "coberturas"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Título",
+      "default": "Protege tu inversión"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Descripción",
+      "default": "<p>Dos soluciones complementarias para que tu empresa esté cubierta ante cualquier imprevisto: daños, fallas técnicas y robo.</p>"
+    },
+    {
+      "type": "select",
+      "id": "padding_top",
+      "label": "Padding top",
+      "default": "l",
+      "options": [
+        { "value": "no-indent", "label": "None" },
+        { "value": "xs", "label": "XS" },
+        { "value": "s", "label": "S" },
+        { "value": "m", "label": "M" },
+        { "value": "l", "label": "L" },
+        { "value": "xl", "label": "XL" }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "padding_bottom",
+      "label": "Padding bottom",
+      "default": "l",
+      "options": [
+        { "value": "no-indent", "label": "None" },
+        { "value": "xs", "label": "XS" },
+        { "value": "s", "label": "S" },
+        { "value": "m", "label": "M" },
+        { "value": "l", "label": "L" },
+        { "value": "xl", "label": "XL" }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "margin_top",
+      "label": "Margin top",
+      "default": "no-indent",
+      "options": [
+        { "value": "no-indent", "label": "None" },
+        { "value": "xs", "label": "XS" },
+        { "value": "s", "label": "S" },
+        { "value": "m", "label": "M" },
+        { "value": "l", "label": "L" },
+        { "value": "xl", "label": "XL" }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "margin_bottom",
+      "label": "Margin bottom",
+      "default": "no-indent",
+      "options": [
+        { "value": "no-indent", "label": "None" },
+        { "value": "xs", "label": "XS" },
+        { "value": "s", "label": "S" },
+        { "value": "m", "label": "M" },
+        { "value": "l", "label": "L" },
+        { "value": "xl", "label": "XL" }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "type": "slide",
+      "name": "Slide",
+      "limit": 2,
+      "settings": [
+        {
+          "type": "text",
+          "id": "tab_label",
+          "label": "Etiqueta tab",
+          "default": "Apple Authorized Reseller"
+        },
+        {
+          "type": "text",
+          "id": "eyebrow",
+          "label": "Eyebrow",
+          "default": "Apple Authorized Reseller"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Título",
+          "default": "AppleCare+ para empresas"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Descripción",
+          "default": "Extiende la garantía original de Apple y agrega protección contra daños accidentales, soporte técnico prioritario y reemplazo express todo por una tarifa fija y predecible."
+        },
+        {
+          "type": "textarea",
+          "id": "checklist",
+          "label": "Checklist (una línea por ítem)",
+          "default": "Cobertura de hardware por 2 años extendidos\nDaños accidentales incluidos (caídas, líquidos)\nReemplazo de batería sin costo si baja del 80%\nSoporte técnico prioritario 24/7 por chat y teléfono\nReemplazo express: equipo nuevo mientras el tuyo se repara\nMás de 5.000 centros de servicio autorizados en el mundo\nCobertura para accesorios Apple originales incluidos"
+        },
+        {
+          "type": "text",
+          "id": "button_label",
+          "label": "Botón",
+          "default": "Ver planes AppleCare+"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "URL botón"
+        },
+        {
+          "type": "select",
+          "id": "button_style",
+          "label": "Estilo botón",
+          "options": [
+            { "value": "primary", "label": "Primary" },
+            { "value": "secondary", "label": "Secondary" },
+            { "value": "tertiary", "label": "Tertiary" },
+            { "value": "simple", "label": "Simple" }
+          ],
+          "default": "primary"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Coverage Slideshow",
+      "category": "Custom",
+      "blocks": [
+        {
+          "type": "slide"
+        },
+        {
+          "type": "slide",
+          "settings": {
+            "tab_label": "Seguro de Robo",
+            "eyebrow": "Seguro de robo",
+            "title": "Onsafe Seguro Empresarial",
+            "text": "Cobertura específica contra robo con o sin violencia, pérdida y daño total de tus equipos Apple. Diseñado para flotas corporativas con gestión centralizada de siniestros.",
+            "checklist": "Cobertura ante robo con y sin violencia\nPérdida total del dispositivo incluida\nReposición del equipo en menos de 72 horas\nGestión online de siniestros sin papeleo\nPóliza corporativa: un contrato para toda la flota\nSin franquicia los primeros 12 meses del plan\nCompatible y complementario con AppleCare+",
+            "button_label": "Cotizar Onsafe"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
