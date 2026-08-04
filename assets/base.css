@@ -5003,9 +5003,9 @@ details[open] > .header__icon--menu .icon-hamburger {
 .list-menu--inline .header__menu-item--active > span {
   background-color: rgb(var(--color-background-secondary));
 }
-.list-menu--inline .header__menu-item:hover > span, .list-menu--inline .header__menu-item:focus-within > span, .list-menu--inline .header__menu-item:focus > span, .list-menu--inline .header__menu-item:active > span {
+/* .list-menu--inline .header__menu-item:hover > span, .list-menu--inline .header__menu-item:focus-within > span, .list-menu--inline .header__menu-item:focus > span, .list-menu--inline .header__menu-item:active > span {
   background-color: rgb(var(--color-background-secondary));
-}
+} */
 .list-menu--inline .header__menu-item:hover + .header__submenu, .list-menu--inline .header__menu-item:focus-within + .header__submenu, .list-menu--inline .header__menu-item:focus + .header__submenu, .list-menu--inline .header__menu-item:active + .header__submenu {
   opacity: 1;
   pointer-events: all;
