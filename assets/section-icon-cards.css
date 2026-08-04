@@ -84,10 +84,6 @@
   letter-spacing: 0.06em;
 }
 
-[id*="icon_cards_casos_reales"] .icon-cards-section__heading {
-  font-size: clamp(2rem, 2.8vw, 3.1rem);
-  line-height: 1.1;
-}
 
 [id*="icon_cards_casos_reales"] .icon-cards-section__description {
   max-width: 780px;

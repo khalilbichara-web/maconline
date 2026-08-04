@@ -139,7 +139,7 @@
         "feature_ybtTVr": {
           "type": "feature",
           "settings": {
-            "icon_name": "solar_graph-down-new-outline.svg",
+            "icon_name": "apple-accounts-benefit-user-id.svg",
             "number": "",
             "heading": "Asignación",
             "description": "Los dispositivos se registran y se asignan al MDM desde el portal corporativo (idealmente vía Apple Business Manager)."
@@ -148,7 +148,7 @@
         "feature_DiL9LK": {
           "type": "feature",
           "settings": {
-            "icon_name": "solar_clock-circle-outline.svg",
+            "icon_name": "apple-accounts-benefit-login.svg",
             "number": "",
             "heading": "Primer encendido",
             "description": "El usuario enciende el equipo y comienza una configuración simplificada."
@@ -157,7 +157,7 @@
         "feature_cJUXTK": {
           "type": "feature",
           "settings": {
-            "icon_name": "solar_clock-circle-outline.svg",
+            "icon_name": "apple-accounts-benefit-link-round.svg",
             "number": "",
             "heading": "Enrolamiento automático",
             "description": "El dispositivo se enrola en el MDM y \nrecibe políticas, cuentas y ajustes."
@@ -166,7 +166,7 @@
         "feature_b7qhRt": {
           "type": "feature",
           "settings": {
-            "icon_name": "solar_clock-circle-outline.svg",
+            "icon_name": "apple-accounts-benefit-shield-check.svg",
             "number": "",
             "heading": "Listo para trabajar",
             "description": "Apps, seguridad y configuración quedan aplicadas sin intervención de TI.\n Cero preparación manual.  Cero filas de equipos en soporte."

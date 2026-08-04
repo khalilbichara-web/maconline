@@ -51,6 +51,18 @@
         >
           <div class="tab-slider__content">
 
+            {% if block.settings.icon_name != blank %}
+              <div class="tab-slider__content-icon">
+                <img
+                  src="{{ block.settings.icon_name | asset_url }}"
+                  alt=""
+                  width="48"
+                  height="48"
+                  loading="lazy"
+                >
+              </div>
+            {% endif %}
+
 
             {% if block.settings.heading != blank %}
               <h2 class="tab-slider__heading">{{ block.settings.heading }}</h2>
@@ -208,6 +220,12 @@
         {
           "type": "header",
           "content": "Contenido"
+        },
+        {
+          "type": "text",
+          "id": "icon_name",
+          "label": "Icono del encabezado",
+          "info": "Nombre del asset en assets/, por ejemplo apple-accounts-use-case-laptop.svg"
         },
         {
           "type": "text",

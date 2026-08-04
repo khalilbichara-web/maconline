@@ -135,6 +135,22 @@
   width: 30.5rem;
 }
 
+.tab-slider__content-icon {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 3rem;
+  height: 3rem;
+  margin-bottom: 0.25rem;
+}
+
+.tab-slider__content-icon img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
 .tab-slider__heading {
   margin: 0;
   font-family: "Geist", system-ui, -apple-system, sans-serif;
@@ -489,6 +505,11 @@
 
   .tab-slider__content {
     width: auto;
+  }
+
+  .tab-slider__content-icon {
+    width: 2.75rem;
+    height: 2.75rem;
   }
 }
 

@@ -140,6 +140,7 @@
           "type": "tab",
           "settings": {
             "tab_label": "1",
+            "icon_name": "tab-slider-icon-1.png",
             "heading": "Compra correcta",
             "description": "Los Mac se compran a través de los tiendas o distribuidores autorizados.",
             "features": "",
@@ -151,10 +152,11 @@
           "type": "tab",
           "settings": {
             "tab_label": "2",
+            "icon_name": "tab-slider-icon-2.png",
             "heading": "Asignación en ABM",
             "description": "El equipo aparece en tu ABM y se marca \npara tu organización.",
             "features": "",
-            "cta_label": "Cotizar iPhone",
+            "cta_label": "",
             "cta_url": ""
           }
         },
@@ -162,10 +164,11 @@
           "type": "tab",
           "settings": {
             "tab_label": "3",
+            "icon_name": "tab-slider-icon-3.png",
             "heading": "Enlace con MDM",
             "description": "En ABM asignas la Mac \na tu servidor MDM.",
             "features": "",
-            "cta_label": "Cotizar iPad",
+            "cta_label": "",
             "cta_url": ""
           }
         }
@@ -244,9 +247,9 @@
       ],
       "name": "3 ABM Dark",
       "settings": {
-        "subheading": "beneficios para tu empresa",
-        "heading": "<p>¿Qué significa “propiedad de Mac” en ABM?</p>",
-        "description": "<p><strong>Apple Business Manager es el portal de Apple para organizaciones.</strong> En el caso de Mac, \"propiedad\" significa que tus equipos quedan asociados a tu empresa a nivel de programa, permitiendo asignarlos a un servidor MDM y automatizar su enrolamiento y configuración cuando se encienden o se reinstalan.</p>",
+        "subheading": "CASOS REALES",
+        "heading": "<p>Casos reales donde MDM cambia el juego</p>",
+        "description": "<p>Ejemplos concretos de cómo el MDM te ahorra tiempo y te sube el estándar de seguridad, sin depender de configuraciones manuales ni del usuario.</p>",
         "columns": "auto",
         "header_alignment": "center",
         "light_mode": false

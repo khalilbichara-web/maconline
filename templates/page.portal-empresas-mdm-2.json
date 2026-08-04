@@ -238,8 +238,8 @@
       ],
       "settings": {
         "color_scheme": "scheme-39e5d4a7-e422-4a30-b12c-b2a059c9acee",
-        "subheading": "PORTAL DE EMPRESAS",
-        "heading": "Un portal pensado para operación real",
+        "subheading": "como funciona ",
+        "heading": "<p>Un portal pensado para operación real</p>",
         "description": "<p>Todo ordenado por módulos, con permisos por rol.</p>",
         "padding_top": "l",
         "padding_bottom": "l",
@@ -317,42 +317,8 @@
     },
     "animated_image_collage_portal": {
       "type": "animated-image-collage",
-      "blocks": {
-        "column_1": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/bg-fondo-rental-1_7b23a22c-7495-4282-b2f9-30e39e1443df.webp",
-            "image_width": 420
-          }
-        },
-        "column_2": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/bg-fondo-rental-4.webp",
-            "image_width": 420
-          }
-        },
-        "column_3": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/bg-fondo-rental-5.webp",
-            "image_width": 420
-          }
-        },
-        "column_4": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/bg-fondo-rental-8.webp",
-            "image_width": 420
-          }
-        }
-      },
-      "block_order": [
-        "column_1",
-        "column_2",
-        "column_3",
-        "column_4"
-      ],
+      "blocks": {},
+      "block_order": [],
       "name": "t:sections.animated-image-collage.name",
       "settings": {
         "section_type": "background",
@@ -394,6 +360,55 @@
         "margin_top": "no-indent",
         "margin_bottom": "no-indent"
       }
+    },
+    "portal_variation_row_portal": {
+      "type": "portal-variation-row",
+      "blocks": {
+        "image_1": {
+          "type": "image",
+          "settings": {
+            "image_asset": "portal-variation-row-1.png"
+          }
+        },
+        "image_2": {
+          "type": "image",
+          "settings": {
+            "image_asset": "portal-variation-row-2.png"
+          }
+        },
+        "image_3": {
+          "type": "image",
+          "settings": {
+            "image_asset": "portal-variation-row-3.png"
+          }
+        },
+        "image_4": {
+          "type": "image",
+          "settings": {
+            "image_asset": "portal-variation-row-4.png"
+          }
+        },
+        "image_5": {
+          "type": "image",
+          "settings": {
+            "image_asset": "portal-variation-row-5.png"
+          }
+        }
+      },
+      "block_order": [
+        "image_1",
+        "image_2",
+        "image_3",
+        "image_4",
+        "image_5"
+      ],
+      "settings": {
+        "color_scheme": "scheme-39e5d4a7-e422-4a30-b12c-b2a059c9acee",
+        "padding_top": "no-indent",
+        "padding_bottom": "m",
+        "margin_top": "no-indent",
+        "margin_bottom": "no-indent"
+      }
     }
   },
   "order": [
@@ -403,6 +418,7 @@
     "portal_challenges_mdm",
     "vertical_slideshow_portal",
     "collapsible_content_portal",
-    "animated_image_collage_portal"
+    "animated_image_collage_portal",
+    "portal_variation_row_portal"
   ]
 }
