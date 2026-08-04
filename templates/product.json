@@ -88,16 +88,6 @@
             "default_open": false
           }
         },
-        "c5319fc4-5e5d-4b46-951a-8a6c63156a2e": {
-          "type": "share",
-          "settings": {
-            "share_label": "Compartir",
-            "show_share_facebook": true,
-            "show_share_twitter": true,
-            "show_share_pinterest": true,
-            "show_share_copy": true
-          }
-        }
       },
       "block_order": [
         "vendor",
@@ -110,8 +100,7 @@
         "inventory",
         "pickup_availability",
         "49b2a417-bcd6-4fb2-8f48-342f0981d93b",
-        "3d90d6b7-fca8-4b1b-b52f-4a46362d3873",
-        "c5319fc4-5e5d-4b46-951a-8a6c63156a2e"
+        "3d90d6b7-fca8-4b1b-b52f-4a46362d3873"
       ],
       "custom_css": [
         ".product__title {background: linear-gradient(91deg, #000a10 14.38%, #07abf8 93.41%); background-clip: text; font-weight: 700; -webkit-background-clip: text; -webkit-text-fill-color: transparent;}"

@@ -1025,7 +1025,7 @@
         "icon_style": "colored",
         "image_width": "medium",
         "image_ratio": "square",
-        "object_fit": "cover",
+        "object_fit": "contain",
         "card_heading_size": "h4",
         "padding_top": "xl",
         "padding_bottom": "xl",

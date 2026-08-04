@@ -147,7 +147,7 @@
         "feature_Pj7eyJ": {
           "type": "feature",
           "settings": {
-            "icon_name": "solar_clock-circle-outline.svg",
+            "icon_name": "apple-accounts-benefit-link-round.svg",
             "heading": "Experiencia consistente para todos",
             "description": "Misma configuración, mismas apps y mismas políticas para cada usuario, sin depender de quién configuró."
           }
@@ -155,7 +155,7 @@
         "feature_pa48F9": {
           "type": "feature",
           "settings": {
-            "icon_name": "solar_chart-outline.svg",
+            "icon_name": "apple-accounts-benefit-shield-check.svg",
             "heading": "Seguridad  desde el primer encendido",
             "description": "Protección mas alla de la garantía estándar durante toda la vigencia"
           }
@@ -163,7 +163,7 @@
         "feature_RzDmKT": {
           "type": "feature",
           "settings": {
-            "icon_name": "solar_shield-check-outline.svg",
+            "icon_name": "apple-accounts-benefit-chart.svg",
             "heading": "Control y visibilidad  centralizada",
             "description": "Inventario, estados, cumplimiento, apps instaladas y acciones remotas (bloqueo, borrado, restricciones)."
           }

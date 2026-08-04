@@ -14,6 +14,10 @@
   assign sort_by = results.sort_by | default: results.default_sort_by
   assign total_active_values = 0
   assign default_presentation = 'text'
+  assign facets_swatch_mode = settings.type_color_swatch
+  if force_color_swatches
+    assign facets_swatch_mode = 'standart'
+  endif
   if results.url
     assign results_url = results.url
   else
@@ -252,8 +256,8 @@
                       <ul
                         class="
                           facets__list list-unstyled
-                          {% if settings.type_color_swatch == 'custom' and color_trigger == name_option -%} facets__list--color 
-                          {% elsif settings.type_color_swatch == 'standart' and presentation == 'swatch' %} facets__list--color 
+                          {% if facets_swatch_mode == 'custom' and color_trigger == name_option -%} facets__list--color 
+                          {% elsif facets_swatch_mode == 'standart' and presentation == 'swatch' %} facets__list--color 
                           {% elsif presentation == 'image' %} facets__list--image {%- endif -%}
                         "
                         role="list"
@@ -261,7 +265,7 @@
                       >
                         {%- for value in filter.values -%}
                           {% liquid
-                            if settings.type_color_swatch == 'custom' and color_trigger == name_option
+                            if facets_swatch_mode == 'custom' and color_trigger == name_option
                               assign color_value = value.value | handle | strip
                               assign color_value_custom = color_value | remove: '-'
 
@@ -304,12 +308,12 @@
                           <li
                             class="
                               list-menu__item facets__item {% if filter_type != 'horizontal' %} body-small {% endif %}
-                              {% if settings.type_color_swatch == 'custom' and color_trigger == name_option -%} facets__item--color 
-                              {% elsif settings.type_color_swatch == 'standart' and presentation == 'swatch' %} facets__item--color {% elsif presentation == 'image' %} facets__item--image {%- endif -%}
+                              {% if facets_swatch_mode == 'custom' and color_trigger == name_option -%} facets__item--color 
+                              {% elsif facets_swatch_mode == 'standart' and presentation == 'swatch' %} facets__item--color {% elsif presentation == 'image' %} facets__item--image {%- endif -%}
                             "
-                            {% if settings.type_color_swatch == 'custom' and color_trigger == name_option %}
+                            {% if facets_swatch_mode == 'custom' and color_trigger == name_option %}
                               style="--swatch-color: {{ color_value_custom }}; --border-radius: {{ settings.swatch_border_radius }}px;"
-                            {% elsif settings.type_color_swatch == 'standart' and presentation == 'swatch' %}
+                            {% elsif facets_swatch_mode == 'standart' and presentation == 'swatch' %}
                               style="
                                 --border-radius: {{ settings.swatch_border_radius }}px;
                                 --swatch-color: {{ swatch_value }};
@@ -334,8 +338,8 @@
                               for="Filter-{{ filter.label | escape }}-{{ forloop.index }}"
                               class="
                                 facet-checkbox{% if value.count == 0 and value.active == false %} facet-checkbox--disabled{% endif %}
-                                {%- if settings.type_color_swatch == 'custom' and color_trigger == name_option -%} facet-checkbox--color 
-                                {%- elsif settings.type_color_swatch == 'standart' and presentation == 'swatch' -%} facet-checkbox--color 
+                                {%- if facets_swatch_mode == 'custom' and color_trigger == name_option -%} facet-checkbox--color 
+                                {%- elsif facets_swatch_mode == 'standart' and presentation == 'swatch' -%} facet-checkbox--color 
                                 {% elsif presentation == 'image' %} facet-checkbox--image {%- endif -%}
                               "
                             >
@@ -356,7 +360,7 @@
                                   {%- endif -%}
                                 </div>
                               {% else %}
-                                {%- unless settings.type_color_swatch == 'custom' and color_trigger == name_option or presentation == 'swatch' -%}
+                                {%- unless facets_swatch_mode == 'custom' and color_trigger == name_option or presentation == 'swatch' -%}
                                   <svg
                                     class="icon icon-checkmark"
                                     width="8"
@@ -683,8 +687,8 @@
                           <ul
                             class="
                               mobile-facets__list list-unstyled
-                              {% if settings.type_color_swatch == 'custom' and color_trigger == name_option -%} mobile-facets__list--color 
-                              {% elsif settings.type_color_swatch == 'standart' and presentation == 'swatch' %} mobile-facets__list--color 
+                              {% if facets_swatch_mode == 'custom' and color_trigger == name_option -%} mobile-facets__list--color 
+                              {% elsif facets_swatch_mode == 'standart' and presentation == 'swatch' %} mobile-facets__list--color 
                               {% elsif presentation == 'image' %} mobile-facets__list--image {%- endif -%}
                             "
                             role="list"
@@ -692,7 +696,7 @@
                           >
                             {%- for value in filter.values -%}
                               {% liquid
-                                if settings.type_color_swatch == 'custom' and color_trigger == name_option
+                                if facets_swatch_mode == 'custom' and color_trigger == name_option
                                   assign color_value = value.value | handle | strip
                                   assign color_value_custom = color_value | remove: '-'
 
@@ -734,13 +738,13 @@
                               <li
                                 class="
                                   mobile-facets__item list-menu__item
-                                  {% if settings.type_color_swatch == 'custom' and color_trigger == name_option -%} mobile-facets__item--color 
-                                  {% elsif settings.type_color_swatch == 'standart' and presentation == 'swatch' %} mobile-facets__item--color 
+                                  {% if facets_swatch_mode == 'custom' and color_trigger == name_option -%} mobile-facets__item--color 
+                                  {% elsif facets_swatch_mode == 'standart' and presentation == 'swatch' %} mobile-facets__item--color 
                                   {% elsif presentation == 'image' %} mobile-facets__item--image {%- endif -%}
                                 "
-                                {% if settings.type_color_swatch == 'custom' and color_trigger == name_option %}
+                                {% if facets_swatch_mode == 'custom' and color_trigger == name_option %}
                                   style="--swatch-color: {{ color_value_custom }}; --border-radius: {{ settings.swatch_border_radius }}px;"
-                                {% elsif settings.type_color_swatch == 'standart' and presentation == 'swatch' %}
+                                {% elsif facets_swatch_mode == 'standart' and presentation == 'swatch' %}
                                   style="
                                     --border-radius: {{ settings.swatch_border_radius }}px;
                                     --swatch-color: {{ swatch_value }};
@@ -765,8 +769,8 @@
                                   for="Filter-{{ filter.label | escape }}-mobile-{{ forloop.index }}"
                                   class="
                                     mobile-facets__label{% if value.count == 0 and value.active == false %} mobile-facets__label--disabled{% endif %}
-                                    {%- if settings.type_color_swatch == 'custom' and color_trigger == name_option -%} facet-checkbox facet-checkbox--color 
-                                    {%- elsif settings.type_color_swatch == 'standart' and presentation == 'swatch' -%} facet-checkbox facet-checkbox--color 
+                                    {%- if facets_swatch_mode == 'custom' and color_trigger == name_option -%} facet-checkbox facet-checkbox--color 
+                                    {%- elsif facets_swatch_mode == 'standart' and presentation == 'swatch' -%} facet-checkbox facet-checkbox--color 
                                     {% elsif presentation == 'image' %} facet-checkbox facet-checkbox--image {%- endif -%}
                                   "
                                 >
@@ -790,7 +794,7 @@
                                       {%- endif -%}
                                     </div>
                                   {% else %}
-                                    {%- unless settings.type_color_swatch == 'custom' and color_trigger == name_option or presentation == 'swatch' -%}
+                                    {%- unless facets_swatch_mode == 'custom' and color_trigger == name_option or presentation == 'swatch' -%}
                                       <span class="mobile-facets__highlight"></span>
                                       <svg
                                         class="icon icon-checkmark"
