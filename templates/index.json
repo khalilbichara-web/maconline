@@ -685,100 +685,6 @@
         "description": "<p>Acompañamos a organizaciones en su transformación digital reduciendo costos de TI y optimizando el retorno de inversión.</p>"
       }
     },
-    "collapsible_content_h8mA63": {
-      "type": "collapsible-content",
-      "blocks": {
-        "accordion_TxWURh": {
-          "type": "accordion",
-          "settings": {
-            "question": "Here can be a commonly asked question about your product or service.",
-            "answer": "<p>Here can be a brief but clear response to the question, giving customers a quick answer without unnecessary details.</p>",
-            "opened": false
-          }
-        },
-        "accordion_6QbF3q": {
-          "type": "accordion",
-          "settings": {
-            "question": "¿Qué es el arriendo operativo?",
-            "answer": "<p>Es una solución que permite a tu empresa acceder a equipos Apple mediante una cuota mensual fija, sin necesidad de realizar una compra inicial. Así puedes incorporar tecnología a tu operación sin inmovilizar capital.</p>",
-            "opened": true
-          }
-        },
-        "accordion_rHLL6w": {
-          "type": "accordion",
-          "settings": {
-            "question": "¿Qué equipos puedo arrendar?",
-            "answer": "<p>Puedes arrendar distintos dispositivos Apple para empresa, como Mac, iPhone y iPad, según disponibilidad, perfil de uso y condiciones comerciales.</p>",
-            "opened": false
-          }
-        },
-        "accordion_WGnJtY": {
-          "type": "accordion",
-          "settings": {
-            "question": "¿Se necesita pagar pie o cuota inicial?",
-            "answer": "<p>No. Una de las principales ventajas del arriendo operativo es que no requiere pago inicial, lo que facilita la incorporación de equipos sin un desembolso importante al comienzo.</p>",
-            "opened": false
-          }
-        },
-        "accordion_yeixQ8": {
-          "type": "accordion",
-          "settings": {
-            "question": "¿La cuota cambia durante el contrato?",
-            "answer": "<p>No. La cuota mensual se mantiene fija en pesos durante toda la vigencia del contrato, lo que permite planificar mejor el presupuesto de tu empresa.</p>",
-            "opened": false
-          }
-        },
-        "accordion_hcApdM": {
-          "type": "accordion",
-          "settings": {
-            "question": "¿El arriendo operativo afecta la capacidad crediticia de mi empresa?",
-            "answer": "<p>En general, este modelo permite acceder a tecnología sin utilizar directamente líneas de crédito destinadas a otros proyectos. De todos modos, la evaluación final dependerá de las condiciones de aprobación y del perfil de cada empresa.</p>",
-            "opened": false
-          }
-        }
-      },
-      "block_order": [
-        "accordion_TxWURh",
-        "accordion_6QbF3q",
-        "accordion_rHLL6w",
-        "accordion_WGnJtY",
-        "accordion_yeixQ8",
-        "accordion_hcApdM"
-      ],
-      "custom_css": [
-        ".collapsible-content.background {background-image: url(https://cdn.shopify.com/s/files/1/0731/0757/0884/files/bg-pf-zero-touch.webp?v=1785354676); background-repeat: no-repeat; background-position: center; background-size: 100%; background-attachment: local;}",
-        "h2 {font-weight: 700;}",
-        "h3 {font-weight: 600; font-size: 150% !important;}",
-        "p {font-size: 120%; opacity: 0.6;}",
-        ".collapsible-content__item {border: 1px solid #011624 !important;}",
-        ".collapsible-content__icon {background-color: #ffffff20;}"
-      ],
-      "name": "t:sections.collapsible-content.name",
-      "settings": {
-        "layout": "background",
-        "color_scheme": "scheme-39e5d4a7-e422-4a30-b12c-b2a059c9acee",
-        "enable_border": false,
-        "border_full": false,
-        "subheading": "Preguntas frecuentes",
-        "subheading_style": "subtitle",
-        "subheading_icon": "circle",
-        "heading": "Resolvemos tus dudas sobre MacOnline",
-        "heading_size": "h2",
-        "heading_level": "h2",
-        "heading_line": "none",
-        "line_color": "#1566e0",
-        "word_break": false,
-        "heading_animation": "none",
-        "word_break_an": false,
-        "text": "¿Tienes preguntas sobre el modelo de arriendo, soporte o renovación? \nEncuentra las respuestas rápidas aquí.",
-        "text_align": "center",
-        "row_color_scheme": "scheme-cf7617bd-cf5d-43c2-b151-2d92b8b69cd6",
-        "padding_top": "l",
-        "padding_bottom": "l",
-        "margin_top": "no-indent",
-        "margin_bottom": "no-indent"
-      }
-    },
     "animated_image_collage_NqQpFB": {
       "type": "animated-image-collage",
       "blocks": {
@@ -927,7 +833,6 @@
     "icon_cards_fXaKUn",
     "device_tabs_NMYyLT",
     "icon_cards_aBAPPi",
-    "collapsible_content_h8mA63",
     "animated_image_collage_NqQpFB",
     "simulador_arriendo_zWJUEq"
   ]
