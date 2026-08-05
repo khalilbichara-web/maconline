@@ -744,7 +744,7 @@
         "border_full": false,
         "subheading": "Preguntas frecuentes",
         "subheading_style": "subtitle",
-        "subheading_icon": "none",
+        "subheading_icon": "circle",
         "heading": "Resolvemos tus dudas sobre MacOnline",
         "heading_size": "h2",
         "heading_level": "h2",
