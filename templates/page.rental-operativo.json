@@ -675,6 +675,7 @@
       "settings": {
         "color_scheme": "light",
         "layout": "image_left",
+        "image": "shopify://shop_images/bg-fondo-rental-6.webp",
         "image_asset": "",
         "subheading": "Protección integral",
         "heading": "Para que tu operación no se detenga",
