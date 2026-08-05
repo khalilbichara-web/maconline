@@ -104,6 +104,10 @@ const subSliderInit = (isUpdate, margin) => {
 				slidesPerView: slidesPerView,
 				spaceBetween: 8,
 				direction: 'horizontal',
+				simulateTouch: true,
+				grabCursor: true,
+				touchStartPreventDefault: false,
+				threshold: 5,
 				mousewheel: {
 					forceToAxis: true,
 				},

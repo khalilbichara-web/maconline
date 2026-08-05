@@ -314,6 +314,9 @@ dir="{% render 'direction' %}"
           font-size: calc(var(--font-body-scale) * 1.4rem);
         }
       }
+      body.policy {
+        background: #ffffff;
+      }
     {% endstyle %}
     {% render 'color-scheme-vars' %}
     {{ 'swiper-bundle.min.css' | asset_url | stylesheet_tag }}
@@ -491,7 +494,7 @@ dir="{% render 'direction' %}"
 
   </head>
 
-  <body class="template-{{ template.name }} template-{{ template | replace: '.', '-' }}">
+  <body class="template-{{ template.name }} template-{{ template | replace: '.', '-' }} {{ request.page_type }}">
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N76JV2DV" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->

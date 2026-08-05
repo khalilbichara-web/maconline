@@ -279,6 +279,11 @@ body {
     max-width: 100%;
   }
 }
+
+.shopify-policy__body h1 span,
+.shopify-policy__body h2 span {
+  color: #0a6cce;
+}
 @media (min-width: 1360px) {
   .container-xxl,
   .shopify-policy__container-xxl, .container-xl,
