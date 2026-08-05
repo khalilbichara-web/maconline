@@ -739,6 +739,67 @@
         "margin_bottom": "no-indent"
       }
     },
+    "split_features_7c7wkY": {
+      "type": "split-features",
+      "blocks": {
+        "feature_Yk6HF8": {
+          "type": "feature",
+          "settings": {
+            "icon_name": "solar_clock-circle-outline.svg",
+            "number": "",
+            "heading": "Cobertura frente a imprevistos",
+            "description": "Respaldo ante daños accidentes para que un incidente no frene al equipo."
+          }
+        },
+        "feature_9cKFAh": {
+          "type": "feature",
+          "settings": {
+            "icon_name": "solar_clock-circle-outline.svg",
+            "number": "",
+            "heading": "Soporte técnico corporativo",
+            "description": "Atención especial para empresas, con canales dedicados."
+          }
+        },
+        "feature_zfd8JG": {
+          "type": "feature",
+          "settings": {
+            "icon_name": "solar_clock-circle-outline.svg",
+            "number": "",
+            "heading": "Garantía extendida",
+            "description": "Protección mas allá de la garantía estándar durante toda la vigencia."
+          }
+        },
+        "feature_79WFX8": {
+          "type": "feature",
+          "settings": {
+            "icon_name": "solar_clock-circle-outline.svg",
+            "number": "",
+            "heading": "Contratación simple y 100% digital",
+            "description": "Todo el proceso en línea, sin trámites presenciales ni papeleo."
+          }
+        }
+      },
+      "block_order": [
+        "feature_Yk6HF8",
+        "feature_9cKFAh",
+        "feature_zfd8JG",
+        "feature_79WFX8"
+      ],
+      "name": "Split Features",
+      "settings": {
+        "color_scheme": "light",
+        "layout": "image_left",
+        "image": "shopify://shop_images/bg-fondo-rental-6.webp",
+        "image_asset": "",
+        "subheading": "Protección integral",
+        "heading": "Para que tu operación no se detenga",
+        "description": "<p>Cada equipo llega respaldado por una ecosistemas completo de servicio: cobertura, soporte corporativos y garantía extendida, gestionado de forma simple y 100% digital.</p>",
+        "show_button": true,
+        "button_label": "Ver planes de cobertura",
+        "button_link": "",
+        "button_style": "primary"
+      }
+    },
     "image_with_text_Ya4ABJ": {
       "type": "image-with-text",
       "blocks": {
@@ -1335,6 +1396,7 @@
     "steps_ezybHY",
     "multicolumn_gxJp4A",
     "slideshow_jaXkq7",
+    "split_features_7c7wkY",
     "image_with_text_Ya4ABJ",
     "multicolumn_nqMyex",
     "collapsible_content_3TzhGG",
