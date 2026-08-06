@@ -434,9 +434,7 @@
   height: 1.4rem;
   color: rgb(var(--color-accent));
 }
-.hero__subtitle + .hero__title {
-  margin-top: 0;
-}
+
 .hero__title {
   width: 100%;
   margin-bottom: 1.6rem;
