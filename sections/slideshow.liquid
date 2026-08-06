@@ -97,6 +97,7 @@
     {% if section.settings.enable_navigation  %} slideshow--with-nav {% endif %}
     {% if section.settings.layout == 'overlay' and section.settings.header_overlay %} section--has-overlay {% endif %}
   "
+  data-heading-gradient-clip="{{ section.settings.enable_heading_gradient_clip }}"
 >
   {%- if section.settings.subheading != blank or section.settings.heading != blank -%}
     <div
@@ -1218,6 +1219,13 @@
       "id": "line_color",
       "label": "t:sections.all.line_color.label",
       "default": "#1566E0"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_heading_gradient_clip",
+      "label": "Enable blue gradient heading",
+      "info": "Applies linear-gradient text with background-clip to the section heading.",
+      "default": false
     },
     {
       "type": "checkbox",

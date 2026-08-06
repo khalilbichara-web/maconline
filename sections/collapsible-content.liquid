@@ -12,6 +12,7 @@
 		collapsible-content color-{{ section.settings.color_scheme }} background section-{{ section.id }}-padding
 		{% if section.settings.enable_border %} section-border {% if section.settings.border_full %} section-border-full {% endif %} {% endif %}
 	'
+	data-heading-gradient-clip='{{ section.settings.enable_heading_gradient_clip }}'
 >
 	<div class='container'>
 		{% render 'section-text',
@@ -717,6 +718,13 @@
 			"id": "line_color",
 			"label": "t:sections.all.line_color.label",
 			"default": "#1566E0"
+		},
+		{
+			"type": "checkbox",
+			"id": "enable_heading_gradient_clip",
+			"label": "Enable blue gradient heading",
+			"info": "Applies linear-gradient text with background-clip to the main heading.",
+			"default": false
 		},
 		{
 			"type": "checkbox",

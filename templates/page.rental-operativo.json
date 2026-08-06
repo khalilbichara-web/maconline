@@ -31,7 +31,7 @@
         "title_6qcqpp": {
           "type": "title",
           "settings": {
-            "heading": "Equipa a tu empresa con Apple, sin inmovilizar capital",
+            "heading": "Arrienda tu Mac desde $19.900 + IVA sin inmovilizar capital",
             "heading_size": "h1",
             "heading_level": "h2",
             "heading_line": "simple",
@@ -206,6 +206,7 @@
         "heading_level": "h2",
         "heading_line": "simple",
         "line_color": "#1566e0",
+        "enable_heading_gradient_clip": true,
         "word_break": false,
         "text": "En vez de gran desembolsado inicial, pagas una cuota mensual fija. \nAsí mantienes la liquidez de tu empresa y tu tecnología siempre al día.",
         "heading_animation": "none",
@@ -800,113 +801,6 @@
         "button_style": "primary"
       }
     },
-    "image_with_text_Ya4ABJ": {
-      "type": "image-with-text",
-      "blocks": {
-        "column_PL7Ynz": {
-          "type": "column",
-          "settings": {
-            "icon": "check-3",
-            "icon_fill_type": "gradient",
-            "heading": "Cobertura frente a imprevistos",
-            "text": "Respaldo ante daños accidentes para que un incidente no frene al equipo."
-          }
-        },
-        "column_JLHD7U": {
-          "type": "column",
-          "settings": {
-            "icon": "check-3",
-            "icon_fill_type": "gradient",
-            "heading": "Soporte técnico corporativo",
-            "text": "Atención especial para empresas, con canales dedicados."
-          }
-        },
-        "column_zeG83T": {
-          "type": "column",
-          "settings": {
-            "icon": "check-3",
-            "icon_fill_type": "gradient",
-            "heading": "Garantía extendida",
-            "text": "Protección mas allá de la garantía estándar durante toda la vigencia."
-          }
-        },
-        "column_L4mgy9": {
-          "type": "column",
-          "settings": {
-            "icon": "check-3",
-            "icon_fill_type": "gradient",
-            "heading": "Contratación simple y 100% digital",
-            "text": "Todo el proceso en línea, sin trámites presenciales ni papeleo."
-          }
-        },
-        "column_3geJqb": {
-          "type": "column",
-          "settings": {
-            "icon": "check-3",
-            "icon_fill_type": "gradient",
-            "heading": "Configuración inicial incluida",
-            "text": "Recibe los equipos listos para trabajar, configuradas según tu operación."
-          }
-        }
-      },
-      "block_order": [
-        "column_PL7Ynz",
-        "column_JLHD7U",
-        "column_zeG83T",
-        "column_L4mgy9",
-        "column_3geJqb"
-      ],
-      "name": "t:sections.image-with-text.presets.name",
-      "settings": {
-        "layout": "image_last",
-        "color_scheme": "",
-        "subheading": "",
-        "subheading_style": "subtitle",
-        "subheading_icon": "none",
-        "heading": "",
-        "heading_size": "h2",
-        "heading_level": "h2",
-        "heading_line": "simple",
-        "line_color": "#1566e0",
-        "word_break": false,
-        "heading_animation": "none",
-        "word_break_an": false,
-        "text": "",
-        "text_align": "left",
-        "inner_subheading": "Protección integral",
-        "inner_heading": "Para que tu operación no se detenga",
-        "inner_heading_size": "h2",
-        "inner_heading_level": "h2",
-        "inner_heading_line": "simple",
-        "inner_line_color": "#1566e0",
-        "inner_word_break": false,
-        "description": "<p>Cada equipo llega respaldado por una ecosistemas completo de servicio: cobertura, soporte corporativos y garantía extendida, gestionado de forma simple y 100% digital.</p>",
-        "text_align_inner": "center",
-        "image": "shopify://shop_images/bg-operacion.webp",
-        "enable_link": false,
-        "link": "",
-        "height": "all-height",
-        "overlay_opacity": 0,
-        "logo_width": 75,
-        "add_text": "",
-        "author_color_scheme": "",
-        "icon_size": "small",
-        "box_shadow": false,
-        "icon_style": "colored",
-        "show_button": true,
-        "button_label": "Ver planes de cobertura",
-        "button_link": "",
-        "button_style": "primary",
-        "show_button_2": false,
-        "button_label_2": "",
-        "button_link_2": "",
-        "button_style_2": "tertiary",
-        "padding_top": "l",
-        "padding_bottom": "xl",
-        "margin_top": "no-indent",
-        "margin_bottom": "no-indent"
-      }
-    },
     "multicolumn_nqMyex": {
       "type": "multicolumn",
       "blocks": {
@@ -1226,11 +1120,12 @@
         "subheading": "",
         "subheading_style": "subtitle",
         "subheading_icon": "none",
-        "heading": "Resolvemos tus dudas sobre MacOnline",
+        "heading": "Preguntas frecuentes Rental Operativo",
         "heading_size": "h2",
         "heading_level": "h2",
         "heading_line": "none",
         "line_color": "#1566e0",
+        "enable_heading_gradient_clip": true,
         "word_break": false,
         "heading_animation": "none",
         "word_break_an": false,
@@ -1397,7 +1292,6 @@
     "multicolumn_gxJp4A",
     "slideshow_jaXkq7",
     "split_features_7c7wkY",
-    "image_with_text_Ya4ABJ",
     "multicolumn_nqMyex",
     "collapsible_content_3TzhGG",
     "animated_image_collage_xhDnX7",

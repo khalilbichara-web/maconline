@@ -15,7 +15,6 @@
 .hero h2 {
   background: linear-gradient(91deg, #fff 14.38%, #07abf8 93.41%);
   background-clip: text;
-  font-weight: 400;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }

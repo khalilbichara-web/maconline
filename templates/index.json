@@ -99,7 +99,7 @@
           "type": "card",
           "settings": {
             "icon_name": "solar_shield-check-outline.svg",
-            "icon_asset": "",
+            "icon_asset": "icon-card-problema-01.png",
             "heading_variant": "number_large",
             "card_label": "",
             "card_large_text": "",
@@ -213,7 +213,7 @@
         "feature_6GP9UX": {
           "type": "feature",
           "settings": {
-            "icon_name": "solar_graph-down-new-outline.svg",
+            "icon_name": "split-feature-rental-1.svg",
             "number": "",
             "heading": "Libera capital para crecer",
             "description": "Evita grandes inversiones iniciales y destina recursos a iniciativas estratégicas."
@@ -222,7 +222,7 @@
         "feature_nHTwgd": {
           "type": "feature",
           "settings": {
-            "icon_name": "solar_clock-circle-outline.svg",
+            "icon_name": "split-feature-rental-2.svg",
             "number": "",
             "heading": "Renueva sin volver a comenzar",
             "description": "Mantén una flota siempre vigente mediante ciclos de renovación planificados."
@@ -231,7 +231,7 @@
         "feature_jcAWeD": {
           "type": "feature",
           "settings": {
-            "icon_name": "solar_clock-circle-outline.svg",
+            "icon_name": "split-feature-rental-3.svg",
             "number": "",
             "heading": "Costos predecibles",
             "description": "Centraliza la inversión tecnológica en una cuota mensual simple de administrar."
@@ -240,7 +240,7 @@
         "feature_gy7pG8": {
           "type": "feature",
           "settings": {
-            "icon_name": "solar_graph-down-new-outline.svg",
+            "icon_name": "split-feature-rental-4.svg",
             "number": "",
             "heading": "Gestión durante todo el ciclo de vida",
             "description": "Desde la entrega hasta la renovación, administramos cada etapa para reducir la carga operativa de tu organización."
@@ -339,7 +339,7 @@
         "feature_TYM9qx": {
           "type": "feature",
           "settings": {
-            "icon_name": "solar_graph-down-new-outline.svg",
+            "icon_name": "split-feature-zero-touch-1.svg",
             "number": "",
             "heading": "Implementación automática",
             "description": "Las políticas corporativas se aplican automáticamente durante el proceso de activación."
@@ -348,7 +348,7 @@
         "feature_eaiRUA": {
           "type": "feature",
           "settings": {
-            "icon_name": "solar_clock-circle-outline.svg",
+            "icon_name": "split-feature-zero-touch-2.svg",
             "number": "",
             "heading": "Renueva sin volver a comenzar",
             "description": "Elimina tareas repetitivas y reduce los tiempos de configuración manual."
@@ -357,7 +357,7 @@
         "feature_LzFwha": {
           "type": "feature",
           "settings": {
-            "icon_name": "solar_clock-circle-outline.svg",
+            "icon_name": "split-feature-zero-touch-3.svg",
             "number": "",
             "heading": "Costos predecibles",
             "description": "Centraliza la inversión tecnológica en una cuota mensual simple de administrar."
@@ -366,7 +366,7 @@
         "feature_qQEzTx": {
           "type": "feature",
           "settings": {
-            "icon_name": "solar_clock-circle-outline.svg",
+            "icon_name": "split-feature-zero-touch-4.svg",
             "number": "",
             "heading": "Escalabilidad",
             "description": "Implementa decenas o cientos de dispositivos manteniendo una experiencia consistente para todos los colaboradores."
@@ -602,7 +602,7 @@
           "type": "card",
           "settings": {
             "icon_name": "solar_shield-check-outline.svg",
-            "icon_asset": "",
+            "icon_asset": "icon-cards-respaldo-1.svg",
             "heading_variant": "default",
             "card_label": "",
             "card_large_text": "+4.000",
@@ -615,7 +615,7 @@
           "type": "card",
           "settings": {
             "icon_name": "solar_clock-circle-outline.svg",
-            "icon_asset": "",
+            "icon_asset": "icon-cards-respaldo-2.svg",
             "heading_variant": "default",
             "card_label": "",
             "card_large_text": "+100.000",
@@ -628,7 +628,7 @@
           "type": "card",
           "settings": {
             "icon_name": "solar_chart-outline.svg",
-            "icon_asset": "",
+            "icon_asset": "icon-cards-respaldo-3.svg",
             "heading_variant": "default",
             "card_label": "",
             "card_large_text": "+10.000",

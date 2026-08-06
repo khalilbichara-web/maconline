@@ -196,8 +196,7 @@
 .split-features__heading {
   margin: 0;
   font-family: "Geist", system-ui, -apple-system, sans-serif;
-  font-size: clamp(1.75rem, 3vw, 2.5rem);
-  font-weight: 700;
+  font-weight: 500;
   line-height: 1.15;
   color: #fff;
 }
