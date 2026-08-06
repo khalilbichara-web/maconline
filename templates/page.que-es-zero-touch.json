@@ -147,7 +147,7 @@
         "feature_Pj7eyJ": {
           "type": "feature",
           "settings": {
-            "icon_name": "apple-accounts-benefit-link-round.svg",
+            "icon_name": "zero-touch-split-feature-2.svg",
             "heading": "Experiencia consistente para todos",
             "description": "Misma configuración, mismas apps y mismas políticas para cada usuario, sin depender de quién configuró."
           }
@@ -163,7 +163,7 @@
         "feature_RzDmKT": {
           "type": "feature",
           "settings": {
-            "icon_name": "apple-accounts-benefit-chart.svg",
+            "icon_name": "zero-touch-split-feature-4.svg",
             "heading": "Control y visibilidad  centralizada",
             "description": "Inventario, estados, cumplimiento, apps instaladas y acciones remotas (bloqueo, borrado, restricciones)."
           }
@@ -181,8 +181,8 @@
         "layout": "image_left",
         "image": "shopify://shop_images/Frame_59.png",
         "subheading": "beneficios clave para empresas",
-        "heading": "Deja de comprar tecnología. Empieza a administrarla de forma inteligente",
-        "description": "<p>Zero-Touch reduce drásticamente el tiempo de implementación y estandariza la configuración de toda tu flota. Tus dispositivos quedan listos desde el primer encendido, con políticas de seguridad, apps y accesos aplicados automáticamente. <br/>Menos carga para TI, más control y una mejor experiencia para los usuarios.<br/><br/></p>",
+        "heading": "¿Cómo funciona?",
+        "description": "<p>Zero-Touch reduce drásticamente el tiempo de implementación y estandariza la configuración de toda tu flota. Tus dispositivos quedan listos desde el primer encendido, con políticas de seguridad, apps y accesos aplicados automáticamente. Menos carga para TI, más control y una mejor experiencia para los usuarios.</p>",
         "show_button": true,
         "button_label": "Agendar Demo",
         "button_link": "",
@@ -240,7 +240,7 @@
         "header_alignment": "center",
         "light_mode": false,
         "subheading": "cómo funciona",
-        "heading": "<p>¿Cómo funciona Zero Touch?<br/><br/></p>",
+        "heading": "<p>¿Cómo funciona Zero Touch?</p>",
         "description": "<p>Asigna los dispositivos a tu MDM y define tu estándar. Al primer encendido, el equipo se enrola solo y recibe automáticamente políticas, apps y configuraciones. Todo queda listo para el usuario, con control total para TI.</p>"
       }
     },

@@ -1,6 +1,8 @@
-.hero__subtitle,
 .hero__title {
   margin-bottom: 2rem;
+}
+.hero__subtitle {
+  margin-bottom: 0;
 }
 
 .subtitle--secondary {
@@ -17,6 +19,7 @@
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  font-size: 32px;
 }
 
 .hero__description {

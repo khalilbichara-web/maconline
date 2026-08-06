@@ -95,7 +95,6 @@
 
 [id*="icon_cards_casos_reales"] .icon-cards-section__description p {
   color: rgba(255, 255, 255, 0.88);
-  font-size: 2rem;
   line-height: 1.3;
 }
 
@@ -169,7 +168,6 @@
 
 [id*="icon_cards_casos_reales"] .icon-cards-section__card-description {
   color: rgba(255, 255, 255, 0.62);
-  font-size: 1.65rem;
   line-height: 1.3;
 }
 
@@ -387,9 +385,6 @@
     font-size: 1.35rem;
   }
 
-  [id*="icon_cards_casos_reales"] .icon-cards-section__card-description {
-    font-size: 0.98rem;
-  }
 }
 
 /* ── Header ─────────────────────────────────────────── */
@@ -437,7 +432,6 @@
 .icon-cards-section__heading {
   margin: 0;
   font-family: "Geist", system-ui, -apple-system, sans-serif;
-  font-size: 2rem;
   background: linear-gradient(63.9deg, #ffffff 21.6%, #07abf8 62.3%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -470,10 +464,11 @@
   color: #0f2435;
   background: none;
   -webkit-text-fill-color: initial;
+  font-weight: 400;
 }
 
 .icon-cards-section--light .icon-cards-section__description p {
-  color: #1f3444;
+  color: #011624;
 }
 
 /* ── Grid ───────────────────────────────────────────── */

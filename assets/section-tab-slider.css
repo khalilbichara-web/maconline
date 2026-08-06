@@ -307,17 +307,20 @@
 
 .tab-slider--abm .tab-slider__subheading {
   color: #5c6f7e;
-  font-size: 0.8125rem;
   font-weight: 500;
   letter-spacing: 0.055em;
 }
 
 .tab-slider--abm .tab-slider__section-heading {
   max-width: 980px;
-  font-weight: 600;
+  font-weight: 500;
   color: #102536;
   background: none;
   -webkit-text-fill-color: #102536;
+}
+
+.tab-slider--abm .tab-slider__section-heading p {
+  margin: 0;
 }
 
 .tab-slider--abm .tab-slider__section-description {
@@ -372,7 +375,6 @@
 }
 
 .tab-slider--abm .tab-slider__feature {
-  font-size: 0.9375rem;
   line-height: 1.35;
   font-weight: 400;
   color: rgba(255, 255, 255, 0.92);

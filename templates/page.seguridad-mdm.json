@@ -181,8 +181,8 @@
       "name": "Tab Slider",
       "settings": {
         "subheading": "beneficios para tu empresa",
-        "heading": "<p>¿Qué significa “propiedad de Mac” en ABM?<br/><br/></p>",
-        "description": "<p><strong>Apple Business Manager es el portal de Apple para organizaciones. </strong>En el caso de Mac, “propiedad” significa que tus equipos quedan asociados a tu empresa a nivel de programa, <br/>permitiendo asignarlos a un servidor MDM y automatizar su enrolamiento y configuración cuando se encienden o se reinstalan.<br/><br/></p>",
+        "heading": "<p>¿Qué significa “propiedad de Mac” en ABM?</p>",
+        "description": "<p><strong>Apple Business Manager es el portal de Apple para organizaciones. </strong><br>En el caso de Mac, “propiedad” significa que tus equipos quedan asociados a tu empresa a nivel de programa, <br/>permitiendo asignarlos a un servidor MDM y automatizar su enrolamiento y configuración cuando se encienden o se reinstalan.<br/><br/></p>",
         "color_scheme": "light",
         "abm_slider_mode": true
       }
@@ -249,7 +249,7 @@
       "settings": {
         "subheading": "CASOS REALES",
         "heading": "<p>Casos reales donde MDM cambia el juego</p>",
-        "description": "<p>Ejemplos concretos de cómo el MDM te ahorra tiempo y te sube el estándar de seguridad, sin depender de configuraciones manuales ni del usuario.</p>",
+        "description": "<p>Ejemplos concretos de cómo el MDM te ahorra tiempo y te sube el estándar de seguridad, <br> sin depender de configuraciones manuales ni del usuario.</p>",
         "columns": "auto",
         "header_alignment": "center",
         "light_mode": false
