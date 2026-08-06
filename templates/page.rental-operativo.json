@@ -67,6 +67,9 @@
         "description_CCfeJR",
         "buttons_KXnMC9"
       ],
+      "custom_css": [
+        ".hero__subtitle {background-color: transparent; border: 1px solid; padding: 10px 24px;}"
+      ],
       "name": "t:sections.hero.name",
       "settings": {
         "layout": "horizontal",
