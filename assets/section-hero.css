@@ -130,6 +130,12 @@
 .hero__outer--horizontal .hero__content > *:not(.hero__subscription-wrapper) {
   max-width: 72rem;
 }
+@media (max-width: 1050px) {
+  .hero__outer--horizontal .hero__image-inner {
+    max-width: 380px;
+    max-height: 245px;
+  }
+}
 .hero__outer--vertical {
   flex-direction: column;
   justify-content: flex-start;

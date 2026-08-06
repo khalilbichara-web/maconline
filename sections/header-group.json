@@ -40,7 +40,7 @@
       "settings": {
         "h1_logo": true,
         "header_type": "left-logo",
-        "full_width": false,
+        "full_width": true,
         "logo": "shopify://shop_images/Logo_desk_-_blanco.png",
         "logo_2": "shopify://shop_images/Logo_desk_-_azul.png",
         "logo_width": 180,
@@ -53,7 +53,7 @@
         "sticky_header_type": "always",
         "enable_search": true,
         "search_color_scheme": "background-1",
-        "enable_box_shadow": true,
+        "enable_box_shadow": false,
         "collection_list": [],
         "product_list": [],
         "image_ratio": "5/4",
