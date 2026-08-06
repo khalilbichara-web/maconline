@@ -346,30 +346,15 @@
 				})
 			})
 
-			const sectionResizeObserver = new ResizeObserver((entries) => {
-				const [entry] = entries
+			const sectionResizeObserver = new ResizeObserver(() => {
 				heightPagination(sectionSlideshow)
 
 				if (slider) {
-					if (
-						slider.swiper &&
-						slider.getAttribute('data-pagination') === 'true' &&
-						thumbs &&
-						thumbs.swiper
-					) {
-						if (entry.contentRect.width < 576) {
-							thumbs.swiper.slideTo(slider.swiper.realIndex)
-							slider.swiper.on('slideChange', (swiper) => {
-								thumbs.swiper.slideTo(swiper.realIndex)
-								playVideo(slider)
-							})
-							slider.swiper.update()
-						} else {
-							slider.swiper.on('slideChange', () => {
-								playVideo(slider)
-							})
-							slider.swiper.update()
-						}
+					if (slider.swiper) {
+						slider.swiper.update()
+					}
+					if (thumbs && thumbs.swiper) {
+						thumbs.swiper.update()
 					}
 				}
 			})

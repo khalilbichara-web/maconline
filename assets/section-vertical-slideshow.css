@@ -140,13 +140,13 @@
 .vertical-slideshow__detail {
   max-height: 0;
   opacity: 0;
+  overflow: hidden;
   transition: max-height 0.25s ease, opacity 0.2s ease;
   margin-left: 4.1rem;
 }
 
 .vertical-slideshow__nav-item.is-active .vertical-slideshow__detail {
   opacity: 1;
-  max-height: 22rem;
   margin-top: 0.7rem;
 }
 
@@ -282,6 +282,14 @@
 
 .vertical-slideshow__mobile-visual {
   display: none;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.25s ease, opacity 0.2s ease;
+}
+
+.vertical-slideshow__mobile-visual.is-open {
+  opacity: 1;
 }
 
 /* Light mode tuning for Apple Accounts step flow */
@@ -426,8 +434,6 @@
 
   .vertical-slideshow__detail,
   .vertical-slideshow__nav-item.is-active .vertical-slideshow__detail {
-    opacity: 1;
-    max-height: none;
     margin-left: 4.2rem;
     margin-top: 0.65rem;
   }
@@ -442,7 +448,7 @@
     display: block;
     position: relative;
     margin: 1.2rem 0 0;
-    min-height: 18rem;
+    min-height: 0;
   }
 
   .vertical-slideshow__mobile-image-wrap {
