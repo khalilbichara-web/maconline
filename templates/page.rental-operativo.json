@@ -778,13 +778,23 @@
             "heading": "Contratación simple y 100% digital",
             "description": "Todo el proceso en línea, sin trámites presenciales ni papeleo."
           }
+        },
+        "feature_HxmTED": {
+          "type": "feature",
+          "settings": {
+            "icon_name": "solar_clock-circle-outline.svg",
+            "number": "",
+            "heading": "Configuración inicial incluida",
+            "description": "Recibe los equipos listos para trabajar, configuradas según tu operación."
+          }
         }
       },
       "block_order": [
         "feature_Yk6HF8",
         "feature_9cKFAh",
         "feature_zfd8JG",
-        "feature_79WFX8"
+        "feature_79WFX8",
+        "feature_HxmTED"
       ],
       "name": "Split Features",
       "settings": {
