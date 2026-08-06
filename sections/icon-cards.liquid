@@ -1,5 +1,11 @@
 {{ 'section-icon-cards.css' | asset_url | stylesheet_tag }}
 
+<style>
+  #shopify-section-{{ section.id }} {
+    overflow: hidden;
+  }
+</style>
+
 {%- liquid
   assign columns   = section.settings.columns | default: '4'
   assign alignment = section.settings.header_alignment | default: 'center'
@@ -143,7 +149,6 @@
 {
   "name": "Icon Cards",
   "tag": "section",
-  "class": "icon-cards-section",
   "settings": [
     {
       "type": "header",

@@ -1,6 +1,5 @@
 .icon-cards-section {
   position: relative;
-  overflow: hidden;
 }
 
 .icon-cards-section--light {
@@ -58,6 +57,12 @@
   position: relative;
   z-index: 1;
   padding: 6.25rem 3.125rem;
+}
+
+@media screen and (max-width: 768px) {
+  .icon-cards-section__container {
+    padding: 0;
+  }
 }
 
 .icon-cards-section__container h2 p {

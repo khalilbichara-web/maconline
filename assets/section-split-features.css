@@ -335,14 +335,14 @@
   .split-features--image_right .split-features__container {
     direction: ltr;
   }
-
+    .split-features__image-wrap {
+    width: 100%;
+    margin: 0;
+  }
   .split-features__media {
     min-height: 360px;
   }
 
-  .split-features__image-wrap {
-    width: 65%;
-  }
 
   .split-features__badge {
     font-size: 0.6875rem;
@@ -359,17 +359,10 @@
     min-height: 260px;
   }
 
-  .split-features__image-wrap {
-    width: 70%;
-  }
 
   .split-features__grid {
     grid-template-columns: 1fr;
     gap: 1rem;
-  }
-
-  .split-features__feature {
-    padding: 1.25rem;
   }
 
   .split-features__feature-number {
