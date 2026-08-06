@@ -91,6 +91,7 @@
         "button_label_2": "Hablar con un experto",
         "button_link_2": "",
         "button_style_2": "tertiary",
+        "mobile_full_width_buttons": true,
         "padding_top": "m",
         "padding_bottom": "m",
         "margin_top": "no-indent",
@@ -288,6 +289,7 @@
         "button_label_2": "",
         "button_link_2": "",
         "button_style_2": "tertiary",
+        "mobile_full_width_buttons": false,
         "padding_top": "m",
         "padding_bottom": "m",
         "margin_top": "no-indent",
@@ -303,3 +305,4 @@
     "animated_image_collage_portal"
   ]
 }
+

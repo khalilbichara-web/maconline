@@ -596,3 +596,19 @@
   flex-wrap: wrap;
   gap: 2rem;
 }
+
+@media screen and (max-width: 1050px) {
+  .aic--mobile-full-width-buttons .aic__buttons {
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+  }
+
+  .aic--mobile-full-width-buttons .aic__buttons .aic__button,
+  .aic--mobile-full-width-buttons .aic__buttons .button {
+    display: flex;
+    flex: 1 1 100%;
+    width: 100%;
+  }
+}

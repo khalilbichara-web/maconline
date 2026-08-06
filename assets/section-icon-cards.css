@@ -605,6 +605,10 @@
   color: #63cdfc;
 }
 
+.icon-cards-section__mobile-bottom-cta {
+  display: none;
+}
+
 .icon-cards-section--light .icon-cards-section__card {
   border-color: #b7ddff;
   background: #ffffff;
@@ -689,5 +693,19 @@
     bottom: -18rem;
     width: 56rem;
     height: 54.625rem;
+  }
+}
+
+@media screen and (max-width: 1050px) {
+  .icon-cards-section__mobile-bottom-cta {
+    margin-top: 1.25rem;
+    width: 100%;
+    display: flex;
+  }
+
+  .icon-cards-section__mobile-bottom-cta .icon-cards-section__button,
+  .icon-cards-section__mobile-bottom-cta .button {
+    width: 100%;
+    justify-content: center;
   }
 }

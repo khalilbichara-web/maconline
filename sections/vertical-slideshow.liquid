@@ -46,6 +46,51 @@
 						<div class="vertical-slideshow__detail">
 							{{ block.settings.details }}
 						</div>
+
+						<div class="vertical-slideshow__mobile-visual" aria-hidden="true">
+							<div class="vertical-slideshow__mobile-image-wrap vertical-slideshow__mobile-image-wrap--{{ forloop.index }}">
+								{% if block.settings.image != blank %}
+									{{
+										block.settings.image
+										| image_url: width: 1000
+										| image_tag:
+											class: 'vertical-slideshow__mobile-image',
+											loading: 'lazy',
+											widths: '320,420,560,720,900,1000'
+									}}
+								{% elsif block.settings.image_asset != blank %}
+									<img src="{{ block.settings.image_asset | asset_url }}" alt="" loading="lazy" class="vertical-slideshow__mobile-image" width="728" height="326">
+								{% endif %}
+							</div>
+
+							<div class="vertical-slideshow__mobile-pills">
+								{% for i in (1..5) %}
+									{%- liquid
+										assign pill_text_key = 'pill_' | append: i | append: '_text'
+										assign pill_icon_key = 'pill_' | append: i | append: '_icon'
+										assign pill_text = block.settings[pill_text_key]
+										assign pill_icon = block.settings[pill_icon_key]
+									-%}
+									{% if pill_text != blank %}
+										<div class="vertical-slideshow__pill vertical-slideshow__pill--{{ i }}">
+											{% if pill_icon != blank %}
+												<span class="vertical-slideshow__pill-icon">
+													{{
+														pill_icon
+														| image_url: width: 24
+														| image_tag:
+															loading: 'lazy',
+															widths: '16,24,32',
+															alt: ''
+													}}
+												</span>
+											{% endif %}
+											<span>{{ pill_text }}</span>
+										</div>
+									{% endif %}
+								{% endfor %}
+							</div>
+						</div>
 					</div>
 				{% endfor %}
 			</div>

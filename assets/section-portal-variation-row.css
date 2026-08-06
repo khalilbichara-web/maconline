@@ -63,9 +63,15 @@
 }
 
 
-@media screen and (max-width: 989px) {
+@media screen and (max-width: 1050px) {
+  .portal-variation-row {
+    overflow: hidden;
+  }
+
   .portal-variation-row__container {
     padding: 0 1.25rem;
+    width: 100%;
+    box-sizing: border-box;
   }
 
   .portal-variation-row__grid {
@@ -80,6 +86,11 @@
     width: calc(50% - 0.6rem);
     transform: none;
     border-radius: 1.4rem;
+  }
+
+  .portal-variation-row__item--1,
+  .portal-variation-row__item--4 {
+    display: none;
   }
 
   .portal-variation-row__item--5 {

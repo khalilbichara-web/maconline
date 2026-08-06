@@ -142,6 +142,17 @@
       </div>
     {% endif %}
 
+    {% if section.settings.show_mobile_bottom_cta and section.settings.mobile_bottom_cta_label != blank %}
+      <div class="icon-cards-section__mobile-bottom-cta">
+        {% render 'button',
+          link: section.settings.mobile_bottom_cta_link,
+          label: section.settings.mobile_bottom_cta_label,
+          style: section.settings.mobile_bottom_cta_style,
+          class: 'icon-cards-section'
+        %}
+      </div>
+    {% endif %}
+
   </div>
 </div>
 
@@ -239,6 +250,41 @@
       "id": "description",
       "label": "Descripción",
       "default": "<p>Cada renovación tecnológica implica decisiones financieras, implementación, soporte, seguridad y administración. Un modelo tradicional hace que estos procesos consuman tiempo, presupuesto y recursos que podrían destinarse al crecimiento del negocio.</p>"
+    },
+    {
+      "type": "header",
+      "content": "Mobile CTA"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_mobile_bottom_cta",
+      "label": "Mostrar CTA mobile al final",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "mobile_bottom_cta_label",
+      "label": "Texto CTA mobile",
+      "default": "Solicita una propuesta"
+    },
+    {
+      "type": "url",
+      "id": "mobile_bottom_cta_link",
+      "label": "URL CTA mobile"
+    },
+    {
+      "type": "select",
+      "id": "mobile_bottom_cta_style",
+      "label": "Estilo CTA mobile",
+      "options": [
+        { "value": "primary", "label": "Primary" },
+        { "value": "secondary", "label": "Secondary" },
+        { "value": "tertiary", "label": "Tertiary" },
+        { "value": "simple", "label": "Simple" },
+        { "value": "simple_secondary", "label": "Simple secondary" },
+        { "value": "simple_link", "label": "Link" }
+      ],
+      "default": "primary"
     }
   ],
   "blocks": [

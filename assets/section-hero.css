@@ -134,6 +134,7 @@
   .hero__outer--horizontal .hero__image-inner {
     max-width: 380px;
     max-height: 245px;
+    margin: 0 auto;
   }
 }
 .hero__outer--vertical {

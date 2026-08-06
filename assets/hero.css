@@ -21,6 +21,11 @@
   -webkit-text-fill-color: transparent;
   font-size: 32px;
 }
+@media (max-width: 1050px) {
+  .hero h2 {
+    font-size: 26px;
+  }
+}
 
 .hero__description {
   color: #fff;
@@ -72,6 +77,10 @@ main .shopify-section:has(.hero) + .shopify-section .icon-cards-section {
   overflow: visible;
 }
 
+.hero__mobile-bottom-ctas {
+  display: none;
+}
+
 @media screen and (max-width: 989px) {
   .hero__bg-overlay--top-left {
     top: -26rem;
@@ -85,5 +94,31 @@ main .shopify-section:has(.hero) + .shopify-section .icon-cards-section {
     left: 8rem;
     width: 80rem;
     height: 69.8rem;
+  }
+
+}
+
+@media screen and (max-width: 1050px) {
+  .hero--mobile-bottom-ctas .hero__content {
+    min-height: 100%;
+  }
+
+  .hero--mobile-bottom-ctas .hero__buttons {
+    display: none;
+  }
+
+  .hero--mobile-bottom-ctas .hero__mobile-bottom-ctas {
+    margin-top: 1.25rem;
+    margin-bottom: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .hero--mobile-bottom-ctas .hero__mobile-bottom-ctas .hero__button,
+  .hero--mobile-bottom-ctas .hero__mobile-bottom-ctas .button {
+    width: 100%;
+    justify-content: center;
   }
 }

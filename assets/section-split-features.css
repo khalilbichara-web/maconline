@@ -320,6 +320,18 @@
   gap: 1.25rem;
 }
 
+@media screen and (max-width: 1050px) {
+  .split-features__buttons {
+    width: 100%;
+  }
+
+  .split-features__buttons .split-features__button,
+  .split-features__buttons .button {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
 /* ── Responsive ───────────────────────────────────────── */
 @media screen and (max-width: 989px) {
   .split-features {
@@ -366,7 +378,7 @@
   }
 
   .split-features__feature-number {
-    font-size: 2rem;
+    font-size: 24px;
   }
 
   /* Hide outer badges on very small screens */

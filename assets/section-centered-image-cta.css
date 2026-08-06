@@ -62,7 +62,5 @@
     min-height: clamp(14rem, 55vw, 24rem);
   }
 
-  .centered-image-cta__cta .button {
-    min-height: 2.75rem;
-  }
+
 }

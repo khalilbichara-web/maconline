@@ -87,9 +87,19 @@
 	{% endstyle %}
 {% endif %}
 
+{% if section.settings.outer_background != blank %}
+	{% style %}
+		#Hero-{{ section.id }} .hero__outer {
+			background: {{ section.settings.outer_background }};
+			border-radius: 25px;
+			padding: 0 2em;
+		}
+	{% endstyle %}
+{% endif %}
+
 <div
 	id='Hero-{{ section.id }}'
-	class='hero section-{{ section.id }}-padding {% if section.settings.layout == 'overlay' and section.settings.header_overlay %} section--has-overlay {% if section.settings.header_transparent %} section--header-light {% endif %} {% endif %}'
+	class='hero section-{{ section.id }}-padding{% if section.settings.mobile_bottom_cta_stack %} hero--mobile-bottom-ctas{% endif %} {% if section.settings.layout == 'overlay' and section.settings.header_overlay %} section--has-overlay {% if section.settings.header_transparent %} section--header-light {% endif %} {% endif %}'
 >
 	{%- if section.settings.overlay_image != blank -%}
 		<div class="hero__bg-overlay" aria-hidden="true">
@@ -521,6 +531,31 @@
 				</div>
 			{% endif %}
 		</div>
+		{% if section.settings.mobile_bottom_cta_stack %}
+			<div class='hero__mobile-bottom-ctas'>
+				{% for block in section.blocks %}
+					{% if block.type == 'buttons' %}
+						{% if block.settings.show_button_1 != blank %}
+							{% render 'button',
+								link: block.settings.button_link_1,
+								label: block.settings.button_label_1,
+								style: block.settings.button_style_1,
+								class: 'hero'
+							%}
+						{% endif %}
+						{% if block.settings.show_button_2 != blank %}
+							{% render 'button',
+								link: block.settings.button_link_2,
+								label: block.settings.button_label_2,
+								style: block.settings.button_style_2,
+								class: 'hero'
+							%}
+						{% endif %}
+						{% break %}
+					{% endif %}
+				{% endfor %}
+			</div>
+		{% endif %}
 	</div>
 </div>
 
@@ -856,6 +891,18 @@
 			],
 			"default": "m",
 			"label": "t:sections.all.section-padding.padding_bottom.label"
+		},
+		{
+			"type": "checkbox",
+			"id": "mobile_bottom_cta_stack",
+			"default": false,
+			"label": "Mobile: stack CTAs at bottom",
+			"info": "On mobile, places hero buttons at the bottom and makes both CTAs full width."
+		},
+		{
+			"type": "color",
+			"id": "outer_background",
+			"label": "Hero outer background"
 		}
 	],
 	"blocks": [

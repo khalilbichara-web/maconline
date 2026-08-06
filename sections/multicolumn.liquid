@@ -29,6 +29,7 @@
 		multicolumn color-{{ section.settings.color_scheme }} background section-{{ section.id }}-padding
 		{% if section.settings.enable_border %} section-border {% if section.settings.border_full %} section-border-full {% endif %} {% endif %}
 		multicolumn-gap--{{ section.settings.gap }}
+		multicolumn--mobile-text-align-{{ section.settings.mobile_text_alignment | default: 'inherit' }}
 		multicolumn--{% if section.settings.section_type == 'separators' %}separators{% elsif section.settings.section_type == 'transparent' %}transparent{% elsif section.settings.section_type == 'solid' %}solid{% endif %}
 	'
 >
@@ -1089,6 +1090,30 @@
 				}
 			],
 			"default": "left"
+		},
+		{
+			"type": "select",
+			"id": "mobile_text_alignment",
+			"label": "Mobile text alignmnet",
+			"options": [
+				{
+					"value": "inherit",
+					"label": "Inherit"
+				},
+				{
+					"value": "left",
+					"label": "Left"
+				},
+				{
+					"value": "center",
+					"label": "Center"
+				},
+				{
+					"value": "right",
+					"label": "Right"
+				}
+			],
+			"default": "inherit"
 		},
 		{
 			"type": "header",

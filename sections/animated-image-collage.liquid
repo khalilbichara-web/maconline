@@ -15,7 +15,7 @@
 {% endstyle %}
 
 <div
-	class='aic aic--{% if section.settings.section_type == 'background' %}background color-{{ section.settings.color_scheme }} background {% elsif section.settings.section_type == 'right' %}right{% elsif section.settings.section_type == 'bottom' %}bottom{% endif %} {% if section.settings.full_width != true %}container{% endif %} {% if section.settings.header_overlay %}section--has-overlay {% if section.settings.header_transparent %} section--header-light {% endif %} {% endif %}'
+	class='aic aic--{% if section.settings.section_type == 'background' %}background color-{{ section.settings.color_scheme }} background {% elsif section.settings.section_type == 'right' %}right{% elsif section.settings.section_type == 'bottom' %}bottom{% endif %} {% if section.settings.full_width != true %}container{% endif %} {% if section.settings.header_overlay %}section--has-overlay {% if section.settings.header_transparent %} section--header-light {% endif %} {% endif %}{% if section.settings.mobile_full_width_buttons %} aic--mobile-full-width-buttons{% endif %}'
 	style='--aic-opacity: {{ section.settings.opacity_overlay }}'
 >
 	<div class='aic__wrapper {% if section.settings.section_type == 'background' %}container{% endif %} {% if section.settings.section_type != 'background' %}color-{{ section.settings.color_scheme }}{% endif %} section-{{ section.id }}-padding'>
@@ -1550,6 +1550,13 @@
 			],
 			"default": "simple",
 			"label": "t:sections.all.button.button_style.label"
+		},
+		{
+			"type": "checkbox",
+			"id": "mobile_full_width_buttons",
+			"default": false,
+			"label": "Mobile: full-width buttons",
+			"info": "Makes CTA buttons full width up to 1050px for this section only."
 		},
 		{
 			"type": "select",

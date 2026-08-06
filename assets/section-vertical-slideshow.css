@@ -280,6 +280,10 @@
   right: 8%;
 }
 
+.vertical-slideshow__mobile-visual {
+  display: none;
+}
+
 /* Light mode tuning for Apple Accounts step flow */
 .vertical-slideshow.vertical-slideshow--force-light {
   background: #f7fbff;
@@ -380,7 +384,7 @@
   object-fit: cover;
 }
 
-@media screen and (max-width: 989px) {
+@media screen and (max-width: 1050px) {
   .vertical-slideshow__container {
     padding: 3rem 1.25rem 3.5rem;
   }
@@ -389,30 +393,115 @@
     grid-template-columns: 1fr;
   }
 
+  .vertical-slideshow__nav {
+    gap: 2.3rem;
+  }
+
+  .vertical-slideshow__nav-item {
+    padding-left: 0.15rem;
+  }
+
+  .vertical-slideshow__nav-item::after,
+  .vertical-slideshow__nav-item.is-active::after {
+    left: 1.1rem;
+    top: 3.5rem;
+    height: calc(100% - 3.5rem);
+    opacity: 1;
+    background: #0ca8f5;
+  }
+
+  .vertical-slideshow__number,
+  .vertical-slideshow__nav-item.is-active .vertical-slideshow__number {
+    width: 36px;
+    height: 36px;
+    font-size: 1.9rem;
+    background: #0ca8f5;
+    color: #ffffff;
+  }
+
+  .vertical-slideshow__label {
+    font-size: clamp(2rem, 5.4vw, 3.2rem);
+    line-height: 1.08;
+  }
+
+  .vertical-slideshow__detail,
+  .vertical-slideshow__nav-item.is-active .vertical-slideshow__detail {
+    opacity: 1;
+    max-height: none;
+    margin-left: 4.2rem;
+    margin-top: 0.65rem;
+  }
+
+  .vertical-slideshow__detail li,
+  .vertical-slideshow__detail p {
+    font-size: clamp(1.55rem, 4.35vw, 2.8rem);
+    line-height: 1.2;
+  }
+
+  .vertical-slideshow__mobile-visual {
+    display: block;
+    position: relative;
+    margin: 1.2rem 0 0;
+    min-height: 18rem;
+  }
+
+  .vertical-slideshow__mobile-image-wrap {
+    position: relative;
+    width: min(80%, 420px);
+    margin: 0 auto;
+    z-index: 2;
+  }
+
+  .vertical-slideshow__mobile-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+  }
+
+  .vertical-slideshow__mobile-pills {
+    position: absolute;
+    inset: 0;
+    z-index: 3;
+  }
+
   .vertical-slideshow__nav::before {
     display: none;
   }
 
   .vertical-slideshow__visual {
-    min-height: 28rem;
-  }
-
-  .vertical-slideshow__visual::before {
-    width: 48rem;
-    height: 48rem;
-    right: -12rem;
-    top: -12rem;
-  }
-
-  .vertical-slideshow__image-wrap {
-    right: 1%;
-    bottom: 0;
-    width: 75%;
+    display: none;
   }
 
 
   .vertical-slideshow__pill {
-    max-width: 44vw;
+    max-width: 47vw;
+    font-size: clamp(0.92rem, 2.35vw, 1.45rem);
     text-overflow: ellipsis;
+  }
+
+  .vertical-slideshow__pill--1 {
+    top: 10%;
+    left: 5%;
+  }
+
+  .vertical-slideshow__pill--2 {
+    top: 68%;
+    left: 10%;
+  }
+
+  .vertical-slideshow__pill--3 {
+    top: 28%;
+    right: 4%;
+  }
+
+  .vertical-slideshow__pill--4 {
+    top: 74%;
+    right: 2%;
+  }
+
+  .vertical-slideshow__pill--5 {
+    top: 84%;
+    right: 20%;
   }
 }

@@ -92,6 +92,7 @@
 <div
   class="
     slideshow slideshow--{{ section.settings.layout }} section-{{ section.id }}-padding
+    slideshow-reverse-column-{{ section.settings.slideshow_reverse_column }}
     {% if section.settings.enable_border %} section-border {% if section.settings.border_full %} section-border-full {% endif %} {% endif %}
     color-{{ section.settings.color_scheme }} background
     {% if section.settings.enable_navigation  %} slideshow--with-nav {% endif %}
@@ -1521,6 +1522,13 @@
       "id": "show_tab_icon",
       "label": "t:sections.slideshow.settings.show_tab_icon.label",
       "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "slideshow_reverse_column",
+      "label": "Mobile: reverse slide column",
+      "info": "On screens up to 1050px, stacks media above content and adjusts tabs layout.",
+      "default": false
     },
     {
       "type": "header",

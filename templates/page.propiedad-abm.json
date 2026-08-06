@@ -55,6 +55,7 @@
         "button_label_2": "",
         "button_link_2": "",
         "button_style_2": "tertiary",
+        "mobile_full_width_buttons": true,
         "padding_top": "m",
         "padding_bottom": "xs",
         "margin_top": "no-indent",
@@ -129,6 +130,7 @@
         "mobile_image_overlay": "overlay",
         "horizontal_alignment": "center",
         "vertical_alignment": "middle",
+        "mobile_bottom_cta_stack": true,
         "padding_top": "m",
         "padding_bottom": "m"
       }
@@ -252,7 +254,11 @@
         "light_mode": true,
         "subheading": "CÓMO FUNCIONA",
         "heading": "<p>Qué habilita Apple Business Manager para Mac</p>",
-        "description": "<p>Lo que habilitas al tener tus Mac \"propiedad empresa\".</p>"
+        "description": "<p>Lo que habilitas al tener tus Mac \"propiedad empresa\".</p>",
+        "show_mobile_bottom_cta": true,
+        "mobile_bottom_cta_label": "Solicita una propuesta",
+        "mobile_bottom_cta_link": "",
+        "mobile_bottom_cta_style": "primary"
       }
     },
     "collapsible_content_hWBRAc": {
@@ -352,6 +358,7 @@
         "button_label_2": "",
         "button_link_2": "",
         "button_style_2": "tertiary",
+        "mobile_full_width_buttons": false,
         "padding_top": "m",
         "padding_bottom": "xs",
         "margin_top": "no-indent",
@@ -369,3 +376,6 @@
     "animated_image_collage_NwN9jA"
   ]
 }
+
+
+

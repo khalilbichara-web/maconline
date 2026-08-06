@@ -55,6 +55,7 @@
         "button_label_2": "Hablar con un experto",
         "button_link_2": "",
         "button_style_2": "tertiary",
+        "mobile_full_width_buttons": true,
         "padding_top": "m",
         "padding_bottom": "xs",
         "margin_top": "no-indent",
@@ -129,6 +130,7 @@
         "mobile_image_overlay": "overlay",
         "horizontal_alignment": "center",
         "vertical_alignment": "middle",
+        "mobile_bottom_cta_stack": true,
         "padding_top": "m",
         "padding_bottom": "m"
       }
@@ -184,7 +186,7 @@
         "heading": "¿Cómo funciona?",
         "description": "<p>Zero-Touch reduce drásticamente el tiempo de implementación y estandariza la configuración de toda tu flota. Tus dispositivos quedan listos desde el primer encendido, con políticas de seguridad, apps y accesos aplicados automáticamente. Menos carga para TI, más control y una mejor experiencia para los usuarios.</p>",
         "show_button": true,
-        "button_label": "Agendar Demo",
+        "button_label": "Solicitar Una Propuesta",
         "button_link": "",
         "button_style": "primary"
       }
@@ -434,6 +436,7 @@
         "button_label_2": "",
         "button_link_2": "",
         "button_style_2": "tertiary",
+        "mobile_full_width_buttons": false,
         "padding_top": "m",
         "padding_bottom": "m",
         "margin_top": "no-indent",
@@ -451,3 +454,4 @@
     "animated_image_collage_wW3JqC"
   ]
 }
+
