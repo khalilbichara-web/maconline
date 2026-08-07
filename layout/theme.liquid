@@ -459,38 +459,52 @@ dir="{% render 'direction' %}"
     })(window,document,'script','dataLayer','GTM-N76JV2DV');</script>
     <!-- End Google Tag Manager -->
 
-    {%- liquid
-      assign is_servicio_template = true
-      if template == 'collection' or template == 'product' or template == 'products' or template == 'cart' or template == 'search' or template == 'list-collections' or template.name == 'checkout'
-        assign is_servicio_template = false
-      endif
-
-      assign light_header_templates = settings.light_header_templates | newline_to_br | replace: '<br />', ',' | replace: ' ', '' | downcase
-      assign light_header_templates = ',' | append: light_header_templates | append: ','
-
-      assign current_template = template | downcase
-      assign current_template_name = template.name | downcase
-      assign current_page_type = request.page_type | downcase
-
-      assign current_template_token = ',' | append: current_template | append: ','
-      assign current_template_name_token = ',' | append: current_template_name | append: ','
-      assign current_page_type_token = ',' | append: current_page_type | append: ','
-
-      assign use_light_header = false
-      if settings.light_header_templates != blank and light_header_templates contains current_template_token
-        assign use_light_header = true
-      elsif settings.light_header_templates != blank and light_header_templates contains current_template_name_token
-        assign use_light_header = true
-      elsif settings.light_header_templates != blank and light_header_templates contains current_page_type_token
-        assign use_light_header = true
-      endif
-    -%}
-
     {{ 'custom.css' | asset_url | stylesheet_tag }}
     
-    {% if is_servicio_template %}
+    {% unless template == 'collection'
+      or template == 'product'
+      or template == 'products'
+      or template == 'cart'
+      or template == 'search'
+      or template == 'list-collections'
+      or template.name == 'checkout' %}
       {{ 'custom-servicio.css' | asset_url | stylesheet_tag }}
-    {% endif %}
+      <style>
+        .header__heading-logo--light {
+		      display: none;
+        }
+        .header__heading-logo--dark {
+          display: block;
+        }
+
+        .header--mobile-active .header__heading-logo--light {
+          display: block!important;
+        }
+
+        .header--mobile-active .header__heading-logo--dark{
+          display: none!important;
+        }
+      </style>
+    {% else %}
+      <style>
+              .header__heading-logo--light {
+          display: none;
+        }
+        .header__heading-logo--dark {
+          display: block;
+        }
+
+
+.header__heading-logo--light {
+		display: block!important;
+	}
+
+
+.header__heading-logo--dark {
+		display: none!important;
+	}
+      </style>
+    {% endunless %}
 
     <style>
       :root {
@@ -515,7 +529,7 @@ dir="{% render 'direction' %}"
 
   </head>
 
-  <body class="template-{{ template.name }} template-{{ template | replace: '.', '-' }} {{ request.page_type }}{% if use_light_header %} use-light-header{% endif %}">
+  <body class="template-{{ template.name }} template-{{ template | replace: '.', '-' }} {{ request.page_type }}">
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N76JV2DV" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->

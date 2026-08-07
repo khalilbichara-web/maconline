@@ -757,8 +757,8 @@ footer details[open] summary ~ * {
   display: none;
 }
 .footer__content-bottom {
-  padding-top: 4.8rem;
-  padding-bottom: 6.4rem;
+  padding-top: 1.8rem;
+  padding-bottom: 3.4rem;
 }
 .footer__content-bottom-wrapper {
   display: flex;
@@ -912,4 +912,10 @@ footer details[open] summary ~ * {
 }
 .footer.footer--align-right .footer__content-bottom-wrapper .footer__policies {
   justify-content: flex-end;
+}
+
+@media screen and (max-width: 1050px) {
+  .footer__nav-column + .footer__nav-column {
+    border-top: 1px solid rgb(var(--color-border));
+  }
 }

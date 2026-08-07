@@ -226,13 +226,9 @@ ul.footer__menu-bottom.list-unstyled {
     padding: 1.2rem 2rem !important;
   }
 }
-@media (max-width: 1024px) {
+@media (max-width: 1050px) {
   .footer__nav-columns {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr;
   }
 }
-@media (max-width: 640px) {
-  .footer__nav-columns {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
+

@@ -1,17 +1,43 @@
 ;(function () {
 	const header = () => {
 		const header = document.querySelector('.shopify-section-header')
+		const headerInner = document.querySelector('.shopify-section-header .header')
 		const menu = document.querySelector('.list-menu--inline')
 		const menuLinks = document.querySelectorAll('.list-menu-item')
 		const search = document.querySelector('.header__search')
+		const mobileMenuDrawer = document.querySelector('header-drawer')
+		const mobileMenuToggle = mobileMenuDrawer?.querySelector('.menu-drawer-container')
+		const mobileMenuSummary = mobileMenuDrawer?.querySelector(
+			'summary.header__icon--menu'
+		)
 
 		let hideMenuTimeout
 
-		header.addEventListener('keydown', (e) => {
+		const syncMobileHeaderState = () => {
+			const isOpen = Boolean(mobileMenuToggle?.open)
+			header?.classList.toggle('header--mobile-active', isOpen)
+			headerInner?.classList.toggle('header--mobile-active', isOpen)
+		}
+
+		header?.addEventListener('keydown', (e) => {
 			if (e.code === 'Escape' && search.isOpen) {
 				search.close()
 			}
 		})
+
+		syncMobileHeaderState()
+		mobileMenuToggle?.addEventListener('toggle', syncMobileHeaderState)
+		mobileMenuSummary?.addEventListener('click', () => {
+			setTimeout(syncMobileHeaderState, 0)
+		})
+
+		if (mobileMenuToggle) {
+			const observer = new MutationObserver(() => syncMobileHeaderState())
+			observer.observe(mobileMenuToggle, {
+				attributes: true,
+				attributeFilter: ['open', 'class'],
+			})
+		}
 
 		const annBar = document.querySelector('.section-announcement')
 		const annBarObserver = new IntersectionObserver((entries) => {
@@ -200,9 +226,9 @@
 		}
 
 		const menuCloseBtn = document.querySelector('.header__modal-close-button')
-		const mobileMenuDrawer = document.querySelector('header-drawer')
-		menuCloseBtn.addEventListener('click', (e) => {
-			mobileMenuDrawer.closeMenuDrawer(e)
+		menuCloseBtn?.addEventListener('click', (e) => {
+			mobileMenuDrawer?.closeMenuDrawer(e)
+			setTimeout(syncMobileHeaderState, 0)
 		})
 	}
 
