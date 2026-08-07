@@ -598,6 +598,9 @@
 }
 
 @media screen and (max-width: 1050px) {
+  .aic__buttons {
+    justify-content: center;
+  }
   .aic--mobile-full-width-buttons .aic__buttons {
     width: 100%;
     flex-direction: column;

@@ -160,7 +160,7 @@
     justify-content: flex-start;
   }
 
-  @media screen and (max-width: 989px) {
+  @media screen and (max-width: 1050px) {
     .portal-challenges__container {
       padding: 3rem 1.25rem 3.5rem;
     }
@@ -193,8 +193,20 @@
     }
 
     .portal-challenges__actions {
-      margin-top: 1.25rem;
+      margin-top: 1.5rem;
       gap: 0.6rem;
+      width: 100%;
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    .portal-challenges__actions > * {
+      width: 100%;
+    }
+
+    .portal-challenges .button {
+      width: 100%;
+      justify-content: center;
     }
   }
 {%- endstyle -%}

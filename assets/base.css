@@ -4092,11 +4092,15 @@ body.body--hidden {
   transition: transform 0.15s ease-out;
 }
 
+/** light header **/ 
 .header-wrapper {
   display: block;
   position: relative;
   transition: all var(--duration-default);
   z-index: 2;
+  background: #ffff;
+  box-shadow: 5px 3px 5px #00000014;
+
 }
 .header-wrapper[data-sticky-type=on-scroll-up] {
   -webkit-transform: translate3d(0, 0, 0);
