@@ -905,6 +905,19 @@
                             </span>
                           {%- endif -%}
                         </button>
+
+                        <!-- Quote button (toggles with Add to Cart when qty > 5) -->
+                        <button
+                          type="button"
+                          id="product-quote-btn"
+                          class="product-form__submit button button--{%- if show_dynamic_checkout -%}tertiary{% else %}primary{%- endif -%}"
+                          style="display: none;"
+                        >
+                          <span>
+                            {{ 'Cotizar producto' }}
+                            {% render 'icon-cart' %}
+                          </span>
+                        </button>
                       </div>
 
                       <div class="product-form__checkout no-js-hidden">
