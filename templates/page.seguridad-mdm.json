@@ -144,7 +144,7 @@
             "tab_label": "1",
             "icon_name": "tab-slider-icon-1.png",
             "heading": "Compra correcta",
-            "description": "Los Mac se compran a través de los tiendas o distribuidores autorizados.",
+            "description": "Los iPhone, iPad y/o Mac se compran a través de las tiendas o distribuidores autorizados.",
             "features": "",
             "cta_label": "",
             "cta_url": ""
@@ -183,8 +183,8 @@
       "name": "Tab Slider",
       "settings": {
         "subheading": "beneficios para tu empresa",
-        "heading": "<p>¿Qué significa “propiedad de Mac” en ABM?</p>",
-        "description": "<p><strong>Apple Business Manager es el portal de Apple para organizaciones. </strong><br>En el caso de Mac, “propiedad” significa que tus equipos quedan asociados a tu empresa a nivel de programa, <br/>permitiendo asignarlos a un servidor MDM y automatizar su enrolamiento y configuración cuando se encienden o se reinstalan.<br/><br/></p>",
+        "heading": "<p>¿Qué significa “propiedad del iPhone, iPad y/o Mac” en ABM?</p>",
+        "description": "<p><strong>Apple Business Manager es el portal de Apple para organizaciones. </strong><br>Apple Business Manager es el portal de Apple para organizaciones. En el caso del iPhone, iPad y/o Mac, “propiedad” significa que tus equipos quedan asociados a tu empresa a nivel de programa, permitiendo asignarlos a un servidor MDM y automatizar su enrolamiento y configuración cuando se encienden o se reinstalan..<br/><br/></p>",
         "color_scheme": "light",
         "abm_slider_mode": true
       }
@@ -429,7 +429,7 @@
         "subheading": "",
         "subheading_style": "subtitle subtitle--secondary",
         "subheading_icon": "none",
-        "heading": "Pasa a una postura de seguridad gestionada, no improvisada",
+        "heading": "Pasa a un modelo de seguridad gestionada, no improvisada",
         "heading_size": "h1",
         "heading_level": "h2",
         "heading_line": "simple",

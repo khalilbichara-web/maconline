@@ -106,7 +106,7 @@
             "card_large_text": "$0",
             "card_subtitle": "",
             "heading": "$0",
-            "description": "Costo de instalación"
+            "description": "Costo de inicial"
           }
         },
         "card_3": {
@@ -452,11 +452,11 @@
         "row_7": {
           "type": "comparison_row",
           "settings": {
-            "feature": "Facturación empresa",
-            "us_value": "Factura electrónica",
+            "feature": "Registro en Apple",
+            "us_value": "ID Apple de la empresa",
             "us_status": "check",
-            "them_value": "Factura electrónica",
-            "them_status": "check"
+            "them_value": "",
+            "them_status": "empty"
           }
         }
       },

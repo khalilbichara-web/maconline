@@ -37,13 +37,13 @@
         "subheading": "Apple Business Manager",
         "subheading_style": "subtitle subtitle--secondary",
         "subheading_icon": "none",
-        "heading": "Propiedad corporativa de Mac, desde el primer encendido",
+        "heading": "Propiedad corporativa de iPhone, iPad y Mac, desde el primer encendido.",
         "heading_size": "h1",
         "heading_level": "h2",
         "heading_line": "simple",
         "line_color": "#1566e0",
         "heading_animation": "none",
-        "text": "Asegura que cada Mac quede registrada como activo de tu empresa, asignada a tu MDM y lista para desplegarse sin preparación manual. Menos fricción, más control y una flota que se puede reasignar y escalar fácilmente.",
+        "text": "Asegura que cada iPhone, iPad y Mac quede registrada como activo de tu empresa, asignada a tu MDM y lista para desplegarse sin preparación manual. Menos fricción, más control y una flota que se puede reasignar y escalar fácilmente.",
         "enable_subscribe": false,
         "button_label_subscribe": "",
         "button_style_subscribe": "primary",
@@ -76,7 +76,7 @@
         "title_T6Ergb": {
           "type": "title",
           "settings": {
-            "heading": "Cuando el Mac “queda personal”, el control se pierde",
+            "heading": "Cuando el iPhone, iPad y Mac “queda personal”, el control se pierde",
             "heading_size": "h1",
             "heading_level": "h2",
             "heading_line": "simple",
@@ -89,7 +89,7 @@
         "description_EttkPP": {
           "type": "description",
           "settings": {
-            "description": "Sin una gestión correcta de propiedad, los equipos pueden terminar configurados con cuentas personales, sin estándar de seguridad y con procesos lentos de onboarding y recambio.\n<strong>\nABM resuelve la base: l Mac queda asociado a tu organizacióny lista para enrolarse automáticamente en MDM.</strong>"
+            "description": "Sin una gestión correcta de propiedad, los equipos pueden terminar configurados con cuentas personales, sin estándar de seguridad y con procesos lentos de onboarding y recambio.<br><br><strong>ABM resuelve la base: El iPhone, iPad y/o Mac queda asociado a tu organización y lista para enrolarse automáticamente en MDM.</strong>"
           }
         },
         "buttons_EjwEdj": {
@@ -180,7 +180,7 @@
         "overlay_bottom_right": "",
         "subheading": "BENEFICIOS PARA TU EMPRESA",
         "subheading_style": "subtitle",
-        "heading": "¿Qué significa “propiedad de Mac” en ABM?",
+        "heading": "¿Qué significa “propiedad del iPhone, iPad y/o Mac” en ABM?",
         "heading_size": "h2",
         "text": "<p><strong>Apple Business Manager es el portal de Apple para organizaciones.</strong><br/>En el caso de Mac, “propiedad” significa que tus equipos quedan asociados a tu empresa a nivel de programa, permitiendo asignarlos a un servidor MDM y automatizar su enrolamiento y configuración cuando se encienden o se reinstalan.</p>",
         "show_numbers": true,
@@ -253,8 +253,8 @@
         "header_alignment": "left",
         "light_mode": true,
         "subheading": "CÓMO FUNCIONA",
-        "heading": "<p>Qué habilita Apple Business Manager para Mac</p>",
-        "description": "<p>Lo que habilitas al tener tus Mac \"propiedad empresa\".</p>",
+        "heading": "<p>Qué habilita Apple Business Manager para iPhone, iPad y/o Mac</p>",
+        "description": "<p>Lo que habilitas al tener tus iPhone, iPad y/o Mac \"propiedad empresa\".</p>",
         "show_mobile_bottom_cta": true,
         "mobile_bottom_cta_label": "Solicita una propuesta",
         "mobile_bottom_cta_link": "",
@@ -340,13 +340,13 @@
         "subheading": "",
         "subheading_style": "subtitle subtitle--secondary",
         "subheading_icon": "none",
-        "heading": "Ordena la propiedad de tu flota Mac y habilita Zero-Touch de verdad",
+        "heading": "Ordena la propiedad de tu flota iPhone, iPad y/o Mac y habilita Zero-Touch de verdad",
         "heading_size": "h1",
         "heading_level": "h2",
         "heading_line": "simple",
         "line_color": "#1566e0",
         "heading_animation": "none",
-        "text": "Te ayudamos a configurar ABM, enlazar tu MDM y definir el flujo de compra/despliegue para que cada Mac quede como activo corporativo, estandarizado y listo para escalar.",
+        "text": "Te ayudamos a configurar ABM, enlazar tu MDM y definir el flujo de compra/despliegue para que cada iPhone, iPad y/o Mac quede como activo corporativo, estandarizado y listo para escalar.",
         "enable_subscribe": false,
         "button_label_subscribe": "",
         "button_style_subscribe": "primary",

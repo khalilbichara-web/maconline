@@ -521,11 +521,11 @@
             "heading": "Mac para trabajar sin límites",
             "heading_size": "recommended",
             "heading_level": "h3",
-            "description": "MacBook Pro, MacBook Air, iMac y Mac Studio para equipos de diseño, desarrollo, finanzas y operaciones\n<ul class=\"list-check\">\n<li>Configuración inicial lista para tu operación</li>\n<li>AppleCare y garantía extendida incluida</li>\n<li>Renovación a la última generación al término del contrato</li>\n<li>Soporte técnico corporativo</li>\n</ul>",
+            "description": "MacBook Pro, MacBook Air, iMac y Mac Studio para equipos de diseño, desarrollo, finanzas y operaciones\n<ul class=\"list-check\">\n<li>Configuración inicial lista para tu operación</li>\n<li>AppleCare y garantía extendida</li>\n<li>Renovación a la última generación al término del contrato</li>\n<li>Soporte técnico corporativo</li>\n</ul>",
             "tab_heading": "Mac",
             "show_button": true,
             "button_style": "primary",
-            "button_label": "Cotizar Mac",
+            "button_label": "Cotizar iMac",
             "button_link": "",
             "overlay_link": false
           }
@@ -746,7 +746,7 @@
         "subheading": "Preguntas frecuentes",
         "subheading_style": "subtitle",
         "subheading_icon": "circle",
-        "heading": "Resolvemos tus dudas sobre MacOnline",
+        "heading": "Resolvemos tus dudas",
         "heading_size": "h2",
         "heading_level": "h2",
         "heading_line": "none",

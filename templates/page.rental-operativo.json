@@ -23,7 +23,7 @@
         "subtitle_iExhfH": {
           "type": "subtitle",
           "settings": {
-            "subheading": "Rental operativo para empresas",
+            "subheading": "Rental operativo para Empresas",
             "subheading_style": "subtitle subtitle--secondary",
             "subheading_icon": "none"
           }
@@ -162,7 +162,7 @@
         "line_color": "#1566e0",
         "enable_heading_gradient_clip": true,
         "word_break": false,
-        "text": "En vez de gran desembolsado inicial, pagas una cuota mensual fija. \nAsí mantienes la liquidez de tu empresa y tu tecnología siempre al día.",
+        "text": "En vez de gran desembolso inicial, pagas una cuota mensual fija. \nAsí mantienes la liquidez de tu empresa y tu tecnología siempre al día.",
         "heading_animation": "none",
         "word_break_an": false,
         "text_align": "left",
@@ -218,7 +218,7 @@
             "enable_link": false,
             "link": "",
             "heading": "Sin pago Cuota mensual fija en pesos",
-            "text": "<p>Un valor predecible y estable durante todo el contrato sin sorpresas cambiarlas, que facilita tu planificación financiera.</p>",
+            "text": "<p>Un valor predecible y estable durante todo el contrato sin sorpresas cambiarias, que facilita tu planificación financiera.</p>",
             "show_button": false,
             "button_label": "Learn More",
             "button_link": "",
@@ -492,7 +492,7 @@
             "icon_name": "solar_clock-circle-outline.svg",
             "number": "",
             "heading": "Contratación simple y 100% digital",
-            "description": "Todo el proceso en línea, sin trámites presenciales ni papeleo."
+            "description": "Todo el proceso en línea, sin trámites Presenciales ni papeleo."
           }
         },
         "feature_HxmTED": {
