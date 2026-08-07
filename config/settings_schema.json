@@ -2817,6 +2817,12 @@
 				],
 				"default": "custom",
 				"label": "t:settings_schema.advanced.settings.rte_type.label"
+			},
+			{
+				"type": "textarea",
+				"id": "light_header_templates",
+				"label": "Light header templates",
+				"info": "Comma or line-separated template names. Examples: page.servicios, page.managed-services, index, collection."
 			}
 		]
 	},

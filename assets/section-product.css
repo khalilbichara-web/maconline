@@ -555,7 +555,8 @@
 }
 
 .product-page .product__media-sublist .swiper-wrapper {
-  gap: 0;
+  gap: 1rem;
+  margin: 2.5rem 0 0 2.5rem;
 }
 
 .product-page .product__media-subitem {
@@ -567,6 +568,7 @@
   background: var(--product-surface);
   border: 0;
   opacity: 0.5;
+  max-height: 150px;
 }
 
 .product-page .product__media-subitem.swiper-slide-thumb-active {

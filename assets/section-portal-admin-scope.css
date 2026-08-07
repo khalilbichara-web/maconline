@@ -16,6 +16,7 @@
   background:
     radial-gradient(circle, rgba(8, 49, 77, 0.85) 0 18%, transparent 18% 34%, rgba(8, 49, 77, 0.55) 34% 48%, transparent 48% 62%, rgba(8, 49, 77, 0.35) 62% 75%, transparent 75% 100%);
   pointer-events: none;
+  z-index: -1
 }
 
 .portal-admin-scope__container {
@@ -25,7 +26,7 @@
   margin: 0 auto;
   background: #051523;
   border-radius: 2rem;
-  padding: clamp(2.5rem, 3.8vw, 4rem) clamp(1.5rem, 3.2vw, 3rem);
+  padding: 5rem;
   display: grid;
   grid-template-columns: minmax(280px, 1fr) minmax(320px, 1.45fr);
   gap: clamp(2rem, 3.3vw, 3.8rem);
