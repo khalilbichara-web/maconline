@@ -37,7 +37,7 @@
         "subheading": "Servicios para Empresas",
         "subheading_style": "subtitle subtitle--secondary",
         "subheading_icon": "none",
-        "heading": "Tecnología Apple.Sin fricciones.",
+        "heading": "Tecnología Apple. Sin fricciones.",
         "heading_size": "h1",
         "heading_level": "h2",
         "heading_line": "simple",
@@ -524,6 +524,7 @@
           "type": "slide",
           "settings": {
             "tab_label": "Apple Authorized Reseller",
+            "icon_asset": "coverage-tab-link-circle.svg",
             "eyebrow": "Apple Authorized Reseller",
             "title": "AppleCare+ para empresas",
             "text": "Extiende la garantía original de Apple y agrega protección contra daños accidentales, soporte técnico prioritario y reemplazo express todo por una tarifa fija y predecible.",
@@ -537,6 +538,7 @@
           "type": "slide",
           "settings": {
             "tab_label": "Seguro de Robo",
+            "icon_asset": "coverage-tab-power-outline.svg",
             "eyebrow": "Seguro de robo",
             "title": "Onsafe\nSeguro Empresarial",
             "text": "Cobertura específica contra robo con o sin violencia, pérdida y daño total de tus equipos Apple. Diseñado para flotas corporativas con gestión centralizada de siniestros.",

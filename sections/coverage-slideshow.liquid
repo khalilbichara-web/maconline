@@ -88,7 +88,7 @@
         {% for block in section.blocks %}
           <button
             type="button"
-            class="coverage-slideshow__tab-btn{% if forloop.first %} is-active{% endif %}"
+            class="coverage-slideshow__tab-btn button {% if forloop.first %} is-active{% endif %}"
             data-coverage-target="{{ forloop.index0 }}"
             role="tab"
             id="coverage-tab-{{ section.id }}-{{ forloop.index0 }}"
@@ -97,7 +97,15 @@
             tabindex="{% if forloop.first %}0{% else %}-1{% endif %}"
           >
             <span class="coverage-slideshow__tab-icon" aria-hidden="true">
-              {% if forloop.first %}
+              {% if block.settings.icon_asset != blank %}
+                <img
+                  src="{{ block.settings.icon_asset | asset_url }}"
+                  alt=""
+                  loading="lazy"
+                  width="20"
+                  height="20"
+                >
+              {% elsif forloop.first %}
                 <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" fill="none"><path d="M5.4 13.7h8.1a3.3 3.3 0 0 0 0-6.6h-.8A4.6 4.6 0 0 0 4.4 8.6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M9.2 11.2l-2 2 2 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
               {% else %}
                 <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" fill="none"><path d="M10 2.8a5 5 0 0 1 5 5v2.2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M6.1 9h7.8a1.8 1.8 0 0 1 1.8 1.8v4a1.8 1.8 0 0 1-1.8 1.8H6.1a1.8 1.8 0 0 1-1.8-1.8v-4A1.8 1.8 0 0 1 6.1 9Z" stroke="currentColor" stroke-width="1.5"/></svg>
@@ -203,6 +211,11 @@
           "id": "tab_label",
           "label": "Etiqueta tab",
           "default": "Apple Authorized Reseller"
+        },
+        {
+          "type": "text",
+          "id": "icon_asset",
+          "label": "Icon asset filename"
         },
         {
           "type": "text",

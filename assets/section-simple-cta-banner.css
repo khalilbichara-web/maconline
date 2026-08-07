@@ -121,9 +121,10 @@
 .simple-cta-banner__fg-image,
 .simple-cta-banner__fg-fallback {
   position: absolute;
-  max-width: 85%;
-  height: auto;
+  max-width: 100%;
+  height: 100%;
   z-index: 3;
+  object-fit: cover;
 }
 
 .simple-cta-banner__fg-fallback {
@@ -138,66 +139,93 @@
   padding: 0.7rem 1.45rem;
 }
 
-@media screen and (max-width: 1200px) {
-  .simple-cta-banner__panel {
-    grid-template-columns: minmax(0, 1fr) minmax(330px, 42%);
-    min-height: 25rem;
+
+@media screen and (max-width:768px) {
+  .simple-cta-banner {
+    min-height: auto;
   }
 
-  .simple-cta-banner__content {
-    padding: 2.4rem 1.4rem 2.4rem 2.25rem;
-  }
-}
-
-@media screen and (max-width: 989px) {
   .simple-cta-banner__container {
-    padding: 0 1.25rem;
+    max-width: 36rem;
+    padding: 0 1rem;
   }
 
   .simple-cta-banner__panel {
     grid-template-columns: 1fr;
-    min-height: auto;
-    border-radius: 1.2rem;
+    min-height: 0;
+    border-radius: 1.5625rem;
     gap: 0;
+    background: linear-gradient(143.84deg, #032237 2.6%, #070a13 45.72%, #021f32 80.24%);
+    border: 1px solid rgba(91, 145, 183, 0.36);
+    box-shadow: 0 22px 44px rgba(2, 12, 20, 0.42);
   }
 
   .simple-cta-banner__content {
-    padding: 1.75rem 1rem 1.25rem;
+    justify-content: flex-start;
+    padding: 1.5rem 1.5rem 1.5rem;
   }
 
+
   .simple-cta-banner__heading {
-    font-size: 2rem;
+    margin-top: 0.625rem;
+    font-size: 1.5rem;
+    line-height: 1.1667;
     max-width: none;
+    background: linear-gradient(98deg, #ffffff 14.38%, #07abf8 93.41%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 
   .simple-cta-banner__description {
+    margin-top: 0.625rem;
     max-width: none;
   }
 
   .simple-cta-banner__description p {
-    font-size: 0.96rem;
+    font-size: 0.875rem;
+    line-height: 1.2857;
   }
 
   .simple-cta-banner__media {
-    border-left: 0;
-    border-top: 1px solid rgba(92, 140, 173, 0.28);
-    min-height: 15.5rem;
+    order: -1;
+    align-items: stretch;
+    justify-content: stretch;
+    min-height: 0;
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+    border-bottom: 1px solid rgba(91, 145, 183, 0.22);
+  }
+
+  .simple-cta-banner__bg-image {
+    inset: auto;
+    width:100%;
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
   }
 
   .simple-cta-banner__fg-image,
   .simple-cta-banner__fg-fallback {
-    left: 50%;
-    transform: translateX(-50%);
-    width: min(84%, 19rem);
+    width: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    bottom: 0;
   }
 
-
   .simple-cta-banner__actions {
+    margin-top: 1.375rem;
+    width: 100%;
     gap: 0.6rem;
   }
 
+  .simple-cta-banner__actions > * {
+    width: 100%;
+  }
+
   .simple-cta-banner .button {
-    min-height: 2.65rem;
-    padding: 0.62rem 1.1rem;
+    width: 100%;
+    min-height: 3rem;
+    padding: 0.75rem 1.5rem;
   }
 }
