@@ -56,7 +56,7 @@
   margin: 0 auto;
   position: relative;
   z-index: 1;
-  padding: 6.25rem 3.125rem;
+  padding: 8.25rem 3.125rem;
 }
 
 @media screen and (max-width: 768px) {
@@ -329,7 +329,7 @@
 
 [id*="icon_cards_23872"] .icon-cards-section__card-heading {
   font-family: "SF Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  line-height: 1.25rem;
+  font-weight: 300;
 }
 
 [id*="icon_cards_23872"] .icon-cards-section__card-description {
@@ -394,19 +394,23 @@
 .icon-cards-section__header {
   display: flex;
   flex-direction: column;
+  gap: 10px;
   margin-bottom: 2.3rem;
 }
+
 
 /* Center variant */
 .icon-cards-section--align-center .icon-cards-section__header {
   align-items: center;
   text-align: center;
+  padding: 2% 0 12% 0;
 }
 
 /* Left variant */
 .icon-cards-section--align-left .icon-cards-section__header {
   align-items: flex-start;
   text-align: left;
+  padding: 3% 0;
 }
 
 .icon-cards-section__subheading-wrapper {
@@ -449,7 +453,7 @@
 .icon-cards-section__description p {
   margin: 0;
   font-family: "SF Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  font-size: 1.25rem;
+  font-size: 16px;
   font-weight: 400;
   line-height: 1.5;
   color: #fff;
@@ -528,8 +532,8 @@
 }
 
 .icon-cards-section__card-icon img {
-  width: 35px;
-  height: 35px;
+  width: 48px;
+  height: 48px;
   display: block;
 }
 
@@ -544,6 +548,7 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  padding-top: 5%;
 }
 
 .icon-cards-section__card--number-large {
@@ -560,23 +565,24 @@
   display: flex;
   flex-direction: column;
   min-height: 100%;
-  gap: 0.625rem;
+  gap: 10px;
 }
 
 .icon-cards-section__card-heading {
   margin: 0;
   font-family: "SF Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  font-size: 1.25rem;
-  font-weight: 590;
+  font-size: 19px;
+  font-weight: 600;
   line-height: 1.2;
   color: #fff;
   word-break: break-word;
+  padding-top: 12%;
 }
 
 .icon-cards-section__card-description {
   margin: 0;
   font-family: "SF Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  font-size: 13px;
+  font-size: 16px;
   font-weight: 400;
   line-height: 1.25;
   color: rgba(255, 255, 255, 0.6);

@@ -20,6 +20,7 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-size: 32px;
+  font-weight: 600;
 }
 @media (max-width: 1050px) {
   .hero h2 {
@@ -29,7 +30,6 @@
 
 .hero__description {
   color: #fff;
-  font-size: 150%;
   margin-bottom: 4rem;
 }
 

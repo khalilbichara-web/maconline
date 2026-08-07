@@ -297,7 +297,7 @@
       "name": "t:sections.collapsible-content.name",
       "settings": {
         "layout": "background",
-        "color_scheme": "background-3",
+        "color_scheme": "scheme-39e5d4a7-e422-4a30-b12c-b2a059c9acee",
         "enable_border": false,
         "border_full": false,
         "subheading": "",

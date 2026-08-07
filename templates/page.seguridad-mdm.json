@@ -34,7 +34,7 @@
         "icon_fill_type": "gradient",
         "icon_size": "recommended",
         "box_shadow": true,
-        "subheading": "Apple Business Manager",
+        "subheading": "Seguridad MDM",
         "subheading_style": "subtitle subtitle--secondary",
         "subheading_icon": "none",
         "heading": "Maneja la seguridad de tus equipos Apple con MDM (Zero-Touch).",
@@ -68,7 +68,7 @@
         "subtitle_6ryWwA": {
           "type": "subtitle",
           "settings": {
-            "subheading": "que es zero touch",
+            "subheading": "seguridad mdm",
             "subheading_style": "subtitle",
             "subheading_icon": "circle"
           }

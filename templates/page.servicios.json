@@ -284,7 +284,7 @@
       ],
       "name": "Icon Cards — El Problema (4 col)",
       "settings": {
-        "columns": "4",
+        "columns": "3",
         "header_alignment": "left",
         "light_mode": false,
         "show_card_description": true,

@@ -171,7 +171,7 @@
   }
 }
 .aic--background .aic__info .aic__description {
-  max-width: 67rem;
+  max-width: 75rem;
   margin-inline: auto;
 }
 .aic--background .aic__subscription {
@@ -586,6 +586,7 @@
 }
 .aic__description {
   margin: 0;
+  font-size: 19px;
 }
 .aic__subscription:last-child:not(:first-child) {
   margin-top: 2.4rem;
