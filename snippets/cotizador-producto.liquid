@@ -50,6 +50,9 @@
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   -webkit-font-smoothing: antialiased;
   color: #1d1d1f;
+    max-height: 100vh;
+  overflow: scroll;
+  margin: .5em auto;
 }
 .qcot-modal.qcot-open {
   opacity: 1; visibility: visible;
@@ -298,8 +301,22 @@
   var formArea = document.getElementById('qcot-form-area');
   var successArea = document.getElementById('qcot-success');
 
-  function openCotModal() { overlay.classList.add('qcot-open'); modal.classList.add('qcot-open'); document.body.style.overflow = 'hidden'; }
-  function closeCotModal() { overlay.classList.remove('qcot-open'); modal.classList.remove('qcot-open'); document.body.style.overflow = ''; }
+  function openCotModal() {
+    var header = document.querySelector('.shopify-section-header');
+    var announcement = document.querySelector('.section-announcement');
+    overlay.classList.add('qcot-open');
+    modal.classList.add('qcot-open');
+    if (header) header.style.zIndex = '-1';
+    if (announcement) announcement.style.zIndex = '-1';
+  }
+  function closeCotModal() {
+    var header = document.querySelector('.shopify-section-header');
+    var announcement = document.querySelector('.section-announcement');
+    overlay.classList.remove('qcot-open');
+    modal.classList.remove('qcot-open');
+    if (header) header.style.zIndex = '';
+    if (announcement) announcement.style.zIndex = '';
+  }
 
   trigger.addEventListener('click', function() {
     formArea.style.display = '';
