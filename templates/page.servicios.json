@@ -158,6 +158,7 @@
         "product_card_deAqrp": {
           "type": "product_card",
           "settings": {
+            "image_override": "shopify://shop_images/Rectangle_039846e0-fd0c-4636-bad6-d620c128012b.png",
             "product": "iphone-16",
             "title": "",
             "subtitle": "",
