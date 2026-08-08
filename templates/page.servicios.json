@@ -419,8 +419,8 @@
         "card_1a": {
           "type": "card",
           "settings": {
-            "icon_name": "solar_shield-check-outline.svg",
-            "icon_asset": "",
+            "icon_name": "",
+            "icon_asset": "solar-shield-check-outline-fg.svg",
             "heading_variant": "default",
             "card_label": "",
             "card_large_text": "",
@@ -435,7 +435,7 @@
           "type": "card",
           "settings": {
             "icon_name": "",
-            "icon_asset": "solar_refresh-square-outline.svg",
+            "icon_asset": "solar-settings-outline-fg.svg",
             "heading_variant": "default",
             "card_label": "",
             "card_large_text": "",
@@ -449,8 +449,8 @@
         "card_3a": {
           "type": "card",
           "settings": {
-            "icon_name": "solar_shield-minimalistic-outline.svg",
-            "icon_asset": "",
+            "icon_name": "",
+            "icon_asset": "solar-verified-check-outline-fg.svg",
             "heading_variant": "default",
             "card_label": "",
             "card_large_text": "",
@@ -465,7 +465,7 @@
           "type": "card",
           "settings": {
             "icon_name": "",
-            "icon_asset": "solar_file-text-outline.svg",
+            "icon_asset": "solar-notebook-minimalistic-outline-fg.svg",
             "heading_variant": "default",
             "card_label": "",
             "card_large_text": "",
@@ -494,8 +494,8 @@
         "card_6a": {
           "type": "card",
           "settings": {
-            "icon_name": "solar_chart-outline.svg",
-            "icon_asset": "",
+            "icon_name": "",
+            "icon_asset": "solar-box-outline-fg.svg",
             "heading_variant": "default",
             "card_label": "",
             "card_large_text": "",

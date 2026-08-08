@@ -58,7 +58,7 @@
 
   
 
-    <div class="icon-cards-section__header">
+    <div class="icon-cards-section__header {% if section.settings.subheading == blank and section.settings.description == blank %} title-alone {% endif %}">
       {% if section.settings.subheading != blank %}
         <div class="icon-cards-section__subheading-wrapper">
           <div class="icon-cards-section__subheading-dot"></div>
@@ -123,7 +123,7 @@
               {% endif %}
 
               {% if block.settings.heading != blank %}
-                <h3 class="icon-cards-section__card-heading">{{ block.settings.heading }}</h3>
+                <h3 class="icon-cards-section__card-heading {% if card_large_text %} has-large-text {% endif %}">{{ block.settings.heading }}</h3>
               {% endif %}
 
               {% if section.settings.show_card_description and block.settings.description != blank %}

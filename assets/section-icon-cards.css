@@ -389,6 +389,10 @@
   padding: 2% 0 12% 0;
 }
 
+.icon-cards-section--align-center .icon-cards-section__header.title-alone {
+  padding-bottom: 2%;
+}
+
 /* Left variant */
 .icon-cards-section--align-left .icon-cards-section__header {
   align-items: flex-start;
@@ -572,6 +576,9 @@
   color: #fff;
   word-break: break-word;
   padding-top: 12%;
+}
+.icon-cards-section__card-heading.has-large-text {
+  padding-top: 3%;
 }
 
 @media (max-width: 1050px) {
