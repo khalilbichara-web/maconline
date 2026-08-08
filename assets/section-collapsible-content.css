@@ -9,6 +9,11 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+@media (max-width: 1050px) {
+  .collapsible-content__title {
+    font-size: 24px;
+  }
+}
 .collapsible-content__item {
   padding: 0.8rem 0;
 }

@@ -3,22 +3,7 @@
 }
 
 
-.portal-variation-row::after {
-  content: "";
-  position: absolute;
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 0;
-}
 
-
-.portal-variation-row::after {
-  width: 4.7rem;
-  height: 13.4rem;
-  right: 0;
-  bottom: -6.2rem;
-  background: radial-gradient(circle at center, rgba(59, 151, 211, 0.25) 0%, rgba(59, 151, 211, 0.06) 57%, rgba(59, 151, 211, 0) 78%);
-}
 
 .portal-variation-row__container {
   max-width: 1440px;
@@ -63,7 +48,6 @@
     min-width: 0;
     gap: 1.2rem;
     flex-wrap: wrap;
-    align-items: stretch;
   }
 
   .portal-variation-row__item {

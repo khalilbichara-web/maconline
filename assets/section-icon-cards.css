@@ -153,7 +153,6 @@
   background: #060911;
   color: #ffffff;
   font-family: "SF Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  font-size: 1.95rem;
   font-weight: 500;
   line-height: 1;
   -webkit-text-fill-color: initial;
@@ -353,21 +352,8 @@
     min-height: 11.5rem;
   }
 
-  [id*="icon_cards_iphone_empresas_kpi_6793"] .icon-cards-section__card-heading {
-    font-size: clamp(2.125rem, 10vw, 2.75rem);
-  }
-
-  [id*="icon_cards_iphone_empresas_kpi_6793"] .icon-cards-section__card-description {
-    font-size: clamp(1.05rem, 4.9vw, 1.5rem);
-  }
-
   [id*="icon_cards_23872"] .icon-cards-section__container {
     padding: 4rem 1.25rem;
-  }
-
-  [id*="icon_cards_23872"] .icon-cards-section__heading {
-    font-size: 1.625rem;
-    line-height: 1.875rem;
   }
 
   [id*="icon_cards_23872"] .icon-cards-section__grid {
@@ -384,9 +370,6 @@
     min-height: 14.2rem;
   }
 
-  [id*="icon_cards_casos_reales"] .icon-cards-section__card-heading {
-    font-size: 1.35rem;
-  }
 
 }
 
@@ -411,6 +394,12 @@
   align-items: flex-start;
   text-align: left;
   padding: 3% 0;
+}
+
+@media screen and (max-width: 1050px) {
+  .icon-cards-section--align-center .icon-cards-section__header {
+    padding: 2% 0;
+  }
 }
 
 .icon-cards-section__subheading-wrapper {
@@ -551,6 +540,12 @@
   padding-top: 5%;
 }
 
+@media screen and (max-width: 1050px) {
+  .icon-cards-section__card-label {
+    font-size: 32px;
+  }
+}
+
 .icon-cards-section__card--number-large {
   justify-content: flex-start;
   gap: 1.6rem;
@@ -579,6 +574,15 @@
   padding-top: 12%;
 }
 
+@media (max-width: 1050px) {
+  .icon-cards-section__card-heading {
+    font-size: 16px;
+  }
+  .icon-cards-section__card-description {
+    font-size: 14px;
+  }
+}
+
 .icon-cards-section__card-description {
   margin: 0;
   font-family: "SF Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -594,7 +598,7 @@
   align-items: center;
   gap: 0.35rem;
   font-family: "SF Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  font-size: 1rem;
+  font-size: 14px;
   line-height: 1.2;
   color: #07abf8;
   text-decoration: none;
@@ -643,7 +647,7 @@
   }
 }
 
-@media screen and (max-width: 989px) {
+@media screen and (max-width: 1050px) {
   .icon-cards-section__grid {
     grid-template-columns: repeat(min(var(--icon-cards-cols, 4), 2), 1fr);
   }
@@ -659,11 +663,7 @@
   }
 
   .icon-cards-section__heading {
-    font-size: 1.75rem;
-  }
-
-  .icon-cards-section__description p {
-    font-size: 1rem;
+    font-size: 24px;
   }
 
   .icon-cards-section__grid {

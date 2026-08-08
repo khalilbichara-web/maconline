@@ -5,7 +5,7 @@
   max-width: 1440px;
   padding: 0 3.125rem;
   display: grid;
-  margin: auto;
+  margin: 5% auto;
   width: 100%;
 }
 
@@ -48,15 +48,13 @@
   margin: 0;
   color: #e6f2f8;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
-  font-size: 0.86rem;
 }
 
 .simple-cta-banner__heading {
   margin: 0.72rem 0 0;
   color: #ffffff;
   font-family: "Geist", system-ui, -apple-system, sans-serif;
-  font-size: clamp(2rem, 2.5vw, 3rem);
+  font-size: 34px;
   line-height: 1.06;
   max-width: 30rem;
 }
@@ -69,7 +67,7 @@
 
 .simple-cta-banner__description p {
   margin: 0;
-  font-size: clamp(1rem, 1.05vw, 1.22rem);
+  font-size: 16px;
   line-height: 1.32;
   color: inherit;
 }
@@ -168,7 +166,7 @@
 
   .simple-cta-banner__heading {
     margin-top: 0.625rem;
-    font-size: 1.5rem;
+    font-size: 24px;
     line-height: 1.1667;
     max-width: none;
     background: linear-gradient(98deg, #ffffff 14.38%, #07abf8 93.41%);
@@ -182,10 +180,6 @@
     max-width: none;
   }
 
-  .simple-cta-banner__description p {
-    font-size: 0.875rem;
-    line-height: 1.2857;
-  }
 
   .simple-cta-banner__media {
     order: -1;

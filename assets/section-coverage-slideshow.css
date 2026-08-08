@@ -30,25 +30,29 @@
 .coverage-slideshow__subheading {
   margin: 0;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
   color: #e6f2f8 !important;
-  font-size: 0.84rem;
-  font-weight: 500;
 }
 
 .coverage-slideshow__heading {
   margin: 0.72rem 0 0;
   font-family: "Geist", system-ui, -apple-system, sans-serif;
-  font-size: clamp(2.4rem, 3.3vw, 3.55rem);
+  font-size: 32px;
   line-height: 1.04;
   color: #ffffff;
 }
 
+
+
 .coverage-slideshow__description {
   margin-top: 1rem;
+  font-size: 16px;
   color: rgba(233, 242, 250, 0.94) !important;
 }
-
+@media screen and (max-width: 1050px) {
+  .coverage-slideshow__heading {
+    font-size: 24px;
+  }
+}
 .coverage-slideshow__description p {
   margin: 0;
   font-size: clamp(1.05rem, 1.35vw, 1.55rem);
@@ -137,7 +141,7 @@
   margin: 0;
   padding: 0.55rem 0 0;
   display: grid;
-  gap: 0.92rem;
+  gap: 14px;
 }
 
 .coverage-slideshow__check-item {
@@ -145,7 +149,6 @@
   align-items: flex-start;
   gap: 0.6rem;
   color: rgba(224, 237, 248, 0.95);
-  font-size: clamp(1rem, 1.08vw, 1.22rem);
   line-height: 1.33;
 }
 

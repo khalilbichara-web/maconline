@@ -1937,9 +1937,9 @@ details > * {
   color: rgba(var(--color-foreground-secondary));
   font-size: 14px;
 }
-@media only screen and (min-width: 1360px) {
+@media only screen and (max-width: 1050px) {
   .subtitle {
-    font-size: calc(var(--font-subtitle-scale) * 1rem);
+    font-size: 12px;
   }
 }
 .subtitle .icon {
@@ -1959,17 +1959,11 @@ details > * {
   font-family: var(--font-subtitle-secondary-family);
   font-weight: var(--font-subtitle-secondary-weight);
   font-style: var(--font-subtitle-secondary-style);
-  font-size: 14px;
   letter-spacing: var(--font-subtitle-secondary-letter-spacing);
   text-transform: var(--font-subtitle-secondary-text-transform);
   color: rgba(var(--color-foreground-title));
   border-radius: 10rem;
   background-color: rgb(var(--color-background-secondary));
-}
-@media only screen and (min-width: 1360px) {
-  .subtitle--secondary {
-    font-size: calc(var(--font-subtitle-secondary-scale) * 1rem);
-  }
 }
 
 .card__subtitle {

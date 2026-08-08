@@ -18,7 +18,7 @@
 .iphone-empresas-testimonials__subheading {
   margin: 0;
   font-family: "SF Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  font-size: 0.7rem;
+
   line-height: 1.2;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -40,7 +40,7 @@
 .iphone-empresas-testimonials__heading {
   margin: 0.55rem 0 0;
   font-family: "Geist", system-ui, -apple-system, sans-serif;
-  font-size: clamp(1.8rem, 2.7vw, 2.85rem);
+  font-size: 32px;
   line-height: 1.12;
   font-weight: 700;
   background: linear-gradient(90deg, #f7fbff 0%, #f7fbff 58%, #1ab8ff 96%);
@@ -161,12 +161,12 @@
   }
 }
 
-@media screen and (max-width: 640px) {
+@media screen and (max-width: 1050px) {
   .iphone-empresas-testimonials__container {
     padding: 3.6rem 1rem 3.8rem;
   }
 
   .iphone-empresas-testimonials__heading {
-    font-size: 1.65rem;
+    font-size: 24px;
   }
 }

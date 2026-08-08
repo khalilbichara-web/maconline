@@ -63,6 +63,11 @@ span.header__search-heading {
 .slideshow__tab-title {
   font-weight: 400;
 }
+@media screen and (max-width: 1050px) {
+ .slideshow__tab-title {
+  font-size: 14px;
+ }
+}
 .slideshow__thumbs-slide.swiper-slide-thumb-active .slideshow__tab-title {
   color: #fff !important;
 }
