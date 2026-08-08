@@ -53,11 +53,38 @@
             assign card_product = block.settings.product
             assign card_title = block.settings.title
             assign card_subtitle = block.settings.subtitle
+            assign card_image_override = block.settings.image_override
           -%}
 
           <article class="servicios-product-pickers__card" {{ block.shopify_attributes }}>
             <div class="servicios-product-pickers__media">
-              {% if card_product != blank and card_product.featured_media != blank %}
+              {% if card_image_override != blank %}
+                {% if card_product != blank %}
+                  <a href="{{ card_product.url }}" class="servicios-product-pickers__media-link" aria-label="{{ card_title | default: card_product.title | escape }}">
+                    {{
+                      card_image_override
+                      | image_url: width: 1000
+                      | image_tag:
+                        class: 'servicios-product-pickers__image',
+                        loading: 'lazy',
+                        widths: '320, 480, 640, 1000',
+                        sizes: '(min-width: 1200px) 22vw, (min-width: 750px) 48vw, 100vw',
+                        alt: card_title | default: card_product.title
+                    }}
+                  </a>
+                {% else %}
+                  {{
+                    card_image_override
+                    | image_url: width: 1000
+                    | image_tag:
+                      class: 'servicios-product-pickers__image',
+                      loading: 'lazy',
+                      widths: '320, 480, 640, 1000',
+                      sizes: '(min-width: 1200px) 22vw, (min-width: 750px) 48vw, 100vw',
+                      alt: card_title
+                  }}
+                {% endif %}
+              {% elsif card_product != blank and card_product.featured_media != blank %}
                 <a href="{{ card_product.url }}" class="servicios-product-pickers__media-link" aria-label="{{ card_title | default: card_product.title | escape }}">
                   {{
                     card_product.featured_media
@@ -182,6 +209,11 @@
       "name": "Producto",
       "limit": 4,
       "settings": [
+        {
+          "type": "image_picker",
+          "id": "image_override",
+          "label": "Imagen personalizada"
+        },
         {
           "type": "product",
           "id": "product",
