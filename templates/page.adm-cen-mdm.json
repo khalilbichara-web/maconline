@@ -130,9 +130,10 @@
         "mobile_image_overlay": "overlay",
         "horizontal_alignment": "center",
         "vertical_alignment": "middle",
-        "mobile_bottom_cta_stack": true,
         "padding_top": "m",
-        "padding_bottom": "m"
+        "padding_bottom": "m",
+        "mobile_bottom_cta_stack": true,
+        "outer_background": ""
       }
     },
     "split_features_YPiY8f": {
@@ -185,7 +186,7 @@
       "settings": {
         "color_scheme": "light",
         "layout": "image_left",
-        "image": "shopify://shop_images/Frame_59_2.png",
+        "image": "shopify://shop_images/Frame_62.png",
         "image_asset": "",
         "subheading": "cómo funciona",
         "heading": "¿Cómo funciona Zero Touch?",
@@ -209,7 +210,9 @@
             "card_large_text": "",
             "card_subtitle": "",
             "heading": "Estandariza",
-            "description": "Políticas por perfil/área \n(Finanzas, Ventas, Operaciones)."
+            "description": "Políticas por perfil/área \n(Finanzas, Ventas, Operaciones).",
+            "link_label": "",
+            "link_url": ""
           }
         },
         "card_DHzMF6": {
@@ -222,7 +225,9 @@
             "card_large_text": "",
             "card_subtitle": "",
             "heading": "Asegura",
-            "description": "Reglas de seguridad y compliance \ndesde el día uno."
+            "description": "Reglas de seguridad y compliance \ndesde el día uno.",
+            "link_label": "",
+            "link_url": ""
           }
         },
         "card_Jtjmie": {
@@ -235,7 +240,9 @@
             "card_large_text": "",
             "card_subtitle": "",
             "heading": "Implementa",
-            "description": "Apps y configuraciones \nen minutos, no en días."
+            "description": "Apps y configuraciones \nen minutos, no en días.",
+            "link_label": "",
+            "link_url": ""
           }
         },
         "card_t7VqVi": {
@@ -248,7 +255,9 @@
             "card_large_text": "",
             "card_subtitle": "",
             "heading": "Soporte",
-            "description": "Acciones remotas para resolver \nincidentes sin mover el equipo."
+            "description": "Acciones remotas para resolver \nincidentes sin mover el equipo.",
+            "link_label": "",
+            "link_url": ""
           }
         }
       },
@@ -266,7 +275,11 @@
         "show_card_description": true,
         "subheading": "cómo funciona",
         "heading": "<p>Un solo panel para toda tus equipos Apple</p>",
-        "description": "<p>Desde un único dashboard puedes configurar, actualizar, monitorear y dar soporte a Mac, iPhone y iPad: <br/>redes Wi-Fi, correo, VPN, restricciones, cumplimiento y actualizaciones del sistema. <br/>Visibilidad total, control en tiempo real y operación sin intervención física.<br/><br/></p>"
+        "description": "<p>Desde un único dashboard puedes configurar, actualizar, monitorear y dar soporte a Mac, iPhone y iPad: <br/>redes Wi-Fi, correo, VPN, restricciones, cumplimiento y actualizaciones del sistema. <br/>Visibilidad total, control en tiempo real y operación sin intervención física.<br/><br/></p>",
+        "show_mobile_bottom_cta": false,
+        "mobile_bottom_cta_label": "Solicita una propuesta",
+        "mobile_bottom_cta_link": "",
+        "mobile_bottom_cta_style": "primary"
       }
     },
     "collapsible_content_6fQmY5": {
@@ -325,6 +338,7 @@
         "heading_level": "h2",
         "heading_line": "none",
         "line_color": "#1566e0",
+        "enable_heading_gradient_clip": false,
         "word_break": false,
         "heading_animation": "none",
         "word_break_an": false,
@@ -444,4 +458,3 @@
     "portal_variation_row_hX3CTN"
   ]
 }
-
