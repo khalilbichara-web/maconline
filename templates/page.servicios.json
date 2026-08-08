@@ -128,6 +128,7 @@
         "product_card_Wr9wUp": {
           "type": "product_card",
           "settings": {
+            "image_override": "shopify://shop_images/1_6ad684fa-4434-44b9-a820-53e78f90db05.png",
             "product": "imac-de-24-chip-apple-m4",
             "title": "",
             "subtitle": "",
@@ -137,6 +138,7 @@
         "product_card_JCC7hr": {
           "type": "product_card",
           "settings": {
+            "image_override": "shopify://shop_images/2_bd455bfa-7308-4a55-a609-6218cbb14cfb.png",
             "product": "ipad-air-de-13-m3",
             "title": "",
             "subtitle": "",
@@ -146,6 +148,7 @@
         "product_card_6cJcgk": {
           "type": "product_card",
           "settings": {
+            "image_override": "shopify://shop_images/3_af8173f7-5307-4909-bf63-170e966d77a9.png",
             "product": "iphone-16",
             "title": "",
             "subtitle": "",
