@@ -88,10 +88,10 @@
         "mobile_image_overlay": "overlay",
         "horizontal_alignment": "center",
         "vertical_alignment": "middle",
-        "mobile_bottom_cta_stack": true,
-        "outer_background": "#000000",
         "padding_top": "xs",
-        "padding_bottom": "xl"
+        "padding_bottom": "xl",
+        "mobile_bottom_cta_stack": true,
+        "outer_background": "#000000"
       }
     },
     "slideshow_ncn8DH": {
@@ -380,7 +380,7 @@
             "tab_heading": "iPhone",
             "show_button": true,
             "button_style": "primary",
-            "button_label": "Cotizar iPone",
+            "button_label": "Cotizar iPhone",
             "button_link": "",
             "overlay_link": false
           }
@@ -701,6 +701,7 @@
         "word_break_an": false,
         "text": "<p>Una implementación rápida y acompañamiento desde el primer día, para que tu equipo empiece <br/>a producir de inmediato. </p>",
         "text_align": "center",
+        "mobile_text_alignment": "inherit",
         "icon_size": "recommended",
         "box_shadow": true,
         "icon_style": "colored",
@@ -996,6 +997,7 @@
         "button_label_2": "",
         "button_link_2": "",
         "button_style_2": "tertiary",
+        "mobile_full_width_buttons": false,
         "padding_top": "m",
         "padding_bottom": "m",
         "margin_top": "no-indent",
