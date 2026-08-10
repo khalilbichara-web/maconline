@@ -41,7 +41,7 @@
         "heading_size": "h1",
         "heading_level": "h2",
         "heading_line": "simple",
-        "line_color": "#1566E0",
+        "line_color": "#1566e0",
         "heading_animation": "none",
         "text": "Arrienda el iPhone de tu elección con una cuota mensual simple.\nElige el operador que quieras. Cambia cuando quieras.\nTu equipo, tu libertad.",
         "enable_subscribe": false,
@@ -62,12 +62,11 @@
         "margin_bottom": "no-indent"
       }
     },
-        "iphone_empresas_centered_cta_2nd": {
+    "iphone_empresas_centered_cta_2nd": {
       "type": "centered-image-cta",
       "settings": {
         "color_scheme": "scheme-39e5d4a7-e422-4a30-b12c-b2a059c9acee",
         "full_width": false,
-        "image": "",
         "image_asset": "iphone-empresas-centered-cta-default-1-6791.png",
         "image_alt": "iPhone para empresas",
         "image_width": 760,
@@ -93,7 +92,9 @@
             "card_large_text": "+500",
             "card_subtitle": "",
             "heading": "+500",
-            "description": "Empresas confían en nosotros"
+            "description": "Empresas confían en nosotros",
+            "link_label": "",
+            "link_url": ""
           }
         },
         "card_2": {
@@ -106,7 +107,9 @@
             "card_large_text": "$0",
             "card_subtitle": "",
             "heading": "$0",
-            "description": "Costo de inicial"
+            "description": "Costo de inicial",
+            "link_label": "",
+            "link_url": ""
           }
         },
         "card_3": {
@@ -119,7 +122,9 @@
             "card_large_text": "100%",
             "card_subtitle": "",
             "heading": "100%",
-            "description": "Libre de planes de operador"
+            "description": "Libre de planes de operador",
+            "link_label": "",
+            "link_url": ""
           }
         },
         "card_4": {
@@ -132,7 +137,9 @@
             "card_large_text": "24h",
             "card_subtitle": "",
             "heading": "24h",
-            "description": "Entrega en Santiago"
+            "description": "Entrega en Santiago",
+            "link_label": "",
+            "link_url": ""
           }
         }
       },
@@ -149,7 +156,11 @@
         "show_card_description": true,
         "subheading": "",
         "heading": "",
-        "description": ""
+        "description": "",
+        "show_mobile_bottom_cta": false,
+        "mobile_bottom_cta_label": "Solicita una propuesta",
+        "mobile_bottom_cta_link": "",
+        "mobile_bottom_cta_style": "primary"
       }
     },
     "icon_cards_23872": {
@@ -165,7 +176,9 @@
             "card_large_text": "",
             "card_subtitle": "",
             "heading": "100% libre de Planes",
-            "description": "El equipo es tuyo en arriendo. Elige el operador y plan que mejor se adapte a tu empresa en cada momento. Sin contratos cruzados."
+            "description": "El equipo es tuyo en arriendo. Elige el operador y plan que mejor se adapte a tu empresa en cada momento. Sin contratos cruzados.",
+            "link_label": "",
+            "link_url": ""
           }
         },
         "card_2": {
@@ -178,7 +191,9 @@
             "card_large_text": "",
             "card_subtitle": "",
             "heading": "Cuota Fija Mensual",
-            "description": "Una sola cuota simple y predecible al mes. Sin sorpresas en la factura, sin cargos escondidos. Control total del presupuesto de tu empresa."
+            "description": "Una sola cuota simple y predecible al mes. Sin sorpresas en la factura, sin cargos escondidos. Control total del presupuesto de tu empresa.",
+            "link_label": "",
+            "link_url": ""
           }
         },
         "card_3": {
@@ -191,7 +206,9 @@
             "card_large_text": "",
             "card_subtitle": "",
             "heading": "Renueva cuando quieras",
-            "description": "Termina el contrato de arriendo y upgradeá al último modelo. Tu flota siempre actualizada con la tecnología Apple más reciente."
+            "description": "Termina el contrato de arriendo y upgradeá al último modelo. Tu flota siempre actualizada con la tecnología Apple más reciente.",
+            "link_label": "",
+            "link_url": ""
           }
         },
         "card_4": {
@@ -204,7 +221,9 @@
             "card_large_text": "",
             "card_subtitle": "",
             "heading": "Soporte Empresarial",
-            "description": "Reposición exprés, MDM incluido y soporte dedicado para empresas. Si el equipo falla, te lo reemplazamos en 24 horas."
+            "description": "Reposición exprés, MDM incluido y soporte dedicado para empresas. Si el equipo falla, te lo reemplazamos en 24 horas.",
+            "link_label": "",
+            "link_url": ""
           }
         },
         "card_5": {
@@ -217,7 +236,9 @@
             "card_large_text": "",
             "card_subtitle": "",
             "heading": "Gestión Centralizada",
-            "description": "Portal de administración para gestionar toda tu flota de dispositivos Apple. Altas, bajas y configuraciones desde un solo lugar."
+            "description": "Portal de administración para gestionar toda tu flota de dispositivos Apple. Altas, bajas y configuraciones desde un solo lugar.",
+            "link_label": "",
+            "link_url": ""
           }
         },
         "card_6": {
@@ -230,7 +251,9 @@
             "card_large_text": "",
             "card_subtitle": "",
             "heading": "Factura Empresa",
-            "description": "Facturación mensual para tu empresa con IVA desglosado. Compatible con SAP, Oracle y cualquier sistema contable."
+            "description": "Facturación mensual para tu empresa con IVA desglosado. Compatible con SAP, Oracle y cualquier sistema contable.",
+            "link_label": "",
+            "link_url": ""
           }
         }
       },
@@ -250,7 +273,11 @@
         "show_card_description": true,
         "subheading": "por qué elegirnos",
         "heading": "<p>La forma inteligente de equipar tu empresa</p>",
-        "description": "<p>Sin permanencia, sin letras chicas, sin planes obligatorios. Solo el IPhone que necesitas a un precio mensual predecible.</p>"
+        "description": "<p>Sin permanencia, sin letras chicas, sin planes obligatorios. Solo el IPhone que necesitas a un precio mensual predecible.</p>",
+        "show_mobile_bottom_cta": false,
+        "mobile_bottom_cta_label": "Solicita una propuesta",
+        "mobile_bottom_cta_link": "",
+        "mobile_bottom_cta_style": "primary"
       }
     },
     "split_features_aQmL29": {
@@ -338,6 +365,7 @@
           "type": "product_card",
           "settings": {
             "product": "iphone-16",
+            "image_override": "shopify://shop_images/1_72980b5a-ab9b-4ddd-b938-f2952c75075f.png",
             "title": "iPhone 15",
             "subtitle": "128 GB · Dynamic Island",
             "price_label": "Desde",
@@ -351,6 +379,7 @@
           "type": "product_card",
           "settings": {
             "product": "iphone-16",
+            "image_override": "shopify://shop_images/2_eb3fb6d4-542b-4312-923f-b12b829cbfd7.png",
             "title": "iPhone 15",
             "subtitle": "128 GB · Dynamic Island",
             "price_label": "Desde",
@@ -364,6 +393,7 @@
           "type": "product_card",
           "settings": {
             "product": "iphone-16",
+            "image_override": "shopify://shop_images/3_a1d5e2fd-eef3-4155-8f1b-f64512d46b3d.png",
             "title": "iPhone 15",
             "subtitle": "128 GB · Dynamic Island",
             "price_label": "Desde",
@@ -595,6 +625,7 @@
         "heading_level": "h2",
         "heading_line": "none",
         "line_color": "#1566e0",
+        "enable_heading_gradient_clip": false,
         "word_break": false,
         "heading_animation": "none",
         "word_break_an": false,
@@ -762,4 +793,3 @@
     "animated_image_collage_cyyxgn"
   ]
 }
-
