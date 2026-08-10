@@ -129,9 +129,9 @@
           "type": "product_card",
           "settings": {
             "image_override": "shopify://shop_images/1_6ad684fa-4434-44b9-a820-53e78f90db05.png",
-            "product": "imac-de-24-chip-apple-m4",
+            "product": "iphone-16",
             "title": "",
-            "subtitle": "",
+            "subtitle": "Estado A",
             "price_fallback": "$0"
           }
         },
