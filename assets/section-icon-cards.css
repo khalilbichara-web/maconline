@@ -142,11 +142,11 @@
 
 [id*="icon_cards_casos_reales"] .icon-cards-section__card-label {
   position: absolute;
-  bottom: -1.4rem;
+  bottom: -1.8rem;
   left: 50%;
   transform: translateX(-50%);
-  width: 3rem;
-  height: 3rem;
+  width: 4.2rem;
+  height: 4.2rem;
   border-radius: 999px;
   display: grid;
   place-items: center;
@@ -156,6 +156,8 @@
   font-weight: 500;
   line-height: 1;
   -webkit-text-fill-color: initial;
+  padding-top: 0;
+  font-size: 3.2rem;
 }
 
 [id*="icon_cards_casos_reales"] .icon-cards-section__card-content {
