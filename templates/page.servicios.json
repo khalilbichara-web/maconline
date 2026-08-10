@@ -1085,7 +1085,7 @@
         "button_style": "primary",
         "show_button_2": true,
         "button_label_2": "+56 2 2345 6789",
-        "button_link_2": "",
+        "button_link_2": "tel:+56 2 2345 6789",
         "button_style_2": "tertiary",
         "mobile_full_width_buttons": false,
         "padding_top": "m",
