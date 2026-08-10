@@ -29,11 +29,38 @@
         {% for block in cards %}
           {%- liquid
             assign card_product = block.settings.product
+            assign card_image_override = block.settings.image_override
             assign list_items = block.settings.list_items | newline_to_br | split: '<br />'
           -%}
           <article class="iphone-empresas-catalog__card" {{ block.shopify_attributes }}>
             <div class="iphone-empresas-catalog__media">
-              {% if card_product != blank and card_product.featured_media != blank %}
+              {% if card_image_override != blank %}
+                {% if card_product != blank and card_product.url != blank %}
+                  <a href="{{ card_product.url }}" class="iphone-empresas-catalog__media-link" aria-label="{{ block.settings.title | default: card_product.title | escape }}">
+                    {{
+                      card_image_override
+                      | image_url: width: 1000
+                      | image_tag:
+                        class: 'iphone-empresas-catalog__image',
+                        loading: 'lazy',
+                        widths: '400, 600, 800, 1000',
+                        sizes: '(min-width: 990px) 22vw, 90vw',
+                        alt: block.settings.title | default: card_product.title
+                    }}
+                  </a>
+                {% else %}
+                  {{
+                    card_image_override
+                    | image_url: width: 1000
+                    | image_tag:
+                      class: 'iphone-empresas-catalog__image',
+                      loading: 'lazy',
+                      widths: '400, 600, 800, 1000',
+                      sizes: '(min-width: 990px) 22vw, 90vw',
+                      alt: block.settings.title
+                  }}
+                {% endif %}
+              {% elsif card_product != blank and card_product.featured_media != blank %}
                 <a href="{{ card_product.url }}" class="iphone-empresas-catalog__media-link" aria-label="{{ block.settings.title | default: card_product.title | escape }}">
                   {{
                     card_product.featured_media
@@ -155,6 +182,11 @@
           "type": "product",
           "id": "product",
           "label": "Producto"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_override",
+          "label": "Imagen override"
         },
         {
           "type": "text",
