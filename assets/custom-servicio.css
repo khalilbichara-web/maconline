@@ -2,6 +2,11 @@
 body {
   background-color: #05070F;
 }
+
+body.template-404 {
+  background-color: inherit;
+}
+
 /* Header */
 .header-wrapper.container .header {
   margin-top: 0 !important;
