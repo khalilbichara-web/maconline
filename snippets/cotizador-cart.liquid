@@ -95,6 +95,11 @@
   opacity: 1; visibility: visible; transform: translate(-50%, -50%) scale(1);
 }
 
+body.qcotc-header-under .shopify-section-header,
+body.qcotc-header-under .section-announcement {
+  z-index: -1 !important;
+}
+
 /* Modal internals */
 .qcotc-header {
   display: flex; justify-content: space-between; align-items: center;
@@ -456,6 +461,11 @@
         btn.addEventListener('click', function(e) {
           e.preventDefault();
           e.stopPropagation();
+          if (btn.id === 'qcotc-trigger-drawer') {
+            document.body.classList.add('qcotc-opened-from-drawer');
+          } else {
+            document.body.classList.remove('qcotc-opened-from-drawer');
+          }
           openModal();
         });
       }
@@ -468,10 +478,45 @@
   var closeBtn = document.getElementById('qcotc-close');
   var formArea = document.getElementById('qcotc-form-area');
   var successArea = document.getElementById('qcotc-success');
+  var overlapNodes = [];
+  var overlapOriginalZ = [];
+
+  function collectOverlapNodes() {
+    var nodes = [];
+    var header = document.querySelector('.shopify-section-header');
+    var announcement = document.querySelector('.section-announcement');
+    if (header) nodes.push(header);
+    if (announcement) nodes.push(announcement);
+    return nodes;
+  }
+
+  function lowerOverlapLayers() {
+    overlapNodes = collectOverlapNodes();
+    overlapOriginalZ = overlapNodes.map(function(node) { return node.style.zIndex; });
+    overlapNodes.forEach(function(node) {
+      node.style.setProperty('z-index', '-1', 'important');
+    });
+    document.body.classList.add('qcotc-header-under');
+  }
+
+  function restoreOverlapLayers() {
+    overlapNodes.forEach(function(node, idx) {
+      var original = overlapOriginalZ[idx];
+      if (original) {
+        node.style.zIndex = original;
+      } else {
+        node.style.removeProperty('z-index');
+      }
+    });
+    document.body.classList.remove('qcotc-header-under');
+    overlapNodes = [];
+    overlapOriginalZ = [];
+  }
 
   function openModal() {
     formArea.style.display = '';
     successArea.classList.remove('qcotc-show');
+    lowerOverlapLayers();
     /* Refresh cart data, then show modal */
     fetchCart().then(function() {
       renderSummary();
@@ -485,6 +530,7 @@
     overlay.classList.remove('qcotc-open');
     modal.classList.remove('qcotc-open');
     document.body.style.overflow = '';
+    restoreOverlapLayers();
   }
 
   closeBtn.addEventListener('click', closeModal);

@@ -40,11 +40,12 @@
   top: 50%; left: 50%;
   transform: translate(-50%, -50%) scale(0.95);
   width: min(500px, calc(100vw - 32px));
-  max-height: calc(100vh - 48px);
   background: #fff;
   border-radius: 20px;
   z-index: 9999;
-  overflow-y: auto;
+  max-height: 100vh;
+  overflow: scroll;
+  margin: .5em auto;
   opacity: 0; visibility: hidden;
   transition: opacity 0.3s, transform 0.3s, visibility 0.3s;
   box-shadow: 0 24px 80px rgba(0,0,0,0.25);
@@ -325,8 +326,52 @@
   var formArea = document.getElementById('qcotc-form-area');
   var successArea = document.getElementById('qcotc-success');
 
-  function openModal() { overlay.classList.add('qcotc-open'); modal.classList.add('qcotc-open'); document.body.style.overflow = 'hidden'; }
-  function closeModal() { overlay.classList.remove('qcotc-open'); modal.classList.remove('qcotc-open'); document.body.style.overflow = ''; }
+  var overlapNodes = [];
+  var originalZIndex = [];
+
+  function collectOverlapNodes() {
+    var nodes = [];
+    var header = document.querySelector('.shopify-section-header');
+    var announcement = document.querySelector('.section-announcement');
+    if (header) nodes.push(header);
+    if (announcement) nodes.push(announcement);
+    return nodes;
+  }
+
+  function lowerOverlapLayers() {
+    overlapNodes = collectOverlapNodes();
+    originalZIndex = overlapNodes.map(function(node) {
+      return node.style.zIndex;
+    });
+    overlapNodes.forEach(function(node) {
+      node.style.setProperty('z-index', '-1', 'important');
+    });
+  }
+
+  function restoreOverlapLayers() {
+    overlapNodes.forEach(function(node, idx) {
+      if (originalZIndex[idx]) {
+        node.style.setProperty('z-index', originalZIndex[idx]);
+      } else {
+        node.style.removeProperty('z-index');
+      }
+    });
+    overlapNodes = [];
+    originalZIndex = [];
+  }
+
+  function openModal() {
+    overlay.classList.add('qcotc-open');
+    modal.classList.add('qcotc-open');
+    document.body.style.overflow = 'hidden';
+    lowerOverlapLayers();
+  }
+  function closeModal() {
+    overlay.classList.remove('qcotc-open');
+    modal.classList.remove('qcotc-open');
+    document.body.style.overflow = '';
+    restoreOverlapLayers();
+  }
 
   trigger.addEventListener('click', function() {
     formArea.style.display = '';

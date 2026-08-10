@@ -2589,6 +2589,9 @@ deferred-media {
   overflow: hidden;
   z-index: 1;
 }
+button[data-qr-open] {
+  cursor: pointer;
+}
 @media screen and (min-width: 750px) {
   .button,
   .customer .button {

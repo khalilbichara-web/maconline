@@ -505,6 +505,7 @@
     var txt = (el.textContent || '').trim().toLowerCase();
     if (txt.indexOf('cotiza') === 0 || txt === 'cotizar arriendo' || txt === 'solicitar cotización') {
       el.addEventListener('click', function(e) { e.preventDefault(); openModal(); });
+      el.style.cursor = 'pointer';
     }
   });
 
