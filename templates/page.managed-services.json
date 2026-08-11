@@ -130,9 +130,10 @@
         "mobile_image_overlay": "overlay",
         "horizontal_alignment": "center",
         "vertical_alignment": "middle",
-        "mobile_bottom_cta_stack": true,
         "padding_top": "m",
-        "padding_bottom": "m"
+        "padding_bottom": "m",
+        "mobile_bottom_cta_stack": true,
+        "outer_background": ""
       }
     },
     "icon_cards_AfcHEg": {
@@ -142,52 +143,60 @@
           "type": "card",
           "settings": {
             "icon_name": "",
-              "icon_asset": "managed-services-icon-1.svg",
+            "icon_asset": "managed-services-icon-1.svg",
             "heading_variant": "default",
             "card_label": "",
             "card_large_text": "",
             "card_subtitle": "",
             "heading": "Implementación  Zero-Touch (Kickoff)",
-            "description": "Diseño de arquitectura · enrolamiento automático · perfiles base · segmentación por áreas · catálogo de apps · documentación operativa"
+            "description": "Diseño de arquitectura · enrolamiento automático · perfiles base · segmentación por áreas · catálogo de apps · documentación operativa",
+            "link_label": "",
+            "link_url": ""
           }
         },
         "card_jAbh3D": {
           "type": "card",
           "settings": {
             "icon_name": "",
-              "icon_asset": "managed-services-icon-2.svg",
+            "icon_asset": "managed-services-icon-2.svg",
             "heading_variant": "default",
             "card_label": "",
             "card_large_text": "",
             "card_subtitle": "",
             "heading": "Operación diaria (Run)",
-            "description": "Altas/bajas y reasignaciones · instalación/retiro de apps · cambios de políticas controlados · soporte remoto · gestión de incidentes · reportes periódicos"
+            "description": "Altas/bajas y reasignaciones · instalación/retiro de apps · cambios de políticas controlados · soporte remoto · gestión de incidentes · reportes periódicos",
+            "link_label": "",
+            "link_url": ""
           }
         },
         "card_N4k6Fp": {
           "type": "card",
           "settings": {
             "icon_name": "",
-              "icon_asset": "managed-services-icon-3.svg",
+            "icon_asset": "managed-services-icon-3.svg",
             "heading_variant": "default",
             "card_label": "",
             "card_large_text": "",
             "card_subtitle": "",
             "heading": "Seguridad y cumplimiento",
-            "description": "Baseline de seguridad · monitoreo de compliance · alertas y remediación · acciones ante pérdida/robo (bloqueo/borrado) · control de versiones y parches (según estrategia)"
+            "description": "Baseline de seguridad · monitoreo de compliance · alertas y remediación · acciones ante pérdida/robo (bloqueo/borrado) · control de versiones y parches (según estrategia)",
+            "link_label": "",
+            "link_url": ""
           }
         },
         "card_fehaFE": {
           "type": "card",
           "settings": {
             "icon_name": "",
-              "icon_asset": "managed-services-icon-4.svg",
+            "icon_asset": "managed-services-icon-4.svg",
             "heading_variant": "default",
             "card_label": "",
             "card_large_text": "",
             "card_subtitle": "",
             "heading": "Gobernanza y mejora continua",
-            "description": "Mesa de control · cambios con trazabilidad · revisión mensual (QBR) · roadmap de mejoras · indicadores y recomendaciones"
+            "description": "Mesa de control · cambios con trazabilidad · revisión mensual (QBR) · roadmap de mejoras · indicadores y recomendaciones",
+            "link_label": "",
+            "link_url": ""
           }
         }
       },
@@ -205,7 +214,11 @@
         "show_card_description": true,
         "subheading": "beneficios clave para empresas",
         "heading": "<p>¿Cómo funciona Zero Touch?</p>",
-        "description": "<p>Un servicio continuo donde nos hacemos cargo del ciclo completo: diseño + implementación + operación. Nos encargamos de que cada dispositivo se configure automáticamente desde el primer encendido y se mantenga en cumplimiento durante toda su vida útil, con soporte y mejoras continuas.</p>"
+        "description": "<p>Un servicio continuo donde nos hacemos cargo del ciclo completo: diseño + implementación + operación. Nos encargamos de que cada dispositivo se configure automáticamente desde el primer encendido y se mantenga en cumplimiento durante toda su vida útil, con soporte y mejoras continuas.</p>",
+        "show_mobile_bottom_cta": false,
+        "mobile_bottom_cta_label": "Solicita una propuesta",
+        "mobile_bottom_cta_link": "",
+        "mobile_bottom_cta_style": "primary"
       }
     },
     "device_tabs_9fqXhT": {
@@ -215,44 +228,56 @@
           "type": "tab",
           "settings": {
             "tab_label": "1",
+            "icon_name": "",
             "heading": "Diagnóstico",
+            "left_text": "",
             "description": "",
             "features": "Levantamiento de flota\nRiesgos\nNecesidades y objetivos",
             "cta_label": "",
-            "cta_url": ""
+            "cta_url": "",
+            "abm_overlay_image": "shopify://shop_images/4_1.png"
           }
         },
         "tab_Lan7fV": {
           "type": "tab",
           "settings": {
             "tab_label": "2",
+            "icon_name": "",
             "heading": "Flota híbrida/remota",
+            "left_text": "",
             "description": "",
             "features": "Políticas\nGrupos\nApps\nFlujo de enrolamiento  \nSeguridad base",
             "cta_label": "",
-            "cta_url": ""
+            "cta_url": "",
+            "image": "shopify://shop_images/2_d511eb49-5bdd-4688-bf92-cdd5e43c5752.png"
           }
         },
         "tab_7hgpXx": {
           "type": "tab",
           "settings": {
             "tab_label": "3",
+            "icon_name": "",
             "heading": "Auditoría/compliance",
+            "left_text": "",
             "description": "",
             "features": "Equipos nuevos, listos para usar\nCobertura frente a imprevistos incluida\nGestión simple para flotas de dispositivos\nRenovación tecnológica al finalizar el contrato",
             "cta_label": "",
-            "cta_url": ""
+            "cta_url": "",
+            "abm_overlay_image": "shopify://shop_images/3_c000c0e5-3218-4fa9-bcc4-8a6fe0f326e4.png"
           }
         },
         "tab_FpKGya": {
           "type": "tab",
           "settings": {
             "tab_label": "4",
+            "icon_name": "",
             "heading": "Pérdida/robo",
+            "left_text": "",
             "description": "",
             "features": "Configuración y apps listas desde el día uno\nProtección integral y soporte incluidas\nIdeal para flotas y despliegue rápido\nContratos flexible con renovación tecnológica",
             "cta_label": "",
-            "cta_url": ""
+            "cta_url": "",
+            "abm_overlay_image": "shopify://shop_images/4_fee8122b-9957-4150-b900-62ecdaf0ba8d.png"
           }
         }
       },
@@ -269,7 +294,8 @@
         "description": "<p>Ejemplos concretos de cómo el MDM te ahorra tiempo y te sube el estándar de seguridad, <br/>sin depender de configuraciones manuales ni del usuario.<br/><br/></p>",
         "header_alignment": "left",
         "color_scheme": "light",
-        "abm_slider_mode": true
+        "abm_slider_mode": true,
+        "slide_bg_mobile": "shopify://shop_images/pasos_mobile_1.png"
       }
     },
     "collapsible_content_3TzhGG": {
@@ -337,6 +363,7 @@
         "heading_level": "h2",
         "heading_line": "none",
         "line_color": "#1566e0",
+        "enable_heading_gradient_clip": false,
         "word_break": false,
         "heading_animation": "none",
         "word_break_an": false,
@@ -455,4 +482,3 @@
     "portal_variation_row_P4ME7C"
   ]
 }
-
