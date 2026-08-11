@@ -361,6 +361,12 @@
   background-repeat: no-repeat;
 }
 
+@media screen and (max-width: 768px) {
+  .tab-slider--abm .tab-slider__slide {
+    background-image: var(--tab-slider-slide-bg-mobile, var(--tab-slider-slide-bg));
+  }
+}
+
 
 
 .tab-slider--abm .tab-slider__content {

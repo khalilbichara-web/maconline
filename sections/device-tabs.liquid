@@ -4,8 +4,9 @@
 {%- assign scheme = section.settings.color_scheme | default: 'dark' -%}
 {%- assign abm_mode = section.settings.abm_slider_mode -%}
 {%- assign slide_bg_asset = 'slide-bg' | append: '.png' -%}
+{%- assign slide_bg_mobile = section.settings.slide_bg_mobile -%}
 
-<div class="tab-slider tab-slider--{{ scheme }}{% if abm_mode %} tab-slider--abm{% endif %}" style="--tab-slider-slide-bg: url('{{ slide_bg_asset | asset_url }}');">
+<div class="tab-slider tab-slider--{{ scheme }}{% if abm_mode %} tab-slider--abm{% endif %}" style="--tab-slider-slide-bg: url('{{ slide_bg_asset | asset_url }}');{% if slide_bg_mobile != blank %} --tab-slider-slide-bg-mobile: url('{{ slide_bg_mobile | image_url: width: 1600 }}');{% endif %}">
 
   {%- if section.settings.subheading != blank or section.settings.heading != blank or section.settings.description != blank -%}
     <div class="tab-slider__section-header tab-slider__section-header--{{ section.settings.header_alignment | default: 'center' }}">
@@ -214,6 +215,12 @@
       "id": "abm_slider_mode",
       "label": "ABM slider mode",
       "default": false
+    },
+    {
+      "type": "image_picker",
+      "id": "slide_bg_mobile",
+      "label": "Slider background mobile (<=768px)",
+      "info": "Se aplica solo en móvil para ABM slider"
     }
   ],
   "blocks": [
