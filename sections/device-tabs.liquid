@@ -4,9 +4,10 @@
 {%- assign scheme = section.settings.color_scheme | default: 'dark' -%}
 {%- assign abm_mode = section.settings.abm_slider_mode -%}
 {%- assign slide_bg_asset = 'slide-bg' | append: '.png' -%}
+{%- assign slide_bg_desktop = section.settings.slide_bg_desktop -%}
 {%- assign slide_bg_mobile = section.settings.slide_bg_mobile -%}
 
-<div class="tab-slider tab-slider--{{ scheme }}{% if abm_mode %} tab-slider--abm{% endif %}" style="--tab-slider-slide-bg: url('{{ slide_bg_asset | asset_url }}');{% if slide_bg_mobile != blank %} --tab-slider-slide-bg-mobile: url('{{ slide_bg_mobile | image_url: width: 1600 }}');{% endif %}">
+<div class="tab-slider tab-slider--{{ scheme }}{% if abm_mode %} tab-slider--abm{% endif %}" style="--tab-slider-slide-bg: {% if slide_bg_desktop != blank %}url('{{ slide_bg_desktop | image_url: width: 2200 }}'){% else %}url('{{ slide_bg_asset | asset_url }}'){% endif %};{% if slide_bg_mobile != blank %} --tab-slider-slide-bg-mobile: url('{{ slide_bg_mobile | image_url: width: 1600 }}');{% endif %}">
 
   {%- if section.settings.subheading != blank or section.settings.heading != blank or section.settings.description != blank -%}
     <div class="tab-slider__section-header tab-slider__section-header--{{ section.settings.header_alignment | default: 'center' }}">
@@ -32,6 +33,8 @@
       <div class="tab-slider__slides">
       {% for block in section.blocks %}
         {% assign overlay_asset = '' %}
+        {% assign overlay_image = block.settings.abm_overlay_image %}
+        {% assign overlay_image_url = '' %}
         {% case forloop.index %}
           {% when 1 %}
             {% assign overlay_asset = 'slide-1-bg-overlay.png' %}
@@ -41,12 +44,19 @@
             {% assign overlay_asset = 'slide-3-overlay.png' %}
         {% endcase %}
 
+        {% if overlay_image != blank %}
+          {% assign overlay_image_url = overlay_image | image_url: width: 1600 %}
+        {% elsif overlay_asset != blank %}
+          {% assign overlay_image_url = overlay_asset | asset_url %}
+        {% endif %}
+
         <div
           class="tab-slider__slide{% if forloop.first %} is-active{% endif %}"
           data-tab="{{ forloop.index0 }}"
           id="tab-slider-panel-{{ section.id }}-{{ forloop.index0 }}"
           role="tabpanel"
           aria-labelledby="tab-slider-tab-{{ section.id }}-{{ forloop.index0 }}"
+          {% if abm_mode and overlay_image_url != blank %}style="--tab-slider-slide-image: url('{{ overlay_image_url }}');"{% endif %}
           {% unless forloop.first %}hidden{% endunless %}
           {{ block.shopify_attributes }}
         >
@@ -107,18 +117,6 @@
           </div>
 
           {% if abm_mode %}
-            <div class="tab-slider__abm-visual" aria-hidden="true">
-              {% if overlay_asset != blank %}
-                <img
-                  src="{{ overlay_asset | asset_url }}"
-                  alt=""
-                  class="tab-slider__abm-overlay"
-                  loading="lazy"
-                  width="700"
-                  height="405"
-                >
-              {% endif %}
-            </div>
           {% elsif block.settings.image != blank %}
             <div class="tab-slider__image-wrap">
               {{
@@ -218,6 +216,11 @@
     },
     {
       "type": "image_picker",
+      "id": "slide_bg_desktop",
+      "label": "Slider background desktop"
+    },
+    {
+      "type": "image_picker",
       "id": "slide_bg_mobile",
       "label": "Slider background mobile (<=768px)",
       "info": "Se aplica solo en móvil para ABM slider"
@@ -294,6 +297,11 @@
           "type": "image_picker",
           "id": "image",
           "label": "Imagen del producto"
+        },
+        {
+          "type": "image_picker",
+          "id": "abm_overlay_image",
+          "label": "ABM overlay image"
         }
       ]
     }
