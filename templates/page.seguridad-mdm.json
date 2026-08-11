@@ -89,7 +89,7 @@
         "description_D4XCBt": {
           "type": "description",
           "settings": {
-            "description": "Un dispositivo sin políticas claras, sin cifrado o sin control de acceso puede transformarse en una brecha.<br/><br>El MDM permite asegurar estándares mínimos, responder rápido ante incidentes (pérdida/robo), y sostener compliance sin depender de configuraciones manuales."
+            "description": "Un dispositivo sin políticas claras, sin cifrado o sin control de acceso puede transformarse en una brecha.<br><br>El MDM permite asegurar estándares mínimos, responder rápido ante incidentes (pérdida/robo), y sostener compliance sin depender de configuraciones manuales."
           }
         },
         "buttons_JLfmnx": {
@@ -130,9 +130,10 @@
         "mobile_image_overlay": "overlay",
         "horizontal_alignment": "center",
         "vertical_alignment": "middle",
-        "mobile_bottom_cta_stack": true,
         "padding_top": "m",
-        "padding_bottom": "m"
+        "padding_bottom": "m",
+        "mobile_bottom_cta_stack": true,
+        "outer_background": ""
       }
     },
     "device_tabs_eqYVrL": {
@@ -144,10 +145,12 @@
             "tab_label": "1",
             "icon_name": "tab-slider-icon-1.png",
             "heading": "Compra correcta",
+            "left_text": "",
             "description": "Los iPhone, iPad y/o Mac se compran a través de las tiendas o distribuidores autorizados.",
             "features": "",
             "cta_label": "",
-            "cta_url": ""
+            "cta_url": "",
+            "abm_overlay_image": "shopify://shop_images/1_f0954a23-36fc-44f9-9c91-9b0e24718f3f.png"
           }
         },
         "tab_rQMxm8": {
@@ -156,10 +159,12 @@
             "tab_label": "2",
             "icon_name": "tab-slider-icon-2.png",
             "heading": "Asignación en ABM",
+            "left_text": "",
             "description": "El equipo aparece en tu ABM y se marca \npara tu organización.",
             "features": "",
             "cta_label": "",
-            "cta_url": ""
+            "cta_url": "",
+            "abm_overlay_image": "shopify://shop_images/2_21e62a81-5264-41a8-b0de-26a24df3592c.png"
           }
         },
         "tab_JbhxiK": {
@@ -168,10 +173,12 @@
             "tab_label": "3",
             "icon_name": "tab-slider-icon-3.png",
             "heading": "Enlace con MDM",
+            "left_text": "",
             "description": "En ABM asignas la Mac \na tu servidor MDM.",
             "features": "",
             "cta_label": "",
-            "cta_url": ""
+            "cta_url": "",
+            "abm_overlay_image": "shopify://shop_images/3_0846ed8e-c425-40f3-a524-1fee98fcd292.png"
           }
         }
       },
@@ -184,9 +191,11 @@
       "settings": {
         "subheading": "beneficios para tu empresa",
         "heading": "<p>¿Qué significa “propiedad del iPhone, iPad y/o Mac” en ABM?</p>",
-        "description": "<p><strong>Apple Business Manager es el portal de Apple para organizaciones. </strong><br>Apple Business Manager es el portal de Apple para organizaciones. En el caso del iPhone, iPad y/o Mac, “propiedad” significa que tus equipos quedan asociados a tu empresa a nivel de programa, permitiendo asignarlos a un servidor MDM y automatizar su enrolamiento y configuración cuando se encienden o se reinstalan..<br/><br/></p>",
+        "description": "<p><strong>Apple Business Manager es el portal de Apple para organizaciones. </strong><br/>Apple Business Manager es el portal de Apple para organizaciones. En el caso del iPhone, iPad y/o Mac, “propiedad” significa que tus equipos quedan asociados a tu empresa a nivel de programa, permitiendo asignarlos a un servidor MDM y automatizar su enrolamiento y configuración cuando se encienden o se reinstalan..<br/><br/></p>",
+        "header_alignment": "center",
         "color_scheme": "light",
-        "abm_slider_mode": true
+        "abm_slider_mode": true,
+        "slide_bg_mobile": "shopify://shop_images/Seguridad_MDM_backgound_mobile.png"
       }
     },
     "icon_cards_casos_reales": {
@@ -196,48 +205,60 @@
           "type": "card",
           "settings": {
             "icon_name": "slide-1-icon.svg",
+            "icon_asset": "",
             "heading_variant": "default",
             "card_label": "1",
             "card_large_text": "",
             "card_subtitle": "",
             "heading": "Onboarding seguro",
-            "description": "Tus equipos Apple con cifrado, passcode, apps y restricciones desde el minuto cero."
+            "description": "Tus equipos Apple con cifrado, passcode, apps y restricciones desde el minuto cero.",
+            "link_label": "",
+            "link_url": ""
           }
         },
         "card_2": {
           "type": "card",
           "settings": {
             "icon_name": "slide-2-icon-clean.svg",
+            "icon_asset": "",
             "heading_variant": "default",
             "card_label": "2",
             "card_large_text": "",
             "card_subtitle": "",
             "heading": "Flota híbrida/remota",
-            "description": "Control y soporte sin visitas, sin retiros y sin “config manual”."
+            "description": "Control y soporte sin visitas, sin retiros y sin “config manual”.",
+            "link_label": "",
+            "link_url": ""
           }
         },
         "card_3": {
           "type": "card",
           "settings": {
             "icon_name": "slide-3-icon-clean.svg",
+            "icon_asset": "",
             "heading_variant": "default",
             "card_label": "3",
             "card_large_text": "",
             "card_subtitle": "",
             "heading": "Auditoría/compliance",
-            "description": "Reportes de cumplimiento, versiones, controles activos y evidencia para auditorías."
+            "description": "Reportes de cumplimiento, versiones, controles activos y evidencia para auditorías.",
+            "link_label": "",
+            "link_url": ""
           }
         },
         "card_4": {
           "type": "card",
           "settings": {
             "icon_name": "slide-4-icon-clean.svg",
+            "icon_asset": "",
             "heading_variant": "default",
             "card_label": "4",
             "card_large_text": "",
             "card_subtitle": "",
             "heading": "Pérdida/robo",
-            "description": "Contención rápida y reducción del impacto."
+            "description": "Contención rápida y reducción del impacto.",
+            "link_label": "",
+            "link_url": ""
           }
         }
       },
@@ -249,12 +270,17 @@
       ],
       "name": "3 ABM Dark",
       "settings": {
+        "columns": "auto",
+        "header_alignment": "center",
+        "light_mode": false,
+        "show_card_description": true,
         "subheading": "CASOS REALES",
         "heading": "<p>Casos reales donde MDM cambia el juego</p>",
         "description": "<p>Ejemplos concretos de cómo el MDM te ahorra tiempo y te sube el estándar de seguridad, <br> sin depender de configuraciones manuales ni del usuario.</p>",
-        "columns": "auto",
-        "header_alignment": "center",
-        "light_mode": false
+        "show_mobile_bottom_cta": false,
+        "mobile_bottom_cta_label": "Solicita una propuesta",
+        "mobile_bottom_cta_link": "",
+        "mobile_bottom_cta_style": "primary"
       }
     },
     "collapsible_content_3xRgKh": {
@@ -313,6 +339,7 @@
         "heading_level": "h2",
         "heading_line": "none",
         "line_color": "#1566e0",
+        "enable_heading_gradient_clip": false,
         "word_break": false,
         "heading_animation": "none",
         "word_break_an": false,
@@ -332,6 +359,7 @@
           "type": "column",
           "settings": {
             "image": "shopify://shop_images/bg-fondo-rental-1_7b23a22c-7495-4282-b2f9-30e39e1443df.webp",
+            "image_asset": "",
             "image_width": 420
           }
         },
@@ -339,6 +367,7 @@
           "type": "column",
           "settings": {
             "image": "shopify://shop_images/bg-fondo-rental-2.webp",
+            "image_asset": "",
             "image_width": 420
           }
         },
@@ -346,6 +375,7 @@
           "type": "column",
           "settings": {
             "image": "shopify://shop_images/bg-fondo-rental-3.webp",
+            "image_asset": "",
             "image_width": 420
           }
         },
@@ -353,6 +383,7 @@
           "type": "column",
           "settings": {
             "image": "shopify://shop_images/bg-fondo-rental-4.webp",
+            "image_asset": "",
             "image_width": 420
           }
         },
@@ -360,6 +391,7 @@
           "type": "column",
           "settings": {
             "image": "shopify://shop_images/bg-fondo-rental-5.webp",
+            "image_asset": "",
             "image_width": 420
           }
         },
@@ -367,6 +399,7 @@
           "type": "column",
           "settings": {
             "image": "shopify://shop_images/bg-fondo-rental-6.webp",
+            "image_asset": "",
             "image_width": 420
           }
         },
@@ -374,6 +407,7 @@
           "type": "column",
           "settings": {
             "image": "shopify://shop_images/bg-fondo-rental-2.webp",
+            "image_asset": "",
             "image_width": 420
           }
         },
@@ -381,6 +415,7 @@
           "type": "column",
           "settings": {
             "image": "shopify://shop_images/bg-fondo-rental-8.webp",
+            "image_asset": "",
             "image_width": 420
           }
         },
@@ -388,6 +423,7 @@
           "type": "column",
           "settings": {
             "image": "shopify://shop_images/bg-fondo-rental-2.webp",
+            "image_asset": "",
             "image_width": 420
           }
         },
@@ -395,6 +431,7 @@
           "type": "column",
           "settings": {
             "image": "shopify://shop_images/bg-fondo-rental-9.webp",
+            "image_asset": "",
             "image_width": 420
           }
         }
@@ -465,4 +502,3 @@
     "animated_image_collage_wW3JqC"
   ]
 }
-
