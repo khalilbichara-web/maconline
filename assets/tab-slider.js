@@ -2,13 +2,17 @@ document.querySelectorAll('.tab-slider').forEach((section) => {
   const btns = section.querySelectorAll('.tab-slider__nav-btn');
   const slides = section.querySelectorAll('.tab-slider__slide');
 
+  slides.forEach((slide) => {
+    slide.removeAttribute('hidden');
+  });
+
   const activateTab = (btn) => {
     const target = btn.dataset.target;
 
     slides.forEach((slide) => {
       const isActive = slide.dataset.tab === target;
       slide.classList.toggle('is-active', isActive);
-      slide.hidden = !isActive;
+      slide.setAttribute('aria-hidden', String(!isActive));
     });
 
     btns.forEach((tab) => {
@@ -35,5 +39,8 @@ document.querySelectorAll('.tab-slider').forEach((section) => {
       activateTab(btns[nextIndex]);
     });
   });
+
+  const initialBtn = section.querySelector('.tab-slider__nav-btn.is-active') || btns[0];
+  if (initialBtn) activateTab(initialBtn);
 });
 

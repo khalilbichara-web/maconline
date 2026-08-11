@@ -121,18 +121,28 @@
   flex-direction: column;
 }
 
+.tab-slider__slides {
+  display: grid;
+}
+
 /* ── Slides ───────────────────────────────────────────── */
 .tab-slider__slide {
-  display: none;
+  display: grid;
+  grid-area: 1 / 1;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
   min-height: 28.8125rem;
   gap: 8.5625rem;
   padding: 0 0 0 3.125rem;
   align-items: center;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 60% 1fr;
 }
 
 .tab-slider__slide.is-active {
-  display: grid;
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
 }
 
 /* ── Content ──────────────────────────────────────────── */
@@ -342,9 +352,8 @@
 .tab-slider--abm .tab-slider__slide {
   padding: 0 0 0 2.8rem;
   gap: 0;
-  grid-template-columns: minmax(330px, 418px) minmax(420px, 1fr);
+  grid-template-columns: 1fr 1fr;
   height: 100%;
-  max-height: 405px;
 
     background-image: var(--tab-slider-slide-bg);
   background-size: cover;
@@ -369,6 +378,12 @@
   letter-spacing: -0.01em;
 }
 
+@media (max-width: 1050px) {
+  .tab-slider--abm .tab-slider__heading {
+    font-size: 24px;
+  }
+}
+
 .tab-slider--abm .tab-slider__description {
   font-size: 20px;
   line-height: 1.35;
@@ -390,8 +405,8 @@
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: center r;
+  object-fit: fill;
+  object-position: center;
 }
 
 .tab-slider--abm .tab-slider__feature-icon {
@@ -434,8 +449,14 @@
   color: #ffffff;
 }
 
+.tab-slider__abm-visual {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
 /* ── Responsive ───────────────────────────────────────── */
-@media screen and (max-width: 989px) {
+@media screen and (max-width: 1050px) {
   .tab-slider {
     padding: 4rem 1.5rem;
   }
@@ -443,7 +464,6 @@
   .tab-slider__slide {
     grid-template-columns: 1fr;
     min-height: 0;
-    padding: 2rem!important;
     gap: 2rem;
   }
 
@@ -470,11 +490,7 @@
     justify-content: center;
   }
 
-  .tab-slider--abm .tab-slider__abm-overlay {
-    height: auto;
-    max-height: 220px;
-    max-width: 100%;
-  }
+
 
   .tab-slider--abm .tab-slider__description {
     font-size: 1.25rem;
@@ -509,7 +525,6 @@
     flex-wrap: wrap;
   }
 
-
   .tab-slider__heading {
     font-size: 1.75rem;
   }
@@ -527,5 +542,5 @@
 
 .tab-slider__abm-visual  img {
   max-width: 450px;
-  margin: 0 auto;
+
 }
