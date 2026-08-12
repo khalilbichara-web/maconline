@@ -332,22 +332,13 @@
             "answer": "<p>Incluye baseline, cumplimiento y respuesta remota.</p>",
             "opened": false
           }
-        },
-        "accordion_kMCUk9": {
-          "type": "accordion",
-          "settings": {
-            "question": "Here can be a commonly asked question about your product or service.",
-            "answer": "<p>Here can be a brief but clear response to the question, giving customers a quick answer without unnecessary details.</p>",
-            "opened": false
-          }
         }
       },
       "block_order": [
         "accordion_xLJNAp",
         "accordion_a7pCWd",
         "accordion_Md9fk7",
-        "accordion_hUBzPe",
-        "accordion_kMCUk9"
+        "accordion_hUBzPe"
       ],
       "name": "t:sections.collapsible-content.name",
       "settings": {
