@@ -360,7 +360,7 @@
           "settings": {
             "label": "Paso",
             "details": "<p>La organización implementa Apple Business Manager.</p>",
-            "image": "shopify://shop_images/1.png",
+            "image": "shopify://shop_images/1_1.png",
             "image_asset": "",
             "pill_1_text": "",
             "pill_2_text": "",
@@ -374,7 +374,7 @@
           "settings": {
             "label": "Paso",
             "details": "<p>Se crean o sincronizan las Apple Accounts Gestionadas desde el directorio corporativo</p>",
-            "image": "shopify://shop_images/2.png",
+            "image": "shopify://shop_images/2_1.png",
             "image_asset": "",
             "pill_1_text": "",
             "pill_2_text": "",
@@ -402,7 +402,7 @@
           "settings": {
             "label": "Paso",
             "details": "<p>Las cuentas se integran con la plataforma MDM para asignar configuraciones, aplicaciones y políticas de seguridad</p>",
-            "image": "shopify://shop_images/4.png",
+            "image": "shopify://shop_images/3_1.png",
             "image_asset": "",
             "pill_1_text": "",
             "pill_2_text": "",
