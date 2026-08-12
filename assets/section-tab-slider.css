@@ -212,7 +212,7 @@
   align-items: center;
   gap: 0.625rem;
   font-family: "SF Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  font-size: 1rem;
+  font-size: 20px;
   line-height: 1.25;
   color: #fff;
 }
@@ -365,6 +365,9 @@
 @media screen and (max-width: 768px) {
   .tab-slider--abm .tab-slider__slide {
     background-image: var(--tab-slider-slide-bg-mobile, var(--tab-slider-slide-image, var(--tab-slider-slide-bg)));
+  }
+  .tab-slider__feature {
+    font-size: 16px;
   }
 }
 
