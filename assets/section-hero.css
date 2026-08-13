@@ -523,8 +523,8 @@
 }
 .hero__captions {
   display: flex;
-  align-items: center;
-  flex-wrap: wrap;
+  align-items: flex-start;
+  flex-direction: column;
   gap: 1.2rem 2.4rem;
   margin-bottom: 2.4rem;
 }
@@ -537,14 +537,19 @@
   display: flex;
   align-items: center;
   gap: 0.4rem;
+  color: #fff;
+  font-size: 16px;
 }
+
+.hero__captions-item .icon {
+  color: rgba(0, 124, 183, 1)
+}
+
 .hero__captions-item svg {
   width: 2rem;
   height: 2rem;
 }
-.hero__captions-item span {
-  font-weight: var(--font-additional-weight);
-}
+
 .hero__users {
   display: flex;
   flex-wrap: wrap;
