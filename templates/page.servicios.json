@@ -97,13 +97,16 @@
           "settings": {
             "show_caption_1": true,
             "caption_text_1": "Aprovecha el valor de tus equipos.",
-            "caption_icon_1": "check-2",
+            "caption_icon_1": "check-3",
             "show_caption_2": true,
             "caption_text_2": "Renueva sin interrumpir tu operación",
-            "caption_icon_2": "check-2",
+            "caption_icon_2": "check-3",
             "show_caption_3": true,
             "caption_text_3": "Crece al ritmo de tu empresa",
-            "caption_icon_3": "check-2"
+            "caption_icon_3": "check-3",
+            "show_caption_4": true,
+            "caption_text_4": "Dales una segunda vida a tus equipos",
+            "caption_icon_4": "check-3"
           }
         }
       },
