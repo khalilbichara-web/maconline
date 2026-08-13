@@ -91,12 +91,27 @@
           "settings": {
             "description": "Entrega tus equipos actuales y utiliza su valor para renovarlos por nuevos dispositivos Apple."
           }
+        },
+        "captions_kXCrpf": {
+          "type": "captions",
+          "settings": {
+            "show_caption_1": true,
+            "caption_text_1": "Aprovecha el valor de tus equipos.",
+            "caption_icon_1": "check-2",
+            "show_caption_2": true,
+            "caption_text_2": "Renueva sin interrumpir tu operación",
+            "caption_icon_2": "check-2",
+            "show_caption_3": true,
+            "caption_text_3": "Crece al ritmo de tu empresa",
+            "caption_icon_3": "check-2"
+          }
         }
       },
       "block_order": [
         "subtitle_zRrjUb",
         "title_d8CMBK",
-        "description_NxRcEy"
+        "description_NxRcEy",
+        "captions_kXCrpf"
       ],
       "name": "t:sections.hero.name",
       "settings": {
@@ -104,7 +119,7 @@
         "header_overlay": false,
         "header_transparent": true,
         "block_type": "plain",
-        "color_scheme": "",
+        "color_scheme": "background-3",
         "full_screen": true,
         "image": "shopify://shop_images/trade_in_empresas_-_desk.png",
         "show_video": false,
