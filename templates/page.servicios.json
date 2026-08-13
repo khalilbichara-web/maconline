@@ -76,7 +76,7 @@
         "title_d8CMBK": {
           "type": "title",
           "settings": {
-            "heading": "Renueva tu flota. Recupera tu valor.",
+            "heading": "Renueva los equipos de tu empresa y da el siguiente paso.",
             "heading_size": "h1",
             "heading_level": "h2",
             "heading_line": "simple",
@@ -89,7 +89,7 @@
         "description_NxRcEy": {
           "type": "description",
           "settings": {
-            "description": "Diseñado específicamente para empresas que quieren modernizar sus equipos Apple sin perder el valor acumulado de su inversión anterior."
+            "description": "Entrega tus equipos actuales y utiliza su valor para renovarlos por nuevos dispositivos Apple."
           }
         }
       },
@@ -106,7 +106,7 @@
         "block_type": "plain",
         "color_scheme": "",
         "full_screen": true,
-        "image": "shopify://shop_images/hero_d667a2c5-d0af-4c9e-b518-7500c3da3aa5.png",
+        "image": "shopify://shop_images/trade_in_empresas_-_desk.png",
         "show_video": false,
         "overlay_opacity": 0,
         "image_ratio": "1/1",
