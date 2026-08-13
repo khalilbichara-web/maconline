@@ -371,6 +371,9 @@
   font-size: 1.6rem;
   line-height: 1.25;
 }
+.vertical-slideshow.vertical-slideshow--force-light .vertical-slideshow__description p {
+  color: #011624
+}
 
 .vertical-slideshow.vertical-slideshow--force-light .vertical-slideshow__visual {
   min-height: 32rem;
