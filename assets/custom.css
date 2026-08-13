@@ -159,7 +159,7 @@ button.newsletter__button.button {
 }
 .footer__nav-columns {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   gap: 80px;
   width: 100%;
 }
