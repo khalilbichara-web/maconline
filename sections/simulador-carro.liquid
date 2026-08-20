@@ -1,11 +1,11 @@
 {%- liquid
   comment
-    El arriendo operativo solo aplica a estos tipos de producto:
-    iPhone, iPad, Mac Desktop (iMac / Mac mini / Mac Studio / Mac Pro)
-    y Mac Notebook (MacBook Air / MacBook Pro).
-    Los demás productos del carrito se muestran como "Solo venta"
-    y no suman cuota. Si ningún producto es elegible, el widget
-    no se renderiza.
+    El widget se renderiza cuando el carrito tiene al menos un
+    dispositivo elegible: iPhone, iPad, Mac Desktop (iMac / Mac mini /
+    Mac Studio / Mac Pro) o Mac Notebook (MacBook Air / MacBook Pro).
+    En ese caso TODO el carrito entra al arriendo: los dispositivos
+    con su factor propio y los accesorios con la tasa 'Otros'.
+    Si ningún producto es elegible, el widget no se renderiza.
   endcomment
   assign qrc_hay_arriendo = false
   for item in cart.items
@@ -101,7 +101,7 @@
   <div class="qrc-header">
     <div class="qrc-badge">Arriendo Operativo</div>
     <div class="qrc-title">Arrienda tu carrito completo</div>
-    <div class="qrc-subtitle">Cuotas mensuales estimadas para tus equipos iPhone, iPad y Mac</div>
+    <div class="qrc-subtitle">Cuotas mensuales estimadas para todo tu carrito</div>
   </div>
 
   <!-- Plazo + MDM -->
@@ -152,20 +152,16 @@
         <div class="qrc-item-detail">
           {%- if qrc_item_tipo != blank -%}
             <span class="qrc-item-type" id="qrc-type-{{ forloop.index0 }}">{{ qrc_item_tipo }}</span>
+            · {{ item.quantity }} {{ item.quantity | pluralize: 'equipo', 'equipos' }}
           {%- else -%}
-            <span class="qrc-item-type qrc-item-type--venta" id="qrc-type-{{ forloop.index0 }}">Solo venta</span>
+            <span class="qrc-item-type" id="qrc-type-{{ forloop.index0 }}">Accesorio</span>
+            · {{ item.quantity }} {{ item.quantity | pluralize: 'unidad', 'unidades' }}
           {%- endif -%}
-          · {{ item.quantity }} {{ item.quantity | pluralize: 'equipo', 'equipos' }}
         </div>
       </div>
       <div class="qrc-item-cuota">
-        {%- if qrc_item_tipo != blank -%}
-          <div class="qrc-item-cuota-val" id="qrc-cuota-{{ forloop.index0 }}">$-</div>
-          <div class="qrc-item-cuota-sub">/mes sin IVA</div>
-        {%- else -%}
-          <div class="qrc-item-cuota-val" id="qrc-cuota-{{ forloop.index0 }}">—</div>
-          <div class="qrc-item-cuota-sub">no aplica arriendo</div>
-        {%- endif -%}
+        <div class="qrc-item-cuota-val" id="qrc-cuota-{{ forloop.index0 }}">$-</div>
+        <div class="qrc-item-cuota-sub">/mes sin IVA</div>
       </div>
     </li>
     {%- endfor -%}
@@ -204,8 +200,9 @@
     {%- endfor -%}
   ];
 
-  /* Elegibilidad de arriendo: solo iPhone, iPad, Mac Desktop y
-     Mac Notebook. El resto se muestra como "Solo venta". */
+  /* Dispositivos elegibles: iPhone, iPad, Mac Desktop y Mac
+     Notebook. El resto se arrienda con la tasa 'Otros' cuando
+     acompaña a un dispositivo (condición de render del widget). */
   function clasificarArriendo(productType) {
     var t = (productType || '').trim();
     if (t.indexOf('iPhone') === 0) return 'iPhone';
@@ -218,7 +215,7 @@
   /* Assign types */
   for (var i = 0; i < cartItems.length; i++) {
     cartItems[i].type = clasificarArriendo(cartItems[i].ptype);
-    cartItems[i].esArriendo = cartItems[i].type !== null;
+    cartItems[i].esDispositivo = cartItems[i].type !== null;
   }
 
   /* Parámetros centralizados (factores por tipo, MDM, IVA) */
@@ -254,7 +251,8 @@
     el.classList.add('qrc-pop');
   }
 
-  /* Main calculation — solo suma los equipos elegibles */
+  /* Main calculation — dispositivos con su factor, accesorios con
+     tasa 'Otros'. El descuento MDM aplica solo a dispositivos. */
   function cCalcular() {
     var mdm = document.getElementById('qrc-mdm').checked;
     var totalCuota = 0;
@@ -262,13 +260,14 @@
 
     for (var i = 0; i < cartItems.length; i++) {
       var item = cartItems[i];
-      if (!item.esArriendo) continue;
 
-      var cuotaLinea = CFG.cuotaNeta(item.price * item.qty, item.qty, cMeses, item.type, mdm);
+      var tipo = item.esDispositivo ? item.type : 'Otros';
+      var cuotaLinea = item.price * item.qty * CFG.factorPara(tipo, cMeses);
+      if (item.esDispositivo && !mdm) cuotaLinea -= CFG.MDM_COSTO * item.qty;
 
       cSet('qrc-cuota-' + i, '$' + fmtMiles(cuotaLinea));
       totalCuota += cuotaLinea;
-      totalEquipos += item.qty;
+      if (item.esDispositivo) totalEquipos += item.qty;
     }
 
     cSet('qrc-total', fmtMiles(totalCuota));
