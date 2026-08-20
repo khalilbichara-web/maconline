@@ -1,0 +1,107 @@
+{%- comment -%}
+  Configuración central del Arriendo Operativo — MacOnline Pro
+  Fuente: parametros-simulador-arriendo_Ago26.xlsx
+  (Qrent · fondeo 9% · rentabilidad 5%)
+
+  ÚNICO lugar donde viven los factores de cuota, valores residuales,
+  MDM, IVA y penalizaciones. Todos los componentes de arriendo
+  (cotizador de carrito, cotizador de producto, rental-calculator,
+  simulador-carro y simulador-arriendo) leen de window.ArriendoConfig.
+
+  Uso: {% render 'arriendo-config' %} al inicio de cada componente.
+  El guard hace que renderizarlo varias veces sea inocuo.
+{%- endcomment -%}
+<script>
+window.ArriendoConfig = window.ArriendoConfig || (function() {
+  'use strict';
+
+  var cfg = {
+    /* Factores de cuota mensual: factor × precio neto = cuota neta.
+       El factor ya incluye el seguro del producto. */
+    FACTORES: {
+      /* Mac / iPad — seguro 2,09% anual */
+      mac_ipad: { 12: 0.0533781341582771, 24: 0.0399699839048888, 36: 0.0312870531571875 },
+      /* iPhone — seguro 5,00% anual */
+      iphone:   { 12: 0.0558031341582771, 24: 0.0423949839048888, 36: 0.0337120531571876 },
+      /* Otros productos — VR 1%, seguro 2,09% (solo simulador manual) */
+      otros:    { 12: 0.0926180055461324, 24: 0.0491659307197362, 36: 0.0347071415697136 }
+    },
+
+    /* Valor residual / compra al final (fracción del precio neto) */
+    VR:       { 12: 0.50, 24: 0.25, 36: 0.15 },
+    VR_OTROS: 0.01,
+
+    /* Mes en que se ejerce la opción de compra */
+    CUOTA_OC: { 12: 13, 24: 25, 36: 37 },
+
+    /* Plazos disponibles */
+    PLAZOS: [12, 24, 36],
+    PLAZO_DEFAULT: 36,
+
+    /* MDM · Gestión remota */
+    MDM_COSTO: 3000,        /* $/equipo/mes */
+    MDM_DEFAULT: false,     /* toggle desactivado por defecto */
+
+    /* IVA */
+    IVA: 1.19,
+
+    /* Penalización por término anticipado (n° de cuotas netas) */
+    PEN: {
+      12: [
+        { txt: 'Antes del mes 3', c: 3 },
+        { txt: 'Antes del mes 6', c: 2 },
+        { txt: 'Antes del mes 9', c: 1 }
+      ],
+      24: [
+        { txt: 'Antes del mes 6', c: 4 },
+        { txt: 'Antes del mes 12', c: 3 },
+        { txt: 'Antes del mes 18', c: 2 }
+      ],
+      36: [
+        { txt: 'Antes del mes 10', c: 5 },
+        { txt: 'Antes del mes 19', c: 4 },
+        { txt: 'Antes del mes 28', c: 3 }
+      ]
+    },
+
+    /* Defaults del simulador manual */
+    SIM_PRECIO_DEFAULT: 999990,
+    SIM_QTY_DEFAULT: 1
+  };
+
+  /* Grupo de factores según el tipo de arriendo clasificado
+     ('iPhone' | 'iPad' | 'Mac Desktop' | 'Mac Notebook' | 'Otros') */
+  cfg.grupoFactores = function(tipo) {
+    if (tipo === 'iPhone') return cfg.FACTORES.iphone;
+    if (tipo === 'Otros') return cfg.FACTORES.otros;
+    return cfg.FACTORES.mac_ipad;
+  };
+
+  /* Factor puntual para un tipo y plazo */
+  cfg.factorPara = function(tipo, plazo) {
+    var grupo = cfg.grupoFactores(tipo);
+    return grupo[plazo] || grupo[cfg.PLAZO_DEFAULT];
+  };
+
+  /* VR para un tipo y plazo */
+  cfg.vrPara = function(tipo, plazo) {
+    if (tipo === 'Otros') return cfg.VR_OTROS;
+    return cfg.VR[plazo] || cfg.VR[cfg.PLAZO_DEFAULT];
+  };
+
+  /* Etiqueta de compra al final, p.ej. "15%" */
+  cfg.vrLabel = function(tipo, plazo) {
+    return Math.round(cfg.vrPara(tipo, plazo) * 100) + '%';
+  };
+
+  /* Cuota neta: precio neto total (precio × cantidad) × factor,
+     menos descuento MDM si está desactivado */
+  cfg.cuotaNeta = function(precioTotal, qty, plazo, tipo, mdmActivo) {
+    var cuota = precioTotal * cfg.factorPara(tipo, plazo);
+    if (!mdmActivo) cuota -= cfg.MDM_COSTO * qty;
+    return cuota;
+  };
+
+  return cfg;
+})();
+</script>
