@@ -3,10 +3,12 @@
   Renders a "Cotizar orden" button and modal to generate a
   leasing quote PDF for all items in the cart.
 
-  El arriendo operativo solo aplica a productos elegibles:
-  iPhone, iPad, Mac Desktop (iMac / Mac mini / Mac Studio / Mac Pro)
-  y Mac Notebook (MacBook Air / MacBook Pro).
-  Los demás productos se cotizan solo para venta (sin cuota).
+  El arriendo aplica cuando el carrito tiene al menos un dispositivo
+  elegible: iPhone, iPad, Mac Desktop (iMac / Mac mini / Mac Studio /
+  Mac Pro) o Mac Notebook (MacBook Air / MacBook Pro). En ese caso
+  TODO el carrito entra al arriendo: dispositivos con su factor y
+  accesorios con la tasa 'Otros'. Sin dispositivos, la cotización
+  es solo de venta (sin cuota).
 
   Usage:
     {% render 'cotizador-cart' %}
@@ -442,9 +444,9 @@ body.qcotc-header-under .section-announcement {
   function isValidEmail(email) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email); }
 
   /* ── Elegibilidad de arriendo operativo ────────────────
-     Solo estos tipos de producto aplican a arriendo:
-     iPhone, iPad, Mac Desktop y Mac Notebook.
-     El resto de productos se cotiza solo para venta. */
+     Dispositivos elegibles: iPhone, iPad, Mac Desktop y Mac
+     Notebook. Si hay al menos uno en el carrito, los demás
+     productos entran con tasa 'Otros'. */
   function clasificarArriendo(productType) {
     var t = (productType || '').trim();
     if (t.indexOf('iPhone') === 0) return 'iPhone';
@@ -458,14 +460,25 @@ body.qcotc-header-under .section-announcement {
     return clasificarArriendo(productType) || productType || 'Accesorio';
   }
 
-  /* Cuota neta por línea: factor según tipo de equipo, con
-     descuento MDM cuando el toggle está desactivado */
-  function calcCuota(priceNet, qty, plazo, tipo) {
-    return CFG.cuotaNeta(priceNet * qty, qty, plazo, tipo, mdmActivo());
+  function hayDispositivo() {
+    return cartItems.some(function(it) { return it.esDispositivo; });
   }
 
+  /* Cuota neta por línea. Los dispositivos usan su factor propio;
+     los accesorios que acompañan a un dispositivo usan la tasa
+     'Otros'. El descuento MDM aplica solo a dispositivos. */
+  function calcCuotaItem(it, plazo) {
+    var tipo = it.esDispositivo ? it.tipo : 'Otros';
+    var cuota = it.priceNet * it.qty * CFG.factorPara(tipo, plazo);
+    if (it.esDispositivo && !mdmActivo()) cuota -= CFG.MDM_COSTO * it.qty;
+    return cuota;
+  }
+
+  /* Con al menos un dispositivo elegible (iPhone/iPad/Mac) en el
+     carrito, TODOS los items entran al arriendo (accesorios con
+     tasa 'Otros'). Sin dispositivos, no hay arriendo. */
   function itemsArriendo() {
-    return cartItems.filter(function(it) { return it.esArriendo; });
+    return hayDispositivo() ? cartItems.slice() : [];
   }
 
   /* ── Inject button near totals ─────────────────────────── */
@@ -595,7 +608,7 @@ body.qcotc-header-under .section-announcement {
             image: item.featured_image ? item.featured_image.url : '',
             handle: item.handle,
             tipo: detectTipo(item.product_title, item.product_type),
-            esArriendo: clasificarArriendo(item.product_type) !== null
+            esDispositivo: clasificarArriendo(item.product_type) !== null
           };
         });
         return cartItems;
@@ -621,8 +634,12 @@ body.qcotc-header-under .section-announcement {
       if (it.variantTitle) {
         html += '<div class="qcotc-item-variant">' + it.variantTitle + '</div>';
       }
-      if (!it.esArriendo) {
-        html += '<div class="qcotc-item-soloventa">Solo venta — no aplica arriendo</div>';
+      if (!it.esDispositivo) {
+        if (hayDispositivo()) {
+          html += '<div class="qcotc-item-variant">Arriendo con tasa accesorio</div>';
+        } else {
+          html += '<div class="qcotc-item-soloventa">Solo venta — no aplica arriendo</div>';
+        }
       }
       html += '</div>';
       html += '<div class="qcotc-item-right">';
@@ -698,14 +715,14 @@ body.qcotc-header-under .section-announcement {
     updateLease();
   }
 
-  /* ── Update lease preview (solo equipos elegibles) ──────── */
+  /* ── Update lease preview ────────────────────────────── */
   function updateLease() {
     var arriendo = itemsArriendo();
     var plazoRow = document.getElementById('qcotc-plazo-row');
     var leaseBox = document.getElementById('qcotc-lease-box');
     var mdmRow = document.getElementById('qcotc-mdm-row');
 
-    /* Sin equipos elegibles: ocultar el componente de arriendo */
+    /* Sin dispositivos elegibles: ocultar el componente de arriendo */
     if (arriendo.length === 0) {
       if (plazoRow) plazoRow.style.display = 'none';
       if (leaseBox) leaseBox.style.display = 'none';
@@ -719,16 +736,13 @@ body.qcotc-header-under .section-announcement {
     var totalCuotaNeta = 0;
     var totalEquipos = 0;
     for (var i = 0; i < arriendo.length; i++) {
-      totalCuotaNeta += calcCuota(arriendo[i].priceNet, arriendo[i].qty, currentPlazo, arriendo[i].tipo);
-      totalEquipos += arriendo[i].qty;
+      totalCuotaNeta += calcCuotaItem(arriendo[i], currentPlazo);
+      if (arriendo[i].esDispositivo) totalEquipos += arriendo[i].qty;
     }
     var totalCuotaIVA = totalCuotaNeta * CFG.IVA;
 
     document.getElementById('qcotc-lease-cuota').textContent = '$' + fmtMiles(totalCuotaNeta) + '/mes';
     var sub = currentPlazo + ' meses · ' + totalEquipos + ' equipo(s) · Con IVA: $' + fmtMiles(totalCuotaIVA) + '/mes';
-    if (arriendo.length < cartItems.length) {
-      sub += ' · Solo equipos iPhone, iPad y Mac';
-    }
     document.getElementById('qcotc-lease-sub').textContent = sub;
   }
 
@@ -753,6 +767,8 @@ body.qcotc-header-under .section-announcement {
 
   /* ── Create Draft Order via App Proxy ────────────────────── */
   function createDraftOrder(leadData) {
+    var hayArriendo = hayDispositivo();
+
     var items = cartItems.map(function(it) {
       var base = {
         variantId: it.variantId,
@@ -761,12 +777,12 @@ body.qcotc-header-under .section-announcement {
         qty: it.qty,
         priceNet: it.priceNet,
         tipoProducto: it.tipo,
-        esArriendo: it.esArriendo
+        esArriendo: hayArriendo
       };
-      if (it.esArriendo) {
+      if (hayArriendo) {
         base.plazo = currentPlazo;
-        base.mdm = mdmActivo();
-        base.cuotaNeta = Math.round(calcCuota(it.priceNet, it.qty, currentPlazo, it.tipo));
+        if (it.esDispositivo) base.mdm = mdmActivo();
+        base.cuotaNeta = Math.round(calcCuotaItem(it, currentPlazo));
         base.cuotaIVA = Math.round(base.cuotaNeta * CFG.IVA);
       }
       return base;
@@ -774,12 +790,10 @@ body.qcotc-header-under .section-announcement {
 
     var totalNeto = 0;
     var totalCuotaNeta = 0;
-    var hayArriendo = false;
     for (var i = 0; i < items.length; i++) {
       totalNeto += items[i].priceNet * items[i].qty;
-      if (items[i].esArriendo) {
+      if (hayArriendo) {
         totalCuotaNeta += items[i].cuotaNeta;
-        hayArriendo = true;
       }
     }
 
@@ -927,8 +941,8 @@ body.qcotc-header-under .section-announcement {
     var pageNum = 1;
     var totalPages = 1;
 
-    /* Equipos elegibles para arriendo — el PDF solo muestra la
-       sección de arriendo operativo si hay al menos uno */
+    /* Items en arriendo — el PDF solo muestra la sección de
+       arriendo operativo si hay dispositivos en el carrito */
     var pdfArriendo = itemsArriendo();
 
     /* ── Colors ─────────────────────────── */
@@ -1182,7 +1196,7 @@ body.qcotc-header-under .section-announcement {
     doc.text('$' + fmtMiles(grandTotal), M + CW - 4, y + 5, { align: 'right' });
     y += 12;
 
-    /* ── Lease sections (solo si hay equipos elegibles) ── */
+    /* ── Lease sections (solo si hay dispositivos) ── */
     if (pdfArriendo.length > 0) {
 
       /* ── Lease hero box ────────────────────── */
@@ -1192,8 +1206,8 @@ body.qcotc-header-under .section-announcement {
       var equiposArriendo = 0;
       var arriendoNeto = 0;
       for (var ci = 0; ci < pdfArriendo.length; ci++) {
-        totalCuotaNeta += calcCuota(pdfArriendo[ci].priceNet, pdfArriendo[ci].qty, currentPlazo, pdfArriendo[ci].tipo);
-        equiposArriendo += pdfArriendo[ci].qty;
+        totalCuotaNeta += calcCuotaItem(pdfArriendo[ci], currentPlazo);
+        if (pdfArriendo[ci].esDispositivo) equiposArriendo += pdfArriendo[ci].qty;
         arriendoNeto += pdfArriendo[ci].priceNet * pdfArriendo[ci].qty;
       }
       var totalCuotaIVA = totalCuotaNeta * CFG.IVA;
@@ -1241,7 +1255,7 @@ body.qcotc-header-under .section-announcement {
         var breakdownRows = [];
         for (var bi = 0; bi < pdfArriendo.length; bi++) {
           var bItem = pdfArriendo[bi];
-          var bCuota = calcCuota(bItem.priceNet, bItem.qty, currentPlazo, bItem.tipo);
+          var bCuota = calcCuotaItem(bItem, currentPlazo);
           var bName = bItem.title.length > 38 ? bItem.title.substring(0, 36) + '...' : bItem.title;
           breakdownRows.push([bName, '× ' + bItem.qty, '$' + fmtMiles(bCuota) + '/mes']);
         }
@@ -1257,18 +1271,6 @@ body.qcotc-header-under .section-announcement {
         });
 
         y += 6;
-      }
-
-      /* ── Nota si hay productos fuera del arriendo ── */
-      if (pdfArriendo.length < cartItems.length) {
-        checkPage(8);
-        doc.setFontSize(7.5);
-        doc.setFont('helvetica', 'italic');
-        doc.setTextColor(gray[0], gray[1], gray[2]);
-        var mixNote = 'El arriendo operativo aplica solo a equipos iPhone, iPad y Mac. Los demás productos se cotizan para venta.';
-        var mixLines = doc.splitTextToSize(mixNote, CW - 4);
-        doc.text(mixLines, M + 2, y);
-        y += mixLines.length * 3.5 + 3;
       }
 
     }
