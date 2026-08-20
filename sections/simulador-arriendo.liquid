@@ -3,7 +3,7 @@
   Simulador de Arriendo Operativo — MacOnline Pro
   Sección Liquid para Shopify (popup modal)
 
-  Los parámetros (factores, VR, MDM, IVA, penalizaciones) viven
+  Los parámetros (factores, MDM, IVA, penalizaciones) viven
   en snippets/arriendo-config.liquid — no editar valores aquí.
 
   INSTRUCCIONES:
@@ -219,8 +219,6 @@
   margin-bottom: 2px;
 }
 .qr-sim .qr-plazo-opt[aria-pressed="true"] .qr-plazo-num { color: #fff; }
-.qr-sim .qr-plazo-vr { font-size: 13px; color: #6e6e73; }
-.qr-sim .qr-plazo-opt[aria-pressed="true"] .qr-plazo-vr { color: rgba(255,255,255,0.6); }
 .qr-sim .qr-plazo-check {
   position: absolute; top: 18px; right: 18px;
   width: 22px; height: 22px; border-radius: 50%;
@@ -249,14 +247,14 @@
 .qr-sim .qr-r-iva { font-size: 28px; font-weight: 600; letter-spacing: -0.03em; color: #757575; text-align: right; }
 .qr-sim .qr-r-iva-note { font-size: 12px; color: #757575; margin-top: 4px; text-align: right; }
 
-.qr-sim .qr-r-grid { display: grid; grid-template-columns: repeat(3,1fr); border-top: 1px solid #d2d2d7; margin-top: 24px; }
+.qr-sim .qr-r-grid { display: grid; grid-template-columns: repeat(2,1fr); border-top: 1px solid #d2d2d7; margin-top: 24px; }
 .qr-sim .qr-r-cell { padding: 18px 22px; border-right: 1px solid #d2d2d7; }
 .qr-sim .qr-r-cell:last-child { border-right: none; }
 .qr-sim .qr-r-cell-label { font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.06em; color: #757575; margin-bottom: 6px; }
 .qr-sim .qr-r-cell-val { font-size: 17px; font-weight: 600; letter-spacing: -0.02em; color: #1d1d1f; }
 .qr-sim .qr-r-cell-sub { font-size: 11px; color: #757575; margin-top: 2px; }
 
-/* Penalties & purchase */
+/* Penalties */
 .qr-sim .qr-detail-head { padding: 18px 24px 14px; border-bottom: 1px solid #d2d2d7; }
 .qr-sim .qr-detail-head-title { font-size: 15px; font-weight: 600; color: #1d1d1f; }
 .qr-sim .qr-detail-head-sub { font-size: 13px; color: #6e6e73; margin-top: 2px; }
@@ -274,14 +272,6 @@
 .qr-sim .qr-pen-right { text-align: right; }
 .qr-sim .qr-pen-val { font-size: 15px; font-weight: 600; color: #1d1d1f; }
 
-.qr-sim .qr-compra-row {
-  padding: 20px 24px;
-  display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap;
-}
-.qr-sim .qr-compra-title { font-size: 15px; font-weight: 600; color: #1d1d1f; }
-.qr-sim .qr-compra-sub { font-size: 13px; color: #6e6e73; margin-top: 2px; }
-.qr-sim .qr-compra-val { font-size: 22px; font-weight: 600; letter-spacing: -0.02em; text-align: right; color: #1d1d1f; }
-.qr-sim .qr-compra-note { font-size: 12px; color: #757575; margin-top: 2px; text-align: right; }
 .qr-sim .qr-disc { text-align: center; font-size: 12px; color: #757575; padding: 8px 0 0; line-height: 1.5; }
 
 /* Animate */
@@ -294,7 +284,6 @@
   .qr-sim .qr-r-big { font-size: 38px; }
   .qr-sim .qr-r-grid { grid-template-columns: 1fr 1fr; }
   .qr-sim .qr-r-cell:nth-child(2) { border-right: none; }
-  .qr-sim .qr-r-cell:nth-child(3) { grid-column: 1/-1; border-top: 1px solid #d2d2d7; }
   .qr-sim .qr-plazo-pills { flex-direction: column; }
   .qr-sim .qr-plazo-opt + .qr-plazo-opt { border-left: none; border-top: 1px solid #d2d2d7; }
   .qr-sim .qr-price-input { width: 140px; }
@@ -382,17 +371,14 @@
           <button class="qr-plazo-opt" id="qr-opt-12" aria-pressed="false">
             <div class="qr-plazo-check"></div>
             <div class="qr-plazo-num">12 meses</div>
-            <div class="qr-plazo-vr">Compra: 50%</div>
           </button>
           <button class="qr-plazo-opt" id="qr-opt-24" aria-pressed="false">
             <div class="qr-plazo-check"></div>
             <div class="qr-plazo-num">24 meses</div>
-            <div class="qr-plazo-vr">Compra: 25%</div>
           </button>
           <button class="qr-plazo-opt" id="qr-opt-36" aria-pressed="true">
             <div class="qr-plazo-check"></div>
             <div class="qr-plazo-num">36 meses</div>
-            <div class="qr-plazo-vr">Compra: 15%</div>
           </button>
         </div>
       </div>
@@ -423,11 +409,6 @@
             <div class="qr-r-cell-val" id="qr-totalPer">—</div>
             <div class="qr-r-cell-sub" id="qr-totalPerSub">sin IVA</div>
           </div>
-          <div class="qr-r-cell">
-            <div class="qr-r-cell-label">Compra al final</div>
-            <div class="qr-r-cell-val" id="qr-recompra">—</div>
-            <div class="qr-r-cell-sub">por equipo · sin IVA</div>
-          </div>
         </div>
       </div>
 
@@ -438,20 +419,6 @@
           <div class="qr-detail-head-sub">Costo adicional si terminas el contrato antes del plazo</div>
         </div>
         <div id="qr-penList"></div>
-      </div>
-
-      <!-- Opción de compra -->
-      <div class="qr-card">
-        <div class="qr-compra-row">
-          <div>
-            <div class="qr-compra-title">Opción de compra</div>
-            <div class="qr-compra-sub" id="qr-compraSub">Al finalizar el contrato (mes 37)</div>
-          </div>
-          <div>
-            <div class="qr-compra-val" id="qr-compraVal">—</div>
-            <div class="qr-compra-note">Total por todos los equipos · sin IVA</div>
-          </div>
-        </div>
       </div>
 
       <p class="qr-disc">Valores referenciales en pesos chilenos sin IVA. Para una cotización formal, contacta a tu ejecutivo MacOnline Pro.</p>
@@ -512,8 +479,8 @@
   });
 
   // ── Parámetros centralizados ─────────────────────
-  // Factores, VR, CUOTA_OC, MDM, IVA y penalizaciones viven
-  // en snippets/arriendo-config.liquid (window.ArriendoConfig)
+  // Factores, MDM, IVA y penalizaciones viven en
+  // snippets/arriendo-config.liquid (window.ArriendoConfig)
   var CFG = window.ArriendoConfig;
 
   // ── Estado ───────────────────────────────────────
@@ -531,7 +498,6 @@
       ['Mac', 'iPad', 'iPhone', 'Otros'].forEach(function(x) {
         document.getElementById('qr-pill-' + x).setAttribute('aria-pressed', x === p);
       });
-      updatePlazoLabels();
       qrCalcular();
     });
   });
@@ -547,14 +513,6 @@
       document.getElementById('qr-opt-' + p).setAttribute('aria-pressed', m === p);
     });
     qrCalcular();
-  }
-
-  // Etiquetas "Compra: X%" según tipo de producto seleccionado
-  function updatePlazoLabels() {
-    CFG.PLAZOS.forEach(function(p) {
-      var el = document.querySelector('#qr-opt-' + p + ' .qr-plazo-vr');
-      if (el) el.textContent = 'Compra: ' + CFG.vrLabel(qrProducto, p);
-    });
   }
 
   // ── Cantidad ─────────────────────────────────────
@@ -643,7 +601,6 @@
     }
 
     var total = monto * qrCantidad;
-    var vr = CFG.vrPara(qrProducto, qrMeses);
     var cuota = CFG.cuotaNeta(total, qrCantidad, qrMeses, qrProducto, mdm);
 
     qrSet('qr-cuotaNeta', Math.round(cuota).toLocaleString('es-CL'));
@@ -651,10 +608,6 @@
     qrSet('qr-totalNeto', fmt(total));
     qrSet('qr-totalPer', fmt(cuota * qrMeses));
     document.getElementById('qr-totalPerSub').textContent = qrMeses + ' cuotas · sin IVA';
-    qrSet('qr-recompra', fmt(monto * vr));
-
-    qrSet('qr-compraVal', fmt(total * vr));
-    document.getElementById('qr-compraSub').textContent = 'Al finalizar el contrato (mes ' + CFG.CUOTA_OC[qrMeses] + ')';
 
     document.getElementById('qr-penList').innerHTML = CFG.PEN[qrMeses].map(function(p) {
       return '<div class="qr-pen-row">' +
@@ -664,7 +617,6 @@
     }).join('');
   }
 
-  updatePlazoLabels();
   qrCalcular();
 
   // CTA hook removed — cotizador handles quoting
