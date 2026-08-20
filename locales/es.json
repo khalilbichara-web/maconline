@@ -215,6 +215,7 @@
       "product_heading": "Nombre para tu producto",
       "product_description": "Descripción de su producto",
       "include_taxes": "Impuesto incluido.",
+      "price_plus_tax": "+ IVA",
       "shipping_policy_html": "<a href=\"&lt;span%20class='notranslate'&gt;{{%20link%20}}&lt;/span&gt;\">Envío</a> calculado al finalizar la compra.",
       "inventory_placeholder": "Descubra nuestro producto único que combina innovación, calidad y estilo. Diseñado pensando en usted, ofrece un rendimiento y un valor inigualables, lo que lo convierte en un imprescindible para cualquiera que busque la excelencia.",
       "tags_placeholder": "Etiqueta 1"
@@ -228,6 +229,8 @@
     "facets": {
       "all": "Todo",
       "apply": "Aplicar",
+      "availability_label": "Disponibilidad",
+      "price_label": "Precio",
       "clear": "Claro",
       "clear_all": "Limpiar todo",
       "from": "De",

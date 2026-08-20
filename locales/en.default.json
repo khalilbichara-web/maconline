@@ -217,6 +217,7 @@
 			"product_description": "Description for your product",
 			"video_exit_message": "{{ title }} opens full screen video in same window.",
 			"include_taxes": "Tax included.",
+			"price_plus_tax": "+ Tax",
 			"shipping_policy_html": "<a href=\"{{ link }}\">Shipping</a> calculated at checkout.",
 			"xr_button": "View in your space",
 			"xr_button_label": "View in your space, loads item in augmented reality window"
@@ -230,6 +231,8 @@
 		"facets": {
 			"all": "All",
 			"apply": "Apply",
+			"availability_label": "Availability",
+			"price_label": "Price",
 			"clear": "Clear",
 			"clear_all": "Clear all",
 			"from": "From",

@@ -21,6 +21,12 @@
 .price-item--sale {
   color: rgb(var(--color-card-price-new));
 }
+.price-item--tax-note {
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: rgba(var(--color-foreground), 0.7);
+  margin-left: 0.4rem;
+}
 .price--on-sale .price-item--regular {
   text-decoration: line-through;
   text-underline-offset: -0.4rem;

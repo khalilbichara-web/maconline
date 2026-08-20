@@ -209,6 +209,12 @@
             {%- for filter in results.filters -%}
               {% liquid
                 assign presentation = filter.presentation | default: default_presentation
+                assign filter_label = filter.label
+                if filter.param_name == 'filter.v.availability' or filter.label == 'Availability'
+                  assign filter_label = 'products.facets.availability_label' | t
+                elsif filter.type == 'price_range'
+                  assign filter_label = 'products.facets.price_label' | t
+                endif
               %}
               {%- assign total_active_values = total_active_values | plus: filter.active_values.size -%}
               {% case filter.type %}
@@ -228,7 +234,7 @@
                     <summary class="facets__summary focus-inset">
                       <div class="facets__summary-inner">
                         <span class="facets__summary-title">
-                          {{ filter.label | escape }}
+                          {{ filter_label | escape }}
                           {% render 'icon-caret' %}
                         </span>
                         {% if filter_type == 'vertical' %}
@@ -412,7 +418,7 @@
                       <summary class="facets__summary">
                         <div class="facets__summary-inner">
                           <span class="facets__summary-title">
-                            {{ filter.label | escape }}
+                            {{ filter_label | escape }}
                             {% render 'icon-caret' %}
                           </span>
                           {% if filter_type == 'vertical' %}
@@ -656,6 +662,12 @@
                 {%- for filter in results.filters -%}
                   {% liquid
                     assign presentation = filter.presentation | default: default_presentation
+                    assign filter_label = filter.label
+                    if filter.param_name == 'filter.v.availability' or filter.label == 'Availability'
+                      assign filter_label = 'products.facets.availability_label' | t
+                    elsif filter.type == 'price_range'
+                      assign filter_label = 'products.facets.price_label' | t
+                    endif
                   %}
                   {% case filter.type %}
                     {% when 'boolean', 'list' %}
@@ -670,7 +682,7 @@
                       >
                         <summary class="mobile-facets__summary body-large">
                           <div>
-                            <span>{{ filter.label | escape }}</span>
+                            <span>{{ filter_label | escape }}</span>
                             <span class="mobile-facets__arrow no-js-hidden">{% render 'icon-caret' %}</span>
                             <noscript>{% render 'icon-caret' %}</noscript>
                           </div>
@@ -682,7 +694,7 @@
                             type="button"
                           >
                             {% render 'icon-caret' %}
-                            {{ filter.label | escape }}
+                            {{ filter_label | escape }}
                           </button>
                           <ul
                             class="
@@ -848,7 +860,7 @@
                       >
                         <summary class="mobile-facets__summary body-large">
                           <div>
-                            <span>{{ filter.label | escape }}</span>
+                            <span>{{ filter_label | escape }}</span>
                             <span class="mobile-facets__arrow no-js-hidden">{% render 'icon-caret' %}</span>
                             <noscript>{% render 'icon-caret' %}</noscript>
                           </div>
@@ -860,7 +872,7 @@
                             type="button"
                           >
                             {% render 'icon-caret' %}
-                            {{ filter.label | escape }}
+                            {{ filter_label | escape }}
                           </button>
 
                           <p class="mobile-facets__info">

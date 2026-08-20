@@ -7,6 +7,7 @@
   	- show_badges: {Boolean} Renders 'Sale' and 'Sold Out' tags if the product matches the condition (optional)
   	- price_class: {String} Adds a price class to the price element (optional)
   	- from_only: {Boolean} If true, when product price varies show 'Desde {min}' instead of 'min - max' (optional)
+  	- tax_note: {Boolean} If true, shows a '+ IVA' note next to the price (optional)
 
   	Usage:
   {% render 'price', product: product %}
@@ -85,6 +86,9 @@
         <span class="price-item price-item--regular">
           {{ money_price }}
         </span>
+        {%- if tax_note -%}
+          <span class="price-item price-item--tax-note">{{ 'products.product.price_plus_tax' | t }}</span>
+        {%- endif -%}
       </dd>
     </div>
     <div class="price__sale">
@@ -99,6 +103,9 @@
         <span class="price-item price-item--sale">
           {{ money_price }}
         </span>
+        {%- if tax_note -%}
+          <span class="price-item price-item--tax-note">{{ 'products.product.price_plus_tax' | t }}</span>
+        {%- endif -%}
       </dd>
       <dt class="price__compare visually-hidden">
         <span class="visually-hidden visually-hidden--inline">{{ 'products.product.price.regular_price' | t }}</span>

@@ -120,6 +120,14 @@
   line-height: 2.8rem;
 }
 
+.product-page .price--product .price-item--tax-note,
+.product-page .price-wrapper .price-item--tax-note {
+  color: rgba(var(--color-foreground), 0.7);
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: normal;
+}
+
 .product-page .product__badge .badge {
   min-height: 2.8rem;
   padding: 0.5rem 1rem;
