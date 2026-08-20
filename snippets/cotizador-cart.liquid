@@ -282,7 +282,6 @@ body.qcotc-header-under .section-announcement {
   border-color: #0071e3; background: #f0f7ff;
 }
 .qcotc-plazo-opt-months { font-size: 14px; font-weight: 700; color: #1d1d1f; display: block; }
-.qcotc-plazo-opt-buyout { font-size: 10px; color: #86868b; display: block; }
 {%- endstyle -%}
 
 <!-- Hidden logo for PDF -->
@@ -321,15 +320,12 @@ body.qcotc-header-under .section-announcement {
     <div class="qcotc-plazo-row" id="qcotc-plazo-row">
       <button type="button" class="qcotc-plazo-opt" data-plazo="12">
         <span class="qcotc-plazo-opt-months">12 meses</span>
-        <span class="qcotc-plazo-opt-buyout">Compra al final: 50%</span>
       </button>
       <button type="button" class="qcotc-plazo-opt" data-plazo="24">
         <span class="qcotc-plazo-opt-months">24 meses</span>
-        <span class="qcotc-plazo-opt-buyout">Compra al final: 25%</span>
       </button>
       <button type="button" class="qcotc-plazo-opt qcotc-plazo-active" data-plazo="36">
         <span class="qcotc-plazo-opt-months">36 meses</span>
-        <span class="qcotc-plazo-opt-buyout">Compra al final: 15%</span>
       </button>
     </div>
 
@@ -1226,8 +1222,7 @@ body.qcotc-header-under .section-announcement {
         ['Plazo del contrato', currentPlazo + ' meses'],
         ['Cantidad de equipos en arriendo', equiposArriendo.toString()],
         ['Valor equipos en arriendo (neto)', '$' + fmtMiles(arriendoNeto)],
-        ['Gestión remota (MDM)', mdmActivo() ? 'Incluido — $' + fmtMiles(CFG.MDM_COSTO) + '/equipo/mes' : 'No incluido (descuento $' + fmtMiles(CFG.MDM_COSTO) + '/equipo/mes)'],
-        ['Opción de compra al final', CFG.vrLabel('', currentPlazo)]
+        ['Gestión remota (MDM)', mdmActivo() ? 'Incluido — $' + fmtMiles(CFG.MDM_COSTO) + '/equipo/mes' : 'No incluido (descuento $' + fmtMiles(CFG.MDM_COSTO) + '/equipo/mes)']
       ];
 
       var lColW = [CW * 0.6, CW * 0.4];
@@ -1291,10 +1286,9 @@ body.qcotc-header-under .section-announcement {
         '1. El arriendo operativo es una alternativa de financiamiento para empresas e instituciones.',
         '2. Las cuotas incluyen el uso del equipo durante el plazo contratado.',
         '3. La gestión remota (MDM) permite administrar los equipos de forma centralizada.',
-        '4. Al finalizar el contrato, el cliente puede ejercer la opción de compra al porcentaje indicado.',
-        '5. Los precios están en pesos chilenos (CLP). Valores netos no incluyen IVA (19%).',
-        '6. Cotización vigente por 15 días desde la fecha de emisión.',
-        '7. Valores referenciales sujetos a aprobación crediticia.'
+        '4. Los precios están en pesos chilenos (CLP). Valores netos no incluyen IVA (19%).',
+        '5. Cotización vigente por 15 días desde la fecha de emisión.',
+        '6. Valores referenciales sujetos a aprobación crediticia.'
       ];
     } else {
       terms = [
