@@ -91,7 +91,7 @@
         "image_fit": "cover",
         "content_align": "left",
         "limit-display": 0,
-        "limit-cache": 30,
+        "limit-cache": 50,
         "position": "bottom",
         "popup-id": "",
         "trigger-open": "manual",
