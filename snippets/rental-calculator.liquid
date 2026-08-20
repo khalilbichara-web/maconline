@@ -1,4 +1,28 @@
-<div class="qrw" data-rental-calculator>
+{%- liquid
+  comment
+    El arriendo operativo solo aplica a estos tipos de producto:
+    iPhone, iPad, Mac Desktop (iMac / Mac mini / Mac Studio / Mac Pro)
+    y Mac Notebook (MacBook Air / MacBook Pro).
+    Para el resto de productos el widget no se renderiza.
+  endcomment
+  assign qrw_tipo = ''
+  assign qrw_pt = product.type | default: '' | strip
+  assign qrw_p4 = qrw_pt | slice: 0, 4
+  assign qrw_p6 = qrw_pt | slice: 0, 6
+  assign qrw_p7 = qrw_pt | slice: 0, 7
+  if qrw_p6 == 'iPhone'
+    assign qrw_tipo = 'iPhone'
+  elsif qrw_p4 == 'iPad'
+    assign qrw_tipo = 'iPad'
+  elsif qrw_p7 == 'MacBook'
+    assign qrw_tipo = 'Mac Notebook'
+  elsif qrw_p4 == 'iMac' or qrw_pt == 'Mac mini' or qrw_pt == 'Mac Studio' or qrw_pt == 'Mac Pro'
+    assign qrw_tipo = 'Mac Desktop'
+  endif
+-%}
+{%- if qrw_tipo != blank -%}
+{% render 'arriendo-config' %}
+<div class="qrw" data-rental-calculator data-tipo-arriendo="{{ qrw_tipo }}">
   <div class="qrw-cuota-section" aria-live="polite">
     <p class="qrw-eyebrow">Arri&eacute;ndalo desde</p>
     <div class="qrw-price-row">
@@ -53,7 +77,8 @@
     if (!calculator || calculator.dataset.initialized === 'true') return;
     calculator.dataset.initialized = 'true';
 
-    const factors = { 12: 0.058669, 24: 0.040385, 36: 0.032015 };
+    const CFG = window.ArriendoConfig;
+    const factors = CFG.grupoFactores(calculator.dataset.tipoArriendo);
     const variants = {{ product.variants | json }};
     let selectedTerm = 12;
 
@@ -68,7 +93,7 @@
       const quantity = Math.max(1, Number.parseInt(quantityInput()?.value || '1', 10));
       const price = (selectedVariant()?.price || {{ product.price }}) / 100;
       const mdmEnabled = calculator.querySelector('#qrw-mdm').checked;
-      return (price * quantity * factors[term]) - (mdmEnabled ? 0 : 3000 * quantity);
+      return (price * quantity * factors[term]) - (mdmEnabled ? 0 : CFG.MDM_COSTO * quantity);
     };
 
     const render = () => {
@@ -76,7 +101,7 @@
       const payment = calculatePayment(selectedTerm);
 
       calculator.querySelector('#qrw-cuota').textContent = formatAmount(payment);
-      calculator.querySelector('#qrw-meta').textContent = `${selectedTerm} meses \u00b7 ${quantity} ${quantity === 1 ? 'equipo' : 'equipos'} \u00b7 sin IVA`;
+      calculator.querySelector('#qrw-meta').textContent = `${selectedTerm} meses · ${quantity} ${quantity === 1 ? 'equipo' : 'equipos'} · sin IVA`;
       calculator.querySelector('#qrw-iva').textContent = `Con IVA: $${formatAmount(payment * 1.19)}/mes`;
 
       Object.keys(factors).forEach((term) => {
@@ -109,3 +134,4 @@
     render();
   })();
 </script>
+{%- endif -%}
