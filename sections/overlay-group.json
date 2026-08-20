@@ -72,26 +72,20 @@
         "f4-close": false
       }
     },
-    "popup_gDBJ7J": {
+    "popup_EtLBhp": {
       "type": "popup",
       "blocks": {
-        "popup_description_aWG3JK": {
-          "type": "popup_description",
+        "custom_liquid_qmdjYA": {
+          "type": "custom_liquid",
           "settings": {
-            "description": ""
+            "custom_liquid": "<script src=\"https://js.hsforms.net/forms/embed/51839039.js\" defer></script>\n<div class=\"hs-form-frame\" data-region=\"na1\" data-form-id=\"320196f9-2226-46eb-a1ee-6ce0f7d4f2ba\" data-portal-id=\"51839039\"></div>"
           }
-        },
-        "divider_MUdY88": {
-          "type": "divider",
-          "settings": {}
         }
       },
       "block_order": [
-        "popup_description_aWG3JK",
-        "divider_MUdY88"
+        "custom_liquid_qmdjYA"
       ],
-      "disabled": true,
-      "name": "t:sections.overlay-group.popup.name",
+      "name": "Popup Habla con Experto",
       "settings": {
         "image_layout": "top",
         "image_fit": "cover",
@@ -111,7 +105,7 @@
         "close-scroll-position": 50,
         "background": "linear-gradient(92deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 1) 100%)",
         "overlay_opacity": 0.1,
-        "width": 1120,
+        "width": 780,
         "color_scheme": "",
         "open-animation": "Fade",
         "exit-animation": "Fade",
@@ -126,6 +120,6 @@
   },
   "order": [
     "039b4fcf-5558-4530-8c91-01afc39e940f",
-    "popup_gDBJ7J"
+    "popup_EtLBhp"
   ]
 }
