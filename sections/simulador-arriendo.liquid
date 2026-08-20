@@ -3,6 +3,9 @@
   Simulador de Arriendo Operativo — MacOnline Pro
   Sección Liquid para Shopify (popup modal)
 
+  Los parámetros (factores, VR, MDM, IVA, penalizaciones) viven
+  en snippets/arriendo-config.liquid — no editar valores aquí.
+
   INSTRUCCIONES:
   1. En tu admin de Shopify, ve a Online Store → Themes → Edit code
   2. En la carpeta "sections/", crea un archivo nuevo: simulador-arriendo.liquid
@@ -12,8 +15,10 @@
   ============================================================
 {% endcomment %}
 
+{% render 'arriendo-config' %}
+
 {%- style -%}
-/* ── OVERLAY + MODAL ───────────────────────────────────── */
+/* ── OVERLAY + MODAL ───────────────────────────────── */
 .qr-overlay {
   position: fixed; inset: 0;
   background: rgba(0, 0, 0, 0.5);
@@ -44,7 +49,7 @@
   transform: translate(-50%, -50%) scale(1);
 }
 
-/* ── MODAL HEADER ──────────────────────────────────────── */
+/* ── MODAL HEADER ────────────────────────────────── */
 .qr-modal-header {
   display: flex; align-items: center; justify-content: space-between;
   padding: 16px 20px;
@@ -67,7 +72,7 @@
 }
 .qr-modal-close:hover { background: rgba(0,0,0,0.12); }
 
-/* ── MODAL BODY (scrollable) ───────────────────────────── */
+/* ── MODAL BODY (scrollable) ───────────────────────── */
 .qr-modal-body {
   overflow-y: auto;
   max-height: calc(100vh - 48px - 62px);
@@ -303,10 +308,10 @@
 }
 {%- endstyle -%}
 
-<!-- ── OVERLAY ──────────────────────────────────────────── -->
+<!-- ── OVERLAY ────────────────────────────────────── -->
 <div class="qr-overlay" id="qr-overlay" aria-hidden="true"></div>
 
-<!-- ── MODAL ───────────────────────────────────────────── -->
+<!-- ── MODAL ─────────────────────────────────────── -->
 <div class="qr-modal" id="qr-modal" role="dialog" aria-modal="true" aria-label="Simulador de Arriendo Operativo">
   <div class="qr-modal-header">
     <span class="qr-modal-title">Simulador de Cuotas</span>
@@ -332,6 +337,7 @@
             <button class="qr-pill" aria-pressed="true" id="qr-pill-Mac">Mac</button>
             <button class="qr-pill" aria-pressed="false" id="qr-pill-iPad">iPad</button>
             <button class="qr-pill" aria-pressed="false" id="qr-pill-iPhone">iPhone</button>
+            <button class="qr-pill" aria-pressed="false" id="qr-pill-Otros">Otros</button>
           </div>
         </div>
 
@@ -387,16 +393,6 @@
             <div class="qr-plazo-check"></div>
             <div class="qr-plazo-num">36 meses</div>
             <div class="qr-plazo-vr">Compra: 15%</div>
-          </button>
-          <button class="qr-plazo-opt" id="qr-opt-48" aria-pressed="false">
-            <div class="qr-plazo-check"></div>
-            <div class="qr-plazo-num">48 meses</div>
-            <div class="qr-plazo-vr">Compra: 8%</div>
-          </button>
-          <button class="qr-plazo-opt" id="qr-opt-60" aria-pressed="false">
-            <div class="qr-plazo-check"></div>
-            <div class="qr-plazo-num">60 meses</div>
-            <div class="qr-plazo-vr">Compra: 4%</div>
           </button>
         </div>
       </div>
@@ -464,7 +460,7 @@
   </div>
 </div>
 
-<!-- ── JAVASCRIPT ───────────────────────────────────────── -->
+<!-- ── JAVASCRIPT ───────────────────────────────────── -->
 <script>
 (function() {
   'use strict';
@@ -515,71 +511,53 @@
     if (e.key === 'Escape' && modal.style.visibility === 'visible') closeModal();
   });
 
-  // ── Datos ────────────────────────────────────────────
-  var FACTOR_CUOTA_BASE = { 12: 0.058669, 24: 0.040385, 36: 0.032015, 48: 0.027087, 60: 0.023532 };
-  var VR_PCT = { 12: 0.50, 24: 0.25, 36: 0.15, 48: 0.08, 60: 0.04 };
-  var CUOTA_OC = { 12: 13, 24: 25, 36: 37, 48: 49, 60: 61 };
-  var PENS = {
-    12: [
-      { txt: 'Meses 1 \u2013 3', c: 2 },
-      { txt: 'Meses 4 \u2013 6', c: 1.5 },
-      { txt: 'Meses 7 \u2013 9', c: 1 }
-    ],
-    24: [
-      { txt: 'Meses 1 \u2013 6', c: 4 },
-      { txt: 'Meses 7 \u2013 12', c: 3 },
-      { txt: 'Meses 13 \u2013 18', c: 2 }
-    ],
-    36: [
-      { txt: 'Meses 1 \u2013 9', c: 5 },
-      { txt: 'Meses 10 \u2013 18', c: 4 },
-      { txt: 'Meses 19 \u2013 27', c: 2.52 }
-    ],
-    48: [
-      { txt: 'Meses 1 \u2013 12', c: 8 },
-      { txt: 'Meses 13 \u2013 24', c: 6 },
-      { txt: 'Meses 25 \u2013 36', c: 4 }
-    ],
-    60: [
-      { txt: 'Meses 1 \u2013 15', c: 10 },
-      { txt: 'Meses 16 \u2013 30', c: 7.5 },
-      { txt: 'Meses 31 \u2013 45', c: 5 }
-    ]
-  };
+  // ── Parámetros centralizados ─────────────────────
+  // Factores, VR, CUOTA_OC, MDM, IVA y penalizaciones viven
+  // en snippets/arriendo-config.liquid (window.ArriendoConfig)
+  var CFG = window.ArriendoConfig;
 
-  // ── Estado ───────────────────────────────────────────
-  var qrMeses = 36, qrProducto = 'Mac', qrCantidad = 1;
+  // ── Estado ───────────────────────────────────────
+  var qrMeses = CFG.PLAZO_DEFAULT, qrProducto = 'Mac', qrCantidad = CFG.SIM_QTY_DEFAULT;
 
-  // ── Elementos ────────────────────────────────────────
+  // ── Elementos ────────────────────────────────────
   var priceInput = document.getElementById('qr-montoUnitario');
   var priceError = document.getElementById('qr-priceError');
   var qtyInput   = document.getElementById('qr-qtyInput');
 
-  // ── Producto pills ───────────────────────────────────
-  ['Mac', 'iPad', 'iPhone'].forEach(function(p) {
+  // ── Producto pills ───────────────────────────────
+  ['Mac', 'iPad', 'iPhone', 'Otros'].forEach(function(p) {
     document.getElementById('qr-pill-' + p).addEventListener('click', function() {
       qrProducto = p;
-      ['Mac', 'iPad', 'iPhone'].forEach(function(x) {
+      ['Mac', 'iPad', 'iPhone', 'Otros'].forEach(function(x) {
         document.getElementById('qr-pill-' + x).setAttribute('aria-pressed', x === p);
       });
+      updatePlazoLabels();
       qrCalcular();
     });
   });
 
-  // ── Plazo ────────────────────────────────────────────
-  [12, 24, 36, 48, 60].forEach(function(p) {
+  // ── Plazo ────────────────────────────────────────
+  CFG.PLAZOS.forEach(function(p) {
     document.getElementById('qr-opt-' + p).addEventListener('click', function() { setQrMeses(p); });
   });
 
   function setQrMeses(m) {
     qrMeses = m;
-    [12, 24, 36, 48, 60].forEach(function(p) {
+    CFG.PLAZOS.forEach(function(p) {
       document.getElementById('qr-opt-' + p).setAttribute('aria-pressed', m === p);
     });
     qrCalcular();
   }
 
-  // ── Cantidad ─────────────────────────────────────────
+  // Etiquetas "Compra: X%" según tipo de producto seleccionado
+  function updatePlazoLabels() {
+    CFG.PLAZOS.forEach(function(p) {
+      var el = document.querySelector('#qr-opt-' + p + ' .qr-plazo-vr');
+      if (el) el.textContent = 'Compra: ' + CFG.vrLabel(qrProducto, p);
+    });
+  }
+
+  // ── Cantidad ─────────────────────────────────────
   document.getElementById('qr-qty-minus').addEventListener('click', function() { chgQrQty(-1); });
   document.getElementById('qr-qty-plus').addEventListener('click', function() { chgQrQty(1); });
 
@@ -599,7 +577,7 @@
     qrCalcular();
   });
 
-  // ── MDM toggle ───────────────────────────────────────
+  // ── MDM toggle ───────────────────────────────────
   document.getElementById('qr-mdm').addEventListener('change', function() { qrCalcular(); });
 
   // ── Precio con formato de miles ──────────────────────
@@ -640,7 +618,7 @@
     }
   });
 
-  // ── Utilidades ───────────────────────────────────────
+  // ── Utilidades ───────────────────────────────────
   var fmt = function(n) { return '$' + Math.round(n).toLocaleString('es-CL'); };
 
   function qrSet(id, val) {
@@ -649,7 +627,7 @@
     el.textContent = val; el.classList.add('qr-pop');
   }
 
-  // ── Cálculo ──────────────────────────────────────────
+  // ── Cálculo ──────────────────────────────────────
   function qrCalcular() {
     var monto = parsePrecio(priceInput.value);
     var mdm = document.getElementById('qr-mdm').checked;
@@ -657,29 +635,28 @@
     // Feedback MDM
     var fb = document.getElementById('qr-mdmFeedback');
     if (mdm) {
-      fb.textContent = 'Administración remota de los equipos · $' + formatMiles(3000) + '/equipo/mes';
+      fb.textContent = 'Administración remota de los equipos · $' + formatMiles(CFG.MDM_COSTO) + '/equipo/mes';
       fb.classList.remove('qr-off');
     } else {
-      fb.textContent = 'Sin gestión remota · se descuentan $' + formatMiles(3000 * qrCantidad) + '/mes de la cuota';
+      fb.textContent = 'Sin gestión remota · se descuentan $' + formatMiles(CFG.MDM_COSTO * qrCantidad) + '/mes de la cuota';
       fb.classList.add('qr-off');
     }
 
     var total = monto * qrCantidad;
-    var factorAjustado = FACTOR_CUOTA_BASE[qrMeses];
-    var descMDM = mdm ? 0 : 3000 * qrCantidad;
-    var cuota = total * factorAjustado - descMDM;
+    var vr = CFG.vrPara(qrProducto, qrMeses);
+    var cuota = CFG.cuotaNeta(total, qrCantidad, qrMeses, qrProducto, mdm);
 
     qrSet('qr-cuotaNeta', Math.round(cuota).toLocaleString('es-CL'));
-    qrSet('qr-cuotaIVA', fmt(cuota * 1.19));
+    qrSet('qr-cuotaIVA', fmt(cuota * CFG.IVA));
     qrSet('qr-totalNeto', fmt(total));
     qrSet('qr-totalPer', fmt(cuota * qrMeses));
     document.getElementById('qr-totalPerSub').textContent = qrMeses + ' cuotas · sin IVA';
-    qrSet('qr-recompra', fmt(monto * VR_PCT[qrMeses]));
+    qrSet('qr-recompra', fmt(monto * vr));
 
-    qrSet('qr-compraVal', fmt(total * VR_PCT[qrMeses]));
-    document.getElementById('qr-compraSub').textContent = 'Al finalizar el contrato (mes ' + CUOTA_OC[qrMeses] + ')';
+    qrSet('qr-compraVal', fmt(total * vr));
+    document.getElementById('qr-compraSub').textContent = 'Al finalizar el contrato (mes ' + CFG.CUOTA_OC[qrMeses] + ')';
 
-    document.getElementById('qr-penList').innerHTML = PENS[qrMeses].map(function(p) {
+    document.getElementById('qr-penList').innerHTML = CFG.PEN[qrMeses].map(function(p) {
       return '<div class="qr-pen-row">' +
         '<span class="qr-pen-when">' + p.txt + '<span class="qr-pen-badge">' + p.c + (p.c === 1 ? ' cuota' : ' cuotas') + '</span></span>' +
         '<div class="qr-pen-right"><div class="qr-pen-val">' + fmt(p.c * cuota) + '</div></div>' +
@@ -687,6 +664,7 @@
     }).join('');
   }
 
+  updatePlazoLabels();
   qrCalcular();
 
   // CTA hook removed — cotizador handles quoting
