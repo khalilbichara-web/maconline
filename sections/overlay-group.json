@@ -97,7 +97,7 @@
         "trigger-open": "manual",
         "trigger-open-delay": 1,
         "open-scroll-type": "%",
-        "open-scroll-position": 50,
+        "open-scroll-position": 30,
         "manual-selector": "a[href='#popup-habla-experto']",
         "trigger-close": "none",
         "trigger-close-delay": 30,
