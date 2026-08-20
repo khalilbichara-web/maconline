@@ -1,3 +1,25 @@
+{%- liquid
+  comment
+    El arriendo operativo solo aplica a estos tipos de producto:
+    iPhone, iPad, Mac Desktop (iMac / Mac mini / Mac Studio / Mac Pro)
+    y Mac Notebook (MacBook Air / MacBook Pro).
+    Para el resto de productos la cotización es solo de venta.
+  endcomment
+  assign qcot_tipo_arriendo = ''
+  assign qcot_pt = product.type | default: '' | strip
+  assign qcot_p4 = qcot_pt | slice: 0, 4
+  assign qcot_p6 = qcot_pt | slice: 0, 6
+  assign qcot_p7 = qcot_pt | slice: 0, 7
+  if qcot_p6 == 'iPhone'
+    assign qcot_tipo_arriendo = 'iPhone'
+  elsif qcot_p4 == 'iPad'
+    assign qcot_tipo_arriendo = 'iPad'
+  elsif qcot_p7 == 'MacBook'
+    assign qcot_tipo_arriendo = 'Mac Notebook'
+  elsif qcot_p4 == 'iMac' or qcot_pt == 'Mac mini' or qcot_pt == 'Mac Studio' or qcot_pt == 'Mac Pro'
+    assign qcot_tipo_arriendo = 'Mac Desktop'
+  endif
+-%}
 {%- style -%}
 /* ── BOTÓN COTIZAR (estilo Buy Button) ──────────────────── */
 .qcot-btn {
@@ -247,11 +269,12 @@
 
   var shopName = {{ shop.name | json }};
 
-  /* Detect product type for leasing factor */
-  var tipoProducto = 'Mac';
-  var titleLower = productData.title.toLowerCase();
-  if (productData.tags.indexOf('iPhone') > -1 || titleLower.indexOf('iphone') > -1) tipoProducto = 'iPhone';
-  else if (productData.tags.indexOf('iPad') > -1 || titleLower.indexOf('ipad') > -1) tipoProducto = 'iPad';
+  /* ── Elegibilidad de arriendo (calculada en Liquid) ─────
+     Solo iPhone, iPad, Mac Desktop y Mac Notebook aplican a
+     arriendo operativo. El resto se cotiza solo para venta. */
+  var tipoArriendo = {{ qcot_tipo_arriendo | json }};
+  var esArriendo = tipoArriendo !== '';
+  var tipoProducto = esArriendo ? tipoArriendo : (productData.type || 'Accesorio');
 
   var FACTOR = { 12: 0.058669, 24: 0.040385, 36: 0.032015, 48: 0.027087, 60: 0.023532 };
   var BUYOUT = { 12: '50%', 24: '25%', 36: '15%', 48: '8%', 60: '4%' };
@@ -339,8 +362,8 @@
       productData.handle,
       productData.variantId,
       leadData.qty,
-      Math.round(leadData.cuotaNeta),
-      leadData.plazo,
+      Math.round(leadData.cuotaNeta || 0),
+      leadData.plazo || 0,
       fmtDateShort().replace(/\//g, '')
     ].join('|');
 
@@ -357,12 +380,16 @@
       qty: leadData.qty,
       priceNet: productData.price,
       tipoProducto: tipoProducto,
-      plazo: leadData.plazo,
-      mdm: leadData.mdmActivo,
-      cuotaNeta: Math.round(leadData.cuotaNeta),
-      cuotaIVA: Math.round(leadData.cuotaIVA),
+      esArriendo: esArriendo,
       token: token
     };
+
+    if (esArriendo) {
+      payload.plazo = leadData.plazo;
+      payload.mdm = leadData.mdmActivo;
+      payload.cuotaNeta = Math.round(leadData.cuotaNeta);
+      payload.cuotaIVA = Math.round(leadData.cuotaIVA);
+    }
 
     console.log('[Cotizador] Creando Draft Order...', payload);
 
@@ -461,27 +488,6 @@
 
     var qty = getNativeQty();
 
-    /* ── Leer plazo y MDM del widget qrw ──────────────────── */
-    var plazo = 36; /* default */
-    var mdmActivo = false; /* default */
-    var plazoBtns = document.querySelectorAll('.qrw-plazo');
-    for (var pi = 0; pi < plazoBtns.length; pi++) {
-      if (plazoBtns[pi].getAttribute('aria-pressed') === 'true') {
-        var idMatch = (plazoBtns[pi].id || '').match(/qrw-p(\d+)/);
-        if (idMatch) plazo = parseInt(idMatch[1], 10);
-        break;
-      }
-    }
-    var mdmCheckbox = document.getElementById('qrw-mdm');
-    if (mdmCheckbox) mdmActivo = mdmCheckbox.checked;
-
-    var factor = FACTOR[plazo];
-    var total = productData.price * qty;
-    var cuotaBase = total * factor;
-    var descMDM = mdmActivo ? 0 : 3000 * qty;
-    var cuotaNeta = cuotaBase - descMDM;
-    var cuotaIVA = cuotaNeta * 1.19;
-
     var leadData = {
       email: email,
       nombre: nombre,
@@ -489,13 +495,37 @@
       empresa: empresa,
       rut: rut,
       telefono: telefono,
-      qty: qty,
-      plazo: plazo,
-      mdmActivo: mdmActivo,
-      cuotaNeta: cuotaNeta,
-      cuotaIVA: cuotaIVA,
-      factor: factor
+      qty: qty
     };
+
+    if (esArriendo) {
+      /* ── Leer plazo y MDM del widget qrw ──────────────── */
+      var plazo = 36; /* default */
+      var mdmActivo = false; /* default */
+      var plazoBtns = document.querySelectorAll('.qrw-plazo');
+      for (var pi = 0; pi < plazoBtns.length; pi++) {
+        if (plazoBtns[pi].getAttribute('aria-pressed') === 'true') {
+          var idMatch = (plazoBtns[pi].id || '').match(/qrw-p(\d+)/);
+          if (idMatch) plazo = parseInt(idMatch[1], 10);
+          break;
+        }
+      }
+      var mdmCheckbox = document.getElementById('qrw-mdm');
+      if (mdmCheckbox) mdmActivo = mdmCheckbox.checked;
+
+      var factor = FACTOR[plazo];
+      var total = productData.price * qty;
+      var cuotaBase = total * factor;
+      var descMDM = mdmActivo ? 0 : 3000 * qty;
+      var cuotaNeta = cuotaBase - descMDM;
+      var cuotaIVA = cuotaNeta * 1.19;
+
+      leadData.plazo = plazo;
+      leadData.mdmActivo = mdmActivo;
+      leadData.cuotaNeta = cuotaNeta;
+      leadData.cuotaIVA = cuotaIVA;
+      leadData.factor = factor;
+    }
 
     /* Create Draft Order in Shopify (fire-and-forget, don't block PDF) */
     createDraftOrder(leadData);
@@ -653,80 +683,117 @@
 
     y += 18;
 
-    /* ── Lease calculation ────────────────────────────── */
-    doc.setTextColor(gray[0], gray[1], gray[2]);
-    doc.setFontSize(8);
-    doc.setFont('helvetica', 'bold');
-    doc.text('OPCIÓN DE ARRIENDO OPERATIVO', M, y);
-    y += 6;
-
-    doc.setFillColor(blue[0], blue[1], blue[2]);
-    doc.roundedRect(M, y, CW, 32, 3, 3, 'F');
-
-    doc.setTextColor(255, 255, 255);
-    doc.setFontSize(10);
-    doc.setFont('helvetica', 'normal');
-    doc.text('Cuota mensual neta (sin IVA)', M + 6, y + 10);
-
-    doc.setFontSize(26);
-    doc.setFont('helvetica', 'bold');
-    doc.text('$' + fmtMiles(data.cuotaNeta) + '/mes', M + 6, y + 24);
-
-    doc.setFontSize(11);
-    doc.setFont('helvetica', 'normal');
-    doc.text('Con IVA: $' + fmtMiles(data.cuotaIVA) + '/mes', M + CW - 6, y + 24, { align: 'right' });
-
-    y += 40;
-
-    var leaseRows = [
-      ['Plazo del contrato', data.plazo + ' meses'],
-      ['Cantidad de equipos', data.qty.toString()],
-      ['Tipo de equipo', tipoProducto],
-      ['Valor total equipos (neto)', '$' + fmtMiles(productData.price * data.qty)],
-      ['Gestión remota (MDM)', data.mdmActivo ? 'Incluido — $3.000/equipo/mes' : 'No incluido (descuento $3.000/equipo/mes)'],
-      ['Opción de compra al final', BUYOUT[data.plazo]],
-      ['Cuota mensual sin IVA', '$' + fmtMiles(data.cuotaNeta)],
-      ['Cuota mensual con IVA', '$' + fmtMiles(data.cuotaIVA)]
-    ];
-
-    for (var r = 0; r < leaseRows.length; r++) {
-      if (r % 2 === 0) {
-        doc.setFillColor(lightBg[0], lightBg[1], lightBg[2]);
-        doc.rect(M, y, CW, 8, 'F');
-      }
+    if (esArriendo) {
+      /* ── Lease calculation ──────────────────────────── */
       doc.setTextColor(gray[0], gray[1], gray[2]);
-      doc.setFontSize(9);
-      doc.setFont('helvetica', 'normal');
-      doc.text(leaseRows[r][0], M + 4, y + 5.5);
-
-      doc.setTextColor(dark[0], dark[1], dark[2]);
+      doc.setFontSize(8);
       doc.setFont('helvetica', 'bold');
-      doc.text(leaseRows[r][1], M + CW - 4, y + 5.5, { align: 'right' });
+      doc.text('OPCIÓN DE ARRIENDO OPERATIVO', M, y);
+      y += 6;
+
+      doc.setFillColor(blue[0], blue[1], blue[2]);
+      doc.roundedRect(M, y, CW, 32, 3, 3, 'F');
+
+      doc.setTextColor(255, 255, 255);
+      doc.setFontSize(10);
+      doc.setFont('helvetica', 'normal');
+      doc.text('Cuota mensual neta (sin IVA)', M + 6, y + 10);
+
+      doc.setFontSize(26);
+      doc.setFont('helvetica', 'bold');
+      doc.text('$' + fmtMiles(data.cuotaNeta) + '/mes', M + 6, y + 24);
+
+      doc.setFontSize(11);
+      doc.setFont('helvetica', 'normal');
+      doc.text('Con IVA: $' + fmtMiles(data.cuotaIVA) + '/mes', M + CW - 6, y + 24, { align: 'right' });
+
+      y += 40;
+
+      var leaseRows = [
+        ['Plazo del contrato', data.plazo + ' meses'],
+        ['Cantidad de equipos', data.qty.toString()],
+        ['Tipo de equipo', tipoProducto],
+        ['Valor total equipos (neto)', '$' + fmtMiles(productData.price * data.qty)],
+        ['Gestión remota (MDM)', data.mdmActivo ? 'Incluido — $3.000/equipo/mes' : 'No incluido (descuento $3.000/equipo/mes)'],
+        ['Opción de compra al final', BUYOUT[data.plazo]],
+        ['Cuota mensual sin IVA', '$' + fmtMiles(data.cuotaNeta)],
+        ['Cuota mensual con IVA', '$' + fmtMiles(data.cuotaIVA)]
+      ];
+
+      for (var r = 0; r < leaseRows.length; r++) {
+        if (r % 2 === 0) {
+          doc.setFillColor(lightBg[0], lightBg[1], lightBg[2]);
+          doc.rect(M, y, CW, 8, 'F');
+        }
+        doc.setTextColor(gray[0], gray[1], gray[2]);
+        doc.setFontSize(9);
+        doc.setFont('helvetica', 'normal');
+        doc.text(leaseRows[r][0], M + 4, y + 5.5);
+
+        doc.setTextColor(dark[0], dark[1], dark[2]);
+        doc.setFont('helvetica', 'bold');
+        doc.text(leaseRows[r][1], M + CW - 4, y + 5.5, { align: 'right' });
+        y += 8;
+      }
+
+      y += 8;
+    } else {
+      /* ── Solo venta: resumen de totales ─────────────── */
+      var ventaRows = [
+        ['Cantidad', data.qty.toString()],
+        ['Total neto', '$' + fmtMiles(productData.price * data.qty)],
+        ['IVA (19%)', '$' + fmtMiles(productData.price * data.qty * 0.19)],
+        ['Total con IVA', '$' + fmtMiles(productData.price * data.qty * 1.19)]
+      ];
+
+      for (var vr = 0; vr < ventaRows.length; vr++) {
+        if (vr % 2 === 0) {
+          doc.setFillColor(lightBg[0], lightBg[1], lightBg[2]);
+          doc.rect(M, y, CW, 8, 'F');
+        }
+        doc.setTextColor(gray[0], gray[1], gray[2]);
+        doc.setFontSize(9);
+        doc.setFont('helvetica', 'normal');
+        doc.text(ventaRows[vr][0], M + 4, y + 5.5);
+
+        doc.setTextColor(dark[0], dark[1], dark[2]);
+        doc.setFont('helvetica', 'bold');
+        doc.text(ventaRows[vr][1], M + CW - 4, y + 5.5, { align: 'right' });
+        y += 8;
+      }
+
       y += 8;
     }
-
-    y += 8;
 
     /* ── Terms & Conditions ──────────────────────────── */
     doc.setTextColor(gray[0], gray[1], gray[2]);
     doc.setFontSize(8);
     doc.setFont('helvetica', 'bold');
-    doc.text('CONDICIONES DEL ARRIENDO', M, y);
+    doc.text(esArriendo ? 'CONDICIONES DEL ARRIENDO' : 'CONDICIONES DE LA COTIZACIÓN', M, y);
     y += 6;
 
     doc.setFontSize(8);
     doc.setFont('helvetica', 'normal');
     doc.setTextColor(110, 110, 115);
 
-    var terms = [
-      '1. El arriendo operativo es una alternativa de financiamiento para empresas e instituciones.',
-      '2. Las cuotas incluyen el uso del equipo durante el plazo contratado.',
-      '3. La gestión remota (MDM) permite administrar los equipos de forma centralizada.',
-      '4. Al finalizar el contrato, el cliente puede ejercer la opción de compra al porcentaje indicado.',
-      '5. Los precios están expresados en pesos chilenos (CLP). Los valores netos no incluyen IVA (19%).',
-      '6. Esta cotización tiene una vigencia de 15 días desde la fecha de emisión.',
-      '7. Los valores son referenciales y pueden estar sujetos a aprobación crediticia.'
-    ];
+    var terms;
+    if (esArriendo) {
+      terms = [
+        '1. El arriendo operativo es una alternativa de financiamiento para empresas e instituciones.',
+        '2. Las cuotas incluyen el uso del equipo durante el plazo contratado.',
+        '3. La gestión remota (MDM) permite administrar los equipos de forma centralizada.',
+        '4. Al finalizar el contrato, el cliente puede ejercer la opción de compra al porcentaje indicado.',
+        '5. Los precios están expresados en pesos chilenos (CLP). Los valores netos no incluyen IVA (19%).',
+        '6. Esta cotización tiene una vigencia de 15 días desde la fecha de emisión.',
+        '7. Los valores son referenciales y pueden estar sujetos a aprobación crediticia.'
+      ];
+    } else {
+      terms = [
+        '1. Los precios están expresados en pesos chilenos (CLP). Los valores netos no incluyen IVA (19%).',
+        '2. Esta cotización tiene una vigencia de 15 días desde la fecha de emisión.',
+        '3. Los valores son referenciales y están sujetos a disponibilidad de stock.'
+      ];
+    }
 
     for (var t = 0; t < terms.length; t++) {
       var lines = doc.splitTextToSize(terms[t], CW - 4);
