@@ -56,7 +56,7 @@
             "button_style_1": "primary",
             "show_button_2": true,
             "button_label_2": "Hablar con un experto",
-            "button_link_2": "#popup-habla-experto",
+            "button_link_2": "",
             "button_style_2": "tertiary"
           }
         }

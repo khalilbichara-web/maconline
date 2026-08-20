@@ -2285,6 +2285,75 @@
 				"name": "Countdown"
 			}
 		},
+		"image-carousel": {
+			"name": "Image carousel",
+			"settings": {
+				"heading": {
+					"default": "Featured"
+				},
+				"header__layout": {
+					"content": "Layout"
+				},
+				"columns_desktop": {
+					"label": "Items visible on desktop"
+				},
+				"gap": {
+					"label": "Space between items"
+				},
+				"image_ratio": {
+					"label": "Image ratio",
+					"options__1": {
+						"label": "Adapt to image"
+					},
+					"options__2": {
+						"label": "Landscape"
+					},
+					"options__3": {
+						"label": "Portrait"
+					},
+					"options__4": {
+						"label": "Square"
+					}
+				},
+				"corner_radius": {
+					"label": "Corner radius"
+				},
+				"header__behavior": {
+					"content": "Behavior"
+				},
+				"show_navigation": {
+					"label": "Show arrows"
+				},
+				"show_pagination": {
+					"label": "Show dots"
+				},
+				"enable_loop": {
+					"label": "Loop slides"
+				},
+				"autoplay": {
+					"label": "Autoplay"
+				},
+				"autoplay_speed": {
+					"label": "Change slides every"
+				}
+			},
+			"blocks": {
+				"slide": {
+					"name": "Slide",
+					"settings": {
+						"image": {
+							"label": "Image"
+						},
+						"link": {
+							"label": "Link"
+						}
+					}
+				}
+			},
+			"presets": {
+				"name": "Image carousel"
+			}
+		},
 		"image-with-text": {
 			"name": "Image with text",
 			"settings": {
@@ -3472,6 +3541,15 @@
 							},
 							"show_vimeo": {
 								"label": "Vimeo"
+							}
+						}
+					},
+					"custom_liquid": {
+						"name": "Custom code (HTML/embed)",
+						"settings": {
+							"custom_liquid": {
+								"label": "Custom code",
+								"info": "Paste an embed code, such as a HubSpot form embed code."
 							}
 						}
 					}
@@ -5337,7 +5415,7 @@
 				},
 				"link": {
 					"label": "Image link"
-				},
+				}
 			},
 			"presets": {
 				"name": "Image banner"
