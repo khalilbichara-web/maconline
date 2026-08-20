@@ -714,7 +714,6 @@
         ['Tipo de equipo', tipoProducto],
         ['Valor total equipos (neto)', '$' + fmtMiles(productData.price * data.qty)],
         ['Gestión remota (MDM)', data.mdmActivo ? 'Incluido — $' + fmtMiles(CFG.MDM_COSTO) + '/equipo/mes' : 'No incluido (descuento $' + fmtMiles(CFG.MDM_COSTO) + '/equipo/mes)'],
-        ['Opción de compra al final', CFG.vrLabel(tipoArriendo, data.plazo)],
         ['Cuota mensual sin IVA', '$' + fmtMiles(data.cuotaNeta)],
         ['Cuota mensual con IVA', '$' + fmtMiles(data.cuotaIVA)]
       ];
@@ -781,10 +780,9 @@
         '1. El arriendo operativo es una alternativa de financiamiento para empresas e instituciones.',
         '2. Las cuotas incluyen el uso del equipo durante el plazo contratado.',
         '3. La gestión remota (MDM) permite administrar los equipos de forma centralizada.',
-        '4. Al finalizar el contrato, el cliente puede ejercer la opción de compra al porcentaje indicado.',
-        '5. Los precios están expresados en pesos chilenos (CLP). Los valores netos no incluyen IVA (19%).',
-        '6. Esta cotización tiene una vigencia de 15 días desde la fecha de emisión.',
-        '7. Los valores son referenciales y pueden estar sujetos a aprobación crediticia.'
+        '4. Los precios están expresados en pesos chilenos (CLP). Los valores netos no incluyen IVA (19%).',
+        '5. Esta cotización tiene una vigencia de 15 días desde la fecha de emisión.',
+        '6. Los valores son referenciales y pueden estar sujetos a aprobación crediticia.'
       ];
     } else {
       terms = [
