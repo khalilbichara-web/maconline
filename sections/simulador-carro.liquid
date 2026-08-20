@@ -1,3 +1,24 @@
+{%- liquid
+  comment
+    El arriendo operativo solo aplica a estos tipos de producto:
+    iPhone, iPad, Mac Desktop (iMac / Mac mini / Mac Studio / Mac Pro)
+    y Mac Notebook (MacBook Air / MacBook Pro).
+    Los demás productos del carrito se muestran como "Solo venta"
+    y no suman cuota. Si ningún producto es elegible, el widget
+    no se renderiza.
+  endcomment
+  assign qrc_hay_arriendo = false
+  for item in cart.items
+    assign qrc_pt = item.product.type | default: '' | strip
+    assign qrc_p4 = qrc_pt | slice: 0, 4
+    assign qrc_p6 = qrc_pt | slice: 0, 6
+    assign qrc_p7 = qrc_pt | slice: 0, 7
+    if qrc_p6 == 'iPhone' or qrc_p4 == 'iPad' or qrc_p7 == 'MacBook' or qrc_p4 == 'iMac' or qrc_pt == 'Mac mini' or qrc_pt == 'Mac Studio' or qrc_pt == 'Mac Pro'
+      assign qrc_hay_arriendo = true
+      break
+    endif
+  endfor
+-%}
 {%- style -%}
 .qrc {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -42,6 +63,7 @@
 .qrc-item-name { font-size: 13px; font-weight: 600; color: #1d1d1f; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .qrc-item-detail { font-size: 11px; color: #6e6e73; margin-top: 1px; }
 .qrc-item-type { display: inline-block; font-size: 10px; font-weight: 500; color: #0071e3; background: rgba(0,113,227,0.08); padding: 1px 6px; border-radius: 4px; }
+.qrc-item-type--venta { color: #b25000; background: rgba(178,80,0,0.08); }
 .qrc-item-cuota { text-align: right; flex-shrink: 0; }
 .qrc-item-cuota-val { font-size: 15px; font-weight: 600; color: #1d1d1f; letter-spacing: -0.02em; }
 .qrc-item-cuota-sub { font-size: 11px; color: #6e6e73; }
@@ -73,12 +95,12 @@
 }
 {%- endstyle -%}
 
-{%- if cart.item_count > 0 -%}
+{%- if cart.item_count > 0 and qrc_hay_arriendo -%}
 <div class="qrc" id="qrc-widget">
   <div class="qrc-header">
     <div class="qrc-badge">Arriendo Operativo</div>
     <div class="qrc-title">Arrienda tu carrito completo</div>
-    <div class="qrc-subtitle">Cuotas mensuales estimadas para todos tus equipos</div>
+    <div class="qrc-subtitle">Cuotas mensuales estimadas para tus equipos iPhone, iPad y Mac</div>
   </div>
 
   <!-- Plazo + MDM -->
@@ -101,6 +123,22 @@
   <!-- Line items -->
   <ul class="qrc-items" id="qrc-items">
     {%- for item in cart.items -%}
+    {%- liquid
+      assign qrc_pt = item.product.type | default: '' | strip
+      assign qrc_p4 = qrc_pt | slice: 0, 4
+      assign qrc_p6 = qrc_pt | slice: 0, 6
+      assign qrc_p7 = qrc_pt | slice: 0, 7
+      assign qrc_item_tipo = ''
+      if qrc_p6 == 'iPhone'
+        assign qrc_item_tipo = 'iPhone'
+      elsif qrc_p4 == 'iPad'
+        assign qrc_item_tipo = 'iPad'
+      elsif qrc_p7 == 'MacBook'
+        assign qrc_item_tipo = 'Mac Notebook'
+      elsif qrc_p4 == 'iMac' or qrc_pt == 'Mac mini' or qrc_pt == 'Mac Studio' or qrc_pt == 'Mac Pro'
+        assign qrc_item_tipo = 'Mac Desktop'
+      endif
+    -%}
     <li class="qrc-item" data-qrc-index="{{ forloop.index0 }}">
       <div class="qrc-item-img">
         {%- if item.image -%}
@@ -110,13 +148,22 @@
       <div class="qrc-item-info">
         <div class="qrc-item-name">{{ item.product.title }}</div>
         <div class="qrc-item-detail">
-          <span class="qrc-item-type" id="qrc-type-{{ forloop.index0 }}">-</span>
+          {%- if qrc_item_tipo != blank -%}
+            <span class="qrc-item-type" id="qrc-type-{{ forloop.index0 }}">{{ qrc_item_tipo }}</span>
+          {%- else -%}
+            <span class="qrc-item-type qrc-item-type--venta" id="qrc-type-{{ forloop.index0 }}">Solo venta</span>
+          {%- endif -%}
           · {{ item.quantity }} {{ item.quantity | pluralize: 'equipo', 'equipos' }}
         </div>
       </div>
       <div class="qrc-item-cuota">
-        <div class="qrc-item-cuota-val" id="qrc-cuota-{{ forloop.index0 }}">$-</div>
-        <div class="qrc-item-cuota-sub">/mes sin IVA</div>
+        {%- if qrc_item_tipo != blank -%}
+          <div class="qrc-item-cuota-val" id="qrc-cuota-{{ forloop.index0 }}">$-</div>
+          <div class="qrc-item-cuota-sub">/mes sin IVA</div>
+        {%- else -%}
+          <div class="qrc-item-cuota-val" id="qrc-cuota-{{ forloop.index0 }}">—</div>
+          <div class="qrc-item-cuota-sub">no aplica arriendo</div>
+        {%- endif -%}
       </div>
     </li>
     {%- endfor -%}
@@ -136,16 +183,12 @@
 
 
 </div>
-{%- else -%}
-<div class="qrc" id="qrc-widget">
-  <div class="qrc-empty">Agrega productos al carrito para ver las cuotas de arriendo.</div>
-</div>
 {%- endif -%}
 
+{%- if cart.item_count > 0 and qrc_hay_arriendo -%}
 <script>
 (function() {
   'use strict';
-  if ({{ cart.item_count }} === 0) return;
 
   /* --- Cart items data from Liquid --- */
   var cartItems = [
@@ -153,26 +196,27 @@
     {
       price: {{ item.price }} / 100,
       qty: {{ item.quantity }},
-      tags: {{ item.product.tags | json }},
+      ptype: {{ item.product.type | default: '' | json }},
       title: {{ item.product.title | json }}
     }{%- unless forloop.last -%},{%- endunless -%}
     {%- endfor -%}
   ];
 
-  /* Detect product type */
-  function detectType(item) {
-    var t = item.title.toLowerCase();
-    var tags = item.tags;
-    if (tags.indexOf('iPhone') > -1 || t.indexOf('iphone') > -1) return 'iPhone';
-    if (tags.indexOf('iPad') > -1 || t.indexOf('ipad') > -1) return 'iPad';
-    return 'Mac';
+  /* Elegibilidad de arriendo: solo iPhone, iPad, Mac Desktop y
+     Mac Notebook. El resto se muestra como "Solo venta". */
+  function clasificarArriendo(productType) {
+    var t = (productType || '').trim();
+    if (t.indexOf('iPhone') === 0) return 'iPhone';
+    if (t.indexOf('iPad') === 0) return 'iPad';
+    if (t.indexOf('MacBook') === 0) return 'Mac Notebook';
+    if (t.indexOf('iMac') === 0 || t === 'Mac mini' || t === 'Mac Studio' || t === 'Mac Pro') return 'Mac Desktop';
+    return null;
   }
 
   /* Assign types */
   for (var i = 0; i < cartItems.length; i++) {
-    cartItems[i].type = detectType(cartItems[i]);
-    var typeEl = document.getElementById('qrc-type-' + i);
-    if (typeEl) typeEl.textContent = cartItems[i].type;
+    cartItems[i].type = clasificarArriendo(cartItems[i].ptype);
+    cartItems[i].esArriendo = cartItems[i].type !== null;
   }
 
   var FACTOR = { 36: 0.0374, 24: 0.0421 };
@@ -204,7 +248,7 @@
     el.classList.add('qrc-pop');
   }
 
-  /* Main calculation */
+  /* Main calculation — solo suma los equipos elegibles */
   function cCalcular() {
     var mdm = document.getElementById('qrc-mdm').checked;
     var totalCuota = 0;
@@ -212,6 +256,8 @@
 
     for (var i = 0; i < cartItems.length; i++) {
       var item = cartItems[i];
+      if (!item.esArriendo) continue;
+
       var factor = FACTOR[cMeses] * (item.type === 'iPhone' ? IPHONE_MULT : 1);
       var descMDM = mdm ? 0 : 3000 * item.qty;
       var cuotaLinea = (item.price * item.qty) * factor - descMDM;
@@ -223,12 +269,13 @@
 
     cSet('qrc-total', fmtMiles(totalCuota));
     cSet('qrc-total-iva', 'Con IVA: $' + fmtMiles(totalCuota * 1.19) + '/mes');
-    document.getElementById('qrc-total-plazo').textContent = cMeses + ' meses \u00b7 ' + totalEquipos + (totalEquipos === 1 ? ' equipo' : ' equipos') + ' \u00b7 sin IVA';
+    document.getElementById('qrc-total-plazo').textContent = cMeses + ' meses · ' + totalEquipos + (totalEquipos === 1 ? ' equipo' : ' equipos') + ' · sin IVA';
   }
 
   cCalcular();
 })();
 </script>
+{%- endif -%}
 
 {% schema %}
 {
