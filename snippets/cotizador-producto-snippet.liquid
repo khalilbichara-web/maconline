@@ -277,7 +277,7 @@
   var esArriendo = tipoArriendo !== '';
   var tipoProducto = esArriendo ? tipoArriendo : (productData.type || 'Accesorio');
 
-  /* Parámetros centralizados (factores por tipo, VR, MDM, IVA) */
+  /* Parámetros centralizados (factores por tipo, IVA) */
   var CFG = window.ArriendoConfig;
 
   /* ── Format helpers ────────────────────────────────────── */
@@ -387,7 +387,6 @@
 
     if (esArriendo) {
       payload.plazo = leadData.plazo;
-      payload.mdm = leadData.mdmActivo;
       payload.cuotaNeta = Math.round(leadData.cuotaNeta);
       payload.cuotaIVA = Math.round(leadData.cuotaIVA);
     }
@@ -500,9 +499,8 @@
     };
 
     if (esArriendo) {
-      /* ── Leer plazo y MDM del widget qrw ──────────────── */
+      /* ── Leer plazo del widget qrw ────────────────── */
       var plazo = CFG.PLAZO_DEFAULT;
-      var mdmActivo = CFG.MDM_DEFAULT;
       var plazoBtns = document.querySelectorAll('.qrw-plazo');
       for (var pi = 0; pi < plazoBtns.length; pi++) {
         if (plazoBtns[pi].getAttribute('aria-pressed') === 'true') {
@@ -511,16 +509,13 @@
           break;
         }
       }
-      var mdmCheckbox = document.getElementById('qrw-mdm');
-      if (mdmCheckbox) mdmActivo = mdmCheckbox.checked;
 
       var factor = CFG.factorPara(tipoArriendo, plazo);
       var total = productData.price * qty;
-      var cuotaNeta = CFG.cuotaNeta(total, qty, plazo, tipoArriendo, mdmActivo);
+      var cuotaNeta = CFG.cuotaNeta(total, plazo, tipoArriendo);
       var cuotaIVA = cuotaNeta * CFG.IVA;
 
       leadData.plazo = plazo;
-      leadData.mdmActivo = mdmActivo;
       leadData.cuotaNeta = cuotaNeta;
       leadData.cuotaIVA = cuotaIVA;
       leadData.factor = factor;
@@ -713,7 +708,6 @@
         ['Cantidad de equipos', data.qty.toString()],
         ['Tipo de equipo', tipoProducto],
         ['Valor total equipos (neto)', '$' + fmtMiles(productData.price * data.qty)],
-        ['Gestión remota (MDM)', data.mdmActivo ? 'Incluido — $' + fmtMiles(CFG.MDM_COSTO) + '/equipo/mes' : 'No incluido (descuento $' + fmtMiles(CFG.MDM_COSTO) + '/equipo/mes)'],
         ['Cuota mensual sin IVA', '$' + fmtMiles(data.cuotaNeta)],
         ['Cuota mensual con IVA', '$' + fmtMiles(data.cuotaIVA)]
       ];
@@ -779,10 +773,9 @@
       terms = [
         '1. El arriendo operativo es una alternativa de financiamiento para empresas e instituciones.',
         '2. Las cuotas incluyen el uso del equipo durante el plazo contratado.',
-        '3. La gestión remota (MDM) permite administrar los equipos de forma centralizada.',
-        '4. Los precios están expresados en pesos chilenos (CLP). Los valores netos no incluyen IVA (19%).',
-        '5. Esta cotización tiene una vigencia de 15 días desde la fecha de emisión.',
-        '6. Los valores son referenciales y pueden estar sujetos a aprobación crediticia.'
+        '3. Los precios están expresados en pesos chilenos (CLP). Los valores netos no incluyen IVA (19%).',
+        '4. Esta cotización tiene una vigencia de 15 días desde la fecha de emisión.',
+        '5. Los valores son referenciales y pueden estar sujetos a aprobación crediticia.'
       ];
     } else {
       terms = [
