@@ -4,7 +4,7 @@
   (Qrent · fondeo 9% · rentabilidad 5%)
 
   ÚNICO lugar donde viven los factores de cuota, valores residuales,
-  MDM, IVA y penalizaciones. Todos los componentes de arriendo
+  IVA y penalizaciones. Todos los componentes de arriendo
   (cotizador de carrito, cotizador de producto, rental-calculator,
   simulador-carro y simulador-arriendo) leen de window.ArriendoConfig.
 
@@ -37,10 +37,6 @@ window.ArriendoConfig = window.ArriendoConfig || (function() {
     /* Plazos disponibles */
     PLAZOS: [12, 24, 36],
     PLAZO_DEFAULT: 36,
-
-    /* MDM · Gestión remota */
-    MDM_COSTO: 3000,        /* $/equipo/mes */
-    MDM_DEFAULT: false,     /* toggle desactivado por defecto */
 
     /* IVA */
     IVA: 1.19,
@@ -94,12 +90,9 @@ window.ArriendoConfig = window.ArriendoConfig || (function() {
     return Math.round(cfg.vrPara(tipo, plazo) * 100) + '%';
   };
 
-  /* Cuota neta: precio neto total (precio × cantidad) × factor,
-     menos descuento MDM si está desactivado */
-  cfg.cuotaNeta = function(precioTotal, qty, plazo, tipo, mdmActivo) {
-    var cuota = precioTotal * cfg.factorPara(tipo, plazo);
-    if (!mdmActivo) cuota -= cfg.MDM_COSTO * qty;
-    return cuota;
+  /* Cuota neta: precio neto total (precio × cantidad) × factor */
+  cfg.cuotaNeta = function(precioTotal, plazo, tipo) {
+    return precioTotal * cfg.factorPara(tipo, plazo);
   };
 
   return cfg;
