@@ -38,19 +38,11 @@
 .qrc-title { font-size: 17px; font-weight: 600; letter-spacing: -0.02em; color: #1d1d1f; }
 .qrc-subtitle { font-size: 13px; color: #6e6e73; margin-top: 2px; }
 
-/* — Plazo + MDM row — */
+/* — Plazo row — */
 .qrc-options { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin-bottom: 16px; }
 .qrc-plazo-group { display: flex; gap: 6px; }
 .qrc-plazo { padding: 8px 14px; border: 1.5px solid #d2d2d7; border-radius: 10px; background: #fff; cursor: pointer; font-family: inherit; text-align: center; transition: all 0.2s; font-size: 13px; font-weight: 600; color: #1d1d1f; }
 .qrc-plazo[aria-pressed="true"] { border-color: #1d1d1f; background: #1d1d1f; color: #fff; }
-.qrc-mdm-group { display: flex; align-items: center; gap: 8px; margin-left: auto; }
-.qrc-mdm-label { font-size: 13px; color: #1d1d1f; }
-.qrc-tog { position: relative; width: 42px; height: 26px; flex-shrink: 0; }
-.qrc-tog input { opacity: 0; width: 0; height: 0; position: absolute; }
-.qrc-tog-track { position: absolute; inset: 0; background: #d2d2d7; border-radius: 100px; cursor: pointer; transition: background 0.3s; }
-.qrc-tog-track::after { content: ''; position: absolute; width: 22px; height: 22px; border-radius: 50%; background: #fff; top: 2px; left: 2px; transition: transform 0.3s cubic-bezier(0.34,1.56,0.64,1); box-shadow: 0 1px 3px rgba(0,0,0,0.18); }
-.qrc-tog input:checked + .qrc-tog-track { background: #34c759; }
-.qrc-tog input:checked + .qrc-tog-track::after { transform: translateX(16px); }
 
 /* — Line items — */
 .qrc-sep { height: 1px; background: #e5e5ea; margin: 12px 0; }
@@ -90,7 +82,6 @@
 /* — Responsive — */
 @media (max-width: 480px) {
   .qrc-options { flex-direction: column; align-items: stretch; }
-  .qrc-mdm-group { margin-left: 0; justify-content: space-between; }
   .qrc-total-val { font-size: 20px; }
 }
 {%- endstyle -%}
@@ -104,19 +95,12 @@
     <div class="qrc-subtitle">Cuotas mensuales estimadas para todo tu carrito</div>
   </div>
 
-  <!-- Plazo + MDM -->
+  <!-- Plazo -->
   <div class="qrc-options">
     <div class="qrc-plazo-group" role="group" aria-label="Plazo del arriendo">
       <button class="qrc-plazo" id="qrc-p12" aria-pressed="false">12 meses</button>
       <button class="qrc-plazo" id="qrc-p24" aria-pressed="false">24 meses</button>
       <button class="qrc-plazo" id="qrc-p36" aria-pressed="true">36 meses</button>
-    </div>
-    <div class="qrc-mdm-group">
-      <span class="qrc-mdm-label">MDM ($3.000/eq)</span>
-      <label class="qrc-tog" aria-label="Activar MDM">
-        <input type="checkbox" id="qrc-mdm">
-        <div class="qrc-tog-track"></div>
-      </label>
     </div>
   </div>
 
@@ -218,7 +202,7 @@
     cartItems[i].esDispositivo = cartItems[i].type !== null;
   }
 
-  /* Parámetros centralizados (factores por tipo, MDM, IVA) */
+  /* Parámetros centralizados (factores por tipo, IVA) */
   var CFG = window.ArriendoConfig;
   var cMeses = CFG.PLAZO_DEFAULT;
 
@@ -238,9 +222,6 @@
     cCalcular();
   }
 
-  /* MDM */
-  document.getElementById('qrc-mdm').addEventListener('change', function() { cCalcular(); });
-
   /* Animation helper */
   function cSet(id, val) {
     var el = document.getElementById(id);
@@ -252,9 +233,8 @@
   }
 
   /* Main calculation — dispositivos con su factor, accesorios con
-     tasa 'Otros'. El descuento MDM aplica solo a dispositivos. */
+     tasa 'Otros'. */
   function cCalcular() {
-    var mdm = document.getElementById('qrc-mdm').checked;
     var totalCuota = 0;
     var totalEquipos = 0;
 
@@ -262,8 +242,7 @@
       var item = cartItems[i];
 
       var tipo = item.esDispositivo ? item.type : 'Otros';
-      var cuotaLinea = item.price * item.qty * CFG.factorPara(tipo, cMeses);
-      if (item.esDispositivo && !mdm) cuotaLinea -= CFG.MDM_COSTO * item.qty;
+      var cuotaLinea = CFG.cuotaNeta(item.price * item.qty, cMeses, tipo);
 
       cSet('qrc-cuota-' + i, '$' + fmtMiles(cuotaLinea));
       totalCuota += cuotaLinea;
