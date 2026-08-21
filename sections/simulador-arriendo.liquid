@@ -3,7 +3,7 @@
   Simulador de Arriendo Operativo — MacOnline Pro
   Sección Liquid para Shopify (popup modal)
 
-  Los parámetros (factores, MDM, IVA, penalizaciones) viven
+  Los parámetros (factores, IVA, penalizaciones) viven
   en snippets/arriendo-config.liquid — no editar valores aquí.
 
   INSTRUCCIONES:
@@ -185,25 +185,6 @@
 .qr-sim .qr-qty-input::-webkit-outer-spin-button { -webkit-appearance: none; }
 .qr-sim .qr-qty-input:focus { background: rgba(0,113,227,0.08); border-radius: 4px; }
 
-/* Toggle */
-.qr-sim .qr-tog { position: relative; width: 51px; height: 31px; flex-shrink: 0; }
-.qr-sim .qr-tog input { opacity: 0; width: 0; height: 0; position: absolute; }
-.qr-sim .qr-tog-track {
-  position: absolute; inset: 0;
-  background: #d2d2d7; border-radius: 100px; cursor: pointer; transition: background 0.3s;
-}
-.qr-sim .qr-tog-track::after {
-  content: ''; position: absolute;
-  width: 27px; height: 27px; border-radius: 50%; background: #fff;
-  top: 2px; left: 2px;
-  transition: transform 0.3s cubic-bezier(0.34,1.56,0.64,1);
-  box-shadow: 0 2px 4px rgba(0,0,0,0.18);
-}
-.qr-sim .qr-tog input:checked + .qr-tog-track { background: #34c759; }
-.qr-sim .qr-tog input:checked + .qr-tog-track::after { transform: translateX(20px); }
-.qr-sim .qr-mdm-feedback { transition: color 0.2s; }
-.qr-sim .qr-mdm-feedback.qr-off { color: #ff3b30 !important; }
-
 /* Plazo selector */
 .qr-sim .qr-plazo-pills { display: flex; gap: 0; }
 .qr-sim .qr-plazo-opt {
@@ -352,17 +333,6 @@
             <button class="qr-qty-btn" id="qr-qty-plus" aria-label="Aumentar cantidad">+</button>
           </div>
         </div>
-
-        <div class="qr-row" style="flex-wrap: wrap;">
-          <span class="qr-row-label">
-            Gestión de dispositivos (MDM)
-            <small id="qr-mdmFeedback" class="qr-mdm-feedback">Administración remota de los equipos · $3.000/equipo/mes</small>
-          </span>
-          <label class="qr-tog" aria-label="Activar o desactivar MDM">
-            <input type="checkbox" id="qr-mdm">
-            <div class="qr-tog-track"></div>
-          </label>
-        </div>
       </div>
 
       <!-- Plazo -->
@@ -479,7 +449,7 @@
   });
 
   // ── Parámetros centralizados ─────────────────────
-  // Factores, MDM, IVA y penalizaciones viven en
+  // Factores, IVA y penalizaciones viven en
   // snippets/arriendo-config.liquid (window.ArriendoConfig)
   var CFG = window.ArriendoConfig;
 
@@ -535,9 +505,6 @@
     qrCalcular();
   });
 
-  // ── MDM toggle ───────────────────────────────────
-  document.getElementById('qr-mdm').addEventListener('change', function() { qrCalcular(); });
-
   // ── Precio con formato de miles ──────────────────────
   function formatMiles(n) {
     return n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
@@ -588,20 +555,9 @@
   // ── Cálculo ──────────────────────────────────────
   function qrCalcular() {
     var monto = parsePrecio(priceInput.value);
-    var mdm = document.getElementById('qr-mdm').checked;
-
-    // Feedback MDM
-    var fb = document.getElementById('qr-mdmFeedback');
-    if (mdm) {
-      fb.textContent = 'Administración remota de los equipos · $' + formatMiles(CFG.MDM_COSTO) + '/equipo/mes';
-      fb.classList.remove('qr-off');
-    } else {
-      fb.textContent = 'Sin gestión remota · se descuentan $' + formatMiles(CFG.MDM_COSTO * qrCantidad) + '/mes de la cuota';
-      fb.classList.add('qr-off');
-    }
 
     var total = monto * qrCantidad;
-    var cuota = CFG.cuotaNeta(total, qrCantidad, qrMeses, qrProducto, mdm);
+    var cuota = CFG.cuotaNeta(total, qrMeses, qrProducto);
 
     qrSet('qr-cuotaNeta', Math.round(cuota).toLocaleString('es-CL'));
     qrSet('qr-cuotaIVA', fmt(cuota * CFG.IVA));
