@@ -255,21 +255,6 @@ body.qcotc-header-under .section-announcement {
 }
 @keyframes qcotcSpin { to { transform: rotate(360deg); } }
 
-/* MDM toggle row */
-.qcotc-mdm-row {
-  display: flex; align-items: center; justify-content: space-between;
-  gap: 12px; margin-bottom: 14px; padding: 10px 14px;
-  background: #f5f5f7; border-radius: 10px;
-}
-.qcotc-mdm-label { font-size: 13px; font-weight: 600; color: #1d1d1f; }
-.qcotc-mdm-sub { font-size: 11px; color: #86868b; margin-top: 1px; }
-.qcotc-tog { position: relative; width: 42px; height: 26px; flex-shrink: 0; }
-.qcotc-tog input { opacity: 0; width: 0; height: 0; position: absolute; }
-.qcotc-tog-track { position: absolute; inset: 0; background: #d2d2d7; border-radius: 100px; cursor: pointer; transition: background 0.3s; }
-.qcotc-tog-track::after { content: ''; position: absolute; width: 22px; height: 22px; border-radius: 50%; background: #fff; top: 2px; left: 2px; transition: transform 0.3s cubic-bezier(0.34,1.56,0.64,1); box-shadow: 0 1px 3px rgba(0,0,0,0.18); }
-.qcotc-tog input:checked + .qcotc-tog-track { background: #34c759; }
-.qcotc-tog input:checked + .qcotc-tog-track::after { transform: translateX(16px); }
-
 /* Plazo toggle */
 .qcotc-plazo-row {
   display: flex; gap: 8px; margin-bottom: 14px;
@@ -329,18 +314,6 @@ body.qcotc-header-under .section-announcement {
       <button type="button" class="qcotc-plazo-opt qcotc-plazo-active" data-plazo="36">
         <span class="qcotc-plazo-opt-months">36 meses</span>
       </button>
-    </div>
-
-    <!-- MDM toggle (solo visible si hay equipos elegibles para arriendo) -->
-    <div class="qcotc-mdm-row" id="qcotc-mdm-row">
-      <div>
-        <div class="qcotc-mdm-label">Gestión remota (MDM)</div>
-        <div class="qcotc-mdm-sub">$3.000/equipo/mes · se descuenta de la cuota si está desactivado</div>
-      </div>
-      <label class="qcotc-tog" aria-label="Activar o desactivar MDM">
-        <input type="checkbox" id="qcotc-mdm">
-        <span class="qcotc-tog-track" aria-hidden="true"></span>
-      </label>
     </div>
 
     <!-- Lease preview (populated by JS) -->
@@ -413,17 +386,12 @@ body.qcotc-header-under .section-announcement {
   }
 
   /* ── Constants ───────────────────────────────────────── */
-  /* Parámetros centralizados (factores por tipo, VR, MDM, IVA) */
+  /* Parámetros centralizados (factores por tipo, IVA) */
   var CFG = window.ArriendoConfig;
   var APP_PROXY_URL = '/apps/cotizador';
   var shopName = {{ shop.name | json }};
   var currentPlazo = CFG.PLAZO_DEFAULT;
   var cartItems = []; /* populated from /cart.js */
-
-  function mdmActivo() {
-    var cb = document.getElementById('qcotc-mdm');
-    return cb ? cb.checked : CFG.MDM_DEFAULT;
-  }
 
   /* ── Format helpers ──────────────────────────────────── */
   function fmtMiles(n) { return Math.round(n).toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.'); }
@@ -466,12 +434,10 @@ body.qcotc-header-under .section-announcement {
 
   /* Cuota neta por línea. Los dispositivos usan su factor propio;
      los accesorios que acompañan a un dispositivo usan la tasa
-     'Otros'. El descuento MDM aplica solo a dispositivos. */
+     'Otros'. */
   function calcCuotaItem(it, plazo) {
     var tipo = it.esDispositivo ? it.tipo : 'Otros';
-    var cuota = it.priceNet * it.qty * CFG.factorPara(tipo, plazo);
-    if (it.esDispositivo && !mdmActivo()) cuota -= CFG.MDM_COSTO * it.qty;
-    return cuota;
+    return CFG.cuotaNeta(it.priceNet * it.qty, plazo, tipo);
   }
 
   /* Con al menos un dispositivo elegible (iPhone/iPad/Mac) en el
@@ -720,18 +686,15 @@ body.qcotc-header-under .section-announcement {
     var arriendo = itemsArriendo();
     var plazoRow = document.getElementById('qcotc-plazo-row');
     var leaseBox = document.getElementById('qcotc-lease-box');
-    var mdmRow = document.getElementById('qcotc-mdm-row');
 
     /* Sin dispositivos elegibles: ocultar el componente de arriendo */
     if (arriendo.length === 0) {
       if (plazoRow) plazoRow.style.display = 'none';
       if (leaseBox) leaseBox.style.display = 'none';
-      if (mdmRow) mdmRow.style.display = 'none';
       return;
     }
     if (plazoRow) plazoRow.style.display = '';
     if (leaseBox) leaseBox.style.display = '';
-    if (mdmRow) mdmRow.style.display = '';
 
     var totalCuotaNeta = 0;
     var totalEquipos = 0;
@@ -756,15 +719,6 @@ body.qcotc-header-under .section-announcement {
     });
   });
 
-  /* ── MDM toggle ──────────────────────────────────────── */
-  (function() {
-    var mdmCb = document.getElementById('qcotc-mdm');
-    if (mdmCb) {
-      mdmCb.checked = CFG.MDM_DEFAULT;
-      mdmCb.addEventListener('change', updateLease);
-    }
-  })();
-
   /* ── Create Draft Order via App Proxy ────────────────────── */
   function createDraftOrder(leadData) {
     var hayArriendo = hayDispositivo();
@@ -781,7 +735,6 @@ body.qcotc-header-under .section-announcement {
       };
       if (hayArriendo) {
         base.plazo = currentPlazo;
-        if (it.esDispositivo) base.mdm = mdmActivo();
         base.cuotaNeta = Math.round(calcCuotaItem(it, currentPlazo));
         base.cuotaIVA = Math.round(base.cuotaNeta * CFG.IVA);
       }
@@ -808,7 +761,6 @@ body.qcotc-header-under .section-announcement {
       totalNeto: Math.round(totalNeto),
       hayArriendo: hayArriendo,
       plazo: hayArriendo ? currentPlazo : null,
-      mdm: hayArriendo ? mdmActivo() : null,
       totalCuotaNeta: hayArriendo ? Math.round(totalCuotaNeta) : null,
       totalCuotaIVA: hayArriendo ? Math.round(totalCuotaNeta * CFG.IVA) : null,
       token: 'CART-' + fmtDateShort().replace(/\//g, '') + '-' + items.length
@@ -1235,8 +1187,7 @@ body.qcotc-header-under .section-announcement {
       var leaseRows = [
         ['Plazo del contrato', currentPlazo + ' meses'],
         ['Cantidad de equipos en arriendo', equiposArriendo.toString()],
-        ['Valor equipos en arriendo (neto)', '$' + fmtMiles(arriendoNeto)],
-        ['Gestión remota (MDM)', mdmActivo() ? 'Incluido — $' + fmtMiles(CFG.MDM_COSTO) + '/equipo/mes' : 'No incluido (descuento $' + fmtMiles(CFG.MDM_COSTO) + '/equipo/mes)']
+        ['Valor equipos en arriendo (neto)', '$' + fmtMiles(arriendoNeto)]
       ];
 
       var lColW = [CW * 0.6, CW * 0.4];
@@ -1287,10 +1238,9 @@ body.qcotc-header-under .section-announcement {
       terms = [
         '1. El arriendo operativo es una alternativa de financiamiento para empresas e instituciones.',
         '2. Las cuotas incluyen el uso del equipo durante el plazo contratado.',
-        '3. La gestión remota (MDM) permite administrar los equipos de forma centralizada.',
-        '4. Los precios están en pesos chilenos (CLP). Valores netos no incluyen IVA (19%).',
-        '5. Cotización vigente por 15 días desde la fecha de emisión.',
-        '6. Valores referenciales sujetos a aprobación crediticia.'
+        '3. Los precios están en pesos chilenos (CLP). Valores netos no incluyen IVA (19%).',
+        '4. Cotización vigente por 15 días desde la fecha de emisión.',
+        '5. Valores referenciales sujetos a aprobación crediticia.'
       ];
     } else {
       terms = [
