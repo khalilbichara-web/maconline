@@ -472,7 +472,7 @@
       ],
       "name": "t:sections.rich-text.presets.name",
       "settings": {
-        "color_scheme": "",
+        "color_scheme": "background-1",
         "full_width": true,
         "alignment": "center",
         "margin_top": "no-indent",
