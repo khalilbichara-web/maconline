@@ -23,6 +23,12 @@
     "image_carousel_P44PPd": {
       "type": "image-carousel",
       "blocks": {
+        "slide_atnzDG": {
+          "type": "slide",
+          "settings": {
+            "link": ""
+          }
+        },
         "slide_b9TN8t": {
           "type": "slide",
           "settings": {
@@ -73,6 +79,7 @@
         }
       },
       "block_order": [
+        "slide_atnzDG",
         "slide_b9TN8t",
         "slide_7B4fNf",
         "slide_zybymH",
