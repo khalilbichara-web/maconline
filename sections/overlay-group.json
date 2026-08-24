@@ -100,7 +100,8 @@
         "custom_liquid_EjG89T"
       ],
       "custom_css": [
-        "#popup-hubspot .popup-close {color: black;}"
+        "#popup-hubspot .popup-close {color: black;}",
+        "#popup-hubspot{color: #000}"
       ],
       "name": "t:sections.overlay-group.popup.name",
       "settings": {
