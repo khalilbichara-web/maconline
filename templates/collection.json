@@ -34,6 +34,7 @@
         "slide_3mBnJM": {
           "type": "slide",
           "settings": {
+            "image": "shopify://shop_images/carrusel-mac.jpg",
             "link": "",
             "text": ""
           }
@@ -41,6 +42,7 @@
         "slide_fgEWEX": {
           "type": "slide",
           "settings": {
+            "image": "shopify://shop_images/carrusel-ipad.jpg",
             "link": "",
             "text": ""
           }
@@ -48,6 +50,7 @@
         "slide_zDkzAT": {
           "type": "slide",
           "settings": {
+            "image": "shopify://shop_images/carrusel-iphone.jpg",
             "link": "",
             "text": ""
           }
@@ -55,6 +58,7 @@
         "slide_whytmh": {
           "type": "slide",
           "settings": {
+            "image": "shopify://shop_images/carrusel-iphone-empresas.jpg",
             "link": "",
             "text": ""
           }
@@ -62,6 +66,7 @@
         "slide_MmkgPm": {
           "type": "slide",
           "settings": {
+            "image": "shopify://shop_images/carrusel-watch.jpg",
             "link": "",
             "text": ""
           }
@@ -69,6 +74,7 @@
         "slide_zE6LwN": {
           "type": "slide",
           "settings": {
+            "image": "shopify://shop_images/carrusel-audio.jpg",
             "link": "",
             "text": ""
           }
@@ -76,6 +82,7 @@
         "slide_9LrXzG": {
           "type": "slide",
           "settings": {
+            "image": "shopify://shop_images/carrusel-software.jpg",
             "link": "",
             "text": "test ejemplo"
           }
@@ -125,7 +132,7 @@
         "columns_mobile": 3,
         "gap": 80,
         "image_ratio": "square",
-        "corner_radius": 0,
+        "corner_radius": 32,
         "show_navigation": true,
         "show_pagination": true,
         "enable_loop": false,
