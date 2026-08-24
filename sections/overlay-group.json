@@ -85,6 +85,9 @@
       "block_order": [
         "custom_liquid_EjG89T"
       ],
+      "custom_css": [
+        "#popup-hubspot .popup-close{color:black;}"
+      ],
       "name": "t:sections.overlay-group.popup.name",
       "settings": {
         "image_layout": "top",
