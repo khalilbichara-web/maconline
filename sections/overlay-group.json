@@ -98,7 +98,7 @@
         "trigger-open-delay": 1,
         "open-scroll-type": "%",
         "open-scroll-position": 50,
-        "manual-selector": "",
+        "manual-selector": "a[href='#popup-hubspot']",
         "trigger-close": "none",
         "trigger-close-delay": 30,
         "close-scroll-type": "%",
