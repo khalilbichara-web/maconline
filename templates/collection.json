@@ -20,6 +20,66 @@
         "margin_bottom": "s"
       }
     },
+    "image_carousel_7bTkxJ": {
+      "type": "image-carousel",
+      "blocks": {
+        "slide_9LrXzG": {
+          "type": "slide",
+          "settings": {
+            "link": "",
+            "text": ""
+          }
+        },
+        "slide_B8kPP4": {
+          "type": "slide",
+          "settings": {
+            "link": "",
+            "text": ""
+          }
+        },
+        "slide_baLecw": {
+          "type": "slide",
+          "settings": {
+            "link": "",
+            "text": ""
+          }
+        },
+        "slide_nej6W8": {
+          "type": "slide",
+          "settings": {
+            "link": "",
+            "text": ""
+          }
+        }
+      },
+      "block_order": [
+        "slide_9LrXzG",
+        "slide_B8kPP4",
+        "slide_baLecw",
+        "slide_nej6W8"
+      ],
+      "name": "t:sections.image-carousel.name",
+      "settings": {
+        "heading": "",
+        "heading_size": "h2",
+        "color_scheme": "",
+        "columns_desktop": 8,
+        "columns_tablet": 5,
+        "columns_mobile": 3,
+        "gap": 100,
+        "image_ratio": "landscape",
+        "corner_radius": 0,
+        "show_navigation": true,
+        "show_pagination": true,
+        "enable_loop": false,
+        "autoplay": false,
+        "autoplay_speed": 5,
+        "padding_top": "m",
+        "padding_bottom": "m",
+        "margin_top": "no-indent",
+        "margin_bottom": "no-indent"
+      }
+    },
     "product-grid": {
       "type": "main-collection-product-grid",
       "settings": {
@@ -176,6 +236,7 @@
         "button_label_2": "Hablar con un especialista",
         "button_link_2": "",
         "button_style_2": "tertiary",
+        "mobile_full_width_buttons": false,
         "padding_top": "m",
         "padding_bottom": "m",
         "margin_top": "no-indent",
@@ -185,6 +246,7 @@
   },
   "order": [
     "banner",
+    "image_carousel_7bTkxJ",
     "product-grid",
     "animated_image_collage_KMFRfx"
   ]
