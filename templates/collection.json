@@ -247,7 +247,7 @@
       ],
       "name": "t:sections.image-carousel.name",
       "settings": {
-        "heading": "Featured",
+        "heading": "",
         "heading_size": "h2",
         "color_scheme": "",
         "columns_desktop": 8,
