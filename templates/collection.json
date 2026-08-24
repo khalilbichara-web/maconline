@@ -176,61 +176,6 @@
         "button_label_2": "Hablar con un especialista",
         "button_link_2": "",
         "button_style_2": "tertiary",
-        "mobile_full_width_buttons": false,
-        "padding_top": "m",
-        "padding_bottom": "m",
-        "margin_top": "no-indent",
-        "margin_bottom": "no-indent"
-      }
-    },
-    "image_carousel_Dh9DGa": {
-      "type": "image-carousel",
-      "blocks": {
-        "slide_prEQL8": {
-          "type": "slide",
-          "settings": {
-            "link": ""
-          }
-        },
-        "slide_kHzb8j": {
-          "type": "slide",
-          "settings": {
-            "link": ""
-          }
-        },
-        "slide_CDEQHx": {
-          "type": "slide",
-          "settings": {
-            "link": ""
-          }
-        },
-        "slide_TF8Agn": {
-          "type": "slide",
-          "settings": {
-            "link": ""
-          }
-        }
-      },
-      "block_order": [
-        "slide_prEQL8",
-        "slide_kHzb8j",
-        "slide_CDEQHx",
-        "slide_TF8Agn"
-      ],
-      "name": "t:sections.image-carousel.name",
-      "settings": {
-        "heading": "Featured",
-        "heading_size": "h2",
-        "color_scheme": "",
-        "columns_desktop": 3,
-        "gap": 16,
-        "image_ratio": "landscape",
-        "corner_radius": 8,
-        "show_navigation": true,
-        "show_pagination": true,
-        "enable_loop": false,
-        "autoplay": false,
-        "autoplay_speed": 5,
         "padding_top": "m",
         "padding_bottom": "m",
         "margin_top": "no-indent",
@@ -240,7 +185,6 @@
   },
   "order": [
     "banner",
-    "image_carousel_Dh9DGa",
     "product-grid",
     "animated_image_collage_KMFRfx"
   ]
