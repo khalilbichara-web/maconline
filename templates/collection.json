@@ -58,7 +58,7 @@
         "slide_zDkzAT": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/carrusel-iphone.jpg",
+            "image": "shopify://shop_images/carrusel-iphone-empresas.jpg",
             "link": "",
             "text": "iPhone para empresas"
           }
@@ -66,7 +66,7 @@
         "slide_whytmh": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/carrusel-iphone-empresas.jpg",
+            "image": "shopify://shop_images/carrusel-watch.jpg",
             "link": "",
             "text": "Watch"
           }
@@ -74,7 +74,7 @@
         "slide_MmkgPm": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/carrusel-watch.jpg",
+            "image": "shopify://shop_images/carrusel-audio.jpg",
             "link": "",
             "text": "Audio"
           }
@@ -82,7 +82,7 @@
         "slide_zE6LwN": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/carrusel-audio.jpg",
+            "image": "shopify://shop_images/carrusel-software.jpg",
             "link": "",
             "text": "Software"
           }
