@@ -75,6 +75,18 @@
     "popup_6MQkP6": {
       "type": "popup",
       "blocks": {
+        "popup_heading_cBCLGn": {
+          "type": "popup_heading",
+          "settings": {
+            "heading": "Here can be your popup title"
+          }
+        },
+        "popup_description_pVDwUR": {
+          "type": "popup_description",
+          "settings": {
+            "description": "Here can be a short message encouraging users to take action, such as subscribing or claiming an offer"
+          }
+        },
         "custom_liquid_EjG89T": {
           "type": "custom_liquid",
           "settings": {
@@ -83,10 +95,12 @@
         }
       },
       "block_order": [
+        "popup_heading_cBCLGn",
+        "popup_description_pVDwUR",
         "custom_liquid_EjG89T"
       ],
       "custom_css": [
-        "#popup-hubspot .popup-close{color:black;}"
+        "#popup-hubspot .popup-close {color: black;}"
       ],
       "name": "t:sections.overlay-group.popup.name",
       "settings": {
