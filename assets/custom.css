@@ -105,9 +105,6 @@ i.icon-circle {
   gap: 2rem !important;
 }
 /*** Footer ***/
-.footer__logo {
-  width: 480px !important;
-}
 .footer .newsletter__form .newsletter__text {
   max-width: 56rem !important;
 }
