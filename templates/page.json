@@ -19,6 +19,7 @@
     },
     "animated_image_collage_pMaBwE": {
       "type": "animated-image-collage",
+      "disabled": true,
       "name": "t:sections.animated-image-collage.name",
       "settings": {
         "section_type": "background",
@@ -55,6 +56,7 @@
         "button_label_2": "Hablar con un experto",
         "button_link_2": "",
         "button_style_2": "tertiary",
+        "mobile_full_width_buttons": false,
         "padding_top": "m",
         "padding_bottom": "xs",
         "margin_top": "no-indent",
@@ -111,6 +113,7 @@
         "description_JJ4m8h",
         "buttons_jqUTYc"
       ],
+      "disabled": true,
       "name": "t:sections.hero.name",
       "settings": {
         "layout": "horizontal",
@@ -130,7 +133,9 @@
         "horizontal_alignment": "center",
         "vertical_alignment": "middle",
         "padding_top": "m",
-        "padding_bottom": "m"
+        "padding_bottom": "m",
+        "mobile_bottom_cta_stack": false,
+        "outer_background": ""
       }
     },
     "icon_cards_PhdCr4": {
@@ -146,7 +151,9 @@
             "card_large_text": "",
             "card_subtitle": "",
             "heading": "Asignación a MDM",
-            "description": "Cada Mac queda asociada al servidor MDM definido por tu organización."
+            "description": "Cada Mac queda asociada al servidor MDM definido por tu organización.",
+            "link_label": "",
+            "link_url": ""
           }
         },
         "card_hcMYJF": {
@@ -159,7 +166,9 @@
             "card_large_text": "",
             "card_subtitle": "",
             "heading": "Enrolamiento automatizado",
-            "description": "Despliegues consistentes sin preparación uno a uno."
+            "description": "Despliegues consistentes sin preparación uno a uno.",
+            "link_label": "",
+            "link_url": ""
           }
         },
         "card_9RRj4f": {
@@ -172,7 +181,9 @@
             "card_large_text": "",
             "card_subtitle": "",
             "heading": "Reasignación y recambio",
-            "description": "Al borrar/reinstalar, el equipo vuelve a tu flujo corporativo."
+            "description": "Al borrar/reinstalar, el equipo vuelve a tu flujo corporativo.",
+            "link_label": "",
+            "link_url": ""
           }
         },
         "card_btPtyV": {
@@ -185,7 +196,9 @@
             "card_large_text": "",
             "card_subtitle": "",
             "heading": "Inventario centralizado",
-            "description": "visibilidad por número de serie, compra, estado y asignación."
+            "description": "visibilidad por número de serie, compra, estado y asignación.",
+            "link_label": "",
+            "link_url": ""
           }
         }
       },
@@ -195,6 +208,7 @@
         "card_9RRj4f",
         "card_btPtyV"
       ],
+      "disabled": true,
       "name": "Icon Cards — El Problema (4 col)",
       "settings": {
         "columns": "4",
@@ -203,7 +217,11 @@
         "show_card_description": true,
         "subheading": "cómo funciona",
         "heading": "<p>Qué habilita Apple Business Manager para iPhone, iPad y/o Mac<br/><br/></p>",
-        "description": "<p>Lo que habilitas al tener tus Mac “propiedad empresa\".<br/></p>"
+        "description": "<p>Lo que habilitas al tener tus Mac “propiedad empresa\".<br/></p>",
+        "show_mobile_bottom_cta": false,
+        "mobile_bottom_cta_label": "Solicita una propuesta",
+        "mobile_bottom_cta_link": "",
+        "mobile_bottom_cta_style": "primary"
       }
     },
     "collapsible_content_fqKbaJ": {
@@ -239,6 +257,7 @@
         "accordion_YCbkq3",
         "accordion_zjxBcC"
       ],
+      "disabled": true,
       "name": "t:sections.collapsible-content.name",
       "settings": {
         "layout": "border",
@@ -253,6 +272,7 @@
         "heading_level": "h2",
         "heading_line": "simple",
         "line_color": "#1566e0",
+        "enable_heading_gradient_clip": false,
         "word_break": false,
         "heading_animation": "none",
         "word_break_an": false,
@@ -367,6 +387,7 @@
         "column_GExaWn",
         "column_97YTrG"
       ],
+      "disabled": true,
       "name": "t:sections.animated-image-collage.name",
       "settings": {
         "section_type": "background",
@@ -403,10 +424,61 @@
         "button_label_2": "Learn more",
         "button_link_2": "",
         "button_style_2": "tertiary",
+        "mobile_full_width_buttons": false,
         "padding_top": "m",
         "padding_bottom": "m",
         "margin_top": "no-indent",
         "margin_bottom": "no-indent"
+      }
+    },
+    "rich_text_nzJCPc": {
+      "type": "rich-text",
+      "blocks": {
+        "subheading_NykfCA": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "Here can be a brief introduction"
+          }
+        },
+        "heading_Lw37NF": {
+          "type": "heading",
+          "settings": {
+            "heading": "Here’s a concise summary of the section’s focus",
+            "heading_size": "medium",
+            "heading_level": "h2"
+          }
+        },
+        "text_tE7iEx": {
+          "type": "text",
+          "settings": {
+            "text": "<p>This section should be structured clearly, ensuring the reader understands the purpose and value of the content</p>"
+          }
+        },
+        "button_FWFMYw": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Call for action",
+            "button_link": "",
+            "button_style": "primary"
+          }
+        }
+      },
+      "block_order": [
+        "subheading_NykfCA",
+        "heading_Lw37NF",
+        "text_tE7iEx",
+        "button_FWFMYw"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "color_scheme": "",
+        "full_width": true,
+        "alignment": "center",
+        "margin_top": "no-indent",
+        "margin_bottom": "no-indent",
+        "padding_top": "m",
+        "padding_bottom": "m"
       }
     }
   },
@@ -416,6 +488,7 @@
     "hero_39ETgw",
     "icon_cards_PhdCr4",
     "collapsible_content_fqKbaJ",
-    "animated_image_collage_9fftCT"
+    "animated_image_collage_9fftCT",
+    "rich_text_nzJCPc"
   ]
 }
