@@ -65,7 +65,7 @@
                 {%- endif -%}
 
                 {%- if block.settings.text != blank -%}
-                  <p class="image-carousel__text">{{ block.settings.text }}</p>
+                  <p class="image-carousel__text" style="font-size: {{ section.settings.text_size }}px;">{{ block.settings.text }}</p>
                 {%- endif -%}
               </div>
             {%- endfor -%}
@@ -197,11 +197,21 @@
       "type": "range",
       "id": "corner_radius",
       "min": 0,
-      "max": 32,
+      "max": 100,
       "step": 2,
       "default": 8,
       "unit": "px",
       "label": "t:sections.image-carousel.settings.corner_radius.label"
+    },
+    {
+      "type": "range",
+      "id": "text_size",
+      "min": 10,
+      "max": 32,
+      "step": 1,
+      "default": 16,
+      "unit": "px",
+      "label": "t:sections.image-carousel.settings.text_size.label"
     },
     {
       "type": "header",

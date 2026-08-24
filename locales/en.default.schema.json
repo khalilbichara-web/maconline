@@ -2324,6 +2324,9 @@
 				"corner_radius": {
 					"label": "Corner radius"
 				},
+				"text_size": {
+					"label": "Text size"
+				},
 				"header__behavior": {
 					"content": "Behavior"
 				},
