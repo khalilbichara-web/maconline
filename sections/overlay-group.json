@@ -78,7 +78,7 @@
         "custom_liquid_EjG89T": {
           "type": "custom_liquid",
           "settings": {
-            "custom_liquid": "<iframe \n  src=\"https://uv39b.share.hsforms.com/2MgGW-SImRuuh7mzg99Tyug\" \n  width=\"100%\" \n  height=\"600\" \n  frameborder=\"0\" \n  style=\"border:none; width:100%;\"\n  title=\"HubSpot Form\">\n</iframe>"
+            "custom_liquid": "<iframe \n  src=\"https://uv39b.share.hsforms.com/2MgGW-SImRuuh7mzg99Tyug\" \n  width=\"100%\" \n  height=\"400\" \n  frameborder=\"0\" \n  style=\"border:none; width:100%;\"\n  title=\"HubSpot Form\">\n</iframe>"
           }
         }
       },
@@ -104,8 +104,8 @@
         "close-scroll-type": "%",
         "close-scroll-position": 50,
         "background": "linear-gradient(92deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 1) 100%)",
-        "overlay_opacity": 0.1,
-        "width": 1120,
+        "overlay_opacity": 0,
+        "width": 700,
         "color_scheme": "",
         "open-animation": "Fade",
         "exit-animation": "Fade",
