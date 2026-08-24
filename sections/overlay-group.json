@@ -93,7 +93,7 @@
         "limit-display": 0,
         "limit-cache": 30,
         "position": "bottom",
-        "popup-id": "",
+        "popup-id": "popup-hubspot",
         "trigger-open": "delay",
         "trigger-open-delay": 1,
         "open-scroll-type": "%",
