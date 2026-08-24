@@ -2297,6 +2297,12 @@
 				"columns_desktop": {
 					"label": "Items visible on desktop"
 				},
+				"columns_tablet": {
+					"label": "Items visible on tablet"
+				},
+				"columns_mobile": {
+					"label": "Items visible on mobile"
+				},
 				"gap": {
 					"label": "Space between items"
 				},
@@ -2346,6 +2352,9 @@
 						},
 						"link": {
 							"label": "Link"
+						},
+						"text": {
+							"label": "Text"
 						}
 					}
 				}

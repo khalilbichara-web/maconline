@@ -1,0 +1,64 @@
+.image-carousel__heading {
+  margin-bottom: 2.4rem;
+}
+
+.image-carousel__slider-wrapper {
+  position: relative;
+}
+
+.image-carousel__slide {
+  height: auto;
+}
+
+.image-carousel__media {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  background-color: rgba(var(--color-foreground), 0.05);
+}
+
+.image-carousel__media--adapt img {
+  position: static;
+  height: auto;
+}
+
+.image-carousel__media--square {
+  aspect-ratio: 1 / 1;
+}
+
+.image-carousel__media--landscape {
+  aspect-ratio: 16 / 9;
+}
+
+.image-carousel__media--portrait {
+  aspect-ratio: 3 / 4;
+}
+
+.image-carousel__media img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.image-carousel__media:hover img {
+  transform: scale(1.03);
+}
+
+.image-carousel__text {
+  margin-top: 1.2rem;
+  text-align: center;
+}
+
+.image-carousel__pagination:not(.swiper-pagination-lock) {
+  position: static;
+  margin-top: 2.4rem;
+}
+
+.image-carousel__navigation {
+  margin-top: 2.4rem;
+}

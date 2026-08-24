@@ -20,95 +20,6 @@
         "margin_bottom": "s"
       }
     },
-    "image_carousel_P44PPd": {
-      "type": "image-carousel",
-      "blocks": {
-        "slide_atnzDG": {
-          "type": "slide",
-          "settings": {
-            "link": ""
-          }
-        },
-        "slide_b9TN8t": {
-          "type": "slide",
-          "settings": {
-            "link": ""
-          }
-        },
-        "slide_7B4fNf": {
-          "type": "slide",
-          "settings": {
-            "link": ""
-          }
-        },
-        "slide_zybymH": {
-          "type": "slide",
-          "settings": {
-            "link": ""
-          }
-        },
-        "slide_pAB4QD": {
-          "type": "slide",
-          "settings": {
-            "link": ""
-          }
-        },
-        "slide_WaMdnA": {
-          "type": "slide",
-          "settings": {
-            "link": ""
-          }
-        },
-        "slide_Gj4GLi": {
-          "type": "slide",
-          "settings": {
-            "link": ""
-          }
-        },
-        "slide_MN7zHQ": {
-          "type": "slide",
-          "settings": {
-            "link": ""
-          }
-        },
-        "slide_MQ3Nna": {
-          "type": "slide",
-          "settings": {
-            "link": ""
-          }
-        }
-      },
-      "block_order": [
-        "slide_atnzDG",
-        "slide_b9TN8t",
-        "slide_7B4fNf",
-        "slide_zybymH",
-        "slide_pAB4QD",
-        "slide_WaMdnA",
-        "slide_Gj4GLi",
-        "slide_MN7zHQ",
-        "slide_MQ3Nna"
-      ],
-      "name": "t:sections.image-carousel.name",
-      "settings": {
-        "heading": "",
-        "heading_size": "h2",
-        "color_scheme": "",
-        "columns_desktop": 8,
-        "gap": 16,
-        "image_ratio": "square",
-        "corner_radius": 0,
-        "show_navigation": true,
-        "show_pagination": true,
-        "enable_loop": false,
-        "autoplay": false,
-        "autoplay_speed": 5,
-        "padding_top": "m",
-        "padding_bottom": "m",
-        "margin_top": "no-indent",
-        "margin_bottom": "no-indent"
-      }
-    },
     "product-grid": {
       "type": "main-collection-product-grid",
       "settings": {
@@ -265,7 +176,6 @@
         "button_label_2": "Hablar con un especialista",
         "button_link_2": "",
         "button_style_2": "tertiary",
-        "mobile_full_width_buttons": false,
         "padding_top": "m",
         "padding_bottom": "m",
         "margin_top": "no-indent",
@@ -275,7 +185,6 @@
   },
   "order": [
     "banner",
-    "image_carousel_P44PPd",
     "product-grid",
     "animated_image_collage_KMFRfx"
   ]
