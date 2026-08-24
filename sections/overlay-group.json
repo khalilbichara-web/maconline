@@ -101,7 +101,7 @@
       ],
       "custom_css": [
         "#popup-hubspot .popup-close {color: black;}",
-        "#popup-hubspot{color: #000}"
+        "#popup-hubspot .popup-heading,#popup-hubspot .popup-description {color: #000;}"
       ],
       "name": "t:sections.overlay-group.popup.name",
       "settings": {
