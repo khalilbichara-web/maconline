@@ -115,6 +115,9 @@
         "slide_9LrXzG",
         "slide_B8kPP4"
       ],
+      "custom_css": [
+        ".image-carousel__text{font-weight: 20}"
+      ],
       "name": "t:sections.image-carousel.name",
       "settings": {
         "heading": "",
