@@ -17,7 +17,7 @@
         "footer-0": {
           "type": "logo_info",
           "settings": {
-            "logo": "shopify://shop_images/mac-online-pro.svg",
+            "logo": "shopify://shop_images/maconline-logo-blanco.png",
             "logo_width": 250,
             "description": "Liderando la integración tecnológica en las principales empresas de Chile."
           }
@@ -40,7 +40,7 @@
       ],
       "custom_css": [
         "h3 {font-size: 120%;}",
-        ".footer__copyright .copyright__content a,.footer__copyright,.footer__policies,.footer__menu-bottom li a {color: #fff; font-weight: 400; transition: all .4s;}",
+        ".footer__copyright .copyright__content a,.footer__copyright,.footer__policies,.footer__menu-bottom li a {color: #fff; font-weight: 400; transition: all 0.4s;}",
         ".footer__menu-bottom li a:hover {opacity: 0.4;}"
       ],
       "settings": {
