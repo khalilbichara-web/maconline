@@ -23,12 +23,19 @@
     "image_carousel_7bTkxJ": {
       "type": "image-carousel",
       "blocks": {
+        "slide_yknNQ4": {
+          "type": "slide",
+          "settings": {
+            "link": "",
+            "text": "Alta gama"
+          }
+        },
         "slide_mrNFYG": {
           "type": "slide",
           "settings": {
             "image": "shopify://shop_images/carrusel-alta-gama.jpg",
             "link": "",
-            "text": ""
+            "text": "Mac"
           }
         },
         "slide_3mBnJM": {
@@ -36,7 +43,7 @@
           "settings": {
             "image": "shopify://shop_images/carrusel-mac.jpg",
             "link": "",
-            "text": ""
+            "text": "iPad"
           }
         },
         "slide_fgEWEX": {
@@ -44,7 +51,7 @@
           "settings": {
             "image": "shopify://shop_images/carrusel-ipad.jpg",
             "link": "",
-            "text": ""
+            "text": "iPhone"
           }
         },
         "slide_zDkzAT": {
@@ -52,7 +59,7 @@
           "settings": {
             "image": "shopify://shop_images/carrusel-iphone.jpg",
             "link": "",
-            "text": ""
+            "text": "iPhone para empresas"
           }
         },
         "slide_whytmh": {
@@ -60,7 +67,7 @@
           "settings": {
             "image": "shopify://shop_images/carrusel-iphone-empresas.jpg",
             "link": "",
-            "text": ""
+            "text": "Watch"
           }
         },
         "slide_MmkgPm": {
@@ -68,7 +75,7 @@
           "settings": {
             "image": "shopify://shop_images/carrusel-watch.jpg",
             "link": "",
-            "text": ""
+            "text": "Audio"
           }
         },
         "slide_zE6LwN": {
@@ -76,7 +83,7 @@
           "settings": {
             "image": "shopify://shop_images/carrusel-audio.jpg",
             "link": "",
-            "text": ""
+            "text": "Software"
           }
         },
         "slide_9LrXzG": {
@@ -93,23 +100,10 @@
             "link": "",
             "text": ""
           }
-        },
-        "slide_baLecw": {
-          "type": "slide",
-          "settings": {
-            "link": "",
-            "text": ""
-          }
-        },
-        "slide_nej6W8": {
-          "type": "slide",
-          "settings": {
-            "link": "",
-            "text": ""
-          }
         }
       },
       "block_order": [
+        "slide_yknNQ4",
         "slide_mrNFYG",
         "slide_3mBnJM",
         "slide_fgEWEX",
@@ -118,9 +112,7 @@
         "slide_MmkgPm",
         "slide_zE6LwN",
         "slide_9LrXzG",
-        "slide_B8kPP4",
-        "slide_baLecw",
-        "slide_nej6W8"
+        "slide_B8kPP4"
       ],
       "name": "t:sections.image-carousel.name",
       "settings": {
