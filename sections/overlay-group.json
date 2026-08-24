@@ -90,7 +90,7 @@
         "custom_liquid_EjG89T": {
           "type": "custom_liquid",
           "settings": {
-            "custom_liquid": "<iframe  src=\"https://uv39b.share.hsforms.com/2MgGW-SImRuuh7mzg99Tyug\" \n  width=\"100%\" \n  height=\"400\" \n  frameborder=\"0\" \n  style=\"border:none; width:100%;\"\n  title=\"HubSpot Form\">\n</iframe>"
+            "custom_liquid": "<script src=\"https://js.hsforms.net/forms/embed/51839039.js\" defer></script>\n<div class=\"hs-form-frame\" data-region=\"na1\" data-form-id=\"320196f9-2226-46eb-a1ee-6ce0f7d4f2ba\" data-portal-id=\"51839039\"></div>"
           }
         }
       },
