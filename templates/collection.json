@@ -34,7 +34,7 @@
         "slide_mrNFYG": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/carrusel-alta-gama.jpg",
+            "image": "shopify://shop_images/carrusel-mac.jpg",
             "link": "",
             "text": "Mac"
           }
@@ -42,7 +42,7 @@
         "slide_3mBnJM": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/carrusel-mac.jpg",
+            "image": "shopify://shop_images/carrusel-ipad.jpg",
             "link": "",
             "text": "iPad"
           }
@@ -50,7 +50,7 @@
         "slide_fgEWEX": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/carrusel-ipad.jpg",
+            "image": "shopify://shop_images/carrusel-iphone.jpg",
             "link": "",
             "text": "iPhone"
           }
