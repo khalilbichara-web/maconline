@@ -26,6 +26,7 @@
         "slide_mrNFYG": {
           "type": "slide",
           "settings": {
+            "image": "shopify://shop_images/carrusel-alta-gama.jpg",
             "link": "",
             "text": ""
           }
@@ -122,8 +123,8 @@
         "columns_desktop": 8,
         "columns_tablet": 5,
         "columns_mobile": 3,
-        "gap": 100,
-        "image_ratio": "landscape",
+        "gap": 80,
+        "image_ratio": "square",
         "corner_radius": 0,
         "show_navigation": true,
         "show_pagination": true,
