@@ -116,7 +116,7 @@
         "slide_B8kPP4"
       ],
       "custom_css": [
-        ".image-carousel__text{font-weight: 20}"
+        ".image-carousel__text {font-size: 20px;}"
       ],
       "name": "t:sections.image-carousel.name",
       "settings": {
