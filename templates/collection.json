@@ -86,21 +86,6 @@
             "link": "",
             "text": "Software"
           }
-        },
-        "slide_9LrXzG": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify://shop_images/carrusel-software.jpg",
-            "link": "",
-            "text": "test ejemplo"
-          }
-        },
-        "slide_B8kPP4": {
-          "type": "slide",
-          "settings": {
-            "link": "",
-            "text": ""
-          }
         }
       },
       "block_order": [
@@ -111,9 +96,7 @@
         "slide_zDkzAT",
         "slide_whytmh",
         "slide_MmkgPm",
-        "slide_zE6LwN",
-        "slide_9LrXzG",
-        "slide_B8kPP4"
+        "slide_zE6LwN"
       ],
       "custom_css": [],
       "name": "t:sections.image-carousel.name",
