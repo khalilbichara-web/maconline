@@ -102,7 +102,8 @@
       "custom_css": [
         "#popup-hubspot .popup-close {color: black;}",
         "#popup-hubspot .popup-heading,#popup-hubspot .popup-description {color: #000; max-width: 100%; text-align: center;}",
-        "#popup-hubspot .popup-description {color: #6e6e73;}"
+        "#popup-hubspot .popup-description {color: #6e6e73;}",
+        ".popup-main--no-image .popup-content {padding: 50px 30px;}"
       ],
       "name": "t:sections.overlay-group.popup.name",
       "settings": {
