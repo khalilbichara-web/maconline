@@ -4253,7 +4253,13 @@
 			}
 		},
 		"main-page": {
-			"name": "Page"
+			"name": "Page",
+			"settings": {
+				"narrow_content": {
+					"label": "Narrow content width",
+					"info": "Matches the reading width used by Shopify's default policy pages (privacy policy, terms of service, etc.)."
+				}
+			}
 		},
 		"main-page-sidebar": {
 			"name": "Page with a sidebar"

@@ -33,3 +33,8 @@
   width: 52.5rem;
   height: 52.5rem;
 }
+
+.page-section--narrow.container {
+  max-width: 560px;
+  max-width: 65ch;
+}
