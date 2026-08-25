@@ -8,16 +8,18 @@
   {% render 'section-padding' %}
 {%- endstyle -%}
 
-<div class="section-{{ section.id }}-padding container color-{{ section.settings.color_scheme }} {% if section.settings.narrow_content %}page-section--narrow{% endif %}">
-  <div class="page-header">
-    <div class="page-header__inner">
-      <h1 class="main-page-title page-title title--page h2">
-        {{ page.title | escape }}
-      </h1>
+<div class="section-{{ section.id }}-padding color-{{ section.settings.color_scheme }}">
+  <div class="container {% if section.settings.narrow_content %}page-section--narrow{% endif %}">
+    <div class="page-header">
+      <div class="page-header__inner">
+        <h1 class="main-page-title page-title title--page h2">
+          {{ page.title | escape }}
+        </h1>
+      </div>
     </div>
-  </div>
-  <div class="rte">
-    {{ page.content }}
+    <div class="rte">
+      {{ page.content }}
+    </div>
   </div>
 </div>
 
