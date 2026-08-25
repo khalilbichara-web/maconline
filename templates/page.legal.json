@@ -14,7 +14,7 @@
       "settings": {
         "padding_top": "m",
         "padding_bottom": "xl",
-        "narrow_content": true
+        "narrow_content": false
       }
     }
   },
