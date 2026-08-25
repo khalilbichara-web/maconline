@@ -127,11 +127,11 @@
       "settings": {
         "products_per_page": 12,
         "columns": 4,
-        "image_ratio": "5/4",
+        "image_ratio": "4/5",
         "image_fit": "cover",
         "add_border_radius_when_contain": true,
         "show_secondary_image": true,
-        "show_vendor": false,
+        "show_vendor": true,
         "show_desc": false,
         "enable_filtering": true,
         "filter_type": "vertical",
