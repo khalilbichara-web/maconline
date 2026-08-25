@@ -8,7 +8,7 @@
   {% render 'section-padding' %}
 {%- endstyle -%}
 
-<div class="section-{{ section.id }}-padding container {% if section.settings.narrow_content %}page-section--narrow{% endif %}">
+<div class="section-{{ section.id }}-padding container color-{{ section.settings.color_scheme }} {% if section.settings.narrow_content %}page-section--narrow{% endif %}">
   <div class="page-header">
     <div class="page-header__inner">
       <h1 class="main-page-title page-title title--page h2">
@@ -27,6 +27,12 @@
   "tag": "section",
   "class": "page-section",
   "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "default": "background-1",
+      "label": "t:sections.all.color_scheme.label"
+    },
     {
       "type": "header",
       "content": "t:sections.all.section-padding.header.content"
