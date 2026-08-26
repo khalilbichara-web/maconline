@@ -904,7 +904,7 @@
         "button_style_subscribe": "primary",
         "show_button": true,
         "button_label": "Solicitar una cotización",
-        "button_link": "",
+        "button_link": "#popup-hubspot",
         "button_style": "primary",
         "show_button_2": false,
         "button_label_2": "",
