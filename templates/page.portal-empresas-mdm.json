@@ -45,7 +45,7 @@
         "button_style": "primary",
         "show_button_2": true,
         "button_label_2": "Hablar con un especialista",
-        "button_link_2": "",
+        "button_link_2": "#popup-hubspot",
         "button_style_2": "tertiary",
         "mobile_full_width_buttons": true,
         "padding_top": "m",
