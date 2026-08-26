@@ -413,8 +413,8 @@
         "heading": "La tecnología debería llegar lista para trabajar. No para ser configurada.",
         "description": "<p>Automatiza la implementación de dispositivos Apple para que cada colaborador reciba un equipo configurado, protegido y completamente operativo desde el primer encendido, reduciendo tiempos de despliegue y la carga operativa del área TI</p>",
         "show_button": true,
-        "button_label": "Explorar rental operativo",
-        "button_link": "",
+        "button_label": "Explora Zero Touch",
+        "button_link": "shopify://pages/que-es-zero-touch",
         "button_style": "primary"
       }
     },
