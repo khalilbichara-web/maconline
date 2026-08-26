@@ -14,7 +14,8 @@
       "disabled": true,
       "settings": {
         "padding_top": "no-indent",
-        "padding_bottom": "m"
+        "padding_bottom": "m",
+        "narrow_content": false
       }
     },
     "animated_image_collage_UaQyDT": {
@@ -53,7 +54,7 @@
         "button_style": "primary",
         "show_button_2": true,
         "button_label_2": "Hablar con un experto",
-        "button_link_2": "",
+        "button_link_2": "#popup-hubspot",
         "button_style_2": "tertiary",
         "mobile_full_width_buttons": true,
         "padding_top": "m",
@@ -130,9 +131,10 @@
         "mobile_image_overlay": "overlay",
         "horizontal_alignment": "center",
         "vertical_alignment": "middle",
-        "mobile_bottom_cta_stack": true,
         "padding_top": "m",
-        "padding_bottom": "m"
+        "padding_bottom": "m",
+        "mobile_bottom_cta_stack": true,
+        "outer_background": ""
       }
     },
     "portal_challenges_mdm": {
@@ -329,6 +331,7 @@
         "heading_level": "h2",
         "heading_line": "none",
         "line_color": "#1566e0",
+        "enable_heading_gradient_clip": false,
         "word_break": false,
         "heading_animation": "none",
         "word_break_an": false,
@@ -447,4 +450,3 @@
     "portal_variation_row_portal"
   ]
 }
-
