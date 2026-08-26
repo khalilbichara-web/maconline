@@ -14,7 +14,8 @@
       "disabled": true,
       "settings": {
         "padding_top": "no-indent",
-        "padding_bottom": "m"
+        "padding_bottom": "m",
+        "narrow_content": false
       }
     },
     "hero_PcXWG3": {
@@ -523,7 +524,7 @@
         "description": "<p>Cada equipo llega respaldado por una ecosistemas completo de servicio: cobertura, soporte corporativos y garantía extendida, gestionado de forma simple y 100% digital.</p>",
         "show_button": true,
         "button_label": "Ver planes de cobertura",
-        "button_link": "",
+        "button_link": "shopify://pages/servicios",
         "button_style": "primary"
       }
     },
