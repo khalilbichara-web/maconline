@@ -194,7 +194,7 @@
         "description": "<p>Asigna los dispositivos a tu MDM y define tu estándar. Al primer encendido, el equipo se enrola solo y recibe automáticamente políticas, apps y configuraciones. Todo queda listo para el usuario, con control total para TI.</p>",
         "show_button": true,
         "button_label": "Agendar un demo",
-        "button_link": "",
+        "button_link": "#popup-hubspot",
         "button_style": "primary"
       }
     },
@@ -384,7 +384,7 @@
         "button_style_subscribe": "primary",
         "show_button": true,
         "button_label": "Agenda un demo",
-        "button_link": "",
+        "button_link": "#popup-hubspot",
         "button_style": "primary",
         "show_button_2": true,
         "button_label_2": "",
