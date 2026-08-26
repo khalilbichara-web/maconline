@@ -47,8 +47,8 @@
             "button_link_1": "#popup-hubspot",
             "button_style_1": "primary",
             "show_button_2": true,
-            "button_label_2": "Conoce Zero Touch",
-            "button_link_2": "shopify://pages/que-es-zero-touch",
+            "button_label_2": "Conoce Rental Operativo",
+            "button_link_2": "shopify://pages/rental-operativo",
             "button_style_2": "tertiary"
           }
         },
