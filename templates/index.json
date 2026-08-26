@@ -284,7 +284,7 @@
         "description": "<p>Transforma la adquisición de dispositivos Apple en un servicio integral que combina financiamiento, soporte, administración y renovación, permitiendo que tu empresa crezca con una infraestructura tecnológica siempre actualizada.</p>",
         "show_button": true,
         "button_label": "Explorar rental operativo",
-        "button_link": "",
+        "button_link": "shopify://pages/rental-operativo",
         "button_style": "primary"
       }
     },
