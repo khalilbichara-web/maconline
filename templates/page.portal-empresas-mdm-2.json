@@ -98,7 +98,7 @@
           "settings": {
             "show_button_1": true,
             "button_label_1": "Agendar demo",
-            "button_link_1": "",
+            "button_link_1": "#popup-hubspot",
             "button_style_1": "primary",
             "show_button_2": false,
             "button_label_2": "",
