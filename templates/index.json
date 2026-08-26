@@ -48,7 +48,7 @@
             "button_style_1": "primary",
             "show_button_2": true,
             "button_label_2": "Conoce Zero Touch",
-            "button_link_2": "shopify://pages/que-es-zero-touch",
+            "button_link_2": "#popup-hubspot",
             "button_style_2": "tertiary"
           }
         },
