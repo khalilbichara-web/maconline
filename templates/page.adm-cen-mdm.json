@@ -14,7 +14,8 @@
       "disabled": true,
       "settings": {
         "padding_top": "no-indent",
-        "padding_bottom": "m"
+        "padding_bottom": "m",
+        "narrow_content": false
       }
     },
     "animated_image_collage_UNpUYN": {
@@ -53,7 +54,7 @@
         "button_style": "primary",
         "show_button_2": true,
         "button_label_2": "Hablar con un experto",
-        "button_link_2": "",
+        "button_link_2": "#popup-hubspot",
         "button_style_2": "tertiary",
         "mobile_full_width_buttons": true,
         "padding_top": "m",
