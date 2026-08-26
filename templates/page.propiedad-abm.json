@@ -14,7 +14,8 @@
       "disabled": true,
       "settings": {
         "padding_top": "no-indent",
-        "padding_bottom": "m"
+        "padding_bottom": "m",
+        "narrow_content": false
       }
     },
     "animated_image_collage_bgYAAz": {
@@ -49,7 +50,7 @@
         "button_style_subscribe": "primary",
         "show_button": true,
         "button_label": "Agendar un demo",
-        "button_link": "",
+        "button_link": "#popup-hubspot",
         "button_style": "primary",
         "show_button_2": true,
         "button_label_2": "",
@@ -97,7 +98,7 @@
           "settings": {
             "show_button_1": true,
             "button_label_1": "Agendar demo",
-            "button_link_1": "",
+            "button_link_1": "#popup-hubspot",
             "button_style_1": "primary",
             "show_button_2": false,
             "button_label_2": "",
@@ -130,9 +131,10 @@
         "mobile_image_overlay": "overlay",
         "horizontal_alignment": "center",
         "vertical_alignment": "middle",
-        "mobile_bottom_cta_stack": true,
         "padding_top": "m",
-        "padding_bottom": "m"
+        "padding_bottom": "m",
+        "mobile_bottom_cta_stack": true,
+        "outer_background": ""
       }
     },
     "three_column_abm_4Jxk9N": {
@@ -197,48 +199,60 @@
           "type": "card",
           "settings": {
             "icon_name": "abm-icon-card-1.svg",
+            "icon_asset": "",
             "heading_variant": "default",
             "card_label": "",
             "card_large_text": "",
             "card_subtitle": "",
             "heading": "Asignación a MDM",
-            "description": "Cada Mac queda asociada al servidor MDM definido por tu organización."
+            "description": "Cada Mac queda asociada al servidor MDM definido por tu organización.",
+            "link_label": "",
+            "link_url": ""
           }
         },
         "card_w8b2": {
           "type": "card",
           "settings": {
             "icon_name": "abm-icon-card-2.svg",
+            "icon_asset": "",
             "heading_variant": "default",
             "card_label": "",
             "card_large_text": "",
             "card_subtitle": "",
             "heading": "Enrolamiento automatizado",
-            "description": "Despliegues consistentes sin preparación uno a uno."
+            "description": "Despliegues consistentes sin preparación uno a uno.",
+            "link_label": "",
+            "link_url": ""
           }
         },
         "card_q3n7": {
           "type": "card",
           "settings": {
             "icon_name": "abm-icon-card-3.svg",
+            "icon_asset": "",
             "heading_variant": "default",
             "card_label": "",
             "card_large_text": "",
             "card_subtitle": "",
             "heading": "Reasignación y recambio",
-            "description": "Al borrar/reinstalar, el equipo vuelve a tu flujo corporativo."
+            "description": "Al borrar/reinstalar, el equipo vuelve a tu flujo corporativo.",
+            "link_label": "",
+            "link_url": ""
           }
         },
         "card_m5t4": {
           "type": "card",
           "settings": {
             "icon_name": "abm-icon-card-4.svg",
+            "icon_asset": "",
             "heading_variant": "default",
             "card_label": "",
             "card_large_text": "",
             "card_subtitle": "",
             "heading": "Inventario centralizado",
-            "description": "Visibilidad por número de serie, compra, estado y asignación."
+            "description": "Visibilidad por número de serie, compra, estado y asignación.",
+            "link_label": "",
+            "link_url": ""
           }
         }
       },
@@ -252,6 +266,7 @@
         "columns": "4",
         "header_alignment": "left",
         "light_mode": true,
+        "show_card_description": true,
         "subheading": "CÓMO FUNCIONA",
         "heading": "<p>Qué habilita Apple Business Manager para iPhone, iPad y/o Mac</p>",
         "description": "<p>Lo que habilitas al tener tus iPhone, iPad y/o Mac \"propiedad empresa\".</p>",
@@ -308,6 +323,7 @@
         "heading_level": "h2",
         "heading_line": "none",
         "line_color": "#1566e0",
+        "enable_heading_gradient_clip": false,
         "word_break": false,
         "heading_animation": "none",
         "word_break_an": false,
@@ -351,8 +367,8 @@
         "button_label_subscribe": "",
         "button_style_subscribe": "primary",
         "show_button": true,
-        "button_label": "Agendar un demo",
-        "button_link": "",
+        "button_label": "Llamar a un experto",
+        "button_link": "tel:+56 22 562 3200",
         "button_style": "primary",
         "show_button_2": true,
         "button_label_2": "",
@@ -376,6 +392,3 @@
     "animated_image_collage_NwN9jA"
   ]
 }
-
-
-
