@@ -26,7 +26,7 @@
         "icon_fill_type": "gradient",
         "icon_size": "recommended",
         "box_shadow": true,
-        "subheading": "Managed Services Zero Touch",
+        "subheading": "Apple Accounts para Empresas",
         "subheading_style": "subtitle subtitle--secondary",
         "subheading_icon": "none",
         "heading": "Administra las identidades Apple de tu organización de forma segura y centralizada",
@@ -175,7 +175,8 @@
       "disabled": true,
       "settings": {
         "padding_top": "no-indent",
-        "padding_bottom": "m"
+        "padding_bottom": "m",
+        "narrow_content": false
       }
     },
     "split_features_apple_accounts_intro": {
