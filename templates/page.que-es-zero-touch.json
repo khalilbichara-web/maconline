@@ -194,7 +194,7 @@
         "description": "<p>Zero-Touch reduce drásticamente el tiempo de implementación y estandariza la configuración de toda tu flota. Tus dispositivos quedan listos desde el primer encendido, con políticas de seguridad, apps y accesos aplicados automáticamente. Menos carga para TI, más control y una mejor experiencia para los usuarios.</p>",
         "show_button": true,
         "button_label": "Solicitar Una Propuesta",
-        "button_link": "",
+        "button_link": "#popup-hubspot",
         "button_style": "primary"
       }
     },
