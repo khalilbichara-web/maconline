@@ -1107,7 +1107,7 @@
         "button_style_subscribe": "primary",
         "show_button": true,
         "button_label": "Escribir al equipo",
-        "button_link": "#",
+        "button_link": "#popup-hubspot",
         "button_style": "primary",
         "show_button_2": true,
         "button_label_2": "+56 2 2345 6789",
