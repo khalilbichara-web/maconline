@@ -27,7 +27,7 @@
           "type": "slide",
           "settings": {
             "image": "shopify://shop_images/carrusel-alta-gama.jpg",
-            "link": "",
+            "link": "/collections/alta-gama",
             "text": "Alta gama"
           }
         },
