@@ -87,7 +87,7 @@
             "button_link": "",
             "default_open": false
           }
-        },
+        }
       },
       "block_order": [
         "vendor",
@@ -254,13 +254,13 @@
         "subheading": "",
         "subheading_style": "subtitle subtitle--secondary",
         "subheading_icon": "none",
-        "heading": "Lorem ipsum dolor sit  amet consectetur",
+        "heading": "Más que dispositivos: una gestión Apple pensada para tu empresa",
         "heading_size": "h1",
         "heading_level": "h2",
         "heading_line": "simple",
         "line_color": "#000000",
         "heading_animation": "none",
-        "text": "Orci orci cras laoreet gravida. Metus massa velit sit elit aenean quam. \nPretium pharetra est nullam amet.",
+        "text": "Equipa a tu organización con tecnología Apple y gestiona cada dispositivo de forma simple, segura y escalable. Conoce las soluciones que permiten optimizar el despliegue, administración y seguridad de tu flota.",
         "enable_subscribe": false,
         "button_label_subscribe": "",
         "button_style_subscribe": "primary",
@@ -272,6 +272,7 @@
         "button_label_2": "Hablar con un especialista",
         "button_link_2": "",
         "button_style_2": "tertiary",
+        "mobile_full_width_buttons": false,
         "padding_top": "m",
         "padding_bottom": "m",
         "margin_top": "no-indent",
