@@ -577,10 +577,10 @@
             "tab_label": "Seguro de Robo",
             "icon_asset": "coverage-tab-power-outline.svg",
             "eyebrow": "Seguro de robo",
-            "title": "Onsafe\nSeguro Empresarial",
+            "title": "OnsafeSeguro Empresarial",
             "text": "Cobertura específica contra robo con o sin violencia, pérdida y daño total de tus equipos Apple. Diseñado para flotas corporativas con gestión centralizada de siniestros.",
             "checklist": "Cobertura ante robo con y sin violencia\nPérdida total del dispositivo incluida\nReposición del equipo en menos de 72 horas\nGestión online de siniestros sin papeleo\nPóliza corporativa: un contrato para toda la flota\nSin franquicia los primeros 12 meses del plan\nCompatible y complementario con AppleCare+",
-            "button_label": "Cotizar Onsafe",
+            "button_label": "",
             "button_link": "",
             "button_style": "primary"
           }
