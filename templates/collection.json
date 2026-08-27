@@ -43,7 +43,7 @@
           "type": "slide",
           "settings": {
             "image": "shopify://shop_images/carrusel-ipad.jpg",
-            "link": "",
+            "link": "/collections/ipad",
             "text": "iPad"
           }
         },
@@ -51,7 +51,7 @@
           "type": "slide",
           "settings": {
             "image": "shopify://shop_images/carrusel-iphone.jpg",
-            "link": "",
+            "link": "/collections/iphone",
             "text": "iPhone"
           }
         },
@@ -59,7 +59,7 @@
           "type": "slide",
           "settings": {
             "image": "shopify://shop_images/carrusel-iphone-empresas.jpg",
-            "link": "",
+            "link": "/collections/iphone-para-empresas",
             "text": "iPhone para empresas"
           }
         },
@@ -67,7 +67,7 @@
           "type": "slide",
           "settings": {
             "image": "shopify://shop_images/carrusel-watch.jpg",
-            "link": "",
+            "link": "/collections/apple-watch",
             "text": "Watch"
           }
         },
