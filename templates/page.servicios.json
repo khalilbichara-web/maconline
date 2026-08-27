@@ -201,7 +201,7 @@
         "button_label_1": "Solicitar evaluación",
         "button_link_1": "#popup-hubspot",
         "button_label_2": "¿Cómo funciona?",
-        "button_link_2": "",
+        "button_link_2": "#beneficios-para-empresas",
         "note": "* Valores estimados sujetos a evaluación presencial. Cotización válida por 14 días. Precios en CLP."
       }
     },
@@ -566,7 +566,7 @@
             "title": "AppleCare+ para empresas",
             "text": "Extiende la garantía original de Apple y agrega protección contra daños accidentales, soporte técnico prioritario y reemplazo express todo por una tarifa fija y predecible.",
             "checklist": "Cobertura de hardware por 2 años extendidos\nDaños accidentales incluidos (caídas, líquidos)\nReemplazo de batería sin costo si baja del 80%\nSoporte técnico prioritario 24/7 por chat y teléfono\nReemplazo express: equipo nuevo mientras el tuyo se repara\nMás de 5.000 centros de servicio autorizados en el mundo\nCobertura para accesorios Apple originales incluidos",
-            "button_label": "Ver planes AppleCare+",
+            "button_label": "",
             "button_link": "",
             "button_style": "primary"
           }
