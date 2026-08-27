@@ -147,8 +147,8 @@
         "product_card_Wr9wUp": {
           "type": "product_card",
           "settings": {
-            "image_override": "shopify://shop_images/1_6ad684fa-4434-44b9-a820-53e78f90db05.png",
-            "product": "iphone-16",
+            "image_override": "shopify://shop_images/iphone_17.png",
+            "product": "iphone-17",
             "title": "",
             "subtitle": "Estado A",
             "price_fallback": "$0"
@@ -157,8 +157,8 @@
         "product_card_JCC7hr": {
           "type": "product_card",
           "settings": {
-            "image_override": "shopify://shop_images/2_bd455bfa-7308-4a55-a609-6218cbb14cfb.png",
-            "product": "ipad-air-de-13-m3",
+            "image_override": "shopify://shop_images/iphone_16.png",
+            "product": "iphone-16",
             "title": "",
             "subtitle": "",
             "price_fallback": ""
@@ -168,7 +168,7 @@
           "type": "product_card",
           "settings": {
             "image_override": "shopify://shop_images/3_af8173f7-5307-4909-bf63-170e966d77a9.png",
-            "product": "iphone-16",
+            "product": "ipad-air-11-m4",
             "title": "",
             "subtitle": "",
             "price_fallback": "$0"
@@ -177,8 +177,8 @@
         "product_card_deAqrp": {
           "type": "product_card",
           "settings": {
-            "image_override": "shopify://shop_images/Rectangle_039846e0-fd0c-4636-bad6-d620c128012b.png",
-            "product": "iphone-16",
+            "image_override": "shopify://shop_images/iMac.png",
+            "product": "imac-ret-4-5k-24-m4-10c-gpu-10c-16gb-ram-256gb-pantalla-nanotexturizada-plata",
             "title": "",
             "subtitle": "",
             "price_fallback": "$0"
