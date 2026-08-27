@@ -75,7 +75,7 @@
           "type": "slide",
           "settings": {
             "image": "shopify://shop_images/carrusel-audio.jpg",
-            "link": "",
+            "link": "/collections/audio",
             "text": "Audio"
           }
         },
@@ -83,7 +83,7 @@
           "type": "slide",
           "settings": {
             "image": "shopify://shop_images/carrusel-software.png",
-            "link": "",
+            "link": "/collections/software",
             "text": "Software"
           }
         }
