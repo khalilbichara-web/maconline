@@ -5,7 +5,13 @@
   assign tabs = section.blocks | where: 'type', 'tab'
 -%}
 
-<section class="tradein-devices-table" data-tradein-devices-table>
+<section
+  class="tradein-devices-table"
+  data-tradein-devices-table
+  {% if section.settings.custom_id != blank %}
+    id="{{ section.settings.custom_id }}"
+  {% endif %}
+>
   <div class="tradein-devices-table__container">
     <header class="tradein-devices-table__header">
       {% if section.settings.subheading != blank %}
@@ -112,6 +118,12 @@
   "tag": "section",
   "class": "section-tradein-devices-table",
   "settings": [
+    {
+      "type": "text",
+      "id": "custom_id",
+      "label": "ID del contenedor (para enlaces internos)",
+      "info": "Se usa como atributo id de la sección, por ejemplo para enlazar con #mi-id desde un botón o menú."
+    },
     {
       "type": "text",
       "id": "subheading",
