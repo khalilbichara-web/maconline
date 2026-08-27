@@ -7,7 +7,12 @@
   assign features     = section.blocks | where: 'type', 'feature'
 -%}
 
-<div class="split-features split-features--{{ layout }} split-features--{{ color_scheme }}">
+<div
+  class="split-features split-features--{{ layout }} split-features--{{ color_scheme }}"
+  {% if section.settings.custom_id != blank %}
+    id="{{ section.settings.custom_id }}"
+  {% endif %}
+>
   <div class="split-features__container">
 
     <!-- ── Media column ────────────────────────────── -->
@@ -140,6 +145,12 @@
   "tag": "section",
   "class": "split-features-section",
   "settings": [
+    {
+      "type": "text",
+      "id": "custom_id",
+      "label": "ID del contenedor (para enlaces internos)",
+      "info": "Se usa como atributo id de la sección, por ejemplo para enlazar con #mi-id desde un botón o menú."
+    },
     {
       "type": "header",
       "content": "Layout"
