@@ -770,7 +770,7 @@
         "button_label_subscribe": "",
         "button_style_subscribe": "primary",
         "show_button": true,
-        "button_label": "Hablar con un experto",
+        "button_label": "Solicitar asesoría",
         "button_link": "#popup-hubspot",
         "button_style": "primary",
         "show_button_2": true,
