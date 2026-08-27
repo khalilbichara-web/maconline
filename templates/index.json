@@ -15,7 +15,7 @@
         "subtitle_x6fy9W": {
           "type": "subtitle",
           "settings": {
-            "subheading": "Rental operativo para empresas",
+            "subheading": "Rental Operativo + Zero Touch",
             "subheading_style": "subtitle subtitle--secondary",
             "subheading_icon": "none"
           }
@@ -166,6 +166,7 @@
       ],
       "name": "Icon Cards — El Problema (4 col)",
       "settings": {
+        "custom_id": "",
         "columns": "4",
         "header_alignment": "center",
         "light_mode": false,
@@ -275,6 +276,7 @@
       ],
       "name": "Split Features",
       "settings": {
+        "custom_id": "",
         "color_scheme": "light",
         "layout": "image_left",
         "image": "shopify://shop_images/img_rental.png",
@@ -344,6 +346,7 @@
       ],
       "name": "Icon Cards — La Solución (3 col)",
       "settings": {
+        "custom_id": "",
         "columns": "3",
         "header_alignment": "left",
         "light_mode": false,
@@ -405,6 +408,7 @@
       ],
       "name": "Split Features",
       "settings": {
+        "custom_id": "",
         "color_scheme": "light",
         "layout": "image_right",
         "image": "shopify://shop_images/Home_-_zero_touch_-_desk.png",
@@ -506,6 +510,7 @@
       ],
       "name": "Icon Cards — El Problema (4 col)",
       "settings": {
+        "custom_id": "",
         "columns": "5",
         "header_alignment": "center",
         "light_mode": false,
@@ -691,6 +696,7 @@
       ],
       "name": "Icon Cards — La Solución (3 col)",
       "settings": {
+        "custom_id": "",
         "overlay_image": "shopify://shop_images/bg-pf-zero-touch.webp",
         "columns": "3",
         "header_alignment": "left",
