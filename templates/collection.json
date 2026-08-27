@@ -35,7 +35,7 @@
           "type": "slide",
           "settings": {
             "image": "shopify://shop_images/carrusel-mac.jpg",
-            "link": "",
+            "link": "/collections/mac",
             "text": "Mac"
           }
         },
