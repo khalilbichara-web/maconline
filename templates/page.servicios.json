@@ -683,8 +683,9 @@
     "simple_cta_banner_1a7725": {
       "type": "simple-cta-banner",
       "settings": {
-        "background_image": "shopify://shop_images/360.png",
+        "background_image": "shopify://shop_images/lineas.png",
         "background_image_asset": "Group 34.png",
+        "image": "shopify://shop_images/360.png",
         "image_asset": "Group 32.png",
         "subheading": "recomendación maconline pro",
         "heading": "AppleCare+ Onsafe = Cobertura 360°",
