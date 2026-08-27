@@ -299,7 +299,7 @@
         "description": "<p>Con nuestros iPhones en arriendo, puedes contratar el plan de datos que más te conviene en cualquier operador. Cambia de plan o de operador en cualquier momento sin afectar tu equipo.</p>",
         "show_button": true,
         "button_label": "Elige tu iPhone",
-        "button_link": "#",
+        "button_link": "#elige-tu-iphone",
         "button_style": "primary"
       }
     },
