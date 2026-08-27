@@ -97,8 +97,8 @@
           "type": "buttons",
           "settings": {
             "show_button_1": true,
-            "button_label_1": "Agendar demo",
-            "button_link_1": "#popup-hubspot",
+            "button_label_1": "Conoce de Apple accounts",
+            "button_link_1": "shopify://pages/apple-accounts-para-empresas",
             "button_style_1": "primary",
             "show_button_2": false,
             "button_label_2": "",
@@ -263,6 +263,7 @@
         "card_m5t4"
       ],
       "settings": {
+        "custom_id": "",
         "columns": "4",
         "header_alignment": "left",
         "light_mode": true,
