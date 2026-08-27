@@ -5,7 +5,12 @@
   assign cards = section.blocks | where: 'type', 'product_card'
 -%}
 
-<section class="iphone-empresas-catalog section-{{ section.id }}-padding">
+<section
+  class="iphone-empresas-catalog section-{{ section.id }}-padding"
+  {% if section.settings.custom_id != blank %}
+    id="{{ section.settings.custom_id }}"
+  {% endif %}
+>
   <div class="iphone-empresas-catalog__container">
     <div class="iphone-empresas-catalog__header">
       {% if section.settings.subheading != blank %}
@@ -147,6 +152,12 @@
   "tag": "section",
   "class": "section-iphone-empresas-catalog",
   "settings": [
+    {
+      "type": "text",
+      "id": "custom_id",
+      "label": "ID del contenedor (para enlaces internos)",
+      "info": "Se usa como atributo id de la sección, por ejemplo para enlazar con #mi-id desde un botón o menú."
+    },
     {
       "type": "text",
       "id": "subheading",
