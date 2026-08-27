@@ -369,9 +369,9 @@
         "product_card_LB6gEp": {
           "type": "product_card",
           "settings": {
-            "product": "iphone-16",
+            "product": "iphone-17",
             "image_override": "shopify://shop_images/1_72980b5a-ab9b-4ddd-b938-f2952c75075f.png",
-            "title": "iPhone 15",
+            "title": "iPhone 17",
             "subtitle": "128 GB · Dynamic Island",
             "price_label": "Desde",
             "price_fallback": "$19.990/mes",
@@ -385,7 +385,7 @@
           "settings": {
             "product": "iphone-16",
             "image_override": "shopify://shop_images/2_eb3fb6d4-542b-4312-923f-b12b829cbfd7.png",
-            "title": "iPhone 15",
+            "title": "iPhone 16",
             "subtitle": "128 GB · Dynamic Island",
             "price_label": "Desde",
             "price_fallback": "$19.990/mes",
@@ -397,7 +397,7 @@
         "product_card_3KVtnA": {
           "type": "product_card",
           "settings": {
-            "product": "iphone-16",
+            "product": "iphone-15",
             "image_override": "shopify://shop_images/3_a1d5e2fd-eef3-4155-8f1b-f64512d46b3d.png",
             "title": "iPhone 15",
             "subtitle": "128 GB · Dynamic Island",
