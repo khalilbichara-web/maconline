@@ -14,7 +14,8 @@
       "disabled": true,
       "settings": {
         "padding_top": "no-indent",
-        "padding_bottom": "m"
+        "padding_bottom": "m",
+        "narrow_content": false
       }
     },
     "animated_image_collage_pMaBwE": {
@@ -446,7 +447,7 @@
             "card_subtitle": "",
             "heading": "Apple Business Essentials",
             "description": "Gestión de dispositivos (MDM), soporte técnico prioritario y almacenamiento iCloud unificado para todo tu equipo.",
-            "link_label": "Saber más",
+            "link_label": "",
             "link_url": ""
           }
         },
@@ -461,7 +462,7 @@
             "card_subtitle": "",
             "heading": "Configuración y Despliegue",
             "description": "Configuramos cada dispositivo con perfiles corporativos, apps y cuentas listas para el primer encendido.",
-            "link_label": "Saber más",
+            "link_label": "",
             "link_url": ""
           }
         },
@@ -476,7 +477,7 @@
             "card_subtitle": "",
             "heading": "Soporte y Garantía",
             "description": "AppleCare+ para empresas con tiempo de respuesta garantizado y equipos de reemplazo mientras tu dispositivo es reparado.",
-            "link_label": "Saber más",
+            "link_label": "",
             "link_url": ""
           }
         },
@@ -491,7 +492,7 @@
             "card_subtitle": "",
             "heading": "Financiamiento Empresarial",
             "description": "Planes de pago a 12, 24 o 36 meses con condiciones especiales para empresas. Incluye opción de leasing operacional.",
-            "link_label": "Consultar condiciones",
+            "link_label": "",
             "link_url": ""
           }
         },
@@ -506,7 +507,7 @@
             "card_subtitle": "",
             "heading": "Capacitación Apple",
             "description": "Talleres presenciales y remotos para que tu equipo saque el máximo provecho de sus dispositivos Apple.",
-            "link_label": "Ver programa",
+            "link_label": "",
             "link_url": ""
           }
         },
@@ -521,7 +522,7 @@
             "card_subtitle": "",
             "heading": "Gestión de Inventario",
             "description": "Portal online para controlar, asignar y monitorear todos los dispositivos Apple de tu empresa en un solo lugar.",
-            "link_label": "Más información",
+            "link_label": "",
             "link_url": ""
           }
         }
