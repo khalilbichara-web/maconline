@@ -54,7 +54,7 @@
         "button_style": "primary",
         "show_button_2": true,
         "button_label_2": "Ver todos los servicios",
-        "button_link_2": "",
+        "button_link_2": "#servicios-empresariales",
         "button_style_2": "tertiary",
         "mobile_full_width_buttons": true,
         "padding_top": "m",
@@ -309,6 +309,7 @@
       ],
       "name": "Icon Cards — El Problema (4 col)",
       "settings": {
+        "custom_id": "",
         "columns": "3",
         "header_alignment": "left",
         "light_mode": false,
@@ -538,6 +539,7 @@
       ],
       "name": "Icon Cards — Servicios Empresariales",
       "settings": {
+        "custom_id": "servicios-empresariales",
         "columns": "3",
         "header_alignment": "center",
         "light_mode": false,
@@ -875,6 +877,7 @@
       ],
       "name": "Icon Cards — Servicio Técnico",
       "settings": {
+        "custom_id": "",
         "columns": "3",
         "header_alignment": "center",
         "light_mode": false,
