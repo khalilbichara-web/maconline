@@ -14,7 +14,8 @@
       "disabled": true,
       "settings": {
         "padding_top": "no-indent",
-        "padding_bottom": "m"
+        "padding_bottom": "m",
+        "narrow_content": false
       }
     },
     "animated_image_collage_4UyP6W": {
@@ -49,7 +50,7 @@
         "button_style_subscribe": "primary",
         "show_button": true,
         "button_label": "Ver modelos disponibles",
-        "button_link": "",
+        "button_link": "/collections/iphone",
         "button_style": "primary",
         "show_button_2": true,
         "button_label_2": "¿Cómo funciona?",
@@ -150,6 +151,7 @@
         "card_4"
       ],
       "settings": {
+        "custom_id": "",
         "columns": "4",
         "header_alignment": "left",
         "light_mode": false,
@@ -267,6 +269,7 @@
       ],
       "name": "Icon Cards — Por qué elegirnos",
       "settings": {
+        "custom_id": "",
         "columns": "3",
         "header_alignment": "center",
         "light_mode": false,
@@ -286,6 +289,7 @@
         ".split-features__image {object-fit: contain;}"
       ],
       "settings": {
+        "custom_id": "",
         "color_scheme": "dark",
         "layout": "image_right",
         "image": "shopify://shop_images/Frame_26.png",
@@ -346,6 +350,7 @@
         "feature_4"
       ],
       "settings": {
+        "custom_id": "",
         "color_scheme": "light",
         "layout": "image_left",
         "image_asset": "iphone-empresas-process-split.png",
