@@ -193,7 +193,7 @@
       ],
       "name": "Servicios Product Pickers",
       "settings": {
-        "custom_id": "catalogo-trade-in",
+        "custom_id": "",
         "subheading": "disponibles para empresas",
         "heading": "Entrega tus equipos. Obtén crédito inmediato.",
         "description": "Evaluamos tu flota completa iPhone, Mac, iPad y Apple Watch y aplicamos el crédito directamente a tu próxima compra. Sin trámites complicados, sin intermediarios.",
@@ -367,6 +367,7 @@
       ],
       "name": "Trade In Devices Table",
       "settings": {
+        "custom_id": "catalogo-trade-in",
         "subheading": "catálogo trade in",
         "heading": "Dispositivos aceptados",
         "description": "Aceptamos la mayoría de los modelos Apple en dos condiciones: A (excelente estado) y B (buen estado con uso normal).",
