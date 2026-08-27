@@ -552,6 +552,7 @@
         "testimonial_2",
         "testimonial_3"
       ],
+      "disabled": true,
       "settings": {
         "subheading": "clientes",
         "heading": "Empresas que ya eligieron la libertad"
