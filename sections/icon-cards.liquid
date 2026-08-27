@@ -19,6 +19,9 @@
 <div
   class="icon-cards-section icon-cards-section--align-{{ alignment }}{% if section.settings.light_mode %} icon-cards-section--light{% endif %}{% if section.settings.show_card_description %} icon-cards-section--show-card-description{% endif %}"
   style="--icon-cards-cols: {{ col_count }}"
+  {% if section.settings.custom_id != blank %}
+    id="{{ section.settings.custom_id }}"
+  {% endif %}
 >
   {%- assign overlay_top_left = section.settings.overlay_top_left -%}
   {%- assign overlay_top_right = section.settings.overlay_top_right -%}
@@ -161,6 +164,12 @@
   "name": "Icon Cards",
   "tag": "section",
   "settings": [
+    {
+      "type": "text",
+      "id": "custom_id",
+      "label": "ID del contenedor (para enlaces internos)",
+      "info": "Se usa como atributo id de la sección, por ejemplo para enlazar con #mi-id desde un botón o menú."
+    },
     {
       "type": "header",
       "content": "Layout"
