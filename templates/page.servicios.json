@@ -193,6 +193,7 @@
       ],
       "name": "Servicios Product Pickers",
       "settings": {
+        "custom_id": "catalogo-trade-in",
         "subheading": "disponibles para empresas",
         "heading": "Entrega tus equipos. Obtén crédito inmediato.",
         "description": "Evaluamos tu flota completa iPhone, Mac, iPad y Apple Watch y aplicamos el crédito directamente a tu próxima compra. Sin trámites complicados, sin intermediarios.",
