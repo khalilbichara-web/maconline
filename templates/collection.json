@@ -276,7 +276,7 @@
         "button_style": "primary",
         "show_button_2": true,
         "button_label_2": "Hablar con un especialista",
-        "button_link_2": "",
+        "button_link_2": "tel:+56 22 562 3200",
         "button_style_2": "tertiary",
         "mobile_full_width_buttons": false,
         "padding_top": "m",
