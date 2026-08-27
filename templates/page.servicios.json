@@ -422,6 +422,7 @@
         "feature_4"
       ],
       "settings": {
+        "custom_id": "beneficios-para-empresas",
         "color_scheme": "light",
         "layout": "image_left",
         "image": "shopify://shop_images/image_59_1.png",
