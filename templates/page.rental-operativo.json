@@ -515,6 +515,7 @@
       ],
       "name": "Split Features",
       "settings": {
+        "custom_id": "",
         "color_scheme": "light",
         "layout": "image_left",
         "image": "shopify://shop_images/bg-fondo-rental-6.webp",
@@ -524,7 +525,7 @@
         "description": "<p>Cada equipo llega respaldado por una ecosistemas completo de servicio: cobertura, soporte corporativos y garantía extendida, gestionado de forma simple y 100% digital.</p>",
         "show_button": true,
         "button_label": "Ver planes de cobertura",
-        "button_link": "shopify://pages/servicios",
+        "button_link": "shopify://pages/applecare",
         "button_style": "primary"
       }
     },
