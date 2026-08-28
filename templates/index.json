@@ -425,15 +425,6 @@
     "testimonial_switcher_g8f48y": {
       "type": "testimonial-switcher",
       "blocks": {
-        "testimonial_MPGMXw": {
-          "type": "testimonial",
-          "settings": {
-            "logo": "shopify://shop_images/nexbu-encendido.png",
-            "logo_off": "shopify://shop_images/nexbu-apagado.png",
-            "text": "Nuestras gestiones se han simplificado gracias a MacOnline como partner tecnológico, permitiéndonos reducir la carga operativa de nuestro equipo. Valoramos especialmente su capacidad para integrarse a nuestros procesos, acompañándonos y asesorándonos de manera cercana en nuestras necesidades tecnológicas.",
-            "rating": 5
-          }
-        },
         "testimonial_h6rHpR": {
           "type": "testimonial",
           "settings": {
@@ -443,11 +434,20 @@
             "rating": 5,
             "image": "shopify://shop_images/vambe-imagen.png"
           }
+        },
+        "testimonial_MPGMXw": {
+          "type": "testimonial",
+          "settings": {
+            "logo": "shopify://shop_images/nexbu-encendido.png",
+            "logo_off": "shopify://shop_images/nexbu-apagado.png",
+            "text": "Nuestras gestiones se han simplificado gracias a MacOnline como partner tecnológico, permitiéndonos reducir la carga operativa de nuestro equipo. Valoramos especialmente su capacidad para integrarse a nuestros procesos, acompañándonos y asesorándonos de manera cercana en nuestras necesidades tecnológicas.",
+            "rating": 5
+          }
         }
       },
       "block_order": [
-        "testimonial_MPGMXw",
-        "testimonial_h6rHpR"
+        "testimonial_h6rHpR",
+        "testimonial_MPGMXw"
       ],
       "name": "Testimonial switcher",
       "settings": {
