@@ -927,6 +927,46 @@
       "type": "simulador-arriendo",
       "name": "Arriendo Popup",
       "settings": {}
+    },
+    "testimonial_switcher_g8f48y": {
+      "type": "testimonial-switcher",
+      "blocks": {
+        "testimonial_h6rHpR": {
+          "type": "testimonial",
+          "settings": {
+            "text": "MacOnline nos apoya siempre que necesitamos comprar grandes cantidades de equipos de una forma súper ágil y nos deja tranquilos saber que siempre es así. Es un proveedor estratégico para nuestro equipo.",
+            "rating": 5
+          }
+        },
+        "testimonial_B6gjzw": {
+          "type": "testimonial",
+          "settings": {
+            "text": "MacOnline nos apoya siempre que necesitamos comprar grandes cantidades de equipos de una forma súper ágil y nos deja tranquilos saber que siempre es así. Es un proveedor estratégico para nuestro equipo.",
+            "rating": 5
+          }
+        },
+        "testimonial_JTXtzR": {
+          "type": "testimonial",
+          "settings": {
+            "text": "MacOnline nos apoya siempre que necesitamos comprar grandes cantidades de equipos de una forma súper ágil y nos deja tranquilos saber que siempre es así. Es un proveedor estratégico para nuestro equipo.",
+            "rating": 5
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_h6rHpR",
+        "testimonial_B6gjzw",
+        "testimonial_JTXtzR"
+      ],
+      "name": "Testimonial switcher",
+      "settings": {
+        "custom_id": "testimonios-maconline",
+        "color_scheme": "",
+        "padding_top": "l",
+        "padding_bottom": "l",
+        "margin_top": "no-indent",
+        "margin_bottom": "no-indent"
+      }
     }
   },
   "order": [
@@ -940,6 +980,7 @@
     "icon_cards_aBAPPi",
     "collapsible_content_EePmtF",
     "animated_image_collage_NqQpFB",
-    "simulador_arriendo_zWJUEq"
+    "simulador_arriendo_zWJUEq",
+    "testimonial_switcher_g8f48y"
   ]
 }
