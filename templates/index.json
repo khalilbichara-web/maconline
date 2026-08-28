@@ -441,7 +441,8 @@
             "logo": "shopify://shop_images/nexbu-encendido.png",
             "logo_off": "shopify://shop_images/nexbu-apagado.png",
             "text": "Nuestras gestiones se han simplificado gracias a MacOnline como partner tecnológico, permitiéndonos reducir la carga operativa de nuestro equipo. Valoramos especialmente su capacidad para integrarse a nuestros procesos, acompañándonos y asesorándonos de manera cercana en nuestras necesidades tecnológicas.",
-            "rating": 5
+            "rating": 5,
+            "image": "shopify://shop_images/nexbu-imagen.png"
           }
         }
       },
