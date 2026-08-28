@@ -422,6 +422,33 @@
         "button_style": "primary"
       }
     },
+    "testimonial_switcher_g8f48y": {
+      "type": "testimonial-switcher",
+      "blocks": {
+        "testimonial_h6rHpR": {
+          "type": "testimonial",
+          "settings": {
+            "logo": "shopify://shop_images/vambe-encendido.png",
+            "logo_off": "shopify://shop_images/vambe-apagado.png",
+            "text": "MacOnline nos apoya siempre que necesitamos comprar grandes cantidades de equipos de una forma súper ágil y nos deja tranquilos saber que siempre es así. Es un proveedor estratégico para nuestro equipo.",
+            "rating": 5,
+            "image": "shopify://shop_images/vambe-imagen.png"
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_h6rHpR"
+      ],
+      "name": "Testimonial switcher",
+      "settings": {
+        "custom_id": "testimonios-maconline",
+        "color_scheme": "",
+        "padding_top": "l",
+        "padding_bottom": "l",
+        "margin_top": "no-indent",
+        "margin_bottom": "no-indent"
+      }
+    },
     "icon_cards_fXaKUn": {
       "type": "icon-cards",
       "blocks": {
@@ -927,33 +954,6 @@
       "type": "simulador-arriendo",
       "name": "Arriendo Popup",
       "settings": {}
-    },
-    "testimonial_switcher_g8f48y": {
-      "type": "testimonial-switcher",
-      "blocks": {
-        "testimonial_h6rHpR": {
-          "type": "testimonial",
-          "settings": {
-            "logo": "shopify://shop_images/vambe-encendido.png",
-            "logo_off": "shopify://shop_images/vambe-apagado.png",
-            "text": "MacOnline nos apoya siempre que necesitamos comprar grandes cantidades de equipos de una forma súper ágil y nos deja tranquilos saber que siempre es así. Es un proveedor estratégico para nuestro equipo.",
-            "rating": 5,
-            "image": "shopify://shop_images/vambe-imagen.png"
-          }
-        }
-      },
-      "block_order": [
-        "testimonial_h6rHpR"
-      ],
-      "name": "Testimonial switcher",
-      "settings": {
-        "custom_id": "testimonios-maconline",
-        "color_scheme": "",
-        "padding_top": "l",
-        "padding_bottom": "l",
-        "margin_top": "no-indent",
-        "margin_bottom": "no-indent"
-      }
     }
   },
   "order": [
@@ -962,12 +962,12 @@
     "split_features_zwiFDQ",
     "icon_cards_kFJjhr",
     "split_features_MDnrDm",
+    "testimonial_switcher_g8f48y",
     "icon_cards_fXaKUn",
     "device_tabs_NMYyLT",
     "icon_cards_aBAPPi",
     "collapsible_content_EePmtF",
     "animated_image_collage_NqQpFB",
-    "simulador_arriendo_zWJUEq",
-    "testimonial_switcher_g8f48y"
+    "simulador_arriendo_zWJUEq"
   ]
 }
