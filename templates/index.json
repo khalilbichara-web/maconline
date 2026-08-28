@@ -934,29 +934,16 @@
         "testimonial_h6rHpR": {
           "type": "testimonial",
           "settings": {
+            "logo": "shopify://shop_images/vambe-encendido.png",
+            "logo_off": "shopify://shop_images/vambe-apagado.png",
             "text": "MacOnline nos apoya siempre que necesitamos comprar grandes cantidades de equipos de una forma súper ágil y nos deja tranquilos saber que siempre es así. Es un proveedor estratégico para nuestro equipo.",
-            "rating": 5
-          }
-        },
-        "testimonial_B6gjzw": {
-          "type": "testimonial",
-          "settings": {
-            "text": "MacOnline nos apoya siempre que necesitamos comprar grandes cantidades de equipos de una forma súper ágil y nos deja tranquilos saber que siempre es así. Es un proveedor estratégico para nuestro equipo.",
-            "rating": 5
-          }
-        },
-        "testimonial_JTXtzR": {
-          "type": "testimonial",
-          "settings": {
-            "text": "MacOnline nos apoya siempre que necesitamos comprar grandes cantidades de equipos de una forma súper ágil y nos deja tranquilos saber que siempre es así. Es un proveedor estratégico para nuestro equipo.",
-            "rating": 5
+            "rating": 5,
+            "image": "shopify://shop_images/vambe-imagen.png"
           }
         }
       },
       "block_order": [
-        "testimonial_h6rHpR",
-        "testimonial_B6gjzw",
-        "testimonial_JTXtzR"
+        "testimonial_h6rHpR"
       ],
       "name": "Testimonial switcher",
       "settings": {
