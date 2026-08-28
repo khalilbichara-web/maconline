@@ -10,12 +10,16 @@
   position: relative;
   background-color: #011624;
 }
-
+.testimonial-switcher__panels{
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+}
 .testimonial-switcher__panel {
   display: none;
   grid-template-columns: 1fr;
   gap: 3.2rem;
   align-items: center;
+  padding-left: 30px;
 }
 
 .testimonial-switcher__panel.is-active {
