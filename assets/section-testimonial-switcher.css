@@ -40,6 +40,9 @@
   .testimonial-switcher__media {
     order: -1;
   }
+  .testimonial-switcher__panel{
+    padding-left:0;
+  }
 }
 
 .testimonial-switcher__content {
