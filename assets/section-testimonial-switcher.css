@@ -20,6 +20,9 @@
   gap: 3.2rem;
   align-items: center;
   padding-left: 30px;
+  -webkit-border-radius: 0 20px 20px 0;
+  border-radius: 0 20px 20px 0;
+  overflow: hidden;
 }
 
 .testimonial-switcher__panel.is-active {
@@ -79,11 +82,8 @@
   font-weight: var(--font-subtitle-weight);
 }
 
-.testimonial-switcher__media {
-  -webkit-border-radius: 0 20px 20px 0;
-  border-radius: 0 20px 20px 0;
-  overflow: hidden;
-}
+
+
 
 .testimonial-switcher__image {
   display: block;
