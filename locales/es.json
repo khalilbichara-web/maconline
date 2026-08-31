@@ -171,7 +171,7 @@
         "maximum_of": "Máximo de {{ quantity }}",
         "multiples_of": "Incrementos de {{ quantity }}",
         "in_cart_html": "<span class=\"quantity-cart\">{{ quantity }}</span> en el carrito",
-        "in_stock": "{{ quantity }} en inventario",
+        "in_stock": "En inventario",
         "out_of_stock": "Agotado"
       },
       "price": {
