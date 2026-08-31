@@ -17,7 +17,6 @@
   position: relative;
   overflow: hidden;
   width: 100%;
-  background-color: rgba(var(--color-foreground), 0.05);
 }
 
 .image-carousel__media--adapt img {
@@ -45,6 +44,7 @@
   height: auto;
   object-fit: cover;
   transition: transform 0.4s ease;
+  margin-top: 15px;
 }
 
 .image-carousel__media:hover img {
