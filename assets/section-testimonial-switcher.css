@@ -169,4 +169,7 @@
     width: auto;
     height: 30px;
   }
+  .testimonial-switcher__content{
+    padding-bottom: 30px;
+  }
 }
