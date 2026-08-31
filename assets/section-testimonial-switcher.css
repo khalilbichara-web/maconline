@@ -13,6 +13,9 @@
 .testimonial-switcher__panels{
   border-bottom-left-radius: 30px;
   border-bottom-right-radius: 30px;
+  -webkit-border-radius: 0 20px 20px 0;
+  border-radius: 0 20px 20px 0;
+  overflow: hidden;
 }
 .testimonial-switcher__panel {
   display: none;
@@ -20,9 +23,6 @@
   gap: 3.2rem;
   align-items: center;
   padding-left: 30px;
-  -webkit-border-radius: 0 20px 20px 0;
-  border-radius: 0 20px 20px 0;
-  overflow: hidden;
 }
 
 .testimonial-switcher__panel.is-active {
