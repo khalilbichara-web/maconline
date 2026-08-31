@@ -80,7 +80,8 @@
 }
 
 .testimonial-switcher__media {
-  border-radius: 1.6rem;
+  -webkit-border-radius: 0 20px 20px 0;
+  border-radius: 0 20px 20px 0;
   overflow: hidden;
 }
 
