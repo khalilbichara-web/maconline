@@ -109,7 +109,7 @@
   background: transparent;
   cursor: pointer;
   /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#007cb7+0,06aaf7+26 */
-  border-color: transparent;
+  border: #007cb7 1px solid;
   border-radius: 5rem;
 }
 
