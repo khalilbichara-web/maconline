@@ -36,6 +36,12 @@
   }
 }
 
+@media screen and (max-width: 749px) {
+  .testimonial-switcher__media {
+    order: -1;
+  }
+}
+
 .testimonial-switcher__content {
   display: flex;
   flex-direction: column;
