@@ -9,13 +9,13 @@
 .testimonial-switcher__card {
   position: relative;
   background: linear-gradient(129deg,rgba(5, 42, 66, 1) 0%, rgba(6, 10, 19, 1) 35%, rgba(3, 39, 61, 1) 70%);
+   -webkit-border-radius: 0 20px 20px 0;
+  border-radius: 0 20px 20px 0;
+  overflow: hidden;
 }
 .testimonial-switcher__panels{
   border-bottom-left-radius: 30px;
   border-bottom-right-radius: 30px;
-  -webkit-border-radius: 0 20px 20px 0;
-  border-radius: 0 20px 20px 0;
-  overflow: hidden;
 }
 .testimonial-switcher__panel {
   display: none;
