@@ -104,12 +104,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 4.8rem;
+  height: 4.2rem;
   padding: 0 2rem;
   background: transparent;
   cursor: pointer;
   /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#007cb7+0,06aaf7+26 */
-  border: #007cb7 1px solid;
+  border: #174d6b 1px solid;
   border-radius: 5rem;
 }
 
