@@ -17,7 +17,7 @@
 {% render 'arriendo-config' %}
 
 {%- style -%}
-/* ── BOTÓN COTIZAR CART ──────────────────────────────── */
+/* ── BOTÓN COTIZAR CART ────────────────────────────── */
 .qcot-cart-btn {
   display: flex;
   align-items: center;
@@ -71,7 +71,7 @@
 .qcotc-page-btn:active { transform: scale(0.98); }
 .qcotc-page-btn svg { width: 20px; height: 20px; fill: currentColor; flex-shrink: 0; }
 
-/* ── OVERLAY + MODAL ─────────────────────────────────── */
+/* ── OVERLAY + MODAL ───────────────────────────────── */
 .qcotc-overlay {
   position: fixed; inset: 0;
   background: rgba(0,0,0,0.5);
@@ -318,7 +318,7 @@ body.qcotc-header-under .section-announcement {
 
     <!-- Lease preview (populated by JS) -->
     <div class="qcotc-lease-preview" id="qcotc-lease-box">
-      <p class="qcotc-lease-label">Cuota mensual estimada (sin IVA)</p>
+      <p class="qcotc-lease-label">Cuota mensual estimada (IVA incluido)</p>
       <p class="qcotc-lease-cuota" id="qcotc-lease-cuota">—</p>
       <p class="qcotc-lease-sub" id="qcotc-lease-sub"></p>
     </div>
@@ -377,7 +377,7 @@ body.qcotc-header-under .section-announcement {
 (function() {
   'use strict';
 
-  /* ── Load jsPDF ──────────────────────────────────────── */
+  /* ── Load jsPDF ──────────────────────────────────── */
   if (!window.jspdf) {
     var s = document.createElement('script');
     s.src = 'https://cdn.jsdelivr.net/npm/jspdf@2.5.2/dist/jspdf.umd.min.js';
@@ -385,7 +385,7 @@ body.qcotc-header-under .section-announcement {
     document.head.appendChild(s);
   }
 
-  /* ── Constants ───────────────────────────────────────── */
+  /* ── Constants ───────────────────────────────────── */
   /* Parámetros centralizados (factores por tipo, IVA) */
   var CFG = window.ArriendoConfig;
   var APP_PROXY_URL = '/apps/cotizador';
@@ -393,7 +393,7 @@ body.qcotc-header-under .section-announcement {
   var currentPlazo = CFG.PLAZO_DEFAULT;
   var cartItems = []; /* populated from /cart.js */
 
-  /* ── Format helpers ──────────────────────────────────── */
+  /* ── Format helpers ───────────────────────────────── */
   function fmtMiles(n) { return Math.round(n).toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.'); }
   function fmtDate() {
     var d = new Date();
@@ -411,10 +411,10 @@ body.qcotc-header-under .section-announcement {
   }
   function isValidEmail(email) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email); }
 
-  /* ── Elegibilidad de arriendo operativo ────────────────
-     Dispositivos elegibles: iPhone, iPad, Mac Desktop y Mac
-     Notebook. Si hay al menos uno en el carrito, los demás
-     productos entran con tasa 'Otros'. */
+  /* ── Elegibilidad de arriendo operativo ──────────────────
+     Solo estos tipos de producto aplican a arriendo:
+     iPhone, iPad, Mac Desktop y Mac Notebook.
+     El resto de productos se cotiza solo para venta. */
   function clasificarArriendo(productType) {
     var t = (productType || '').trim();
     if (t.indexOf('iPhone') === 0) return 'iPhone';
@@ -447,7 +447,7 @@ body.qcotc-header-under .section-announcement {
     return hayDispositivo() ? cartItems.slice() : [];
   }
 
-  /* ── Inject button near totals ─────────────────────────── */
+  /* ── Inject button near totals ───────────────────────── */
   function injectButton() {
     var template = document.getElementById('qcotc-btn-template');
     if (!template) return;
@@ -494,7 +494,7 @@ body.qcotc-header-under .section-announcement {
     });
   }
 
-  /* ── Modal open/close ──────────────────────────────────── */
+  /* ── Modal open/close ──────────────────────────────── */
   var overlay = document.getElementById('qcotc-overlay');
   var modal = document.getElementById('qcotc-modal');
   var closeBtn = document.getElementById('qcotc-close');
@@ -558,7 +558,7 @@ body.qcotc-header-under .section-announcement {
   closeBtn.addEventListener('click', closeModal);
   overlay.addEventListener('click', closeModal);
 
-  /* ── Fetch cart ───────────────────────────────────────── */
+  /* ── Fetch cart ───────────────────────────────────── */
   function fetchCart() {
     return fetch('/cart.js', { headers: { 'Accept': 'application/json' } })
       .then(function(r) { return r.json(); })
@@ -581,7 +581,7 @@ body.qcotc-header-under .section-announcement {
       });
   }
 
-  /* ── Render cart summary in modal ────────────────────────── */
+  /* ── Render cart summary in modal ──────────────────────── */
   function renderSummary() {
     var container = document.getElementById('qcotc-summary');
     var html = '<p class="qcotc-summary-title">Productos a cotizar (' + cartItems.length + ')</p>';
@@ -589,7 +589,8 @@ body.qcotc-header-under .section-announcement {
 
     for (var i = 0; i < cartItems.length; i++) {
       var it = cartItems[i];
-      var lineTotal = it.priceNet * it.qty;
+      /* Precios mostrados siempre con IVA incluido */
+      var lineTotal = it.priceNet * it.qty * CFG.IVA;
       totalNet += lineTotal;
       html += '<div class="qcotc-item">';
       if (it.image) {
@@ -620,7 +621,7 @@ body.qcotc-header-under .section-announcement {
     }
 
     html += '<div class="qcotc-total-row">';
-    html += '<span class="qcotc-total-label">Total neto</span>';
+    html += '<span class="qcotc-total-label">Total (IVA incluido)</span>';
     html += '<span class="qcotc-total-value" id="qcotc-total-value">$' + fmtMiles(totalNet) + '</span>';
     html += '</div>';
 
@@ -628,7 +629,7 @@ body.qcotc-header-under .section-announcement {
     bindQtyEvents();
   }
 
-  /* ── Quantity stepper event handlers ────────────────────── */
+  /* ── Quantity stepper event handlers ───────────────────── */
   function bindQtyEvents() {
     /* +/- buttons */
     document.querySelectorAll('.qcotc-qty-btn').forEach(function(btn) {
@@ -671,7 +672,7 @@ body.qcotc-header-under .section-announcement {
   function recalcTotals() {
     var totalNet = 0;
     for (var i = 0; i < cartItems.length; i++) {
-      var lineTotal = cartItems[i].priceNet * cartItems[i].qty;
+      var lineTotal = cartItems[i].priceNet * cartItems[i].qty * CFG.IVA;
       totalNet += lineTotal;
       var lineEl = document.getElementById('qcotc-line-price-' + i);
       if (lineEl) lineEl.textContent = '$' + fmtMiles(lineTotal);
@@ -681,7 +682,7 @@ body.qcotc-header-under .section-announcement {
     updateLease();
   }
 
-  /* ── Update lease preview ────────────────────────────── */
+  /* ── Update lease preview (solo equipos elegibles) ──────── */
   function updateLease() {
     var arriendo = itemsArriendo();
     var plazoRow = document.getElementById('qcotc-plazo-row');
@@ -704,12 +705,12 @@ body.qcotc-header-under .section-announcement {
     }
     var totalCuotaIVA = totalCuotaNeta * CFG.IVA;
 
-    document.getElementById('qcotc-lease-cuota').textContent = '$' + fmtMiles(totalCuotaNeta) + '/mes';
-    var sub = currentPlazo + ' meses · ' + totalEquipos + ' equipo(s) · Con IVA: $' + fmtMiles(totalCuotaIVA) + '/mes';
+    document.getElementById('qcotc-lease-cuota').textContent = '$' + fmtMiles(totalCuotaIVA) + '/mes';
+    var sub = currentPlazo + ' meses · ' + totalEquipos + ' equipo(s) · IVA incluido';
     document.getElementById('qcotc-lease-sub').textContent = sub;
   }
 
-  /* ── Plazo toggle ──────────────────────────────────────── */
+  /* ── Plazo toggle ──────────────────────────────────── */
   document.querySelectorAll('.qcotc-plazo-opt').forEach(function(btn) {
     btn.addEventListener('click', function() {
       document.querySelectorAll('.qcotc-plazo-opt').forEach(function(b) { b.classList.remove('qcotc-plazo-active'); });
@@ -719,7 +720,7 @@ body.qcotc-header-under .section-announcement {
     });
   });
 
-  /* ── Create Draft Order via App Proxy ────────────────────── */
+  /* ── Create Draft Order via App Proxy ──────────────────── */
   function createDraftOrder(leadData) {
     var hayArriendo = hayDispositivo();
 
@@ -815,7 +816,7 @@ body.qcotc-header-under .section-announcement {
     });
   }
 
-  /* ── Submit handler ────────────────────────────────────── */
+  /* ── Submit handler ────────────────────────────────── */
   var submitBtn = document.getElementById('qcotc-submit-btn');
   var emailInput = document.getElementById('qcotc-email');
   var emailError = document.getElementById('qcotc-email-error');
@@ -882,9 +883,9 @@ body.qcotc-header-under .section-announcement {
     attemptPDF(10);
   });
 
-  /* ══════════════════════════════════════════════════════
+  /* ════════════════════════════════════════════════════
      PDF GENERATION (multi-page, multi-product)
-     ══════════════════════════════════════════════════════ */
+     ════════════════════════════════════════════════════ */
   function generateCartPDF(data) {
     var jsPDF = window.jspdf.jsPDF;
     var doc = new jsPDF('p', 'mm', 'a4');
@@ -893,11 +894,11 @@ body.qcotc-header-under .section-announcement {
     var pageNum = 1;
     var totalPages = 1;
 
-    /* Items en arriendo — el PDF solo muestra la sección de
-       arriendo operativo si hay dispositivos en el carrito */
+    /* Equipos elegibles para arriendo — el PDF solo muestra la
+       sección de arriendo operativo si hay al menos uno */
     var pdfArriendo = itemsArriendo();
 
-    /* ── Colors ─────────────────────────── */
+    /* ── Colors ───────────────────────────── */
     var blue = [0, 113, 227];
     var dark = [29, 29, 31];
     var gray = [110, 110, 115];
@@ -906,7 +907,7 @@ body.qcotc-header-under .section-announcement {
     var footerH = 14;
     var maxY = H - M - footerH;
 
-    /* ── Page management ───────────────────── */
+    /* ── Page management ─────────────────────── */
     function checkPage(needed) {
       if (y + needed > maxY) {
         addFooter();
@@ -980,11 +981,11 @@ body.qcotc-header-under .section-announcement {
       y += 8;
     }
 
-    /* ═════════════════════════════════════════════
+    /* ════════════════════════════════════════════
        PAGE CONTENT
-       ═════════════════════════════════════════════ */
+       ════════════════════════════════════════════ */
 
-    /* ── Header bar ───────────────────────── */
+    /* ── Header bar ──────────────────────────── */
     doc.setFillColor(blue[0], blue[1], blue[2]);
     doc.rect(0, 0, W, 40, 'F');
 
@@ -1025,7 +1026,7 @@ body.qcotc-header-under .section-announcement {
 
     y = 48;
 
-    /* ── Client info ───────────────────────── */
+    /* ── Client info ─────────────────────────── */
     sectionTitle('DATOS DEL SOLICITANTE');
 
     var clientName = ((data.nombre || '') + ' ' + (data.apellido || '')).trim() || '—';
@@ -1071,7 +1072,7 @@ body.qcotc-header-under .section-announcement {
     sectionTitle('DETALLE DE EQUIPOS');
 
     var prodColWidths = [CW * 0.44, CW * 0.12, CW * 0.10, CW * 0.17, CW * 0.17];
-    var prodHeader = ['Producto', 'Tipo', 'Cant.', 'Precio Unit.', 'Total Neto'];
+    var prodHeader = ['Producto', 'Tipo', 'Cant.', 'Precio Unit.', 'Total'];
     var prodHeaderAlign = ['left', 'left', 'center', 'right', 'right'];
 
     /* Draw header */
@@ -1125,11 +1126,11 @@ body.qcotc-header-under .section-announcement {
       doc.text(item.qty.toString(), cx + prodColWidths[2] / 2, y + 6, { align: 'center' });
       cx += prodColWidths[2];
 
-      doc.text('$' + fmtMiles(item.priceNet), cx + prodColWidths[3] - 4, y + 6, { align: 'right' });
+      doc.text('$' + fmtMiles(item.priceNet * CFG.IVA), cx + prodColWidths[3] - 4, y + 6, { align: 'right' });
       cx += prodColWidths[3];
 
       doc.setFont('helvetica', 'bold');
-      var lineTotal = item.priceNet * item.qty;
+      var lineTotal = item.priceNet * item.qty * CFG.IVA;
       doc.text('$' + fmtMiles(lineTotal), cx + prodColWidths[4] - 4, y + 6, { align: 'right' });
 
       grandTotal += lineTotal;
@@ -1144,14 +1145,14 @@ body.qcotc-header-under .section-announcement {
     doc.setFontSize(9);
     doc.setFont('helvetica', 'bold');
     doc.setTextColor(dark[0], dark[1], dark[2]);
-    doc.text('Total Neto:', M + CW - prodColWidths[4] - 4, y + 5, { align: 'right' });
+    doc.text('Total (IVA incl.):', M + CW - prodColWidths[4] - 4, y + 5, { align: 'right' });
     doc.text('$' + fmtMiles(grandTotal), M + CW - 4, y + 5, { align: 'right' });
     y += 12;
 
-    /* ── Lease sections (solo si hay dispositivos) ── */
+    /* ── Lease sections (solo si hay equipos elegibles) ── */
     if (pdfArriendo.length > 0) {
 
-      /* ── Lease hero box ────────────────────── */
+      /* ── Lease hero box ──────────────────────── */
       sectionTitle('OPCIÓN DE ARRIENDO OPERATIVO');
 
       var totalCuotaNeta = 0;
@@ -1171,23 +1172,19 @@ body.qcotc-header-under .section-announcement {
       doc.setTextColor(255, 255, 255);
       doc.setFontSize(9);
       doc.setFont('helvetica', 'normal');
-      doc.text('Cuota mensual neta (sin IVA)', M + 6, y + 9);
+      doc.text('Cuota mensual (IVA incluido)', M + 6, y + 9);
 
       doc.setFontSize(24);
       doc.setFont('helvetica', 'bold');
-      doc.text('$' + fmtMiles(totalCuotaNeta) + '/mes', M + 6, y + 22);
-
-      doc.setFontSize(10);
-      doc.setFont('helvetica', 'normal');
-      doc.text('Con IVA: $' + fmtMiles(totalCuotaIVA) + '/mes', M + CW - 6, y + 22, { align: 'right' });
+      doc.text('$' + fmtMiles(totalCuotaIVA) + '/mes', M + 6, y + 22);
 
       y += 34;
 
-      /* ── Lease detail table ──────────────────── */
+      /* ── Lease detail table ────────────────────── */
       var leaseRows = [
         ['Plazo del contrato', currentPlazo + ' meses'],
         ['Cantidad de equipos en arriendo', equiposArriendo.toString()],
-        ['Valor equipos en arriendo (neto)', '$' + fmtMiles(arriendoNeto)]
+        ['Valor equipos en arriendo (IVA incluido)', '$' + fmtMiles(arriendoNeto * CFG.IVA)]
       ];
 
       var lColW = [CW * 0.6, CW * 0.4];
@@ -1199,22 +1196,22 @@ body.qcotc-header-under .section-announcement {
 
       y += 6;
 
-      /* ── Per-product cuota breakdown ───────────── */
+      /* ── Per-product cuota breakdown ─────────────── */
       if (pdfArriendo.length > 1) {
         sectionTitle('DESGLOSE DE CUOTA POR PRODUCTO');
 
         var breakdownRows = [];
         for (var bi = 0; bi < pdfArriendo.length; bi++) {
           var bItem = pdfArriendo[bi];
-          var bCuota = calcCuotaItem(bItem, currentPlazo);
+          var bCuota = calcCuotaItem(bItem, currentPlazo) * CFG.IVA;
           var bName = bItem.title.length > 38 ? bItem.title.substring(0, 36) + '...' : bItem.title;
           breakdownRows.push([bName, '× ' + bItem.qty, '$' + fmtMiles(bCuota) + '/mes']);
         }
-        breakdownRows.push(['TOTAL CUOTA MENSUAL', '', '$' + fmtMiles(totalCuotaNeta) + '/mes']);
+        breakdownRows.push(['TOTAL CUOTA MENSUAL', '', '$' + fmtMiles(totalCuotaIVA) + '/mes']);
 
         var bColW = [CW * 0.55, CW * 0.15, CW * 0.30];
         drawTable(breakdownRows, bColW, {
-          header: ['Producto', 'Cant.', 'Cuota Neta'],
+          header: ['Producto', 'Cant.', 'Cuota Mensual'],
           headerAlign: ['left', 'center', 'right'],
           align: ['left', 'center', 'right'],
           boldCols: [2],
@@ -1226,7 +1223,7 @@ body.qcotc-header-under .section-announcement {
 
     }
 
-    /* ── Terms & Conditions ──────────────────── */
+    /* ── Terms & Conditions ────────────────────── */
     sectionTitle(pdfArriendo.length > 0 ? 'CONDICIONES DEL ARRIENDO' : 'CONDICIONES DE LA COTIZACIÓN');
 
     doc.setFontSize(7.5);
@@ -1238,13 +1235,13 @@ body.qcotc-header-under .section-announcement {
       terms = [
         '1. El arriendo operativo es una alternativa de financiamiento para empresas e instituciones.',
         '2. Las cuotas incluyen el uso del equipo durante el plazo contratado.',
-        '3. Los precios están en pesos chilenos (CLP). Valores netos no incluyen IVA (19%).',
+        '3. Los precios están en pesos chilenos (CLP) e incluyen IVA (19%).',
         '4. Cotización vigente por 15 días desde la fecha de emisión.',
         '5. Valores referenciales sujetos a aprobación crediticia.'
       ];
     } else {
       terms = [
-        '1. Los precios están en pesos chilenos (CLP). Valores netos no incluyen IVA (19%).',
+        '1. Los precios están en pesos chilenos (CLP) e incluyen IVA (19%).',
         '2. Cotización vigente por 15 días desde la fecha de emisión.',
         '3. Valores referenciales sujetos a disponibilidad de stock.'
       ];
@@ -1257,10 +1254,10 @@ body.qcotc-header-under .section-announcement {
       y += tlines.length * 3.5;
     }
 
-    /* ── Footer on last page ─────────────────── */
+    /* ── Footer on last page ───────────────────── */
     addFooter();
 
-    /* ── Update page numbers ─────────────────── */
+    /* ── Update page numbers ───────────────────── */
     for (var p = 1; p <= totalPages; p++) {
       doc.setPage(p);
       var fy = H - M - 2;
@@ -1272,12 +1269,12 @@ body.qcotc-header-under .section-announcement {
       doc.text('Pág. ' + p + ' de ' + totalPages, W - M, fy, { align: 'right' });
     }
 
-    /* ── Save ─────────────────────────────── */
+    /* ── Save ───────────────────────────────── */
     var fileName = 'Cotizacion_Orden_' + fmtDateShort().replace(/\//g, '') + '.pdf';
     doc.save(fileName);
   }
 
-  /* ── Initialize ──────────────────────────────────────── */
+  /* ── Initialize ────────────────────────────────────── */
   /* Inject button on DOMContentLoaded and also after AJAX cart updates */
   function init() {
     injectButton();
