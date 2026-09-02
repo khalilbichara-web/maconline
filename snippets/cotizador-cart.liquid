@@ -974,14 +974,20 @@ body.qcotc-header-under .section-announcement {
     var headers = ['Código', 'Cant.', 'Descripción', 'Precio Unitario', '% Dscto', 'Total Neto'];
 
     function drawProductHeader(atY) {
+      /* primero todas las celdas (el texto en jsPDF pisa el color
+         de relleno), luego los titulos */
       doc.setFillColor(headGray[0], headGray[1], headGray[2]);
       var hx = M;
-      doc.setFont('helvetica', 'bold');
-      doc.setFontSize(8.5);
       for (var h = 0; h < headers.length; h++) {
         doc.rect(hx, atY, colW[h], 9, 'FD');
-        doc.text(headers[h], hx + colW[h] / 2, atY + 6, { align: 'center' });
         hx += colW[h];
+      }
+      hx = M;
+      doc.setFont('helvetica', 'bold');
+      doc.setFontSize(8.5);
+      for (var h2 = 0; h2 < headers.length; h2++) {
+        doc.text(headers[h2], hx + colW[h2] / 2, atY + 6, { align: 'center' });
+        hx += colW[h2];
       }
       return atY + 9;
     }
@@ -1020,7 +1026,7 @@ body.qcotc-header-under .section-announcement {
       totalNeto += lineNeto;
       var desc2 = it2.title;
       if (it2.variantTitle) desc2 += ' ' + it2.variantTitle;
-      if (desc2.length > 62) desc2 = desc2.substring(0, 60) + '...';
+      if (desc2.length > 45) desc2 = desc2.substring(0, 43) + '...';
       doc.text(String(it2.sku || '').substring(0, 20), M + 2, iy2);
       doc.text(String(it2.qty), M + colW[0] + colW[1] / 2, iy2, { align: 'center' });
       doc.text(desc2, M + colW[0] + colW[1] + 2, iy2);
