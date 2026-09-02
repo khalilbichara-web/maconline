@@ -265,6 +265,7 @@
     vendor: {{ product.vendor | json }},
     type: {{ product.type | json }},
     url: {{ product.url | json }},
+    sku: {{ product.selected_or_first_available_variant.sku | json }},
     variantId: {{ product.selected_or_first_available_variant.id | json }}
   };
 
@@ -549,23 +550,18 @@
     attemptPDF(10);
   });
 
-  /* ── PDF Generation with jsPDF ────────────────────────── */
+  /* ── PDF Generation with jsPDF — formato cotización MacOnline ── */
   function generatePDF(data) {
     var jsPDF = window.jspdf.jsPDF;
     var doc = new jsPDF('p', 'mm', 'a4');
-    var W = 210, M = 20, CW = W - 2 * M;
-    var y = 20;
+    var W = 210, H = 297, M = 12, CW = W - 2 * M;
 
-    var blue = [0, 113, 227];
-    var dark = [29, 29, 31];
-    var gray = [110, 110, 115];
-    var lightBg = [245, 245, 247];
+    var headGray = [217, 217, 217];
 
-    /* ── Header with shop logo ───────────────────── */
-    doc.setFillColor(blue[0], blue[1], blue[2]);
-    doc.rect(0, 0, W, 44, 'F');
+    doc.setDrawColor(0, 0, 0);
+    doc.setLineWidth(0.3);
 
-    /* Try to add the shop logo */
+    /* ── Logo ─────────────────────────── */
     var logoEl = document.getElementById('qcot-shop-logo');
     var logoAdded = false;
     if (logoEl && logoEl.complete && logoEl.naturalWidth > 0) {
@@ -573,230 +569,196 @@
         var canvas = document.createElement('canvas');
         canvas.width = logoEl.naturalWidth;
         canvas.height = logoEl.naturalHeight;
-        var ctx = canvas.getContext('2d');
-        ctx.drawImage(logoEl, 0, 0);
-        var logoDataUrl = canvas.toDataURL('image/png');
-
-        /* Fit logo into ~40x16mm box */
-        var logoMaxW = 40, logoMaxH = 16;
-        var ratio = Math.min(logoMaxW / logoEl.naturalWidth, logoMaxH / logoEl.naturalHeight);
-        var lw = logoEl.naturalWidth * ratio;
-        var lh = logoEl.naturalHeight * ratio;
-        doc.addImage(logoDataUrl, 'PNG', M, y - 4, lw, lh);
+        canvas.getContext('2d').drawImage(logoEl, 0, 0);
+        var ratio = Math.min(55 / logoEl.naturalWidth, 16 / logoEl.naturalHeight);
+        doc.addImage(canvas.toDataURL('image/png'), 'PNG', M, 10, logoEl.naturalWidth * ratio, logoEl.naturalHeight * ratio);
         logoAdded = true;
       } catch(e) { console.warn('Logo insert error:', e); }
     }
-
-    /* Fallback: shop name as text */
     if (!logoAdded) {
-      doc.setTextColor(255, 255, 255);
+      doc.setFont('helvetica', 'bold');
       doc.setFontSize(22);
+      doc.setTextColor(0, 0, 0);
+      doc.text(shopName, M, 20);
+    }
+
+    /* ── Bloque razón social ──────────────── */
+    var y = 32;
+    doc.setTextColor(0, 0, 0);
+    doc.setFont('helvetica', 'bold');
+    doc.setFontSize(13);
+    doc.text('ITEM Limitada', M, y);
+    y += 5;
+    doc.setFontSize(7.5);
+    doc.text('RUT 78.936.330-7', M, y); y += 3.8;
+    doc.text('EXP, C-VTA EQUIPOS, TELEF- ACCS.SERV, ESTUDIOS, MANT.Y SOPORTE COM.', M, y); y += 3.8;
+    doc.text('AV. APOQUINDO 5583, PISO 8, OFICINA 8, COMUNA DE LAS CONDES', M, y);
+    y += 9;
+
+    /* ── Tablas de datos: cliente / cotización ── */
+    var qNum = String(Date.now()).slice(-6);
+    var tW = CW / 2 - 5;
+    var contacto = ((data.nombre || '') + ' ' + (data.apellido || '')).trim();
+    var leftRows = [
+      ['RUT', data.rut || ''],
+      ['Cliente', data.empresa || contacto],
+      ['Telefono', data.telefono || ''],
+      ['Contacto', contacto],
+      ['E-Mail', data.email || '']
+    ];
+    var rightRows = [
+      ['Cotización', qNum],
+      ['Ejecutivo', ''],
+      ['E-Mail', ''],
+      ['F. Emisión', fmtDateShort()],
+      ['F. Vencimiento', addDays(15)]
+    ];
+    function infoTable(x, w, rows, startY) {
+      var labelW = w * 0.38;
+      var rh = 7;
+      doc.setFontSize(9);
+      for (var i = 0; i < rows.length; i++) {
+        var ry = startY + i * rh;
+        doc.rect(x, ry, labelW, rh);
+        doc.rect(x + labelW, ry, w - labelW, rh);
+        doc.setFont('helvetica', 'bold');
+        doc.text(rows[i][0], x + 2, ry + 4.8);
+        doc.setFont('helvetica', 'normal');
+        doc.text(String(rows[i][1] || '').substring(0, 32), x + labelW + 2, ry + 4.8);
+      }
+      return rows.length * rh;
+    }
+    var hUsed = infoTable(M, tW, leftRows, y);
+    infoTable(M + tW + 10, tW, rightRows, y);
+    y += hUsed + 10;
+
+    /* ── Tabla de productos ───────────────── */
+    var colW = [30, 14, 78, 24, 18, 22];
+    var headers = ['Código', 'Cant.', 'Descripción', 'Precio Unitario', '% Dscto', 'Total Neto'];
+
+    doc.setFillColor(headGray[0], headGray[1], headGray[2]);
+    var hx = M;
+    doc.setFont('helvetica', 'bold');
+    doc.setFontSize(8.5);
+    for (var h = 0; h < headers.length; h++) {
+      doc.rect(hx, y, colW[h], 9, 'FD');
+      doc.text(headers[h], hx + colW[h] / 2, y + 6, { align: 'center' });
+      hx += colW[h];
+    }
+    y += 9;
+
+    var bodyTop = y;
+    var totalNeto = productData.price * data.qty;
+
+    doc.setFont('helvetica', 'normal');
+    doc.setFontSize(8);
+    var desc = productData.title;
+    if (productData.variantTitle && productData.variantTitle !== 'Default Title') desc += ' ' + productData.variantTitle;
+    if (desc.length > 62) desc = desc.substring(0, 60) + '...';
+    var ry2 = bodyTop + 6;
+    doc.text(String(productData.sku || '').substring(0, 20), M + 2, ry2);
+    doc.text(String(data.qty), M + colW[0] + colW[1] / 2, ry2, { align: 'center' });
+    doc.text(desc, M + colW[0] + colW[1] + 2, ry2);
+    doc.text(fmtMiles(productData.price), M + colW[0] + colW[1] + colW[2] + colW[3] - 2, ry2, { align: 'right' });
+    doc.text('0,00', M + colW[0] + colW[1] + colW[2] + colW[3] + colW[4] - 2, ry2, { align: 'right' });
+    doc.text(fmtMiles(totalNeto), M + CW - 2, ry2, { align: 'right' });
+
+    /* cuerpo con altura fija, columnas de punta a punta */
+    var bodyH = 70;
+    var cx = M;
+    for (var c = 0; c < colW.length; c++) {
+      doc.rect(cx, bodyTop, colW[c], bodyH);
+      cx += colW[c];
+    }
+    y = bodyTop + bodyH + 5;
+
+    /* ── Totales (derecha) ────────────────── */
+    var neto = Math.round(totalNeto);
+    var iva = Math.round(neto * (CFG.IVA - 1));
+    var total = neto + iva;
+    var boxW = 62, labW = 30;
+    var bx = M + CW - boxW;
+    var totRows = [
+      ['SUB TOTAL', fmtMiles(neto)],
+      ['DESCUENTO', '0'],
+      ['NETO', fmtMiles(neto)],
+      ['IVA', fmtMiles(iva)],
+      ['TOTAL', fmtMiles(total)]
+    ];
+    doc.setFontSize(9);
+    for (var t = 0; t < totRows.length; t++) {
+      var ty = y + t * 7;
+      doc.rect(bx, ty, labW, 7);
+      doc.rect(bx + labW, ty, boxW - labW, 7);
       doc.setFont('helvetica', 'bold');
-      doc.text(shopName, M, y + 8);
+      doc.text(totRows[t][0], bx + 2, ty + 4.8);
+      doc.setFont('helvetica', t >= 2 ? 'bold' : 'normal');
+      doc.text(totRows[t][1], bx + boxW - 2, ty + 4.8, { align: 'right' });
     }
 
-    doc.setTextColor(255, 255, 255);
-    doc.setFontSize(10);
-    doc.setFont('helvetica', 'normal');
-    doc.text('Cotización de Producto', M, logoAdded ? y + 18 : y + 16);
-
-    doc.setFontSize(9);
-    doc.text('Fecha: ' + fmtDate(), W - M, y + 6, { align: 'right' });
-    doc.text('Válida hasta: ' + addDays(15), W - M, y + 12, { align: 'right' });
-    doc.setFontSize(8);
-    doc.text('Ref: ' + data.email.split('@')[0].toUpperCase() + '-' + fmtDateShort().replace(/\//g, ''), W - M, y + 18, { align: 'right' });
-
-    y = 54;
-
-    /* ── Client info ───────────────────────────── */
-    doc.setFillColor(lightBg[0], lightBg[1], lightBg[2]);
-    doc.roundedRect(M, y, CW, 42, 3, 3, 'F');
-
-    doc.setTextColor(gray[0], gray[1], gray[2]);
-    doc.setFontSize(8);
+    /* ── Notas (izquierda) ────────────────── */
     doc.setFont('helvetica', 'bold');
-    doc.text('DATOS DEL SOLICITANTE', M + 6, y + 7);
+    doc.setFontSize(9.5);
+    doc.text('"Con OnCare extiende la cobertura frente a fallas hasta por 4 años.', M + 58, y + 5, { align: 'center' });
+    doc.text('Consulta por planes disponibles"', M + 58, y + 10, { align: 'center' });
 
-    doc.setTextColor(dark[0], dark[1], dark[2]);
-    doc.setFontSize(10);
-    doc.setFont('helvetica', 'normal');
-    var clientName = ((data.nombre || '') + ' ' + (data.apellido || '')).trim() || 'No especificado';
-    doc.text('Nombre: ' + clientName, M + 6, y + 14);
-    doc.text('Email: ' + data.email, M + 6, y + 21);
-    doc.text('Teléfono: ' + (data.telefono || 'No especificado'), M + 6, y + 28);
-    if (data.empresa) {
-      doc.text('Empresa: ' + data.empresa, CW / 2 + M, y + 14);
-    }
-    if (data.rut) {
-      doc.text('RUT: ' + data.rut, CW / 2 + M, y + 21);
-    }
-
-    y += 50;
-
-    /* ── Product details ─────────────────────────── */
-    doc.setTextColor(gray[0], gray[1], gray[2]);
-    doc.setFontSize(8);
-    doc.setFont('helvetica', 'bold');
-    doc.text('DETALLE DEL EQUIPO', M, y);
-    y += 6;
-
-    doc.setFillColor(dark[0], dark[1], dark[2]);
-    doc.roundedRect(M, y, CW, 10, 2, 2, 'F');
-    doc.setTextColor(255, 255, 255);
+    doc.rect(M, y + 16, 100, 14);
     doc.setFontSize(9);
-    doc.setFont('helvetica', 'bold');
-    doc.text('Producto', M + 4, y + 7);
-    doc.text('Tipo', M + 90, y + 7);
-    doc.text('Cant.', M + 115, y + 7, { align: 'center' });
-    doc.text('Precio Unit.', M + 140, y + 7, { align: 'right' });
-    doc.text('Total', M + CW - 4, y + 7, { align: 'right' });
-    y += 12;
+    doc.text('Renovación de equipos.', M + 3, y + 22);
+    doc.text('Consulta por valor de recompra de equipos Apple.', M + 3, y + 27);
 
-    doc.setFillColor(lightBg[0], lightBg[1], lightBg[2]);
-    doc.rect(M, y, CW, 12, 'F');
-    doc.setTextColor(dark[0], dark[1], dark[2]);
-    doc.setFontSize(9);
-    doc.setFont('helvetica', 'normal');
+    y += 40;
 
-    var prodName = productData.title;
-    if (prodName.length > 40) prodName = prodName.substring(0, 38) + '...';
-    doc.text(prodName, M + 4, y + 5);
-
-    if (productData.variantTitle && productData.variantTitle !== 'Default Title') {
-      doc.setFontSize(7);
-      doc.setTextColor(gray[0], gray[1], gray[2]);
-      doc.text(productData.variantTitle.substring(0, 50), M + 4, y + 10);
-    }
-
-    doc.setFontSize(9);
-    doc.setTextColor(dark[0], dark[1], dark[2]);
-    doc.text(tipoProducto, M + 90, y + 7);
-    doc.text(data.qty.toString(), M + 115, y + 7, { align: 'center' });
-    doc.text('$' + fmtMiles(productData.price * CFG.IVA), M + 140, y + 7, { align: 'right' });
-    doc.text('$' + fmtMiles(productData.price * data.qty * CFG.IVA), M + CW - 4, y + 7, { align: 'right' });
-
-    y += 18;
-
+    /* ── Arriendo operativo (si aplica) ───────── */
     if (esArriendo) {
-      /* ── Lease calculation ──────────────────────── */
-      doc.setTextColor(gray[0], gray[1], gray[2]);
-      doc.setFontSize(8);
+      doc.rect(M, y, CW, 13);
       doc.setFont('helvetica', 'bold');
-      doc.text('OPCIÓN DE ARRIENDO OPERATIVO', M, y);
-      y += 6;
-
-      doc.setFillColor(blue[0], blue[1], blue[2]);
-      doc.roundedRect(M, y, CW, 32, 3, 3, 'F');
-
-      doc.setTextColor(255, 255, 255);
-      doc.setFontSize(10);
+      doc.setFontSize(9);
+      doc.text('Arriendo Operativo', M + 3, y + 5);
       doc.setFont('helvetica', 'normal');
-      doc.text('Cuota mensual (IVA incluido)', M + 6, y + 10);
-
-      doc.setFontSize(26);
-      doc.setFont('helvetica', 'bold');
-      doc.text('$' + fmtMiles(data.cuotaIVA) + '/mes', M + 6, y + 24);
-
-      y += 40;
-
-      var leaseRows = [
-        ['Plazo del contrato', data.plazo + ' meses'],
-        ['Cantidad de equipos', data.qty.toString()],
-        ['Tipo de equipo', tipoProducto],
-        ['Valor total equipos (IVA incluido)', '$' + fmtMiles(productData.price * data.qty * CFG.IVA)],
-        ['Cuota mensual (IVA incluido)', '$' + fmtMiles(data.cuotaIVA)]
-      ];
-
-      for (var r = 0; r < leaseRows.length; r++) {
-        if (r % 2 === 0) {
-          doc.setFillColor(lightBg[0], lightBg[1], lightBg[2]);
-          doc.rect(M, y, CW, 8, 'F');
-        }
-        doc.setTextColor(gray[0], gray[1], gray[2]);
-        doc.setFontSize(9);
-        doc.setFont('helvetica', 'normal');
-        doc.text(leaseRows[r][0], M + 4, y + 5.5);
-
-        doc.setTextColor(dark[0], dark[1], dark[2]);
-        doc.setFont('helvetica', 'bold');
-        doc.text(leaseRows[r][1], M + CW - 4, y + 5.5, { align: 'right' });
-        y += 8;
-      }
-
-      y += 8;
-    } else {
-      /* ── Solo venta: resumen de totales ─────────────── */
-      var ventaRows = [
-        ['Cantidad', data.qty.toString()],
-        ['Total (IVA incluido)', '$' + fmtMiles(productData.price * data.qty * CFG.IVA)]
-      ];
-
-      for (var vr = 0; vr < ventaRows.length; vr++) {
-        if (vr % 2 === 0) {
-          doc.setFillColor(lightBg[0], lightBg[1], lightBg[2]);
-          doc.rect(M, y, CW, 8, 'F');
-        }
-        doc.setTextColor(gray[0], gray[1], gray[2]);
-        doc.setFontSize(9);
-        doc.setFont('helvetica', 'normal');
-        doc.text(ventaRows[vr][0], M + 4, y + 5.5);
-
-        doc.setTextColor(dark[0], dark[1], dark[2]);
-        doc.setFont('helvetica', 'bold');
-        doc.text(ventaRows[vr][1], M + CW - 4, y + 5.5, { align: 'right' });
-        y += 8;
-      }
-
-      y += 8;
+      doc.text('Plazo ' + data.plazo + ' meses · Cuota mensual (IVA incluido): $' + fmtMiles(data.cuotaIVA) + '/mes', M + 3, y + 10);
+      y += 18;
     }
 
-    /* ── Terms & Conditions ──────────────────────── */
-    doc.setTextColor(gray[0], gray[1], gray[2]);
-    doc.setFontSize(8);
-    doc.setFont('helvetica', 'bold');
-    doc.text(esArriendo ? 'CONDICIONES DEL ARRIENDO' : 'CONDICIONES DE LA COTIZACIÓN', M, y);
-    y += 6;
-
-    doc.setFontSize(8);
-    doc.setFont('helvetica', 'normal');
-    doc.setTextColor(110, 110, 115);
-
+    /* ── Consideraciones ──────────────────── */
     var terms;
     if (esArriendo) {
       terms = [
-        '1. El arriendo operativo es una alternativa de financiamiento para empresas e instituciones.',
-        '2. Las cuotas incluyen el uso del equipo durante el plazo contratado.',
-        '3. Los precios están expresados en pesos chilenos (CLP) e incluyen IVA (19%).',
-        '4. Esta cotización tiene una vigencia de 15 días desde la fecha de emisión.',
-        '5. Los valores son referenciales y pueden estar sujetos a aprobación crediticia.'
+        '1- El arriendo operativo es una alternativa de financiamiento para empresas e instituciones.',
+        '2- Las cuotas incluyen el uso del equipo durante el plazo contratado.',
+        '3- Esta cotización tiene una vigencia de 15 días desde la fecha de emisión.',
+        '4- Los valores son referenciales y pueden estar sujetos a aprobación crediticia.',
+        '* Recuerde revisar nuestros términos y condiciones, publicados en nuestra web https://www.maconline.com/condiciones'
       ];
     } else {
       terms = [
-        '1. Los precios están expresados en pesos chilenos (CLP) e incluyen IVA (19%).',
-        '2. Esta cotización tiene una vigencia de 15 días desde la fecha de emisión.',
-        '3. Los valores son referenciales y están sujetos a disponibilidad de stock.'
+        '1- Esta cotización tiene una vigencia de 15 días desde la fecha de emisión.',
+        '2- El plazo de entrega está sujeto a disponibilidad al momento de realizar el pago.',
+        '3- Los valores son referenciales y están sujetos a disponibilidad de stock.',
+        '* Recuerde revisar nuestros términos y condiciones, publicados en nuestra web https://www.maconline.com/condiciones'
       ];
     }
-
-    for (var t = 0; t < terms.length; t++) {
-      var lines = doc.splitTextToSize(terms[t], CW - 4);
-      doc.text(lines, M + 2, y);
-      y += lines.length * 4;
-    }
-
-    /* ── Footer ────────────────────────────────── */
-    y = 275;
-    doc.setDrawColor(200, 200, 200);
-    doc.line(M, y, W - M, y);
-    y += 5;
-    doc.setFontSize(8);
-    doc.setTextColor(gray[0], gray[1], gray[2]);
+    var termsH = 7 + terms.length * 4 + 3;
+    doc.rect(M, y, CW, termsH);
+    doc.setFont('helvetica', 'bold');
+    doc.setFontSize(8.5);
+    doc.text('Consideraciones', M + 2, y + 5);
     doc.setFont('helvetica', 'normal');
-    doc.text(shopName + ' — Equipos Apple para empresas', M, y);
-    doc.text('Generado el ' + fmtDateShort(), W - M, y, { align: 'right' });
+    doc.setFontSize(7.5);
+    var ly = y + 9.5;
+    for (var t2 = 0; t2 < terms.length; t2++) {
+      doc.text(terms[t2], M + 2, ly);
+      ly += 4;
+    }
+    y += termsH;
 
-    /* ── Save PDF ──────────────────────────────── */
-    var fileName = 'Cotizacion_' + productData.title.replace(/[^a-zA-Z0-9]/g, '_').substring(0, 30) + '_' + fmtDateShort().replace(/\//g, '') + '.pdf';
+    /* ── Pie de página ────────────────────── */
+    doc.setFont('helvetica', 'bold');
+    doc.setFontSize(9);
+    doc.text('MacOnline - Avenida Apoquindo 5583 - Las Condes - Santiago de Chile - 25623200', W / 2, H - 10, { align: 'center' });
+
+    /* ── Save PDF ───────────────────────── */
+    var fileName = 'Cotizacion_' + qNum + '_' + fmtDateShort().replace(/\//g, '') + '.pdf';
     doc.save(fileName);
   }
 
