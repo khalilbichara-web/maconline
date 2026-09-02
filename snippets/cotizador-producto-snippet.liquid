@@ -636,14 +636,20 @@
     var colW = [30, 14, 78, 24, 18, 22];
     var headers = ['Código', 'Cant.', 'Descripción', 'Precio Unitario', '% Dscto', 'Total Neto'];
 
+    /* primero todas las celdas (el texto en jsPDF pisa el color
+       de relleno), luego los titulos */
     doc.setFillColor(headGray[0], headGray[1], headGray[2]);
     var hx = M;
-    doc.setFont('helvetica', 'bold');
-    doc.setFontSize(8.5);
     for (var h = 0; h < headers.length; h++) {
       doc.rect(hx, y, colW[h], 9, 'FD');
-      doc.text(headers[h], hx + colW[h] / 2, y + 6, { align: 'center' });
       hx += colW[h];
+    }
+    hx = M;
+    doc.setFont('helvetica', 'bold');
+    doc.setFontSize(8.5);
+    for (var h2 = 0; h2 < headers.length; h2++) {
+      doc.text(headers[h2], hx + colW[h2] / 2, y + 6, { align: 'center' });
+      hx += colW[h2];
     }
     y += 9;
 
@@ -654,7 +660,7 @@
     doc.setFontSize(8);
     var desc = productData.title;
     if (productData.variantTitle && productData.variantTitle !== 'Default Title') desc += ' ' + productData.variantTitle;
-    if (desc.length > 62) desc = desc.substring(0, 60) + '...';
+    if (desc.length > 45) desc = desc.substring(0, 43) + '...';
     var ry2 = bodyTop + 6;
     doc.text(String(productData.sku || '').substring(0, 20), M + 2, ry2);
     doc.text(String(data.qty), M + colW[0] + colW[1] / 2, ry2, { align: 'center' });
