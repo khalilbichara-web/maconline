@@ -29,8 +29,7 @@
       <span class="qrw-cuota">$<span id="qrw-cuota">0</span></span>
       <span class="qrw-cuota-suffix">/por mes</span>
     </div>
-    <p class="qrw-meta" id="qrw-meta">12 meses &middot; 1 equipo &middot; sin IVA</p>
-    <p class="qrw-iva" id="qrw-iva">Con IVA: $0/mes</p>
+    <p class="qrw-meta" id="qrw-meta">12 meses &middot; 1 equipo &middot; IVA incluido</p>
   </div>
 
   <p class="qrw-plazo-label" id="qrw-plazo-label">Plazo</p>
@@ -58,17 +57,6 @@
       </button>
     {% endfor %}
   </div>
-
-  <div class="qrw-mdm-row">
-    <div>
-      <label class="qrw-mdm-label" for="qrw-mdm">Gesti&oacute;n remota (MDM)</label>
-      <p class="qrw-mdm-sub">$3.000/equipo/mes</p>
-    </div>
-    <label class="qrw-switch">
-      <input id="qrw-mdm" type="checkbox">
-      <span class="qrw-switch-track" aria-hidden="true"></span>
-    </label>
-  </div>
 </div>
 
 <script>
@@ -89,11 +77,11 @@
       return variants.find((variant) => String(variant.id) === variantInput?.value) || variants[0];
     };
 
+    /* Cuota mostrada siempre con IVA incluido */
     const calculatePayment = (term) => {
       const quantity = Math.max(1, Number.parseInt(quantityInput()?.value || '1', 10));
       const price = (selectedVariant()?.price || {{ product.price }}) / 100;
-      const mdmEnabled = calculator.querySelector('#qrw-mdm').checked;
-      return (price * quantity * factors[term]) - (mdmEnabled ? 0 : CFG.MDM_COSTO * quantity);
+      return price * quantity * factors[term] * CFG.IVA;
     };
 
     const render = () => {
@@ -101,8 +89,7 @@
       const payment = calculatePayment(selectedTerm);
 
       calculator.querySelector('#qrw-cuota').textContent = formatAmount(payment);
-      calculator.querySelector('#qrw-meta').textContent = `${selectedTerm} meses · ${quantity} ${quantity === 1 ? 'equipo' : 'equipos'} · sin IVA`;
-      calculator.querySelector('#qrw-iva').textContent = `Con IVA: $${formatAmount(payment * 1.19)}/mes`;
+      calculator.querySelector('#qrw-meta').textContent = `${selectedTerm} meses · ${quantity} ${quantity === 1 ? 'equipo' : 'equipos'} · IVA incluido`;
 
       Object.keys(factors).forEach((term) => {
         calculator.querySelector(`[data-term-price="${term}"]`).textContent = formatAmount(calculatePayment(term));
@@ -121,7 +108,6 @@
       });
     });
 
-    calculator.querySelector('#qrw-mdm').addEventListener('change', render);
     document.addEventListener('change', (event) => {
       if (event.target.matches('variant-selects select, variant-radios input, input[name="quantity"]')) {
         window.setTimeout(render, 0);
