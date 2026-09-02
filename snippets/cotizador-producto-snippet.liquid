@@ -47,7 +47,7 @@
 .qcot-btn:active { transform: scale(0.98); }
 .qcot-btn svg { width: 20px; height: 20px; fill: currentColor; flex-shrink: 0; }
 
-/* ── OVERLAY + MODAL ────────────────────────────────────── */
+/* ── OVERLAY + MODAL ──────────────────────────────── */
 .qcot-overlay {
   position: fixed; inset: 0;
   background: rgba(0,0,0,0.5);
@@ -160,15 +160,15 @@
 }
 {%- endstyle -%}
 
-<!-- ── BOTÓN COTIZAR ────────────────────────────────────── -->
+<!-- ── BOTÓN COTIZAR ────────────────────────────────── -->
 <button class="qcot-btn" id="qcot-trigger">
   Cotizar producto
 </button>
 
-<!-- ── OVERLAY ───────────────────────────────────────────── -->
+<!-- ── OVERLAY ─────────────────────────────────────── -->
 <div class="qcot-overlay" id="qcot-overlay"></div>
 
-<!-- ── MODAL ─────────────────────────────────────────────── -->
+<!-- ── MODAL ───────────────────────────────────────── -->
 <div class="qcot-modal" id="qcot-modal" role="dialog" aria-modal="true" aria-label="Cotizar producto">
   <div class="qcot-modal-header">
     <span class="qcot-modal-title">Cotizar producto</span>
@@ -246,7 +246,7 @@
 (function() {
   'use strict';
 
-  /* ── Load jsPDF dynamically ────────────────────────────── */
+  /* ── Load jsPDF dynamically ────────────────────────── */
   var jsPDFReady = false;
   var jsPDFScript = document.createElement('script');
   jsPDFScript.src = 'https://cdn.jsdelivr.net/npm/jspdf@2.5.2/dist/jspdf.umd.min.js';
@@ -254,7 +254,7 @@
   jsPDFScript.onerror = function() { console.error('Failed to load jsPDF from CDN'); };
   document.head.appendChild(jsPDFScript);
 
-  /* ── Product data from Liquid ──────────────────────────── */
+  /* ── Product data from Liquid ──────────────────────── */
   var productData = {
     title: {{ product.title | json }},
     variantTitle: {{ product.selected_or_first_available_variant.title | json }},
@@ -280,7 +280,7 @@
   /* Parámetros centralizados (factores por tipo, IVA) */
   var CFG = window.ArriendoConfig;
 
-  /* ── Format helpers ────────────────────────────────────── */
+  /* ── Format helpers ────────────────────────────────── */
   function fmtMiles(n) { return Math.round(n).toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.'); }
   function fmtDate() {
     var d = new Date();
@@ -297,7 +297,7 @@
     return d.getDate().toString().padStart(2,'0') + '/' + (d.getMonth()+1).toString().padStart(2,'0') + '/' + d.getFullYear();
   }
 
-  /* ── Read native quantity ──────────────────────────────── */
+  /* ── Read native quantity ──────────────────────────── */
   function getNativeQty() {
     var selectors = [
       'form[action*="/cart/add"] input[name="quantity"]',
@@ -311,11 +311,11 @@
     return 1;
   }
 
-  /* ── Display price in modal ────────────────────────────── */
+  /* ── Display price in modal ────────────────────────── */
   var priceEl = document.getElementById('qcot-prod-price');
-  if (priceEl) priceEl.textContent = '$' + fmtMiles(productData.price) + ' sin IVA';
+  if (priceEl) priceEl.textContent = '$' + fmtMiles(productData.price * CFG.IVA) + ' IVA incluido';
 
-  /* ── Modal open/close ──────────────────────────────────── */
+  /* ── Modal open/close ────────────────────────────── */
   var overlay = document.getElementById('qcot-overlay');
   var modal = document.getElementById('qcot-modal');
   var trigger = document.getElementById('qcot-trigger');
@@ -348,12 +348,12 @@
   closeBtn.addEventListener('click', closeCotModal);
   overlay.addEventListener('click', closeCotModal);
 
-  /* ── Email validation ──────────────────────────────────── */
+  /* ── Email validation ────────────────────────────── */
   function isValidEmail(email) {
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
   }
 
-  /* ── Create Draft Order via App Proxy ──────────────────── */
+  /* ── Create Draft Order via App Proxy ────────────────── */
   /* La Custom App recibe estos datos y crea un Draft Order
      via Admin API + registra/tagea al cliente como lead. */
   var APP_PROXY_URL = '/apps/cotizador';
@@ -447,7 +447,7 @@
     });
   }
 
-  /* ── Submit handler ────────────────────────────────────── */
+  /* ── Submit handler ──────────────────────────────── */
   var submitBtn = document.getElementById('qcot-submit-btn');
   var emailInput = document.getElementById('qcot-email');
   var emailError = document.getElementById('qcot-email-error');
@@ -549,7 +549,7 @@
     attemptPDF(10);
   });
 
-  /* ── PDF Generation with jsPDF ─────────────────────────── */
+  /* ── PDF Generation with jsPDF ────────────────────────── */
   function generatePDF(data) {
     var jsPDF = window.jspdf.jsPDF;
     var doc = new jsPDF('p', 'mm', 'a4');
@@ -561,7 +561,7 @@
     var gray = [110, 110, 115];
     var lightBg = [245, 245, 247];
 
-    /* ── Header with shop logo ───────────────────────── */
+    /* ── Header with shop logo ───────────────────── */
     doc.setFillColor(blue[0], blue[1], blue[2]);
     doc.rect(0, 0, W, 44, 'F');
 
@@ -608,7 +608,7 @@
 
     y = 54;
 
-    /* ── Client info ─────────────────────────────────── */
+    /* ── Client info ───────────────────────────── */
     doc.setFillColor(lightBg[0], lightBg[1], lightBg[2]);
     doc.roundedRect(M, y, CW, 42, 3, 3, 'F');
 
@@ -633,7 +633,7 @@
 
     y += 50;
 
-    /* ── Product details ─────────────────────────────── */
+    /* ── Product details ─────────────────────────── */
     doc.setTextColor(gray[0], gray[1], gray[2]);
     doc.setFontSize(8);
     doc.setFont('helvetica', 'bold');
@@ -649,7 +649,7 @@
     doc.text('Tipo', M + 90, y + 7);
     doc.text('Cant.', M + 115, y + 7, { align: 'center' });
     doc.text('Precio Unit.', M + 140, y + 7, { align: 'right' });
-    doc.text('Total Neto', M + CW - 4, y + 7, { align: 'right' });
+    doc.text('Total', M + CW - 4, y + 7, { align: 'right' });
     y += 12;
 
     doc.setFillColor(lightBg[0], lightBg[1], lightBg[2]);
@@ -672,13 +672,13 @@
     doc.setTextColor(dark[0], dark[1], dark[2]);
     doc.text(tipoProducto, M + 90, y + 7);
     doc.text(data.qty.toString(), M + 115, y + 7, { align: 'center' });
-    doc.text('$' + fmtMiles(productData.price), M + 140, y + 7, { align: 'right' });
-    doc.text('$' + fmtMiles(productData.price * data.qty), M + CW - 4, y + 7, { align: 'right' });
+    doc.text('$' + fmtMiles(productData.price * CFG.IVA), M + 140, y + 7, { align: 'right' });
+    doc.text('$' + fmtMiles(productData.price * data.qty * CFG.IVA), M + CW - 4, y + 7, { align: 'right' });
 
     y += 18;
 
     if (esArriendo) {
-      /* ── Lease calculation ──────────────────────────── */
+      /* ── Lease calculation ──────────────────────── */
       doc.setTextColor(gray[0], gray[1], gray[2]);
       doc.setFontSize(8);
       doc.setFont('helvetica', 'bold');
@@ -691,15 +691,11 @@
       doc.setTextColor(255, 255, 255);
       doc.setFontSize(10);
       doc.setFont('helvetica', 'normal');
-      doc.text('Cuota mensual neta (sin IVA)', M + 6, y + 10);
+      doc.text('Cuota mensual (IVA incluido)', M + 6, y + 10);
 
       doc.setFontSize(26);
       doc.setFont('helvetica', 'bold');
-      doc.text('$' + fmtMiles(data.cuotaNeta) + '/mes', M + 6, y + 24);
-
-      doc.setFontSize(11);
-      doc.setFont('helvetica', 'normal');
-      doc.text('Con IVA: $' + fmtMiles(data.cuotaIVA) + '/mes', M + CW - 6, y + 24, { align: 'right' });
+      doc.text('$' + fmtMiles(data.cuotaIVA) + '/mes', M + 6, y + 24);
 
       y += 40;
 
@@ -707,9 +703,8 @@
         ['Plazo del contrato', data.plazo + ' meses'],
         ['Cantidad de equipos', data.qty.toString()],
         ['Tipo de equipo', tipoProducto],
-        ['Valor total equipos (neto)', '$' + fmtMiles(productData.price * data.qty)],
-        ['Cuota mensual sin IVA', '$' + fmtMiles(data.cuotaNeta)],
-        ['Cuota mensual con IVA', '$' + fmtMiles(data.cuotaIVA)]
+        ['Valor total equipos (IVA incluido)', '$' + fmtMiles(productData.price * data.qty * CFG.IVA)],
+        ['Cuota mensual (IVA incluido)', '$' + fmtMiles(data.cuotaIVA)]
       ];
 
       for (var r = 0; r < leaseRows.length; r++) {
@@ -733,9 +728,7 @@
       /* ── Solo venta: resumen de totales ─────────────── */
       var ventaRows = [
         ['Cantidad', data.qty.toString()],
-        ['Total neto', '$' + fmtMiles(productData.price * data.qty)],
-        ['IVA (19%)', '$' + fmtMiles(productData.price * data.qty * 0.19)],
-        ['Total con IVA', '$' + fmtMiles(productData.price * data.qty * 1.19)]
+        ['Total (IVA incluido)', '$' + fmtMiles(productData.price * data.qty * CFG.IVA)]
       ];
 
       for (var vr = 0; vr < ventaRows.length; vr++) {
@@ -757,7 +750,7 @@
       y += 8;
     }
 
-    /* ── Terms & Conditions ──────────────────────────── */
+    /* ── Terms & Conditions ──────────────────────── */
     doc.setTextColor(gray[0], gray[1], gray[2]);
     doc.setFontSize(8);
     doc.setFont('helvetica', 'bold');
@@ -773,13 +766,13 @@
       terms = [
         '1. El arriendo operativo es una alternativa de financiamiento para empresas e instituciones.',
         '2. Las cuotas incluyen el uso del equipo durante el plazo contratado.',
-        '3. Los precios están expresados en pesos chilenos (CLP). Los valores netos no incluyen IVA (19%).',
+        '3. Los precios están expresados en pesos chilenos (CLP) e incluyen IVA (19%).',
         '4. Esta cotización tiene una vigencia de 15 días desde la fecha de emisión.',
         '5. Los valores son referenciales y pueden estar sujetos a aprobación crediticia.'
       ];
     } else {
       terms = [
-        '1. Los precios están expresados en pesos chilenos (CLP). Los valores netos no incluyen IVA (19%).',
+        '1. Los precios están expresados en pesos chilenos (CLP) e incluyen IVA (19%).',
         '2. Esta cotización tiene una vigencia de 15 días desde la fecha de emisión.',
         '3. Los valores son referenciales y están sujetos a disponibilidad de stock.'
       ];
@@ -791,7 +784,7 @@
       y += lines.length * 4;
     }
 
-    /* ── Footer ──────────────────────────────────────── */
+    /* ── Footer ────────────────────────────────── */
     y = 275;
     doc.setDrawColor(200, 200, 200);
     doc.line(M, y, W - M, y);
@@ -802,7 +795,7 @@
     doc.text(shopName + ' — Equipos Apple para empresas', M, y);
     doc.text('Generado el ' + fmtDateShort(), W - M, y, { align: 'right' });
 
-    /* ── Save PDF ────────────────────────────────────── */
+    /* ── Save PDF ──────────────────────────────── */
     var fileName = 'Cotizacion_' + productData.title.replace(/[^a-zA-Z0-9]/g, '_').substring(0, 30) + '_' + fmtDateShort().replace(/\//g, '') + '.pdf';
     doc.save(fileName);
   }
