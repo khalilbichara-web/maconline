@@ -279,6 +279,11 @@
   /* Parámetros centralizados (factores por tipo, IVA) */
   var CFG = window.ArriendoConfig;
 
+  /* Los precios del e-commerce YA incluyen IVA (taxesIncluded).
+     Se deriva el neto para cálculos, PDF y draft orders. */
+  productData.priceBruto = productData.price;
+  productData.price = productData.price / CFG.IVA;
+
   /* ── Format helpers ────────────────────────────────── */
   function fmtMiles(n) { return Math.round(n).toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.'); }
   function fmtDate() {
@@ -310,9 +315,9 @@
     return 1;
   }
 
-  /* ── Display price in modal ────────────────────────── */
+  /* ── Display price in modal (precio de tienda, IVA incluido) ── */
   var priceEl = document.getElementById('qcot-prod-price');
-  if (priceEl) priceEl.textContent = '$' + fmtMiles(productData.price * CFG.IVA) + ' IVA incluido';
+  if (priceEl) priceEl.textContent = '$' + fmtMiles(productData.priceBruto) + ' IVA incluido';
 
   /* ── Modal open/close ────────────────────────────── */
   var overlay = document.getElementById('qcot-overlay');
@@ -678,8 +683,8 @@
 
     /* ── Totales (derecha) ────────────────── */
     var neto = Math.round(totalNeto);
-    var iva = Math.round(neto * (CFG.IVA - 1));
-    var total = neto + iva;
+    var total = Math.round(productData.priceBruto * data.qty);
+    var iva = total - neto;
     var boxW = 62, labW = 30;
     var bx = M + CW - boxW;
     var totRows = [
