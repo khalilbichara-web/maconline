@@ -241,7 +241,9 @@
       var item = cartItems[i];
 
       var tipo = item.esDispositivo ? item.type : 'Otros';
-      var cuotaLinea = CFG.cuotaNeta(item.price * item.qty, cMeses, tipo) * CFG.IVA;
+      /* item.price ya incluye IVA; por linealidad la cuota resultante
+         tambien queda con IVA incluido */
+      var cuotaLinea = CFG.cuotaNeta(item.price * item.qty, cMeses, tipo);
 
       cSet('qrc-cuota-' + i, '$' + fmtMiles(cuotaLinea));
       totalCuota += cuotaLinea;
