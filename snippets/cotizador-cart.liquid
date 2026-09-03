@@ -571,7 +571,9 @@ body.qcotc-header-under .section-announcement {
             title: item.product_title,
             variantTitle: item.variant_title && item.variant_title !== 'Default Title' ? item.variant_title : '',
             qty: item.quantity,
-            priceNet: item.price / 100, /* cents → CLP */
+            /* item.price YA incluye IVA (taxesIncluded); se deriva el neto */
+            priceNet: (item.price / 100) / CFG.IVA,
+            priceBruto: item.price / 100,
             image: item.featured_image ? item.featured_image.url : '',
             handle: item.handle,
             tipo: detectTipo(item.product_title, item.product_type),
@@ -591,7 +593,7 @@ body.qcotc-header-under .section-announcement {
     for (var i = 0; i < cartItems.length; i++) {
       var it = cartItems[i];
       /* Precios mostrados siempre con IVA incluido */
-      var lineTotal = it.priceNet * it.qty * CFG.IVA;
+      var lineTotal = it.priceBruto * it.qty;
       totalNet += lineTotal;
       html += '<div class="qcotc-item">';
       if (it.image) {
@@ -673,7 +675,7 @@ body.qcotc-header-under .section-announcement {
   function recalcTotals() {
     var totalNet = 0;
     for (var i = 0; i < cartItems.length; i++) {
-      var lineTotal = cartItems[i].priceNet * cartItems[i].qty * CFG.IVA;
+      var lineTotal = cartItems[i].priceBruto * cartItems[i].qty;
       totalNet += lineTotal;
       var lineEl = document.getElementById('qcotc-line-price-' + i);
       if (lineEl) lineEl.textContent = '$' + fmtMiles(lineTotal);
@@ -1005,6 +1007,7 @@ body.qcotc-header-under .section-announcement {
     var rowH = 6.5;
     var maxBodyBottom = 190; /* deja espacio para totales y notas */
     var totalNeto = 0;
+    var totalBruto = 0;
     var iy2 = bodyTop + 6;
 
     doc.setFont('helvetica', 'normal');
@@ -1024,6 +1027,7 @@ body.qcotc-header-under .section-announcement {
       }
       var lineNeto = it2.priceNet * it2.qty;
       totalNeto += lineNeto;
+      totalBruto += it2.priceBruto * it2.qty;
       var desc2 = it2.title;
       if (it2.variantTitle) desc2 += ' ' + it2.variantTitle;
       if (desc2.length > 45) desc2 = desc2.substring(0, 43) + '...';
@@ -1044,8 +1048,8 @@ body.qcotc-header-under .section-announcement {
 
     /* ── Totales (derecha) ────────────────── */
     var neto = Math.round(totalNeto);
-    var iva = Math.round(neto * (CFG.IVA - 1));
-    var total = neto + iva;
+    var total = Math.round(totalBruto);
+    var iva = total - neto;
     var boxW = 62, labW = 30;
     var bx = M + CW - boxW;
     var totRows = [
