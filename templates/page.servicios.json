@@ -178,10 +178,10 @@
           "type": "product_card",
           "settings": {
             "image_override": "shopify://shop_images/iMac.png",
-            "product": "imac-m4-24",
+            "product": "imac-ret-4-5k-24-m4-10c-gpu-10c-16gb-ram-256gb-pantalla-nanotexturizada-plata",
             "title": "",
             "subtitle": "",
-            "price_fallback": ""
+            "price_fallback": "$0"
           }
         }
       },

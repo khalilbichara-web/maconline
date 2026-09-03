@@ -129,7 +129,7 @@
 
                 {% if card_product != blank %}
                   <div class="servicios-product-pickers__price">
-                    {{ card_product.price | money }}
+                    {{ card_product.price_max | money }}
                   </div>
                 {% elsif block.settings.price_fallback != blank %}
                   <div class="servicios-product-pickers__price servicios-product-pickers__price--fallback">
