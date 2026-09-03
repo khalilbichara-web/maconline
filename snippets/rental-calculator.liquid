@@ -29,8 +29,7 @@
       <span class="qrw-cuota">$<span id="qrw-cuota">0</span></span>
       <span class="qrw-cuota-suffix">/por mes</span>
     </div>
-    <p class="qrw-meta" id="qrw-meta">12 meses &middot; 1 equipo &middot; sin IVA</p>
-    <p class="qrw-iva" id="qrw-iva">Con IVA: $0/mes</p>
+    <p class="qrw-meta" id="qrw-meta">12 meses &middot; 1 equipo &middot; IVA incluido</p>
   </div>
 
   <p class="qrw-plazo-label" id="qrw-plazo-label">Plazo</p>
@@ -78,6 +77,8 @@
       return variants.find((variant) => String(variant.id) === variantInput?.value) || variants[0];
     };
 
+    /* Los precios del e-commerce YA incluyen IVA; por linealidad
+       cuota (IVA incl.) = precio (IVA incl.) x factor */
     const calculatePayment = (term) => {
       const quantity = Math.max(1, Number.parseInt(quantityInput()?.value || '1', 10));
       const price = (selectedVariant()?.price || {{ product.price }}) / 100;
@@ -89,8 +90,7 @@
       const payment = calculatePayment(selectedTerm);
 
       calculator.querySelector('#qrw-cuota').textContent = formatAmount(payment);
-      calculator.querySelector('#qrw-meta').textContent = `${selectedTerm} meses · ${quantity} ${quantity === 1 ? 'equipo' : 'equipos'} · sin IVA`;
-      calculator.querySelector('#qrw-iva').textContent = `Con IVA: $${formatAmount(payment * 1.19)}/mes`;
+      calculator.querySelector('#qrw-meta').textContent = `${selectedTerm} meses · ${quantity} ${quantity === 1 ? 'equipo' : 'equipos'} · IVA incluido`;
 
       Object.keys(factors).forEach((term) => {
         calculator.querySelector(`[data-term-price="${term}"]`).textContent = formatAmount(calculatePayment(term));
