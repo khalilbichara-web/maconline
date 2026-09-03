@@ -77,11 +77,12 @@
       return variants.find((variant) => String(variant.id) === variantInput?.value) || variants[0];
     };
 
-    /* Cuota mostrada siempre con IVA incluido */
+    /* Los precios del e-commerce YA incluyen IVA; por linealidad
+       cuota (IVA incl.) = precio (IVA incl.) x factor */
     const calculatePayment = (term) => {
       const quantity = Math.max(1, Number.parseInt(quantityInput()?.value || '1', 10));
       const price = (selectedVariant()?.price || {{ product.price }}) / 100;
-      return price * quantity * factors[term] * CFG.IVA;
+      return price * quantity * factors[term];
     };
 
     const render = () => {
