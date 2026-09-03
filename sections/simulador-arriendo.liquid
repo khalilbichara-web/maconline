@@ -18,7 +18,7 @@
 {% render 'arriendo-config' %}
 
 {%- style -%}
-/* ── OVERLAY + MODAL ───────────────────────────── */
+/* ── OVERLAY + MODAL ───────────────────────────────── */
 .qr-overlay {
   position: fixed; inset: 0;
   background: rgba(0, 0, 0, 0.5);
@@ -49,7 +49,7 @@
   transform: translate(-50%, -50%) scale(1);
 }
 
-/* ── MODAL HEADER ────────────────────────────── */
+/* ── MODAL HEADER ────────────────────────────────── */
 .qr-modal-header {
   display: flex; align-items: center; justify-content: space-between;
   padding: 16px 20px;
@@ -72,7 +72,7 @@
 }
 .qr-modal-close:hover { background: rgba(0,0,0,0.12); }
 
-/* ── MODAL BODY (scrollable) ───────────────────── */
+/* ── MODAL BODY (scrollable) ───────────────────────── */
 .qr-modal-body {
   overflow-y: auto;
   max-height: calc(100vh - 48px - 62px);
@@ -80,7 +80,7 @@
   -webkit-overflow-scrolling: touch;
 }
 
-/* ── SIMULADOR STYLES (namespaced con .qr-sim) ───────── */
+/* ── SIMULADOR STYLES (namespaced con .qr-sim) ─────────── */
 .qr-sim {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -235,7 +235,7 @@
 .qr-sim .qr-r-cell-val { font-size: 17px; font-weight: 600; letter-spacing: -0.02em; color: #1d1d1f; }
 .qr-sim .qr-r-cell-sub { font-size: 11px; color: #757575; margin-top: 2px; }
 
-/* Penalties & purchase */
+/* Penalties */
 .qr-sim .qr-detail-head { padding: 18px 24px 14px; border-bottom: 1px solid #d2d2d7; }
 .qr-sim .qr-detail-head-title { font-size: 15px; font-weight: 600; color: #1d1d1f; }
 .qr-sim .qr-detail-head-sub { font-size: 13px; color: #6e6e73; margin-top: 2px; }
@@ -278,10 +278,10 @@
 }
 {%- endstyle -%}
 
-<!-- ── OVERLAY ────────────────────────────── -->
+<!-- ── OVERLAY ────────────────────────────────────── -->
 <div class="qr-overlay" id="qr-overlay" aria-hidden="true"></div>
 
-<!-- ── MODAL ─────────────────────────────── -->
+<!-- ── MODAL ─────────────────────────────────────── -->
 <div class="qr-modal" id="qr-modal" role="dialog" aria-modal="true" aria-label="Simulador de Arriendo Operativo">
   <div class="qr-modal-header">
     <span class="qr-modal-title">Simulador de Cuotas</span>
@@ -314,12 +314,12 @@
         <div class="qr-row">
           <label class="qr-row-label" for="qr-montoUnitario">
             Precio por equipo
-            <small>IVA incluido · precio de lista del equipo</small>
+            <small>Sin IVA · precio de lista del equipo</small>
           </label>
           <div class="qr-input-wrap">
             <div class="qr-input-row">
               <span class="qr-prefix">$</span>
-              <input type="text" inputmode="numeric" class="qr-price-input" id="qr-montoUnitario" value="999.990" aria-label="Precio por equipo IVA incluido">
+              <input type="text" inputmode="numeric" class="qr-price-input" id="qr-montoUnitario" value="999.990" aria-label="Precio por equipo sin IVA">
             </div>
             <div class="qr-input-error" id="qr-priceError">Ingresa un monto válido</div>
           </div>
@@ -357,9 +357,14 @@
       <div class="qr-card">
         <div class="qr-result-hero">
           <div>
-            <div class="qr-r-label">Cuota mensual (IVA incluido)</div>
+            <div class="qr-r-label">Cuota mensual sin IVA</div>
             <div class="qr-r-big"><sup>$</sup><span id="qr-cuotaNeta">—</span></div>
-            <div class="qr-r-note">Pago mensual total · IVA incluido</div>
+            <div class="qr-r-note">Monto facturado por mes · sin IVA</div>
+          </div>
+          <div>
+            <div class="qr-r-iva-label">Con IVA (19%)</div>
+            <div class="qr-r-iva" id="qr-cuotaIVA">—</div>
+            <div class="qr-r-iva-note">Pago mensual total</div>
           </div>
         </div>
 
@@ -367,12 +372,12 @@
           <div class="qr-r-cell">
             <div class="qr-r-cell-label">Costo total equipos</div>
             <div class="qr-r-cell-val" id="qr-totalNeto">—</div>
-            <div class="qr-r-cell-sub">IVA incluido</div>
+            <div class="qr-r-cell-sub">sin IVA</div>
           </div>
           <div class="qr-r-cell">
             <div class="qr-r-cell-label">Gasto total del contrato</div>
             <div class="qr-r-cell-val" id="qr-totalPer">—</div>
-            <div class="qr-r-cell-sub" id="qr-totalPerSub">IVA incluido</div>
+            <div class="qr-r-cell-sub" id="qr-totalPerSub">sin IVA</div>
           </div>
         </div>
       </div>
@@ -386,18 +391,18 @@
         <div id="qr-penList"></div>
       </div>
 
-      <p class="qr-disc">Valores referenciales en pesos chilenos, IVA incluido. Para una cotización formal, contacta a tu ejecutivo MacOnline Pro.</p>
+      <p class="qr-disc">Valores referenciales en pesos chilenos sin IVA. Para una cotización formal, contacta a tu ejecutivo MacOnline Pro.</p>
 
     </div>
   </div>
 </div>
 
-<!-- ── JAVASCRIPT ───────────────────────────── -->
+<!-- ── JAVASCRIPT ───────────────────────────────────── -->
 <script>
 (function() {
   'use strict';
 
-  // ── Modal open/close ─────────────────────
+  // ── Modal open/close ─────────────────────────────────
   var overlay = document.getElementById('qr-overlay');
   var modal   = document.getElementById('qr-modal');
   // Sin botón propio — se abre desde botones del tema con data-qr-open o por texto
@@ -443,20 +448,20 @@
     if (e.key === 'Escape' && modal.style.visibility === 'visible') closeModal();
   });
 
-  // ── Parámetros centralizados ─────────────────
+  // ── Parámetros centralizados ─────────────────────
   // Factores, IVA y penalizaciones viven en
   // snippets/arriendo-config.liquid (window.ArriendoConfig)
   var CFG = window.ArriendoConfig;
 
-  // ── Estado ───────────────────────────────
+  // ── Estado ───────────────────────────────────────
   var qrMeses = CFG.PLAZO_DEFAULT, qrProducto = 'Mac', qrCantidad = CFG.SIM_QTY_DEFAULT;
 
-  // ── Elementos ────────────────────────────
+  // ── Elementos ────────────────────────────────────
   var priceInput = document.getElementById('qr-montoUnitario');
   var priceError = document.getElementById('qr-priceError');
   var qtyInput   = document.getElementById('qr-qtyInput');
 
-  // ── Producto pills ───────────────────────
+  // ── Producto pills ───────────────────────────────
   ['Mac', 'iPad', 'iPhone', 'Otros'].forEach(function(p) {
     document.getElementById('qr-pill-' + p).addEventListener('click', function() {
       qrProducto = p;
@@ -467,7 +472,7 @@
     });
   });
 
-  // ── Plazo ────────────────────────────────
+  // ── Plazo ────────────────────────────────────────
   CFG.PLAZOS.forEach(function(p) {
     document.getElementById('qr-opt-' + p).addEventListener('click', function() { setQrMeses(p); });
   });
@@ -480,7 +485,7 @@
     qrCalcular();
   }
 
-  // ── Cantidad ─────────────────────────────
+  // ── Cantidad ─────────────────────────────────────
   document.getElementById('qr-qty-minus').addEventListener('click', function() { chgQrQty(-1); });
   document.getElementById('qr-qty-plus').addEventListener('click', function() { chgQrQty(1); });
 
@@ -538,7 +543,7 @@
     }
   });
 
-  // ── Utilidades ───────────────────────────
+  // ── Utilidades ───────────────────────────────────
   var fmt = function(n) { return '$' + Math.round(n).toLocaleString('es-CL'); };
 
   function qrSet(id, val) {
@@ -547,9 +552,7 @@
     el.textContent = val; el.classList.add('qr-pop');
   }
 
-  // ── Cálculo ──────────────────────────────
-  // El precio ingresado es IVA incluido; como la cuota escala
-  // linealmente, cuota (IVA incl.) = precio (IVA incl.) × factor.
+  // ── Cálculo ──────────────────────────────────────
   function qrCalcular() {
     var monto = parsePrecio(priceInput.value);
 
@@ -557,9 +560,10 @@
     var cuota = CFG.cuotaNeta(total, qrMeses, qrProducto);
 
     qrSet('qr-cuotaNeta', Math.round(cuota).toLocaleString('es-CL'));
+    qrSet('qr-cuotaIVA', fmt(cuota * CFG.IVA));
     qrSet('qr-totalNeto', fmt(total));
     qrSet('qr-totalPer', fmt(cuota * qrMeses));
-    document.getElementById('qr-totalPerSub').textContent = qrMeses + ' cuotas · IVA incluido';
+    document.getElementById('qr-totalPerSub').textContent = qrMeses + ' cuotas · sin IVA';
 
     document.getElementById('qr-penList').innerHTML = CFG.PEN[qrMeses].map(function(p) {
       return '<div class="qr-pen-row">' +

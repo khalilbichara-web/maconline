@@ -145,7 +145,7 @@
       </div>
       <div class="qrc-item-cuota">
         <div class="qrc-item-cuota-val" id="qrc-cuota-{{ forloop.index0 }}">$-</div>
-        <div class="qrc-item-cuota-sub">/mes IVA incluido</div>
+        <div class="qrc-item-cuota-sub">/mes sin IVA</div>
       </div>
     </li>
     {%- endfor -%}
@@ -158,7 +158,8 @@
     <div class="qrc-total-label">Cuota total mensual</div>
     <div class="qrc-total-meta">
       <div class="qrc-total-val"><sup>$</sup><span id="qrc-total">-</span><span class="qrc-total-suffix">/mes</span></div>
-      <div class="qrc-total-plazo" id="qrc-total-plazo">36 meses · IVA incluido</div>
+      <div class="qrc-total-iva" id="qrc-total-iva">Con IVA: $-/mes</div>
+      <div class="qrc-total-plazo" id="qrc-total-plazo">36 meses · sin IVA</div>
     </div>
   </div>
 
@@ -232,7 +233,7 @@
   }
 
   /* Main calculation — dispositivos con su factor, accesorios con
-     tasa 'Otros'. Cuotas mostradas siempre con IVA incluido. */
+     tasa 'Otros'. */
   function cCalcular() {
     var totalCuota = 0;
     var totalEquipos = 0;
@@ -241,8 +242,6 @@
       var item = cartItems[i];
 
       var tipo = item.esDispositivo ? item.type : 'Otros';
-      /* item.price ya incluye IVA; por linealidad la cuota resultante
-         tambien queda con IVA incluido */
       var cuotaLinea = CFG.cuotaNeta(item.price * item.qty, cMeses, tipo);
 
       cSet('qrc-cuota-' + i, '$' + fmtMiles(cuotaLinea));
@@ -251,7 +250,8 @@
     }
 
     cSet('qrc-total', fmtMiles(totalCuota));
-    document.getElementById('qrc-total-plazo').textContent = cMeses + ' meses · ' + totalEquipos + (totalEquipos === 1 ? ' equipo' : ' equipos') + ' · IVA incluido';
+    cSet('qrc-total-iva', 'Con IVA: $' + fmtMiles(totalCuota * CFG.IVA) + '/mes');
+    document.getElementById('qrc-total-plazo').textContent = cMeses + ' meses · ' + totalEquipos + (totalEquipos === 1 ? ' equipo' : ' equipos') + ' · sin IVA';
   }
 
   cCalcular();
